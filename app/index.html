@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4ecdb">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>YDS Çalışma</title>
+  <script>
+    /* Önbellek/eski sürüm sorununu kökten önle: her açılışta SW'leri kaldır, cache temizle */
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(() => {});
+    }
+    if (window.caches) { caches.keys().then(ks => ks.forEach(k => caches.delete(k))).catch(() => {}); }
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=47">
+</head>
+<body>
+  <header id="ust-bar">
+    <button id="menuBtn" class="ust-ikon" aria-label="Müfredat menüsü" hidden>☰</button>
+    <button id="geri" hidden>‹ Geri</button>
+    <h1 id="baslik">Üniteler</h1>
+    <div id="ust-aksiyon">
+      <button id="yardimBtn" class="ust-ikon" aria-label="Nasıl çalışılır">?</button>
+      <button id="ayarBtn" class="ust-ikon" aria-label="Ayarlar">⚙</button>
+    </div>
+  </header>
+  <main id="icerik"></main>
+  <nav id="alt-menu" hidden>
+    <button data-ekran="oku"><span class="nav-ikon">📖</span><span class="nav-etiket">Oku</span></button>
+    <button data-ekran="kelime"><span class="nav-ikon">🎴</span><span class="nav-etiket">Kelime</span></button>
+    <button data-ekran="gramer"><span class="nav-ikon">📝</span><span class="nav-etiket">Gramer</span></button>
+    <button data-ekran="quiz"><span class="nav-ikon">🧠</span><span class="nav-etiket">Quiz</span></button>
+    <button data-ekran="bosluk"><span class="nav-ikon">✍️</span><span class="nav-etiket">Boşluk</span></button>
+  </nav>
+  <script type="module" src="js/app.js?v=47"></script>
+</body>
+</html>
