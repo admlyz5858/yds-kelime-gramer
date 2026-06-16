@@ -1,0 +1,30 @@
+# Ağır / yerel üretim dizinleri — GitHub'a gitmez
+work/
+_probe/
+u3-kareler/
+pipeline/
+app/data/frames/
+.remember/
+srv.log
+
+# Video ve büyük ara dosyalar
+*.ts
+*.wav
+*.mp4
+*.mkv
+
+# Mobil build çıktıları
+mobil/www/
+mobil/node_modules/
+mobil/android/app/build/
+mobil/android/.gradle/
+mobil/android/build/
+mobil/android/local.properties
+mobil/android/app/release/
+*.jks
+*.keystore
+
+# Sistem
+node_modules/
+.DS_Store
+*.log
