@@ -31,3 +31,6 @@ node_modules/
 
 # Android çöp dosyaları
 .trashed-*
+
+# Keystore base64 (asla commitleme)
+*.b64
