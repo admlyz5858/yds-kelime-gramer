@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#f4ecdb"/>
+  <rect x="232" y="300" width="560" height="430" rx="28" fill="#fffaf0" stroke="#c2542f" stroke-width="18"/>
+  <line x1="512" y1="318" x2="512" y2="712" stroke="#c2542f" stroke-width="14"/>
+  <g stroke="#3a3327" stroke-width="12" stroke-linecap="round">
+    <line x1="300" y1="392" x2="464" y2="392"/>
+    <line x1="300" y1="452" x2="464" y2="452"/>
+    <line x1="300" y1="512" x2="430" y2="512"/>
+    <line x1="560" y1="392" x2="724" y2="392"/>
+    <line x1="560" y1="452" x2="724" y2="452"/>
+    <line x1="560" y1="512" x2="690" y2="512"/>
+  </g>
+  <text x="512" y="855" font-family="Georgia, 'Times New Roman', serif" font-size="170" font-weight="700" fill="#c2542f" text-anchor="middle">YDS</text>
+</svg>
