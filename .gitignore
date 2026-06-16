@@ -37,3 +37,6 @@ node_modules/
 
 # İndirilen build çıktıları
 cikti/
+
+# Mağaza teslim klasörü (indirilen/üretilen, yeniden üretilebilir)
+magaza-varliklari/
