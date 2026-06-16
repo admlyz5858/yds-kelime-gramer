@@ -1,5 +1,5 @@
 // app/js/app.js
-import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard } from './logic.js';
+import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
 import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar } from './storage.js';
 
 const icerik = document.getElementById('icerik');
@@ -118,23 +118,38 @@ function cekmeceAc() {
   const liste = o.querySelector('#cekListe');
   const ciz = (q) => {
     liste.innerHTML = searchLessons(manifest.dersler, q).map(d => {
-      const bilgi = d.durum === 'yakinda' ? 'Yakında'
+      const kilitli = dersKilitli(d);
+      const bilgi = kilitli ? dersDurumEtiket(d)
         : [d.kelime_sayisi ? `${d.kelime_sayisi} kelime` : '', d.bolum_sayisi ? `${d.bolum_sayisi} bölüm` : ''].filter(Boolean).join(' · ');
       const ad = d.baslik.replace(/^Ünite\s*\d+\s*[—-]\s*/i, '');
-      return `<button class="cek-ders ${d.durum === 'yakinda' ? 'yakinda' : ''}" data-id="${d.id}" data-dosya="${d.dosya}" ${d.durum === 'yakinda' ? 'disabled' : ''}>
+      return `<button class="cek-ders ${kilitli ? 'kilitli' : ''} ${d.durum === 'premium' ? 'premium' : ''}" data-id="${d.id}" data-dosya="${d.dosya}" data-durum="${d.durum || ''}">
         <div class="cek-no">${d.id}</div>
         <div class="cek-ic"><div class="cek-bas">${esc(ad)}</div><div class="cek-alt">${esc(bilgi)}${isDone(progress, d.id) ? ' · ✓ çalışıldı' : ''}</div></div>
-        ${d.durum === 'yakinda' ? '<span class="cek-kilit">🔒</span>' : '<span class="ok">›</span>'}
+        ${kilitli ? '<span class="cek-kilit">🔒</span>' : '<span class="ok">›</span>'}
       </button>`;
     }).join('');
-    liste.querySelectorAll('.cek-ders:not([disabled])').forEach(el =>
-      el.onclick = () => { kapat(); dersAc(el.dataset.dosya, Number(el.dataset.id)); });
+    liste.querySelectorAll('.cek-ders').forEach(el =>
+      el.onclick = () => {
+        const dd = manifest.dersler.find(x => x.id === Number(el.dataset.id));
+        if (dersKilitli(dd)) {
+          modalAc('Premium — yakında', `
+            <p class="modal-aciklama">Bu ünite yakında <b>premium</b> ile açılacak. Şimdilik <b>Ünite 1 — En Sık Kullanılan 1000 Kelime</b> ücretsiz çalışabilirsin.</p>`);
+          return;
+        }
+        kapat();
+        dersAc(el.dataset.dosya, Number(el.dataset.id));
+      });
   };
   ciz('');
   o.querySelector('#cekAra').oninput = (e) => ciz(e.target.value);
 }
 
 async function dersAc(dosya, id) {
+  const _ders = manifest.dersler.find(x => x.id === Number(id));
+  if (dersKilitli(_ders)) {
+    modalAc('Premium — yakında', `<p class="modal-aciklama">Bu ünite yakında premium ile açılacak.</p>`);
+    return;
+  }
   aktifDers = await getJSON('data/' + dosya);
   aktifDers._id = id;
   _ayar.sonDers = { dosya, id, baslik: aktifDers.baslik }; saveAyar(_ayar);
