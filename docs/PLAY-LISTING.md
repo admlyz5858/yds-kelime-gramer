@@ -64,5 +64,7 @@ Sınav başarısı için her gün biraz çalış — gerisini uygulama hatırlat
 2. Sorun yoksa **Üretim (Production)**'a yükselt.
 
 ## Gizlilik politikası URL'si
-Task 17'de üretilen herkese açık URL buraya yazılacak:
-`<GIZLILIK_URL>`
+```
+https://admlyz5858.github.io/yds-gizlilik/
+```
+(Kaynak: public repo `admlyz5858/yds-gizlilik`, GitHub Pages. Güncellemek için o repodaki `index.html`'i değiştir.)
