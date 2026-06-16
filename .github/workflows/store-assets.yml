@@ -1,0 +1,54 @@
+name: Store Assets
+
+on:
+  workflow_dispatch:
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: NPM kur
+        working-directory: mobil
+        run: npm install
+
+      - name: Playwright chromium kur
+        working-directory: mobil
+        run: npx playwright install --with-deps chromium
+
+      - name: www hazırla
+        working-directory: mobil
+        run: node hazirla.mjs
+
+      - name: Statik sunucu başlat
+        working-directory: mobil
+        run: |
+          python3 -m http.server 8100 --directory www &
+          sleep 3
+          curl -s -o /dev/null -w "sunucu: %{http_code}\n" http://localhost:8100/index.html
+
+      - name: Mağaza görselleri üret (ikon + feature)
+        working-directory: mobil
+        run: node store/uret-gorsel.mjs
+
+      - name: Ekran görüntüleri çek
+        working-directory: mobil
+        env:
+          BASE_URL: http://localhost:8100
+        run: node store/ekran-goruntu.mjs
+
+      - name: Üretilenleri listele
+        working-directory: mobil
+        run: ls -la store/cikti
+
+      - name: Mağaza varlıkları artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: store-assets
+          path: mobil/store/cikti/*.png
+          if-no-files-found: error
