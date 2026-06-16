@@ -28,3 +28,6 @@ mobil/android/app/release/
 node_modules/
 .DS_Store
 *.log
+
+# Android çöp dosyaları
+.trashed-*
