@@ -1,0 +1,83 @@
+{
+  "uretim_tarihi": "2026-06-15",
+  "dersler": [
+    {
+      "id": 1,
+      "dosya": "uniteler/unite-01.json",
+      "baslik": "Ünite 1 — En Sık Kullanılan 1000 Kelime",
+      "kelime_sayisi": 1034,
+      "durum": "hazir"
+    },
+    {
+      "id": 2,
+      "dosya": "uniteler/unite-02.json",
+      "baslik": "Ünite 2 — Edatlar (Prepositions)",
+      "kelime_sayisi": 147,
+      "durum": "premium",
+      "bolum_sayisi": 77
+    },
+    {
+      "id": 3,
+      "dosya": "uniteler/unite-03.json",
+      "baslik": "Ünite 3 — Geniş ve Şimdiki Zamanlar (Present Tenses)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 4,
+      "dosya": "uniteler/unite-04.json",
+      "baslik": "Ünite 4 — Geçmiş Zamanlar (Past Tenses)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 5,
+      "dosya": "uniteler/unite-05.json",
+      "baslik": "Ünite 5 — Gelecek Zamanlar (Future Tenses)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 6,
+      "dosya": "uniteler/unite-06.json",
+      "baslik": "Ünite 6 — Zaman Tekrarı (Tense Revision)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 7,
+      "dosya": "uniteler/unite-07.json",
+      "baslik": "Ünite 7 — Modallar (Modals)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 8,
+      "dosya": "uniteler/unite-08.json",
+      "baslik": "Ünite 8 — Modal Tekrarı (Modal Revision)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 9,
+      "dosya": "uniteler/unite-09.json",
+      "baslik": "Ünite 9 — Fiilimsiler (Verbals)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 10,
+      "dosya": "uniteler/unite-10.json",
+      "baslik": "Ünite 10 — Etken ve Edilgen Çatı (Active & Passive)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    },
+    {
+      "id": 11,
+      "dosya": "uniteler/unite-11.json",
+      "baslik": "Ünite 11 — Koşul Cümleleri (Conditionals)",
+      "kelime_sayisi": 0,
+      "durum": "premium"
+    }
+  ]
+}
