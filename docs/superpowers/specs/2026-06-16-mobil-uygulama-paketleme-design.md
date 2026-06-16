@@ -59,7 +59,7 @@ Yerelde ve CI'da çalışan saf Node script. Adımlar:
 
 ### Bileşen 3 — Capacitor yapılandırması
 
-- `capacitor.config.json`: `appId: "com.admlyz.ydsders"`, `appName: "YDS Ders"`, `webDir: "www"`, `server.androidScheme: "https"` (localhost https → güvenli bağlam, fetch çalışır).
+- `capacitor.config.json`: `appId: "com.admlyz.ydsders"`, `appName: "YDS Kelime ve Gramer"`, `webDir: "www"`, `server.androidScheme: "https"` (localhost https → güvenli bağlam, fetch çalışır). Play mağaza adı / launcher etiketi: **"YDS Kelime ve Gramer"**.
 - `android/` projesi `npx cap add android` ile bir kez üretilir ve repoya commit edilir (CI'da yeniden üretmeye gerek kalmaz; `cap sync` yeterli).
 - `versionCode: 1`, `versionName: "1.0.0"` (`android/app/build.gradle`).
 
