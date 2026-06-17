@@ -56,7 +56,7 @@ jobs:
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
           chmod +x gradlew
-          ./gradlew bundleRelease --no-daemon
+          ./gradlew bundleRelease assembleRelease --no-daemon
 
       - name: İmzayı doğrula
         working-directory: mobil/android
@@ -65,9 +65,16 @@ jobs:
           ls -la "$AAB"
           jarsigner -verify "$AAB" && echo "AAB imzalı ✔"
 
-      - name: AAB artifact yükle
+      - name: AAB artifact yükle (Play Store)
         uses: actions/upload-artifact@v4
         with:
           name: app-release-aab
           path: mobil/android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+
+      - name: APK artifact yükle (doğrudan kurulum/test)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: mobil/android/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
