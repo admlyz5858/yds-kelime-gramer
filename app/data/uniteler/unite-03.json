@@ -1,17 +1,4036 @@
 {
   "id": 3,
   "baslik": "Ünite 3 — Geniş ve Şimdiki Zamanlar (Present Tenses)",
-  "konu_ozeti": "Bu ünitenin içeriği videolardan sırayla eklenecek.",
+  "konu_ozeti": "Present zamanların tümü: Simple Present (geniş zaman), Present Continuous (am/is/are V-ing), Present Perfect (have/has V3) ve Present Perfect Continuous (have/has been V-ing). Konu anlatımı + örnek cümleler (kelimeye dokun, çeviri için kaydır) + seviyeli testler.",
   "bolumler": [
     {
-      "baslik": "Yakında",
-      "satirlar": [
-        "Bu ünite henüz hazırlanmadı. İçerik sırayla ekleniyor."
+      "baslik": "📘 Konu Anlatımı — Geniş ve Şimdiki Zamanlar",
+      "sema": {
+        "kural": "İngilizcede \"genel/alışkanlık\", \"şu an\", \"geçmişten şimdiye bağlantı\" anlamları farklı present biçimleriyle anlatılır. Önce YAPIYI tanı, sonra hangi durumda kullanıldığını öğren.",
+        "ekler": [
+          {
+            "edat": "V1 / V+s",
+            "ek": "geniş zaman — genel doğru, alışkanlık"
+          },
+          {
+            "edat": "am/is/are + V-ing",
+            "ek": "şu an / geçici"
+          },
+          {
+            "edat": "have/has + V3",
+            "ek": "geçmişte oldu, şimdiyle bağlantılı"
+          },
+          {
+            "edat": "have/has been + V-ing",
+            "ek": "geçmişten beri süren"
+          }
+        ],
+        "kademeBaslik": "Zaman ipucu kelimeleri",
+        "kademe": [
+          {
+            "en": "always / usually / every day",
+            "tr": "her zaman / genelde → Simple Present"
+          },
+          {
+            "en": "now / at the moment / currently",
+            "tr": "şu an → Present Continuous"
+          },
+          {
+            "en": "just / already / yet / ever / since",
+            "tr": "henüz / daha şimdi → Present Perfect"
+          },
+          {
+            "en": "for + süre / since + nokta (lately)",
+            "tr": "… beri süredir → Present Perfect Continuous"
+          }
+        ]
+      }
+    },
+    {
+      "baslik": "Simple Present — geniş zaman",
+      "ust": "GENİŞ / ŞİMDİKİ ZAMAN",
+      "ogeler": [
+        {
+          "kural": "V1 (he/she/it → V+s)",
+          "anlam": "Genel doğrular, alışkanlıklar, tekrarlanan eylemler ve tarifeli/programlı olaylar için kullanılır.",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "Earth",
+                  "a": "Dünya",
+                  "vurgu": true
+                },
+                {
+                  "k": "orbits",
+                  "a": "yörüngesinde döner",
+                  "en": "V1 + -s (3. tekil geniş zaman)",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "Sun.",
+                  "a": "Güneş",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Dünya, Güneş'in etrafında döner."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Water",
+                  "a": "su",
+                  "vurgu": true
+                },
+                {
+                  "k": "boils",
+                  "a": "kaynar",
+                  "en": "V1 + -s (geniş zaman)",
+                  "vurgu": true
+                },
+                {
+                  "k": "at",
+                  "a": "-de",
+                  "vurgu": false
+                },
+                {
+                  "k": "100",
+                  "a": "100",
+                  "vurgu": false
+                },
+                {
+                  "k": "degrees",
+                  "a": "derece",
+                  "vurgu": true
+                },
+                {
+                  "k": "Celsius.",
+                  "a": "santigrat",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Su 100 santigrat derecede kaynar."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Honey",
+                  "a": "bal",
+                  "vurgu": true
+                },
+                {
+                  "k": "never",
+                  "a": "asla",
+                  "vurgu": true
+                },
+                {
+                  "k": "spoils.",
+                  "a": "bozulur",
+                  "en": "V1 + -s (geniş zaman)",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Bal asla bozulmaz."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "heart",
+                  "a": "kalp",
+                  "vurgu": true
+                },
+                {
+                  "k": "pumps",
+                  "a": "pompalar",
+                  "en": "V1 + -s (geniş zaman)",
+                  "vurgu": true
+                },
+                {
+                  "k": "blood",
+                  "a": "kan",
+                  "vurgu": true
+                },
+                {
+                  "k": "throughout",
+                  "a": "boyunca/her yerine",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "body.",
+                  "a": "vücut",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Kalp, vücudun her yerine kan pompalar."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Leaves",
+                  "a": "yapraklar",
+                  "vurgu": true
+                },
+                {
+                  "k": "change",
+                  "a": "değiştirir",
+                  "en": "V1 (geniş zaman, çoğul özne)",
+                  "vurgu": true
+                },
+                {
+                  "k": "colour",
+                  "a": "renk",
+                  "vurgu": true
+                },
+                {
+                  "k": "in",
+                  "a": "-de",
+                  "vurgu": false
+                },
+                {
+                  "k": "autumn.",
+                  "a": "sonbahar",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Yapraklar sonbaharda renk değiştirir."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "V1",
+                  "a": "fiilin 1. hali",
+                  "en": "V1 = yalın fiil (geniş zaman olumlu)",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapar"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "don't",
+                  "a": "-maz",
+                  "en": "don't = I/you/we/they olumsuz",
+                  "vurgu": true
+                },
+                {
+                  "k": "V1",
+                  "a": "fiil",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "doesn't",
+                  "a": "-maz",
+                  "en": "doesn't = he/she/it olumsuz",
+                  "vurgu": true
+                },
+                {
+                  "k": "V1",
+                  "a": "fiil",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapmaz"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "V1",
+                  "a": "fiil",
+                  "en": "V1 = olumlu geniş zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "(affirmative)",
+                  "a": "olumlu",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "don't",
+                  "a": "-maz",
+                  "vurgu": true
+                },
+                {
+                  "k": "V1",
+                  "a": "fiil",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "doesn't",
+                  "a": "-maz",
+                  "vurgu": true
+                },
+                {
+                  "k": "V1",
+                  "a": "fiil",
+                  "vurgu": true
+                },
+                {
+                  "k": "(negative)",
+                  "a": "olumsuz",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapar / yapmaz"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "He",
+                  "a": "o",
+                  "vurgu": false
+                },
+                {
+                  "k": "always",
+                  "a": "her zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "locks",
+                  "a": "kilitler",
+                  "en": "V1 + -s (3. tekil geniş zaman)",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "door",
+                  "a": "kapı",
+                  "vurgu": true
+                },
+                {
+                  "k": "twice.",
+                  "a": "iki kez",
+                  "vurgu": true
+                }
+              ],
+              "tr": "O her zaman 2 kez kapıyı kilitler."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Turks",
+                  "a": "Türkler",
+                  "vurgu": true
+                },
+                {
+                  "k": "drink",
+                  "a": "içer",
+                  "en": "V1 (geniş zaman, çoğul özne)",
+                  "vurgu": true
+                },
+                {
+                  "k": "so",
+                  "a": "çok",
+                  "vurgu": true
+                },
+                {
+                  "k": "much",
+                  "a": "çok (sayılamayan)",
+                  "vurgu": true
+                },
+                {
+                  "k": "tea.",
+                  "a": "çay",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Türkler çok çay içer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Present Continuous — am/is/are V-ing",
+      "ust": "GENİŞ / ŞİMDİKİ ZAMAN",
+      "ogeler": [
+        {
+          "kural": "am/is/are + V-ing",
+          "anlam": "Şu anda olmakta olan, geçici durumlar ve yakın gelecekteki planlar için kullanılır.",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "am",
+                  "a": "-iyorum",
+                  "en": "am Ving = I için şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "fiil+ing",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "is",
+                  "a": "-iyor",
+                  "en": "is Ving = he/she/it şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "fiil+ing",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "are",
+                  "a": "-iyor",
+                  "en": "are Ving = you/we/they şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "fiil+ing",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapıyor"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "am",
+                  "a": "-miyorum",
+                  "vurgu": true
+                },
+                {
+                  "k": "not",
+                  "a": "değil",
+                  "en": "am not Ving = olumsuz şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "fiil+ing",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "is",
+                  "a": "-miyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "not",
+                  "a": "değil",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "fiil+ing",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "are",
+                  "a": "-miyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "not",
+                  "a": "değil",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "fiil+ing",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapmıyor"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "I",
+                  "a": "ben",
+                  "vurgu": false
+                },
+                {
+                  "k": "am",
+                  "a": "-iyorum",
+                  "en": "am + Ving = şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "talking",
+                  "a": "konuşuyorum",
+                  "en": "V+ing",
+                  "vurgu": true
+                },
+                {
+                  "k": "to",
+                  "vurgu": false
+                },
+                {
+                  "k": "you",
+                  "a": "sen",
+                  "vurgu": false
+                },
+                {
+                  "k": "right",
+                  "a": "tam",
+                  "vurgu": true
+                },
+                {
+                  "k": "now.",
+                  "a": "şimdi",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Şu anda seninle konuşuyorum."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "cat",
+                  "a": "kedi",
+                  "vurgu": true
+                },
+                {
+                  "k": "is",
+                  "a": "-iyor",
+                  "en": "is + Ving = şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "chasing",
+                  "a": "kovalıyor",
+                  "en": "V+ing",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "mouse",
+                  "a": "fare",
+                  "vurgu": true
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "moment.",
+                  "a": "şu anda",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Kedi şu anda bir fareyi kovalıyor."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Be",
+                  "a": "ol",
+                  "vurgu": true
+                },
+                {
+                  "k": "quiet!",
+                  "a": "sessiz",
+                  "vurgu": true
+                },
+                {
+                  "k": "Your",
+                  "a": "senin",
+                  "vurgu": false
+                },
+                {
+                  "k": "little",
+                  "a": "küçük",
+                  "vurgu": true
+                },
+                {
+                  "k": "brother",
+                  "a": "erkek kardeş",
+                  "vurgu": true
+                },
+                {
+                  "k": "is",
+                  "a": "-yor",
+                  "en": "is + Ving = şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "still",
+                  "a": "hâlâ",
+                  "vurgu": true
+                },
+                {
+                  "k": "sleeping.",
+                  "a": "uyuyor",
+                  "en": "V+ing",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Sessiz ol! Küçük kardeşin hâlâ uyuyor."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "They",
+                  "a": "onlar",
+                  "vurgu": false
+                },
+                {
+                  "k": "are",
+                  "a": "-yor",
+                  "vurgu": true
+                },
+                {
+                  "k": "not",
+                  "a": "değil",
+                  "en": "are not Ving = olumsuz şimdiki zaman",
+                  "vurgu": true
+                },
+                {
+                  "k": "watching",
+                  "a": "izliyor",
+                  "en": "V+ing",
+                  "vurgu": true
+                },
+                {
+                  "k": "television",
+                  "a": "televizyon",
+                  "vurgu": true
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "moment.",
+                  "a": "şu anda",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Onlar şu anda televizyon izlemiyorlar."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "She",
+                  "a": "o (kız)",
+                  "vurgu": false
+                },
+                {
+                  "k": "is",
+                  "a": "-iyor (yardımcı)",
+                  "en": "is + Ving = şu an yapıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "writing",
+                  "a": "yazıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "an",
+                  "vurgu": false
+                },
+                {
+                  "k": "email",
+                  "a": "e-posta",
+                  "vurgu": false
+                },
+                {
+                  "k": "to",
+                  "vurgu": false
+                },
+                {
+                  "k": "her",
+                  "a": "onun",
+                  "vurgu": false
+                },
+                {
+                  "k": "boss",
+                  "a": "patron",
+                  "vurgu": false
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "present.",
+                  "a": "şu an",
+                  "vurgu": false
+                }
+              ],
+              "tr": "O şu anda patronuna bir e-posta yazıyor."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "I",
+                  "a": "ben",
+                  "vurgu": false
+                },
+                {
+                  "k": "am",
+                  "a": "-iyor (yardımcı)",
+                  "en": "am + Ving = şu an yapıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "reading",
+                  "a": "okuyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "very",
+                  "a": "çok",
+                  "vurgu": false
+                },
+                {
+                  "k": "interesting",
+                  "a": "ilginç",
+                  "vurgu": false
+                },
+                {
+                  "k": "book",
+                  "a": "kitap",
+                  "vurgu": false
+                },
+                {
+                  "k": "these",
+                  "a": "bu",
+                  "vurgu": false
+                },
+                {
+                  "k": "days.",
+                  "a": "günler / sıralar",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Bu sıralar çok ilginç bir kitap okuyorum."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "They",
+                  "a": "onlar",
+                  "vurgu": false
+                },
+                {
+                  "k": "are",
+                  "a": "-iyor (yardımcı)",
+                  "en": "are + Ving = şu an yapıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "renovating",
+                  "a": "tadilat yapıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "their",
+                  "a": "onların",
+                  "vurgu": false
+                },
+                {
+                  "k": "house",
+                  "a": "ev",
+                  "vurgu": false
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "moment.",
+                  "a": "şu an",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Onlar şu anda evlerini yeniliyorlar (tadilat yapıyorlar)."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "She",
+                  "a": "o (kız)",
+                  "vurgu": false
+                },
+                {
+                  "k": "is",
+                  "a": "-iyor (yardımcı)",
+                  "en": "is + Ving = şu an yapıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "focusing",
+                  "a": "odaklanıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "on",
+                  "vurgu": false
+                },
+                {
+                  "k": "her",
+                  "a": "onun",
+                  "vurgu": false
+                },
+                {
+                  "k": "career",
+                  "a": "kariyer",
+                  "vurgu": false
+                },
+                {
+                  "k": "this",
+                  "a": "bu",
+                  "vurgu": false
+                },
+                {
+                  "k": "summer.",
+                  "a": "yaz",
+                  "vurgu": false
+                }
+              ],
+              "tr": "O bu yaz kariyerine odaklanıyor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Present Perfect — have/has V3",
+      "ust": "GENİŞ / ŞİMDİKİ ZAMAN",
+      "ogeler": [
+        {
+          "kural": "have/has + V3",
+          "anlam": "Geçmişte olmuş ama şimdiyle bağlantılı eylemler; bitiş anı belirsizdir (just, already, yet, ever, since, for).",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "has",
+                  "a": "yapmış (yardımcı)",
+                  "en": "has/have + V3 = yapmış durumda (Present Perfect)",
+                  "vurgu": true
+                },
+                {
+                  "k": "V3",
+                  "a": "fiilin 3. hali",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "yapmış (yardımcı)",
+                  "en": "have + V3 = yapmış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "V3",
+                  "a": "fiilin 3. hali",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapmış durumda"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "hasn't",
+                  "a": "yapmamış (olumsuz)",
+                  "en": "hasn't + V3 = yapmamış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "V3",
+                  "a": "fiilin 3. hali",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "haven't",
+                  "a": "yapmamış (olumsuz)",
+                  "en": "haven't + V3 = yapmamış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "V3",
+                  "a": "fiilin 3. hali",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapmamış durumda"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "I",
+                  "a": "ben",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "yapmış (yardımcı)",
+                  "en": "have + V3 = yapmış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "visited",
+                  "a": "ziyaret ettim",
+                  "vurgu": true
+                },
+                {
+                  "k": "Paris",
+                  "a": "Paris",
+                  "vurgu": false
+                },
+                {
+                  "k": "several",
+                  "a": "birkaç",
+                  "vurgu": false
+                },
+                {
+                  "k": "times.",
+                  "a": "kez",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Paris'i birkaç kez ziyaret ettim."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Emily",
+                  "a": "Emily",
+                  "vurgu": false
+                },
+                {
+                  "k": "has",
+                  "a": "yapmış (yardımcı)",
+                  "en": "has + V3 = yapmış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "read",
+                  "a": "okudu",
+                  "vurgu": true
+                },
+                {
+                  "k": "Romeo",
+                  "a": "Romeo",
+                  "vurgu": false
+                },
+                {
+                  "k": "and",
+                  "a": "ve",
+                  "vurgu": false
+                },
+                {
+                  "k": "Juliet.",
+                  "a": "Juliet",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Emily Romeo ve Juliet'i okudu."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "John",
+                  "a": "John",
+                  "vurgu": false
+                },
+                {
+                  "k": "has",
+                  "a": "yapmış (yardımcı)",
+                  "en": "has + V3 = yapmış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "travelled",
+                  "a": "seyahat etti",
+                  "vurgu": true
+                },
+                {
+                  "k": "to",
+                  "vurgu": false
+                },
+                {
+                  "k": "many",
+                  "a": "birçok",
+                  "vurgu": false
+                },
+                {
+                  "k": "countries",
+                  "a": "ülkeler",
+                  "vurgu": false
+                },
+                {
+                  "k": "in",
+                  "vurgu": false
+                },
+                {
+                  "k": "Europe.",
+                  "a": "Avrupa",
+                  "vurgu": false
+                }
+              ],
+              "tr": "John Avrupa'da birçok ülkeye seyahat etti."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "We",
+                  "a": "biz",
+                  "vurgu": false
+                },
+                {
+                  "k": "haven't",
+                  "a": "yapmamış (olumsuz)",
+                  "en": "haven't + V3 = yapmamış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "seen",
+                  "a": "görmedik",
+                  "vurgu": true
+                },
+                {
+                  "k": "that",
+                  "a": "o",
+                  "vurgu": false
+                },
+                {
+                  "k": "movie",
+                  "a": "film",
+                  "vurgu": false
+                },
+                {
+                  "k": "before.",
+                  "a": "daha önce",
+                  "vurgu": false
+                }
+              ],
+              "tr": "O filmi daha önce görmedik."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Japan",
+                  "a": "Japonya",
+                  "vurgu": false
+                },
+                {
+                  "k": "has",
+                  "a": "yapmış (yardımcı)",
+                  "en": "has + V3 = yapmış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "adopted",
+                  "a": "benimsedi",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "new",
+                  "a": "yeni",
+                  "vurgu": false
+                },
+                {
+                  "k": "strategy",
+                  "a": "strateji",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "economic",
+                  "a": "ekonomik",
+                  "vurgu": false
+                },
+                {
+                  "k": "growth.",
+                  "a": "büyüme",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Japonya ekonomik büyüme için yeni bir strateji benimsedi."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "I",
+                  "a": "ben",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "-mış durumda (yardımcı)",
+                  "en": "have + V3 = almış durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "bought",
+                  "a": "satın aldım",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "new",
+                  "a": "yeni",
+                  "vurgu": false
+                },
+                {
+                  "k": "car.",
+                  "a": "araba",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Ben yeni bir araba almış durumdayım."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "I",
+                  "a": "ben",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "-mış durumda (yardımcı)",
+                  "en": "have + V3 = yemiş durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "eaten",
+                  "a": "yedim",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "cake.",
+                  "a": "kek",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Ben bir kek yemiş durumdayım."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "He",
+                  "a": "o (erkek)",
+                  "vurgu": false
+                },
+                {
+                  "k": "has",
+                  "a": "-mış durumda (yardımcı)",
+                  "en": "has + V3 = kesmiş durumda",
+                  "vurgu": true
+                },
+                {
+                  "k": "cut",
+                  "a": "kesti",
+                  "vurgu": true
+                },
+                {
+                  "k": "his",
+                  "a": "onun",
+                  "vurgu": false
+                },
+                {
+                  "k": "hair,",
+                  "a": "saç",
+                  "vurgu": false
+                },
+                {
+                  "k": "and",
+                  "a": "ve",
+                  "vurgu": false
+                },
+                {
+                  "k": "it",
+                  "vurgu": false
+                },
+                {
+                  "k": "looks",
+                  "a": "görünüyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "much",
+                  "a": "çok daha",
+                  "vurgu": false
+                },
+                {
+                  "k": "shorter",
+                  "a": "daha kısa",
+                  "vurgu": false
+                },
+                {
+                  "k": "now.",
+                  "a": "şimdi",
+                  "vurgu": false
+                }
+              ],
+              "tr": "O saçlarını kestirmiş durumda ve o şimdi çok daha kısa görünür."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Present Perfect Continuous — have/has been V-ing",
+      "ust": "GENİŞ / ŞİMDİKİ ZAMAN",
+      "ogeler": [
+        {
+          "kural": "have/has been + V-ing",
+          "anlam": "Geçmişte başlayıp şimdiye dek süren eylemler; \"for/since\" ile süreyi vurgular.",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "has",
+                  "a": "yardımcı",
+                  "en": "has been + Ving = bir süredir yapıyor (Present Perfect Continuous)",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "yardımcı",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "-yor hali fiil",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "yardımcı",
+                  "en": "have been + Ving = bir süredir yapıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "yardımcı",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "-yor hali fiil",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapıyor"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "hasn't",
+                  "a": "yardımcı (olumsuz)",
+                  "en": "hasn't been + Ving = bir süredir yapmıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "yardımcı",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "-yor hali fiil",
+                  "vurgu": true
+                },
+                {
+                  "k": "/",
+                  "vurgu": false
+                },
+                {
+                  "k": "haven't",
+                  "a": "yardımcı (olumsuz)",
+                  "en": "haven't been + Ving = bir süredir yapmıyor",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "yardımcı",
+                  "vurgu": true
+                },
+                {
+                  "k": "Ving",
+                  "a": "-yor hali fiil",
+                  "vurgu": true
+                }
+              ],
+              "tr": "yapmıyor"
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Lately,",
+                  "a": "son zamanlarda",
+                  "vurgu": true
+                },
+                {
+                  "k": "I",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "-dir/süreklilik",
+                  "en": "have been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "feeling",
+                  "a": "hissetmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "bit",
+                  "a": "biraz",
+                  "vurgu": false
+                },
+                {
+                  "k": "under",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "weather.",
+                  "a": "keyifsiz/hasta (deyim)",
+                  "en": "under the weather = keyifsiz",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Son zamanlarda biraz keyifsiz/hasta hissediyorum."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Since",
+                  "a": "-den beri",
+                  "en": "since = başlangıç noktası",
+                  "vurgu": true
+                },
+                {
+                  "k": "I",
+                  "vurgu": false
+                },
+                {
+                  "k": "finished",
+                  "a": "bitirdim",
+                  "vurgu": true
+                },
+                {
+                  "k": "college,",
+                  "a": "kolej",
+                  "vurgu": true
+                },
+                {
+                  "k": "I",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "-dir/süreklilik",
+                  "en": "have been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "working",
+                  "a": "çalışmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "this",
+                  "a": "bu",
+                  "vurgu": false
+                },
+                {
+                  "k": "company.",
+                  "a": "şirket",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Ben koleji bitirdiğimden beri, ben bu şirkette çalışıyorum."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "They",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "-dir/süreklilik",
+                  "en": "have been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "waiting",
+                  "a": "beklemek",
+                  "vurgu": true
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "bus",
+                  "a": "otobüs",
+                  "vurgu": true
+                },
+                {
+                  "k": "for",
+                  "a": "süre (boyunca)",
+                  "en": "for + süre = ...dır/dir",
+                  "vurgu": true
+                },
+                {
+                  "k": "30",
+                  "a": "30",
+                  "vurgu": false
+                },
+                {
+                  "k": "minutes.",
+                  "a": "dakika",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Onlar 30 dakikadır otobüsü bekliyor."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "He",
+                  "vurgu": false
+                },
+                {
+                  "k": "has",
+                  "a": "-dir/süreklilik",
+                  "en": "has been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "playing",
+                  "a": "çalmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "guitar",
+                  "a": "gitar",
+                  "vurgu": true
+                },
+                {
+                  "k": "all",
+                  "a": "tüm",
+                  "vurgu": false
+                },
+                {
+                  "k": "his",
+                  "a": "onun",
+                  "vurgu": false
+                },
+                {
+                  "k": "life.",
+                  "a": "hayat",
+                  "vurgu": true
+                }
+              ],
+              "tr": "O tüm hayatı boyunca gitar çalıyor."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "We",
+                  "vurgu": false
+                },
+                {
+                  "k": "have",
+                  "a": "-dir/süreklilik",
+                  "en": "have been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "working",
+                  "a": "çalışmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "on",
+                  "vurgu": false
+                },
+                {
+                  "k": "this",
+                  "a": "bu",
+                  "vurgu": false
+                },
+                {
+                  "k": "project",
+                  "a": "proje",
+                  "vurgu": true
+                },
+                {
+                  "k": "all",
+                  "a": "tüm",
+                  "vurgu": false
+                },
+                {
+                  "k": "day.",
+                  "a": "gün",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Biz tüm gündür bu proje üzerine çalışıyoruz."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "chef",
+                  "a": "şef",
+                  "vurgu": true
+                },
+                {
+                  "k": "has",
+                  "a": "-dir/süreklilik",
+                  "en": "has been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "preparing",
+                  "a": "hazırlamak",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "special",
+                  "a": "özel",
+                  "vurgu": true
+                },
+                {
+                  "k": "dish",
+                  "a": "yemek",
+                  "vurgu": true
+                },
+                {
+                  "k": "since",
+                  "a": "-den beri",
+                  "en": "since = başlangıç noktası",
+                  "vurgu": true
+                },
+                {
+                  "k": "this",
+                  "a": "bu",
+                  "vurgu": false
+                },
+                {
+                  "k": "morning.",
+                  "a": "sabah",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Şef bu sabahtan beri özel yemeği hazırlıyor."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "workers",
+                  "a": "işçiler",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "-dir/süreklilik",
+                  "en": "have been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "repairing",
+                  "a": "onarmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "bridge",
+                  "a": "köprü",
+                  "vurgu": true
+                },
+                {
+                  "k": "for",
+                  "a": "süre (boyunca)",
+                  "en": "for + süre = ...dır/dir",
+                  "vurgu": true
+                },
+                {
+                  "k": "weeks,",
+                  "a": "haftalar",
+                  "vurgu": true
+                },
+                {
+                  "k": "but",
+                  "a": "ama",
+                  "vurgu": false
+                },
+                {
+                  "k": "they",
+                  "vurgu": false
+                },
+                {
+                  "k": "haven't",
+                  "a": "-medi (olumsuz)",
+                  "en": "haven't V3 = henüz yapmamış",
+                  "vurgu": true
+                },
+                {
+                  "k": "finished",
+                  "a": "bitirmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "yet.",
+                  "a": "henüz",
+                  "en": "yet = henüz (olumsuzda)",
+                  "vurgu": true
+                }
+              ],
+              "tr": "İşçiler haftalardır köprüyü onarıyorlar ama henüz bitirmediler."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "She",
+                  "vurgu": false
+                },
+                {
+                  "k": "looks",
+                  "a": "görünmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "sweaty.",
+                  "a": "terli",
+                  "vurgu": true
+                },
+                {
+                  "k": "She",
+                  "vurgu": false
+                },
+                {
+                  "k": "has",
+                  "a": "-dir/süreklilik",
+                  "en": "has been + Ving = bir süredir devam eden",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "vurgu": true
+                },
+                {
+                  "k": "exercising",
+                  "a": "egzersiz yapmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "gym.",
+                  "a": "spor salonu",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Terli görünüyor. Spor salonunda egzersiz yapıyordu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Karışık Tanıma — Present Forms",
+      "ciftler": [
+        {
+          "tokenlar": [
+            {
+              "k": "V1",
+              "a": "fiilin 1. hali",
+              "en": "V1 = Simple Present",
+              "vurgu": true
+            },
+            {
+              "k": "(yapar)",
+              "a": "yapar",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Simple",
+              "a": "basit/geniş",
+              "vurgu": true
+            },
+            {
+              "k": "Present",
+              "a": "şimdi/geniş zaman",
+              "vurgu": true
+            }
+          ],
+          "tr": "V1 (yapar) — Geniş Zaman olumlu yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "don't",
+              "a": "-maz (olumsuz)",
+              "en": "don't V1 = olumsuz geniş zaman",
+              "vurgu": true
+            },
+            {
+              "k": "V1",
+              "a": "fiilin 1. hali",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "doesn't",
+              "a": "-maz (he/she/it)",
+              "en": "doesn't V1 = 3. tekil olumsuz",
+              "vurgu": true
+            },
+            {
+              "k": "V1",
+              "a": "fiilin 1. hali",
+              "vurgu": true
+            },
+            {
+              "k": "(yapmaz)",
+              "a": "yapmaz",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Simple",
+              "a": "basit/geniş",
+              "vurgu": true
+            },
+            {
+              "k": "Present",
+              "a": "geniş zaman",
+              "vurgu": true
+            },
+            {
+              "k": "negative",
+              "a": "olumsuz",
+              "vurgu": true
+            }
+          ],
+          "tr": "don't V1 / doesn't V1 (yapmaz) — Geniş Zaman olumsuz yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "am",
+              "a": "-iyorum",
+              "en": "am Ving = I için şimdiki zaman",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "is",
+              "a": "-iyor (he/she/it)",
+              "en": "is Ving = 3. tekil şimdiki zaman",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "are",
+              "a": "-iyor (we/you/they)",
+              "en": "are Ving = çoğul şimdiki zaman",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "(yapıyor)",
+              "a": "yapıyor",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Present",
+              "a": "şimdiki",
+              "vurgu": true
+            },
+            {
+              "k": "Continuous",
+              "a": "sürekli",
+              "vurgu": true
+            }
+          ],
+          "tr": "am Ving / is Ving / are Ving (yapıyor) — Şimdiki Zaman olumlu yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "am",
+              "a": "-mıyorum",
+              "vurgu": true
+            },
+            {
+              "k": "not",
+              "a": "değil/olumsuz",
+              "en": "am not Ving = olumsuz şimdiki zaman",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "is",
+              "vurgu": true
+            },
+            {
+              "k": "not",
+              "a": "değil/olumsuz",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "are",
+              "vurgu": true
+            },
+            {
+              "k": "not",
+              "a": "değil/olumsuz",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "(yapmıyor)",
+              "a": "yapmıyor",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Present",
+              "a": "şimdiki",
+              "vurgu": true
+            },
+            {
+              "k": "Continuous",
+              "a": "sürekli",
+              "vurgu": true
+            },
+            {
+              "k": "negative",
+              "a": "olumsuz",
+              "vurgu": true
+            }
+          ],
+          "tr": "am not Ving / is not Ving / are not Ving (yapmıyor) — Şimdiki Zaman olumsuz yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "has",
+              "a": "-mış (he/she/it)",
+              "en": "has V3 = 3. tekil present perfect",
+              "vurgu": true
+            },
+            {
+              "k": "V3",
+              "a": "fiilin 3. hali",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "have",
+              "a": "-mış",
+              "en": "have V3 = present perfect",
+              "vurgu": true
+            },
+            {
+              "k": "V3",
+              "a": "fiilin 3. hali",
+              "vurgu": true
+            },
+            {
+              "k": "(yapmış",
+              "a": "yapmış",
+              "vurgu": false
+            },
+            {
+              "k": "durumda)",
+              "a": "durumda",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Present",
+              "a": "yakın geçmiş",
+              "vurgu": true
+            },
+            {
+              "k": "Perfect",
+              "a": "tamamlanmış",
+              "vurgu": true
+            }
+          ],
+          "tr": "has V3 / have V3 (yapmış durumda) — Yakın Geçmiş Zaman olumlu yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "hasn't",
+              "a": "-memiş (he/she/it)",
+              "en": "hasn't V3 = olumsuz present perfect",
+              "vurgu": true
+            },
+            {
+              "k": "V3",
+              "a": "fiilin 3. hali",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "haven't",
+              "a": "-memiş",
+              "en": "haven't V3 = olumsuz present perfect",
+              "vurgu": true
+            },
+            {
+              "k": "V3",
+              "a": "fiilin 3. hali",
+              "vurgu": true
+            },
+            {
+              "k": "(yapmamış",
+              "a": "yapmamış",
+              "vurgu": false
+            },
+            {
+              "k": "durumda)",
+              "a": "durumda",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Present",
+              "a": "yakın geçmiş",
+              "vurgu": true
+            },
+            {
+              "k": "Perfect",
+              "a": "tamamlanmış",
+              "vurgu": true
+            },
+            {
+              "k": "negative",
+              "a": "olumsuz",
+              "vurgu": true
+            }
+          ],
+          "tr": "hasn't V3 / haven't V3 (yapmamış durumda) — Yakın Geçmiş Zaman olumsuz yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "has",
+              "a": "-dir (he/she/it)",
+              "en": "has been Ving = 3. tekil present perfect continuous",
+              "vurgu": true
+            },
+            {
+              "k": "been",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "have",
+              "a": "-dir",
+              "en": "have been Ving = present perfect continuous",
+              "vurgu": true
+            },
+            {
+              "k": "been",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "(yapıyor)",
+              "a": "yapıyor",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Present",
+              "a": "yakın geçmiş",
+              "vurgu": true
+            },
+            {
+              "k": "Perfect",
+              "a": "tamamlanmış",
+              "vurgu": true
+            },
+            {
+              "k": "Continuous",
+              "a": "sürekli",
+              "vurgu": true
+            }
+          ],
+          "tr": "has been Ving / have been Ving (yapıyor) — Yakın Geçmiş Sürekli Zaman olumlu yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "hasn't",
+              "a": "-miyor (he/she/it)",
+              "en": "hasn't been Ving = olumsuz present perfect continuous",
+              "vurgu": true
+            },
+            {
+              "k": "been",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "/",
+              "vurgu": false
+            },
+            {
+              "k": "haven't",
+              "a": "-miyor",
+              "en": "haven't been Ving = olumsuz present perfect continuous",
+              "vurgu": true
+            },
+            {
+              "k": "been",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": "Ving",
+              "a": "fiil+ing",
+              "vurgu": true
+            },
+            {
+              "k": "(yapmıyor)",
+              "a": "yapmıyor",
+              "vurgu": false
+            },
+            {
+              "k": "—",
+              "vurgu": false
+            },
+            {
+              "k": "Present",
+              "a": "yakın geçmiş",
+              "vurgu": true
+            },
+            {
+              "k": "Perfect",
+              "a": "tamamlanmış",
+              "vurgu": true
+            },
+            {
+              "k": "Continuous",
+              "a": "sürekli",
+              "vurgu": true
+            },
+            {
+              "k": "negative",
+              "a": "olumsuz",
+              "vurgu": true
+            }
+          ],
+          "tr": "hasn't been Ving / haven't been Ving (yapmıyor) — Yakın Geçmiş Sürekli Zaman olumsuz yapısı"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "Frequency",
+              "a": "sıklık",
+              "vurgu": true
+            },
+            {
+              "k": "adverbs",
+              "a": "zarflar",
+              "vurgu": true
+            },
+            {
+              "k": "are",
+              "a": "-dir (edilgen)",
+              "en": "are + used = edilgen yapı",
+              "vurgu": true
+            },
+            {
+              "k": "commonly",
+              "a": "yaygın olarak",
+              "vurgu": true
+            },
+            {
+              "k": "used",
+              "a": "kullanılan",
+              "en": "are used = kullanılır (passive)",
+              "vurgu": true
+            },
+            {
+              "k": "when",
+              "a": "-iken, -dığında",
+              "vurgu": true
+            },
+            {
+              "k": "talking",
+              "a": "konuşurken",
+              "en": "when + V-ing = -iken",
+              "vurgu": true
+            },
+            {
+              "k": "about",
+              "a": "hakkında",
+              "vurgu": false
+            },
+            {
+              "k": "habits",
+              "a": "alışkanlıklar",
+              "vurgu": true
+            },
+            {
+              "k": "and",
+              "a": "ve",
+              "vurgu": false
+            },
+            {
+              "k": "things",
+              "a": "şeyler, işler",
+              "vurgu": true
+            },
+            {
+              "k": "we",
+              "a": "biz",
+              "vurgu": false
+            },
+            {
+              "k": "generally",
+              "a": "genellikle",
+              "vurgu": true
+            },
+            {
+              "k": "do.",
+              "a": "yaparız",
+              "vurgu": true
+            }
+          ],
+          "tr": "Alışkanlıklarımızdan, genelde yaptığımız işlerden bahsederken sıklık zarfları (frequency adverbs) yaygın olarak kullanılır."
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "always",
+              "a": "daima, hep, her zaman",
+              "vurgu": true
+            }
+          ],
+          "tr": "daima, hep, her zaman"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "almost",
+              "a": "neredeyse, hemen",
+              "vurgu": true
+            },
+            {
+              "k": "always",
+              "a": "her zaman",
+              "vurgu": true
+            }
+          ],
+          "tr": "hemen her zaman"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "usually",
+              "a": "genellikle",
+              "vurgu": true
+            }
+          ],
+          "tr": "genellikle"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "generally",
+              "a": "genellikle",
+              "vurgu": true
+            }
+          ],
+          "tr": "genellikle"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "often",
+              "a": "sık sık",
+              "vurgu": true
+            }
+          ],
+          "tr": "sık sık"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "frequently",
+              "a": "sık sık",
+              "vurgu": true
+            }
+          ],
+          "tr": "sık sık"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "sometimes",
+              "a": "bazen",
+              "vurgu": true
+            }
+          ],
+          "tr": "bazen"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "occasionally",
+              "a": "ara sıra",
+              "vurgu": true
+            }
+          ],
+          "tr": "ara sıra"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "seldom",
+              "a": "nadiren",
+              "vurgu": true
+            }
+          ],
+          "tr": "nadiren"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "rarely",
+              "a": "nadiren",
+              "vurgu": true
+            }
+          ],
+          "tr": "nadiren"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "hardly",
+              "a": "neredeyse hiç",
+              "vurgu": true
+            },
+            {
+              "k": "ever",
+              "a": "hiç (vurgulayıcı)",
+              "vurgu": true
+            }
+          ],
+          "tr": "neredeyse hiç"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "almost",
+              "a": "neredeyse",
+              "vurgu": true
+            },
+            {
+              "k": "never",
+              "a": "asla, hiç",
+              "vurgu": true
+            }
+          ],
+          "tr": "neredeyse hiç"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "never",
+              "a": "hiç, asla, hiçbir zaman",
+              "vurgu": true
+            }
+          ],
+          "tr": "hiç, asla, hiç bir zaman"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "always",
+              "a": "daima, hep, her zaman",
+              "vurgu": true
+            },
+            {
+              "k": ">",
+              "vurgu": false
+            },
+            {
+              "k": "daime,",
+              "a": "(daima yazım hatası)",
+              "vurgu": false
+            },
+            {
+              "k": "hep,",
+              "a": "hep",
+              "vurgu": false
+            },
+            {
+              "k": "her",
+              "a": "her",
+              "vurgu": false
+            },
+            {
+              "k": "zaman",
+              "a": "zaman",
+              "vurgu": false
+            }
+          ],
+          "tr": "always > daima, hep, her zaman"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "almost",
+              "a": "neredeyse",
+              "vurgu": true
+            },
+            {
+              "k": "always",
+              "a": "her zaman",
+              "vurgu": true
+            },
+            {
+              "k": ">",
+              "vurgu": false
+            },
+            {
+              "k": "hemen",
+              "a": "hemen",
+              "vurgu": false
+            },
+            {
+              "k": "her",
+              "a": "her",
+              "vurgu": false
+            },
+            {
+              "k": "zaman",
+              "a": "zaman",
+              "vurgu": false
+            }
+          ],
+          "tr": "almost always > hemen her zaman"
+        }
       ]
     }
   ],
   "kelimeler": [],
   "gramer": [],
   "soru_cozumleri": [],
-  "quiz": []
+  "testler": [
+    {
+      "ad": "Test 1",
+      "sorular": [
+        {
+          "soru": "Good communication is vital ____ a successful relationship.",
+          "secenekler": [
+            "at",
+            "with",
+            "on",
+            "for"
+          ],
+          "cevap": "for",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Good",
+                "a": "iyi",
+                "vurgu": true
+              },
+              {
+                "k": "communication",
+                "a": "iletişim",
+                "vurgu": true
+              },
+              {
+                "k": "is",
+                "a": "-dir",
+                "en": "is = tekil özne yardımcı fiili",
+                "vurgu": false
+              },
+              {
+                "k": "vital",
+                "a": "hayati",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "a": "için",
+                "vurgu": false
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "successful",
+                "a": "başarılı",
+                "vurgu": true
+              },
+              {
+                "k": "relationship.",
+                "a": "ilişki",
+                "vurgu": true
+              }
+            ],
+            "tr": "İyi iletişim, başarılı bir ilişki için hayati önem taşır."
+          }
+        },
+        {
+          "soru": "Prolonged exposure ____ the sun can cause skin damage.",
+          "secenekler": [
+            "to",
+            "at",
+            "into",
+            "on"
+          ],
+          "cevap": "to",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Prolonged",
+                "a": "uzun süreli",
+                "vurgu": true
+              },
+              {
+                "k": "exposure",
+                "a": "maruz kalma",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "sun",
+                "a": "güneş",
+                "vurgu": true
+              },
+              {
+                "k": "can",
+                "a": "-ebilir/-abilir",
+                "en": "can = yetenek/olasılık",
+                "vurgu": true
+              },
+              {
+                "k": "cause",
+                "a": "neden olmak",
+                "vurgu": true
+              },
+              {
+                "k": "skin",
+                "a": "cilt",
+                "vurgu": true
+              },
+              {
+                "k": "damage.",
+                "a": "hasar",
+                "vurgu": true
+              }
+            ],
+            "tr": "Güneşe uzun süre maruz kalmak cilt hasarına neden olabilir."
+          }
+        },
+        {
+          "soru": "Good time management is crucial ____ success in exams.",
+          "secenekler": [
+            "over",
+            "for",
+            "on",
+            "about"
+          ],
+          "cevap": "for",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Good",
+                "a": "iyi",
+                "vurgu": true
+              },
+              {
+                "k": "time",
+                "a": "zaman",
+                "vurgu": true
+              },
+              {
+                "k": "management",
+                "a": "yönetim",
+                "vurgu": true
+              },
+              {
+                "k": "is",
+                "vurgu": false
+              },
+              {
+                "k": "crucial",
+                "a": "çok önemli",
+                "en": "crucial for = -için çok önemli",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "success",
+                "a": "başarı",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "exams.",
+                "a": "sınavlar",
+                "vurgu": true
+              }
+            ],
+            "tr": "İyi zaman yönetimi, sınavlarda başarı için çok önemlidir."
+          }
+        },
+        {
+          "soru": "She submitted her application ____ the university before the deadline.",
+          "secenekler": [
+            "to",
+            "over",
+            "with",
+            "off"
+          ],
+          "cevap": "to",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "She",
+                "a": "o",
+                "vurgu": false
+              },
+              {
+                "k": "submitted",
+                "a": "sundu/teslim etti",
+                "en": "submit to = -e sunmak",
+                "vurgu": true
+              },
+              {
+                "k": "her",
+                "a": "kendi",
+                "vurgu": false
+              },
+              {
+                "k": "application",
+                "a": "başvuru",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "university",
+                "a": "üniversite",
+                "vurgu": true
+              },
+              {
+                "k": "before",
+                "a": "-den önce",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "deadline.",
+                "a": "son tarih",
+                "vurgu": true
+              }
+            ],
+            "tr": "Başvurusunu son tarihten önce üniversiteye sundu."
+          }
+        },
+        {
+          "soru": "The country is very advanced ____ technology compared to its neighbours.",
+          "secenekler": [
+            "by",
+            "in",
+            "to",
+            "at"
+          ],
+          "cevap": "in",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "country",
+                "a": "ülke",
+                "vurgu": true
+              },
+              {
+                "k": "is",
+                "vurgu": false
+              },
+              {
+                "k": "very",
+                "a": "çok",
+                "vurgu": false
+              },
+              {
+                "k": "advanced",
+                "a": "ileri/gelişmiş",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "technology",
+                "a": "teknoloji",
+                "vurgu": true
+              },
+              {
+                "k": "compared",
+                "a": "kıyasla",
+                "en": "compared to = -e kıyasla",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "its",
+                "a": "kendi",
+                "vurgu": false
+              },
+              {
+                "k": "neighbours.",
+                "a": "komşular",
+                "vurgu": true
+              }
+            ],
+            "tr": "Ülke, komşularına kıyasla teknolojide çok ileridir."
+          }
+        },
+        {
+          "soru": "Scientists are trying to ____ the origin of the virus.",
+          "secenekler": [
+            "determine",
+            "withdraw",
+            "acquire",
+            "ensure"
+          ],
+          "cevap": "determine",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Scientists",
+                "a": "bilim insanları",
+                "vurgu": true
+              },
+              {
+                "k": "are",
+                "vurgu": false
+              },
+              {
+                "k": "trying",
+                "a": "çalışıyor",
+                "en": "try to = -meye çalışmak",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "determine",
+                "a": "belirlemek",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "origin",
+                "a": "köken",
+                "vurgu": true
+              },
+              {
+                "k": "of",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "virus.",
+                "a": "virüs",
+                "vurgu": true
+              }
+            ],
+            "tr": "Bilim insanları virüsün kökenini belirlemeye çalışıyor."
+          }
+        },
+        {
+          "soru": "The doctor diagnosed her ____ a rare disease after many tests.",
+          "secenekler": [
+            "as",
+            "to",
+            "over",
+            "with"
+          ],
+          "cevap": "with",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "doctor",
+                "a": "doktor",
+                "vurgu": true
+              },
+              {
+                "k": "diagnosed",
+                "a": "teşhis koydu",
+                "en": "diagnose sb with = -e ... teşhisi koymak",
+                "vurgu": true
+              },
+              {
+                "k": "her",
+                "a": "ona",
+                "vurgu": false
+              },
+              {
+                "k": "with",
+                "vurgu": false
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "rare",
+                "a": "nadir",
+                "vurgu": true
+              },
+              {
+                "k": "disease",
+                "a": "hastalık",
+                "vurgu": true
+              },
+              {
+                "k": "after",
+                "a": "-den sonra",
+                "vurgu": true
+              },
+              {
+                "k": "many",
+                "a": "birçok",
+                "vurgu": true
+              },
+              {
+                "k": "tests.",
+                "a": "testler",
+                "vurgu": true
+              }
+            ],
+            "tr": "Doktor, birçok testten sonra ona nadir bir hastalık teşhisi koydu."
+          }
+        },
+        {
+          "soru": "Modern medicine often ____ advanced technology to diagnose complex diseases.",
+          "secenekler": [
+            "points out",
+            "relates to",
+            "depends on",
+            "goes on"
+          ],
+          "cevap": "depends on",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Modern",
+                "a": "modern",
+                "vurgu": true
+              },
+              {
+                "k": "medicine",
+                "a": "tıp",
+                "vurgu": true
+              },
+              {
+                "k": "often",
+                "a": "sıklıkla",
+                "vurgu": true
+              },
+              {
+                "k": "depends",
+                "a": "bağımlıdır",
+                "en": "depend on = -e bağlı olmak",
+                "vurgu": true
+              },
+              {
+                "k": "on",
+                "vurgu": false
+              },
+              {
+                "k": "advanced",
+                "a": "ileri",
+                "vurgu": true
+              },
+              {
+                "k": "technology",
+                "a": "teknoloji",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "diagnose",
+                "a": "teşhis etmek",
+                "vurgu": true
+              },
+              {
+                "k": "complex",
+                "a": "karmaşık",
+                "vurgu": true
+              },
+              {
+                "k": "diseases.",
+                "a": "hastalıklar",
+                "vurgu": true
+              }
+            ],
+            "tr": "Modern tıp, karmaşık hastalıkları teşhis etmek için sıklıkla ileri teknolojiye bağımlıdır."
+          }
+        },
+        {
+          "soru": "He took extra precautions ____ theft by installing a security system.",
+          "secenekler": [
+            "against",
+            "through",
+            "across",
+            "out of"
+          ],
+          "cevap": "against",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "He",
+                "a": "o",
+                "vurgu": false
+              },
+              {
+                "k": "took",
+                "a": "aldı",
+                "en": "take precautions = önlem almak",
+                "vurgu": true
+              },
+              {
+                "k": "extra",
+                "a": "ekstra",
+                "vurgu": true
+              },
+              {
+                "k": "precautions",
+                "a": "önlemler",
+                "vurgu": true
+              },
+              {
+                "k": "against",
+                "a": "-e karşı",
+                "vurgu": true
+              },
+              {
+                "k": "theft",
+                "a": "hırsızlık",
+                "vurgu": true
+              },
+              {
+                "k": "by",
+                "a": "-erek/-arak",
+                "en": "by + -ing = yaparak",
+                "vurgu": true
+              },
+              {
+                "k": "installing",
+                "a": "kurarak",
+                "vurgu": true
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "security",
+                "a": "güvenlik",
+                "vurgu": true
+              },
+              {
+                "k": "system.",
+                "a": "sistem",
+                "vurgu": true
+              }
+            ],
+            "tr": "Bir güvenlik sistemi kurarak hırsızlığa karşı ekstra önlemler aldı."
+          }
+        },
+        {
+          "soru": "Wearing a helmet will ____ injuries while riding your bike around town.",
+          "secenekler": [
+            "save",
+            "relieve",
+            "prevent",
+            "regulate"
+          ],
+          "cevap": "prevent",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Wearing",
+                "a": "giymek/takmak",
+                "en": "Wearing = -ing fiilden isim (gerund)",
+                "vurgu": true
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "helmet",
+                "a": "kask",
+                "vurgu": true
+              },
+              {
+                "k": "will",
+                "a": "-ecek/-acak",
+                "en": "will = gelecek zaman",
+                "vurgu": true
+              },
+              {
+                "k": "prevent",
+                "a": "önlemek",
+                "vurgu": true
+              },
+              {
+                "k": "injuries",
+                "a": "yaralanmalar",
+                "vurgu": true
+              },
+              {
+                "k": "while",
+                "a": "-iken",
+                "en": "while = aynı anda olma",
+                "vurgu": true
+              },
+              {
+                "k": "riding",
+                "a": "sürerken",
+                "en": "riding = -ing süreklilik",
+                "vurgu": true
+              },
+              {
+                "k": "your",
+                "a": "senin",
+                "vurgu": false
+              },
+              {
+                "k": "bike",
+                "a": "bisiklet",
+                "vurgu": true
+              },
+              {
+                "k": "around",
+                "a": "çevresinde",
+                "vurgu": false
+              },
+              {
+                "k": "town.",
+                "a": "şehir",
+                "vurgu": true
+              }
+            ],
+            "tr": "Kask takmak, şehirde bisiklet sürerken yaralanmaları önleyecektir."
+          }
+        }
+      ]
+    },
+    {
+      "ad": "Test 2",
+      "sorular": [
+        {
+          "soru": "Babies are ____ to cold weather, so they need warm clothes always.",
+          "secenekler": [
+            "chronic",
+            "available",
+            "domestic",
+            "vulnerable"
+          ],
+          "cevap": "vulnerable",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Babies",
+                "a": "bebekler",
+                "vurgu": true
+              },
+              {
+                "k": "are",
+                "vurgu": false
+              },
+              {
+                "k": "vulnerable",
+                "a": "savunmasız",
+                "en": "vulnerable to = -e karşı savunmasız",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "cold",
+                "a": "soğuk",
+                "vurgu": true
+              },
+              {
+                "k": "weather,",
+                "a": "hava",
+                "vurgu": true
+              },
+              {
+                "k": "so",
+                "a": "bu yüzden",
+                "vurgu": false
+              },
+              {
+                "k": "they",
+                "a": "onlar",
+                "vurgu": false
+              },
+              {
+                "k": "need",
+                "a": "ihtiyaç duyar",
+                "vurgu": true
+              },
+              {
+                "k": "warm",
+                "a": "sıcak",
+                "vurgu": true
+              },
+              {
+                "k": "clothes",
+                "a": "kıyafetler",
+                "vurgu": true
+              },
+              {
+                "k": "always.",
+                "a": "her zaman",
+                "vurgu": true
+              }
+            ],
+            "tr": "Bebekler soğuk havaya karşı savunmasızdır, bu yüzden her zaman sıcak kıyafetlere ihtiyaç duyarlar."
+          }
+        },
+        {
+          "soru": "The negotiations were tense, but the two parties ____ reached an agreement.",
+          "secenekler": [
+            "notably",
+            "dramatically",
+            "eventually",
+            "hardly"
+          ],
+          "cevap": "eventually",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "negotiations",
+                "a": "müzakereler",
+                "vurgu": true
+              },
+              {
+                "k": "were",
+                "a": "-di/-dı",
+                "vurgu": false
+              },
+              {
+                "k": "tense,",
+                "a": "gergin",
+                "vurgu": true
+              },
+              {
+                "k": "but",
+                "a": "ancak",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "two",
+                "a": "iki",
+                "vurgu": false
+              },
+              {
+                "k": "parties",
+                "a": "taraflar",
+                "vurgu": true
+              },
+              {
+                "k": "eventually",
+                "a": "sonunda",
+                "vurgu": true
+              },
+              {
+                "k": "reached",
+                "a": "vardı",
+                "en": "reach an agreement = anlaşmaya varmak",
+                "vurgu": true
+              },
+              {
+                "k": "an",
+                "vurgu": false
+              },
+              {
+                "k": "agreement.",
+                "a": "anlaşma",
+                "vurgu": true
+              }
+            ],
+            "tr": "Müzakereler gergindi, ancak iki taraf sonunda bir anlaşmaya vardı."
+          }
+        },
+        {
+          "soru": "The child ____ ate his vegetables after much persuasion from his parents.",
+          "secenekler": [
+            "extremely",
+            "increasingly",
+            "naturally",
+            "reluctantly"
+          ],
+          "cevap": "reluctantly",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "child",
+                "a": "çocuk",
+                "vurgu": true
+              },
+              {
+                "k": "reluctantly",
+                "a": "isteksizce",
+                "vurgu": true
+              },
+              {
+                "k": "ate",
+                "a": "yedi",
+                "en": "ate = eat fiilinin geçmiş hali",
+                "vurgu": true
+              },
+              {
+                "k": "his",
+                "a": "onun",
+                "vurgu": false
+              },
+              {
+                "k": "vegetables",
+                "a": "sebzeler",
+                "vurgu": true
+              },
+              {
+                "k": "after",
+                "a": "-den sonra",
+                "vurgu": true
+              },
+              {
+                "k": "much",
+                "a": "çok",
+                "vurgu": false
+              },
+              {
+                "k": "persuasion",
+                "a": "ikna etme",
+                "vurgu": true
+              },
+              {
+                "k": "from",
+                "a": "-den",
+                "vurgu": false
+              },
+              {
+                "k": "his",
+                "a": "onun",
+                "vurgu": false
+              },
+              {
+                "k": "parents.",
+                "a": "ebeveynler",
+                "vurgu": true
+              }
+            ],
+            "tr": "Çocuk, ebeveynlerinin çok ikna etmesinin ardından sebzelerini isteksizce yedi."
+          }
+        },
+        {
+          "soru": "Eating ____ amounts of sugar can be harmful to your health and teeth.",
+          "secenekler": [
+            "vital",
+            "excessive",
+            "accessible",
+            "redundant"
+          ],
+          "cevap": "excessive",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Eating",
+                "a": "yemek",
+                "en": "-ing = isim gibi özne",
+                "vurgu": true
+              },
+              {
+                "k": "excessive",
+                "a": "aşırı",
+                "vurgu": true
+              },
+              {
+                "k": "amounts",
+                "a": "miktarlar",
+                "vurgu": true
+              },
+              {
+                "k": "of",
+                "vurgu": false
+              },
+              {
+                "k": "sugar",
+                "a": "şeker",
+                "vurgu": true
+              },
+              {
+                "k": "can",
+                "a": "-ebilir/-abilir",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "vurgu": false
+              },
+              {
+                "k": "harmful",
+                "a": "zararlı",
+                "en": "harmful to = -e zararlı",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "your",
+                "a": "senin",
+                "vurgu": false
+              },
+              {
+                "k": "health",
+                "a": "sağlık",
+                "vurgu": true
+              },
+              {
+                "k": "and",
+                "a": "ve",
+                "vurgu": false
+              },
+              {
+                "k": "teeth.",
+                "a": "dişler",
+                "vurgu": true
+              }
+            ],
+            "tr": "Aşırı miktarda şeker yemek sağlığınıza ve dişlerinize zararlı olabilir."
+          }
+        },
+        {
+          "soru": "Environmental groups are fighting against the ____ of natural resources in protected areas.",
+          "secenekler": [
+            "innovation",
+            "exploitation",
+            "prevalence",
+            "challenge"
+          ],
+          "cevap": "exploitation",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Environmental",
+                "a": "çevresel",
+                "vurgu": true
+              },
+              {
+                "k": "groups",
+                "a": "gruplar",
+                "vurgu": true
+              },
+              {
+                "k": "are",
+                "vurgu": false
+              },
+              {
+                "k": "fighting",
+                "a": "mücadele ediyor",
+                "en": "are + -ing = şu an süren",
+                "vurgu": true
+              },
+              {
+                "k": "against",
+                "a": "-e karşı",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "exploitation",
+                "a": "sömürü",
+                "vurgu": true
+              },
+              {
+                "k": "of",
+                "vurgu": false
+              },
+              {
+                "k": "natural",
+                "a": "doğal",
+                "vurgu": true
+              },
+              {
+                "k": "resources",
+                "a": "kaynaklar",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "protected",
+                "a": "korunan",
+                "vurgu": true
+              },
+              {
+                "k": "areas.",
+                "a": "alanlar",
+                "vurgu": true
+              }
+            ],
+            "tr": "Çevre grupları, korunan alanlardaki doğal kaynakların sömürülmesine karşı mücadele ediyor."
+          }
+        },
+        {
+          "soru": "Regular team meetings can ____ better communication, and they help in solving problems quickly.",
+          "secenekler": [
+            "work on",
+            "depend on",
+            "go on",
+            "contribute to"
+          ],
+          "cevap": "contribute to",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Regular",
+                "a": "düzenli",
+                "vurgu": true
+              },
+              {
+                "k": "team",
+                "a": "ekip",
+                "vurgu": true
+              },
+              {
+                "k": "meetings",
+                "a": "toplantılar",
+                "vurgu": true
+              },
+              {
+                "k": "can",
+                "a": "-ebilir/-abilir",
+                "vurgu": true
+              },
+              {
+                "k": "contribute",
+                "a": "katkıda bulunmak",
+                "en": "contribute to = -e katkıda bulunmak",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "better",
+                "a": "daha iyi",
+                "vurgu": true
+              },
+              {
+                "k": "communication,",
+                "a": "iletişim",
+                "vurgu": true
+              },
+              {
+                "k": "and",
+                "a": "ve",
+                "vurgu": false
+              },
+              {
+                "k": "they",
+                "a": "onlar",
+                "vurgu": false
+              },
+              {
+                "k": "help",
+                "a": "yardım etmek",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "solving",
+                "a": "çözme",
+                "en": "help in + -ing",
+                "vurgu": true
+              },
+              {
+                "k": "problems",
+                "a": "sorunlar",
+                "vurgu": true
+              },
+              {
+                "k": "quickly.",
+                "a": "hızlıca",
+                "vurgu": true
+              }
+            ],
+            "tr": "Düzenli ekip toplantıları daha iyi iletişime katkıda bulunabilir ve sorunların hızlıca çözülmesine yardımcı olur."
+          }
+        },
+        {
+          "soru": "After long negotiations, both sides finally reached a/an ____ to end the ongoing conflict.",
+          "secenekler": [
+            "application",
+            "agreement",
+            "exposure",
+            "challenge"
+          ],
+          "cevap": "agreement",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "After",
+                "a": "-den sonra",
+                "vurgu": true
+              },
+              {
+                "k": "long",
+                "a": "uzun",
+                "vurgu": true
+              },
+              {
+                "k": "negotiations,",
+                "a": "müzakereler",
+                "vurgu": true
+              },
+              {
+                "k": "both",
+                "a": "her iki",
+                "vurgu": true
+              },
+              {
+                "k": "sides",
+                "a": "taraflar",
+                "vurgu": true
+              },
+              {
+                "k": "finally",
+                "a": "sonunda",
+                "vurgu": true
+              },
+              {
+                "k": "reached",
+                "a": "vardı/ulaştı",
+                "en": "reach an agreement = anlaşmaya varmak",
+                "vurgu": true
+              },
+              {
+                "k": "an",
+                "vurgu": false
+              },
+              {
+                "k": "agreement",
+                "a": "anlaşma",
+                "vurgu": true
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "end",
+                "a": "sona erdirmek",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "ongoing",
+                "a": "devam eden",
+                "vurgu": true
+              },
+              {
+                "k": "conflict.",
+                "a": "çatışma",
+                "vurgu": true
+              }
+            ],
+            "tr": "Uzun müzakerelerden sonra, her iki taraf sonunda devam eden çatışmayı sona erdirmek için bir anlaşmaya vardı."
+          }
+        },
+        {
+          "soru": "In some countries, ____ in Japan and South Korea, technology plays a major role in daily life.",
+          "secenekler": [
+            "hardly",
+            "significantly",
+            "extremely",
+            "notably"
+          ],
+          "cevap": "notably",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "In",
+                "vurgu": false
+              },
+              {
+                "k": "some",
+                "a": "bazı",
+                "vurgu": false
+              },
+              {
+                "k": "countries,",
+                "a": "ülkeler",
+                "vurgu": true
+              },
+              {
+                "k": "notably",
+                "a": "özellikle",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "Japan",
+                "a": "Japonya",
+                "vurgu": false
+              },
+              {
+                "k": "and",
+                "a": "ve",
+                "vurgu": false
+              },
+              {
+                "k": "South",
+                "a": "Güney",
+                "vurgu": false
+              },
+              {
+                "k": "Korea,",
+                "a": "Kore",
+                "vurgu": false
+              },
+              {
+                "k": "technology",
+                "a": "teknoloji",
+                "vurgu": true
+              },
+              {
+                "k": "plays",
+                "a": "oynar",
+                "en": "play a role = rol oynamak",
+                "vurgu": true
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "major",
+                "a": "önemli/büyük",
+                "vurgu": true
+              },
+              {
+                "k": "role",
+                "a": "rol",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "daily",
+                "a": "günlük",
+                "vurgu": true
+              },
+              {
+                "k": "life.",
+                "a": "yaşam",
+                "vurgu": true
+              }
+            ],
+            "tr": "Bazı ülkelerde, özellikle Japonya ve Güney Kore'de, teknoloji günlük yaşamda önemli bir rol oynar."
+          }
+        },
+        {
+          "soru": "Sleep is ____ for mental and physical health in every person's life.",
+          "secenekler": [
+            "crucial",
+            "reliable",
+            "regular",
+            "prevalent"
+          ],
+          "cevap": "crucial",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Sleep",
+                "a": "uyku",
+                "vurgu": true
+              },
+              {
+                "k": "is",
+                "vurgu": false
+              },
+              {
+                "k": "crucial",
+                "a": "çok önemli",
+                "en": "crucial for = -için çok önemli",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "mental",
+                "a": "zihinsel",
+                "vurgu": true
+              },
+              {
+                "k": "and",
+                "a": "ve",
+                "vurgu": false
+              },
+              {
+                "k": "physical",
+                "a": "fiziksel",
+                "vurgu": true
+              },
+              {
+                "k": "health",
+                "a": "sağlık",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "every",
+                "a": "her",
+                "vurgu": false
+              },
+              {
+                "k": "person's",
+                "a": "insanın",
+                "vurgu": true
+              },
+              {
+                "k": "life.",
+                "a": "yaşam",
+                "vurgu": true
+              }
+            ],
+            "tr": "Uyku, her insanın yaşamında zihinsel ve fiziksel sağlık için çok önemlidir."
+          }
+        },
+        {
+          "soru": "The ____ in medicine has greatly improved the quality of life for patients.",
+          "secenekler": [
+            "exposure",
+            "precaution",
+            "innovation",
+            "distinction"
+          ],
+          "cevap": "innovation",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "innovation",
+                "a": "yenilik",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "medicine",
+                "a": "tıp",
+                "vurgu": true
+              },
+              {
+                "k": "has",
+                "vurgu": false
+              },
+              {
+                "k": "greatly",
+                "a": "büyük ölçüde",
+                "vurgu": true
+              },
+              {
+                "k": "improved",
+                "a": "iyileştirdi",
+                "en": "has improved = -miş/iyileştirdi (present perfect)",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "quality",
+                "a": "kalite",
+                "vurgu": true
+              },
+              {
+                "k": "of",
+                "vurgu": false
+              },
+              {
+                "k": "life",
+                "a": "yaşam",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "patients.",
+                "a": "hastalar",
+                "vurgu": true
+              }
+            ],
+            "tr": "Tıptaki yenilik, hastaların yaşam kalitesini büyük ölçüde iyileştirdi."
+          }
+        }
+      ]
+    }
+  ]
 }
