@@ -13,6 +13,14 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:background">@null</item>
+        <!-- Android 15 (API 35) edge-to-edge zorunluluğundan çık: içerik durum/navigasyon
+             çubuğunun altına girmesin, üst bar butonları tıklanabilir kalsın. -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+        <!-- Durum ve navigasyon çubuğu uygulamanın krem temasıyla uyumlu, koyu ikonlu -->
+        <item name="android:statusBarColor">#f4ecdb</item>
+        <item name="android:navigationBarColor">#f4ecdb</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 
 
