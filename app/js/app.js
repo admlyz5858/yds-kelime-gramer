@@ -1,6 +1,6 @@
 // app/js/app.js
 import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
-import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar } from './storage.js';
+import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen } from './storage.js';
 
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
@@ -20,9 +20,20 @@ let _acikBolum = null;   // Oku ekranında açık olan bölüm indeksi (null = b
 
 // ===== Kelime Defteri =====
 let _defter = loadDefter();   // { en(küçük): kelimeObj }
+let _ogrenilen = loadOgrenilen();   // { en(küçük): kelimeObj } — "biliyorum" işaretlenenler
 const shuffle = (a) => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
 function defterdeMi(en) { return !!_defter[String(en).toLowerCase()]; }
 function defterKelimeler() { return Object.values(_defter); }
+function ogrenilenler() { return Object.values(_ogrenilen); }
+function ogrenildiMi(en) { return !!_ogrenilen[String(en).toLowerCase()]; }
+// "Biliyorum" → öğrenilenlere ekle, defterde varsa çıkar
+function ogrenildiEkle(kart) {
+  const en = String(kart.en).toLowerCase();
+  _ogrenilen[en] = { en: kart.en, tur: kart.tur, tr: kart.tr, ornek_tokenlar: kart.ornek_tokenlar, ornek_tr: kart.ornek_tr };
+  saveOgrenilen(_ogrenilen);
+  if (_defter[en]) { delete _defter[en]; saveDefter(_defter); }
+}
+function ogrenildiSil(en) { en = String(en).toLowerCase(); if (_ogrenilen[en]) { delete _ogrenilen[en]; saveOgrenilen(_ogrenilen); } }
 function defterToggle(kart) {
   const en = String(kart.en).toLowerCase();
   if (_defter[en]) delete _defter[en];
@@ -65,21 +76,22 @@ async function anaSayfa() {
     <div class="hizli-grid">
       <button class="hizli-kart vurgu" id="hUniteler"><span class="hizli-ikon">📚</span><b>Üniteler</b><i>Müfredat menüsü</i></button>
       <button class="hizli-kart" id="hDefter"><span class="hizli-ikon">📓</span><b>Kelime Defteri</b><i>${n} kelime</i></button>
+      <button class="hizli-kart" id="hOgrenilen"><span class="hizli-ikon">🎓</span><b>Öğrendiklerim</b><i>${ogrenilenler().length} kelime</i></button>
       <button class="hizli-kart" id="hYanlis"><span class="hizli-ikon">❌</span><b>Yanlışlarım</b><i>${ny} soru</i></button>
       <button class="hizli-kart" id="hBasarim"><span class="hizli-ikon">🏅</span><b>Başarımlar</b><i>${basarimlar().filter(x => x.ok).length}/${basarimlar().length} rozet</i></button>
-      <button class="hizli-kart" id="hYardim"><span class="hizli-ikon">💡</span><b>Nasıl çalışılır</b><i>Kısa kılavuz</i></button>
       <button class="hizli-kart" id="hTema"><span class="hizli-ikon">${koyu ? '☀️' : '🌙'}</span><b>${koyu ? 'Açık tema' : 'Koyu tema'}</b><i>Görünümü değiştir</i></button>
     </div>
   `);
-  icerik.querySelectorAll('.pano-cip[data-git]').forEach(c => c.onclick = () => {
+  icerik.querySelectorAll('[data-git]').forEach(c => c.onclick = () => {
     if (c.dataset.git === 'defter') defterAc();
     else if (c.dataset.git === 'yanlis') yanlisAc();
+    else if (c.dataset.git === 'ogrenilen') ogrenilenAc();
   });
   document.getElementById('hUniteler').onclick = cekmeceAc;
   document.getElementById('hDefter').onclick = defterAc;
+  document.getElementById('hOgrenilen').onclick = ogrenilenAc;
   document.getElementById('hYanlis').onclick = yanlisAc;
   document.getElementById('hBasarim').onclick = basarimAc;
-  document.getElementById('hYardim').onclick = yardimAc;
   document.getElementById('hTema').onclick = () => { temaDegistir(); anaSayfa(); };
   const gb = document.getElementById('gununBtn');
   if (gb) gb.onclick = gununAc;
@@ -174,6 +186,27 @@ function defterAc() {
   geriBtn.onclick = anaSayfa;
   altMenu.querySelectorAll('button').forEach(b => b.onclick = () => ekranGoster(b.dataset.ekran));
   ekranGoster(kelimeler.length ? 'kelime' : 'oku');
+}
+
+// Öğrenilen kelimeleri sanal ünite gibi aç (tekrar/çalışma)
+function ogrenilenAc() {
+  const kelimeler = ogrenilenler();
+  aktifDers = {
+    _id: 'ogrenilen', baslik: 'Öğrendiklerim', konu_ozeti: '',
+    bolumler: [], cumleler: [], gramer: [], soru_cozumleri: [],
+    kelimeler, quiz: defterQuizUret(kelimeler)
+  };
+  geriBtn.hidden = false; menuBtn.hidden = true;
+  geriBtn.onclick = anaSayfa;
+  baslikEl.textContent = 'Öğrendiklerim';
+  if (!kelimeler.length) {
+    altMenu.hidden = true;
+    render('<div class="cumle"><div class="tr">Henüz öğrenilen kelime yok. 🎴 Kelime kartında sağa kaydır (✓ Biliyorum) → kelime buraya gelir. Burada tekrar edebilir, quiz/boşluk ile pekiştirebilirsin.</div></div>');
+    return;
+  }
+  altMenu.hidden = false;
+  altMenu.querySelectorAll('button').forEach(b => b.onclick = () => ekranGoster(b.dataset.ekran));
+  ekranGoster('kelime');
 }
 
 // Defter kelimelerinden çoktan seçmeli (kelime → anlam) quiz üret
@@ -274,7 +307,7 @@ function kuralEtiket(o) {
 function edatBolumHTML(b) {
   const ogeler = b.ogeler || [];
   const toplamOrnek = ogeler.reduce((s, o) => s + (o.ornekler?.length || 0), 0);
-  let h = bolumHero(b.baslik, `${ogeler.length} kullanım · ${toplamOrnek} örnek`, { ust: 'EDAT' });
+  let h = bolumHero(b.baslik, `${ogeler.length} kullanım · ${toplamOrnek} örnek`, { ust: b.ust || 'EDAT' });
   if (ogeler.length > 1) {
     h += `<div class="edat-cipler">` + ogeler.map((o, idx) =>
       `<button class="edat-cip" data-hedef="kural-${idx}"><span class="edat-cip-no">${idx + 1}</span>${esc(kuralEtiket(o))}</button>`
@@ -353,11 +386,11 @@ function cizKart() {
     <div class="kart-sayac">🎴 ${_kartIdx + 1} / ${k.length}</div>
     <div class="kart-ilerleme"><div class="kart-ilerleme-ic" style="width:${Math.round((_kartIdx + 1) / k.length * 100)}%"></div></div>
     <div class="flashcard ${_kartAcik ? 'acik' : ''}" id="kart">
-      <div class="kart-et sol">📓 Öğren</div>
-      <div class="kart-et sag">✓ Biliyorum</div>
+      <div class="kart-et sol">📓 Bilmiyorum</div>
+      <div class="kart-et sag">🎓 Biliyorum</div>
       ${yuz}
     </div>
-    <div class="kart-kaydir-ipucu">← öğren&nbsp;&nbsp;·&nbsp;&nbsp;kaydır&nbsp;&nbsp;·&nbsp;&nbsp;biliyorum →</div>
+    <div class="kart-kaydir-ipucu">← bilmiyorum (defter)&nbsp;&nbsp;·&nbsp;&nbsp;kaydır&nbsp;&nbsp;·&nbsp;&nbsp;biliyorum (öğrenilen) →</div>
     <div class="btn-satir">
       <button class="aksiyon ${defterdeMi(kart.en) ? '' : 'ikincil'} defter-toggle" id="defterBtn">${defterdeMi(kart.en) ? '📓 Defterde ✓' : '📓 Bilmiyorum'}</button>
       <button class="aksiyon" id="sonraki">Sonraki ›</button>
@@ -396,14 +429,15 @@ function cizKart() {
   if (anlamEl) anlamEl.onclick = (e) => { e.stopPropagation(); _kartAcik = false; cizKart(); };
   if (_kartAcik) wireOrnekler(icerik);
 }
-// Kartı kaydırarak gönder: yön>0 biliyorum, yön<0 bilmiyorum (deftere ekle)
+// Kartı kaydırarak gönder: yön>0 biliyorum→öğrenilen, yön<0 bilmiyorum→defter
 function kartUcur(yon) {
   const k = aktifDers.kelimeler, kart = k[_kartIdx];
   const kartEl = document.getElementById('kart');
   kartEl.style.transition = 'transform .32s ease, opacity .32s ease';
   kartEl.style.transform = `translateX(${yon * 520}px) rotate(${yon * 22}deg)`;
   kartEl.style.opacity = '0';
-  if (yon < 0 && !defterdeMi(kart.en)) defterToggle(kart);
+  if (yon > 0) ogrenildiEkle(kart);                                  // biliyorum → öğrenilen
+  else { if (!defterdeMi(kart.en)) defterToggle(kart); ogrenildiSil(kart.en); }   // bilmiyorum → defter
   gunKaydet();
   setTimeout(() => { _kartIdx = nextCard(_kartIdx, k.length); _kartAcik = false; cizKart(); }, 300);
 }
@@ -451,7 +485,7 @@ function semaHTML(s) {
     h += `</div>`;
   }
   if (Array.isArray(s.kademe) && s.kademe.length) {
-    h += `<div class="sema-kademe-baslik">Öbek nasıl uzar?</div>`;
+    h += `<div class="sema-kademe-baslik">${esc(s.kademeBaslik || 'Öbek nasıl uzar?')}</div>`;
     h += s.kademe.map(k => `<div class="kademe-satir"><span class="kademe-en">${esc(k.en)}</span><span class="kademe-ok">→</span><span class="kademe-tr">${esc(k.tr)}</span></div>`).join('');
   }
   return h + '</div>';
@@ -865,7 +899,7 @@ function ayarAc() {
         onayAc(sorular[is], () => {
           if (is === 'yanlis' || is === 'hepsi') { _yanlis = []; saveYanlis(_yanlis); }
           if (is === 'defter' || is === 'hepsi') { _defter = {}; saveDefter(_defter); }
-          if (is === 'hepsi') { _istat = {}; saveIstat(_istat); progress = {}; saveProgress(progress); }
+          if (is === 'hepsi') { _ogrenilen = {}; saveOgrenilen(_ogrenilen); _istat = {}; saveIstat(_istat); progress = {}; saveProgress(progress); }
           anaSayfa();
         });
       });
@@ -916,6 +950,13 @@ function temaUygula() {
   document.documentElement.dataset.tema = koyu ? 'koyu' : 'acik';
   const mt = document.querySelector('meta[name="theme-color"]');
   if (mt) mt.content = koyu ? '#1a1611' : '#f4ecdb';
+  // Mobil (Capacitor): native durum çubuğunu da temaya uydur (PWA/tarayıcıda atlanır)
+  const SB = window.Capacitor?.Plugins?.StatusBar;
+  if (SB) {
+    SB.setOverlaysWebView?.({ overlay: false }).catch?.(() => {});
+    SB.setBackgroundColor?.({ color: koyu ? '#1a1611' : '#f4ecdb' }).catch?.(() => {});
+    SB.setStyle?.({ style: koyu ? 'DARK' : 'LIGHT' }).catch?.(() => {});
+  }
 }
 function temaDegistir() { _ayar.tema = _ayar.tema === 'koyu' ? 'acik' : 'koyu'; saveAyar(_ayar); temaUygula(); }
 
@@ -988,7 +1029,7 @@ function panoStats() {
   const bugunSay = _ayar.gunTarih === bugun ? (_ayar.gunSayac || 0) : 0;
   return {
     cozTest, dogru: d, toplam: t, yuzde: t ? Math.round(d / t * 100) : 0,
-    defter: defterKelimeler().length, yanlis: _yanlis.length,
+    defter: defterKelimeler().length, yanlis: _yanlis.length, ogrenilen: ogrenilenler().length,
     seri, bugun: bugunSay, hedef: _ayar.hedef || HEDEF_VARSAYILAN
   };
 }
@@ -1004,12 +1045,15 @@ function panoHTML() {
         <div class="pano-selam">Çalışma Defteri</div>
         <div class="pano-seri ${s.seri > 0 ? 'aktif' : ''}">${seriYazi}</div>
       </div>
-      <div class="pano-ring ${tamam ? 'tamam' : ''}">
-        <svg viewBox="0 0 80 80" width="76" height="76">
-          <circle class="ring-arka" cx="40" cy="40" r="${r}"/>
-          <circle class="ring-on" cx="40" cy="40" r="${r}" stroke-dasharray="${dolu.toFixed(1)} ${cevre.toFixed(1)}" transform="rotate(-90 40 40)"/>
-        </svg>
-        <div class="pano-ring-yazi">${tamam ? '<b class="ring-tik">✓</b>' : `<b>${s.bugun}</b>`}<span>${tamam ? 'hedef!' : '/' + s.hedef + ' bugün'}</span></div>
+      <div class="pano-sag">
+        <button class="pano-ogr" data-git="ogrenilen"><b>🎓 ${s.ogrenilen}</b><span>öğrenilen</span></button>
+        <div class="pano-ring ${tamam ? 'tamam' : ''}">
+          <svg viewBox="0 0 80 80" width="76" height="76">
+            <circle class="ring-arka" cx="40" cy="40" r="${r}"/>
+            <circle class="ring-on" cx="40" cy="40" r="${r}" stroke-dasharray="${dolu.toFixed(1)} ${cevre.toFixed(1)}" transform="rotate(-90 40 40)"/>
+          </svg>
+          <div class="pano-ring-yazi">${tamam ? '<b class="ring-tik">✓</b>' : `<b>${s.bugun}</b>`}<span>${tamam ? 'hedef!' : '/' + s.hedef + ' bugün'}</span></div>
+        </div>
       </div>
     </div>
     <div class="pano-stat">

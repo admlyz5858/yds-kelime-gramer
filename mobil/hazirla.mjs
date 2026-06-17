@@ -21,8 +21,19 @@ for (const f of ['sunucu.py', 'baslat.sh', 'js/logic.test.js']) {
 // frames klasörü (varsa) pakete girmesin
 rmSync(join(hedef, 'data', 'frames'), { recursive: true, force: true });
 
-// 3) Premium ünite JSON'larını ele (manifest.durum'a göre — otomatik/gelecek-uyumlu)
-const manifest = JSON.parse(readFileSync(join(hedef, 'data', 'manifest.json'), 'utf8'));
+// 3) MAĞAZA KİLİDİ: yalnızca bu ünite id'leri ücretsiz; gerisi PWA'da "hazir" olsa bile
+//    mağaza paketinde PREMIUM olarak kilitlenir (PWA manifest'inden bağımsız).
+//    İleride bir üniteyi mağazada açmak için id'sini bu listeye ekle.
+const UCRETSIZ = [1];
+const manifestYol = join(hedef, 'data', 'manifest.json');
+const manifest = JSON.parse(readFileSync(manifestYol, 'utf8'));
+for (const d of manifest.dersler) {
+  if (!UCRETSIZ.includes(d.id)) d.durum = 'premium';
+}
+// Store manifest'ini (kilitli durumlarla) www'a geri yaz — uygulama bunu okuyup kilitli kart çizer
+writeFileSync(manifestYol, JSON.stringify(manifest, null, 2) + '\n');
+
+// Premium ünite JSON'larını paketten ele
 let elenen = [];
 for (const d of manifest.dersler) {
   if (d.durum === 'premium' && d.dosya) {
@@ -31,5 +42,6 @@ for (const d of manifest.dersler) {
   }
 }
 
-console.log('www/ hazır. Elenen premium ünite JSON:', elenen.join(',') || '(yok)');
+console.log('www/ hazır. Ücretsiz üniteler:', UCRETSIZ.join(','));
+console.log('Elenen premium ünite JSON:', elenen.join(',') || '(yok)');
 console.log('Pakete giren üniteler:', manifest.dersler.filter(d => d.durum !== 'premium').map(d => d.id).join(','));

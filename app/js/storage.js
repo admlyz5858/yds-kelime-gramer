@@ -22,6 +22,18 @@ export function saveDefter(defter) {
   localStorage.setItem(DKEY, JSON.stringify(defter));
 }
 
+// ===== Öğrenilen kelimeler — { en(küçük): kelimeObj } (flashcard'da "biliyorum") =====
+const OGKEY = 'yds-ogrenilen-v1';
+
+export function loadOgrenilen() {
+  try { return JSON.parse(localStorage.getItem(OGKEY)) || {}; }
+  catch { return {}; }
+}
+
+export function saveOgrenilen(o) {
+  localStorage.setItem(OGKEY, JSON.stringify(o));
+}
+
 // ===== Test istatistikleri — { "unitId#testIdx": {dogru, toplam, tamam} } (en iyi skor) =====
 const IKEY = 'yds-test-istat-v1';
 

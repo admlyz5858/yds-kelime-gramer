@@ -1,17 +1,6243 @@
 {
   "id": 5,
   "baslik": "Ünite 5 — Gelecek Zamanlar (Future Tenses)",
-  "konu_ozeti": "Bu ünitenin içeriği videolardan sırayla eklenecek.",
+  "konu_ozeti": "Gelecek zamanın tüm biçimleri: will, be going to, future continuous (will be V-ing), future perfect (will have V3) ve future perfect continuous (will have been V-ing). Konu anlatımı + örnek cümleler (kelimeye dokun, çeviri için kaydır) + seviyeli testler.",
   "bolumler": [
     {
-      "baslik": "Yakında",
-      "satirlar": [
-        "Bu ünite henüz hazırlanmadı. İçerik sırayla ekleniyor."
+      "baslik": "📘 Konu Anlatımı — Gelecek Zamanlar",
+      "sema": {
+        "kural": "Gelecek zaman İngilizcede birkaç biçimde anlatılır. Önce YAPIYI tanı, sonra hangi durumda kullanıldığını öğren. Aşağıdaki bölümlerde her biçimin kuralı ve örnek cümleleri var.",
+        "ekler": [
+          {
+            "edat": "will + V1",
+            "ek": "yalın gelecek"
+          },
+          {
+            "edat": "be going to + V1",
+            "ek": "plan / kesin belirti"
+          },
+          {
+            "edat": "will be + V-ing",
+            "ek": "o anda yapıyor olacak"
+          },
+          {
+            "edat": "will have + V3",
+            "ek": "o ana kadar bitmiş olacak"
+          },
+          {
+            "edat": "will have been + V-ing",
+            "ek": "o ana kadar … süredir"
+          }
+        ],
+        "kademeBaslik": "Gelecek zaman ipucu kelimeleri",
+        "kademe": [
+          {
+            "en": "tomorrow / next week / soon",
+            "tr": "yarın / gelecek hafta → will"
+          },
+          {
+            "en": "this time tomorrow",
+            "tr": "yarın bu saatlerde → will be V-ing"
+          },
+          {
+            "en": "by 2030 / by the time …",
+            "tr": "2030’a kadar → will have V3"
+          },
+          {
+            "en": "for + süre (by then)",
+            "tr": "… süredir → will have been V-ing"
+          }
+        ]
+      }
+    },
+    {
+      "baslik": "Simple Future — will / be going to",
+      "ust": "GELECEK ZAMAN",
+      "ogeler": [
+        {
+          "kural": "will + V1",
+          "anlam": "Gelecekte gerçekleşecek eylemleri anlatır (yalın gelecek).",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "We",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "travel",
+                  "a": "seyahat etmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "to",
+                  "vurgu": false
+                },
+                {
+                  "k": "Japan",
+                  "a": "Japonya",
+                  "vurgu": false
+                },
+                {
+                  "k": "next",
+                  "a": "gelecek",
+                  "vurgu": false
+                },
+                {
+                  "k": "summer.",
+                  "a": "yaz",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Biz gelecek yaz Japonya'ya seyahat edeceğiz."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "jury",
+                  "a": "jüri",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "announce",
+                  "a": "duyurmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "results",
+                  "a": "sonuçlar",
+                  "vurgu": false
+                },
+                {
+                  "k": "in",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "next",
+                  "a": "önümüzdeki",
+                  "vurgu": false
+                },
+                {
+                  "k": "few",
+                  "a": "birkaç",
+                  "vurgu": false
+                },
+                {
+                  "k": "days.",
+                  "a": "gün",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Jüri önümüzdeki birkaç gün içinde sonuçları duyuracak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "According",
+                  "vurgu": false
+                },
+                {
+                  "k": "to",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "weather",
+                  "a": "hava durumu",
+                  "vurgu": false
+                },
+                {
+                  "k": "forecast,",
+                  "a": "tahmin",
+                  "vurgu": false
+                },
+                {
+                  "k": "it",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "rain",
+                  "a": "yağmur yağmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "tomorrow.",
+                  "a": "yarın",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Hava tahminlerine göre yarın yağmur yağacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "She",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "start",
+                  "a": "başlamak",
+                  "vurgu": true
+                },
+                {
+                  "k": "her",
+                  "vurgu": false
+                },
+                {
+                  "k": "new",
+                  "a": "yeni",
+                  "vurgu": false
+                },
+                {
+                  "k": "job",
+                  "a": "iş",
+                  "vurgu": false
+                },
+                {
+                  "k": "in",
+                  "vurgu": false
+                },
+                {
+                  "k": "two",
+                  "a": "iki",
+                  "vurgu": false
+                },
+                {
+                  "k": "weeks.",
+                  "a": "hafta",
+                  "vurgu": false
+                }
+              ],
+              "tr": "O, iki hafta içinde yeni işine başlayacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "Prime",
+                  "a": "Başbakan",
+                  "vurgu": false
+                },
+                {
+                  "k": "Minister",
+                  "a": "Bakan",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "make",
+                  "a": "yapmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "speech",
+                  "a": "konuşma",
+                  "vurgu": false
+                },
+                {
+                  "k": "on",
+                  "vurgu": false
+                },
+                {
+                  "k": "television",
+                  "a": "televizyon",
+                  "vurgu": false
+                },
+                {
+                  "k": "tonight.",
+                  "a": "bu gece",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Başbakan bu gece televizyonda bir konuşma yapacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "team",
+                  "a": "takım",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "celebrate",
+                  "a": "kutlamak",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "victory",
+                  "a": "zafer",
+                  "vurgu": false
+                },
+                {
+                  "k": "tomorrow.",
+                  "a": "yarın",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Takım yarın zaferi kutlayacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "A",
+                  "vurgu": false
+                },
+                {
+                  "k": "nuclear",
+                  "a": "nükleer",
+                  "vurgu": false
+                },
+                {
+                  "k": "war",
+                  "a": "savaş",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "bring",
+                  "a": "getirmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "about",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "destruction",
+                  "a": "yıkım",
+                  "vurgu": false
+                },
+                {
+                  "k": "of",
+                  "vurgu": false
+                },
+                {
+                  "k": "mankind.",
+                  "a": "insanlık",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Bir nükleer savaş insanoğlunun yıkımına sebep olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "consequences",
+                  "a": "sonuçlar",
+                  "vurgu": false
+                },
+                {
+                  "k": "of",
+                  "vurgu": false
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "potential",
+                  "a": "olası",
+                  "vurgu": false
+                },
+                {
+                  "k": "nuclear",
+                  "a": "nükleer",
+                  "vurgu": false
+                },
+                {
+                  "k": "war",
+                  "a": "savaş",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek/-acak",
+                  "vurgu": true
+                },
+                {
+                  "k": "be",
+                  "a": "olmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "disastrous",
+                  "a": "feci",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "many",
+                  "a": "birçok",
+                  "vurgu": false
+                },
+                {
+                  "k": "people.",
+                  "a": "insan",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Olası bir nükleer savaşın sonuçları birçok insan için feci olacak."
+            }
+          ]
+        },
+        {
+          "kural": "be going to + V1",
+          "anlam": "Önceden planlanmış eylemlerde ya da bir şeyin olacağına dair kesin belirti varsa kullanılır.",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "We",
+                  "vurgu": false
+                },
+                {
+                  "k": "are",
+                  "a": "olmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "going",
+                  "a": "gidecek",
+                  "vurgu": true
+                },
+                {
+                  "k": "to",
+                  "vurgu": true
+                },
+                {
+                  "k": "watch",
+                  "a": "izlemek",
+                  "vurgu": false
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "movie",
+                  "a": "film",
+                  "vurgu": false
+                },
+                {
+                  "k": "tonight.",
+                  "a": "bu gece",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Bu gece film izleyeceğiz."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "They",
+                  "vurgu": false
+                },
+                {
+                  "k": "are",
+                  "a": "olmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "going",
+                  "a": "gidecek",
+                  "vurgu": true
+                },
+                {
+                  "k": "to",
+                  "vurgu": true
+                },
+                {
+                  "k": "paint",
+                  "a": "boyamak",
+                  "vurgu": false
+                },
+                {
+                  "k": "their",
+                  "vurgu": false
+                },
+                {
+                  "k": "house",
+                  "a": "ev",
+                  "vurgu": false
+                },
+                {
+                  "k": "next",
+                  "a": "gelecek",
+                  "vurgu": false
+                },
+                {
+                  "k": "month.",
+                  "a": "ay",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Gelecek ay evlerini boyayacaklar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Future Continuous — will be V-ing",
+      "ust": "GELECEK ZAMAN",
+      "ogeler": [
+        {
+          "kural": "will be + V-ing",
+          "anlam": "Gelecekte belirli bir zaman noktasında yapıyor olacağımız eylemleri ifade eder.",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "Tomorrow",
+                  "a": "yarın",
+                  "vurgu": false
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "noon,",
+                  "a": "öğlen",
+                  "vurgu": false
+                },
+                {
+                  "k": "we",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-yor olacak",
+                  "vurgu": true
+                },
+                {
+                  "k": "be",
+                  "a": "olmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "hiking",
+                  "a": "yürüyüş yapmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "through",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "mountain",
+                  "a": "dağ",
+                  "vurgu": false
+                },
+                {
+                  "k": "trails.",
+                  "a": "patikalar",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Yarın öğlen, dağ patikalarında yürüyüş yapıyor olacağız."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "We",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-yor olacak",
+                  "vurgu": true
+                },
+                {
+                  "k": "be",
+                  "a": "olmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "playing",
+                  "a": "oynamak",
+                  "vurgu": true
+                },
+                {
+                  "k": "baseball",
+                  "a": "beyzbol",
+                  "vurgu": false
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "this",
+                  "vurgu": false
+                },
+                {
+                  "k": "time",
+                  "a": "zaman",
+                  "vurgu": false
+                },
+                {
+                  "k": "tomorrow.",
+                  "a": "yarın",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Biz yarın bu saatlerde beyzbol oynuyor olacağız."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "This",
+                  "vurgu": false
+                },
+                {
+                  "k": "time",
+                  "a": "zaman",
+                  "vurgu": false
+                },
+                {
+                  "k": "next",
+                  "a": "gelecek",
+                  "vurgu": false
+                },
+                {
+                  "k": "week,",
+                  "a": "hafta",
+                  "vurgu": false
+                },
+                {
+                  "k": "they",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "be",
+                  "a": "olacak",
+                  "en": "future continuous",
+                  "vurgu": true
+                },
+                {
+                  "k": "hiking",
+                  "a": "tırmanmak",
+                  "en": "hiking (in progress)",
+                  "vurgu": true
+                },
+                {
+                  "k": "in",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "mountains.",
+                  "a": "dağlar",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Gelecek hafta bu saatlerde onlar dağlarda yürüyüş yapıyor olacaklar."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "He",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "be",
+                  "a": "olacak",
+                  "en": "future continuous",
+                  "vurgu": true
+                },
+                {
+                  "k": "painting",
+                  "a": "boyamak",
+                  "en": "painting (in progress)",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "house",
+                  "a": "ev",
+                  "vurgu": false
+                },
+                {
+                  "k": "all",
+                  "vurgu": false
+                },
+                {
+                  "k": "day",
+                  "a": "gün",
+                  "vurgu": false
+                },
+                {
+                  "k": "tomorrow.",
+                  "a": "yarın",
+                  "vurgu": false
+                }
+              ],
+              "tr": "O yarın tüm gün evi boyuyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Intelligent",
+                  "a": "akıllı",
+                  "vurgu": false
+                },
+                {
+                  "k": "robots",
+                  "a": "robotlar",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "be",
+                  "a": "olacak",
+                  "en": "future continuous",
+                  "vurgu": true
+                },
+                {
+                  "k": "ruling",
+                  "a": "yönetmek",
+                  "en": "ruling (in progress)",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "world",
+                  "a": "dünya",
+                  "vurgu": false
+                },
+                {
+                  "k": "in",
+                  "vurgu": false
+                },
+                {
+                  "k": "2100.",
+                  "a": "2100 yılında",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Akıllı robotlar 2100 yılında dünyayı yönetiyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Don't",
+                  "a": "etme",
+                  "vurgu": false
+                },
+                {
+                  "k": "disturb",
+                  "a": "rahatsız etmek",
+                  "vurgu": false
+                },
+                {
+                  "k": "us",
+                  "vurgu": false
+                },
+                {
+                  "k": "between",
+                  "a": "arasında",
+                  "vurgu": false
+                },
+                {
+                  "k": "2",
+                  "vurgu": false
+                },
+                {
+                  "k": "and",
+                  "vurgu": false
+                },
+                {
+                  "k": "4",
+                  "vurgu": false
+                },
+                {
+                  "k": "pm.",
+                  "a": "öğleden sonra",
+                  "vurgu": false
+                },
+                {
+                  "k": "We",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "be",
+                  "a": "olacak",
+                  "en": "future continuous",
+                  "vurgu": true
+                },
+                {
+                  "k": "discussing",
+                  "a": "tartışmak",
+                  "en": "discussing (in progress)",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "firm's",
+                  "a": "şirketin",
+                  "vurgu": false
+                },
+                {
+                  "k": "marketing",
+                  "a": "pazarlama",
+                  "vurgu": false
+                },
+                {
+                  "k": "strategies.",
+                  "a": "stratejiler",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Bizi saat 2 ile 4 arasında rahatsız etme. Biz şirketin pazarlama stratejilerini tartışıyor olacağız."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Future Perfect — will have V3",
+      "ust": "GELECEK ZAMAN",
+      "ogeler": [
+        {
+          "kural": "will have + V3",
+          "anlam": "Gelecekte belirli bir zamana kadar tamamlanmış olacak eylemleri anlatır. (by the time + geniş zaman → future perfect)",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "By",
+                  "a": "kadar",
+                  "vurgu": false
+                },
+                {
+                  "k": "tomorrow,",
+                  "a": "yarına",
+                  "vurgu": false
+                },
+                {
+                  "k": "she",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "cleaned",
+                  "a": "temizlemek",
+                  "en": "cleaned (completed)",
+                  "vurgu": true
+                },
+                {
+                  "k": "her",
+                  "vurgu": false
+                },
+                {
+                  "k": "room;",
+                  "a": "oda",
+                  "vurgu": false
+                },
+                {
+                  "k": "it",
+                  "vurgu": false
+                },
+                {
+                  "k": "is",
+                  "vurgu": false
+                },
+                {
+                  "k": "very",
+                  "vurgu": false
+                },
+                {
+                  "k": "messy",
+                  "a": "dağınık",
+                  "vurgu": false
+                },
+                {
+                  "k": "now.",
+                  "a": "şimdi",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Yarına kadar odasını temizlemiş olacak; şu an çok dağınık."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "John",
+                  "a": "John",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "finished",
+                  "a": "bitirmek",
+                  "en": "finished (completed)",
+                  "vurgu": true
+                },
+                {
+                  "k": "his",
+                  "vurgu": false
+                },
+                {
+                  "k": "puzzle",
+                  "a": "bulmaca",
+                  "vurgu": false
+                },
+                {
+                  "k": "by",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "end",
+                  "a": "son",
+                  "vurgu": false
+                },
+                {
+                  "k": "of",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "day.",
+                  "a": "gün",
+                  "vurgu": false
+                }
+              ],
+              "tr": "John bulmacasını günün sonuna kadar bitirmiş olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "By",
+                  "a": "kadar",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "time",
+                  "a": "zaman",
+                  "vurgu": false
+                },
+                {
+                  "k": "he",
+                  "vurgu": false
+                },
+                {
+                  "k": "turns",
+                  "a": "olmak (yaş)",
+                  "vurgu": false
+                },
+                {
+                  "k": "30,",
+                  "vurgu": false
+                },
+                {
+                  "k": "he",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "started",
+                  "a": "başlatmak",
+                  "en": "started (completed)",
+                  "vurgu": true
+                },
+                {
+                  "k": "his",
+                  "vurgu": false
+                },
+                {
+                  "k": "own",
+                  "a": "kendi",
+                  "vurgu": false
+                },
+                {
+                  "k": "business.",
+                  "a": "iş",
+                  "vurgu": false
+                }
+              ],
+              "tr": "30 yaşına gelene kadar kendi işini kurmuş olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "He",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "run",
+                  "a": "koşmak",
+                  "en": "run (completed)",
+                  "vurgu": true
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "marathon",
+                  "a": "maraton",
+                  "vurgu": false
+                },
+                {
+                  "k": "by",
+                  "vurgu": false
+                },
+                {
+                  "k": "next",
+                  "a": "gelecek",
+                  "vurgu": false
+                },
+                {
+                  "k": "spring;",
+                  "a": "bahar",
+                  "vurgu": false
+                },
+                {
+                  "k": "he's",
+                  "vurgu": false
+                },
+                {
+                  "k": "been",
+                  "vurgu": false
+                },
+                {
+                  "k": "training",
+                  "a": "antrenman",
+                  "vurgu": false
+                },
+                {
+                  "k": "hard",
+                  "a": "sıkı",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "it.",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Gelecek bahara kadar bir maraton koşmuş olacak; bunun için sıkı antrenman yapıyor."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "We",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "visited",
+                  "a": "ziyaret etmek",
+                  "en": "visited (completed)",
+                  "vurgu": true
+                },
+                {
+                  "k": "our",
+                  "vurgu": false
+                },
+                {
+                  "k": "grandparents",
+                  "a": "büyükanne/baba",
+                  "vurgu": false
+                },
+                {
+                  "k": "by",
+                  "vurgu": false
+                },
+                {
+                  "k": "next",
+                  "a": "gelecek",
+                  "vurgu": false
+                },
+                {
+                  "k": "month;",
+                  "a": "ay",
+                  "vurgu": false
+                },
+                {
+                  "k": "we",
+                  "vurgu": false
+                },
+                {
+                  "k": "miss",
+                  "a": "özlemek",
+                  "vurgu": false
+                },
+                {
+                  "k": "them",
+                  "vurgu": false
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "lot.",
+                  "a": "çok",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Gelecek aya kadar büyükanne ve büyükbabamızı ziyaret etmiş olacağız; onları çok özlüyoruz."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "By",
+                  "a": "kadar",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "time",
+                  "a": "zaman",
+                  "vurgu": false
+                },
+                {
+                  "k": "we",
+                  "vurgu": false
+                },
+                {
+                  "k": "get",
+                  "a": "ulaşmak",
+                  "vurgu": false
+                },
+                {
+                  "k": "to",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "beach,",
+                  "a": "sahil",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "sun",
+                  "a": "güneş",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "risen.",
+                  "a": "doğmak",
+                  "en": "risen (completed)",
+                  "vurgu": true
+                }
+              ],
+              "tr": "Sahile ulaşana kadar güneş doğmuş olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "The",
+                  "vurgu": false
+                },
+                {
+                  "k": "train",
+                  "a": "tren",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "departed",
+                  "a": "hareket etmek",
+                  "en": "departed (completed)",
+                  "vurgu": true
+                },
+                {
+                  "k": "by",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "time",
+                  "a": "zaman",
+                  "vurgu": false
+                },
+                {
+                  "k": "you",
+                  "vurgu": false
+                },
+                {
+                  "k": "reach",
+                  "a": "ulaşmak",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "station.",
+                  "a": "istasyon",
+                  "vurgu": false
+                }
+              ],
+              "tr": "İstasyona ulaştığında tren hareket etmiş olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Biz",
+                  "a": "biz",
+                  "vurgu": false
+                },
+                {
+                  "k": "sahile",
+                  "a": "sahil",
+                  "vurgu": false
+                },
+                {
+                  "k": "ulaşana",
+                  "a": "ulaşmak",
+                  "vurgu": false
+                },
+                {
+                  "k": "kadar",
+                  "a": "kadar",
+                  "vurgu": false
+                },
+                {
+                  "k": ",",
+                  "vurgu": false
+                },
+                {
+                  "k": "güneş",
+                  "a": "güneş",
+                  "vurgu": false
+                },
+                {
+                  "k": "doğmuş",
+                  "a": "doğmak",
+                  "vurgu": false
+                },
+                {
+                  "k": "durumda",
+                  "vurgu": false
+                },
+                {
+                  "k": "olacak",
+                  "a": "olacak",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Sahile ulaşana kadar güneş doğmuş durumda olacak."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Future Perfect Continuous — will have been V-ing",
+      "ust": "GELECEK ZAMAN",
+      "ogeler": [
+        {
+          "kural": "will have been + V-ing",
+          "anlam": "Gelecekte belirli bir noktada bir eylemi ne kadar süredir yapıyor olacağımızı ifade eder. Cümlede çoğu zaman \"for + zaman dilimi\" bulunur.",
+          "ornekler": [
+            {
+              "tokenlar": [
+                {
+                  "k": "She",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect continuous",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "olmuş",
+                  "en": "been (continuous marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "working",
+                  "a": "çalışmak",
+                  "en": "working (in progress)",
+                  "vurgu": true
+                },
+                {
+                  "k": "at",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "company",
+                  "a": "şirket",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "seven",
+                  "a": "yedi",
+                  "vurgu": false
+                },
+                {
+                  "k": "years",
+                  "a": "yıl",
+                  "vurgu": false
+                },
+                {
+                  "k": "next",
+                  "a": "gelecek",
+                  "vurgu": false
+                },
+                {
+                  "k": "month.",
+                  "a": "ay",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Gelecek ay şirkette yedi yıldır çalışıyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "Next",
+                  "a": "gelecek",
+                  "vurgu": false
+                },
+                {
+                  "k": "week,",
+                  "a": "hafta",
+                  "vurgu": false
+                },
+                {
+                  "k": "he",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "olacak",
+                  "en": "future perfect continuous",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlamış",
+                  "en": "have (perfect marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "olmuş",
+                  "en": "been (continuous marker)",
+                  "vurgu": true
+                },
+                {
+                  "k": "waiting",
+                  "a": "beklemek",
+                  "en": "waiting (in progress)",
+                  "vurgu": true
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "her",
+                  "vurgu": false
+                },
+                {
+                  "k": "arrival",
+                  "a": "varış",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "three",
+                  "a": "üç",
+                  "vurgu": false
+                },
+                {
+                  "k": "hours.",
+                  "a": "saat",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Gelecek hafta onun gelişini üç saattir bekliyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "They",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "living",
+                  "a": "yaşamak",
+                  "vurgu": true
+                },
+                {
+                  "k": "in",
+                  "vurgu": false
+                },
+                {
+                  "k": "their",
+                  "vurgu": false
+                },
+                {
+                  "k": "new",
+                  "a": "yeni",
+                  "vurgu": false
+                },
+                {
+                  "k": "house",
+                  "a": "ev",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "year",
+                  "a": "yıl",
+                  "vurgu": false
+                },
+                {
+                  "k": "in",
+                  "vurgu": false
+                },
+                {
+                  "k": "May.",
+                  "a": "Mayıs",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Mayıs ayında yeni evlerinde bir yıldır yaşıyor olacaklar."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "By",
+                  "vurgu": false
+                },
+                {
+                  "k": "2100,",
+                  "a": "2100'e kadar",
+                  "vurgu": false
+                },
+                {
+                  "k": "humans",
+                  "a": "insanlık",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "exploring",
+                  "a": "keşfetmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "space",
+                  "a": "uzay",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "nearly",
+                  "a": "neredeyse",
+                  "vurgu": false
+                },
+                {
+                  "k": "150",
+                  "vurgu": false
+                },
+                {
+                  "k": "years.",
+                  "a": "yıl",
+                  "vurgu": false
+                }
+              ],
+              "tr": "2100 yılına gelindiğinde, insanlık neredeyse 150 yıldır uzayı keşfediyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "In",
+                  "vurgu": false
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "few",
+                  "a": "birkaç",
+                  "vurgu": false
+                },
+                {
+                  "k": "weeks,",
+                  "a": "hafta",
+                  "vurgu": false
+                },
+                {
+                  "k": "she",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "practising",
+                  "a": "çalışmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "piano",
+                  "a": "piyano",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "year.",
+                  "a": "yıl",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Birkaç hafta içinde piyano çalışıyor olduğu bir yılı dolmuş olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "In",
+                  "vurgu": false
+                },
+                {
+                  "k": "2025,",
+                  "a": "2025'te",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "world",
+                  "a": "dünya",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "dealing",
+                  "a": "mücadele etmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "with",
+                  "vurgu": false
+                },
+                {
+                  "k": "plastic",
+                  "a": "plastik",
+                  "vurgu": false
+                },
+                {
+                  "k": "pollution",
+                  "a": "kirlilik",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "almost",
+                  "a": "neredeyse",
+                  "vurgu": false
+                },
+                {
+                  "k": "a",
+                  "vurgu": false
+                },
+                {
+                  "k": "century.",
+                  "a": "yüzyıl",
+                  "vurgu": false
+                }
+              ],
+              "tr": "2025 yılında dünya, neredeyse bir asırdır plastik kirliliğiyle mücadele ediyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "By",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "time",
+                  "a": "zaman",
+                  "vurgu": false
+                },
+                {
+                  "k": "they",
+                  "vurgu": false
+                },
+                {
+                  "k": "reach",
+                  "a": "ulaşmak",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "beach,",
+                  "a": "plaj",
+                  "vurgu": false
+                },
+                {
+                  "k": "they",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "driving",
+                  "a": "araba sürmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "hours.",
+                  "a": "saatler",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Plaja vardıklarında saatlerdir araba sürüyor olacaklar."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "In",
+                  "vurgu": false
+                },
+                {
+                  "k": "2030,",
+                  "a": "2030'da",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "internet",
+                  "a": "internet",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "influencing",
+                  "a": "etkilemek",
+                  "vurgu": true
+                },
+                {
+                  "k": "global",
+                  "a": "küresel",
+                  "vurgu": false
+                },
+                {
+                  "k": "culture",
+                  "a": "kültür",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "fifty",
+                  "a": "elli",
+                  "vurgu": false
+                },
+                {
+                  "k": "years.",
+                  "a": "yıl",
+                  "vurgu": false
+                }
+              ],
+              "tr": "2030 yılında internet, elli yıldır küresel kültürü etkiliyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "By",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "time",
+                  "a": "zaman",
+                  "vurgu": false
+                },
+                {
+                  "k": "he",
+                  "vurgu": false
+                },
+                {
+                  "k": "retires,",
+                  "a": "emekli olmak",
+                  "vurgu": false
+                },
+                {
+                  "k": "he",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "teaching",
+                  "a": "öğretmek",
+                  "vurgu": true
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "over",
+                  "a": "fazla",
+                  "vurgu": false
+                },
+                {
+                  "k": "forty",
+                  "a": "kırk",
+                  "vurgu": false
+                },
+                {
+                  "k": "years.",
+                  "a": "yıl",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Emekli olduğunda kırk yılı aşkın bir süredir öğretmenlik yapıyor olacak."
+            },
+            {
+              "tokenlar": [
+                {
+                  "k": "We",
+                  "vurgu": false
+                },
+                {
+                  "k": "will",
+                  "a": "-ecek",
+                  "en": "future marker",
+                  "vurgu": true
+                },
+                {
+                  "k": "have",
+                  "a": "tamamlanmış",
+                  "en": "perfect aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "been",
+                  "a": "sürmekte olan",
+                  "en": "continuous aspect",
+                  "vurgu": true
+                },
+                {
+                  "k": "sitting",
+                  "a": "oturmak",
+                  "vurgu": true
+                },
+                {
+                  "k": "here",
+                  "a": "burada",
+                  "vurgu": false
+                },
+                {
+                  "k": "for",
+                  "vurgu": false
+                },
+                {
+                  "k": "three",
+                  "a": "üç",
+                  "vurgu": false
+                },
+                {
+                  "k": "hours",
+                  "a": "saat",
+                  "vurgu": false
+                },
+                {
+                  "k": "by",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "end",
+                  "a": "son",
+                  "vurgu": false
+                },
+                {
+                  "k": "of",
+                  "vurgu": false
+                },
+                {
+                  "k": "the",
+                  "vurgu": false
+                },
+                {
+                  "k": "movie.",
+                  "a": "film",
+                  "vurgu": false
+                }
+              ],
+              "tr": "Film bittiğinde burada üç saattir oturuyor olacağız."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "baslik": "Karışık Tanıma — Future Forms",
+      "ciftler": [
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "-ecek",
+              "en": "future marker",
+              "vurgu": true
+            },
+            {
+              "k": "be",
+              "a": "sürmekte olan",
+              "en": "continuous aspect",
+              "vurgu": true
+            },
+            {
+              "k": "struggling",
+              "a": "mücadele etmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "mücadele ediyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "-ecek",
+              "en": "future marker",
+              "vurgu": true
+            },
+            {
+              "k": "express",
+              "a": "ifade etmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "ifade edecek"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "-ecek",
+              "en": "future marker",
+              "vurgu": true
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmış",
+              "en": "perfect aspect",
+              "vurgu": true
+            },
+            {
+              "k": "evolved",
+              "a": "evrimleşmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "evrimleşmiş olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "-ecek",
+              "en": "future marker",
+              "vurgu": true
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmış",
+              "en": "perfect aspect",
+              "vurgu": true
+            },
+            {
+              "k": "been",
+              "a": "sürmekte olan",
+              "en": "continuous aspect",
+              "vurgu": true
+            },
+            {
+              "k": "destroying",
+              "a": "yok etmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "yok ediyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "-ecek",
+              "en": "future marker",
+              "vurgu": true
+            },
+            {
+              "k": "benefit",
+              "a": "yararlanmak",
+              "vurgu": true
+            },
+            {
+              "k": "from",
+              "vurgu": false
+            }
+          ],
+          "tr": "yararlanacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "-ecek",
+              "en": "future marker",
+              "vurgu": true
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmış",
+              "en": "perfect aspect",
+              "vurgu": true
+            },
+            {
+              "k": "disturbed",
+              "a": "rahatsız etmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "rahatsız etmiş olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "be",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "searching",
+              "a": "aramak",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "for",
+              "vurgu": false
+            }
+          ],
+          "tr": "arıyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "be",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "benefiting",
+              "a": "yararlanmak",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "from",
+              "vurgu": false
+            }
+          ],
+          "tr": "yararlanıyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "wonder",
+              "a": "merak etmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "merak edecek"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "be",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "absorbing",
+              "a": "emmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "emiyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmışlık",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "been",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "collecting",
+              "a": "toplamak",
+              "vurgu": true
+            }
+          ],
+          "tr": "toplayıyor olacak (o ana kadar)"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "promise",
+              "a": "söz vermek",
+              "vurgu": true
+            }
+          ],
+          "tr": "söz verecek"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmışlık",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "deteriorated",
+              "a": "bozulmak",
+              "vurgu": true
+            }
+          ],
+          "tr": "bozulmuş durumda olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "be",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "exceeding",
+              "a": "aşmak",
+              "vurgu": true
+            }
+          ],
+          "tr": "aşıyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmışlık",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "assessed",
+              "a": "değerlendirmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "değerlendirmiş durumda olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "contribute",
+              "a": "katkıda bulunmak",
+              "vurgu": true
+            }
+          ],
+          "tr": "katkıda bulunacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "be",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "allocating",
+              "a": "tahsis etmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "tahsis ediyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmışlık",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "destroyed",
+              "a": "yok etmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "yok etmiş durumda olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmışlık",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "been",
+              "a": "süreklilik",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "varying",
+              "a": "değişmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "değişiyor olacak (o ana kadar)"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek zaman",
+              "vurgu": true
+            },
+            {
+              "k": " ",
+              "vurgu": false
+            },
+            {
+              "k": "absorb",
+              "a": "emmek",
+              "vurgu": true
+            }
+          ],
+          "tr": "emecek"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek yardımcısı",
+              "vurgu": true
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmış gelecek",
+              "vurgu": true
+            },
+            {
+              "k": "cured",
+              "a": "tedavi etmiş",
+              "vurgu": true
+            }
+          ],
+          "tr": "tedavi etmiş durumda olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek yardımcısı",
+              "vurgu": true
+            },
+            {
+              "k": "be",
+              "a": "sürekli gelecek",
+              "vurgu": true
+            },
+            {
+              "k": "expressing",
+              "a": "ifade ediyor",
+              "vurgu": true
+            }
+          ],
+          "tr": "ifade ediyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek yardımcısı",
+              "vurgu": true
+            },
+            {
+              "k": "have",
+              "a": "tamamlanmış",
+              "vurgu": true
+            },
+            {
+              "k": "been",
+              "a": "sürekli eylem",
+              "vurgu": true
+            },
+            {
+              "k": "saving",
+              "a": "tasarruf ediyor",
+              "vurgu": true
+            }
+          ],
+          "tr": "tasarruf ediyor olacak"
+        },
+        {
+          "tokenlar": [
+            {
+              "k": "will",
+              "a": "gelecek yardımcısı",
+              "vurgu": true
+            },
+            {
+              "k": "diagnose",
+              "a": "teşhis edecek",
+              "vurgu": true
+            }
+          ],
+          "tr": "teşhis edecek"
+        }
       ]
     }
   ],
   "kelimeler": [],
   "gramer": [],
   "soru_cozumleri": [],
-  "quiz": []
+  "testler": [
+    {
+      "ad": "Test 1",
+      "sorular": [
+        {
+          "soru": "Don't phone me before 8 o'clock, we ____ dinner.",
+          "secenekler": [
+            "will have",
+            "will be having",
+            "will have had",
+            "will have been having"
+          ],
+          "cevap": "will be having",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Don't",
+                "vurgu": false
+              },
+              {
+                "k": "phone",
+                "a": "aramak",
+                "vurgu": false
+              },
+              {
+                "k": "me",
+                "vurgu": false
+              },
+              {
+                "k": "before",
+                "a": "önce",
+                "vurgu": false
+              },
+              {
+                "k": "8",
+                "vurgu": false
+              },
+              {
+                "k": "o'clock,",
+                "a": "saat 8'den",
+                "vurgu": false
+              },
+              {
+                "k": "we",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "a": "süreklilik",
+                "vurgu": true
+              },
+              {
+                "k": "having",
+                "a": "yiyor olmak",
+                "en": "will be having = yiyor olacağız",
+                "vurgu": true
+              },
+              {
+                "k": "dinner.",
+                "a": "akşam yemeği",
+                "vurgu": false
+              }
+            ],
+            "tr": "Saat 8'den önce beni arama, akşam yemeği yiyor olacağız."
+          }
+        },
+        {
+          "soru": "Tomorrow at this time, I ____ on the beach.",
+          "secenekler": [
+            "will relax",
+            "will be relaxing",
+            "will have relaxed",
+            "will have been relaxing"
+          ],
+          "cevap": "will be relaxing",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Tomorrow",
+                "a": "yarın",
+                "vurgu": false
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "this",
+                "vurgu": false
+              },
+              {
+                "k": "time,",
+                "a": "bu saatte",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "a": "süreklilik",
+                "vurgu": true
+              },
+              {
+                "k": "relaxing",
+                "a": "dinleniyor",
+                "en": "will be relaxing = dinleniyor olacağım",
+                "vurgu": true
+              },
+              {
+                "k": "on",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "beach.",
+                "a": "plaj",
+                "vurgu": false
+              }
+            ],
+            "tr": "Yarın bu saatte, sahilde dinleniyor olacağım."
+          }
+        },
+        {
+          "soru": "18. Don't phone me before 8 o'clock, we ____ dinner.",
+          "secenekler": [
+            "will have",
+            "will be having",
+            "will have had",
+            "will have been having"
+          ],
+          "cevap": "will be having",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "18.",
+                "vurgu": false
+              },
+              {
+                "k": "Don't",
+                "vurgu": false
+              },
+              {
+                "k": "phone",
+                "a": "ara",
+                "vurgu": false
+              },
+              {
+                "k": "me",
+                "vurgu": false
+              },
+              {
+                "k": "before",
+                "vurgu": false
+              },
+              {
+                "k": "8",
+                "vurgu": false
+              },
+              {
+                "k": "o'clock,",
+                "a": "saat 8",
+                "vurgu": false
+              },
+              {
+                "k": "we",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacağız",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "en": "will be V-ing →",
+                "vurgu": true
+              },
+              {
+                "k": "having",
+                "a": "yiyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "dinner.",
+                "a": "akşam yemeği",
+                "vurgu": false
+              }
+            ],
+            "tr": "Saat 8'den önce beni arama, akşam yemeği yiyor olacağız."
+          }
+        },
+        {
+          "soru": "14. Tomorrow at this time, I ____ on the beach.",
+          "secenekler": [
+            "will relax",
+            "will be relaxing",
+            "will have relaxed",
+            "will have been relaxing"
+          ],
+          "cevap": "will be relaxing",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "14.",
+                "vurgu": false
+              },
+              {
+                "k": "Tomorrow",
+                "a": "yarın",
+                "vurgu": false
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "this",
+                "vurgu": false
+              },
+              {
+                "k": "time,",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacağım",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "en": "will be V-ing →",
+                "vurgu": true
+              },
+              {
+                "k": "relaxing",
+                "a": "dinleniyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "on",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "beach.",
+                "a": "sahil",
+                "vurgu": false
+              }
+            ],
+            "tr": "Yarın bu saatte sahilde dinleniyor olacağım."
+          }
+        },
+        {
+          "soru": "The fire ____ the whole building before the firemen arrive.",
+          "secenekler": [
+            "will destroy",
+            "will be destroying",
+            "will have destroyed",
+            "will have been destroying"
+          ],
+          "cevap": "will have destroyed",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "fire",
+                "a": "yangın",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "bitmiş eylem",
+                "vurgu": true
+              },
+              {
+                "k": "destroyed",
+                "a": "yıkmış/yakıp yıkmış",
+                "en": "will have destroyed = yakıp yıkmış olacak",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "whole",
+                "a": "tüm",
+                "vurgu": false
+              },
+              {
+                "k": "building",
+                "a": "bina",
+                "vurgu": false
+              },
+              {
+                "k": "before",
+                "a": "önce",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "firemen",
+                "a": "itfaiyeciler",
+                "vurgu": false
+              },
+              {
+                "k": "arrive.",
+                "a": "ulaşmak",
+                "vurgu": false
+              }
+            ],
+            "tr": "İtfaiyeciler varmadan önce yangın binanın tamamını yakmış olacak."
+          }
+        },
+        {
+          "soru": "At midnight the speakers ____ their projects for ten hours.",
+          "secenekler": [
+            "will present",
+            "will have presented",
+            "will be presenting",
+            "will have been presenting"
+          ],
+          "cevap": "will have been presenting",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "At",
+                "vurgu": false
+              },
+              {
+                "k": "midnight",
+                "a": "gece yarısı",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "speakers",
+                "a": "konuşmacılar",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek zaman",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "tamamlanmış",
+                "en": "perfect helper",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürmüş",
+                "en": "continuous helper",
+                "vurgu": true
+              },
+              {
+                "k": "presenting",
+                "a": "sunarken",
+                "en": "will have been presenting = future perfect continuous",
+                "vurgu": true
+              },
+              {
+                "k": "their",
+                "vurgu": false
+              },
+              {
+                "k": "projects",
+                "a": "projeleri",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "ten",
+                "a": "on",
+                "vurgu": false
+              },
+              {
+                "k": "hours.",
+                "a": "saat",
+                "vurgu": false
+              }
+            ],
+            "tr": "Gece yarısı konuşmacılar projelerini on saattir sunuyor olacaklar."
+          }
+        },
+        {
+          "soru": "When I finish this course, I ____ English for twenty years.",
+          "secenekler": [
+            "will have been learning",
+            "will learn",
+            "will have learnt",
+            "will be learning"
+          ],
+          "cevap": "will have been learning",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "When",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "finish",
+                "a": "bitirmek",
+                "vurgu": false
+              },
+              {
+                "k": "this",
+                "vurgu": false
+              },
+              {
+                "k": "course,",
+                "a": "kurs/ders",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "bitmiş eylem",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekliliği",
+                "vurgu": true
+              },
+              {
+                "k": "learning",
+                "a": "öğreniyor",
+                "en": "will have been learning = öğreniyor olmuş olacak",
+                "vurgu": true
+              },
+              {
+                "k": "English",
+                "a": "İngilizce",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "twenty",
+                "a": "yirmi",
+                "vurgu": false
+              },
+              {
+                "k": "years.",
+                "a": "yıl",
+                "vurgu": false
+              }
+            ],
+            "tr": "Bu kursu bitirdiğimde, yirmi yıldır İngilizce öğreniyor olacağım."
+          }
+        },
+        {
+          "soru": "We talked about it yesterday and I ____ my job tomorrow.",
+          "secenekler": [
+            "will have quitted",
+            "will be quitting",
+            "will quit",
+            "will have been quitting"
+          ],
+          "cevap": "will quit",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "We",
+                "vurgu": false
+              },
+              {
+                "k": "talked",
+                "a": "konuştuk",
+                "vurgu": false
+              },
+              {
+                "k": "about",
+                "vurgu": false
+              },
+              {
+                "k": "it",
+                "vurgu": false
+              },
+              {
+                "k": "yesterday",
+                "a": "dün",
+                "vurgu": false
+              },
+              {
+                "k": "and",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "en": "will = gelecek zaman (kararlı niyet)",
+                "vurgu": true
+              },
+              {
+                "k": "quit",
+                "a": "bırakmak",
+                "vurgu": true
+              },
+              {
+                "k": "my",
+                "vurgu": false
+              },
+              {
+                "k": "job",
+                "a": "iş",
+                "vurgu": false
+              },
+              {
+                "k": "tomorrow.",
+                "a": "yarın",
+                "vurgu": false
+              }
+            ],
+            "tr": "Dün bunu konuştuk ve ben yarın işimi bırakacağım."
+          }
+        },
+        {
+          "soru": "7. The fire ____ the whole building before the firemen arrive.",
+          "secenekler": [
+            "will destroy",
+            "will be destroying",
+            "will have destroyed",
+            "will have been destroying"
+          ],
+          "cevap": "will have destroyed",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "7.",
+                "vurgu": false
+              },
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "fire",
+                "a": "yangın",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "tamamlanmış",
+                "vurgu": true
+              },
+              {
+                "k": "destroyed",
+                "a": "tahrip etmiş",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "whole",
+                "a": "tüm",
+                "vurgu": false
+              },
+              {
+                "k": "building",
+                "a": "bina",
+                "vurgu": false
+              },
+              {
+                "k": "before",
+                "a": "önce",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "firemen",
+                "a": "itfaiyeciler",
+                "vurgu": false
+              },
+              {
+                "k": "arrive.",
+                "a": "geldiğinde",
+                "vurgu": false
+              }
+            ],
+            "tr": "İtfaiyeciler gelmeden önce yangın tüm binayı tahrip etmiş olacak."
+          }
+        },
+        {
+          "soru": "20. At midnight the speakers ____ their projects for ten hours.",
+          "secenekler": [
+            "will present",
+            "will have presented",
+            "will be presenting",
+            "will have been presenting"
+          ],
+          "cevap": "will have been presenting",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "20.",
+                "vurgu": false
+              },
+              {
+                "k": "At",
+                "vurgu": false
+              },
+              {
+                "k": "midnight",
+                "a": "gece yarısı",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "speakers",
+                "a": "konuşmacılar",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have been →",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "en": "→ perfect progressive",
+                "vurgu": true
+              },
+              {
+                "k": "presenting",
+                "a": "sunum yapıyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "their",
+                "vurgu": false
+              },
+              {
+                "k": "projects",
+                "a": "projeler",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "ten",
+                "a": "on",
+                "vurgu": false
+              },
+              {
+                "k": "hours.",
+                "a": "saat",
+                "vurgu": false
+              }
+            ],
+            "tr": "Gece yarısında konuşmacılar on saattir projelerini sunuyor olacak."
+          }
+        }
+      ]
+    },
+    {
+      "ad": "Test 2",
+      "sorular": [
+        {
+          "soru": "The Prime Minister ____ the government's decision about bilateral agreements soon.",
+          "secenekler": [
+            "will have announced",
+            "will announce",
+            "will be announcing",
+            "will have been announcing"
+          ],
+          "cevap": "will announce",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "Prime",
+                "a": "Başbakan",
+                "vurgu": false
+              },
+              {
+                "k": "Minister",
+                "a": "bakan",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "en": "will = gelecek zaman",
+                "vurgu": true
+              },
+              {
+                "k": "announce",
+                "a": "duyurmak",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "government's",
+                "a": "hükümetin",
+                "vurgu": false
+              },
+              {
+                "k": "decision",
+                "a": "karar",
+                "vurgu": false
+              },
+              {
+                "k": "about",
+                "vurgu": false
+              },
+              {
+                "k": "bilateral",
+                "a": "ikili (anlaşma)",
+                "vurgu": false
+              },
+              {
+                "k": "agreements",
+                "a": "anlaşmalar",
+                "vurgu": false
+              },
+              {
+                "k": "soon.",
+                "a": "yakında",
+                "vurgu": false
+              }
+            ],
+            "tr": "Başbakan, ikili anlaşmalara ilişkin hükümetin kararını yakında açıklayacak."
+          }
+        },
+        {
+          "soru": "I'm going now, but I ____ you at the same time tomorrow.",
+          "secenekler": [
+            "will be seeing",
+            "will see",
+            "will have seen",
+            "will have been seeing"
+          ],
+          "cevap": "will be seeing",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "I'm",
+                "vurgu": false
+              },
+              {
+                "k": "going",
+                "a": "gidiyorum",
+                "vurgu": false
+              },
+              {
+                "k": "now,",
+                "a": "şimdi",
+                "vurgu": false
+              },
+              {
+                "k": "but",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek zaman",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "a": "ol-",
+                "en": "continuous helper",
+                "vurgu": true
+              },
+              {
+                "k": "seeing",
+                "a": "görüyor olacağım",
+                "en": "will be seeing = future continuous",
+                "vurgu": true
+              },
+              {
+                "k": "you",
+                "vurgu": false
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "same",
+                "a": "aynı",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "zamanda",
+                "vurgu": false
+              },
+              {
+                "k": "tomorrow.",
+                "a": "yarın",
+                "vurgu": false
+              }
+            ],
+            "tr": "Şimdi gidiyorum ama yarın aynı saatte seni görüyor olacağım."
+          }
+        },
+        {
+          "soru": "The organizers have confirmed the schedule; the festival ____ in July.",
+          "secenekler": [
+            "will take place",
+            "will be taking place",
+            "will have taken place",
+            "will have been taking place"
+          ],
+          "cevap": "will take place",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "organizers",
+                "a": "organizatörler",
+                "vurgu": false
+              },
+              {
+                "k": "have",
+                "vurgu": false
+              },
+              {
+                "k": "confirmed",
+                "a": "onayladı",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "schedule;",
+                "a": "program",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "festival",
+                "a": "festival",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "en": "will = gelecek zaman",
+                "vurgu": true
+              },
+              {
+                "k": "take",
+                "a": "gerçekleşmek",
+                "vurgu": true
+              },
+              {
+                "k": "place",
+                "vurgu": false
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "July.",
+                "a": "Temmuz",
+                "vurgu": false
+              }
+            ],
+            "tr": "Organizatörler programı onayladı; festival Temmuz'da gerçekleşecek."
+          }
+        },
+        {
+          "soru": "10. When I finish this course, I ____ English for twenty years.",
+          "secenekler": [
+            "will have been learning",
+            "will learn",
+            "will have learnt",
+            "will be learning"
+          ],
+          "cevap": "will have been learning",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "10.",
+                "vurgu": false
+              },
+              {
+                "k": "When",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "finish",
+                "a": "bitirdiğimde",
+                "vurgu": false
+              },
+              {
+                "k": "this",
+                "vurgu": false
+              },
+              {
+                "k": "course,",
+                "a": "kurs",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "tamamlanmış",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekli eylem",
+                "vurgu": true
+              },
+              {
+                "k": "learning",
+                "a": "öğreniyor",
+                "vurgu": true
+              },
+              {
+                "k": "English",
+                "a": "İngilizce",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "twenty",
+                "a": "yirmi",
+                "vurgu": false
+              },
+              {
+                "k": "years.",
+                "a": "yıl",
+                "vurgu": false
+              }
+            ],
+            "tr": "Bu kursu bitirdiğimde, yirmi yıldır İngilizce öğreniyor olacağım."
+          }
+        },
+        {
+          "soru": "16. We talked about it yesterday and I ____ my job tomorrow.",
+          "secenekler": [
+            "will have quitted",
+            "will be quitting",
+            "will quit",
+            "will have been quitting"
+          ],
+          "cevap": "will quit",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "16.",
+                "vurgu": false
+              },
+              {
+                "k": "We",
+                "vurgu": false
+              },
+              {
+                "k": "talked",
+                "a": "konuştuk",
+                "vurgu": false
+              },
+              {
+                "k": "about",
+                "vurgu": false
+              },
+              {
+                "k": "it",
+                "vurgu": false
+              },
+              {
+                "k": "yesterday",
+                "a": "dün",
+                "vurgu": false
+              },
+              {
+                "k": "and",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "bırakacağım",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "quit",
+                "a": "işi bırak",
+                "vurgu": true
+              },
+              {
+                "k": "my",
+                "vurgu": false
+              },
+              {
+                "k": "job",
+                "a": "iş",
+                "vurgu": false
+              },
+              {
+                "k": "tomorrow.",
+                "a": "yarın",
+                "vurgu": false
+              }
+            ],
+            "tr": "Dün bunu konuştuk ve yarın işimi bırakacağım."
+          }
+        },
+        {
+          "soru": "By 2050, people ____ for gender equality for more than a century.",
+          "secenekler": [
+            "will have been fighting",
+            "will fight",
+            "will have fought",
+            "will be fighting"
+          ],
+          "cevap": "will have been fighting",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "2050,",
+                "a": "2050'ye kadar",
+                "vurgu": false
+              },
+              {
+                "k": "people",
+                "a": "insanlar",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "bitmiş eylem",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekliliği",
+                "vurgu": true
+              },
+              {
+                "k": "fighting",
+                "a": "mücadele ediyor",
+                "en": "will have been fighting = mücadele ediyor olmuş olacak",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "gender",
+                "a": "cinsiyet",
+                "vurgu": false
+              },
+              {
+                "k": "equality",
+                "a": "eşitlik",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "more",
+                "vurgu": false
+              },
+              {
+                "k": "than",
+                "vurgu": false
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "century.",
+                "a": "yüzyıl",
+                "vurgu": false
+              }
+            ],
+            "tr": "2050'ye kadar, insanlar bir yüzyıldan fazladır cinsiyet eşitliği için mücadele ediyor olacak."
+          }
+        },
+        {
+          "soru": "6. The Prime Minister ____ the government's decision about bilateral agreements soon.",
+          "secenekler": [
+            "will have announced",
+            "will announce",
+            "will be announcing",
+            "will have been announcing"
+          ],
+          "cevap": "will announce",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "6.",
+                "vurgu": false
+              },
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "Prime",
+                "a": "Başbakan",
+                "vurgu": false
+              },
+              {
+                "k": "Minister",
+                "a": "bakan",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "announce",
+                "a": "açıklayacak",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "government's",
+                "a": "hükümetin",
+                "vurgu": false
+              },
+              {
+                "k": "decision",
+                "a": "karar",
+                "vurgu": false
+              },
+              {
+                "k": "about",
+                "vurgu": false
+              },
+              {
+                "k": "bilateral",
+                "a": "ikili",
+                "vurgu": false
+              },
+              {
+                "k": "agreements",
+                "a": "anlaşmalar",
+                "vurgu": false
+              },
+              {
+                "k": "soon.",
+                "a": "yakında",
+                "vurgu": false
+              }
+            ],
+            "tr": "Başbakan, ikili anlaşmalara ilişkin hükümet kararını yakında açıklayacak."
+          }
+        },
+        {
+          "soru": "19. I'm going now, but I ____ you at the same time tomorrow.",
+          "secenekler": [
+            "will be seeing",
+            "will see",
+            "will have seen",
+            "will have been seeing"
+          ],
+          "cevap": "will be seeing",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "19.",
+                "vurgu": false
+              },
+              {
+                "k": "I'm",
+                "vurgu": false
+              },
+              {
+                "k": "going",
+                "a": "gidiyorum",
+                "vurgu": false
+              },
+              {
+                "k": "now,",
+                "vurgu": false
+              },
+              {
+                "k": "but",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacağım",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "en": "will be V-ing →",
+                "vurgu": true
+              },
+              {
+                "k": "seeing",
+                "a": "görüyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "you",
+                "vurgu": false
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "same",
+                "a": "aynı",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "saat",
+                "vurgu": false
+              },
+              {
+                "k": "tomorrow.",
+                "a": "yarın",
+                "vurgu": false
+              }
+            ],
+            "tr": "Şimdi gidiyorum, ama yarın aynı saatte görüşüyor olacağız."
+          }
+        },
+        {
+          "soru": "13. The organizers have confirmed the schedule; the festival ____ in July.",
+          "secenekler": [
+            "will take place",
+            "will be taking place",
+            "will have taken place",
+            "will have been taking place"
+          ],
+          "cevap": "will take place",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "13.",
+                "vurgu": false
+              },
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "organizers",
+                "a": "organizatörler",
+                "vurgu": false
+              },
+              {
+                "k": "have",
+                "vurgu": false
+              },
+              {
+                "k": "confirmed",
+                "a": "onayladı",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "schedule;",
+                "a": "program",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "festival",
+                "a": "festival",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gerçekleşecek",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "take",
+                "en": "will take place →",
+                "vurgu": true
+              },
+              {
+                "k": "place",
+                "en": "→ gerçekleşmek",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "July.",
+                "a": "Temmuz",
+                "vurgu": false
+              }
+            ],
+            "tr": "Organizatörler programı onayladı; festival Temmuz'da gerçekleşecek."
+          }
+        },
+        {
+          "soru": "The principal has just announced; school ____ early today due to the snow.",
+          "secenekler": [
+            "will close",
+            "will be closing",
+            "will have closed",
+            "will have been closing"
+          ],
+          "cevap": "will close",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "principal",
+                "a": "okul müdürü",
+                "vurgu": false
+              },
+              {
+                "k": "has",
+                "vurgu": false
+              },
+              {
+                "k": "just",
+                "a": "az önce",
+                "vurgu": false
+              },
+              {
+                "k": "announced;",
+                "a": "duyurdu",
+                "vurgu": false
+              },
+              {
+                "k": "school",
+                "a": "okul",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "en": "will = gelecek zaman",
+                "vurgu": true
+              },
+              {
+                "k": "close",
+                "a": "kapanmak",
+                "vurgu": true
+              },
+              {
+                "k": "early",
+                "a": "erken",
+                "vurgu": false
+              },
+              {
+                "k": "today",
+                "a": "bugün",
+                "vurgu": false
+              },
+              {
+                "k": "due",
+                "vurgu": false
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "snow.",
+                "a": "kar",
+                "vurgu": false
+              }
+            ],
+            "tr": "Okul müdürü az önce duyurdu; okul bugün kar nedeniyle erken kapanacak."
+          }
+        }
+      ]
+    },
+    {
+      "ad": "Test 3",
+      "sorular": [
+        {
+          "soru": "17. By 2050, people ____ for gender equality for more than a century.",
+          "secenekler": [
+            "will have been fighting",
+            "will fight",
+            "will have fought",
+            "will be fighting"
+          ],
+          "cevap": "will have been fighting",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "17.",
+                "vurgu": false
+              },
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "2050,",
+                "a": "2050'ye kadar",
+                "vurgu": false
+              },
+              {
+                "k": "people",
+                "a": "insanlar",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have been →",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "en": "→ perfect progressive",
+                "vurgu": true
+              },
+              {
+                "k": "fighting",
+                "a": "mücadele ediyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "gender",
+                "a": "cinsiyet",
+                "vurgu": false
+              },
+              {
+                "k": "equality",
+                "a": "eşitlik",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "more",
+                "vurgu": false
+              },
+              {
+                "k": "than",
+                "vurgu": false
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "century.",
+                "a": "yüzyıl",
+                "vurgu": false
+              }
+            ],
+            "tr": "2050'ye kadar insanlar bir yüzyıldan fazla süredir toplumsal cinsiyet eşitliği için mücadele ediyor olacak."
+          }
+        },
+        {
+          "soru": "When the practice fire alarm rings at 2 p.m., they ____ presentations in class.",
+          "secenekler": [
+            "will do",
+            "will have done",
+            "will have been doing",
+            "will be doing"
+          ],
+          "cevap": "will be doing",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "When",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "practice",
+                "a": "tatbikat",
+                "vurgu": false
+              },
+              {
+                "k": "fire",
+                "a": "yangın",
+                "vurgu": false
+              },
+              {
+                "k": "alarm",
+                "a": "alarm",
+                "vurgu": false
+              },
+              {
+                "k": "rings",
+                "a": "çalmak",
+                "vurgu": false
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "2",
+                "vurgu": false
+              },
+              {
+                "k": "p.m.,",
+                "vurgu": false
+              },
+              {
+                "k": "they",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "a": "süreklilik",
+                "vurgu": true
+              },
+              {
+                "k": "doing",
+                "a": "yapıyor olmak",
+                "en": "will be doing = yapıyor olacaklar",
+                "vurgu": true
+              },
+              {
+                "k": "presentations",
+                "a": "sunum",
+                "vurgu": false
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "class.",
+                "a": "sınıfta",
+                "vurgu": false
+              }
+            ],
+            "tr": "Saat 14:00'de tatbikat yangın alarmı çaldığında, onlar sınıfta sunum yapıyor olacak."
+          }
+        },
+        {
+          "soru": "8. The principal has just announced; school ____ early today due to the snow.",
+          "secenekler": [
+            "will close",
+            "will be closing",
+            "will have closed",
+            "will have been closing"
+          ],
+          "cevap": "will close",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "8.",
+                "vurgu": false
+              },
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "principal",
+                "a": "müdür",
+                "vurgu": false
+              },
+              {
+                "k": "has",
+                "vurgu": false
+              },
+              {
+                "k": "just",
+                "a": "az önce",
+                "vurgu": false
+              },
+              {
+                "k": "announced;",
+                "a": "duyurdu",
+                "vurgu": false
+              },
+              {
+                "k": "school",
+                "a": "okul",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "close",
+                "a": "kapanacak",
+                "vurgu": true
+              },
+              {
+                "k": "early",
+                "a": "erken",
+                "vurgu": false
+              },
+              {
+                "k": "today",
+                "a": "bugün",
+                "vurgu": false
+              },
+              {
+                "k": "due",
+                "vurgu": false
+              },
+              {
+                "k": "to",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "snow.",
+                "a": "kar",
+                "vurgu": false
+              }
+            ],
+            "tr": "Müdür az önce duyurdu; okul bugün kar nedeniyle erken kapanacak."
+          }
+        },
+        {
+          "soru": "9. When the practice fire alarm rings at 2 p.m., they ____ presentations in class.",
+          "secenekler": [
+            "will do",
+            "will have done",
+            "will have been doing",
+            "will be doing"
+          ],
+          "cevap": "will be doing",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "9.",
+                "vurgu": false
+              },
+              {
+                "k": "When",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "practice",
+                "a": "tatbikat",
+                "vurgu": false
+              },
+              {
+                "k": "fire",
+                "a": "yangın",
+                "vurgu": false
+              },
+              {
+                "k": "alarm",
+                "a": "alarm",
+                "vurgu": false
+              },
+              {
+                "k": "rings",
+                "a": "çaldığında",
+                "vurgu": false
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "2",
+                "vurgu": false
+              },
+              {
+                "k": "p.m.,",
+                "vurgu": false
+              },
+              {
+                "k": "they",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "a": "sürekli gelecek",
+                "vurgu": true
+              },
+              {
+                "k": "doing",
+                "a": "yapıyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "presentations",
+                "a": "sunumlar",
+                "vurgu": false
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "class.",
+                "a": "sınıfta",
+                "vurgu": false
+              }
+            ],
+            "tr": "Saat 14.00'te tatbikat yangın alarmı çaldığında, sınıfta sunum yapıyor olacaklar."
+          }
+        },
+        {
+          "soru": "By next summer, they ____ enough money for their trip.",
+          "secenekler": [
+            "will save",
+            "will be saving",
+            "will have saved",
+            "will have been saving"
+          ],
+          "cevap": "will have saved",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "next",
+                "a": "gelecek",
+                "vurgu": false
+              },
+              {
+                "k": "summer,",
+                "a": "yaz",
+                "vurgu": false
+              },
+              {
+                "k": "they",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have V3 →",
+                "vurgu": true
+              },
+              {
+                "k": "saved",
+                "a": "biriktirmiş olacak",
+                "vurgu": true
+              },
+              {
+                "k": "enough",
+                "a": "yeterince",
+                "vurgu": false
+              },
+              {
+                "k": "money",
+                "a": "para",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "their",
+                "vurgu": false
+              },
+              {
+                "k": "trip.",
+                "a": "gezi",
+                "vurgu": false
+              }
+            ],
+            "tr": "Gelecek yaz itibarıyla gezileri için yeterince para biriktirmiş olacaklar."
+          }
+        },
+        {
+          "soru": "1. By next summer, they ____ enough money for their trip.",
+          "secenekler": [
+            "will save",
+            "will be saving",
+            "will have saved",
+            "will have been saving"
+          ],
+          "cevap": "will have saved",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "1.",
+                "vurgu": false
+              },
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "next",
+                "a": "gelecek",
+                "vurgu": false
+              },
+              {
+                "k": "summer,",
+                "a": "yaz",
+                "vurgu": false
+              },
+              {
+                "k": "they",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "tamamlanmış",
+                "vurgu": true
+              },
+              {
+                "k": "saved",
+                "a": "biriktirmiş",
+                "vurgu": true
+              },
+              {
+                "k": "enough",
+                "a": "yeterince",
+                "vurgu": false
+              },
+              {
+                "k": "money",
+                "a": "para",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "their",
+                "vurgu": false
+              },
+              {
+                "k": "trip.",
+                "a": "gezi",
+                "vurgu": false
+              }
+            ],
+            "tr": "Gelecek yazın başında, gezileri için yeterince para biriktirmiş olacaklar."
+          }
+        },
+        {
+          "soru": "Watching TV is a waste of time for Diana, so she ____ her children watch TV.",
+          "secenekler": [
+            "won't let",
+            "won't be letting",
+            "won't have let",
+            "won't have been letting"
+          ],
+          "cevap": "won't let",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Watching",
+                "a": "izlemek",
+                "vurgu": false
+              },
+              {
+                "k": "TV",
+                "a": "TV",
+                "vurgu": false
+              },
+              {
+                "k": "is",
+                "vurgu": false
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "waste",
+                "a": "israf",
+                "vurgu": false
+              },
+              {
+                "k": "of",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "zaman",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "Diana,",
+                "a": "Diana",
+                "vurgu": false
+              },
+              {
+                "k": "so",
+                "vurgu": false
+              },
+              {
+                "k": "she",
+                "vurgu": false
+              },
+              {
+                "k": "won't",
+                "a": "izin vermeyecek",
+                "en": "will not → future",
+                "vurgu": true
+              },
+              {
+                "k": "let",
+                "a": "izin vermek",
+                "vurgu": true
+              },
+              {
+                "k": "her",
+                "vurgu": false
+              },
+              {
+                "k": "children",
+                "a": "çocuklar",
+                "vurgu": false
+              },
+              {
+                "k": "watch",
+                "a": "izlemek",
+                "vurgu": false
+              },
+              {
+                "k": "TV.",
+                "a": "TV",
+                "vurgu": false
+              }
+            ],
+            "tr": "TV izlemek Diana için zaman kaybıdır, bu yüzden çocuklarının TV izlemesine izin vermeyecek."
+          }
+        },
+        {
+          "soru": "4. Watching TV is a waste of time for Diana, so she ____ her children watch TV.",
+          "secenekler": [
+            "won't let",
+            "won't be letting",
+            "won't have let",
+            "won't have been letting"
+          ],
+          "cevap": "won't let",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "4.",
+                "vurgu": false
+              },
+              {
+                "k": "Watching",
+                "a": "izlemek",
+                "vurgu": false
+              },
+              {
+                "k": "TV",
+                "a": "televizyon",
+                "vurgu": false
+              },
+              {
+                "k": "is",
+                "vurgu": false
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "waste",
+                "a": "israf",
+                "vurgu": false
+              },
+              {
+                "k": "of",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "zaman",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "Diana,",
+                "a": "Diana için",
+                "vurgu": false
+              },
+              {
+                "k": "so",
+                "vurgu": false
+              },
+              {
+                "k": "she",
+                "vurgu": false
+              },
+              {
+                "k": "won't",
+                "a": "izin vermeyecek",
+                "vurgu": true
+              },
+              {
+                "k": "let",
+                "a": "izin vermek",
+                "vurgu": false
+              },
+              {
+                "k": "her",
+                "vurgu": false
+              },
+              {
+                "k": "children",
+                "a": "çocuklar",
+                "vurgu": false
+              },
+              {
+                "k": "watch",
+                "a": "izlemek",
+                "vurgu": false
+              },
+              {
+                "k": "TV.",
+                "a": "televizyon",
+                "vurgu": false
+              }
+            ],
+            "tr": "Televizyon izlemek Diana için zaman israfıdır, bu yüzden çocuklarının TV izlemesine izin vermeyecek."
+          }
+        },
+        {
+          "soru": "By the time the movie ends, we ____ it for two hours.",
+          "secenekler": [
+            "will watch",
+            "will be watching",
+            "will have watched",
+            "will have been watching"
+          ],
+          "cevap": "will have been watching",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "movie",
+                "a": "film",
+                "vurgu": false
+              },
+              {
+                "k": "ends,",
+                "a": "biter",
+                "vurgu": false
+              },
+              {
+                "k": "we",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacağız",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have been →",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "en": "→ perfect progressive",
+                "vurgu": true
+              },
+              {
+                "k": "watching",
+                "a": "izliyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "it",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "two",
+                "a": "iki",
+                "vurgu": false
+              },
+              {
+                "k": "hours.",
+                "a": "saat",
+                "vurgu": false
+              }
+            ],
+            "tr": "Film bittiğinde iki saattir onu izliyor olacağız."
+          }
+        },
+        {
+          "soru": "2. By the time the movie ends, we ____ it for two hours.",
+          "secenekler": [
+            "will watch",
+            "will be watching",
+            "will have watched",
+            "will have been watching"
+          ],
+          "cevap": "will have been watching",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "2.",
+                "vurgu": false
+              },
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "zaman",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "movie",
+                "a": "film",
+                "vurgu": false
+              },
+              {
+                "k": "ends,",
+                "a": "bittiğinde",
+                "vurgu": false
+              },
+              {
+                "k": "we",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "tamamlanmış",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekli eylem",
+                "vurgu": true
+              },
+              {
+                "k": "watching",
+                "a": "izliyor",
+                "vurgu": true
+              },
+              {
+                "k": "it",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "two",
+                "a": "iki",
+                "vurgu": false
+              },
+              {
+                "k": "hours.",
+                "a": "saat",
+                "vurgu": false
+              }
+            ],
+            "tr": "Film bittiğinde, onu iki saattir izliyor olacağız."
+          }
+        }
+      ]
+    },
+    {
+      "ad": "Test 4",
+      "sorular": [
+        {
+          "soru": "Don't worry. By the time you arrive I ____ up the whole house.",
+          "secenekler": [
+            "will clean",
+            "will be cleaning",
+            "will have cleaned",
+            "will have been cleaning"
+          ],
+          "cevap": "will have cleaned",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Don't",
+                "vurgu": false
+              },
+              {
+                "k": "worry.",
+                "a": "endişelenme",
+                "vurgu": false
+              },
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "vurgu": false
+              },
+              {
+                "k": "you",
+                "vurgu": false
+              },
+              {
+                "k": "arrive",
+                "a": "varırsın",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacağım",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have V3 →",
+                "vurgu": true
+              },
+              {
+                "k": "cleaned",
+                "a": "temizlemiş olacak",
+                "vurgu": true
+              },
+              {
+                "k": "up",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "whole",
+                "a": "bütün",
+                "vurgu": false
+              },
+              {
+                "k": "house.",
+                "a": "ev",
+                "vurgu": false
+              }
+            ],
+            "tr": "Endişelenme. Sen geldiğinde bütün evi temizlemiş olacağım."
+          }
+        },
+        {
+          "soru": "3. Don't worry. By the time you arrive I ____ up the whole house.",
+          "secenekler": [
+            "will clean",
+            "will be cleaning",
+            "will have cleaned",
+            "will have been cleaning"
+          ],
+          "cevap": "will have cleaned",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "3.",
+                "vurgu": false
+              },
+              {
+                "k": "Don't",
+                "vurgu": false
+              },
+              {
+                "k": "worry.",
+                "a": "endişelenme",
+                "vurgu": false
+              },
+              {
+                "k": "By",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "zaman",
+                "vurgu": false
+              },
+              {
+                "k": "you",
+                "vurgu": false
+              },
+              {
+                "k": "arrive",
+                "a": "geldiğinde",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "tamamlanmış",
+                "vurgu": true
+              },
+              {
+                "k": "cleaned",
+                "a": "temizlemiş",
+                "vurgu": true
+              },
+              {
+                "k": "up",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "whole",
+                "a": "tüm",
+                "vurgu": false
+              },
+              {
+                "k": "house.",
+                "a": "ev",
+                "vurgu": false
+              }
+            ],
+            "tr": "Endişelenme. Sen geldiğinde tüm evi temizlemiş olacağım."
+          }
+        },
+        {
+          "soru": "He's always planning his future; by next year, he ____ in three marathons.",
+          "secenekler": [
+            "will be participating",
+            "will participate",
+            "will have participated",
+            "will have been participating"
+          ],
+          "cevap": "will have participated",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "He's",
+                "vurgu": false
+              },
+              {
+                "k": "always",
+                "a": "her zaman",
+                "vurgu": false
+              },
+              {
+                "k": "planning",
+                "a": "planlamak",
+                "vurgu": false
+              },
+              {
+                "k": "his",
+                "vurgu": false
+              },
+              {
+                "k": "future;",
+                "a": "gelecek",
+                "vurgu": false
+              },
+              {
+                "k": "by",
+                "vurgu": false
+              },
+              {
+                "k": "next",
+                "a": "gelecek",
+                "vurgu": false
+              },
+              {
+                "k": "year,",
+                "a": "yıl",
+                "vurgu": false
+              },
+              {
+                "k": "he",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "bitmiş eylem",
+                "vurgu": true
+              },
+              {
+                "k": "participated",
+                "a": "katılmış",
+                "en": "will have participated = katılmış olacak",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "three",
+                "a": "üç",
+                "vurgu": false
+              },
+              {
+                "k": "marathons.",
+                "a": "maraton",
+                "vurgu": false
+              }
+            ],
+            "tr": "O her zaman geleceğini planlar; gelecek yıla kadar üç maratona katılmış olacak."
+          }
+        },
+        {
+          "soru": "The team ____ at the exhibition for five hours by the time I arrive there.",
+          "secenekler": [
+            "will work",
+            "will be working",
+            "will have worked",
+            "will have been working"
+          ],
+          "cevap": "will have been working",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "team",
+                "a": "ekip",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "bitmiş eylem",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekliliği",
+                "vurgu": true
+              },
+              {
+                "k": "working",
+                "a": "çalışıyor",
+                "en": "will have been working = o ana kadar çalışıyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "exhibition",
+                "a": "sergi",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "five",
+                "a": "beş",
+                "vurgu": false
+              },
+              {
+                "k": "hours",
+                "a": "saat",
+                "vurgu": false
+              },
+              {
+                "k": "by",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "zaman",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "arrive",
+                "a": "ulaşmak",
+                "vurgu": false
+              },
+              {
+                "k": "there.",
+                "vurgu": false
+              }
+            ],
+            "tr": "Ben oraya ulaştığımda, ekip sergide beş saattir çalışıyor olacak."
+          }
+        },
+        {
+          "soru": "11. He's always planning his future; by next year, he ____ in three marathons.",
+          "secenekler": [
+            "will be participating",
+            "will participate",
+            "will have participated",
+            "will have been participating"
+          ],
+          "cevap": "will have participated",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "11.",
+                "vurgu": false
+              },
+              {
+                "k": "He's",
+                "a": "o",
+                "vurgu": false
+              },
+              {
+                "k": "always",
+                "a": "her zaman",
+                "vurgu": false
+              },
+              {
+                "k": "planning",
+                "a": "planlıyor",
+                "vurgu": false
+              },
+              {
+                "k": "his",
+                "vurgu": false
+              },
+              {
+                "k": "future;",
+                "a": "geleceği",
+                "vurgu": false
+              },
+              {
+                "k": "by",
+                "vurgu": false
+              },
+              {
+                "k": "next",
+                "a": "önümüzdeki",
+                "vurgu": false
+              },
+              {
+                "k": "year,",
+                "a": "yıl",
+                "vurgu": false
+              },
+              {
+                "k": "he",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have V3 →",
+                "vurgu": true
+              },
+              {
+                "k": "participated",
+                "a": "katılmış olacak",
+                "vurgu": true
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "three",
+                "a": "üç",
+                "vurgu": false
+              },
+              {
+                "k": "marathons.",
+                "a": "maraton",
+                "vurgu": false
+              }
+            ],
+            "tr": "O hep geleceğini planlar; önümüzdeki yıla kadar üç maratona katılmış olacak."
+          }
+        },
+        {
+          "soru": "Ali will be very tired when he gets home because he ____ for over two hours.",
+          "secenekler": [
+            "will jog",
+            "will be jogging",
+            "will have jogged",
+            "will have been jogging"
+          ],
+          "cevap": "will have been jogging",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "Ali",
+                "a": "Ali",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "a": "süreklilik",
+                "vurgu": true
+              },
+              {
+                "k": "very",
+                "a": "çok",
+                "vurgu": false
+              },
+              {
+                "k": "tired",
+                "a": "yorgun",
+                "vurgu": false
+              },
+              {
+                "k": "when",
+                "vurgu": false
+              },
+              {
+                "k": "he",
+                "vurgu": false
+              },
+              {
+                "k": "gets",
+                "a": "gelmek",
+                "vurgu": false
+              },
+              {
+                "k": "home",
+                "a": "ev",
+                "vurgu": false
+              },
+              {
+                "k": "because",
+                "a": "çünkü",
+                "vurgu": false
+              },
+              {
+                "k": "he",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "bitmiş eylem",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekliliği",
+                "vurgu": true
+              },
+              {
+                "k": "jogging",
+                "a": "koşuyor",
+                "en": "will have been jogging = koşuyor olmuş olacak",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "over",
+                "a": "fazla",
+                "vurgu": false
+              },
+              {
+                "k": "two",
+                "a": "iki",
+                "vurgu": false
+              },
+              {
+                "k": "hours.",
+                "a": "saat",
+                "vurgu": false
+              }
+            ],
+            "tr": "Ali eve geldiğinde çok yorgun olacak çünkü iki saatten fazla koşuyor olmuş olacak."
+          }
+        },
+        {
+          "soru": "5. The team ____ at the exhibition for five hours by the time I arrive there.",
+          "secenekler": [
+            "will work",
+            "will be working",
+            "will have worked",
+            "will have been working"
+          ],
+          "cevap": "will have been working",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "5.",
+                "vurgu": false
+              },
+              {
+                "k": "The",
+                "vurgu": false
+              },
+              {
+                "k": "team",
+                "a": "ekip",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "gelecek yardımcısı",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "tamamlanmış",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekli eylem",
+                "vurgu": true
+              },
+              {
+                "k": "working",
+                "a": "çalışıyor",
+                "vurgu": true
+              },
+              {
+                "k": "at",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "exhibition",
+                "a": "sergi",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "five",
+                "a": "beş",
+                "vurgu": false
+              },
+              {
+                "k": "hours",
+                "a": "saat",
+                "vurgu": false
+              },
+              {
+                "k": "by",
+                "vurgu": false
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "time",
+                "a": "zaman",
+                "vurgu": false
+              },
+              {
+                "k": "I",
+                "vurgu": false
+              },
+              {
+                "k": "arrive",
+                "a": "vardığımda",
+                "vurgu": false
+              },
+              {
+                "k": "there.",
+                "a": "oraya",
+                "vurgu": false
+              }
+            ],
+            "tr": "Ben oraya vardığımda ekip beş saattir sergide çalışıyor olacak."
+          }
+        },
+        {
+          "soru": "12. Ali will be very tired when he gets home because he ____ for over two hours.",
+          "secenekler": [
+            "will jog",
+            "will be jogging",
+            "will have jogged",
+            "will have been jogging"
+          ],
+          "cevap": "will have been jogging",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "12.",
+                "vurgu": false
+              },
+              {
+                "k": "Ali",
+                "a": "Ali",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "en": "will be → future",
+                "vurgu": true
+              },
+              {
+                "k": "very",
+                "vurgu": false
+              },
+              {
+                "k": "tired",
+                "a": "yorgun",
+                "vurgu": false
+              },
+              {
+                "k": "when",
+                "vurgu": false
+              },
+              {
+                "k": "he",
+                "vurgu": false
+              },
+              {
+                "k": "gets",
+                "a": "varır",
+                "vurgu": false
+              },
+              {
+                "k": "home",
+                "a": "eve",
+                "vurgu": false
+              },
+              {
+                "k": "because",
+                "vurgu": false
+              },
+              {
+                "k": "he",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have been →",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "en": "→ perfect progressive",
+                "vurgu": true
+              },
+              {
+                "k": "jogging",
+                "a": "koşuyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "over",
+                "vurgu": false
+              },
+              {
+                "k": "two",
+                "a": "iki",
+                "vurgu": false
+              },
+              {
+                "k": "hours.",
+                "a": "saat",
+                "vurgu": false
+              }
+            ],
+            "tr": "Ali eve geldiğinde çok yorgun olacak çünkü iki saatten fazla koşuyor olacak."
+          }
+        },
+        {
+          "soru": "We will be making a rest stop in half an hour because you ____ the car for six hours and feeling very tired.",
+          "secenekler": [
+            "will drive",
+            "will have driven",
+            "will have been driving",
+            "will be driving"
+          ],
+          "cevap": "will have been driving",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "We",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "a": "süreklilik",
+                "vurgu": true
+              },
+              {
+                "k": "making",
+                "a": "yapmak",
+                "en": "will be making = yapıyor olacağız",
+                "vurgu": true
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "rest",
+                "a": "dinlenme",
+                "vurgu": false
+              },
+              {
+                "k": "stop",
+                "a": "mola",
+                "vurgu": false
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "half",
+                "a": "yarım",
+                "vurgu": false
+              },
+              {
+                "k": "an",
+                "vurgu": false
+              },
+              {
+                "k": "hour",
+                "a": "saat",
+                "vurgu": false
+              },
+              {
+                "k": "because",
+                "a": "çünkü",
+                "vurgu": false
+              },
+              {
+                "k": "you",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak (gelecek)",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "a": "bitmiş eylem",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "a": "sürekliliği",
+                "vurgu": true
+              },
+              {
+                "k": "driving",
+                "a": "sürüyor",
+                "en": "will have been driving = sürüyor olmuş olacak",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "car",
+                "a": "araba",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "six",
+                "a": "altı",
+                "vurgu": false
+              },
+              {
+                "k": "hours",
+                "a": "saat",
+                "vurgu": false
+              },
+              {
+                "k": "and",
+                "vurgu": false
+              },
+              {
+                "k": "feeling",
+                "a": "hissetmek",
+                "vurgu": false
+              },
+              {
+                "k": "very",
+                "a": "çok",
+                "vurgu": false
+              },
+              {
+                "k": "tired.",
+                "a": "yorgun",
+                "vurgu": false
+              }
+            ],
+            "tr": "Yarım saat içinde mola vereceğiz çünkü altı saattir araba sürmüş ve çok yorulmuş olacaksın."
+          }
+        },
+        {
+          "soru": "15. We will be making a rest stop in half an hour because you ____ the car for six hours and feeling very tired.",
+          "secenekler": [
+            "will drive",
+            "will have driven",
+            "will have been driving",
+            "will be driving"
+          ],
+          "cevap": "will have been driving",
+          "ornek": {
+            "tokenlar": [
+              {
+                "k": "15.",
+                "vurgu": false
+              },
+              {
+                "k": "We",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "yapacağız",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "be",
+                "en": "will be V-ing →",
+                "vurgu": true
+              },
+              {
+                "k": "making",
+                "a": "mola yapıyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "a",
+                "vurgu": false
+              },
+              {
+                "k": "rest",
+                "a": "mola",
+                "vurgu": false
+              },
+              {
+                "k": "stop",
+                "a": "duruş",
+                "vurgu": false
+              },
+              {
+                "k": "in",
+                "vurgu": false
+              },
+              {
+                "k": "half",
+                "vurgu": false
+              },
+              {
+                "k": "an",
+                "vurgu": false
+              },
+              {
+                "k": "hour",
+                "a": "saat",
+                "vurgu": false
+              },
+              {
+                "k": "because",
+                "vurgu": false
+              },
+              {
+                "k": "you",
+                "vurgu": false
+              },
+              {
+                "k": "will",
+                "a": "olacak",
+                "en": "future marker",
+                "vurgu": true
+              },
+              {
+                "k": "have",
+                "en": "will have been →",
+                "vurgu": true
+              },
+              {
+                "k": "been",
+                "en": "→ perfect progressive",
+                "vurgu": true
+              },
+              {
+                "k": "driving",
+                "a": "sürüyor olacak",
+                "vurgu": true
+              },
+              {
+                "k": "the",
+                "vurgu": false
+              },
+              {
+                "k": "car",
+                "a": "araba",
+                "vurgu": false
+              },
+              {
+                "k": "for",
+                "vurgu": false
+              },
+              {
+                "k": "six",
+                "a": "altı",
+                "vurgu": false
+              },
+              {
+                "k": "hours",
+                "a": "saat",
+                "vurgu": false
+              },
+              {
+                "k": "and",
+                "vurgu": false
+              },
+              {
+                "k": "feeling",
+                "a": "hissediyor",
+                "vurgu": false
+              },
+              {
+                "k": "very",
+                "vurgu": false
+              },
+              {
+                "k": "tired.",
+                "a": "çok yorgun",
+                "vurgu": false
+              }
+            ],
+            "tr": "Yarım saat içinde mola vereceğiz çünkü altı saattir araba sürüyor olacaksın ve çok yorgun hissedeceksin."
+          }
+        }
+      ]
+    }
+  ]
 }
