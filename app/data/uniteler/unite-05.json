@@ -2783,7 +2783,4243 @@
       ]
     }
   ],
-  "kelimeler": [],
+  "kelimeler": [
+    {
+      "en": "destruction",
+      "tur": "isim",
+      "tr": "yıkım, yok etme, imha",
+      "ornek_tr": "Bir nükleer savaş insanlığın yıkımını getirecektir.",
+      "ornek_tokenlar": [
+        {
+          "k": "A",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "nuclear",
+          "a": "nükleer",
+          "vurgu": false
+        },
+        {
+          "k": "war",
+          "a": "savaş",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "bring",
+          "a": "getirmek",
+          "en": "bring about: yol açmak",
+          "vurgu": false
+        },
+        {
+          "k": "about",
+          "a": "-e dair",
+          "en": "bring about: yol açmak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "destruction",
+          "a": "yıkım",
+          "vurgu": true
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "mankind.",
+          "a": "insanlık",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "consequences",
+      "tur": "isim",
+      "tr": "sonuçlar, neticeler",
+      "ornek_tr": "Olası bir nükleer savaşın sonuçları birçok insan için felaket olacaktır.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "consequences",
+          "a": "sonuçlar",
+          "vurgu": true
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "potential",
+          "a": "olası",
+          "vurgu": false
+        },
+        {
+          "k": "nuclear",
+          "a": "nükleer",
+          "vurgu": false
+        },
+        {
+          "k": "war",
+          "a": "savaş",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "disastrous",
+          "a": "felaket",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "many",
+          "a": "birçok",
+          "vurgu": false
+        },
+        {
+          "k": "people.",
+          "a": "insan",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "disastrous",
+      "tur": "sıfat",
+      "tr": "felaket niteliğinde, yıkıcı",
+      "ornek_tr": "Olası bir nükleer savaşın sonuçları birçok insan için felaket olacaktır.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "consequences",
+          "a": "sonuçlar",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "potential",
+          "a": "olası",
+          "vurgu": false
+        },
+        {
+          "k": "nuclear",
+          "a": "nükleer",
+          "vurgu": false
+        },
+        {
+          "k": "war",
+          "a": "savaş",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "disastrous",
+          "a": "felaket",
+          "vurgu": true
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "many",
+          "a": "birçok",
+          "vurgu": false
+        },
+        {
+          "k": "people.",
+          "a": "insan",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "incurable",
+      "tur": "sıfat",
+      "tr": "tedavi edilemez, çaresiz",
+      "ornek_tr": "Yakında bilim insanları daha önce tedavi edilemez olan bir hastalığın tedavisini bulacaklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "Soon,",
+          "a": "yakında",
+          "vurgu": false
+        },
+        {
+          "k": "scientists",
+          "a": "bilim insanları",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "discover",
+          "a": "keşfetmek",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "cure",
+          "a": "tedavi",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "previously",
+          "a": "daha önce",
+          "vurgu": false
+        },
+        {
+          "k": "incurable",
+          "a": "tedavi edilemez",
+          "vurgu": true
+        },
+        {
+          "k": "disease.",
+          "a": "hastalık",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "celebrate",
+      "tur": "fiil",
+      "tr": "kutlamak",
+      "ornek_tr": "Takım zaferi yarın kutlayacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "team",
+          "a": "takım",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "celebrate",
+          "a": "kutlamak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "victory",
+          "a": "zafer",
+          "vurgu": false
+        },
+        {
+          "k": "tomorrow.",
+          "a": "yarın",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "announce",
+      "tur": "fiil",
+      "tr": "duyurmak, açıklamak, ilan etmek",
+      "ornek_tr": "Jüri sonuçları önümüzdeki birkaç gün içinde açıklayacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "jury",
+          "a": "jüri",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "announce",
+          "a": "açıklamak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "results",
+          "a": "sonuçlar",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "içinde",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "önümüzdeki",
+          "vurgu": false
+        },
+        {
+          "k": "few",
+          "a": "birkaç",
+          "vurgu": false
+        },
+        {
+          "k": "days.",
+          "a": "gün",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "forecast",
+      "tur": "isim",
+      "tr": "tahmin, öngörü (hava durumu)",
+      "ornek_tr": "Hava tahminine göre yarın yağmur yağacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "According",
+          "a": "göre",
+          "en": "according to: -e göre",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "en": "according to: -e göre",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "weather",
+          "a": "hava",
+          "vurgu": false
+        },
+        {
+          "k": "forecast,",
+          "a": "tahmin",
+          "vurgu": true
+        },
+        {
+          "k": "it",
+          "a": "(özne)",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "rain",
+          "a": "yağmur yağmak",
+          "vurgu": false
+        },
+        {
+          "k": "tomorrow.",
+          "a": "yarın",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "expired",
+      "tur": "fiil",
+      "tr": "süresi doldu, geçerliliği bitti",
+      "ornek_tr": "Yurt dışına seyahat edecekti ama pasaportunun süresi doldu.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "-di",
+          "en": "be going to: -ecekti",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "-ecek",
+          "en": "be going to: -ecekti",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "travel",
+          "a": "seyahat etmek",
+          "vurgu": false
+        },
+        {
+          "k": "abroad,",
+          "a": "yurt dışı",
+          "vurgu": false
+        },
+        {
+          "k": "but",
+          "a": "ama",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "passport",
+          "a": "pasaport",
+          "vurgu": false
+        },
+        {
+          "k": "expired.",
+          "a": "süresi doldu",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "faint",
+      "tur": "fiil",
+      "tr": "bayılmak, baygınlık geçirmek",
+      "ornek_tr": "Başım dönüyor. Sanırım bayılacağım.",
+      "ornek_tokenlar": [
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "feel",
+          "a": "hissetmek",
+          "vurgu": false
+        },
+        {
+          "k": "dizzy.",
+          "a": "baş dönmesi",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "think",
+          "a": "sanmak",
+          "vurgu": false
+        },
+        {
+          "k": "I'm",
+          "a": "ben -im",
+          "en": "be going to: -ecek",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "-ecek",
+          "en": "be going to: -ecek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "faint.",
+          "a": "bayılmak",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "dizzy",
+      "tur": "sıfat",
+      "tr": "başı dönen, sersemlemiş",
+      "ornek_tr": "Başım dönüyor. Sanırım bayılacağım.",
+      "ornek_tokenlar": [
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "feel",
+          "a": "hissetmek",
+          "vurgu": false
+        },
+        {
+          "k": "dizzy.",
+          "a": "başı dönen",
+          "vurgu": true
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "think",
+          "a": "sanmak",
+          "vurgu": false
+        },
+        {
+          "k": "I'm",
+          "a": "ben -im",
+          "en": "be going to: -ecek",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "-ecek",
+          "en": "be going to: -ecek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "faint.",
+          "a": "bayılmak",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "intelligent",
+      "tur": "sıfat",
+      "tr": "zeki, akıllı",
+      "ornek_tr": "2100 yılında zeki robotlar dünyayı yönetiyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Intelligent",
+          "a": "zeki",
+          "vurgu": true
+        },
+        {
+          "k": "robots",
+          "a": "robotlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "will be V-ing: gelecekte sürerlik",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "olmak",
+          "en": "will be V-ing: gelecekte sürerlik",
+          "vurgu": false
+        },
+        {
+          "k": "ruling",
+          "a": "yönetmek",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "world",
+          "a": "dünya",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "2100.",
+          "a": "2100",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "strategies",
+      "tur": "isim",
+      "tr": "stratejiler",
+      "ornek_tr": "Bizi 14.00 ile 16.00 arasında rahatsız etme. Firmanın pazarlama stratejilerini görüşüyor olacağız.",
+      "ornek_tokenlar": [
+        {
+          "k": "Don't",
+          "a": "-me",
+          "vurgu": false
+        },
+        {
+          "k": "disturb",
+          "a": "rahatsız etmek",
+          "vurgu": false
+        },
+        {
+          "k": "us",
+          "a": "bizi",
+          "vurgu": false
+        },
+        {
+          "k": "between",
+          "a": "arasında",
+          "vurgu": false
+        },
+        {
+          "k": "2",
+          "a": "2",
+          "vurgu": false
+        },
+        {
+          "k": "and",
+          "a": "ve",
+          "vurgu": false
+        },
+        {
+          "k": "4",
+          "a": "4",
+          "vurgu": false
+        },
+        {
+          "k": "pm.",
+          "a": "öğleden sonra",
+          "vurgu": false
+        },
+        {
+          "k": "We",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "will be V-ing: gelecekte sürerlik",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "olmak",
+          "en": "will be V-ing: gelecekte sürerlik",
+          "vurgu": false
+        },
+        {
+          "k": "discussing",
+          "a": "görüşmek",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "firm's",
+          "a": "firmanın",
+          "vurgu": false
+        },
+        {
+          "k": "marketing",
+          "a": "pazarlama",
+          "vurgu": false
+        },
+        {
+          "k": "strategies.",
+          "a": "stratejiler",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "flu",
+      "tur": "isim",
+      "tr": "grip",
+      "ornek_tr": "Kız kardeşim grip belirtileri gösteriyor; hasta olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "My",
+          "a": "benim",
+          "vurgu": false
+        },
+        {
+          "k": "sister",
+          "a": "kız kardeş",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "showing",
+          "a": "gösteriyor",
+          "vurgu": false
+        },
+        {
+          "k": "signs",
+          "a": "belirtiler",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "flu;",
+          "a": "grip",
+          "vurgu": true
+        },
+        {
+          "k": "she",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "-ecek",
+          "en": "be going to",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "sick.",
+          "a": "hasta",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "expire",
+      "tur": "fiil",
+      "tr": "süresi dolmak, geçersiz olmak",
+      "ornek_tr": "Yurt dışına seyahat edecekti, ama pasaportunun süresi doldu.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "(geçmiş)",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "-ecekti",
+          "en": "be going to",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek için",
+          "vurgu": false
+        },
+        {
+          "k": "travel",
+          "a": "seyahat etmek",
+          "vurgu": false
+        },
+        {
+          "k": "abroad,",
+          "a": "yurt dışı",
+          "vurgu": false
+        },
+        {
+          "k": "but",
+          "a": "ama",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "passport",
+          "a": "pasaport",
+          "vurgu": false
+        },
+        {
+          "k": "expired.",
+          "a": "süresi doldu",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "abroad",
+      "tur": "zarf",
+      "tr": "yurt dışında, yurt dışına",
+      "ornek_tr": "Yurt dışına seyahat edecekti, ama pasaportunun süresi doldu.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "(geçmiş)",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "-ecekti",
+          "en": "be going to",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek için",
+          "vurgu": false
+        },
+        {
+          "k": "travel",
+          "a": "seyahat etmek",
+          "vurgu": false
+        },
+        {
+          "k": "abroad,",
+          "a": "yurt dışı(na)",
+          "vurgu": true
+        },
+        {
+          "k": "but",
+          "a": "ama",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "passport",
+          "a": "pasaport",
+          "vurgu": false
+        },
+        {
+          "k": "expired.",
+          "a": "süresi doldu",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "hike",
+      "tur": "fiil",
+      "tr": "uzun yürüyüş yapmak, doğa yürüyüşü yapmak",
+      "ornek_tr": "Yarın öğlen, dağ patikalarında yürüyüş yapıyor olacağız.",
+      "ornek_tokenlar": [
+        {
+          "k": "Tomorrow",
+          "a": "yarın",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "noon,",
+          "a": "öğlen",
+          "vurgu": false
+        },
+        {
+          "k": "we",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future continuous",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "hiking",
+          "a": "yürüyüş yapmak",
+          "vurgu": true
+        },
+        {
+          "k": "through",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "mountain",
+          "a": "dağ",
+          "vurgu": false
+        },
+        {
+          "k": "trails.",
+          "a": "patikalar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "trail",
+      "tur": "isim",
+      "tr": "patika, iz, keçi yolu",
+      "ornek_tr": "Yarın öğlen, dağ patikalarında yürüyüş yapıyor olacağız.",
+      "ornek_tokenlar": [
+        {
+          "k": "Tomorrow",
+          "a": "yarın",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "noon,",
+          "a": "öğlen",
+          "vurgu": false
+        },
+        {
+          "k": "we",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future continuous",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "hiking",
+          "a": "yürüyüş yapmak",
+          "vurgu": false
+        },
+        {
+          "k": "through",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "mountain",
+          "a": "dağ",
+          "vurgu": false
+        },
+        {
+          "k": "trails.",
+          "a": "patikalar",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "rule",
+      "tur": "fiil",
+      "tr": "yönetmek, hükmetmek",
+      "ornek_tr": "2100 yılında akıllı robotlar dünyayı yönetiyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Intelligent",
+          "a": "akıllı",
+          "vurgu": false
+        },
+        {
+          "k": "robots",
+          "a": "robotlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future continuous",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "ruling",
+          "a": "yönetmek",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "world",
+          "a": "dünya",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "2100.",
+          "a": "2100",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "disturb",
+      "tur": "fiil",
+      "tr": "rahatsız etmek, bölmek",
+      "ornek_tr": "Bizi 14.00 ile 16.00 arasında rahatsız etmeyin. Firmanın pazarlama stratejilerini tartışıyor olacağız.",
+      "ornek_tokenlar": [
+        {
+          "k": "Don't",
+          "a": "-me",
+          "vurgu": false
+        },
+        {
+          "k": "disturb",
+          "a": "rahatsız etmek",
+          "vurgu": true
+        },
+        {
+          "k": "us",
+          "a": "bizi",
+          "vurgu": false
+        },
+        {
+          "k": "between",
+          "a": "arasında",
+          "vurgu": false
+        },
+        {
+          "k": "2",
+          "a": "2",
+          "vurgu": false
+        },
+        {
+          "k": "and",
+          "a": "ve",
+          "vurgu": false
+        },
+        {
+          "k": "4",
+          "a": "4",
+          "vurgu": false
+        },
+        {
+          "k": "pm.",
+          "a": "öğleden sonra",
+          "vurgu": false
+        },
+        {
+          "k": "We",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future continuous",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "discussing",
+          "a": "tartışmak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "firm's",
+          "a": "firmanın",
+          "vurgu": false
+        },
+        {
+          "k": "marketing",
+          "a": "pazarlama",
+          "vurgu": false
+        },
+        {
+          "k": "strategies.",
+          "a": "stratejiler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "discuss",
+      "tur": "fiil",
+      "tr": "tartışmak, görüşmek, ele almak",
+      "ornek_tr": "Bizi 14.00 ile 16.00 arasında rahatsız etmeyin. Firmanın pazarlama stratejilerini tartışıyor olacağız.",
+      "ornek_tokenlar": [
+        {
+          "k": "Don't",
+          "a": "-me",
+          "vurgu": false
+        },
+        {
+          "k": "disturb",
+          "a": "rahatsız etmek",
+          "vurgu": false
+        },
+        {
+          "k": "us",
+          "a": "bizi",
+          "vurgu": false
+        },
+        {
+          "k": "between",
+          "a": "arasında",
+          "vurgu": false
+        },
+        {
+          "k": "2",
+          "a": "2",
+          "vurgu": false
+        },
+        {
+          "k": "and",
+          "a": "ve",
+          "vurgu": false
+        },
+        {
+          "k": "4",
+          "a": "4",
+          "vurgu": false
+        },
+        {
+          "k": "pm.",
+          "a": "öğleden sonra",
+          "vurgu": false
+        },
+        {
+          "k": "We",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future continuous",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "discussing",
+          "a": "tartışmak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "firm's",
+          "a": "firmanın",
+          "vurgu": false
+        },
+        {
+          "k": "marketing",
+          "a": "pazarlama",
+          "vurgu": false
+        },
+        {
+          "k": "strategies.",
+          "a": "stratejiler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "strategy",
+      "tur": "isim",
+      "tr": "strateji, izlem",
+      "ornek_tr": "Bizi 14.00 ile 16.00 arasında rahatsız etmeyin. Firmanın pazarlama stratejilerini tartışıyor olacağız.",
+      "ornek_tokenlar": [
+        {
+          "k": "Don't",
+          "a": "-me",
+          "vurgu": false
+        },
+        {
+          "k": "disturb",
+          "a": "rahatsız etmek",
+          "vurgu": false
+        },
+        {
+          "k": "us",
+          "a": "bizi",
+          "vurgu": false
+        },
+        {
+          "k": "between",
+          "a": "arasında",
+          "vurgu": false
+        },
+        {
+          "k": "2",
+          "a": "2",
+          "vurgu": false
+        },
+        {
+          "k": "and",
+          "a": "ve",
+          "vurgu": false
+        },
+        {
+          "k": "4",
+          "a": "4",
+          "vurgu": false
+        },
+        {
+          "k": "pm.",
+          "a": "öğleden sonra",
+          "vurgu": false
+        },
+        {
+          "k": "We",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future continuous",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "discussing",
+          "a": "tartışmak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "firm's",
+          "a": "firmanın",
+          "vurgu": false
+        },
+        {
+          "k": "marketing",
+          "a": "pazarlama",
+          "vurgu": false
+        },
+        {
+          "k": "strategies.",
+          "a": "stratejiler",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "messy",
+      "tur": "sıfat",
+      "tr": "dağınık, düzensiz",
+      "ornek_tr": "Yarına kadar odasını temizlemiş olacak; şu an çok dağınık.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "tomorrow,",
+          "a": "yarın",
+          "vurgu": false
+        },
+        {
+          "k": "she",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-miş olacak",
+          "en": "future perfect",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "cleaned",
+          "a": "temizledi",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "room;",
+          "a": "oda",
+          "vurgu": false
+        },
+        {
+          "k": "it",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-dir",
+          "vurgu": false
+        },
+        {
+          "k": "very",
+          "a": "çok",
+          "vurgu": false
+        },
+        {
+          "k": "messy",
+          "a": "dağınık",
+          "vurgu": true
+        },
+        {
+          "k": "now.",
+          "a": "şimdi",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "marathon",
+      "tur": "isim",
+      "tr": "maraton",
+      "ornek_tr": "Gelecek bahara kadar bir maraton koşmuş olacak; bunun için sıkı çalışıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-muş olacak",
+          "en": "future perfect",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "run",
+          "a": "koştu",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "marathon",
+          "a": "maraton",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "spring;",
+          "a": "ilkbahar",
+          "vurgu": false
+        },
+        {
+          "k": "he's",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(yardımcı fiil)",
+          "en": "present perfect continuous",
+          "vurgu": false
+        },
+        {
+          "k": "training",
+          "a": "antrenman yapmak",
+          "vurgu": false
+        },
+        {
+          "k": "hard",
+          "a": "sıkı",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "it.",
+          "a": "onun",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "depart",
+      "tur": "fiil",
+      "tr": "(araç/kişi) hareket etmek, kalkmak, ayrılmak",
+      "ornek_tr": "Sen istasyona vardığında tren çoktan kalkmış olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "train",
+          "a": "tren",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-miş olacak",
+          "en": "future perfect",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "departed",
+          "a": "kalktı",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "time",
+          "a": "zaman",
+          "en": "by the time",
+          "vurgu": false
+        },
+        {
+          "k": "you",
+          "a": "sen",
+          "vurgu": false
+        },
+        {
+          "k": "reach",
+          "a": "ulaşmak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "station.",
+          "a": "istasyon",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "explore",
+      "tur": "fiil",
+      "tr": "keşfetmek, araştırmak",
+      "ornek_tr": "2100 yılına gelindiğinde, insanlar yaklaşık 150 yıldır uzayı keşfediyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "2100,",
+          "a": "2100",
+          "vurgu": false
+        },
+        {
+          "k": "humans",
+          "a": "insanlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "en": "will have been + V-ing (gelecekte sürerlik)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "exploring",
+          "a": "keşfediyor",
+          "vurgu": true
+        },
+        {
+          "k": "space",
+          "a": "uzay",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "-dir (süre)",
+          "vurgu": false
+        },
+        {
+          "k": "nearly",
+          "a": "neredeyse",
+          "vurgu": false
+        },
+        {
+          "k": "150",
+          "a": "150",
+          "vurgu": false
+        },
+        {
+          "k": "years.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "influence",
+      "tur": "fiil",
+      "tr": "etkilemek, tesir etmek",
+      "ornek_tr": "2030'da internet, küresel kültürü elli yıldır etkiliyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "In",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "2030,",
+          "a": "2030",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "internet",
+          "a": "internet",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı)",
+          "en": "will have been + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "influencing",
+          "a": "etkiliyor",
+          "vurgu": true
+        },
+        {
+          "k": "global",
+          "a": "küresel",
+          "vurgu": false
+        },
+        {
+          "k": "culture",
+          "a": "kültür",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "-dir (süre)",
+          "vurgu": false
+        },
+        {
+          "k": "fifty",
+          "a": "elli",
+          "vurgu": false
+        },
+        {
+          "k": "years.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "evolve",
+      "tur": "fiil",
+      "tr": "evrilmek, gelişmek",
+      "ornek_tr": "Diller, gelecek yüzyıllar boyunca önemli ölçüde evrilmiş olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Languages",
+          "a": "diller",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı)",
+          "en": "will have + V3 (gelecekte tamamlanma)",
+          "vurgu": false
+        },
+        {
+          "k": "evolved",
+          "a": "evrilmiş",
+          "vurgu": true
+        },
+        {
+          "k": "significantly",
+          "a": "önemli ölçüde",
+          "vurgu": false
+        },
+        {
+          "k": "over",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "coming",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "centuries.",
+          "a": "yüzyıllar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "destroy",
+      "tur": "fiil",
+      "tr": "yok etmek, tahrip etmek",
+      "ornek_tr": "Kirlilik, çevreyi on yıllardır tahrip ediyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Pollution",
+          "a": "kirlilik",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı)",
+          "en": "will have been + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "destroying",
+          "a": "tahrip ediyor",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "environment",
+          "a": "çevre",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "-dir (süre)",
+          "vurgu": false
+        },
+        {
+          "k": "decades.",
+          "a": "on yıllar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "express",
+      "tur": "fiil",
+      "tr": "ifade etmek, dile getirmek",
+      "ornek_tr": "Yarın toplantıda görüşünü ifade edecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "express",
+          "a": "ifade edecek",
+          "vurgu": true
+        },
+        {
+          "k": "her",
+          "a": "kendi",
+          "vurgu": false
+        },
+        {
+          "k": "opinion",
+          "a": "görüş",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "meeting",
+          "a": "toplantı",
+          "vurgu": false
+        },
+        {
+          "k": "tomorrow.",
+          "a": "yarın",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "struggle",
+      "tur": "fiil",
+      "tr": "mücadele etmek, zorlanmak",
+      "ornek_tr": "Önümüzdeki hafta yeni sistemle boğuşuyor olacaklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "They",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı)",
+          "en": "will be + V-ing (gelecekte sürerlik)",
+          "vurgu": false
+        },
+        {
+          "k": "struggling",
+          "a": "boğuşuyor",
+          "vurgu": true
+        },
+        {
+          "k": "with",
+          "a": "ile",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "system",
+          "a": "sistem",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "week.",
+          "a": "hafta",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "benefit",
+      "tur": "fiil",
+      "tr": "yararlanmak, fayda sağlamak",
+      "ornek_tr": "Gelecek nesiller bu reformlardan yararlanacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Future",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "generations",
+          "a": "nesiller",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "benefit",
+          "a": "yararlanacak",
+          "vurgu": true
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "en": "benefit from (-den yararlanmak)",
+          "vurgu": false
+        },
+        {
+          "k": "these",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "reforms.",
+          "a": "reformlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "alter",
+      "tur": "fiil",
+      "tr": "değiştirmek, dönüştürmek",
+      "ornek_tr": "Gelecek yıla kadar yeni politika, çalışanların çalışma şeklini değiştirmiş olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "year,",
+          "a": "yıl",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "policy",
+          "a": "politika",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı)",
+          "en": "will have + V3",
+          "vurgu": false
+        },
+        {
+          "k": "altered",
+          "a": "değiştirmiş",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "way",
+          "a": "şekil",
+          "vurgu": false
+        },
+        {
+          "k": "employees",
+          "a": "çalışanlar",
+          "vurgu": false
+        },
+        {
+          "k": "work.",
+          "a": "çalışır",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "deteriorate",
+      "tur": "fiil",
+      "tr": "kötüleşmek, bozulmak",
+      "ornek_tr": "Uygun bakım olmadan, hastanın durumu hızla kötüleşecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "Without",
+          "a": "-sız",
+          "vurgu": false
+        },
+        {
+          "k": "proper",
+          "a": "uygun",
+          "vurgu": false
+        },
+        {
+          "k": "care,",
+          "a": "bakım",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "patient's",
+          "a": "hastanın",
+          "vurgu": false
+        },
+        {
+          "k": "condition",
+          "a": "durum",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "deteriorate",
+          "a": "kötüleşecek",
+          "vurgu": true
+        },
+        {
+          "k": "quickly.",
+          "a": "hızla",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "vary",
+      "tur": "fiil",
+      "tr": "değişmek, farklılık göstermek",
+      "ornek_tr": "Sonuçlar, deneyin koşullarına bağlı olarak farklılık gösteriyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "results",
+          "a": "sonuçlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı)",
+          "en": "will be + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "varying",
+          "a": "farklılık gösteriyor",
+          "vurgu": true
+        },
+        {
+          "k": "depending",
+          "a": "bağlı",
+          "en": "depending on (-e bağlı olarak)",
+          "vurgu": false
+        },
+        {
+          "k": "on",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "conditions",
+          "a": "koşullar",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "experiment.",
+          "a": "deney",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "cite",
+      "tur": "fiil",
+      "tr": "alıntı yapmak, kaynak göstermek",
+      "ornek_tr": "Tezinde, onlarca güvenilir kaynağa atıfta bulunmuş olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "In",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "kendi",
+          "vurgu": false
+        },
+        {
+          "k": "thesis,",
+          "a": "tez",
+          "vurgu": false
+        },
+        {
+          "k": "she",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı)",
+          "en": "will have + V3",
+          "vurgu": false
+        },
+        {
+          "k": "cited",
+          "a": "atıfta bulunmuş",
+          "vurgu": true
+        },
+        {
+          "k": "dozens",
+          "a": "onlarca",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "credible",
+          "a": "güvenilir",
+          "vurgu": false
+        },
+        {
+          "k": "sources.",
+          "a": "kaynaklar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "rely",
+      "tur": "fiil",
+      "tr": "güvenmek, bel bağlamak",
+      "ornek_tr": "Gelecekte insanlar yenilenebilir enerjiye her zamankinden daha çok bel bağlayacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "In",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "future,",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "people",
+          "a": "insanlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "rely",
+          "a": "bel bağlayacak",
+          "vurgu": true
+        },
+        {
+          "k": "on",
+          "a": "-e",
+          "en": "rely on (-e güvenmek)",
+          "vurgu": false
+        },
+        {
+          "k": "renewable",
+          "a": "yenilenebilir",
+          "vurgu": false
+        },
+        {
+          "k": "energy",
+          "a": "enerji",
+          "vurgu": false
+        },
+        {
+          "k": "more",
+          "a": "daha çok",
+          "vurgu": false
+        },
+        {
+          "k": "than",
+          "a": "-den",
+          "vurgu": false
+        },
+        {
+          "k": "ever.",
+          "a": "her zaman",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "absorb",
+      "tur": "fiil",
+      "tr": "emmek, soğurmak, içine çekmek",
+      "ornek_tr": "Yeni malzeme, kendisine çarpan güneş ışığının çoğunu soğuruyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "material",
+          "a": "malzeme",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "en": "will be + V-ing: gelecekte sürerlik",
+          "vurgu": false
+        },
+        {
+          "k": "absorbing",
+          "a": "soğuruyor",
+          "vurgu": true
+        },
+        {
+          "k": "most",
+          "a": "çoğunu",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "sunlight",
+          "a": "güneş ışığı",
+          "vurgu": false
+        },
+        {
+          "k": "that",
+          "a": "ki o",
+          "vurgu": false
+        },
+        {
+          "k": "hits",
+          "a": "çarpar",
+          "vurgu": false
+        },
+        {
+          "k": "it.",
+          "a": "ona",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "collect",
+      "tur": "fiil",
+      "tr": "toplamak, biriktirmek",
+      "ornek_tr": "Çalışmanın sonunda araştırmacılar on yıldır veri topluyor olacaklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "end",
+          "a": "son",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "study,",
+          "a": "çalışma",
+          "vurgu": false
+        },
+        {
+          "k": "researchers",
+          "a": "araştırmacılar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(yardımcı fiil)",
+          "en": "will have been + V-ing: gelecek bitmiş sürerlik",
+          "vurgu": false
+        },
+        {
+          "k": "collecting",
+          "a": "topluyor",
+          "vurgu": true
+        },
+        {
+          "k": "data",
+          "a": "veri",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "ten",
+          "a": "on",
+          "vurgu": false
+        },
+        {
+          "k": "years.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "promise",
+      "tur": "fiil",
+      "tr": "söz vermek, vaat etmek",
+      "ornek_tr": "Aday, kampanya boyunca daha düşük vergiler vaat edecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "candidate",
+          "a": "aday",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "promise",
+          "a": "vaat etmek",
+          "vurgu": true
+        },
+        {
+          "k": "lower",
+          "a": "daha düşük",
+          "vurgu": false
+        },
+        {
+          "k": "taxes",
+          "a": "vergiler",
+          "vurgu": false
+        },
+        {
+          "k": "during",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "campaign.",
+          "a": "kampanya",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "expand",
+      "tur": "fiil",
+      "tr": "genişlemek, büyümek, yayılmak",
+      "ornek_tr": "Şirket gelecek çeyrekte yeni pazarlara açılıyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "company",
+          "a": "şirket",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "en": "will be + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "expanding",
+          "a": "genişliyor",
+          "vurgu": true
+        },
+        {
+          "k": "into",
+          "a": "-e doğru",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "markets",
+          "a": "pazarlar",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "quarter.",
+          "a": "çeyrek",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "provide",
+      "tur": "fiil",
+      "tr": "sağlamak, sunmak, temin etmek",
+      "ornek_tr": "2030'a kadar kuruluş yirmi yıldır yardım sağlıyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "2030,",
+          "a": "2030",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "organization",
+          "a": "kuruluş",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(yardımcı fiil)",
+          "en": "will have been + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "providing",
+          "a": "sağlıyor",
+          "vurgu": true
+        },
+        {
+          "k": "aid",
+          "a": "yardım",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "two",
+          "a": "iki",
+          "vurgu": false
+        },
+        {
+          "k": "decades.",
+          "a": "on yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "wonder",
+      "tur": "fiil",
+      "tr": "merak etmek, hayret etmek",
+      "ornek_tr": "Gelecek nesiller bu sorunları nasıl çözdüğümüzü merak edecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "Future",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "generations",
+          "a": "nesiller",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "wonder",
+          "a": "merak etmek",
+          "vurgu": true
+        },
+        {
+          "k": "how",
+          "a": "nasıl",
+          "vurgu": false
+        },
+        {
+          "k": "we",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "solved",
+          "a": "çözdük",
+          "vurgu": false
+        },
+        {
+          "k": "these",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "problems.",
+          "a": "sorunlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "exceed",
+      "tur": "fiil",
+      "tr": "aşmak, geçmek, üstüne çıkmak",
+      "ornek_tr": "Yarın bu saatte satışlar tüm beklentileri aşıyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "this",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "time",
+          "a": "zaman",
+          "vurgu": false
+        },
+        {
+          "k": "tomorrow,",
+          "a": "yarın",
+          "vurgu": false
+        },
+        {
+          "k": "sales",
+          "a": "satışlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "en": "will be + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "exceeding",
+          "a": "aşıyor",
+          "vurgu": true
+        },
+        {
+          "k": "all",
+          "a": "tüm",
+          "vurgu": false
+        },
+        {
+          "k": "expectations.",
+          "a": "beklentiler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "assess",
+      "tur": "fiil",
+      "tr": "değerlendirmek, ölçmek, takdir etmek",
+      "ornek_tr": "Son teslim tarihine kadar komite her başvuruyu değerlendirmiş olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "deadline,",
+          "a": "son teslim tarihi",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "committee",
+          "a": "komite",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "en": "will have + V3: gelecekte tamamlanmış",
+          "vurgu": false
+        },
+        {
+          "k": "assessed",
+          "a": "değerlendirmiş",
+          "vurgu": true
+        },
+        {
+          "k": "every",
+          "a": "her",
+          "vurgu": false
+        },
+        {
+          "k": "application.",
+          "a": "başvuru",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "contribute",
+      "tur": "fiil",
+      "tr": "katkıda bulunmak, katkı sağlamak",
+      "ornek_tr": "Her üye projenin başarısına katkıda bulunacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Each",
+          "a": "her",
+          "vurgu": false
+        },
+        {
+          "k": "member",
+          "a": "üye",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "contribute",
+          "a": "katkıda bulunmak",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "en": "contribute to: -e katkıda bulunmak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "success",
+          "a": "başarı",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "project.",
+          "a": "proje",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "allocate",
+      "tur": "fiil",
+      "tr": "tahsis etmek, ayırmak, paylaştırmak",
+      "ornek_tr": "Hükümet gelecek yıl eğitime daha fazla fon ayırıyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "government",
+          "a": "hükümet",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "en": "will be + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "allocating",
+          "a": "tahsis ediyor",
+          "vurgu": true
+        },
+        {
+          "k": "more",
+          "a": "daha fazla",
+          "vurgu": false
+        },
+        {
+          "k": "funds",
+          "a": "fon",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "education",
+          "a": "eğitim",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "year.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "cure",
+      "tur": "fiil",
+      "tr": "iyileştirmek, tedavi etmek, çare bulmak",
+      "ornek_tr": "Bilim insanları hastalığı on yıl içinde tedavi etmiş olacaklarını umuyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Scientists",
+          "a": "bilim insanları",
+          "vurgu": false
+        },
+        {
+          "k": "hope",
+          "a": "umarlar",
+          "vurgu": false
+        },
+        {
+          "k": "they",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "en": "will have + V3: gelecekte tamamlanmış",
+          "vurgu": false
+        },
+        {
+          "k": "cured",
+          "a": "tedavi etmiş",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "disease",
+          "a": "hastalık",
+          "vurgu": false
+        },
+        {
+          "k": "within",
+          "a": "içinde",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "decade.",
+          "a": "on yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "save",
+      "tur": "fiil",
+      "tr": "biriktirmek, tasarruf etmek; kurtarmak",
+      "ornek_tr": "Emekliliğe kadar kırk yıldır para biriktiriyor olacaklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "retirement,",
+          "a": "emeklilik",
+          "vurgu": false
+        },
+        {
+          "k": "they",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(yardımcı fiil)",
+          "en": "will have been + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "saving",
+          "a": "biriktiriyor",
+          "vurgu": true
+        },
+        {
+          "k": "money",
+          "a": "para",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "forty",
+          "a": "kırk",
+          "vurgu": false
+        },
+        {
+          "k": "years.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "diagnose",
+      "tur": "fiil",
+      "tr": "teşhis koymak, tanı koymak",
+      "ornek_tr": "Yeni cihaz hastalığı saniyeler içinde teşhis edecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "device",
+          "a": "cihaz",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "diagnose",
+          "a": "teşhis koymak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "illness",
+          "a": "hastalık",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "içinde",
+          "vurgu": false
+        },
+        {
+          "k": "seconds.",
+          "a": "saniyeler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "eliminate",
+      "tur": "fiil",
+      "tr": "ortadan kaldırmak, yok etmek",
+      "ornek_tr": "Yeni politika gereksiz evrak işlerini ortadan kaldırıyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "policy",
+          "a": "politika",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "-",
+          "en": "will be + V-ing: gelecekte süregelen",
+          "vurgu": false
+        },
+        {
+          "k": "eliminating",
+          "a": "ortadan kaldırmak",
+          "vurgu": true
+        },
+        {
+          "k": "unnecessary",
+          "a": "gereksiz",
+          "vurgu": false
+        },
+        {
+          "k": "paperwork.",
+          "a": "evrak işi",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "complete",
+      "tur": "fiil",
+      "tr": "tamamlamak, bitirmek",
+      "ornek_tr": "Zorluklara rağmen, ay sonuna kadar projeyi tamamlamış olacaklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "Despite",
+          "a": "rağmen",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "challenges,",
+          "a": "zorluklar",
+          "vurgu": false
+        },
+        {
+          "k": "they",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "en": "will have + V3: gelecekte tamamlanmış",
+          "vurgu": false
+        },
+        {
+          "k": "completed",
+          "a": "tamamlamak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "project",
+          "a": "proje",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "end",
+          "a": "son",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "month.",
+          "a": "ay",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "discover",
+      "tur": "fiil",
+      "tr": "keşfetmek, ortaya çıkarmak",
+      "ornek_tr": "2030'a kadar bilim insanları Mars hakkında daha çok şey keşfetmiş olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "2030,",
+          "a": "2030",
+          "vurgu": false
+        },
+        {
+          "k": "scientists",
+          "a": "bilim insanları",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "en": "will have + V3",
+          "vurgu": false
+        },
+        {
+          "k": "discovered",
+          "a": "keşfetmek",
+          "vurgu": true
+        },
+        {
+          "k": "more",
+          "a": "daha çok",
+          "vurgu": false
+        },
+        {
+          "k": "about",
+          "a": "hakkında",
+          "vurgu": false
+        },
+        {
+          "k": "Mars.",
+          "a": "Mars",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "lecture",
+      "tur": "isim",
+      "tr": "ders, konferans, sunum",
+      "ornek_tr": "Gelecek cuma bu saatte, yenilenebilir enerji üzerine bir konferans veriyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "Friday",
+          "a": "cuma",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "this",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "hour,",
+          "a": "saat",
+          "vurgu": false
+        },
+        {
+          "k": "he",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "-",
+          "en": "will be + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "giving",
+          "a": "vermek",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "lecture",
+          "a": "konferans",
+          "vurgu": true
+        },
+        {
+          "k": "on",
+          "a": "üzerine",
+          "vurgu": false
+        },
+        {
+          "k": "renewable",
+          "a": "yenilenebilir",
+          "vurgu": false
+        },
+        {
+          "k": "energy.",
+          "a": "enerji",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "renewable",
+      "tur": "sıfat",
+      "tr": "yenilenebilir",
+      "ornek_tr": "Gelecek cuma bu saatte, yenilenebilir enerji üzerine bir konferans veriyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "Friday",
+          "a": "cuma",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "this",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "hour,",
+          "a": "saat",
+          "vurgu": false
+        },
+        {
+          "k": "he",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "-",
+          "en": "will be + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "giving",
+          "a": "vermek",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "lecture",
+          "a": "konferans",
+          "vurgu": false
+        },
+        {
+          "k": "on",
+          "a": "üzerine",
+          "vurgu": false
+        },
+        {
+          "k": "renewable",
+          "a": "yenilenebilir",
+          "vurgu": true
+        },
+        {
+          "k": "energy.",
+          "a": "enerji",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "suffer",
+      "tur": "fiil",
+      "tr": "acı çekmek, ızdırap çekmek (from: -den mustarip olmak)",
+      "ornek_tr": "Yardım olmadan, hasta şiddetli ağrı çekecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "Without",
+          "a": "-sız, olmadan",
+          "vurgu": false
+        },
+        {
+          "k": "help,",
+          "a": "yardım",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "patient",
+          "a": "hasta",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "suffer",
+          "a": "acı çekmek",
+          "vurgu": true
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "en": "suffer from: -den mustarip olmak",
+          "vurgu": false
+        },
+        {
+          "k": "severe",
+          "a": "şiddetli",
+          "vurgu": false
+        },
+        {
+          "k": "pain.",
+          "a": "ağrı",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "participate",
+      "tur": "fiil",
+      "tr": "katılmak (in: -e katılmak)",
+      "ornek_tr": "Sürekli geleceğini planlıyor; gelecek yıla kadar üç maratona katılmış olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "He's",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "always",
+          "a": "sürekli",
+          "vurgu": false
+        },
+        {
+          "k": "planning",
+          "a": "planlamak",
+          "vurgu": false
+        },
+        {
+          "k": "his",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "future;",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "year,",
+          "a": "yıl",
+          "vurgu": false
+        },
+        {
+          "k": "he",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "en": "will have + V3",
+          "vurgu": false
+        },
+        {
+          "k": "participated",
+          "a": "katılmak",
+          "vurgu": true
+        },
+        {
+          "k": "in",
+          "a": "-e",
+          "en": "participate in: -e katılmak",
+          "vurgu": false
+        },
+        {
+          "k": "three",
+          "a": "üç",
+          "vurgu": false
+        },
+        {
+          "k": "marathons.",
+          "a": "maraton",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "confirm",
+      "tur": "fiil",
+      "tr": "onaylamak, doğrulamak, teyit etmek",
+      "ornek_tr": "Organizatörler programı onayladı; festival temmuzda gerçekleşecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "organizers",
+          "a": "organizatörler",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "en": "present perfect",
+          "vurgu": false
+        },
+        {
+          "k": "confirmed",
+          "a": "onaylamak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "schedule;",
+          "a": "program",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "festival",
+          "a": "festival",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "take",
+          "a": "-",
+          "en": "take place: gerçekleşmek",
+          "vurgu": false
+        },
+        {
+          "k": "place",
+          "a": "gerçekleşmek",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-da",
+          "vurgu": false
+        },
+        {
+          "k": "July.",
+          "a": "temmuz",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "clean",
+      "tur": "fiil",
+      "tr": "temizlemek",
+      "ornek_tr": "Merak etme. Sen geldiğinde tüm evi temizlemiş olacağım.",
+      "ornek_tokenlar": [
+        {
+          "k": "Don't",
+          "a": "-ma",
+          "vurgu": false
+        },
+        {
+          "k": "worry.",
+          "a": "merak etmek",
+          "vurgu": false
+        },
+        {
+          "k": "By",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "time",
+          "a": "-",
+          "en": "by the time: -diğinde",
+          "vurgu": false
+        },
+        {
+          "k": "you",
+          "a": "sen",
+          "vurgu": false
+        },
+        {
+          "k": "arrive,",
+          "a": "varmak",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "en": "will have + V3",
+          "vurgu": false
+        },
+        {
+          "k": "cleaned",
+          "a": "temizlemek",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "whole",
+          "a": "bütün",
+          "vurgu": false
+        },
+        {
+          "k": "house.",
+          "a": "ev",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "exhibition",
+      "tur": "isim",
+      "tr": "sergi, fuar",
+      "ornek_tr": "Ben oraya vardığımda, ekip sergide beş saattir çalışıyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "team",
+          "a": "ekip",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "-",
+          "en": "will have been + V-ing: gelecekte süregelmiş",
+          "vurgu": false
+        },
+        {
+          "k": "working",
+          "a": "çalışmak",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "exhibition",
+          "a": "sergi",
+          "vurgu": true
+        },
+        {
+          "k": "for",
+          "a": "-dir",
+          "vurgu": false
+        },
+        {
+          "k": "five",
+          "a": "beş",
+          "vurgu": false
+        },
+        {
+          "k": "hours",
+          "a": "saat",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "time",
+          "a": "-",
+          "en": "by the time: -diğinde",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "arrive",
+          "a": "varmak",
+          "vurgu": false
+        },
+        {
+          "k": "there.",
+          "a": "oraya",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "close",
+      "tur": "fiil",
+      "tr": "kapanmak, kapatmak",
+      "ornek_tr": "Müdür az önce duyurdu; okul bugün kar nedeniyle erken kapanacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "principal",
+          "a": "müdür",
+          "vurgu": false
+        },
+        {
+          "k": "has",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "just",
+          "a": "az önce",
+          "en": "have just + V3",
+          "vurgu": false
+        },
+        {
+          "k": "announced;",
+          "a": "duyurmak",
+          "vurgu": false
+        },
+        {
+          "k": "school",
+          "a": "okul",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "close",
+          "a": "kapanmak",
+          "vurgu": true
+        },
+        {
+          "k": "early",
+          "a": "erken",
+          "vurgu": false
+        },
+        {
+          "k": "today",
+          "a": "bugün",
+          "vurgu": false
+        },
+        {
+          "k": "due",
+          "a": "-",
+          "en": "due to: nedeniyle",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "snow.",
+          "a": "kar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "learn",
+      "tur": "fiil",
+      "tr": "öğrenmek",
+      "ornek_tr": "Bu kursu bitirdiğimde, yirmi yıldır İngilizce öğreniyor olacağım.",
+      "ornek_tokenlar": [
+        {
+          "k": "When",
+          "a": "-dığında",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "finish",
+          "a": "bitirmek",
+          "vurgu": false
+        },
+        {
+          "k": "this",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "course,",
+          "a": "kurs",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future perfect continuous: will have been + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahip olmak",
+          "en": "future perfect continuous",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "-mış",
+          "en": "future perfect continuous",
+          "vurgu": false
+        },
+        {
+          "k": "learning",
+          "a": "öğreniyor",
+          "vurgu": true
+        },
+        {
+          "k": "English",
+          "a": "İngilizce",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "-dır/boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "twenty",
+          "a": "yirmi",
+          "vurgu": false
+        },
+        {
+          "k": "years.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "equality",
+      "tur": "isim",
+      "tr": "eşitlik",
+      "ornek_tr": "2050'ye gelindiğinde, insanlar bir asrı aşkın süredir cinsiyet eşitliği için mücadele ediyor olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar/gelindiğinde",
+          "vurgu": false
+        },
+        {
+          "k": "2050,",
+          "a": "2050",
+          "vurgu": false
+        },
+        {
+          "k": "people",
+          "a": "insanlar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future perfect continuous: will have been + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahip olmak",
+          "en": "future perfect continuous",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "-mış",
+          "en": "future perfect continuous",
+          "vurgu": false
+        },
+        {
+          "k": "fighting",
+          "a": "mücadele ediyor",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "gender",
+          "a": "cinsiyet",
+          "vurgu": false
+        },
+        {
+          "k": "equality",
+          "a": "eşitlik",
+          "vurgu": true
+        },
+        {
+          "k": "for",
+          "a": "-dır/boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "more",
+          "a": "daha",
+          "en": "more than: -den fazla",
+          "vurgu": false
+        },
+        {
+          "k": "than",
+          "a": "-den",
+          "en": "more than: -den fazla",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "century.",
+          "a": "yüzyıl/asır",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "present",
+      "tur": "fiil",
+      "tr": "sunmak, takdim etmek",
+      "ornek_tr": "Gece yarısı, konuşmacılar on saattir projelerini sunuyor olacaklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "At",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "midnight",
+          "a": "gece yarısı",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "speakers",
+          "a": "konuşmacılar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "en": "future perfect continuous: will have been + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahip olmak",
+          "en": "future perfect continuous",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "-mış",
+          "en": "future perfect continuous",
+          "vurgu": false
+        },
+        {
+          "k": "presenting",
+          "a": "sunuyor",
+          "vurgu": true
+        },
+        {
+          "k": "their",
+          "a": "onların",
+          "vurgu": false
+        },
+        {
+          "k": "projects",
+          "a": "projeler",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "-dır/boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "ten",
+          "a": "on",
+          "vurgu": false
+        },
+        {
+          "k": "hours.",
+          "a": "saat",
+          "vurgu": false
+        }
+      ]
+    }
+  ],
   "gramer": [],
   "soru_cozumleri": [],
   "testler": [
