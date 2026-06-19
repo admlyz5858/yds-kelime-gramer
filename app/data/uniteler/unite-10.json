@@ -1615,7 +1615,7113 @@
       ]
     }
   ],
-  "kelimeler": [],
+  "kelimeler": [
+    {
+      "en": "anxious",
+      "tur": "sıfat",
+      "tr": "endişeli, kaygılı",
+      "ornek_tr": "Final sınavlarının sonuçları hakkında endişeliydi.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "idi",
+          "vurgu": false
+        },
+        {
+          "k": "anxious",
+          "a": "endişeli",
+          "en": "anxious about: -e dair kaygılı",
+          "vurgu": true
+        },
+        {
+          "k": "about",
+          "a": "hakkında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "results",
+          "a": "sonuçlar",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "final",
+          "a": "final",
+          "vurgu": false
+        },
+        {
+          "k": "exams.",
+          "a": "sınavlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "opportunity",
+      "tur": "isim",
+      "tr": "fırsat, imkan",
+      "ornek_tr": "Bu staj, genç mezunlar için harika bir fırsat.",
+      "ornek_tokenlar": [
+        {
+          "k": "This",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "internship",
+          "a": "staj",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-dır",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "great",
+          "a": "harika",
+          "vurgu": false
+        },
+        {
+          "k": "opportunity",
+          "a": "fırsat",
+          "en": "opportunity for: -e fırsat",
+          "vurgu": true
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "young",
+          "a": "genç",
+          "vurgu": false
+        },
+        {
+          "k": "graduates.",
+          "a": "mezunlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "separate",
+      "tur": "sıfat",
+      "tr": "ayrı, ayrılmış",
+      "ornek_tr": "Yeni çit, bahçeyi yoldan ayrı tutuyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "fence",
+          "a": "çit",
+          "vurgu": false
+        },
+        {
+          "k": "keeps",
+          "a": "tutar",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "garden",
+          "a": "bahçe",
+          "vurgu": false
+        },
+        {
+          "k": "separate",
+          "a": "ayrı",
+          "en": "separate from: -den ayrı",
+          "vurgu": true
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "road.",
+          "a": "yol",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "complain",
+      "tur": "fiil",
+      "tr": "şikayet etmek, yakınmak",
+      "ornek_tr": "Müşteriler sık sık yavaş teslimat hizmetinden şikayet eder.",
+      "ornek_tokenlar": [
+        {
+          "k": "Customers",
+          "a": "müşteriler",
+          "vurgu": false
+        },
+        {
+          "k": "often",
+          "a": "sık sık",
+          "vurgu": false
+        },
+        {
+          "k": "complain",
+          "a": "şikayet eder",
+          "en": "complain about: -den şikayet etmek",
+          "vurgu": true
+        },
+        {
+          "k": "about",
+          "a": "hakkında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "slow",
+          "a": "yavaş",
+          "vurgu": false
+        },
+        {
+          "k": "delivery",
+          "a": "teslimat",
+          "vurgu": false
+        },
+        {
+          "k": "service.",
+          "a": "hizmet",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "obstacle",
+      "tur": "isim",
+      "tr": "engel, mani",
+      "ornek_tr": "Finansman eksikliği, projenin önündeki en büyük engel olmaya devam ediyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Lack",
+          "a": "eksiklik",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "funding",
+          "a": "finansman",
+          "vurgu": false
+        },
+        {
+          "k": "remains",
+          "a": "olmaya devam eder",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "biggest",
+          "a": "en büyük",
+          "vurgu": false
+        },
+        {
+          "k": "obstacle",
+          "a": "engel",
+          "en": "obstacle to: -e engel",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "project.",
+          "a": "proje",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "conceal",
+      "tur": "fiil",
+      "tr": "gizlemek, saklamak",
+      "ornek_tr": "Hayal kırıklığını meslektaşlarından gizlemeye çalıştı.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "tried",
+          "a": "çalıştı",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "conceal",
+          "a": "gizlemek",
+          "en": "conceal from: -den gizlemek",
+          "vurgu": true
+        },
+        {
+          "k": "his",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "disappointment",
+          "a": "hayal kırıklığı",
+          "vurgu": false
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "vurgu": false
+        },
+        {
+          "k": "his",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "colleagues.",
+          "a": "meslektaşlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "deliver",
+      "tur": "fiil",
+      "tr": "teslim etmek, ulaştırmak",
+      "ornek_tr": "Şirket, paketi öğleye kadar ofise teslim etmeye söz verdi.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "company",
+          "a": "şirket",
+          "vurgu": false
+        },
+        {
+          "k": "promised",
+          "a": "söz verdi",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "deliver",
+          "a": "teslim etmek",
+          "en": "deliver to: -e teslim etmek",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "package",
+          "a": "paket",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "office",
+          "a": "ofis",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "noon.",
+          "a": "öğlen",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "conflict",
+      "tur": "isim",
+      "tr": "çatışma, anlaşmazlık",
+      "ornek_tr": "İki departman arasında ciddi bir çatışma vardı.",
+      "ornek_tokenlar": [
+        {
+          "k": "There",
+          "a": "(var)",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "vardı",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "serious",
+          "a": "ciddi",
+          "vurgu": false
+        },
+        {
+          "k": "conflict",
+          "a": "çatışma",
+          "en": "conflict between: -arasında çatışma",
+          "vurgu": true
+        },
+        {
+          "k": "between",
+          "a": "arasında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "two",
+          "a": "iki",
+          "vurgu": false
+        },
+        {
+          "k": "departments.",
+          "a": "departmanlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "convert",
+      "tur": "fiil",
+      "tr": "dönüştürmek, çevirmek",
+      "ornek_tr": "Eski fabrika, bir depodan dairelere dönüştürüldü.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "old",
+          "a": "eski",
+          "vurgu": false
+        },
+        {
+          "k": "factory",
+          "a": "fabrika",
+          "vurgu": false
+        },
+        {
+          "k": "has",
+          "a": "-dı",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "converted",
+          "a": "dönüştürüldü",
+          "en": "convert from...into: -den -e dönüştürmek",
+          "vurgu": true
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "warehouse",
+          "a": "depo",
+          "vurgu": false
+        },
+        {
+          "k": "into",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "apartments.",
+          "a": "daireler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "diminish",
+      "tur": "fiil",
+      "tr": "azalmak, azaltmak, eksiltmek",
+      "ornek_tr": "Eski para biriminin değeri, enflasyonla azaltılıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "value",
+          "a": "değer",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "old",
+          "a": "eski",
+          "vurgu": false
+        },
+        {
+          "k": "currency",
+          "a": "para birimi",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-yor",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "diminished",
+          "a": "azaltılıyor",
+          "en": "be diminished: azaltılmak",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "inflation.",
+          "a": "enflasyon",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "stimulate",
+      "tur": "fiil",
+      "tr": "canlandırmak, teşvik etmek, harekete geçirmek",
+      "ornek_tr": "Düşük vergiler, bölgedeki ekonomik büyümeyi canlandırabilir.",
+      "ornek_tokenlar": [
+        {
+          "k": "Lower",
+          "a": "daha düşük",
+          "vurgu": false
+        },
+        {
+          "k": "taxes",
+          "a": "vergiler",
+          "vurgu": false
+        },
+        {
+          "k": "can",
+          "a": "-ebilir",
+          "vurgu": false
+        },
+        {
+          "k": "stimulate",
+          "a": "canlandırmak",
+          "en": "stimulate growth: büyümeyi teşvik etmek",
+          "vurgu": true
+        },
+        {
+          "k": "economic",
+          "a": "ekonomik",
+          "vurgu": false
+        },
+        {
+          "k": "growth",
+          "a": "büyüme",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "region.",
+          "a": "bölge",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "abolish",
+      "tur": "fiil",
+      "tr": "kaldırmak, ortadan kaldırmak, lağvetmek",
+      "ornek_tr": "Kölelik, yeni yasa çıkarılmadan çok önce kaldırılmıştı.",
+      "ornek_tokenlar": [
+        {
+          "k": "Slavery",
+          "a": "kölelik",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "-mıştı",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "abolished",
+          "a": "kaldırılmıştı",
+          "en": "be abolished: kaldırılmak",
+          "vurgu": true
+        },
+        {
+          "k": "long",
+          "a": "çok",
+          "vurgu": false
+        },
+        {
+          "k": "before",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-ı",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "law",
+          "a": "yasa",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "-dı",
+          "vurgu": false
+        },
+        {
+          "k": "passed.",
+          "a": "çıkarıldı",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "conclude",
+      "tur": "fiil",
+      "tr": "sonuçlandırmak, bitirmek; sonuca varmak",
+      "ornek_tr": "Müzakereler son tarihten önce sonuçlandırılmadı.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "negotiations",
+          "a": "müzakereler",
+          "vurgu": false
+        },
+        {
+          "k": "weren't",
+          "a": "değildi",
+          "vurgu": false
+        },
+        {
+          "k": "concluded",
+          "a": "sonuçlandırılmış",
+          "vurgu": true
+        },
+        {
+          "k": "before",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "deadline.",
+          "a": "son tarih",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "warn",
+      "tur": "fiil",
+      "tr": "uyarmak, ikaz etmek",
+      "ornek_tr": "Sakinler planlanan elektrik kesintileri hakkında önceden uyarılacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Residents",
+          "a": "sakinler",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "warned",
+          "a": "uyarılmış",
+          "vurgu": true
+        },
+        {
+          "k": "in",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "advance",
+          "a": "önceden",
+          "en": "in advance: önceden",
+          "vurgu": false
+        },
+        {
+          "k": "about",
+          "a": "hakkında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "planned",
+          "a": "planlanan",
+          "vurgu": false
+        },
+        {
+          "k": "power",
+          "a": "elektrik",
+          "vurgu": false
+        },
+        {
+          "k": "cuts.",
+          "a": "kesintiler",
+          "en": "power cut: elektrik kesintisi",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "disappear",
+      "tur": "fiil",
+      "tr": "kaybolmak, gözden kaybolmak",
+      "ornek_tr": "Sabah sisi güneş doğar doğmaz kaybolur.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "morning",
+          "a": "sabah",
+          "vurgu": false
+        },
+        {
+          "k": "fog",
+          "a": "sis",
+          "vurgu": false
+        },
+        {
+          "k": "disappears",
+          "a": "kaybolur",
+          "vurgu": true
+        },
+        {
+          "k": "as",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "soon",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "as",
+          "a": "-ar -maz",
+          "en": "as soon as: -ar -maz",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "sun",
+          "a": "güneş",
+          "vurgu": false
+        },
+        {
+          "k": "rises.",
+          "a": "doğar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "transmit",
+      "tur": "fiil",
+      "tr": "iletmek, bulaştırmak, aktarmak",
+      "ornek_tr": "Enfekte hayvanlar virüsü birkaç insana bulaştırdı.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "infected",
+          "a": "enfekte",
+          "vurgu": false
+        },
+        {
+          "k": "animals",
+          "a": "hayvanlar",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "transmitted",
+          "a": "bulaştırdı",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "virus",
+          "a": "virüs",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "several",
+          "a": "birkaç",
+          "vurgu": false
+        },
+        {
+          "k": "humans.",
+          "a": "insanlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "feed",
+      "tur": "fiil",
+      "tr": "beslemek, yedirmek",
+      "ornek_tr": "Hemşire odaya girdiğinde bebek besleniyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "baby",
+          "a": "bebek",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "fed",
+          "a": "besleniyor",
+          "vurgu": true
+        },
+        {
+          "k": "when",
+          "a": "-dığında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "nurse",
+          "a": "hemşire",
+          "vurgu": false
+        },
+        {
+          "k": "entered",
+          "a": "girdi",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "room.",
+          "a": "oda",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "cure",
+      "tur": "fiil",
+      "tr": "iyileştirmek, tedavi etmek; (isim) çare",
+      "ornek_tr": "Aşı dağıtıldığında hastalık iyileştirilmiş olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "disease",
+          "a": "hastalık",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "cured",
+          "a": "iyileştirilmiş",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "time",
+          "a": "-e kadar",
+          "en": "by the time: -dığı zamana kadar",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "vaccine",
+          "a": "aşı",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "distributed.",
+          "a": "dağıtılır",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "overcome",
+      "tur": "fiil",
+      "tr": "üstesinden gelmek, aşmak, yenmek",
+      "ornek_tr": "Birçok engel sabır ve sıkı çalışmayla aşılır.",
+      "ornek_tokenlar": [
+        {
+          "k": "Many",
+          "a": "birçok",
+          "vurgu": false
+        },
+        {
+          "k": "obstacles",
+          "a": "engeller",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "overcome",
+          "a": "aşılır",
+          "vurgu": true
+        },
+        {
+          "k": "through",
+          "a": "yoluyla",
+          "vurgu": false
+        },
+        {
+          "k": "patience",
+          "a": "sabır",
+          "vurgu": false
+        },
+        {
+          "k": "and",
+          "a": "ve",
+          "vurgu": false
+        },
+        {
+          "k": "hard",
+          "a": "sıkı",
+          "vurgu": false
+        },
+        {
+          "k": "work.",
+          "a": "çalışma",
+          "en": "hard work: sıkı çalışma",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "collapse",
+      "tur": "fiil",
+      "tr": "çökmek, yıkılmak; (isim) çöküş",
+      "ornek_tr": "Eski köprüler ağır kamyonların ağırlığı altında çöküyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "old",
+          "a": "eski",
+          "vurgu": false
+        },
+        {
+          "k": "bridges",
+          "a": "köprüler",
+          "vurgu": false
+        },
+        {
+          "k": "were",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "collapsing",
+          "a": "çöküyordu",
+          "vurgu": true
+        },
+        {
+          "k": "under",
+          "a": "altında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "weight",
+          "a": "ağırlık",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "heavy",
+          "a": "ağır",
+          "vurgu": false
+        },
+        {
+          "k": "trucks.",
+          "a": "kamyonlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "refuse",
+      "tur": "fiil",
+      "tr": "reddetmek, geri çevirmek",
+      "ornek_tr": "Komite, net bir gerekçe göstermeden öneriyi reddetti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "committee",
+          "a": "komite",
+          "vurgu": false
+        },
+        {
+          "k": "refused",
+          "a": "reddetti",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "proposal",
+          "a": "öneri",
+          "vurgu": false
+        },
+        {
+          "k": "without",
+          "a": "-meden",
+          "vurgu": false
+        },
+        {
+          "k": "giving",
+          "a": "verme",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "clear",
+          "a": "net",
+          "vurgu": false
+        },
+        {
+          "k": "reason.",
+          "a": "gerekçe",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "accomplish",
+      "tur": "fiil",
+      "tr": "başarmak, tamamlamak, gerçekleştirmek",
+      "ornek_tr": "Görev, belirlenen son tarihten önce tamamlandı.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "mission",
+          "a": "görev",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "accomplished",
+          "a": "tamamlandı",
+          "vurgu": true
+        },
+        {
+          "k": "ahead",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "",
+          "en": "ahead of: -den önce",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "scheduled",
+          "a": "belirlenen",
+          "vurgu": false
+        },
+        {
+          "k": "deadline.",
+          "a": "son tarih",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "seek",
+      "tur": "fiil",
+      "tr": "aramak, araştırmak, peşinde olmak",
+      "ornek_tr": "Uzmanlar yıllardır bir çözüm aramaktadır.",
+      "ornek_tokenlar": [
+        {
+          "k": "A",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "solution",
+          "a": "çözüm",
+          "vurgu": false
+        },
+        {
+          "k": "has",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "sought",
+          "a": "aranmaktadır",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "experts",
+          "a": "uzmanlar",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "many",
+          "a": "birçok",
+          "vurgu": false
+        },
+        {
+          "k": "years.",
+          "a": "yıllardır",
+          "en": "for many years: yıllardır",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "survive",
+      "tur": "fiil",
+      "tr": "hayatta kalmak, atlatmak, sağ kurtulmak",
+      "ornek_tr": "Korkunç kazadan yalnızca birkaç yolcu sağ kurtuldu.",
+      "ornek_tokenlar": [
+        {
+          "k": "Only",
+          "a": "yalnızca",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "few",
+          "a": "birkaç",
+          "vurgu": false
+        },
+        {
+          "k": "passengers",
+          "a": "yolcular",
+          "vurgu": false
+        },
+        {
+          "k": "survived",
+          "a": "sağ kurtuldu",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "",
+          "vurgu": false
+        },
+        {
+          "k": "terrible",
+          "a": "korkunç",
+          "vurgu": false
+        },
+        {
+          "k": "accident.",
+          "a": "kaza",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "exclude",
+      "tur": "fiil",
+      "tr": "hariç tutmak, dışlamak, almamak",
+      "ornek_tr": "Uygun belgeleri olmayan adaylar sınava alınmayacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Candidates",
+          "a": "Adaylar",
+          "vurgu": false
+        },
+        {
+          "k": "without",
+          "a": "olmadan",
+          "vurgu": false
+        },
+        {
+          "k": "proper",
+          "a": "uygun",
+          "vurgu": false
+        },
+        {
+          "k": "documents",
+          "a": "belgeler",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "excluded",
+          "a": "dışlanacak/alınmayacak",
+          "en": "be excluded from: -den hariç tutulmak",
+          "vurgu": true
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "exam.",
+          "a": "sınav",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "locate",
+      "tur": "fiil",
+      "tr": "yerini bulmak, tespit etmek; konumlandırmak",
+      "ornek_tr": "Kurtarma ekibi kaybolan yürüyüşçüleri gece çökmeden bulmuştu.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "rescue",
+          "a": "kurtarma",
+          "vurgu": false
+        },
+        {
+          "k": "team",
+          "a": "ekip",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "(geçmiş öncesi)",
+          "vurgu": false
+        },
+        {
+          "k": "located",
+          "a": "yerini bulmuştu",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "missing",
+          "a": "kayıp",
+          "vurgu": false
+        },
+        {
+          "k": "hikers",
+          "a": "yürüyüşçüler",
+          "vurgu": false
+        },
+        {
+          "k": "before",
+          "a": "-den önce",
+          "vurgu": false
+        },
+        {
+          "k": "nightfall.",
+          "a": "gece çökmesi",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "prepare",
+      "tur": "fiil",
+      "tr": "hazırlamak, hazırlanmak",
+      "ornek_tr": "Aşçılar öğleden sonra boyunca ziyafeti hazırlıyor olacaklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "chefs",
+          "a": "aşçılar",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(sürerlik)",
+          "vurgu": false
+        },
+        {
+          "k": "preparing",
+          "a": "hazırlıyor olacak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "banquet",
+          "a": "ziyafet",
+          "vurgu": false
+        },
+        {
+          "k": "throughout",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "afternoon.",
+          "a": "öğleden sonra",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "invest",
+      "tur": "fiil",
+      "tr": "yatırım yapmak",
+      "ornek_tr": "Şirket yenilenebilir enerjiye büyük yatırımlar yapıyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "company",
+          "a": "şirket",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "(geçmiş öncesi)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(sürerlik)",
+          "vurgu": false
+        },
+        {
+          "k": "investing",
+          "a": "yatırım yapıyordu",
+          "en": "invest in: -e yatırım yapmak",
+          "vurgu": true
+        },
+        {
+          "k": "heavily",
+          "a": "yoğun şekilde",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "renewable",
+          "a": "yenilenebilir",
+          "vurgu": false
+        },
+        {
+          "k": "energy.",
+          "a": "enerji",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "hinder",
+      "tur": "fiil",
+      "tr": "engellemek, ket vurmak, sekteye uğratmak",
+      "ornek_tr": "Ekonomik ilerleme siyasi istikrarsızlık tarafından engelleniyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Economic",
+          "a": "ekonomik",
+          "vurgu": false
+        },
+        {
+          "k": "progress",
+          "a": "ilerleme",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "hindered",
+          "a": "engelleniyor",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "political",
+          "a": "siyasi",
+          "vurgu": false
+        },
+        {
+          "k": "instability.",
+          "a": "istikrarsızlık",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "promote",
+      "tur": "fiil",
+      "tr": "terfi ettirmek; teşvik etmek, tanıtmak",
+      "ornek_tr": "Yakında terfi etse iyi olur.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "O",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "(yapı)",
+          "en": "had better: -sa iyi olur",
+          "vurgu": false
+        },
+        {
+          "k": "better",
+          "a": "daha iyi",
+          "en": "had better: -sa iyi olur",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "promoted",
+          "a": "terfi ettirilse",
+          "vurgu": true
+        },
+        {
+          "k": "soon.",
+          "a": "yakında",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "collect",
+      "tur": "fiil",
+      "tr": "toplamak, tahsil etmek",
+      "ornek_tr": "Vergi düzgün şekilde toplanmıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "tax",
+          "a": "vergi",
+          "vurgu": false
+        },
+        {
+          "k": "isn't",
+          "a": "(edilgen-olumsuz)",
+          "vurgu": false
+        },
+        {
+          "k": "collected",
+          "a": "toplanmıyor/tahsil edilmiyor",
+          "vurgu": true
+        },
+        {
+          "k": "properly.",
+          "a": "düzgün şekilde",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "restrict",
+      "tur": "fiil",
+      "tr": "kısıtlamak, sınırlamak",
+      "ornek_tr": "Yeni kurallar daha da kısıtlanacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "rules",
+          "a": "kurallar",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "(gelecek)",
+          "en": "be going to: -ecek",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "(gelecek)",
+          "en": "be going to: -ecek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(gelecek)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "restricted",
+          "a": "kısıtlanacak",
+          "vurgu": true
+        },
+        {
+          "k": "further.",
+          "a": "daha da",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "eliminate",
+      "tur": "fiil",
+      "tr": "ortadan kaldırmak, elemek, yok etmek",
+      "ornek_tr": "Geçen yıl birçok iş ortadan kaldırılıyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "Several",
+          "a": "birçok",
+          "vurgu": false
+        },
+        {
+          "k": "jobs",
+          "a": "işler",
+          "vurgu": false
+        },
+        {
+          "k": "were",
+          "a": "(edilgen sürerlik)",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "(edilgen sürerlik)",
+          "vurgu": false
+        },
+        {
+          "k": "eliminated",
+          "a": "ortadan kaldırılıyordu",
+          "vurgu": true
+        },
+        {
+          "k": "last",
+          "a": "geçen",
+          "vurgu": false
+        },
+        {
+          "k": "year.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "criticize",
+      "tur": "fiil",
+      "tr": "eleştirmek",
+      "ornek_tr": "Meslektaşları tarafından eleştirilmekten hoşlanmıyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "O",
+          "vurgu": false
+        },
+        {
+          "k": "disliked",
+          "a": "hoşlanmıyordu",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "(edilgen-ulaç)",
+          "vurgu": false
+        },
+        {
+          "k": "criticized",
+          "a": "eleştirilmek",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "his",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "colleagues.",
+          "a": "meslektaşları",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "react",
+      "tur": "fiil",
+      "tr": "tepki vermek, karşılık vermek",
+      "ornek_tr": "Habere derhal tepki vermeliydi.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "O",
+          "vurgu": false
+        },
+        {
+          "k": "should",
+          "a": "(yapı)",
+          "en": "should have + V3: -meliydi",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(yapı)",
+          "en": "should have + V3: -meliydi",
+          "vurgu": false
+        },
+        {
+          "k": "reacted",
+          "a": "tepki vermeliydi",
+          "en": "react to: -e tepki vermek",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "news",
+          "a": "haber",
+          "vurgu": false
+        },
+        {
+          "k": "immediately.",
+          "a": "derhal",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "violate",
+      "tur": "fiil",
+      "tr": "ihlal etmek, çiğnemek",
+      "ornek_tr": "Plan anlaşmayı ihlal edecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "plan",
+          "a": "plan",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek)",
+          "vurgu": false
+        },
+        {
+          "k": "violate",
+          "a": "ihlal edecek",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli)",
+          "vurgu": false
+        },
+        {
+          "k": "agreement.",
+          "a": "anlaşma",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "worry",
+      "tur": "fiil",
+      "tr": "endişelenmek, merak etmek",
+      "ornek_tr": "Eskiden sınavları için endişelenirdi.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o (kadın)",
+          "vurgu": false
+        },
+        {
+          "k": "used",
+          "a": "—",
+          "en": "used to: eskiden yapardı",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "worry",
+          "a": "endişelenmek",
+          "vurgu": true
+        },
+        {
+          "k": "about",
+          "a": "hakkında",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "exams.",
+          "a": "sınavları",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "invent",
+      "tur": "fiil",
+      "tr": "icat etmek",
+      "ornek_tr": "Telefonun 1876'da icat edildiği söylenir.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "telephone",
+          "a": "telefon",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "said",
+          "a": "söylenir",
+          "en": "is said to: söylenir",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "invented",
+          "a": "icat edilmiş",
+          "vurgu": true
+        },
+        {
+          "k": "in",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "1876.",
+          "a": "1876'da",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "divide",
+      "tur": "fiil",
+      "tr": "bölmek, ayırmak",
+      "ornek_tr": "Kitap on bölüme ayrılmıştır.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "book",
+          "a": "kitap",
+          "vurgu": false
+        },
+        {
+          "k": "has",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "divided",
+          "a": "bölünmüş",
+          "vurgu": true
+        },
+        {
+          "k": "into",
+          "a": "—",
+          "en": "divide into: -e bölmek",
+          "vurgu": false
+        },
+        {
+          "k": "ten",
+          "a": "on",
+          "vurgu": false
+        },
+        {
+          "k": "chapters.",
+          "a": "bölüm",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "forget",
+      "tur": "fiil",
+      "tr": "unutmak",
+      "ornek_tr": "Randevuyu unutmuş olabilir.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "o (erkek)",
+          "vurgu": false
+        },
+        {
+          "k": "might",
+          "a": "—",
+          "en": "might have V3: -mış olabilir",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "forgotten",
+          "a": "unutmuş",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "appointment.",
+          "a": "randevu",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "identify",
+      "tur": "fiil",
+      "tr": "teşhis etmek, kimliğini belirlemek",
+      "ornek_tr": "Şüpheli, tanıklarca teşhis edilecekti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "suspect",
+          "a": "şüpheli",
+          "vurgu": false
+        },
+        {
+          "k": "would",
+          "a": "—",
+          "en": "would be V3: edilecekti",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "identified",
+          "a": "teşhis edilmiş",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "witnesses.",
+          "a": "tanıklar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "suspend",
+      "tur": "fiil",
+      "tr": "(geçici) uzaklaştırmak, askıya almak",
+      "ornek_tr": "Oyuncular kötü davranış nedeniyle uzaklaştırıldı.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "players",
+          "a": "oyuncular",
+          "vurgu": false
+        },
+        {
+          "k": "were",
+          "a": "—",
+          "en": "were V3: edildi (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "suspended",
+          "a": "uzaklaştırıldı",
+          "vurgu": true
+        },
+        {
+          "k": "for",
+          "a": "nedeniyle",
+          "vurgu": false
+        },
+        {
+          "k": "misconduct.",
+          "a": "kötü davranış",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "apply",
+      "tur": "fiil",
+      "tr": "uygulamak; başvurmak",
+      "ornek_tr": "Kural daha önce uygulanmış olmalıydı.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "rule",
+          "a": "kural",
+          "vurgu": false
+        },
+        {
+          "k": "should",
+          "a": "—",
+          "en": "should have V3: -malıydı",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "applied",
+          "a": "uygulanmış",
+          "vurgu": true
+        },
+        {
+          "k": "earlier.",
+          "a": "daha önce",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "commit",
+      "tur": "fiil",
+      "tr": "(suç/hata) işlemek",
+      "ornek_tr": "Hatayı yaptığını itiraf etti.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "o (erkek)",
+          "vurgu": false
+        },
+        {
+          "k": "admitted",
+          "a": "itiraf etti",
+          "vurgu": false
+        },
+        {
+          "k": "having",
+          "a": "—",
+          "en": "having V3: -mış olmayı",
+          "vurgu": false
+        },
+        {
+          "k": "committed",
+          "a": "işlemiş/yapmış",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "error.",
+          "a": "hata",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "recognize",
+      "tur": "fiil",
+      "tr": "tanımak, fark etmek",
+      "ornek_tr": "Onu karanlıkta tanımış olamaz.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o (kadın)",
+          "vurgu": false
+        },
+        {
+          "k": "can't",
+          "a": "—",
+          "en": "can't have V3: -mış olamaz",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "recognized",
+          "a": "tanımış",
+          "vurgu": true
+        },
+        {
+          "k": "him",
+          "a": "onu",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "dark.",
+          "a": "karanlık",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "combine",
+      "tur": "fiil",
+      "tr": "birleştirmek, bir araya getirmek",
+      "ornek_tr": "İki birim çabalarını birleştirmeli.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "two",
+          "a": "iki",
+          "vurgu": false
+        },
+        {
+          "k": "departments",
+          "a": "birim/bölüm",
+          "vurgu": false
+        },
+        {
+          "k": "should",
+          "a": "—",
+          "en": "should: -malı",
+          "vurgu": false
+        },
+        {
+          "k": "combine",
+          "a": "birleştirmek",
+          "vurgu": true
+        },
+        {
+          "k": "their",
+          "a": "onların",
+          "vurgu": false
+        },
+        {
+          "k": "efforts.",
+          "a": "çabalar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "famine",
+      "tur": "isim",
+      "tr": "kıtlık (açlık)",
+      "ornek_tr": "Dünyanın birçok yerinde kıtlık ciddi bir sorundur.",
+      "ornek_tokenlar": [
+        {
+          "k": "In",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "many",
+          "a": "birçok",
+          "vurgu": false
+        },
+        {
+          "k": "parts",
+          "a": "kısım/yer",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "world,",
+          "a": "dünya",
+          "vurgu": false
+        },
+        {
+          "k": "famine",
+          "a": "kıtlık",
+          "vurgu": true
+        },
+        {
+          "k": "is",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "serious",
+          "a": "ciddi",
+          "vurgu": false
+        },
+        {
+          "k": "problem.",
+          "a": "sorun",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "starvation",
+      "tur": "isim",
+      "tr": "açlık, açlıktan ölme",
+      "ornek_tr": "İnsanların yeterince yiyecekleri olmadığında, vücutlarının sağlıklı kalmak için ihtiyaç duyduğu besinleri alamamaları durumu olan açlıktan muzdarip olabilirler.",
+      "ornek_tokenlar": [
+        {
+          "k": "When",
+          "a": "-dığında",
+          "vurgu": false
+        },
+        {
+          "k": "people",
+          "a": "insanlar",
+          "vurgu": false
+        },
+        {
+          "k": "don't",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahip olmak",
+          "vurgu": false
+        },
+        {
+          "k": "enough",
+          "a": "yeterli",
+          "vurgu": false
+        },
+        {
+          "k": "food",
+          "a": "yiyecek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "eat,",
+          "a": "yemek",
+          "vurgu": false
+        },
+        {
+          "k": "they",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "can",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "suffer",
+          "a": "muzdarip olmak",
+          "en": "suffer from: -den muzdarip olmak",
+          "vurgu": false
+        },
+        {
+          "k": "from",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "starvation,",
+          "a": "açlık",
+          "vurgu": true
+        },
+        {
+          "k": "which",
+          "a": "ki bu",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "when",
+          "a": "—durum",
+          "vurgu": false
+        },
+        {
+          "k": "their",
+          "a": "onların",
+          "vurgu": false
+        },
+        {
+          "k": "bodies",
+          "a": "vücutlar",
+          "vurgu": false
+        },
+        {
+          "k": "don't",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "get",
+          "a": "almak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "nutrients",
+          "a": "besinler",
+          "vurgu": false
+        },
+        {
+          "k": "they",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "need",
+          "a": "ihtiyaç duymak",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "—",
+          "vurgu": false
+        },
+        {
+          "k": "stay",
+          "a": "kalmak",
+          "vurgu": false
+        },
+        {
+          "k": "healthy.",
+          "a": "sağlıklı",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "diverse",
+      "tur": "sıfat",
+      "tr": "çeşitli, farklı türden",
+      "ornek_tr": "New York, ABD'nin en çeşitli (kozmopolit) şehri olarak kabul edilir.",
+      "ornek_tokenlar": [
+        {
+          "k": "New",
+          "a": "New",
+          "vurgu": false
+        },
+        {
+          "k": "York",
+          "a": "York",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-dır",
+          "vurgu": false
+        },
+        {
+          "k": "considered",
+          "a": "kabul edilir",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "most",
+          "a": "en",
+          "vurgu": false
+        },
+        {
+          "k": "diverse",
+          "a": "çeşitli",
+          "vurgu": true
+        },
+        {
+          "k": "city",
+          "a": "şehir",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "U.S.",
+          "a": "ABD",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "disqualify",
+      "tur": "fiil",
+      "tr": "diskalifiye etmek, hak/yeterlilik kaybettirmek",
+      "ornek_tr": "Geçit töreninden önce veya sırasında diskalifiye edilme riskini almak istemezsiniz.",
+      "ornek_tokenlar": [
+        {
+          "k": "You",
+          "a": "sen",
+          "vurgu": false
+        },
+        {
+          "k": "don't",
+          "a": "-mez",
+          "vurgu": false
+        },
+        {
+          "k": "want",
+          "a": "istemek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "risk",
+          "a": "riske atmak",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "olma",
+          "vurgu": false
+        },
+        {
+          "k": "disqualified",
+          "a": "diskalifiye edilme",
+          "vurgu": true
+        },
+        {
+          "k": "before",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "or",
+          "a": "veya",
+          "vurgu": false
+        },
+        {
+          "k": "during",
+          "a": "sırasında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "parade.",
+          "a": "geçit töreni",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "emit",
+      "tur": "fiil",
+      "tr": "yaymak, salmak (gaz/ışık/ses)",
+      "ornek_tr": "Fabrika bacalarından zararlı gazlar salındı.",
+      "ornek_tokenlar": [
+        {
+          "k": "Harmful",
+          "a": "zararlı",
+          "vurgu": false
+        },
+        {
+          "k": "gases",
+          "a": "gazlar",
+          "vurgu": false
+        },
+        {
+          "k": "were",
+          "a": "-di (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "emitted",
+          "a": "salındı",
+          "vurgu": true
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "factory",
+          "a": "fabrika",
+          "vurgu": false
+        },
+        {
+          "k": "chimneys.",
+          "a": "bacalar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "establish",
+      "tur": "fiil",
+      "tr": "kurmak, tesis etmek; belirlemek",
+      "ornek_tr": "Üniversitede yeni bir araştırma merkezi kuruluyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "A",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "research",
+          "a": "araştırma",
+          "vurgu": false
+        },
+        {
+          "k": "center",
+          "a": "merkez",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-iyor (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "-iyor (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "established",
+          "a": "kuruluyor",
+          "vurgu": true
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "university.",
+          "a": "üniversite",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "finish",
+      "tur": "fiil",
+      "tr": "bitirmek, tamamlamak",
+      "ornek_tr": "Proje, son teslim tarihinden önce bitirilmişti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "project",
+          "a": "proje",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "-mişti",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "-mişti (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "finished",
+          "a": "bitirilmişti",
+          "vurgu": true
+        },
+        {
+          "k": "before",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "deadline.",
+          "a": "son teslim tarihi",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "promise",
+      "tur": "fiil",
+      "tr": "söz vermek, vaat etmek",
+      "ornek_tr": "Bakan, sorunu derhal ele alacağına söz verdi.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "minister",
+          "a": "bakan",
+          "vurgu": false
+        },
+        {
+          "k": "promised",
+          "a": "söz verdi",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "address",
+          "a": "ele almak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "issue",
+          "a": "sorun",
+          "vurgu": false
+        },
+        {
+          "k": "immediately.",
+          "a": "derhal",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "examine",
+      "tur": "fiil",
+      "tr": "incelemek, muayene etmek",
+      "ornek_tr": "Bilim insanları laboratuvarda yeni numuneleri inceliyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Scientists",
+          "a": "bilim insanları",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "-iyor",
+          "vurgu": false
+        },
+        {
+          "k": "examining",
+          "a": "inceliyor",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "samples",
+          "a": "numuneler",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "laboratory.",
+          "a": "laboratuvar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "assume",
+      "tur": "fiil",
+      "tr": "üstlenmek; varsaymak, farz etmek",
+      "ornek_tr": "Komite, karar için tüm sorumluluğu üstlendi.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "committee",
+          "a": "komite",
+          "vurgu": false
+        },
+        {
+          "k": "has",
+          "a": "-di (bitmiş)",
+          "vurgu": false
+        },
+        {
+          "k": "assumed",
+          "a": "üstlendi",
+          "vurgu": true
+        },
+        {
+          "k": "full",
+          "a": "tam",
+          "vurgu": false
+        },
+        {
+          "k": "responsibility",
+          "a": "sorumluluk",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "decision.",
+          "a": "karar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "propose",
+      "tur": "fiil",
+      "tr": "önermek, teklif etmek",
+      "ornek_tr": "Krizle başa çıkmak için birçok çözüm önerildi.",
+      "ornek_tokenlar": [
+        {
+          "k": "Several",
+          "a": "birçok",
+          "vurgu": false
+        },
+        {
+          "k": "solutions",
+          "a": "çözümler",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-di (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "-di (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "proposed",
+          "a": "önerildi",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "tackle",
+          "a": "başa çıkmak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "crisis.",
+          "a": "kriz",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "respond",
+      "tur": "fiil",
+      "tr": "yanıt vermek, karşılık vermek",
+      "ornek_tr": "Yetkililer acil duruma hızla yanıt vermişti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "authorities",
+          "a": "yetkililer",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "-mişti",
+          "vurgu": false
+        },
+        {
+          "k": "responded",
+          "a": "yanıt vermişti",
+          "vurgu": true
+        },
+        {
+          "k": "quickly",
+          "a": "hızla",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "emergency.",
+          "a": "acil durum",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "add",
+      "tur": "fiil",
+      "tr": "eklemek, ilave etmek",
+      "ornek_tr": "Son anda sözleşmeye yeni bir madde eklendi.",
+      "ornek_tokenlar": [
+        {
+          "k": "A",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "clause",
+          "a": "madde",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "-di (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "added",
+          "a": "eklendi",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "contract",
+          "a": "sözleşme",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "last",
+          "a": "son",
+          "vurgu": false
+        },
+        {
+          "k": "minute.",
+          "a": "an, dakika",
+          "en": "at the last minute: son anda",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "check",
+      "tur": "fiil",
+      "tr": "kontrol etmek, denetlemek",
+      "ornek_tr": "Ekipman, her uçuştan önce kontrol edilmelidir.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "equipment",
+          "a": "ekipman",
+          "vurgu": false
+        },
+        {
+          "k": "ought",
+          "a": "-meli",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-meli",
+          "en": "ought to: -meli/-malı",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "checked",
+          "a": "kontrol edilmek",
+          "vurgu": true
+        },
+        {
+          "k": "before",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "every",
+          "a": "her",
+          "vurgu": false
+        },
+        {
+          "k": "flight.",
+          "a": "uçuş",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "discover",
+      "tur": "fiil",
+      "tr": "keşfetmek, bulmak",
+      "ornek_tr": "Antik kalıntılar bir grup arkeolog tarafından keşfedilmişti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "ancient",
+          "a": "antik",
+          "vurgu": false
+        },
+        {
+          "k": "ruins",
+          "a": "kalıntılar",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "(geçmiş yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen yardımcı)",
+          "en": "had been + V3 = past perfect passive",
+          "vurgu": false
+        },
+        {
+          "k": "discovered",
+          "a": "keşfedildi",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "group",
+          "a": "grup",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "(-in)",
+          "vurgu": false
+        },
+        {
+          "k": "archaeologists.",
+          "a": "arkeologlar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "utilize",
+      "tur": "fiil",
+      "tr": "kullanmak, yararlanmak",
+      "ornek_tr": "Bu kaynaklar verimli bir şekilde kullanılmıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "These",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "resources",
+          "a": "kaynaklar",
+          "vurgu": false
+        },
+        {
+          "k": "aren't",
+          "a": "değiller",
+          "en": "are not being + V3 = pres. cont. passive",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "(edilgen yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "utilized",
+          "a": "kullanılan",
+          "vurgu": true
+        },
+        {
+          "k": "efficiently.",
+          "a": "verimli şekilde",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "develop",
+      "tur": "fiil",
+      "tr": "geliştirmek",
+      "ornek_tr": "Girişim yepyeni bir uygulama geliştirmeye karar verdi.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "startup",
+          "a": "girişim",
+          "vurgu": false
+        },
+        {
+          "k": "decided",
+          "a": "karar verdi",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(-mek)",
+          "en": "decide to + V1",
+          "vurgu": false
+        },
+        {
+          "k": "develop",
+          "a": "geliştirmek",
+          "vurgu": true
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "brand-new",
+          "a": "yepyeni",
+          "vurgu": false
+        },
+        {
+          "k": "application.",
+          "a": "uygulama",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "trigger",
+      "tur": "fiil",
+      "tr": "tetiklemek, yol açmak",
+      "ornek_tr": "Tepki, küçük bir kıvılcım tarafından tetiklenmiş olabilir.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "reaction",
+          "a": "tepki",
+          "vurgu": false
+        },
+        {
+          "k": "might",
+          "a": "-mış olabilir",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(tamamlanma yardımcı)",
+          "en": "might have been + V3 = geçmişe dönük olasılık (edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "triggered",
+          "a": "tetiklendi",
+          "vurgu": true
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "small",
+          "a": "küçük",
+          "vurgu": false
+        },
+        {
+          "k": "spark.",
+          "a": "kıvılcım",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "win",
+      "tur": "fiil",
+      "tr": "kazanmak",
+      "ornek_tr": "Gelecek yıla kadar atlet çok sayıda şampiyonluk kazanmış olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "By",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "year,",
+          "a": "yıl",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "athlete",
+          "a": "atlet",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(tamamlanma yardımcı)",
+          "en": "will have + V3 = future perfect",
+          "vurgu": false
+        },
+        {
+          "k": "won",
+          "a": "kazanmış",
+          "vurgu": true
+        },
+        {
+          "k": "numerous",
+          "a": "çok sayıda",
+          "vurgu": false
+        },
+        {
+          "k": "championships.",
+          "a": "şampiyonluklar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "visit",
+      "tur": "fiil",
+      "tr": "ziyaret etmek",
+      "ornek_tr": "Çocukken müzeyi ziyaret etmiş olduğunu hatırlıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "remembers",
+          "a": "hatırlıyor",
+          "vurgu": false
+        },
+        {
+          "k": "having",
+          "a": "(tamamlanmış)",
+          "en": "remember + having V3 = geçmişteki eylemi hatırlamak",
+          "vurgu": false
+        },
+        {
+          "k": "visited",
+          "a": "ziyaret etmiş",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "museum",
+          "a": "müze",
+          "vurgu": false
+        },
+        {
+          "k": "as",
+          "a": "(iken)",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "child.",
+          "a": "çocuk",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "accept",
+      "tur": "fiil",
+      "tr": "kabul etmek",
+      "ornek_tr": "Geç teslimler hiçbir koşulda kabul edilemez.",
+      "ornek_tokenlar": [
+        {
+          "k": "Late",
+          "a": "geç",
+          "vurgu": false
+        },
+        {
+          "k": "submissions",
+          "a": "teslimler",
+          "vurgu": false
+        },
+        {
+          "k": "can't",
+          "a": "-emez",
+          "en": "can't be + V3 = edilgen olanaksızlık",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "accepted",
+          "a": "kabul edilen",
+          "vurgu": true
+        },
+        {
+          "k": "under",
+          "a": "altında",
+          "vurgu": false
+        },
+        {
+          "k": "any",
+          "a": "herhangi",
+          "vurgu": false
+        },
+        {
+          "k": "circumstances.",
+          "a": "koşullar",
+          "en": "under any circumstances = hiçbir koşulda",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "allow",
+      "tur": "fiil",
+      "tr": "izin vermek, olanak tanımak",
+      "ornek_tr": "Yeni politika daha fazla esnekliğe olanak tanımış olmalı.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "policy",
+          "a": "politika",
+          "vurgu": false
+        },
+        {
+          "k": "must",
+          "a": "-mış olmalı",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(tamamlanma yardımcı)",
+          "en": "must have + V3 = geçmişe dönük güçlü çıkarım",
+          "vurgu": false
+        },
+        {
+          "k": "allowed",
+          "a": "olanak tanımış",
+          "vurgu": true
+        },
+        {
+          "k": "for",
+          "a": "(-e)",
+          "en": "allow for = olanak tanımak",
+          "vurgu": false
+        },
+        {
+          "k": "greater",
+          "a": "daha fazla",
+          "vurgu": false
+        },
+        {
+          "k": "flexibility.",
+          "a": "esneklik",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "fit",
+      "tur": "fiil",
+      "tr": "uymak, oturmak",
+      "ornek_tr": "Bu parça yapbozun içine kusursuzca oturacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "This",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "piece",
+          "a": "parça",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "fit",
+          "a": "oturmak",
+          "vurgu": true
+        },
+        {
+          "k": "perfectly",
+          "a": "kusursuzca",
+          "vurgu": false
+        },
+        {
+          "k": "into",
+          "a": "içine",
+          "en": "fit into = içine oturmak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "puzzle.",
+          "a": "yapboz",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "view",
+      "tur": "fiil",
+      "tr": "görmek, addetmek (bir gözle bakmak)",
+      "ornek_tr": "Bu tablolar paha biçilmez hazineler olarak görülüyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "These",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "paintings",
+          "a": "tablolar",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "(edilgen yardımcı)",
+          "en": "be viewed as = olarak görülmek",
+          "vurgu": false
+        },
+        {
+          "k": "viewed",
+          "a": "görülen",
+          "vurgu": true
+        },
+        {
+          "k": "as",
+          "a": "olarak",
+          "vurgu": false
+        },
+        {
+          "k": "priceless",
+          "a": "paha biçilmez",
+          "vurgu": false
+        },
+        {
+          "k": "treasures.",
+          "a": "hazineler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "burn",
+      "tur": "fiil",
+      "tr": "yanmak, yakmak",
+      "ornek_tr": "Mum bütün gece boyunca yanıyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "candle",
+          "a": "mum",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "(geçmiş sürekli yardımcı)",
+          "en": "was + V-ing = past continuous",
+          "vurgu": false
+        },
+        {
+          "k": "burning",
+          "a": "yanıyordu",
+          "vurgu": true
+        },
+        {
+          "k": "all",
+          "a": "bütün",
+          "vurgu": false
+        },
+        {
+          "k": "through",
+          "a": "boyunca",
+          "en": "all through = boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "night.",
+          "a": "gece",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "converted",
+      "tur": "fiil",
+      "tr": "dönüştürmek (convert'in geçmiş/V3 hali)",
+      "ornek_tr": "Eski fabrika modern bir müzeye dönüştürüldü.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "old",
+          "a": "eski",
+          "vurgu": false
+        },
+        {
+          "k": "factory",
+          "a": "fabrika",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "(edilgen yardımcı)",
+          "en": "was + V3 = past simple passive",
+          "vurgu": false
+        },
+        {
+          "k": "converted",
+          "a": "dönüştürüldü",
+          "vurgu": true
+        },
+        {
+          "k": "into",
+          "a": "-e",
+          "en": "convert into = -e dönüştürmek",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "modern",
+          "a": "modern",
+          "vurgu": false
+        },
+        {
+          "k": "museum.",
+          "a": "müze",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "promoted",
+      "tur": "fiil",
+      "tr": "terfi ettirilmek; tanıtmak",
+      "ornek_tr": "Yetenekli çalışanları motive tutmak için terfi ettirilmeleri iyi olur.",
+      "ornek_tokenlar": [
+        {
+          "k": "Talented",
+          "a": "yetenekli",
+          "vurgu": false
+        },
+        {
+          "k": "employees",
+          "a": "çalışanlar",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "-meli",
+          "en": "had better = -se iyi olur",
+          "vurgu": false
+        },
+        {
+          "k": "better",
+          "a": "daha iyi",
+          "en": "had better kalıbı",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "promoted",
+          "a": "terfi ettirilmek",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-mek için",
+          "vurgu": false
+        },
+        {
+          "k": "keep",
+          "a": "tutmak",
+          "vurgu": false
+        },
+        {
+          "k": "them",
+          "a": "onları",
+          "vurgu": false
+        },
+        {
+          "k": "motivated.",
+          "a": "motive",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "collected",
+      "tur": "fiil",
+      "tr": "toplanmak; tahsil edilmek",
+      "ornek_tr": "Vergi düşük gelirli hanelerden tahsil edilmiyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "tax",
+          "a": "vergi",
+          "vurgu": false
+        },
+        {
+          "k": "isn't",
+          "a": "değil",
+          "vurgu": false
+        },
+        {
+          "k": "collected",
+          "a": "tahsil edilmek",
+          "vurgu": true
+        },
+        {
+          "k": "from",
+          "a": "-den",
+          "vurgu": false
+        },
+        {
+          "k": "low-income",
+          "a": "düşük gelirli",
+          "vurgu": false
+        },
+        {
+          "k": "households.",
+          "a": "haneler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "criticized",
+      "tur": "fiil",
+      "tr": "eleştirilmek",
+      "ornek_tr": "Müdür, ekibinin önünde eleştirilmekten hoşlanmıyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "manager",
+          "a": "müdür",
+          "vurgu": false
+        },
+        {
+          "k": "disliked",
+          "a": "hoşlanmıyordu",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "(edilgen ulaç)",
+          "vurgu": false
+        },
+        {
+          "k": "criticized",
+          "a": "eleştirilmek",
+          "vurgu": true
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "front",
+          "a": "ön",
+          "en": "in front of = önünde",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "his",
+          "a": "onun",
+          "vurgu": false
+        },
+        {
+          "k": "team.",
+          "a": "ekip",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "restricted",
+      "tur": "fiil",
+      "tr": "kısıtlanmak, sınırlandırılmak",
+      "ornek_tr": "İthalat gelecek yıl kısıtlanacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "Imports",
+          "a": "ithalat",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "(yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "-ecek",
+          "en": "be going to = gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(kalıp)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "restricted",
+          "a": "kısıtlanmak",
+          "vurgu": true
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "year.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "eliminated",
+      "tur": "fiil",
+      "tr": "ortadan kaldırılmak, giderilmek",
+      "ornek_tr": "Sistem çöktüğünde hatalar giderilmekteydi.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "errors",
+          "a": "hatalar",
+          "vurgu": false
+        },
+        {
+          "k": "were",
+          "a": "(yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "(sürekli edilgen)",
+          "en": "were being = ediliyordu",
+          "vurgu": false
+        },
+        {
+          "k": "eliminated",
+          "a": "giderilmek",
+          "vurgu": true
+        },
+        {
+          "k": "when",
+          "a": "-diğinde",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "system",
+          "a": "sistem",
+          "vurgu": false
+        },
+        {
+          "k": "crashed.",
+          "a": "çöktü",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "delivered",
+      "tur": "fiil",
+      "tr": "teslim edilmek, ulaştırılmak",
+      "ornek_tr": "Paketin öğleden önce teslim edilmesi gerekiyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "package",
+          "a": "paket",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "required",
+          "a": "gerekli",
+          "en": "be required to = gerekmek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mesi",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "delivered",
+          "a": "teslim edilmek",
+          "vurgu": true
+        },
+        {
+          "k": "before",
+          "a": "-den önce",
+          "vurgu": false
+        },
+        {
+          "k": "noon.",
+          "a": "öğlen",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "exposed",
+      "tur": "fiil",
+      "tr": "maruz bırakılmak",
+      "ornek_tr": "İşçiler zararlı kimyasallara maruz kalmıştır.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "workers",
+          "a": "işçiler",
+          "vurgu": false
+        },
+        {
+          "k": "has",
+          "a": "(yardımcı)",
+          "en": "have/has been = -mıştır",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "exposed",
+          "a": "maruz bırakılmak",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "en": "exposed to = -e maruz",
+          "vurgu": false
+        },
+        {
+          "k": "harmful",
+          "a": "zararlı",
+          "vurgu": false
+        },
+        {
+          "k": "chemicals.",
+          "a": "kimyasallar",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "competing",
+      "tur": "fiil",
+      "tr": "yarışmak, rekabet etmek",
+      "ornek_tr": "Sporcu final turunda yarışıyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "athlete",
+          "a": "sporcu",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "(yardımcı)",
+          "en": "was + -ing = -yordu",
+          "vurgu": false
+        },
+        {
+          "k": "competing",
+          "a": "yarışmak",
+          "vurgu": true
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "final",
+          "a": "final",
+          "vurgu": false
+        },
+        {
+          "k": "round.",
+          "a": "tur",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "informed",
+      "tur": "fiil",
+      "tr": "bilgilendirilmek, haberdar edilmek",
+      "ornek_tr": "Değişiklikler hakkında bilgilendirilmiş olduğunu inkâr etti.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "denied",
+          "a": "inkâr etti",
+          "vurgu": false
+        },
+        {
+          "k": "having",
+          "a": "(geçmiş ulaç)",
+          "en": "having been = -miş olmak",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "informed",
+          "a": "bilgilendirilmek",
+          "vurgu": true
+        },
+        {
+          "k": "about",
+          "a": "hakkında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "changes.",
+          "a": "değişiklikler",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "invented",
+      "tur": "fiil",
+      "tr": "icat edilmek, bulunmak",
+      "ornek_tr": "İnternet 20. yüzyılın sonlarında icat edildi.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "Internet",
+          "a": "internet",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "invented",
+          "a": "icat edilmek",
+          "vurgu": true
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "late",
+          "a": "geç/sonları",
+          "vurgu": false
+        },
+        {
+          "k": "20th",
+          "a": "20.",
+          "vurgu": false
+        },
+        {
+          "k": "century.",
+          "a": "yüzyıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "expected",
+      "tur": "fiil",
+      "tr": "beklenmek; ummak",
+      "ornek_tr": "Hissedarların bu yıl daha yüksek bir getiri beklemesi bekleniyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Shareholders",
+          "a": "hissedarlar",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "(yardımcı)",
+          "vurgu": false
+        },
+        {
+          "k": "expected",
+          "a": "beklenmek",
+          "en": "be expected to = -mesi beklenir",
+          "vurgu": true
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "higher",
+          "a": "daha yüksek",
+          "vurgu": false
+        },
+        {
+          "k": "yield",
+          "a": "getiri",
+          "vurgu": false
+        },
+        {
+          "k": "this",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "year.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "considered",
+      "tur": "fiil",
+      "tr": "sayılmak, kabul edilmek; göz önünde bulundurmak",
+      "ornek_tr": "New York, ABD'nin en çeşitli şehri olarak kabul edilir.",
+      "ornek_tokenlar": [
+        {
+          "k": "New",
+          "a": "New",
+          "vurgu": false
+        },
+        {
+          "k": "York",
+          "a": "York",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "considered",
+          "a": "kabul edilmek",
+          "en": "be considered = sayılmak",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "most",
+          "a": "en",
+          "vurgu": false
+        },
+        {
+          "k": "diverse",
+          "a": "çeşitli",
+          "vurgu": false
+        },
+        {
+          "k": "city",
+          "a": "şehir",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirteç)",
+          "vurgu": false
+        },
+        {
+          "k": "U.S.",
+          "a": "ABD",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "sinking",
+      "tur": "fiil",
+      "tr": "batmak (sink fiilinin -ing hali); batma",
+      "ornek_tr": "Gün geçtikçe Yeni Zelanda Pasifik Okyanusu'na batıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Day",
+          "a": "gün",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "ile",
+          "vurgu": false
+        },
+        {
+          "k": "day,",
+          "a": "gün",
+          "en": "day by day = gün geçtikçe",
+          "vurgu": false
+        },
+        {
+          "k": "New",
+          "a": "Yeni",
+          "vurgu": false
+        },
+        {
+          "k": "Zealand",
+          "a": "Zelanda",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(şimdiki zaman yardımcı fiili)",
+          "vurgu": false
+        },
+        {
+          "k": "sinking",
+          "a": "batıyor",
+          "vurgu": true
+        },
+        {
+          "k": "into",
+          "a": "içine",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "Pacific",
+          "a": "Pasifik",
+          "vurgu": false
+        },
+        {
+          "k": "Ocean.",
+          "a": "Okyanus",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "disqualified",
+      "tur": "fiil",
+      "tr": "diskalifiye edilmek, yarışma dışı bırakılmak (disqualify'ın geçmiş/edilgen hali)",
+      "ornek_tr": "Geçit töreninden önce ya da sırasında diskalifiye edilme riskini almak istemezsin.",
+      "ornek_tokenlar": [
+        {
+          "k": "You",
+          "a": "sen",
+          "vurgu": false
+        },
+        {
+          "k": "don't",
+          "a": "(olumsuzluk)",
+          "vurgu": false
+        },
+        {
+          "k": "want",
+          "a": "istemek",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(mastar)",
+          "vurgu": false
+        },
+        {
+          "k": "risk",
+          "a": "riske atmak",
+          "vurgu": false
+        },
+        {
+          "k": "being",
+          "a": "(edilgen -ing)",
+          "vurgu": false
+        },
+        {
+          "k": "disqualified",
+          "a": "diskalifiye edilmek",
+          "vurgu": true
+        },
+        {
+          "k": "before",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "or",
+          "a": "ya da",
+          "vurgu": false
+        },
+        {
+          "k": "during",
+          "a": "sırasında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "parade.",
+          "a": "geçit töreni",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "built",
+      "tur": "fiil",
+      "tr": "inşa etmek (build fiilinin geçmiş/3. hali); inşa edilmiş",
+      "ornek_tr": "İşçiler kasabada yeni bir eğlence parkı inşa edecek. (Not: cümle dilbilgisel olarak hatalı; doğrusu 'will build' olmalı.)",
+      "ornek_tokenlar": [
+        {
+          "k": "Workers",
+          "a": "işçiler",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek zaman)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "built",
+          "a": "inşa et(il)miş",
+          "vurgu": true
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "fun",
+          "a": "eğlence",
+          "vurgu": false
+        },
+        {
+          "k": "park",
+          "a": "park",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "içinde",
+          "vurgu": false
+        },
+        {
+          "k": "town.",
+          "a": "kasaba",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "sink",
+      "tur": "fiil",
+      "tr": "batmak, batırmak; (isim) lavabo",
+      "ornek_tr": "Gün geçtikçe Yeni Zelanda Pasifik Okyanusu'na batıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Day",
+          "a": "gün",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "ile",
+          "vurgu": false
+        },
+        {
+          "k": "day,",
+          "a": "gün",
+          "en": "day by day = gün geçtikçe",
+          "vurgu": false
+        },
+        {
+          "k": "New",
+          "a": "Yeni",
+          "vurgu": false
+        },
+        {
+          "k": "Zealand",
+          "a": "Zelanda",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(şimdiki zaman yardımcı fiili)",
+          "vurgu": false
+        },
+        {
+          "k": "sinking",
+          "a": "batıyor",
+          "vurgu": true
+        },
+        {
+          "k": "into",
+          "a": "içine",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "Pacific",
+          "a": "Pasifik",
+          "vurgu": false
+        },
+        {
+          "k": "Ocean.",
+          "a": "Okyanus",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "build",
+      "tur": "fiil",
+      "tr": "inşa etmek, kurmak, yapmak",
+      "ornek_tr": "İşçiler kasabada yeni bir eğlence parkı inşa edebilir. (Not: cümle dilbilgisel olarak hatalı; doğrusu 'may build' olmalı.)",
+      "ornek_tokenlar": [
+        {
+          "k": "Workers",
+          "a": "işçiler",
+          "vurgu": false
+        },
+        {
+          "k": "may",
+          "a": "-ebilir (olasılık)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "built",
+          "a": "inşa et(il)miş",
+          "vurgu": true
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "fun",
+          "a": "eğlence",
+          "vurgu": false
+        },
+        {
+          "k": "park",
+          "a": "park",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "içinde",
+          "vurgu": false
+        },
+        {
+          "k": "town.",
+          "a": "kasaba",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "give",
+      "tur": "fiil",
+      "tr": "vermek",
+      "ornek_tr": "Katil müebbet hapse çarptırılmış (kendisine ömür boyu hapis verilmiş) olmalıydı.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "murderer",
+          "a": "katil",
+          "vurgu": false
+        },
+        {
+          "k": "should",
+          "a": "-meliydi",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(tamamlanmış)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen)",
+          "en": "should have been given = verilmiş olmalıydı",
+          "vurgu": false
+        },
+        {
+          "k": "given",
+          "a": "verilmiş",
+          "vurgu": true
+        },
+        {
+          "k": "life",
+          "a": "yaşam/ömür",
+          "vurgu": false
+        },
+        {
+          "k": "long",
+          "a": "boyu",
+          "en": "lifelong = ömür boyu",
+          "vurgu": false
+        },
+        {
+          "k": "prison.",
+          "a": "hapis",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "convey",
+      "tur": "fiil",
+      "tr": "iletmek, aktarmak, ifade etmek",
+      "ornek_tr": "Konuşmacı sunum sırasında mesajı açıkça iletti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "speaker",
+          "a": "konuşmacı",
+          "vurgu": false
+        },
+        {
+          "k": "conveyed",
+          "a": "iletti",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "message",
+          "a": "mesaj",
+          "vurgu": false
+        },
+        {
+          "k": "clearly",
+          "a": "açıkça",
+          "vurgu": false
+        },
+        {
+          "k": "during",
+          "a": "sırasında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "presentation.",
+          "a": "sunum",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "impending",
+      "tur": "sıfat",
+      "tr": "yaklaşan, an meselesi olan (genellikle kötü/tehlikeli)",
+      "ornek_tr": "Sokaklar boş. İnsanlar yaklaşan fırtına hakkında uyarılacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "streets",
+          "a": "sokaklar",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "empty.",
+          "a": "boş",
+          "vurgu": false
+        },
+        {
+          "k": "People",
+          "a": "insanlar",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "(gelecek yapısı)",
+          "vurgu": false
+        },
+        {
+          "k": "going",
+          "a": "(gelecek yapısı)",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(gelecek yapısı)",
+          "en": "be going to = -ecek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "warned",
+          "a": "uyarılmak",
+          "vurgu": false
+        },
+        {
+          "k": "about",
+          "a": "hakkında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "impending",
+          "a": "yaklaşan",
+          "vurgu": true
+        },
+        {
+          "k": "storm.",
+          "a": "fırtına",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "ceasefire",
+      "tur": "isim",
+      "tr": "ateşkes",
+      "ornek_tr": "Bu hafta ilerleyen günlerde bir ateşkes ilan edilmesi bekleniyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "A",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "ceasefire",
+          "a": "ateşkes",
+          "vurgu": true
+        },
+        {
+          "k": "is",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "expected",
+          "a": "bekleniyor",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(mastar)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "declared",
+          "a": "ilan edilmek",
+          "vurgu": false
+        },
+        {
+          "k": "later",
+          "a": "ilerleyen",
+          "vurgu": false
+        },
+        {
+          "k": "this",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "week.",
+          "a": "hafta",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "misplace",
+      "tur": "fiil",
+      "tr": "yanlış yere koymak, (koyduğu yeri unutarak) kaybetmek",
+      "ornek_tr": "Belge kayıp. Ofis temizliği sırasında yanlış bir yere konmuş olabilir.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "document",
+          "a": "belge",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "missing.",
+          "a": "kayıp",
+          "vurgu": false
+        },
+        {
+          "k": "It",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "might",
+          "a": "-mış olabilir",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(tamamlanmış)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "(edilgen)",
+          "en": "might have been = -mış olabilir",
+          "vurgu": false
+        },
+        {
+          "k": "misplaced",
+          "a": "yanlış yere konmuş",
+          "vurgu": true
+        },
+        {
+          "k": "during",
+          "a": "sırasında",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "office",
+          "a": "ofis",
+          "vurgu": false
+        },
+        {
+          "k": "cleanup.",
+          "a": "temizlik",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "elect",
+      "tur": "fiil",
+      "tr": "seçmek (oyla), seçimle iş başına getirmek",
+      "ornek_tr": "Gelecek yıl yeni bir hükümet seçilecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "A",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "government",
+          "a": "hükümet",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek zaman)",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "elected",
+          "a": "seçilecek",
+          "vurgu": true
+        },
+        {
+          "k": "next",
+          "a": "gelecek",
+          "vurgu": false
+        },
+        {
+          "k": "year.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "construct",
+      "tur": "fiil",
+      "tr": "inşa etmek, kurmak, oluşturmak",
+      "ornek_tr": "İnşaat ekibi yıl sonuna kadar binayı inşa etmiş olacak.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "construction",
+          "a": "inşaat",
+          "vurgu": false
+        },
+        {
+          "k": "team",
+          "a": "ekip",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "(gelecek zaman)",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(tamamlanmış)",
+          "en": "will have constructed = inşa etmiş olacak",
+          "vurgu": false
+        },
+        {
+          "k": "constructed",
+          "a": "inşa etmiş",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "building",
+          "a": "bina",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "-e kadar",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "end",
+          "a": "son",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "(-in)",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "year.",
+          "a": "yıl",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "declare",
+      "tur": "fiil",
+      "tr": "ilan etmek, açıklamak, beyan etmek",
+      "ornek_tr": "Bu hafta ilerleyen günlerde bir ateşkesin ilan edilmesi bekleniyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "A",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "ceasefire",
+          "a": "ateşkes",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-dır",
+          "vurgu": false
+        },
+        {
+          "k": "expected",
+          "a": "bekleniyor",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "declared",
+          "a": "ilan edilmek",
+          "vurgu": true
+        },
+        {
+          "k": "later",
+          "a": "ilerleyen",
+          "vurgu": false
+        },
+        {
+          "k": "this",
+          "a": "bu",
+          "vurgu": false
+        },
+        {
+          "k": "week.",
+          "a": "hafta",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "explain",
+      "tur": "fiil",
+      "tr": "açıklamak, izah etmek",
+      "ornek_tr": "Eğitmen, oryantasyon sırasında kuralları tüm yeni üyelere açıklar.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "trainer",
+          "a": "eğitmen",
+          "vurgu": false
+        },
+        {
+          "k": "explains",
+          "a": "açıklar",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "rules",
+          "a": "kurallar",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "all",
+          "a": "tüm",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "members",
+          "a": "üyeler",
+          "vurgu": false
+        },
+        {
+          "k": "during",
+          "a": "sırasında",
+          "vurgu": false
+        },
+        {
+          "k": "orientation.",
+          "a": "oryantasyon",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "finalize",
+      "tur": "fiil",
+      "tr": "sonuçlandırmak, kesinleştirmek, tamamlamak",
+      "ornek_tr": "Her iki taraf da imzaladıkları anda anlaşmayı kesinleştirecek.",
+      "ornek_tokenlar": [
+        {
+          "k": "Both",
+          "a": "her iki",
+          "vurgu": false
+        },
+        {
+          "k": "parties",
+          "a": "taraf",
+          "vurgu": false
+        },
+        {
+          "k": "will",
+          "a": "-ecek",
+          "vurgu": false
+        },
+        {
+          "k": "finalize",
+          "a": "kesinleştirmek",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "agreement",
+          "a": "anlaşma",
+          "vurgu": false
+        },
+        {
+          "k": "as",
+          "a": "-er ermez",
+          "en": "as soon as: -er ermez",
+          "vurgu": false
+        },
+        {
+          "k": "soon",
+          "a": "-er ermez",
+          "en": "as soon as: -er ermez",
+          "vurgu": false
+        },
+        {
+          "k": "as",
+          "a": "-er ermez",
+          "en": "as soon as: -er ermez",
+          "vurgu": false
+        },
+        {
+          "k": "they",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "sign.",
+          "a": "imzalamak",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "artefact",
+      "tur": "isim",
+      "tr": "tarihi eser, yapay nesne",
+      "ornek_tr": "Antik eserin, yetenekli zanaatkarlar tarafından bin yıldan fazla bir süre önce yapıldığına inanılıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "ancient",
+          "a": "antik",
+          "vurgu": false
+        },
+        {
+          "k": "artefact",
+          "a": "tarihi eser",
+          "vurgu": true
+        },
+        {
+          "k": "is",
+          "a": "-dır",
+          "vurgu": false
+        },
+        {
+          "k": "believed",
+          "a": "inanılıyor",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "crafted",
+          "a": "yapılmak",
+          "vurgu": false
+        },
+        {
+          "k": "by",
+          "a": "tarafından",
+          "vurgu": false
+        },
+        {
+          "k": "skilled",
+          "a": "yetenekli",
+          "vurgu": false
+        },
+        {
+          "k": "artisans",
+          "a": "zanaatkarlar",
+          "vurgu": false
+        },
+        {
+          "k": "over",
+          "a": "fazla",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "thousand",
+          "a": "bin",
+          "vurgu": false
+        },
+        {
+          "k": "years",
+          "a": "yıl",
+          "vurgu": false
+        },
+        {
+          "k": "ago.",
+          "a": "önce",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "deadline",
+      "tur": "isim",
+      "tr": "son teslim tarihi, süre sonu",
+      "ornek_tr": "Ekibin raporu son teslim tarihinden önce tamamlamış olması gerekir.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "team",
+          "a": "ekip",
+          "vurgu": false
+        },
+        {
+          "k": "should",
+          "a": "-meli",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "completed",
+          "a": "tamamlamak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "report",
+          "a": "rapor",
+          "vurgu": false
+        },
+        {
+          "k": "before",
+          "a": "önce",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "deadline.",
+          "a": "son teslim tarihi",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "rumour",
+      "tur": "isim",
+      "tr": "söylenti, dedikodu",
+      "ornek_tr": "O söylentiyi yaymamalıydılar. Bir sürü gereksiz drama yarattı.",
+      "ornek_tokenlar": [
+        {
+          "k": "They",
+          "a": "onlar",
+          "vurgu": false
+        },
+        {
+          "k": "shouldn't",
+          "a": "-memeliydi",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "spread",
+          "a": "yaymak",
+          "vurgu": false
+        },
+        {
+          "k": "that",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "rumour.",
+          "a": "söylenti",
+          "vurgu": true
+        },
+        {
+          "k": "It",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "caused",
+          "a": "neden oldu",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "lot",
+          "a": "sürü",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "unnecessary",
+          "a": "gereksiz",
+          "vurgu": false
+        },
+        {
+          "k": "drama.",
+          "a": "drama",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "explosion",
+      "tur": "isim",
+      "tr": "patlama",
+      "ornek_tr": "Bomba patlamasında yirmi sivil öldü.",
+      "ornek_tokenlar": [
+        {
+          "k": "Twenty",
+          "a": "yirmi",
+          "vurgu": false
+        },
+        {
+          "k": "civilians",
+          "a": "siviller",
+          "vurgu": false
+        },
+        {
+          "k": "were",
+          "a": "-di",
+          "vurgu": false
+        },
+        {
+          "k": "killed",
+          "a": "öldürülmek",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "bomb",
+          "a": "bomba",
+          "vurgu": false
+        },
+        {
+          "k": "explosion.",
+          "a": "patlama",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "introduce",
+      "tur": "fiil",
+      "tr": "tanıtmak, sunmak, ortaya koymak",
+      "ornek_tr": "Einstein, dünyaya yeni bir teori sunma riskini göze aldı.",
+      "ornek_tokenlar": [
+        {
+          "k": "Einstein",
+          "a": "Einstein",
+          "vurgu": false
+        },
+        {
+          "k": "risked",
+          "a": "riske attı",
+          "vurgu": false
+        },
+        {
+          "k": "introducing",
+          "a": "tanıtmak",
+          "vurgu": true
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "theory",
+          "a": "teori",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "world.",
+          "a": "dünya",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "acknowledge",
+      "tur": "fiil",
+      "tr": "kabul etmek, itiraf etmek, onaylamak",
+      "ornek_tr": "Çalışan, bir hata yaptığını kabul etti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "employee",
+          "a": "çalışan",
+          "vurgu": false
+        },
+        {
+          "k": "acknowledged",
+          "a": "kabul etti",
+          "vurgu": true
+        },
+        {
+          "k": "making",
+          "a": "yapmak",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "mistake.",
+          "a": "hata",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "consider",
+      "tur": "fiil",
+      "tr": "düşünmek, değerlendirmek, addetmek",
+      "ornek_tr": "Ülke genel olarak basın özgürlüğüne sahip kabul edilmiyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "country",
+          "a": "ülke",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-dır",
+          "vurgu": false
+        },
+        {
+          "k": "not",
+          "a": "değil",
+          "vurgu": false
+        },
+        {
+          "k": "generally",
+          "a": "genel olarak",
+          "vurgu": false
+        },
+        {
+          "k": "considered",
+          "a": "kabul edilmek",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahip olmak",
+          "vurgu": false
+        },
+        {
+          "k": "freedom",
+          "a": "özgürlük",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-in",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "press.",
+          "a": "basın",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "advise",
+      "tur": "fiil",
+      "tr": "tavsiye etmek, öğüt vermek",
+      "ornek_tr": "Bir öğretmen olarak, ona kendi alanında eğitim almasını tavsiye ettim.",
+      "ornek_tokenlar": [
+        {
+          "k": "As",
+          "a": "olarak",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "teacher,",
+          "a": "öğretmen",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "advised",
+          "a": "tavsiye ettim",
+          "vurgu": true
+        },
+        {
+          "k": "her",
+          "a": "ona",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "receive",
+          "a": "almak",
+          "vurgu": false
+        },
+        {
+          "k": "an",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "education",
+          "a": "eğitim",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "kendi",
+          "vurgu": false
+        },
+        {
+          "k": "field.",
+          "a": "alan",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "adapt",
+      "tur": "fiil",
+      "tr": "uyum sağlamak, uyarlamak, alışmak",
+      "ornek_tr": "Yeni ortama uyum sağlamakta zorlandı.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "had",
+          "a": "-di",
+          "vurgu": false
+        },
+        {
+          "k": "difficulty",
+          "a": "zorluk",
+          "en": "have difficulty + V-ing: -mekte zorlanmak",
+          "vurgu": false
+        },
+        {
+          "k": "adapting",
+          "a": "uyum sağlamak",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "-",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "environment.",
+          "a": "ortam",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "deny",
+      "tur": "fiil",
+      "tr": "inkar etmek, reddetmek",
+      "ornek_tr": "İşe karışmış olduğunu inkar etti.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "denied",
+          "a": "inkar etti",
+          "vurgu": true
+        },
+        {
+          "k": "having",
+          "a": "(perfect gerund)",
+          "en": "having + V3: önceki eylem",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "involved",
+          "a": "karışmış",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "affair.",
+          "a": "mesele, olay",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "enjoy",
+      "tur": "fiil",
+      "tr": "keyif almak, hoşlanmak",
+      "ornek_tr": "Emma sinemada iyi bir gerilim filmi izlemekten her zaman keyif alır.",
+      "ornek_tokenlar": [
+        {
+          "k": "Emma",
+          "a": "Emma",
+          "vurgu": false
+        },
+        {
+          "k": "always",
+          "a": "her zaman",
+          "vurgu": false
+        },
+        {
+          "k": "enjoys",
+          "a": "keyif alır",
+          "vurgu": true
+        },
+        {
+          "k": "seeing",
+          "a": "izlemekten",
+          "en": "enjoy + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "good",
+          "a": "iyi",
+          "vurgu": false
+        },
+        {
+          "k": "thriller",
+          "a": "gerilim filmi",
+          "vurgu": false
+        },
+        {
+          "k": "at",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "cinema.",
+          "a": "sinema",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "enable",
+      "tur": "fiil",
+      "tr": "olanak sağlamak, mümkün kılmak",
+      "ornek_tr": "Büyük üniversiteler öğrencilerin derslere çevrimiçi katılmasına olanak sağlar.",
+      "ornek_tokenlar": [
+        {
+          "k": "Major",
+          "a": "büyük, önemli",
+          "vurgu": false
+        },
+        {
+          "k": "universities",
+          "a": "üniversiteler",
+          "vurgu": false
+        },
+        {
+          "k": "enable",
+          "a": "olanak sağlar",
+          "vurgu": true
+        },
+        {
+          "k": "students",
+          "a": "öğrenciler",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(to-mastar)",
+          "en": "enable sb to do",
+          "vurgu": false
+        },
+        {
+          "k": "attend",
+          "a": "katılmak",
+          "vurgu": false
+        },
+        {
+          "k": "classes",
+          "a": "dersler",
+          "vurgu": false
+        },
+        {
+          "k": "online.",
+          "a": "çevrimiçi",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "scholarship",
+      "tur": "isim",
+      "tr": "burs",
+      "ornek_tr": "Jenny burs aldığı için şanslı.",
+      "ornek_tokenlar": [
+        {
+          "k": "Jenny",
+          "a": "Jenny",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "-dir",
+          "vurgu": false
+        },
+        {
+          "k": "lucky",
+          "a": "şanslı",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(to-mastar)",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "(perfect mastar)",
+          "en": "to have been given: edilgen perfect",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "given",
+          "a": "verilmiş",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "scholarship.",
+          "a": "burs",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "blame",
+      "tur": "fiil",
+      "tr": "suçlamak, sorumlu tutmak",
+      "ornek_tr": "Hatayı fark etmediği için kendini suçladı.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o (kadın)",
+          "vurgu": false
+        },
+        {
+          "k": "blamed",
+          "a": "suçladı",
+          "vurgu": true
+        },
+        {
+          "k": "herself",
+          "a": "kendini",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "-den dolayı",
+          "en": "blame sb for sth",
+          "vurgu": false
+        },
+        {
+          "k": "not",
+          "a": "değil",
+          "vurgu": false
+        },
+        {
+          "k": "having",
+          "a": "(perfect gerund)",
+          "vurgu": false
+        },
+        {
+          "k": "noticed",
+          "a": "fark etmiş",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "mistake.",
+          "a": "hata",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "impact",
+      "tur": "isim",
+      "tr": "etki, tesir",
+      "ornek_tr": "Dünyada olumlu bir etki yaratma arzumuz var.",
+      "ornek_tokenlar": [
+        {
+          "k": "We",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahibiz",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "desire",
+          "a": "arzu",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(to-mastar)",
+          "vurgu": false
+        },
+        {
+          "k": "make",
+          "a": "yaratmak",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "positive",
+          "a": "olumlu",
+          "vurgu": false
+        },
+        {
+          "k": "impact",
+          "a": "etki",
+          "vurgu": true
+        },
+        {
+          "k": "on",
+          "a": "üzerinde",
+          "en": "impact on sth",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "world.",
+          "a": "dünya",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "receive",
+      "tur": "fiil",
+      "tr": "almak, edinmek",
+      "ornek_tr": "Bir öğretmen olarak ona kendi alanında eğitim almasını tavsiye ettim.",
+      "ornek_tokenlar": [
+        {
+          "k": "As",
+          "a": "olarak",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "teacher,",
+          "a": "öğretmen",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "advised",
+          "a": "tavsiye ettim",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "ona",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(to-mastar)",
+          "vurgu": false
+        },
+        {
+          "k": "receive",
+          "a": "almak",
+          "vurgu": true
+        },
+        {
+          "k": "an",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "education",
+          "a": "eğitim",
+          "vurgu": false
+        },
+        {
+          "k": "in",
+          "a": "-de",
+          "vurgu": false
+        },
+        {
+          "k": "her",
+          "a": "kendi",
+          "vurgu": false
+        },
+        {
+          "k": "field.",
+          "a": "alan",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "work",
+      "tur": "fiil",
+      "tr": "çalışmak",
+      "ornek_tr": "On iki saat çalıştıktan sonra yorgun hissettim.",
+      "ornek_tokenlar": [
+        {
+          "k": "Having",
+          "a": "(perfect participle)",
+          "en": "Having + V3: önce biten eylem",
+          "vurgu": false
+        },
+        {
+          "k": "worked",
+          "a": "çalıştıktan",
+          "vurgu": true
+        },
+        {
+          "k": "for",
+          "a": "boyunca",
+          "vurgu": false
+        },
+        {
+          "k": "twelve",
+          "a": "on iki",
+          "vurgu": false
+        },
+        {
+          "k": "hours,",
+          "a": "saat",
+          "vurgu": false
+        },
+        {
+          "k": "I",
+          "a": "ben",
+          "vurgu": false
+        },
+        {
+          "k": "felt",
+          "a": "hissettim",
+          "vurgu": false
+        },
+        {
+          "k": "tired.",
+          "a": "yorgun",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "find",
+      "tur": "fiil",
+      "tr": "bulmak",
+      "ornek_tr": "Elbiseniz için doğru kumaşı bulmakta sorun yaşıyoruz.",
+      "ornek_tokenlar": [
+        {
+          "k": "We're",
+          "a": "biz -iyoruz",
+          "vurgu": false
+        },
+        {
+          "k": "having",
+          "a": "yaşıyoruz",
+          "en": "have problems V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "problems",
+          "a": "sorunlar",
+          "vurgu": false
+        },
+        {
+          "k": "finding",
+          "a": "bulmakta",
+          "vurgu": true
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "right",
+          "a": "doğru",
+          "vurgu": false
+        },
+        {
+          "k": "material",
+          "a": "kumaş, malzeme",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "için",
+          "vurgu": false
+        },
+        {
+          "k": "your",
+          "a": "senin",
+          "vurgu": false
+        },
+        {
+          "k": "dress.",
+          "a": "elbise",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "make",
+      "tur": "fiil",
+      "tr": "yapmak, yaratmak",
+      "ornek_tr": "Dünyada olumlu bir etki yaratma arzumuz var.",
+      "ornek_tokenlar": [
+        {
+          "k": "We",
+          "a": "biz",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahibiz",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "desire",
+          "a": "arzu",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "(to-mastar)",
+          "vurgu": false
+        },
+        {
+          "k": "make",
+          "a": "yaratmak",
+          "vurgu": true
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "positive",
+          "a": "olumlu",
+          "vurgu": false
+        },
+        {
+          "k": "impact",
+          "a": "etki",
+          "vurgu": false
+        },
+        {
+          "k": "on",
+          "a": "üzerinde",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "world.",
+          "a": "dünya",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "choose",
+      "tur": "fiil",
+      "tr": "seçmek",
+      "ornek_tr": "Takım kaptanı seçilmiş olmaktan gurur duyuyordu.",
+      "ornek_tokenlar": [
+        {
+          "k": "He",
+          "a": "o",
+          "vurgu": false
+        },
+        {
+          "k": "was",
+          "a": "-di",
+          "vurgu": false
+        },
+        {
+          "k": "proud",
+          "a": "gururlu",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-den dolayı",
+          "en": "proud of V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "having",
+          "a": "(perfect gerund)",
+          "vurgu": false
+        },
+        {
+          "k": "been",
+          "a": "olmak",
+          "vurgu": false
+        },
+        {
+          "k": "chosen",
+          "a": "seçilmiş",
+          "vurgu": true
+        },
+        {
+          "k": "as",
+          "a": "olarak",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "team",
+          "a": "takım",
+          "vurgu": false
+        },
+        {
+          "k": "captain.",
+          "a": "kaptan",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "smoke",
+      "tur": "fiil",
+      "tr": "sigara içmek",
+      "ornek_tr": "Sigara içmek uzun vadeli sağlığınıza çok zarar verebilir.",
+      "ornek_tokenlar": [
+        {
+          "k": "Smoking",
+          "a": "sigara içmek",
+          "en": "gerund (özne)",
+          "vurgu": true
+        },
+        {
+          "k": "can",
+          "a": "-ebilir",
+          "vurgu": false
+        },
+        {
+          "k": "do",
+          "a": "vermek",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "lot",
+          "a": "çok",
+          "vurgu": false
+        },
+        {
+          "k": "of",
+          "a": "-(nin)",
+          "vurgu": false
+        },
+        {
+          "k": "damage",
+          "a": "zarar",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "your",
+          "a": "senin",
+          "vurgu": false
+        },
+        {
+          "k": "long-term",
+          "a": "uzun vadeli",
+          "vurgu": false
+        },
+        {
+          "k": "health.",
+          "a": "sağlık",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "attend",
+      "tur": "fiil",
+      "tr": "katılmak; devam etmek (derse/toplantıya)",
+      "ornek_tr": "Büyük üniversiteler öğrencilerin derslere çevrimiçi katılmasına olanak tanıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "Major",
+          "a": "büyük/önde gelen",
+          "vurgu": false
+        },
+        {
+          "k": "universities",
+          "a": "üniversiteler",
+          "vurgu": false
+        },
+        {
+          "k": "enable",
+          "a": "olanak tanımak",
+          "vurgu": false
+        },
+        {
+          "k": "students",
+          "a": "öğrenciler",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek için",
+          "vurgu": false
+        },
+        {
+          "k": "attend",
+          "a": "katılmak",
+          "vurgu": true
+        },
+        {
+          "k": "classes",
+          "a": "dersler",
+          "vurgu": false
+        },
+        {
+          "k": "online.",
+          "a": "çevrimiçi",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "acknowledged",
+      "tur": "fiil",
+      "tr": "kabul etti, itiraf etti; (varlığını) onayladı",
+      "ornek_tr": "Çalışan bir hata yaptığını kabul etti.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "employee",
+          "a": "çalışan",
+          "vurgu": false
+        },
+        {
+          "k": "acknowledged",
+          "a": "kabul etti",
+          "vurgu": true
+        },
+        {
+          "k": "making",
+          "a": "yapmayı",
+          "en": "acknowledge + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "mistake.",
+          "a": "hata",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "blamed",
+      "tur": "fiil",
+      "tr": "suçladı, kabahati yükledi",
+      "ornek_tr": "Hatayı fark etmediği için kendini suçladı.",
+      "ornek_tokenlar": [
+        {
+          "k": "She",
+          "a": "o (kadın)",
+          "vurgu": false
+        },
+        {
+          "k": "blamed",
+          "a": "suçladı",
+          "vurgu": true
+        },
+        {
+          "k": "herself",
+          "a": "kendini",
+          "vurgu": false
+        },
+        {
+          "k": "for",
+          "a": "-den dolayı",
+          "en": "blame sb for sth",
+          "vurgu": false
+        },
+        {
+          "k": "not",
+          "a": "değil",
+          "vurgu": false
+        },
+        {
+          "k": "having",
+          "a": "(perfect)",
+          "vurgu": false
+        },
+        {
+          "k": "noticed",
+          "a": "fark etme",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "mistake.",
+          "a": "hata",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "memory",
+      "tur": "isim",
+      "tr": "hafıza, bellek; anı",
+      "ornek_tr": "Fillerin müthiş bir hafızaya sahip olduğu bilinir.",
+      "ornek_tokenlar": [
+        {
+          "k": "Elephants",
+          "a": "filler",
+          "vurgu": false
+        },
+        {
+          "k": "are",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "known",
+          "a": "bilinir",
+          "en": "be known to V",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "have",
+          "a": "sahip olmak",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "fantastic",
+          "a": "müthiş",
+          "vurgu": false
+        },
+        {
+          "k": "memory.",
+          "a": "hafıza",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "industries",
+      "tur": "isim",
+      "tr": "sanayiler, endüstriler; sektörler",
+      "ornek_tr": "Hükümet yeni sanayiler geliştirmeye çalışıyor.",
+      "ornek_tokenlar": [
+        {
+          "k": "The",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "government",
+          "a": "hükümet",
+          "vurgu": false
+        },
+        {
+          "k": "is",
+          "a": "(yardımcı fiil)",
+          "vurgu": false
+        },
+        {
+          "k": "trying",
+          "a": "çalışıyor",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mek",
+          "vurgu": false
+        },
+        {
+          "k": "develop",
+          "a": "geliştirmek",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "industries.",
+          "a": "sanayiler",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "theory",
+      "tur": "isim",
+      "tr": "teori, kuram",
+      "ornek_tr": "Einstein dünyaya yeni bir teori sunma riskini göze aldı.",
+      "ornek_tokenlar": [
+        {
+          "k": "Einstein",
+          "a": "Einstein",
+          "vurgu": false
+        },
+        {
+          "k": "risked",
+          "a": "riskini göze aldı",
+          "en": "risk + V-ing",
+          "vurgu": false
+        },
+        {
+          "k": "introducing",
+          "a": "sunmayı",
+          "vurgu": false
+        },
+        {
+          "k": "a",
+          "a": "bir",
+          "vurgu": false
+        },
+        {
+          "k": "new",
+          "a": "yeni",
+          "vurgu": false
+        },
+        {
+          "k": "theory",
+          "a": "teori",
+          "vurgu": true
+        },
+        {
+          "k": "to",
+          "a": "-e",
+          "vurgu": false
+        },
+        {
+          "k": "the",
+          "a": "(belirli artikel)",
+          "vurgu": false
+        },
+        {
+          "k": "world.",
+          "a": "dünya",
+          "vurgu": false
+        }
+      ]
+    },
+    {
+      "en": "advertisers",
+      "tur": "isim",
+      "tr": "reklamcılar, reklam verenler",
+      "ornek_tr": "Reklamcılar ürünlerinin hatırlanmasını ister.",
+      "ornek_tokenlar": [
+        {
+          "k": "Advertisers",
+          "a": "reklamcılar",
+          "vurgu": true
+        },
+        {
+          "k": "want",
+          "a": "ister",
+          "vurgu": false
+        },
+        {
+          "k": "their",
+          "a": "onların",
+          "vurgu": false
+        },
+        {
+          "k": "products",
+          "a": "ürünler",
+          "vurgu": false
+        },
+        {
+          "k": "to",
+          "a": "-mesini",
+          "vurgu": false
+        },
+        {
+          "k": "be",
+          "a": "(edilgen)",
+          "vurgu": false
+        },
+        {
+          "k": "remembered.",
+          "a": "hatırlanmak",
+          "vurgu": false
+        }
+      ]
+    }
+  ],
   "gramer": [],
   "soru_cozumleri": [],
   "testler": [
