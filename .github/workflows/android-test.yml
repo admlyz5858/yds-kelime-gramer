@@ -1,0 +1,62 @@
+name: Android Test Build (Premium içerikli)
+
+# Premium içerik DAHİL, kodla kilitli TEST APK'sı üretir (kod: ayarlardan girilir).
+# Sadece elle tetiklenir. Üretim AAB'sini etkilemez.
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: NPM kur
+        working-directory: mobil
+        run: npm install
+
+      - name: www hazırla (TÜM içerik, kilitli)
+        working-directory: mobil
+        run: TUMU=1 node hazirla.mjs
+
+      - name: İkon/splash üret
+        working-directory: mobil
+        run: npx @capacitor/assets generate --android --assetPath kaynak || echo "ikon üretimi atlandı"
+
+      - name: Capacitor sync
+        working-directory: mobil
+        run: npx cap sync android
+
+      - name: Keystore yaz
+        working-directory: mobil/android
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > upload-keystore.jks
+
+      - name: TEST APK derle (imzalı)
+        working-directory: mobil/android
+        env:
+          ANDROID_KEYSTORE_PATH: ${{ github.workspace }}/mobil/android/upload-keystore.jks
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+
+      - name: TEST APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-test-apk
+          path: mobil/android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error

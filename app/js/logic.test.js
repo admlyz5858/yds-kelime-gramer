@@ -41,6 +41,12 @@ test('dersKilitli premium ve yakinda için true, hazir için false', () => {
   assert.equal(dersKilitli(null), false);
 });
 
+test('dersKilitli premium kod açılınca premium kilidini kaldırır', () => {
+  assert.equal(dersKilitli({ durum: 'premium' }, true), false);   // kod açık
+  assert.equal(dersKilitli({ durum: 'premium' }, false), true);   // kod kapalı
+  assert.equal(dersKilitli({ durum: 'yakinda' }, true), true);    // yakinda yine kilitli
+});
+
 test('dersDurumEtiket duruma göre etiket verir', () => {
   assert.equal(dersDurumEtiket({ durum: 'premium' }), 'Premium — yakında');
   assert.equal(dersDurumEtiket({ durum: 'yakinda' }), 'Yakında');

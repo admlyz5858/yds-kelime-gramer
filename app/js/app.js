@@ -130,7 +130,7 @@ function cekmeceAc() {
   const liste = o.querySelector('#cekListe');
   const ciz = (q) => {
     liste.innerHTML = searchLessons(manifest.dersler, q).map(d => {
-      const kilitli = dersKilitli(d);
+      const kilitli = dersKilitli(d, _ayar.premiumAcik);
       const bilgi = kilitli ? dersDurumEtiket(d)
         : [d.kelime_sayisi ? `${d.kelime_sayisi} kelime` : '', d.bolum_sayisi ? `${d.bolum_sayisi} bölüm` : ''].filter(Boolean).join(' · ');
       const ad = d.baslik.replace(/^Ünite\s*\d+\s*[—-]\s*/i, '');
@@ -143,7 +143,7 @@ function cekmeceAc() {
     liste.querySelectorAll('.cek-ders').forEach(el =>
       el.onclick = () => {
         const dd = manifest.dersler.find(x => x.id === Number(el.dataset.id));
-        if (dersKilitli(dd)) {
+        if (dersKilitli(dd, _ayar.premiumAcik)) {
           modalAc('Premium — yakında', `
             <p class="modal-aciklama">Bu ünite yakında <b>premium</b> ile açılacak. Şimdilik <b>Ünite 1 — En Sık Kullanılan 1000 Kelime</b> ücretsiz çalışabilirsin.</p>`);
           return;
@@ -158,11 +158,16 @@ function cekmeceAc() {
 
 async function dersAc(dosya, id) {
   const _ders = manifest.dersler.find(x => x.id === Number(id));
-  if (dersKilitli(_ders)) {
+  if (dersKilitli(_ders, _ayar.premiumAcik)) {
     modalAc('Premium — yakında', `<p class="modal-aciklama">Bu ünite yakında premium ile açılacak.</p>`);
     return;
   }
-  aktifDers = await getJSON('data/' + dosya);
+  try {
+    aktifDers = await getJSON('data/' + dosya);
+  } catch (e) {
+    modalAc('İçerik yok', `<p class="modal-aciklama">Bu ünitenin içeriği bu sürümde bulunmuyor.</p>`);
+    return;
+  }
   aktifDers._id = id;
   _ayar.sonDers = { dosya, id, baslik: aktifDers.baslik }; saveAyar(_ayar);
   geriBtn.hidden = false; menuBtn.hidden = true; altMenu.hidden = false;
@@ -871,11 +876,44 @@ function yardimAc() {
 }
 
 // --- Ayarlar modalı ---
+// Premium açma kodu (test/erken erişim). İstemci tarafı — güvenli ödeme değil.
+const PREMIUM_KOD = 'YDS-PREMIUM-2026';
+
+function premiumKodAc() {
+  modalAc('Premium kodu', `
+    <p class="modal-aciklama">Premium üniteleri açmak için kodu gir.</p>
+    <input id="pkodInput" type="text" autocapitalize="characters" autocomplete="off" placeholder="Kod"
+      style="width:100%;box-sizing:border-box;padding:13px;border:1px solid var(--hat);border-radius:12px;background:var(--yuzey);color:var(--murekkep);font-size:16px;margin-bottom:10px;">
+    <button id="pkodAc" class="aksiyon" style="width:100%;">Aç</button>
+    <div id="pkodMsg" style="margin-top:10px;color:var(--kil);min-height:1.2em;"></div>
+  `, {
+    onWire: (o, kapat) => {
+      const inp = o.querySelector('#pkodInput');
+      const msg = o.querySelector('#pkodMsg');
+      const dene = () => {
+        const v = (inp.value || '').trim().toUpperCase();
+        if (v === PREMIUM_KOD) {
+          _ayar.premiumAcik = true; saveAyar(_ayar); kapat(); anaSayfa();
+          modalAc('Premium açıldı 🎉', `<p class="modal-aciklama">Tüm üniteler açıldı. İyi çalışmalar!</p>`);
+        } else {
+          msg.textContent = 'Kod hatalı, tekrar dene.';
+        }
+      };
+      o.querySelector('#pkodAc').onclick = dene;
+      inp.onkeydown = (e) => { if (e.key === 'Enter') dene(); };
+      setTimeout(() => inp.focus(), 100);
+    }
+  });
+}
+
 function ayarAc() {
   modalAc('Ayarlar', `
     <button class="ayar-sat" data-is="tema"><span>${_ayar.tema === 'koyu' ? '☀️' : '🌙'}</span><div><b>${_ayar.tema === 'koyu' ? 'Açık tema' : 'Koyu tema'}</b><i>Görünümü değiştir</i></div></button>
     <button class="ayar-sat" data-is="hedef"><span>🎯</span><div><b>Günlük hedef</b><i>${_ayar.hedef || HEDEF_VARSAYILAN} aktivite/gün — değiştirmek için dokun</i></div></button>
     <button class="ayar-sat" data-is="giris"><span>👋</span><div><b>Tanıtım ekranını göster</b><i>Karşılama ekranını tekrar aç</i></div></button>
+    ${_ayar.premiumAcik
+      ? `<button class="ayar-sat" data-is="premiumkapat"><span>✅</span><div><b>Premium açık</b><i>Tüm üniteler açık — kapatmak için dokun</i></div></button>`
+      : `<button class="ayar-sat" data-is="premiumkod"><span>🔑</span><div><b>Premium kodu gir</b><i>Premium üniteleri açmak için kod gir</i></div></button>`}
     <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>Biriken yanlış soruları sıfırla</i></div></button>
     <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>Eklenen kelimeleri sil</i></div></button>
     <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Test skorları, defter, yanlışlar — hepsi</i></div></button>
@@ -891,6 +929,8 @@ function ayarAc() {
           saveAyar(_ayar); kapat(); ayarAc(); return;
         }
         if (is === 'giris') { kapat(); girisEkrani(true); return; }
+        if (is === 'premiumkod') { kapat(); premiumKodAc(); return; }
+        if (is === 'premiumkapat') { _ayar.premiumAcik = false; saveAyar(_ayar); kapat(); ayarAc(); return; }
         const sorular = {
           yanlis: 'Yanlışlarım listesindeki tüm sorular silinsin mi?',
           defter: 'Kelime Defteri’ndeki tüm kelimeler silinsin mi?',

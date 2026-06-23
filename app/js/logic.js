@@ -30,9 +30,10 @@ export function nextCard(index, total) {
   return (index + 1) % total;
 }
 
-export function dersKilitli(ders) {
+export function dersKilitli(ders, premiumAcik) {
   const d = ders && ders.durum;
-  return d === 'premium' || d === 'yakinda';
+  if (d === 'premium') return !premiumAcik;   // premium kod ile açıldıysa kilitli değil
+  return d === 'yakinda';
 }
 
 export function dersDurumEtiket(ders) {
