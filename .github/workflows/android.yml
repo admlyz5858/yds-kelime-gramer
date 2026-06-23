@@ -1,13 +1,7 @@
 name: Android Build
 
 on:
-  workflow_dispatch:
-  push:
-    branches: [ main ]
-    paths:
-      - 'app/**'
-      - 'mobil/**'
-      - '.github/workflows/android.yml'
+  workflow_dispatch:   # sadece elle tetiklenir (her push'ta build alıp dakika harcamayı önler)
 
 jobs:
   build:
