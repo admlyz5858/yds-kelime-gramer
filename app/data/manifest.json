@@ -87,6 +87,14 @@
       "durum": "hazir",
       "bolum_sayisi": 6,
       "kelime_sayisi": 145
+    },
+    {
+      "id": 12,
+      "dosya": "uniteler/unite-12.json",
+      "baslik": "Ünite 12 — İsim Cümlecikleri (Noun Clauses)",
+      "durum": "hazir",
+      "bolum_sayisi": 6,
+      "kelime_sayisi": 87
     }
   ]
 }
