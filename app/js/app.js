@@ -1,5 +1,5 @@
 // app/js/app.js
-import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, kalanKartlar, dersKilitli, dersDurumEtiket } from './logic.js';
+import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, kalanKartlar, alistirmaSecimi, dersKilitli, dersDurumEtiket } from './logic.js';
 import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen } from './storage.js';
 
 const icerik = document.getElementById('icerik');
@@ -829,7 +829,7 @@ let _bosluk = [], _boslukCevap = [];
 function ekranBosluk() {
   const k = (aktifDers.kelimeler || []).filter(w => Array.isArray(w.ornek_tokenlar) && w.ornek_tokenlar.some(t => t.vurgu));
   if (k.length < 2) { render('<div class="cumle"><div class="tr">Boşluk doldurma için yeterli örnekli kelime yok. (Kelime sekmesinden “Bilmiyorum” ile deftere ekle.)</div></div>'); return; }
-  _bosluk = shuffle(k).slice(0, 15).map(w => {
+  _bosluk = alistirmaSecimi(k, _ogrenilen, 15, shuffle).map(w => {
     const toks = w.ornek_tokenlar;
     const hedefIdx = toks.findIndex(t => t.vurgu);
     const dogru = toks[hedefIdx].k.replace(/[.,!?;:]+$/g, '');

@@ -37,6 +37,19 @@ export function kalanKartlar(kelimeler, ogrenilen) {
   return (kelimeler || []).filter(w => !og[String(w && w.en).toLowerCase()]);
 }
 
+// Alıştırma (boşluk doldurma) için kelime seçer.
+// Önce öğrenmedikleri koyar; yer kalırsa öğrendikleriyle tamamlar. Böylece
+// alıştırma yeni kelimeye öncelik verir ama ünite bitince boşalmaz, tekrara döner.
+// karistir: sıralamayı bozan işlev (Math.random dışarıda kalsın diye dışarıdan gelir)
+export function alistirmaSecimi(kelimeler, ogrenilen, adet, karistir = (a) => a) {
+  const og = ogrenilen || {};
+  const hepsi = kelimeler || [];
+  const ogrenildi = (w) => !!og[String(w && w.en).toLowerCase()];
+  const yeni = karistir(hepsi.filter(w => !ogrenildi(w)));
+  const bilinen = karistir(hepsi.filter(ogrenildi));
+  return [...yeni, ...bilinen].slice(0, Math.max(0, adet));
+}
+
 export function dersKilitli(ders, premiumAcik) {
   const d = ders && ders.durum;
   if (d === 'premium') return !premiumAcik;   // premium kod ile açıldıysa kilitli değil

@@ -1,7 +1,7 @@
 // app/js/logic.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { searchLessons, toggleDone, isDone, scoreQuiz, isAnswerCorrect, nextCard, kalanKartlar, dersKilitli, dersDurumEtiket } from './logic.js';
+import { searchLessons, toggleDone, isDone, scoreQuiz, isAnswerCorrect, nextCard, kalanKartlar, alistirmaSecimi, dersKilitli, dersDurumEtiket } from './logic.js';
 
 test('searchLessons başlığa göre filtreler (büyük/küçük harf duyarsız)', () => {
   const m = [{ id: 1, baslik: 'Hazırlık 101' }, { id: 2, baslik: 'Deneme 5' }];
@@ -74,4 +74,29 @@ test('kalanKartlar boş/eksik girdide çökmez', () => {
   assert.deepEqual(kalanKartlar(null, null), []);
   assert.deepEqual(kalanKartlar([], { a: {} }), []);
   assert.deepEqual(kalanKartlar([{ en: 'x' }], null).map(w => w.en), ['x']);
+});
+
+test('alistirmaSecimi önce öğrenilmemiş kelimeleri koyar', () => {
+  const kelimeler = [{ en: 'a' }, { en: 'b' }, { en: 'c' }, { en: 'd' }];
+  const secim = alistirmaSecimi(kelimeler, { a: {}, c: {} }, 4);
+  assert.deepEqual(secim.map(w => w.en), ['b', 'd', 'a', 'c']);
+});
+
+test('alistirmaSecimi yer kalmazsa öğrenilenleri hiç almaz', () => {
+  const kelimeler = [{ en: 'a' }, { en: 'b' }, { en: 'c' }];
+  const secim = alistirmaSecimi(kelimeler, { c: {} }, 2);
+  assert.deepEqual(secim.map(w => w.en), ['a', 'b']);
+});
+
+test('alistirmaSecimi hepsi öğrenilmişse boş dönmez — tekrara döner', () => {
+  const kelimeler = [{ en: 'a' }, { en: 'b' }];
+  const secim = alistirmaSecimi(kelimeler, { a: {}, b: {} }, 5);
+  assert.deepEqual(secim.map(w => w.en).sort(), ['a', 'b']);
+});
+
+test('alistirmaSecimi adet sınırını aşmaz, boş girdide çökmez', () => {
+  const kelimeler = [{ en: 'a' }, { en: 'b' }, { en: 'c' }];
+  assert.equal(alistirmaSecimi(kelimeler, {}, 2).length, 2);
+  assert.deepEqual(alistirmaSecimi(kelimeler, {}, 0), []);
+  assert.deepEqual(alistirmaSecimi(null, null, 5), []);
 });
