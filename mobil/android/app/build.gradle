@@ -33,6 +33,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
+        debug {
+            // Doğrudan-kurulum TEST paketi: mağaza/CI imzalı sürümle çakışmasın diye
+            // farklı paket adı (.test) → mevcut uygulamanın YANINA kurulur.
+            applicationIdSuffix ".test"
+            versionNameSuffix "-test"
+        }
     }
 }
 
