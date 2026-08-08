@@ -1,10 +1,10 @@
 // app/sw.js — network-first (çevrimiçi hep güncel, çevrimdışı önbellek)
-const CACHE = 'yds-v2';
+const CACHE = 'yds-v3';
 const ASSETS = [
   './', './index.html', './css/style.css',
-  './js/app.js', './js/logic.js', './js/storage.js',
+  './js/app.js', './js/logic.js', './js/storage.js', './js/ogren.js',
   './manifest.webmanifest',
-  './data/manifest.json', './data/lessons/ders-001.json'
+  './data/manifest.json', './data/kelime-havuz.json'
 ];
 self.addEventListener('install', e =>
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())));

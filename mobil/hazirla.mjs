@@ -3,6 +3,7 @@
 import { cpSync, rmSync, mkdirSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { havuzYaz } from './kelime-havuz.mjs';
 
 const buGun = dirname(fileURLToPath(import.meta.url));
 const kok = join(buGun, '..');
@@ -45,6 +46,16 @@ if (!TUMU) {
       if (existsSync(yol)) { rmSync(yol, { force: true }); elenen.push(d.id); }
     }
   }
+}
+
+// 4) Kelime Öğren havuzunu pakete GİREN ünitelerden yeniden üret.
+//    Üretim build'inde premium üniteler silindiği için havuz kendiliğinden sadece
+//    ücretsiz kelimeleri içerir; TEST build'inde (TUMU=1) tüm üniteler kalır → tüm havuz.
+const havuzDir = join(hedef, 'data', 'uniteler');
+const havuzCikti = join(hedef, 'data', 'kelime-havuz.json');
+if (existsSync(havuzDir)) {
+  const h = havuzYaz(havuzDir, havuzCikti);
+  console.log('Kelime havuzu (paket):', h.toplam, 'kelime · üniteler', h.uniteler.join(','));
 }
 
 console.log('www/ hazır.', TUMU ? '[TEST build — tüm içerik dahil, kilitli]' : '[ÜRETİM build]', 'Ücretsiz üniteler:', UCRETSIZ.join(','));

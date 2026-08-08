@@ -1,6 +1,7 @@
 // app/js/app.js
 import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
 import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen } from './storage.js';
+import { kurKelimeOgren } from './ogren.js';
 
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
@@ -72,6 +73,11 @@ async function anaSayfa() {
     ${panoHTML()}
     ${gununKartHTML()}
     ${devam}
+    <button class="ogren-banner" id="hOgren">
+      <span class="ogren-banner-ikon">🌱</span>
+      <span class="ogren-banner-metin"><b>Kelime Öğren</b><i>Tüm kelimeler · aralıklı tekrarla kalıcı öğren</i></span>
+      <span class="ogren-banner-ok">›</span>
+    </button>
     <div class="hizli-baslik">Hızlı erişim</div>
     <div class="hizli-grid">
       <button class="hizli-kart vurgu" id="hUniteler"><span class="hizli-ikon">📚</span><b>Üniteler</b><i>Müfredat menüsü</i></button>
@@ -87,6 +93,7 @@ async function anaSayfa() {
     else if (c.dataset.git === 'yanlis') yanlisAc();
     else if (c.dataset.git === 'ogrenilen') ogrenilenAc();
   });
+  document.getElementById('hOgren').onclick = () => kelimeOgren.ac();
   document.getElementById('hUniteler').onclick = cekmeceAc;
   document.getElementById('hDefter').onclick = defterAc;
   document.getElementById('hOgrenilen').onclick = ogrenilenAc;
@@ -249,6 +256,19 @@ function ekranGoster(ekran) {
 window.ekranGoster = ekranGoster; // diğer ekran modülleri için
 window.__app = { get aktifDers(){return aktifDers;}, render, progress, saveProgress, toggleDone,
   isAnswerCorrect, scoreQuiz, nextCard };
+
+// Tam-ekran alt modül modu: geri butonu + başlık, alt menü/müfredat gizli
+function ekranModu(baslik, geriFn) {
+  aktifDers = null;
+  geriBtn.hidden = false; menuBtn.hidden = true; altMenu.hidden = true;
+  baslikEl.textContent = baslik;
+  geriBtn.onclick = geriFn;
+}
+
+// "Kelime Öğren" — tüm ünitelerin kelimeleriyle aralıklı-tekrar bölümü (ayrı modül)
+const kelimeOgren = kurKelimeOgren({
+  render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu,
+});
 
 // Task 11: Ders okuma ekranı
 function ekranOku() {

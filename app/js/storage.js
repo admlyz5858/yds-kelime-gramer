@@ -58,6 +58,19 @@ export function saveYanlis(yanlis) {
   localStorage.setItem(YKEY, JSON.stringify(yanlis));
 }
 
+// ===== Kelime Öğren — aralıklı tekrar (SRS) durumu =====
+// { surum, kartlar:{ enLower:{b,e,i,d,r,l,s} }, gun:{tarih,yeni,tekrar}, gec:[{t,y,r,d,w}], ayar:{yeniHedef} }
+const SKEY = 'yds-srs-v1';
+
+export function loadSRS() {
+  try { return JSON.parse(localStorage.getItem(SKEY)) || null; }
+  catch { return null; }
+}
+
+export function saveSRS(srs) {
+  localStorage.setItem(SKEY, JSON.stringify(srs));
+}
+
 // ===== Uygulama ayarları / bayraklar — { girisGoruldu, ... } =====
 const AKEY = 'yds-ayar-v1';
 

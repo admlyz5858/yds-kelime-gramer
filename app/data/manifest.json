@@ -103,6 +103,14 @@
       "durum": "hazir",
       "bolum_sayisi": 6,
       "kelime_sayisi": 79
+    },
+    {
+      "id": 14,
+      "dosya": "uniteler/unite-14.json",
+      "baslik": "Ünite 14 — Bağlaçlar ve Geçiş İfadeleri (Connectors)",
+      "durum": "hazir",
+      "bolum_sayisi": 6,
+      "kelime_sayisi": 46
     }
   ]
 }

@@ -1,0 +1,5944 @@
+{
+ "id": 14,
+ "baslik": "Ünite 14 — Bağlaçlar ve Geçiş İfadeleri (Connectors)",
+ "konu_ozeti": "Bağlaçlar ve geçiş ifadeleri: zıtlık (although/despite/however), sebep (because/since/due to), sonuç (therefore/so/thus), amaç (so that/in order to), koşul (unless/provided that) ve ekleme (moreover/in addition). Cümle mi isim mi istediği ve zarf-bağlaç farkı vurgulu. Konu anlatımı + örnek cümleler + seviyeli testler.",
+ "bolumler": [
+  {
+   "baslik": "📘 Konu Anlatımı — Bağlaçlar",
+   "sema": {
+    "kural": "Bağlaçlar iki fikri anlam ilişkisine göre birbirine bağlar. Önce İLİŞKİYİ (zıtlık / sebep-sonuç / ekleme / amaç) bul, sonra bağlacın DİLBİLGİSİ türüne göre (isim mi cümle mi ister) doğru olanı seç.",
+    "ekler": [
+     {
+      "edat": "although / though + CÜMLE",
+      "ek": "zıtlık (bağlaç)"
+     },
+     {
+      "edat": "despite / in spite of + İSİM",
+      "ek": "zıtlık (edat)"
+     },
+     {
+      "edat": "because + CÜMLE / because of + İSİM",
+      "ek": "sebep"
+     },
+     {
+      "edat": "therefore / thus (; …)",
+      "ek": "sonuç (zarf)"
+     }
+    ],
+    "kademeBaslik": "Hangi ilişki?",
+    "kademe": [
+     {
+      "en": "iki fikir çelişiyor",
+      "tr": "zıtlık → although / however / despite"
+     },
+     {
+      "en": "biri diğerinin nedeni",
+      "tr": "sebep → because / since / due to"
+     },
+     {
+      "en": "biri diğerinin sonucu",
+      "tr": "sonuç → therefore / so / thus"
+     },
+     {
+      "en": "fikir ekleniyor",
+      "tr": "ekleme → moreover / in addition"
+     }
+    ]
+   }
+  },
+  {
+   "baslik": "Zıtlık — Contrast",
+   "ust": "BAĞLAÇ",
+   "ogeler": [
+    {
+     "kural": "although/though/even though + CÜMLE  |  despite/in spite of + İSİM  |  however/nevertheless (zarf)",
+     "anlam": "İki çelişen fikri bağlar. En sık YDS tuzağı: although CÜMLE ister, despite/in spite of İSİM ister; however bir zarftır ve noktalı virgül/nokta ile ayrılır.",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "Although",
+         "a": "-mesine rağmen",
+         "en": "although + CÜMLE (özne+fiil)",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "team",
+         "vurgu": false
+        },
+        {
+         "k": "worked",
+         "a": "çalıştı",
+         "vurgu": true
+        },
+        {
+         "k": "hard,",
+         "a": "sıkı",
+         "vurgu": false
+        },
+        {
+         "k": "they",
+         "vurgu": false
+        },
+        {
+         "k": "lost",
+         "a": "kaybetti",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "final.",
+         "a": "final",
+         "vurgu": false
+        }
+       ],
+       "tr": "Takım sıkı çalışmasına rağmen finali kaybetti."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "Despite",
+         "a": "-e rağmen",
+         "en": "despite + İSİM/isim öbeği (cümle DEĞİL)",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "heavy",
+         "a": "yoğun",
+         "vurgu": false
+        },
+        {
+         "k": "rain,",
+         "a": "yağmur",
+         "vurgu": false
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "match",
+         "vurgu": false
+        },
+        {
+         "k": "continued.",
+         "a": "devam etti",
+         "vurgu": true
+        }
+       ],
+       "tr": "Yoğun yağmura rağmen maç devam etti."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "plan",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "risky;",
+         "a": "riskli",
+         "vurgu": false
+        },
+        {
+         "k": "however,",
+         "a": "ancak",
+         "en": "however = zarf; ; veya . ister",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "board",
+         "vurgu": false
+        },
+        {
+         "k": "approved",
+         "a": "onayladı",
+         "vurgu": true
+        },
+        {
+         "k": "it.",
+         "a": "onu",
+         "vurgu": false
+        }
+       ],
+       "tr": "Plan riskliydi; ancak kurul onu onayladı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "She",
+         "vurgu": false
+        },
+        {
+         "k": "is",
+         "vurgu": false
+        },
+        {
+         "k": "very",
+         "vurgu": false
+        },
+        {
+         "k": "talented,",
+         "a": "yetenekli",
+         "vurgu": true
+        },
+        {
+         "k": "whereas",
+         "a": "oysa",
+         "en": "whereas = iki cümleyi karşılaştırır",
+         "vurgu": true
+        },
+        {
+         "k": "her",
+         "vurgu": false
+        },
+        {
+         "k": "brother",
+         "vurgu": false
+        },
+        {
+         "k": "is",
+         "vurgu": false
+        },
+        {
+         "k": "rather",
+         "vurgu": false
+        },
+        {
+         "k": "lazy.",
+         "a": "tembel",
+         "vurgu": true
+        }
+       ],
+       "tr": "O çok yetenekli, oysa erkek kardeşi oldukça tembel."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "In",
+         "a": "-e rağmen",
+         "en": "in spite of + İSİM (= despite)",
+         "vurgu": true
+        },
+        {
+         "k": "spite",
+         "vurgu": true
+        },
+        {
+         "k": "of",
+         "vurgu": true
+        },
+        {
+         "k": "his",
+         "vurgu": false
+        },
+        {
+         "k": "injury,",
+         "a": "sakatlık",
+         "vurgu": true
+        },
+        {
+         "k": "he",
+         "vurgu": false
+        },
+        {
+         "k": "finished",
+         "a": "bitirdi",
+         "vurgu": false
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "race.",
+         "a": "yarış",
+         "vurgu": false
+        }
+       ],
+       "tr": "Sakatlığına rağmen yarışı bitirdi."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Sebep — Cause",
+   "ust": "BAĞLAÇ",
+   "ogeler": [
+    {
+     "kural": "because / since / as + CÜMLE   |   because of / due to / owing to + İSİM",
+     "anlam": "Bir sonucun nedenini verir. Tuzak: because CÜMLE, because of İSİM ister; due to / owing to da isimle kullanılır.",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "flight",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "delayed",
+         "a": "ertelendi",
+         "vurgu": true
+        },
+        {
+         "k": "because",
+         "a": "çünkü",
+         "en": "because + CÜMLE",
+         "vurgu": true
+        },
+        {
+         "k": "a",
+         "vurgu": false
+        },
+        {
+         "k": "storm",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "approaching.",
+         "a": "yaklaşıyordu",
+         "vurgu": true
+        }
+       ],
+       "tr": "Bir fırtına yaklaştığı için uçuş ertelendi."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "event",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "cancelled",
+         "vurgu": false
+        },
+        {
+         "k": "because",
+         "a": "yüzünden",
+         "en": "because of + İSİM",
+         "vurgu": true
+        },
+        {
+         "k": "of",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "pandemic.",
+         "a": "pandemi",
+         "vurgu": true
+        }
+       ],
+       "tr": "Etkinlik pandemi yüzünden iptal edildi."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "Since",
+         "a": "-dığı için",
+         "en": "since = because (sebep)",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "roads",
+         "vurgu": false
+        },
+        {
+         "k": "were",
+         "vurgu": false
+        },
+        {
+         "k": "icy,",
+         "a": "buzlu",
+         "vurgu": true
+        },
+        {
+         "k": "schools",
+         "vurgu": false
+        },
+        {
+         "k": "closed",
+         "a": "kapandı",
+         "vurgu": true
+        },
+        {
+         "k": "early.",
+         "a": "erken",
+         "vurgu": false
+        }
+       ],
+       "tr": "Yollar buzlu olduğu için okullar erken kapandı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "bridge",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "unsafe",
+         "a": "güvensiz",
+         "vurgu": true
+        },
+        {
+         "k": "due",
+         "a": "nedeniyle",
+         "en": "due to + İSİM",
+         "vurgu": true
+        },
+        {
+         "k": "to",
+         "vurgu": true
+        },
+        {
+         "k": "corrosion.",
+         "a": "korozyon",
+         "vurgu": true
+        }
+       ],
+       "tr": "Köprü korozyon nedeniyle güvensizdi."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "As",
+         "a": "-dığı için",
+         "en": "as = sebep (başta)",
+         "vurgu": true
+        },
+        {
+         "k": "he",
+         "vurgu": false
+        },
+        {
+         "k": "had",
+         "vurgu": false
+        },
+        {
+         "k": "no",
+         "vurgu": false
+        },
+        {
+         "k": "experience,",
+         "a": "deneyim",
+         "vurgu": true
+        },
+        {
+         "k": "he",
+         "vurgu": false
+        },
+        {
+         "k": "wasn't",
+         "vurgu": false
+        },
+        {
+         "k": "hired.",
+         "a": "işe alındı",
+         "vurgu": true
+        }
+       ],
+       "tr": "Deneyimi olmadığı için işe alınmadı."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Sonuç & Amaç — Result & Purpose",
+   "ust": "BAĞLAÇ",
+   "ogeler": [
+    {
+     "kural": "therefore/thus/hence/consequently (zarf)  |  so (bağlaç)  |  so that + CÜMLE / in order to + FİİL (amaç)",
+     "anlam": "Sonuç: therefore/thus/consequently zarftır (; ister); so bağlaçtır. Amaç: so that cümle, in order to / so as to fiil ister; in case önlem bildirir.",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "data",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "incomplete;",
+         "a": "eksik",
+         "vurgu": true
+        },
+        {
+         "k": "therefore,",
+         "a": "bu yüzden",
+         "en": "therefore = sonuç zarfı",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "study",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "repeated.",
+         "a": "tekrarlandı",
+         "vurgu": true
+        }
+       ],
+       "tr": "Veriler eksikti; bu yüzden çalışma tekrarlandı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "It",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "raining,",
+         "vurgu": false
+        },
+        {
+         "k": "so",
+         "a": "bu yüzden",
+         "en": "so = bağlaç (sonuç)",
+         "vurgu": true
+        },
+        {
+         "k": "we",
+         "vurgu": false
+        },
+        {
+         "k": "stayed",
+         "a": "kaldık",
+         "vurgu": true
+        },
+        {
+         "k": "indoors.",
+         "a": "içeride",
+         "vurgu": false
+        }
+       ],
+       "tr": "Yağmur yağıyordu, bu yüzden içeride kaldık."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "He",
+         "vurgu": false
+        },
+        {
+         "k": "studied",
+         "vurgu": false
+        },
+        {
+         "k": "abroad",
+         "vurgu": false
+        },
+        {
+         "k": "so",
+         "a": "için",
+         "en": "so that + CÜMLE = amaç",
+         "vurgu": true
+        },
+        {
+         "k": "that",
+         "vurgu": true
+        },
+        {
+         "k": "he",
+         "vurgu": false
+        },
+        {
+         "k": "could",
+         "vurgu": false
+        },
+        {
+         "k": "improve",
+         "a": "geliştirmek",
+         "vurgu": true
+        },
+        {
+         "k": "his",
+         "vurgu": false
+        },
+        {
+         "k": "English.",
+         "a": "İngilizce",
+         "vurgu": false
+        }
+       ],
+       "tr": "İngilizcesini geliştirmek için yurt dışında okudu."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "She",
+         "vurgu": false
+        },
+        {
+         "k": "left",
+         "vurgu": false
+        },
+        {
+         "k": "early",
+         "vurgu": false
+        },
+        {
+         "k": "in",
+         "a": "-mek için",
+         "en": "in order to + FİİL = amaç",
+         "vurgu": true
+        },
+        {
+         "k": "order",
+         "vurgu": true
+        },
+        {
+         "k": "to",
+         "vurgu": true
+        },
+        {
+         "k": "catch",
+         "a": "yakalamak",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "train.",
+         "a": "tren",
+         "vurgu": false
+        }
+       ],
+       "tr": "Treni yakalamak için erken çıktı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "Take",
+         "vurgu": false
+        },
+        {
+         "k": "an",
+         "vurgu": false
+        },
+        {
+         "k": "umbrella",
+         "vurgu": false
+        },
+        {
+         "k": "in",
+         "a": "ihtimaline karşı",
+         "en": "in case + CÜMLE = -e karşı önlem",
+         "vurgu": true
+        },
+        {
+         "k": "case",
+         "vurgu": true
+        },
+        {
+         "k": "it",
+         "vurgu": false
+        },
+        {
+         "k": "rains.",
+         "a": "yağar",
+         "vurgu": true
+        }
+       ],
+       "tr": "Yağmur yağar diye yanına şemsiye al."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Ekleme & Zaman — Addition & Time",
+   "ust": "BAĞLAÇ",
+   "ogeler": [
+    {
+     "kural": "moreover / furthermore / in addition / besides (ekleme)  |  meanwhile / subsequently (zaman)",
+     "anlam": "Yeni bir fikir ekler veya zaman ilişkisi kurar. Bunların çoğu ZARFTIR: iki bağımsız cümle arasında noktalı virgül veya nokta ile kullanılır.",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "offer",
+         "vurgu": false
+        },
+        {
+         "k": "is",
+         "vurgu": false
+        },
+        {
+         "k": "cheap;",
+         "a": "ucuz",
+         "vurgu": false
+        },
+        {
+         "k": "moreover,",
+         "a": "üstelik",
+         "en": "moreover = ekleme zarfı",
+         "vurgu": true
+        },
+        {
+         "k": "it",
+         "vurgu": false
+        },
+        {
+         "k": "includes",
+         "a": "içerir",
+         "vurgu": false
+        },
+        {
+         "k": "free",
+         "vurgu": false
+        },
+        {
+         "k": "shipping.",
+         "a": "kargo",
+         "vurgu": true
+        }
+       ],
+       "tr": "Teklif ucuz; üstelik ücretsiz kargo içeriyor."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "design",
+         "vurgu": false
+        },
+        {
+         "k": "is",
+         "vurgu": false
+        },
+        {
+         "k": "elegant.",
+         "vurgu": false
+        },
+        {
+         "k": "In",
+         "a": "ayrıca",
+         "en": "in addition = ek olarak",
+         "vurgu": true
+        },
+        {
+         "k": "addition,",
+         "vurgu": true
+        },
+        {
+         "k": "it",
+         "vurgu": false
+        },
+        {
+         "k": "is",
+         "vurgu": false
+        },
+        {
+         "k": "highly",
+         "vurgu": false
+        },
+        {
+         "k": "durable.",
+         "a": "dayanıklı",
+         "vurgu": true
+        }
+       ],
+       "tr": "Tasarım şık. Ayrıca son derece dayanıklı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "He",
+         "vurgu": false
+        },
+        {
+         "k": "dislikes",
+         "vurgu": false
+        },
+        {
+         "k": "crowds;",
+         "a": "kalabalık",
+         "vurgu": false
+        },
+        {
+         "k": "nevertheless,",
+         "a": "yine de",
+         "en": "nevertheless = zıtlık zarfı",
+         "vurgu": true
+        },
+        {
+         "k": "he",
+         "vurgu": false
+        },
+        {
+         "k": "attended",
+         "a": "katıldı",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "concert.",
+         "a": "konser",
+         "vurgu": false
+        }
+       ],
+       "tr": "Kalabalıktan hoşlanmaz; yine de konsere katıldı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "guests",
+         "vurgu": false
+        },
+        {
+         "k": "were",
+         "vurgu": false
+        },
+        {
+         "k": "arriving;",
+         "a": "geliyordu",
+         "vurgu": false
+        },
+        {
+         "k": "meanwhile,",
+         "a": "bu sırada",
+         "en": "meanwhile = zaman zarfı",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "chef",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "preparing",
+         "a": "hazırlıyordu",
+         "vurgu": true
+        },
+        {
+         "k": "dinner.",
+         "a": "akşam yemeği",
+         "vurgu": false
+        }
+       ],
+       "tr": "Misafirler geliyordu; bu sırada şef akşam yemeğini hazırlıyordu."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "results",
+         "vurgu": false
+        },
+        {
+         "k": "were",
+         "vurgu": false
+        },
+        {
+         "k": "promising.",
+         "vurgu": false
+        },
+        {
+         "k": "Furthermore,",
+         "a": "dahası",
+         "en": "furthermore = ekleme zarfı",
+         "vurgu": true
+        },
+        {
+         "k": "costs",
+         "vurgu": false
+        },
+        {
+         "k": "were",
+         "vurgu": false
+        },
+        {
+         "k": "reduced.",
+         "a": "azaltıldı",
+         "vurgu": true
+        }
+       ],
+       "tr": "Sonuçlar umut vericiydi. Dahası, maliyetler azaltıldı."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Karışık Tanıma — Connectors",
+   "ciftler": [
+    {
+     "tokenlar": [
+      {
+       "k": "Even",
+       "a": "-mesine rağmen",
+       "en": "even though + CÜMLE (güçlü zıtlık)",
+       "vurgu": true
+      },
+      {
+       "k": "though",
+       "vurgu": true
+      },
+      {
+       "k": "he",
+       "vurgu": false
+      },
+      {
+       "k": "was",
+       "vurgu": false
+      },
+      {
+       "k": "exhausted,",
+       "a": "bitkin",
+       "vurgu": true
+      },
+      {
+       "k": "he",
+       "vurgu": false
+      },
+      {
+       "k": "kept",
+       "vurgu": false
+      },
+      {
+       "k": "running.",
+       "a": "koşmak",
+       "vurgu": true
+      }
+     ],
+     "tr": "Bitkin olmasına rağmen koşmaya devam etti."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "project",
+       "vurgu": false
+      },
+      {
+       "k": "failed",
+       "vurgu": false
+      },
+      {
+       "k": "owing",
+       "a": "nedeniyle",
+       "en": "owing to + İSİM (= due to)",
+       "vurgu": true
+      },
+      {
+       "k": "to",
+       "vurgu": true
+      },
+      {
+       "k": "poor",
+       "vurgu": false
+      },
+      {
+       "k": "planning.",
+       "a": "planlama",
+       "vurgu": true
+      }
+     ],
+     "tr": "Proje kötü planlama nedeniyle başarısız oldu."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "Unless",
+       "a": "-mezse",
+       "en": "unless = if not (koşul)",
+       "vurgu": true
+      },
+      {
+       "k": "you",
+       "vurgu": false
+      },
+      {
+       "k": "hurry,",
+       "a": "acele et",
+       "vurgu": true
+      },
+      {
+       "k": "you",
+       "vurgu": false
+      },
+      {
+       "k": "will",
+       "vurgu": false
+      },
+      {
+       "k": "miss",
+       "vurgu": false
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "bus.",
+       "a": "otobüs",
+       "vurgu": false
+      }
+     ],
+     "tr": "Acele etmezsen otobüsü kaçıracaksın."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "theory",
+       "vurgu": false
+      },
+      {
+       "k": "is",
+       "vurgu": false
+      },
+      {
+       "k": "elegant;",
+       "a": "zarif",
+       "vurgu": false
+      },
+      {
+       "k": "nonetheless,",
+       "a": "yine de",
+       "en": "nonetheless = nevertheless",
+       "vurgu": true
+      },
+      {
+       "k": "it",
+       "vurgu": false
+      },
+      {
+       "k": "lacks",
+       "a": "yoksun",
+       "vurgu": false
+      },
+      {
+       "k": "evidence.",
+       "a": "kanıt",
+       "vurgu": true
+      }
+     ],
+     "tr": "Teori zarif; yine de kanıttan yoksun."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "While",
+       "a": "iken",
+       "en": "while = zıtlık/eşzamanlılık",
+       "vurgu": true
+      },
+      {
+       "k": "some",
+       "vurgu": false
+      },
+      {
+       "k": "praised",
+       "vurgu": false
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "film,",
+       "vurgu": false
+      },
+      {
+       "k": "others",
+       "vurgu": false
+      },
+      {
+       "k": "criticized",
+       "a": "eleştirdi",
+       "vurgu": true
+      },
+      {
+       "k": "it.",
+       "a": "onu",
+       "vurgu": false
+      }
+     ],
+     "tr": "Kimileri filmi övdü, kimileriyse eleştirdi."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "You",
+       "vurgu": false
+      },
+      {
+       "k": "may",
+       "vurgu": false
+      },
+      {
+       "k": "enter",
+       "vurgu": false
+      },
+      {
+       "k": "provided",
+       "a": "şartıyla",
+       "en": "provided that = koşuluyla",
+       "vurgu": true
+      },
+      {
+       "k": "that",
+       "vurgu": true
+      },
+      {
+       "k": "you",
+       "vurgu": false
+      },
+      {
+       "k": "show",
+       "vurgu": false
+      },
+      {
+       "k": "identification.",
+       "a": "kimlik",
+       "vurgu": true
+      }
+     ],
+     "tr": "Kimlik göstermen şartıyla girebilirsin."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "machine",
+       "vurgu": false
+      },
+      {
+       "k": "overheated;",
+       "a": "aşırı ısındı",
+       "vurgu": false
+      },
+      {
+       "k": "consequently,",
+       "a": "dolayısıyla",
+       "en": "consequently = sonuç zarfı",
+       "vurgu": true
+      },
+      {
+       "k": "it",
+       "vurgu": false
+      },
+      {
+       "k": "shut",
+       "a": "kapandı",
+       "vurgu": true
+      },
+      {
+       "k": "down.",
+       "vurgu": false
+      }
+     ],
+     "tr": "Makine aşırı ısındı; dolayısıyla kapandı."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "Whereas",
+       "a": "oysa",
+       "vurgu": true
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "north",
+       "vurgu": false
+      },
+      {
+       "k": "is",
+       "vurgu": false
+      },
+      {
+       "k": "industrial,",
+       "a": "sanayi",
+       "vurgu": true
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "south",
+       "vurgu": false
+      },
+      {
+       "k": "is",
+       "vurgu": false
+      },
+      {
+       "k": "agricultural.",
+       "a": "tarımsal",
+       "vurgu": true
+      }
+     ],
+     "tr": "Kuzey sanayiye dayalıyken güney tarımsaldır."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "She",
+       "vurgu": false
+      },
+      {
+       "k": "saved",
+       "vurgu": false
+      },
+      {
+       "k": "money",
+       "vurgu": false
+      },
+      {
+       "k": "so",
+       "a": "diye",
+       "en": "so as to + FİİL = amaç",
+       "vurgu": true
+      },
+      {
+       "k": "as",
+       "vurgu": true
+      },
+      {
+       "k": "to",
+       "vurgu": true
+      },
+      {
+       "k": "afford",
+       "a": "gücü yetmek",
+       "vurgu": true
+      },
+      {
+       "k": "a",
+       "vurgu": false
+      },
+      {
+       "k": "house.",
+       "a": "ev",
+       "vurgu": false
+      }
+     ],
+     "tr": "Bir ev alabilmek için para biriktirdi."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "Thus,",
+       "a": "böylece",
+       "en": "thus = sonuç/böylece",
+       "vurgu": true
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "experiment",
+       "vurgu": false
+      },
+      {
+       "k": "confirmed",
+       "a": "doğruladı",
+       "vurgu": true
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "hypothesis.",
+       "a": "hipotez",
+       "vurgu": true
+      }
+     ],
+     "tr": "Böylece deney hipotezi doğruladı."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "Besides",
+       "a": "ayrıca",
+       "en": "besides = ek olarak",
+       "vurgu": true
+      },
+      {
+       "k": "being",
+       "vurgu": false
+      },
+      {
+       "k": "cheap,",
+       "vurgu": false
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "tool",
+       "vurgu": false
+      },
+      {
+       "k": "is",
+       "vurgu": false
+      },
+      {
+       "k": "reliable.",
+       "a": "güvenilir",
+       "vurgu": true
+      }
+     ],
+     "tr": "Ucuz olmasının yanında araç güvenilir de."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "As",
+       "a": "-dığı için",
+       "en": "as long as = sürece (koşul)",
+       "vurgu": true
+      },
+      {
+       "k": "long",
+       "vurgu": true
+      },
+      {
+       "k": "as",
+       "vurgu": true
+      },
+      {
+       "k": "you",
+       "vurgu": false
+      },
+      {
+       "k": "practice,",
+       "a": "pratik yap",
+       "vurgu": true
+      },
+      {
+       "k": "you",
+       "vurgu": false
+      },
+      {
+       "k": "will",
+       "vurgu": false
+      },
+      {
+       "k": "improve.",
+       "a": "gelişmek",
+       "vurgu": false
+      }
+     ],
+     "tr": "Pratik yaptığın sürece gelişeceksin."
+    }
+   ]
+  }
+ ],
+ "kelimeler": [
+  {
+   "en": "work",
+   "tur": "fiil",
+   "tr": "çalışmak",
+   "ornek_tr": "Takım sıkı çalışmasına rağmen finali kaybetti.",
+   "ornek_tokenlar": [
+    {
+     "k": "Although",
+     "a": "-mesine rağmen",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "team",
+     "vurgu": false
+    },
+    {
+     "k": "worked",
+     "a": "çalıştı",
+     "vurgu": true
+    },
+    {
+     "k": "hard,",
+     "a": "sıkı",
+     "vurgu": false
+    },
+    {
+     "k": "they",
+     "vurgu": false
+    },
+    {
+     "k": "lost",
+     "a": "kaybetti",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "final.",
+     "a": "final",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "lose",
+   "tur": "fiil",
+   "tr": "kaybetmek",
+   "ornek_tr": "Takım sıkı çalışmasına rağmen finali kaybetti.",
+   "ornek_tokenlar": [
+    {
+     "k": "Although",
+     "a": "-mesine rağmen",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "team",
+     "vurgu": false
+    },
+    {
+     "k": "worked",
+     "a": "çalıştı",
+     "vurgu": false
+    },
+    {
+     "k": "hard,",
+     "a": "sıkı",
+     "vurgu": false
+    },
+    {
+     "k": "they",
+     "vurgu": false
+    },
+    {
+     "k": "lost",
+     "a": "kaybetti",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "final.",
+     "a": "final",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "rain",
+   "tur": "isim",
+   "tr": "yağmur",
+   "ornek_tr": "Yoğun yağmura rağmen maç devam etti.",
+   "ornek_tokenlar": [
+    {
+     "k": "Despite",
+     "a": "-e rağmen",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "heavy",
+     "a": "yoğun",
+     "vurgu": false
+    },
+    {
+     "k": "rain,",
+     "a": "yağmur",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "match",
+     "vurgu": false
+    },
+    {
+     "k": "continued.",
+     "a": "devam etti",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "continue",
+   "tur": "fiil",
+   "tr": "devam etmek",
+   "ornek_tr": "Yoğun yağmura rağmen maç devam etti.",
+   "ornek_tokenlar": [
+    {
+     "k": "Despite",
+     "a": "-e rağmen",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "heavy",
+     "a": "yoğun",
+     "vurgu": false
+    },
+    {
+     "k": "rain,",
+     "a": "yağmur",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "match",
+     "vurgu": false
+    },
+    {
+     "k": "continued.",
+     "a": "devam etti",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "risky",
+   "tur": "sıfat",
+   "tr": "riskli",
+   "ornek_tr": "Plan riskliydi; ancak kurul onu onayladı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "plan",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "risky;",
+     "a": "riskli",
+     "vurgu": true
+    },
+    {
+     "k": "however,",
+     "a": "ancak",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "board",
+     "vurgu": false
+    },
+    {
+     "k": "approved",
+     "a": "onayladı",
+     "vurgu": false
+    },
+    {
+     "k": "it.",
+     "a": "onu",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "approve",
+   "tur": "fiil",
+   "tr": "onaylamak",
+   "ornek_tr": "Plan riskliydi; ancak kurul onu onayladı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "plan",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "risky;",
+     "a": "riskli",
+     "vurgu": false
+    },
+    {
+     "k": "however,",
+     "a": "ancak",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "board",
+     "vurgu": false
+    },
+    {
+     "k": "approved",
+     "a": "onayladı",
+     "vurgu": true
+    },
+    {
+     "k": "it.",
+     "a": "onu",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "talented",
+   "tur": "sıfat",
+   "tr": "yetenekli",
+   "ornek_tr": "O çok yetenekli, oysa erkek kardeşi oldukça tembel.",
+   "ornek_tokenlar": [
+    {
+     "k": "She",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "very",
+     "vurgu": false
+    },
+    {
+     "k": "talented,",
+     "a": "yetenekli",
+     "vurgu": true
+    },
+    {
+     "k": "whereas",
+     "a": "oysa",
+     "vurgu": false
+    },
+    {
+     "k": "her",
+     "vurgu": false
+    },
+    {
+     "k": "brother",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "rather",
+     "vurgu": false
+    },
+    {
+     "k": "lazy.",
+     "a": "tembel",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "lazy",
+   "tur": "sıfat",
+   "tr": "tembel",
+   "ornek_tr": "O çok yetenekli, oysa erkek kardeşi oldukça tembel.",
+   "ornek_tokenlar": [
+    {
+     "k": "She",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "very",
+     "vurgu": false
+    },
+    {
+     "k": "talented,",
+     "a": "yetenekli",
+     "vurgu": false
+    },
+    {
+     "k": "whereas",
+     "a": "oysa",
+     "vurgu": false
+    },
+    {
+     "k": "her",
+     "vurgu": false
+    },
+    {
+     "k": "brother",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "rather",
+     "vurgu": false
+    },
+    {
+     "k": "lazy.",
+     "a": "tembel",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "injury",
+   "tur": "isim",
+   "tr": "sakatlık, yaralanma",
+   "ornek_tr": "Sakatlığına rağmen yarışı bitirdi.",
+   "ornek_tokenlar": [
+    {
+     "k": "In",
+     "a": "-e rağmen",
+     "vurgu": false
+    },
+    {
+     "k": "spite",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "his",
+     "vurgu": false
+    },
+    {
+     "k": "injury,",
+     "a": "sakatlık",
+     "vurgu": true
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "finished",
+     "a": "bitirdi",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "race.",
+     "a": "yarış",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "race",
+   "tur": "isim",
+   "tr": "yarış",
+   "ornek_tr": "Sakatlığına rağmen yarışı bitirdi.",
+   "ornek_tokenlar": [
+    {
+     "k": "In",
+     "a": "-e rağmen",
+     "vurgu": false
+    },
+    {
+     "k": "spite",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "his",
+     "vurgu": false
+    },
+    {
+     "k": "injury,",
+     "a": "sakatlık",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "finished",
+     "a": "bitirdi",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "race.",
+     "a": "yarış",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "delay",
+   "tur": "fiil",
+   "tr": "ertelemek, geciktirmek",
+   "ornek_tr": "Bir fırtına yaklaştığı için uçuş ertelendi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "flight",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "delayed",
+     "a": "ertelendi",
+     "vurgu": true
+    },
+    {
+     "k": "because",
+     "a": "çünkü",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "storm",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "approaching.",
+     "a": "yaklaşıyordu",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "approach",
+   "tur": "fiil",
+   "tr": "yaklaşmak",
+   "ornek_tr": "Bir fırtına yaklaştığı için uçuş ertelendi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "flight",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "delayed",
+     "a": "ertelendi",
+     "vurgu": false
+    },
+    {
+     "k": "because",
+     "a": "çünkü",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "storm",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "approaching.",
+     "a": "yaklaşıyordu",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "pandemic",
+   "tur": "isim",
+   "tr": "pandemi, salgın",
+   "ornek_tr": "Etkinlik pandemi yüzünden iptal edildi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "event",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "cancelled",
+     "vurgu": false
+    },
+    {
+     "k": "because",
+     "a": "yüzünden",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "pandemic.",
+     "a": "pandemi",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "icy",
+   "tur": "sıfat",
+   "tr": "buzlu",
+   "ornek_tr": "Yollar buzlu olduğu için okullar erken kapandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Since",
+     "a": "-dığı için",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "roads",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "icy,",
+     "a": "buzlu",
+     "vurgu": true
+    },
+    {
+     "k": "schools",
+     "vurgu": false
+    },
+    {
+     "k": "closed",
+     "a": "kapandı",
+     "vurgu": false
+    },
+    {
+     "k": "early.",
+     "a": "erken",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "close",
+   "tur": "fiil",
+   "tr": "kapanmak",
+   "ornek_tr": "Yollar buzlu olduğu için okullar erken kapandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Since",
+     "a": "-dığı için",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "roads",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "icy,",
+     "a": "buzlu",
+     "vurgu": false
+    },
+    {
+     "k": "schools",
+     "vurgu": false
+    },
+    {
+     "k": "closed",
+     "a": "kapandı",
+     "vurgu": true
+    },
+    {
+     "k": "early.",
+     "a": "erken",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "unsafe",
+   "tur": "sıfat",
+   "tr": "güvensiz",
+   "ornek_tr": "Köprü korozyon nedeniyle güvensizdi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "bridge",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "unsafe",
+     "a": "güvensiz",
+     "vurgu": true
+    },
+    {
+     "k": "due",
+     "a": "nedeniyle",
+     "vurgu": false
+    },
+    {
+     "k": "to",
+     "vurgu": false
+    },
+    {
+     "k": "corrosion.",
+     "a": "korozyon",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "corrosion",
+   "tur": "isim",
+   "tr": "korozyon, paslanma",
+   "ornek_tr": "Köprü korozyon nedeniyle güvensizdi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "bridge",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "unsafe",
+     "a": "güvensiz",
+     "vurgu": false
+    },
+    {
+     "k": "due",
+     "a": "nedeniyle",
+     "vurgu": false
+    },
+    {
+     "k": "to",
+     "vurgu": false
+    },
+    {
+     "k": "corrosion.",
+     "a": "korozyon",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "experience",
+   "tur": "isim",
+   "tr": "deneyim",
+   "ornek_tr": "Deneyimi olmadığı için işe alınmadı.",
+   "ornek_tokenlar": [
+    {
+     "k": "As",
+     "a": "-dığı için",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "had",
+     "vurgu": false
+    },
+    {
+     "k": "no",
+     "vurgu": false
+    },
+    {
+     "k": "experience,",
+     "a": "deneyim",
+     "vurgu": true
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "wasn't",
+     "vurgu": false
+    },
+    {
+     "k": "hired.",
+     "a": "işe alındı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "hire",
+   "tur": "fiil",
+   "tr": "işe almak",
+   "ornek_tr": "Deneyimi olmadığı için işe alınmadı.",
+   "ornek_tokenlar": [
+    {
+     "k": "As",
+     "a": "-dığı için",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "had",
+     "vurgu": false
+    },
+    {
+     "k": "no",
+     "vurgu": false
+    },
+    {
+     "k": "experience,",
+     "a": "deneyim",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "wasn't",
+     "vurgu": false
+    },
+    {
+     "k": "hired.",
+     "a": "işe alındı",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "incomplete",
+   "tur": "sıfat",
+   "tr": "eksik, tamamlanmamış",
+   "ornek_tr": "Veriler eksikti; bu yüzden çalışma tekrarlandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "data",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "incomplete;",
+     "a": "eksik",
+     "vurgu": true
+    },
+    {
+     "k": "therefore,",
+     "a": "bu yüzden",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "study",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "repeated.",
+     "a": "tekrarlandı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "repeat",
+   "tur": "fiil",
+   "tr": "tekrarlamak",
+   "ornek_tr": "Veriler eksikti; bu yüzden çalışma tekrarlandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "data",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "incomplete;",
+     "a": "eksik",
+     "vurgu": false
+    },
+    {
+     "k": "therefore,",
+     "a": "bu yüzden",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "study",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "repeated.",
+     "a": "tekrarlandı",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "stay",
+   "tur": "fiil",
+   "tr": "kalmak",
+   "ornek_tr": "Yağmur yağıyordu, bu yüzden içeride kaldık.",
+   "ornek_tokenlar": [
+    {
+     "k": "It",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "raining,",
+     "vurgu": false
+    },
+    {
+     "k": "so",
+     "a": "bu yüzden",
+     "vurgu": false
+    },
+    {
+     "k": "we",
+     "vurgu": false
+    },
+    {
+     "k": "stayed",
+     "a": "kaldık",
+     "vurgu": true
+    },
+    {
+     "k": "indoors.",
+     "a": "içeride",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "improve",
+   "tur": "fiil",
+   "tr": "geliştirmek",
+   "ornek_tr": "İngilizcesini geliştirmek için yurt dışında okudu.",
+   "ornek_tokenlar": [
+    {
+     "k": "He",
+     "vurgu": false
+    },
+    {
+     "k": "studied",
+     "vurgu": false
+    },
+    {
+     "k": "abroad",
+     "vurgu": false
+    },
+    {
+     "k": "so",
+     "a": "için",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "could",
+     "vurgu": false
+    },
+    {
+     "k": "improve",
+     "a": "geliştirmek",
+     "vurgu": true
+    },
+    {
+     "k": "his",
+     "vurgu": false
+    },
+    {
+     "k": "English.",
+     "a": "İngilizce",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "catch",
+   "tur": "fiil",
+   "tr": "yakalamak",
+   "ornek_tr": "Treni yakalamak için erken çıktı.",
+   "ornek_tokenlar": [
+    {
+     "k": "She",
+     "vurgu": false
+    },
+    {
+     "k": "left",
+     "vurgu": false
+    },
+    {
+     "k": "early",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "a": "-mek için",
+     "vurgu": false
+    },
+    {
+     "k": "order",
+     "vurgu": false
+    },
+    {
+     "k": "to",
+     "vurgu": false
+    },
+    {
+     "k": "catch",
+     "a": "yakalamak",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "train.",
+     "a": "tren",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "rain",
+   "tur": "fiil",
+   "tr": "yağmur yağmak",
+   "ornek_tr": "Yağmur yağar diye yanına şemsiye al.",
+   "ornek_tokenlar": [
+    {
+     "k": "Take",
+     "vurgu": false
+    },
+    {
+     "k": "an",
+     "vurgu": false
+    },
+    {
+     "k": "umbrella",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "a": "ihtimaline karşı",
+     "vurgu": false
+    },
+    {
+     "k": "case",
+     "vurgu": false
+    },
+    {
+     "k": "it",
+     "vurgu": false
+    },
+    {
+     "k": "rains.",
+     "a": "yağar",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "shipping",
+   "tur": "isim",
+   "tr": "kargo, nakliye",
+   "ornek_tr": "Teklif ucuz; üstelik ücretsiz kargo içeriyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "offer",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "cheap;",
+     "a": "ucuz",
+     "vurgu": false
+    },
+    {
+     "k": "moreover,",
+     "a": "üstelik",
+     "vurgu": false
+    },
+    {
+     "k": "it",
+     "vurgu": false
+    },
+    {
+     "k": "includes",
+     "a": "içerir",
+     "vurgu": false
+    },
+    {
+     "k": "free",
+     "vurgu": false
+    },
+    {
+     "k": "shipping.",
+     "a": "kargo",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "durable",
+   "tur": "sıfat",
+   "tr": "dayanıklı",
+   "ornek_tr": "Tasarım şık. Ayrıca son derece dayanıklı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "design",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "elegant.",
+     "vurgu": false
+    },
+    {
+     "k": "In",
+     "a": "ayrıca",
+     "vurgu": false
+    },
+    {
+     "k": "addition,",
+     "vurgu": false
+    },
+    {
+     "k": "it",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "highly",
+     "vurgu": false
+    },
+    {
+     "k": "durable.",
+     "a": "dayanıklı",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "crowd",
+   "tur": "isim",
+   "tr": "kalabalık",
+   "ornek_tr": "Kalabalıktan hoşlanmaz; yine de konsere katıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "He",
+     "vurgu": false
+    },
+    {
+     "k": "dislikes",
+     "vurgu": false
+    },
+    {
+     "k": "crowds;",
+     "a": "kalabalık",
+     "vurgu": true
+    },
+    {
+     "k": "nevertheless,",
+     "a": "yine de",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "attended",
+     "a": "katıldı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "concert.",
+     "a": "konser",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "attend",
+   "tur": "fiil",
+   "tr": "katılmak",
+   "ornek_tr": "Kalabalıktan hoşlanmaz; yine de konsere katıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "He",
+     "vurgu": false
+    },
+    {
+     "k": "dislikes",
+     "vurgu": false
+    },
+    {
+     "k": "crowds;",
+     "a": "kalabalık",
+     "vurgu": false
+    },
+    {
+     "k": "nevertheless,",
+     "a": "yine de",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "attended",
+     "a": "katıldı",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "concert.",
+     "a": "konser",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "prepare",
+   "tur": "fiil",
+   "tr": "hazırlamak",
+   "ornek_tr": "Misafirler geliyordu; bu sırada şef akşam yemeğini hazırlıyordu.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "guests",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "arriving;",
+     "a": "geliyordu",
+     "vurgu": false
+    },
+    {
+     "k": "meanwhile,",
+     "a": "bu sırada",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "chef",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "preparing",
+     "a": "hazırlıyordu",
+     "vurgu": true
+    },
+    {
+     "k": "dinner.",
+     "a": "akşam yemeği",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "promising",
+   "tur": "sıfat",
+   "tr": "umut verici",
+   "ornek_tr": "Sonuçlar umut vericiydi. Dahası, maliyetler azaltıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "results",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "promising.",
+     "vurgu": true
+    },
+    {
+     "k": "Furthermore,",
+     "a": "dahası",
+     "vurgu": false
+    },
+    {
+     "k": "costs",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "reduced.",
+     "a": "azaltıldı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "reduce",
+   "tur": "fiil",
+   "tr": "azaltmak",
+   "ornek_tr": "Sonuçlar umut vericiydi. Dahası, maliyetler azaltıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "results",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "promising.",
+     "vurgu": false
+    },
+    {
+     "k": "Furthermore,",
+     "a": "dahası",
+     "vurgu": false
+    },
+    {
+     "k": "costs",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "reduced.",
+     "a": "azaltıldı",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "exhausted",
+   "tur": "sıfat",
+   "tr": "bitkin, tükenmiş",
+   "ornek_tr": "Bitkin olmasına rağmen koşmaya devam etti.",
+   "ornek_tokenlar": [
+    {
+     "k": "Even",
+     "a": "-mesine rağmen",
+     "vurgu": false
+    },
+    {
+     "k": "though",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "exhausted,",
+     "a": "bitkin",
+     "vurgu": true
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "kept",
+     "vurgu": false
+    },
+    {
+     "k": "running.",
+     "a": "koşmak",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "planning",
+   "tur": "isim",
+   "tr": "planlama",
+   "ornek_tr": "Proje kötü planlama nedeniyle başarısız oldu.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "project",
+     "vurgu": false
+    },
+    {
+     "k": "failed",
+     "vurgu": false
+    },
+    {
+     "k": "owing",
+     "a": "nedeniyle",
+     "vurgu": false
+    },
+    {
+     "k": "to",
+     "vurgu": false
+    },
+    {
+     "k": "poor",
+     "vurgu": false
+    },
+    {
+     "k": "planning.",
+     "a": "planlama",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "hurry",
+   "tur": "fiil",
+   "tr": "acele etmek",
+   "ornek_tr": "Acele etmezsen otobüsü kaçıracaksın.",
+   "ornek_tokenlar": [
+    {
+     "k": "Unless",
+     "a": "-mezse",
+     "vurgu": false
+    },
+    {
+     "k": "you",
+     "vurgu": false
+    },
+    {
+     "k": "hurry,",
+     "a": "acele et",
+     "vurgu": true
+    },
+    {
+     "k": "you",
+     "vurgu": false
+    },
+    {
+     "k": "will",
+     "vurgu": false
+    },
+    {
+     "k": "miss",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "bus.",
+     "a": "otobüs",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "evidence",
+   "tur": "isim",
+   "tr": "kanıt",
+   "ornek_tr": "Teori zarif; yine de kanıttan yoksun.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "theory",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "elegant;",
+     "a": "zarif",
+     "vurgu": false
+    },
+    {
+     "k": "nonetheless,",
+     "a": "yine de",
+     "vurgu": false
+    },
+    {
+     "k": "it",
+     "vurgu": false
+    },
+    {
+     "k": "lacks",
+     "a": "yoksun",
+     "vurgu": false
+    },
+    {
+     "k": "evidence.",
+     "a": "kanıt",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "criticize",
+   "tur": "fiil",
+   "tr": "eleştirmek",
+   "ornek_tr": "Kimileri filmi övdü, kimileriyse eleştirdi.",
+   "ornek_tokenlar": [
+    {
+     "k": "While",
+     "a": "iken",
+     "vurgu": false
+    },
+    {
+     "k": "some",
+     "vurgu": false
+    },
+    {
+     "k": "praised",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "film,",
+     "vurgu": false
+    },
+    {
+     "k": "others",
+     "vurgu": false
+    },
+    {
+     "k": "criticized",
+     "a": "eleştirdi",
+     "vurgu": true
+    },
+    {
+     "k": "it.",
+     "a": "onu",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "identification",
+   "tur": "isim",
+   "tr": "kimlik",
+   "ornek_tr": "Kimlik göstermen şartıyla girebilirsin.",
+   "ornek_tokenlar": [
+    {
+     "k": "You",
+     "vurgu": false
+    },
+    {
+     "k": "may",
+     "vurgu": false
+    },
+    {
+     "k": "enter",
+     "vurgu": false
+    },
+    {
+     "k": "provided",
+     "a": "şartıyla",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "vurgu": false
+    },
+    {
+     "k": "you",
+     "vurgu": false
+    },
+    {
+     "k": "show",
+     "vurgu": false
+    },
+    {
+     "k": "identification.",
+     "a": "kimlik",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "overheat",
+   "tur": "fiil",
+   "tr": "aşırı ısınmak",
+   "ornek_tr": "Makine aşırı ısındı; dolayısıyla kapandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "machine",
+     "vurgu": false
+    },
+    {
+     "k": "overheated;",
+     "a": "aşırı ısındı",
+     "vurgu": true
+    },
+    {
+     "k": "consequently,",
+     "a": "dolayısıyla",
+     "vurgu": false
+    },
+    {
+     "k": "it",
+     "vurgu": false
+    },
+    {
+     "k": "shut",
+     "a": "kapandı",
+     "vurgu": false
+    },
+    {
+     "k": "down.",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "industrial",
+   "tur": "sıfat",
+   "tr": "sanayiye ait",
+   "ornek_tr": "Kuzey sanayiye dayalıyken güney tarımsaldır.",
+   "ornek_tokenlar": [
+    {
+     "k": "Whereas",
+     "a": "oysa",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "north",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "industrial,",
+     "a": "sanayi",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "south",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "agricultural.",
+     "a": "tarımsal",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "agricultural",
+   "tur": "sıfat",
+   "tr": "tarımsal",
+   "ornek_tr": "Kuzey sanayiye dayalıyken güney tarımsaldır.",
+   "ornek_tokenlar": [
+    {
+     "k": "Whereas",
+     "a": "oysa",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "north",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "industrial,",
+     "a": "sanayi",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "south",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "agricultural.",
+     "a": "tarımsal",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "afford",
+   "tur": "fiil",
+   "tr": "maddi gücü yetmek",
+   "ornek_tr": "Bir ev alabilmek için para biriktirdi.",
+   "ornek_tokenlar": [
+    {
+     "k": "She",
+     "vurgu": false
+    },
+    {
+     "k": "saved",
+     "vurgu": false
+    },
+    {
+     "k": "money",
+     "vurgu": false
+    },
+    {
+     "k": "so",
+     "a": "diye",
+     "vurgu": false
+    },
+    {
+     "k": "as",
+     "vurgu": false
+    },
+    {
+     "k": "to",
+     "vurgu": false
+    },
+    {
+     "k": "afford",
+     "a": "gücü yetmek",
+     "vurgu": true
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "house.",
+     "a": "ev",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "confirm",
+   "tur": "fiil",
+   "tr": "doğrulamak",
+   "ornek_tr": "Böylece deney hipotezi doğruladı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Thus,",
+     "a": "böylece",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "experiment",
+     "vurgu": false
+    },
+    {
+     "k": "confirmed",
+     "a": "doğruladı",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "hypothesis.",
+     "a": "hipotez",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "hypothesis",
+   "tur": "isim",
+   "tr": "hipotez, varsayım",
+   "ornek_tr": "Böylece deney hipotezi doğruladı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Thus,",
+     "a": "böylece",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "experiment",
+     "vurgu": false
+    },
+    {
+     "k": "confirmed",
+     "a": "doğruladı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "hypothesis.",
+     "a": "hipotez",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "reliable",
+   "tur": "sıfat",
+   "tr": "güvenilir",
+   "ornek_tr": "Ucuz olmasının yanında araç güvenilir de.",
+   "ornek_tokenlar": [
+    {
+     "k": "Besides",
+     "a": "ayrıca",
+     "vurgu": false
+    },
+    {
+     "k": "being",
+     "vurgu": false
+    },
+    {
+     "k": "cheap,",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "tool",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "reliable.",
+     "a": "güvenilir",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "practice",
+   "tur": "fiil",
+   "tr": "pratik yapmak",
+   "ornek_tr": "Pratik yaptığın sürece gelişeceksin.",
+   "ornek_tokenlar": [
+    {
+     "k": "As",
+     "a": "-dığı için",
+     "vurgu": false
+    },
+    {
+     "k": "long",
+     "vurgu": false
+    },
+    {
+     "k": "as",
+     "vurgu": false
+    },
+    {
+     "k": "you",
+     "vurgu": false
+    },
+    {
+     "k": "practice,",
+     "a": "pratik yap",
+     "vurgu": true
+    },
+    {
+     "k": "you",
+     "vurgu": false
+    },
+    {
+     "k": "will",
+     "vurgu": false
+    },
+    {
+     "k": "improve.",
+     "a": "gelişmek",
+     "vurgu": false
+    }
+   ]
+  }
+ ],
+ "gramer": [],
+ "soru_cozumleri": [],
+ "testler": [
+  {
+   "ad": "Test 1 — Zıtlık",
+   "sorular": [
+    {
+     "soru": "____ the high cost, the government approved the space program.",
+     "secenekler": [
+      "Although",
+      "Despite",
+      "Because",
+      "Therefore"
+     ],
+     "cevap": "Despite",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Despite",
+        "a": "-e rağmen",
+        "en": "İSİM öbeği (the high cost) → Despite",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "high",
+        "vurgu": false
+       },
+       {
+        "k": "cost,",
+        "a": "maliyet",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "government",
+        "vurgu": false
+       },
+       {
+        "k": "approved",
+        "a": "onayladı",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "space",
+        "vurgu": false
+       },
+       {
+        "k": "program.",
+        "a": "program",
+        "vurgu": false
+       }
+      ],
+      "tr": "Yüksek maliyete rağmen hükûmet uzay programını onayladı."
+     }
+    },
+    {
+     "soru": "____ she had studied medicine, she chose to become a writer.",
+     "secenekler": [
+      "Despite",
+      "In spite of",
+      "Although",
+      "Due to"
+     ],
+     "cevap": "Although",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Although",
+        "a": "-mesine rağmen",
+        "en": "CÜMLE (she had studied) → Although",
+        "vurgu": true
+       },
+       {
+        "k": "she",
+        "vurgu": false
+       },
+       {
+        "k": "had",
+        "vurgu": false
+       },
+       {
+        "k": "studied",
+        "a": "okudu",
+        "vurgu": false
+       },
+       {
+        "k": "medicine,",
+        "a": "tıp",
+        "vurgu": false
+       },
+       {
+        "k": "she",
+        "vurgu": false
+       },
+       {
+        "k": "chose",
+        "a": "seçti",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "become",
+        "vurgu": false
+       },
+       {
+        "k": "a",
+        "vurgu": false
+       },
+       {
+        "k": "writer.",
+        "a": "yazar",
+        "vurgu": false
+       }
+      ],
+      "tr": "Tıp okumuş olmasına rağmen yazar olmayı seçti."
+     }
+    },
+    {
+     "soru": "The proposal was innovative; ____, it was rejected by the committee.",
+     "secenekler": [
+      "because",
+      "however",
+      "despite",
+      "so that"
+     ],
+     "cevap": "however",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "proposal",
+        "a": "öneri",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "innovative;",
+        "a": "yenilikçi",
+        "vurgu": false
+       },
+       {
+        "k": "however,",
+        "a": "ancak",
+        "en": "; sonrası zıtlık zarfı → however",
+        "vurgu": true
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "rejected",
+        "a": "reddedildi",
+        "vurgu": false
+       },
+       {
+        "k": "by",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "committee.",
+        "a": "kurul",
+        "vurgu": false
+       }
+      ],
+      "tr": "Öneri yenilikçiydi; ancak kurul tarafından reddedildi."
+     }
+    },
+    {
+     "soru": "Coastal cities are humid, ____ inland areas tend to be dry.",
+     "secenekler": [
+      "despite",
+      "because",
+      "whereas",
+      "therefore"
+     ],
+     "cevap": "whereas",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Coastal",
+        "a": "kıyı",
+        "vurgu": false
+       },
+       {
+        "k": "cities",
+        "vurgu": false
+       },
+       {
+        "k": "are",
+        "vurgu": false
+       },
+       {
+        "k": "humid,",
+        "a": "nemli",
+        "vurgu": false
+       },
+       {
+        "k": "whereas",
+        "a": "oysa",
+        "en": "iki cümleyi karşılaştırır → whereas",
+        "vurgu": true
+       },
+       {
+        "k": "inland",
+        "a": "iç kesim",
+        "vurgu": false
+       },
+       {
+        "k": "areas",
+        "vurgu": false
+       },
+       {
+        "k": "tend",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "be",
+        "vurgu": false
+       },
+       {
+        "k": "dry.",
+        "a": "kuru",
+        "vurgu": false
+       }
+      ],
+      "tr": "Kıyı şehirleri nemliyken iç bölgeler kuru olma eğilimindedir."
+     }
+    },
+    {
+     "soru": "____ being warned repeatedly, he ignored the safety rules.",
+     "secenekler": [
+      "Although",
+      "Because",
+      "In spite of",
+      "Whereas"
+     ],
+     "cevap": "In spite of",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "In",
+        "a": "-e rağmen",
+        "en": "in spite of + isim-fiil (being warned) → In spite of",
+        "vurgu": true
+       },
+       {
+        "k": "spite",
+        "vurgu": true
+       },
+       {
+        "k": "of",
+        "vurgu": true
+       },
+       {
+        "k": "being",
+        "vurgu": false
+       },
+       {
+        "k": "warned",
+        "a": "uyarıldı",
+        "vurgu": false
+       },
+       {
+        "k": "repeatedly,",
+        "a": "defalarca",
+        "vurgu": false
+       },
+       {
+        "k": "he",
+        "vurgu": false
+       },
+       {
+        "k": "ignored",
+        "a": "görmezden geldi",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "safety",
+        "vurgu": false
+       },
+       {
+        "k": "rules.",
+        "a": "kurallar",
+        "vurgu": false
+       }
+      ],
+      "tr": "Defalarca uyarılmasına rağmen güvenlik kurallarını görmezden geldi."
+     }
+    },
+    {
+     "soru": "The medicine relieves pain; ____, it may cause drowsiness.",
+     "secenekler": [
+      "therefore",
+      "nevertheless",
+      "because",
+      "so"
+     ],
+     "cevap": "nevertheless",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "medicine",
+        "vurgu": false
+       },
+       {
+        "k": "relieves",
+        "a": "hafifletir",
+        "vurgu": false
+       },
+       {
+        "k": "pain;",
+        "a": "ağrı",
+        "vurgu": false
+       },
+       {
+        "k": "nevertheless,",
+        "a": "yine de",
+        "en": "zıtlık zarfı → nevertheless",
+        "vurgu": true
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "may",
+        "vurgu": false
+       },
+       {
+        "k": "cause",
+        "vurgu": false
+       },
+       {
+        "k": "drowsiness.",
+        "a": "uyku hâli",
+        "vurgu": false
+       }
+      ],
+      "tr": "İlaç ağrıyı hafifletir; yine de uyku hâline yol açabilir."
+     }
+    },
+    {
+     "soru": "____ the storm was severe, the ferries continued to operate.",
+     "secenekler": [
+      "Despite",
+      "Even though",
+      "Because of",
+      "Due to"
+     ],
+     "cevap": "Even though",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Even",
+        "a": "-mesine rağmen",
+        "en": "CÜMLE → even though",
+        "vurgu": true
+       },
+       {
+        "k": "though",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "storm",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "severe,",
+        "a": "şiddetli",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "ferries",
+        "a": "vapurlar",
+        "vurgu": false
+       },
+       {
+        "k": "continued",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "operate.",
+        "a": "çalışmak",
+        "vurgu": false
+       }
+      ],
+      "tr": "Fırtına şiddetli olmasına rağmen vapurlar çalışmaya devam etti."
+     }
+    },
+    {
+     "soru": "He is fluent in French, ____ his sister speaks only English.",
+     "secenekler": [
+      "despite",
+      "while",
+      "because",
+      "therefore"
+     ],
+     "cevap": "while",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "He",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "fluent",
+        "a": "akıcı",
+        "vurgu": false
+       },
+       {
+        "k": "in",
+        "vurgu": false
+       },
+       {
+        "k": "French,",
+        "vurgu": false
+       },
+       {
+        "k": "while",
+        "a": "oysa",
+        "en": "karşılaştırma → while",
+        "vurgu": true
+       },
+       {
+        "k": "his",
+        "vurgu": false
+       },
+       {
+        "k": "sister",
+        "vurgu": false
+       },
+       {
+        "k": "speaks",
+        "vurgu": false
+       },
+       {
+        "k": "only",
+        "vurgu": false
+       },
+       {
+        "k": "English.",
+        "vurgu": false
+       }
+      ],
+      "tr": "O akıcı Fransızca konuşur, oysa kız kardeşi yalnızca İngilizce konuşur."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 2 — Sebep-Sonuç",
+   "sorular": [
+    {
+     "soru": "The crops failed ____ the prolonged drought.",
+     "secenekler": [
+      "because",
+      "since",
+      "due to",
+      "so"
+     ],
+     "cevap": "due to",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "crops",
+        "a": "ekinler",
+        "vurgu": false
+       },
+       {
+        "k": "failed",
+        "a": "kurudu",
+        "vurgu": false
+       },
+       {
+        "k": "due",
+        "a": "nedeniyle",
+        "en": "İSİM (the drought) → due to",
+        "vurgu": true
+       },
+       {
+        "k": "to",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "prolonged",
+        "a": "uzun süreli",
+        "vurgu": false
+       },
+       {
+        "k": "drought.",
+        "a": "kuraklık",
+        "vurgu": false
+       }
+      ],
+      "tr": "Ekinler uzun süreli kuraklık nedeniyle kurudu."
+     }
+    },
+    {
+     "soru": "____ the results were inconclusive, the team ran the test again.",
+     "secenekler": [
+      "Due to",
+      "Because of",
+      "Since",
+      "Therefore"
+     ],
+     "cevap": "Since",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Since",
+        "a": "-dığı için",
+        "en": "CÜMLE (the results were) → Since",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "results",
+        "vurgu": false
+       },
+       {
+        "k": "were",
+        "vurgu": false
+       },
+       {
+        "k": "inconclusive,",
+        "a": "belirsiz",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "team",
+        "vurgu": false
+       },
+       {
+        "k": "ran",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "test",
+        "vurgu": false
+       },
+       {
+        "k": "again.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Sonuçlar belirsiz olduğu için ekip testi tekrar yaptı."
+     }
+    },
+    {
+     "soru": "The server crashed; ____, all unsaved data was lost.",
+     "secenekler": [
+      "because",
+      "consequently",
+      "although",
+      "despite"
+     ],
+     "cevap": "consequently",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "server",
+        "vurgu": false
+       },
+       {
+        "k": "crashed;",
+        "a": "çöktü",
+        "vurgu": false
+       },
+       {
+        "k": "consequently,",
+        "a": "dolayısıyla",
+        "en": "sonuç zarfı → consequently",
+        "vurgu": true
+       },
+       {
+        "k": "all",
+        "vurgu": false
+       },
+       {
+        "k": "unsaved",
+        "vurgu": false
+       },
+       {
+        "k": "data",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "lost.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Sunucu çöktü; dolayısıyla kaydedilmemiş tüm veriler kayboldu."
+     }
+    },
+    {
+     "soru": "The factory closed ____ a shortage of raw materials.",
+     "secenekler": [
+      "because",
+      "since",
+      "as",
+      "owing to"
+     ],
+     "cevap": "owing to",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "factory",
+        "vurgu": false
+       },
+       {
+        "k": "closed",
+        "vurgu": false
+       },
+       {
+        "k": "owing",
+        "a": "nedeniyle",
+        "en": "İSİM → owing to",
+        "vurgu": true
+       },
+       {
+        "k": "to",
+        "vurgu": true
+       },
+       {
+        "k": "a",
+        "vurgu": false
+       },
+       {
+        "k": "shortage",
+        "a": "kıtlık",
+        "vurgu": false
+       },
+       {
+        "k": "of",
+        "vurgu": false
+       },
+       {
+        "k": "raw",
+        "a": "ham",
+        "vurgu": false
+       },
+       {
+        "k": "materials.",
+        "a": "malzeme",
+        "vurgu": false
+       }
+      ],
+      "tr": "Fabrika ham madde kıtlığı nedeniyle kapandı."
+     }
+    },
+    {
+     "soru": "____ he was the most qualified, the board offered him the position.",
+     "secenekler": [
+      "Due to",
+      "Because of",
+      "As",
+      "Therefore"
+     ],
+     "cevap": "As",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "As",
+        "a": "-dığı için",
+        "en": "CÜMLE (başta sebep) → As",
+        "vurgu": true
+       },
+       {
+        "k": "he",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "most",
+        "vurgu": false
+       },
+       {
+        "k": "qualified,",
+        "a": "nitelikli",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "board",
+        "vurgu": false
+       },
+       {
+        "k": "offered",
+        "vurgu": false
+       },
+       {
+        "k": "him",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "position.",
+        "a": "pozisyon",
+        "vurgu": false
+       }
+      ],
+      "tr": "En nitelikli aday olduğu için kurul ona pozisyonu teklif etti."
+     }
+    },
+    {
+     "soru": "Temperatures are rising; ____, sea levels are expected to climb.",
+     "secenekler": [
+      "because",
+      "thus",
+      "although",
+      "whereas"
+     ],
+     "cevap": "thus",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Temperatures",
+        "vurgu": false
+       },
+       {
+        "k": "are",
+        "vurgu": false
+       },
+       {
+        "k": "rising;",
+        "a": "yükseliyor",
+        "vurgu": false
+       },
+       {
+        "k": "thus,",
+        "a": "böylece",
+        "en": "sonuç zarfı → thus",
+        "vurgu": true
+       },
+       {
+        "k": "sea",
+        "vurgu": false
+       },
+       {
+        "k": "levels",
+        "vurgu": false
+       },
+       {
+        "k": "are",
+        "vurgu": false
+       },
+       {
+        "k": "expected",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "climb.",
+        "a": "yükselmek",
+        "vurgu": false
+       }
+      ],
+      "tr": "Sıcaklıklar yükseliyor; böylece deniz seviyelerinin de artması bekleniyor."
+     }
+    },
+    {
+     "soru": "The event was postponed ____ the organizers could secure a venue.",
+     "secenekler": [
+      "because of",
+      "so that",
+      "due to",
+      "in spite of"
+     ],
+     "cevap": "so that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "event",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "postponed",
+        "a": "ertelendi",
+        "vurgu": false
+       },
+       {
+        "k": "so",
+        "a": "için",
+        "en": "so that + CÜMLE (amaç) → so that",
+        "vurgu": true
+       },
+       {
+        "k": "that",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "organizers",
+        "a": "düzenleyiciler",
+        "vurgu": false
+       },
+       {
+        "k": "could",
+        "vurgu": false
+       },
+       {
+        "k": "secure",
+        "a": "ayarlamak",
+        "vurgu": false
+       },
+       {
+        "k": "a",
+        "vurgu": false
+       },
+       {
+        "k": "venue.",
+        "a": "mekân",
+        "vurgu": false
+       }
+      ],
+      "tr": "Düzenleyiciler bir mekân ayarlayabilsin diye etkinlik ertelendi."
+     }
+    },
+    {
+     "soru": "She was promoted ____ her exceptional performance.",
+     "secenekler": [
+      "because",
+      "since",
+      "on account of",
+      "as"
+     ],
+     "cevap": "on account of",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "She",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "promoted",
+        "a": "terfi etti",
+        "vurgu": false
+       },
+       {
+        "k": "on",
+        "a": "yüzünden",
+        "en": "on account of + İSİM (= because of) → on account of",
+        "vurgu": true
+       },
+       {
+        "k": "account",
+        "vurgu": true
+       },
+       {
+        "k": "of",
+        "vurgu": true
+       },
+       {
+        "k": "her",
+        "vurgu": false
+       },
+       {
+        "k": "exceptional",
+        "a": "olağanüstü",
+        "vurgu": false
+       },
+       {
+        "k": "performance.",
+        "a": "performans",
+        "vurgu": false
+       }
+      ],
+      "tr": "Olağanüstü performansı sayesinde terfi etti."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 3 — Amaç & Koşul",
+   "sorular": [
+    {
+     "soru": "Keep the receipt ____ you need to return the item.",
+     "secenekler": [
+      "so that",
+      "in case",
+      "in order to",
+      "due to"
+     ],
+     "cevap": "in case",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Keep",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "receipt",
+        "a": "fiş",
+        "vurgu": false
+       },
+       {
+        "k": "in",
+        "a": "ihtimaline karşı",
+        "en": "in case + CÜMLE → in case",
+        "vurgu": true
+       },
+       {
+        "k": "case",
+        "vurgu": true
+       },
+       {
+        "k": "you",
+        "vurgu": false
+       },
+       {
+        "k": "need",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "return",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "item.",
+        "a": "ürün",
+        "vurgu": false
+       }
+      ],
+      "tr": "Ürünü iade etmen gerekir diye fişi sakla."
+     }
+    },
+    {
+     "soru": "He whispered ____ to avoid waking the baby.",
+     "secenekler": [
+      "so that",
+      "in case",
+      "so as",
+      "because"
+     ],
+     "cevap": "so as",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "He",
+        "vurgu": false
+       },
+       {
+        "k": "whispered",
+        "a": "fısıldadı",
+        "vurgu": false
+       },
+       {
+        "k": "so",
+        "a": "diye",
+        "en": "so as to + FİİL (amaç) → so as",
+        "vurgu": true
+       },
+       {
+        "k": "as",
+        "vurgu": true
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "avoid",
+        "vurgu": false
+       },
+       {
+        "k": "waking",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "baby.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Bebeği uyandırmamak için fısıldadı."
+     }
+    },
+    {
+     "soru": "____ you finish the report, you may leave early.",
+     "secenekler": [
+      "Unless",
+      "Provided that",
+      "In case",
+      "Due to"
+     ],
+     "cevap": "Provided that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Provided",
+        "a": "şartıyla",
+        "en": "provided that = koşuluyla → Provided that",
+        "vurgu": true
+       },
+       {
+        "k": "that",
+        "vurgu": true
+       },
+       {
+        "k": "you",
+        "vurgu": false
+       },
+       {
+        "k": "finish",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "report,",
+        "vurgu": false
+       },
+       {
+        "k": "you",
+        "vurgu": false
+       },
+       {
+        "k": "may",
+        "vurgu": false
+       },
+       {
+        "k": "leave",
+        "vurgu": false
+       },
+       {
+        "k": "early.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Raporu bitirmen şartıyla erken çıkabilirsin."
+     }
+    },
+    {
+     "soru": "You will not pass ____ you revise thoroughly.",
+     "secenekler": [
+      "provided that",
+      "so that",
+      "unless",
+      "in case"
+     ],
+     "cevap": "unless",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "You",
+        "vurgu": false
+       },
+       {
+        "k": "will",
+        "vurgu": false
+       },
+       {
+        "k": "not",
+        "vurgu": false
+       },
+       {
+        "k": "pass",
+        "vurgu": false
+       },
+       {
+        "k": "unless",
+        "a": "-mezsen",
+        "en": "unless = if not → unless",
+        "vurgu": true
+       },
+       {
+        "k": "you",
+        "vurgu": false
+       },
+       {
+        "k": "revise",
+        "a": "tekrar et",
+        "vurgu": false
+       },
+       {
+        "k": "thoroughly.",
+        "a": "iyice",
+        "vurgu": false
+       }
+      ],
+      "tr": "İyice tekrar etmezsen geçemezsin."
+     }
+    },
+    {
+     "soru": "The scientists lowered the temperature ____ slow the reaction.",
+     "secenekler": [
+      "so that",
+      "in order to",
+      "in case",
+      "because of"
+     ],
+     "cevap": "in order to",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "scientists",
+        "vurgu": false
+       },
+       {
+        "k": "lowered",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "temperature",
+        "vurgu": false
+       },
+       {
+        "k": "in",
+        "a": "-mek için",
+        "en": "in order to + FİİL → in order to",
+        "vurgu": true
+       },
+       {
+        "k": "order",
+        "vurgu": true
+       },
+       {
+        "k": "to",
+        "vurgu": true
+       },
+       {
+        "k": "slow",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "reaction.",
+        "a": "tepkime",
+        "vurgu": false
+       }
+      ],
+      "tr": "Bilim insanları tepkimeyi yavaşlatmak için sıcaklığı düşürdü."
+     }
+    },
+    {
+     "soru": "You can borrow my car ____ you return it by tonight.",
+     "secenekler": [
+      "unless",
+      "as long as",
+      "in case",
+      "due to"
+     ],
+     "cevap": "as long as",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "You",
+        "vurgu": false
+       },
+       {
+        "k": "can",
+        "vurgu": false
+       },
+       {
+        "k": "borrow",
+        "vurgu": false
+       },
+       {
+        "k": "my",
+        "vurgu": false
+       },
+       {
+        "k": "car",
+        "vurgu": false
+       },
+       {
+        "k": "as",
+        "a": "sürece",
+        "en": "as long as = koşul → as long as",
+        "vurgu": true
+       },
+       {
+        "k": "long",
+        "vurgu": true
+       },
+       {
+        "k": "as",
+        "vurgu": true
+       },
+       {
+        "k": "you",
+        "vurgu": false
+       },
+       {
+        "k": "return",
+        "vurgu": false
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "by",
+        "vurgu": false
+       },
+       {
+        "k": "tonight.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Bu gece iade etmen şartıyla arabamı ödünç alabilirsin."
+     }
+    },
+    {
+     "soru": "The teacher spoke slowly ____ everyone could follow the lecture.",
+     "secenekler": [
+      "in order to",
+      "so that",
+      "so as to",
+      "because"
+     ],
+     "cevap": "so that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "teacher",
+        "vurgu": false
+       },
+       {
+        "k": "spoke",
+        "vurgu": false
+       },
+       {
+        "k": "slowly",
+        "vurgu": false
+       },
+       {
+        "k": "so",
+        "a": "için",
+        "en": "so that + CÜMLE (özneli amaç) → so that",
+        "vurgu": true
+       },
+       {
+        "k": "that",
+        "vurgu": true
+       },
+       {
+        "k": "everyone",
+        "vurgu": false
+       },
+       {
+        "k": "could",
+        "vurgu": false
+       },
+       {
+        "k": "follow",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "lecture.",
+        "a": "ders",
+        "vurgu": false
+       }
+      ],
+      "tr": "Herkes dersi takip edebilsin diye öğretmen yavaş konuştu."
+     }
+    },
+    {
+     "soru": "Take a map ____ your phone runs out of battery.",
+     "secenekler": [
+      "so that",
+      "in order to",
+      "in case",
+      "provided that"
+     ],
+     "cevap": "in case",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Take",
+        "vurgu": false
+       },
+       {
+        "k": "a",
+        "vurgu": false
+       },
+       {
+        "k": "map",
+        "vurgu": false
+       },
+       {
+        "k": "in",
+        "a": "ihtimaline karşı",
+        "en": "in case + CÜMLE → in case",
+        "vurgu": true
+       },
+       {
+        "k": "case",
+        "vurgu": true
+       },
+       {
+        "k": "your",
+        "vurgu": false
+       },
+       {
+        "k": "phone",
+        "vurgu": false
+       },
+       {
+        "k": "runs",
+        "vurgu": false
+       },
+       {
+        "k": "out",
+        "vurgu": false
+       },
+       {
+        "k": "of",
+        "vurgu": false
+       },
+       {
+        "k": "battery.",
+        "a": "pil",
+        "vurgu": false
+       }
+      ],
+      "tr": "Telefonunun şarjı biter diye yanına harita al."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 4 — Ekleme & Geçiş",
+   "sorular": [
+    {
+     "soru": "The apartment is spacious; ____, it is close to the metro.",
+     "secenekler": [
+      "however",
+      "moreover",
+      "because",
+      "unless"
+     ],
+     "cevap": "moreover",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "apartment",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "spacious;",
+        "a": "ferah",
+        "vurgu": false
+       },
+       {
+        "k": "moreover,",
+        "a": "üstelik",
+        "en": "ekleme zarfı → moreover",
+        "vurgu": true
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "close",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "metro.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Daire ferah; üstelik metroya da yakın."
+     }
+    },
+    {
+     "soru": "The candidate was unqualified. ____, he lacked any real experience.",
+     "secenekler": [
+      "Nevertheless",
+      "Furthermore",
+      "Whereas",
+      "Therefore"
+     ],
+     "cevap": "Furthermore",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "candidate",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "unqualified.",
+        "vurgu": false
+       },
+       {
+        "k": "Furthermore,",
+        "a": "dahası",
+        "en": "ekleme zarfı → Furthermore",
+        "vurgu": true
+       },
+       {
+        "k": "he",
+        "vurgu": false
+       },
+       {
+        "k": "lacked",
+        "a": "yoksundu",
+        "vurgu": false
+       },
+       {
+        "k": "any",
+        "vurgu": false
+       },
+       {
+        "k": "real",
+        "vurgu": false
+       },
+       {
+        "k": "experience.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Aday niteliksizdi. Dahası, gerçek bir deneyimi de yoktu."
+     }
+    },
+    {
+     "soru": "The guests were seated; ____, the waiters served appetizers.",
+     "secenekler": [
+      "meanwhile",
+      "however",
+      "because",
+      "unless"
+     ],
+     "cevap": "meanwhile",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "guests",
+        "vurgu": false
+       },
+       {
+        "k": "were",
+        "vurgu": false
+       },
+       {
+        "k": "seated;",
+        "a": "oturdu",
+        "vurgu": false
+       },
+       {
+        "k": "meanwhile,",
+        "a": "bu sırada",
+        "en": "zaman zarfı → meanwhile",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "waiters",
+        "vurgu": false
+       },
+       {
+        "k": "served",
+        "vurgu": false
+       },
+       {
+        "k": "appetizers.",
+        "a": "mezeler",
+        "vurgu": false
+       }
+      ],
+      "tr": "Misafirler oturdu; bu sırada garsonlar mezeleri servis etti."
+     }
+    },
+    {
+     "soru": "The device is waterproof; ____, it resists extreme heat.",
+     "secenekler": [
+      "nevertheless",
+      "in addition",
+      "whereas",
+      "due to"
+     ],
+     "cevap": "in addition",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "device",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "waterproof;",
+        "a": "su geçirmez",
+        "vurgu": false
+       },
+       {
+        "k": "in",
+        "a": "ayrıca",
+        "en": "ekleme → in addition",
+        "vurgu": true
+       },
+       {
+        "k": "addition,",
+        "vurgu": true
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "resists",
+        "a": "dayanır",
+        "vurgu": false
+       },
+       {
+        "k": "extreme",
+        "vurgu": false
+       },
+       {
+        "k": "heat.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Cihaz su geçirmez; ayrıca aşırı sıcağa da dayanır."
+     }
+    },
+    {
+     "soru": "The results were submitted late; ____, they were still accepted.",
+     "secenekler": [
+      "moreover",
+      "nonetheless",
+      "because",
+      "so that"
+     ],
+     "cevap": "nonetheless",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "results",
+        "vurgu": false
+       },
+       {
+        "k": "were",
+        "vurgu": false
+       },
+       {
+        "k": "submitted",
+        "vurgu": false
+       },
+       {
+        "k": "late;",
+        "a": "geç",
+        "vurgu": false
+       },
+       {
+        "k": "nonetheless,",
+        "a": "yine de",
+        "en": "zıtlık zarfı → nonetheless",
+        "vurgu": true
+       },
+       {
+        "k": "they",
+        "vurgu": false
+       },
+       {
+        "k": "were",
+        "vurgu": false
+       },
+       {
+        "k": "still",
+        "vurgu": false
+       },
+       {
+        "k": "accepted.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Sonuçlar geç teslim edildi; yine de kabul edildi."
+     }
+    },
+    {
+     "soru": "First the dough is kneaded; ____, it is left to rise.",
+     "secenekler": [
+      "however",
+      "subsequently",
+      "because",
+      "whereas"
+     ],
+     "cevap": "subsequently",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "First",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "dough",
+        "a": "hamur",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "kneaded;",
+        "a": "yoğrulur",
+        "vurgu": false
+       },
+       {
+        "k": "subsequently,",
+        "a": "ardından",
+        "en": "zaman zarfı → subsequently",
+        "vurgu": true
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "left",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "rise.",
+        "a": "kabarmak",
+        "vurgu": false
+       }
+      ],
+      "tr": "Önce hamur yoğrulur; ardından kabarmaya bırakılır."
+     }
+    },
+    {
+     "soru": "The hotel offers free breakfast; ____, parking is included.",
+     "secenekler": [
+      "nevertheless",
+      "besides",
+      "although",
+      "due to"
+     ],
+     "cevap": "besides",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "hotel",
+        "vurgu": false
+       },
+       {
+        "k": "offers",
+        "vurgu": false
+       },
+       {
+        "k": "free",
+        "vurgu": false
+       },
+       {
+        "k": "breakfast;",
+        "a": "kahvaltı",
+        "vurgu": false
+       },
+       {
+        "k": "besides,",
+        "a": "ayrıca",
+        "en": "ekleme → besides",
+        "vurgu": true
+       },
+       {
+        "k": "parking",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "included.",
+        "a": "dâhil",
+        "vurgu": false
+       }
+      ],
+      "tr": "Otel ücretsiz kahvaltı sunuyor; ayrıca otopark da dâhil."
+     }
+    },
+    {
+     "soru": "She had rehearsed for weeks; ____, she felt nervous on stage.",
+     "secenekler": [
+      "moreover",
+      "even so",
+      "because",
+      "so that"
+     ],
+     "cevap": "even so",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "She",
+        "vurgu": false
+       },
+       {
+        "k": "had",
+        "vurgu": false
+       },
+       {
+        "k": "rehearsed",
+        "a": "prova yaptı",
+        "vurgu": false
+       },
+       {
+        "k": "for",
+        "vurgu": false
+       },
+       {
+        "k": "weeks;",
+        "vurgu": false
+       },
+       {
+        "k": "even",
+        "a": "yine de",
+        "en": "even so = buna rağmen → even so",
+        "vurgu": true
+       },
+       {
+        "k": "so,",
+        "vurgu": true
+       },
+       {
+        "k": "she",
+        "vurgu": false
+       },
+       {
+        "k": "felt",
+        "vurgu": false
+       },
+       {
+        "k": "nervous",
+        "a": "gergin",
+        "vurgu": false
+       },
+       {
+        "k": "on",
+        "vurgu": false
+       },
+       {
+        "k": "stage.",
+        "a": "sahne",
+        "vurgu": false
+       }
+      ],
+      "tr": "Haftalarca prova yapmıştı; yine de sahnede gergin hissetti."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 5 — Karma (Zor)",
+   "sorular": [
+    {
+     "soru": "____ its modest budget, the film achieved remarkable success.",
+     "secenekler": [
+      "Although",
+      "Despite",
+      "Because",
+      "Whereas"
+     ],
+     "cevap": "Despite",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Despite",
+        "a": "-e rağmen",
+        "en": "İSİM öbeği → Despite",
+        "vurgu": true
+       },
+       {
+        "k": "its",
+        "vurgu": false
+       },
+       {
+        "k": "modest",
+        "a": "mütevazı",
+        "vurgu": false
+       },
+       {
+        "k": "budget,",
+        "a": "bütçe",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "film",
+        "vurgu": false
+       },
+       {
+        "k": "achieved",
+        "a": "elde etti",
+        "vurgu": false
+       },
+       {
+        "k": "remarkable",
+        "a": "dikkat çekici",
+        "vurgu": false
+       },
+       {
+        "k": "success.",
+        "a": "başarı",
+        "vurgu": false
+       }
+      ],
+      "tr": "Mütevazı bütçesine rağmen film dikkat çekici bir başarı elde etti."
+     }
+    },
+    {
+     "soru": "The negotiations collapsed, ____ leaving both sides frustrated.",
+     "secenekler": [
+      "because",
+      "thereby",
+      "despite",
+      "unless"
+     ],
+     "cevap": "thereby",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "negotiations",
+        "a": "müzakereler",
+        "vurgu": false
+       },
+       {
+        "k": "collapsed,",
+        "a": "çöktü",
+        "vurgu": false
+       },
+       {
+        "k": "thereby",
+        "a": "böylelikle",
+        "en": "thereby + V-ing = böylece",
+        "vurgu": true
+       },
+       {
+        "k": "leaving",
+        "vurgu": false
+       },
+       {
+        "k": "both",
+        "vurgu": false
+       },
+       {
+        "k": "sides",
+        "vurgu": false
+       },
+       {
+        "k": "frustrated.",
+        "a": "hayal kırıklığı",
+        "vurgu": false
+       }
+      ],
+      "tr": "Müzakereler çöktü; böylelikle iki tarafı da hayal kırıklığına uğrattı."
+     }
+    },
+    {
+     "soru": "____ the vaccine proved effective, it was distributed globally.",
+     "secenekler": [
+      "Despite",
+      "In spite of",
+      "Now that",
+      "Due to"
+     ],
+     "cevap": "Now that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Now",
+        "a": "artık",
+        "en": "now that = -dığı için (yeni durum) → Now that",
+        "vurgu": true
+       },
+       {
+        "k": "that",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "vaccine",
+        "vurgu": false
+       },
+       {
+        "k": "proved",
+        "vurgu": false
+       },
+       {
+        "k": "effective,",
+        "a": "etkili",
+        "vurgu": false
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "distributed",
+        "a": "dağıtıldı",
+        "vurgu": false
+       },
+       {
+        "k": "globally.",
+        "vurgu": false
+       }
+      ],
+      "tr": "Aşının etkili olduğu kanıtlandığı için dünya çapında dağıtıldı."
+     }
+    },
+    {
+     "soru": "The bridge must be reinforced; ____, it may collapse under load.",
+     "secenekler": [
+      "nevertheless",
+      "otherwise",
+      "moreover",
+      "whereas"
+     ],
+     "cevap": "otherwise",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "bridge",
+        "vurgu": false
+       },
+       {
+        "k": "must",
+        "vurgu": false
+       },
+       {
+        "k": "be",
+        "vurgu": false
+       },
+       {
+        "k": "reinforced;",
+        "a": "güçlendirilmeli",
+        "vurgu": false
+       },
+       {
+        "k": "otherwise,",
+        "a": "aksi hâlde",
+        "en": "otherwise = yoksa",
+        "vurgu": true
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "may",
+        "vurgu": false
+       },
+       {
+        "k": "collapse",
+        "vurgu": false
+       },
+       {
+        "k": "under",
+        "vurgu": false
+       },
+       {
+        "k": "load.",
+        "a": "yük",
+        "vurgu": false
+       }
+      ],
+      "tr": "Köprü güçlendirilmeli; aksi hâlde yük altında çökebilir."
+     }
+    },
+    {
+     "soru": "He accepted the offer ____ he had reservations about the salary.",
+     "secenekler": [
+      "despite",
+      "even though",
+      "because of",
+      "so that"
+     ],
+     "cevap": "even though",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "He",
+        "vurgu": false
+       },
+       {
+        "k": "accepted",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "offer",
+        "vurgu": false
+       },
+       {
+        "k": "even",
+        "a": "-mesine rağmen",
+        "en": "CÜMLE → even though",
+        "vurgu": true
+       },
+       {
+        "k": "though",
+        "vurgu": true
+       },
+       {
+        "k": "he",
+        "vurgu": false
+       },
+       {
+        "k": "had",
+        "vurgu": false
+       },
+       {
+        "k": "reservations",
+        "a": "çekinceler",
+        "vurgu": false
+       },
+       {
+        "k": "about",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "salary.",
+        "a": "maaş",
+        "vurgu": false
+       }
+      ],
+      "tr": "Maaşla ilgili çekinceleri olmasına rağmen teklifi kabul etti."
+     }
+    },
+    {
+     "soru": "The software is free; ____, its features rival paid alternatives.",
+     "secenekler": [
+      "nonetheless",
+      "what is more",
+      "whereas",
+      "because"
+     ],
+     "cevap": "what is more",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "software",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "free;",
+        "a": "ücretsiz",
+        "vurgu": false
+       },
+       {
+        "k": "what",
+        "a": "dahası",
+        "en": "what is more = üstelik",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "vurgu": true
+       },
+       {
+        "k": "more,",
+        "vurgu": true
+       },
+       {
+        "k": "its",
+        "vurgu": false
+       },
+       {
+        "k": "features",
+        "vurgu": false
+       },
+       {
+        "k": "rival",
+        "a": "yarışır",
+        "vurgu": false
+       },
+       {
+        "k": "paid",
+        "vurgu": false
+       },
+       {
+        "k": "alternatives.",
+        "a": "alternatifler",
+        "vurgu": false
+       }
+      ],
+      "tr": "Yazılım ücretsiz; dahası özellikleri ücretli seçeneklerle yarışıyor."
+     }
+    },
+    {
+     "soru": "____ demand kept rising, the company doubled its production.",
+     "secenekler": [
+      "Despite",
+      "As",
+      "In spite of",
+      "Therefore"
+     ],
+     "cevap": "As",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "As",
+        "a": "-dıkça",
+        "en": "as = -dıkça/-dığı için → As",
+        "vurgu": true
+       },
+       {
+        "k": "demand",
+        "a": "talep",
+        "vurgu": false
+       },
+       {
+        "k": "kept",
+        "vurgu": false
+       },
+       {
+        "k": "rising,",
+        "a": "arttı",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "company",
+        "vurgu": false
+       },
+       {
+        "k": "doubled",
+        "a": "ikiye katladı",
+        "vurgu": false
+       },
+       {
+        "k": "its",
+        "vurgu": false
+       },
+       {
+        "k": "production.",
+        "a": "üretim",
+        "vurgu": false
+       }
+      ],
+      "tr": "Talep artmaya devam ettikçe şirket üretimini ikiye katladı."
+     }
+    },
+    {
+     "soru": "The manuscript was fragile; ____, it was handled with great care.",
+     "secenekler": [
+      "however",
+      "accordingly",
+      "whereas",
+      "unless"
+     ],
+     "cevap": "accordingly",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "manuscript",
+        "a": "el yazması",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "fragile;",
+        "a": "kırılgan",
+        "vurgu": false
+       },
+       {
+        "k": "accordingly,",
+        "a": "buna göre",
+        "en": "accordingly = bu doğrultuda",
+        "vurgu": true
+       },
+       {
+        "k": "it",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "handled",
+        "vurgu": false
+       },
+       {
+        "k": "with",
+        "vurgu": false
+       },
+       {
+        "k": "great",
+        "vurgu": false
+       },
+       {
+        "k": "care.",
+        "a": "özen",
+        "vurgu": false
+       }
+      ],
+      "tr": "El yazması kırılgandı; bu doğrultuda büyük özenle taşındı."
+     }
+    }
+   ]
+  }
+ ]
+}
