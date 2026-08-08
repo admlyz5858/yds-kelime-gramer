@@ -1,0 +1,7853 @@
+{
+ "id": 13,
+ "baslik": "Ünite 13 — Sıfat Cümlecikleri (Relative Clauses)",
+ "konu_ozeti": "Sıfat cümlecikleri (relative clauses): who / whom / which / that / whose / where / when / why ile bir ismi tanımlayan yan cümleler. İnsan-eşya ve özne-nesne ayrımı, iyelik (whose), yer-zaman zamirleri, virgüllü (non-defining) yapılar ve edat + ilgi zamiri. Konu anlatımı + örnek cümleler + seviyeli testler.",
+ "bolumler": [
+  {
+   "baslik": "📘 Konu Anlatımı — Sıfat Cümlecikleri",
+   "sema": {
+    "kural": "Sıfat cümlecikleri (relative clauses) bir ismi tanımlar. İlgi zamiri, tanımladığı ismin İNSAN mı / EŞYA mı olduğuna ve cümlede ÖZNE mi / NESNE mi görevi gördüğüne göre seçilir.",
+    "ekler": [
+     {
+      "edat": "who / that",
+      "ek": "insan — özne"
+     },
+     {
+      "edat": "which / that",
+      "ek": "eşya-hayvan — özne/nesne"
+     },
+     {
+      "edat": "whose",
+      "ek": "iyelik (-in … -i)"
+     },
+     {
+      "edat": "where / when / why",
+      "ek": "yer / zaman / sebep"
+     }
+    ],
+    "kademeBaslik": "Hangi zamir?",
+    "kademe": [
+     {
+      "en": "insanı tanımla",
+      "tr": "who (özne) / whom (nesne)"
+     },
+     {
+      "en": "eşya-hayvanı tanımla",
+      "tr": "which / that"
+     },
+     {
+      "en": "\"-in …-i\" iyelik",
+      "tr": "whose"
+     },
+     {
+      "en": "virgüllü ek bilgi",
+      "tr": "non-defining: that OLMAZ"
+     }
+    ]
+   }
+  },
+  {
+   "baslik": "Who / Whom / That — İnsanı Tanımlama",
+   "ust": "SIFAT CÜMLECİĞİ",
+   "ogeler": [
+    {
+     "kural": "isim(insan) + who/that (özne) veya whom/that (nesne) + fiil",
+     "anlam": "İnsan olan ismi tanımlar. Cümlecikte ÖZNE görevi görüyorsa who/that, NESNE görevi görüyorsa whom/that (konuşmada çoğu kez düşer).",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "scientist",
+         "a": "bilim insanı",
+         "vurgu": false
+        },
+        {
+         "k": "who",
+         "a": "ki o",
+         "en": "who = insan + özne",
+         "vurgu": true
+        },
+        {
+         "k": "discovered",
+         "a": "keşfetti",
+         "vurgu": true
+        },
+        {
+         "k": "penicillin",
+         "a": "penisilin",
+         "vurgu": false
+        },
+        {
+         "k": "saved",
+         "a": "kurtardı",
+         "vurgu": true
+        },
+        {
+         "k": "millions",
+         "a": "milyonlar",
+         "vurgu": false
+        },
+        {
+         "k": "of",
+         "vurgu": false
+        },
+        {
+         "k": "lives.",
+         "a": "hayat",
+         "vurgu": false
+        }
+       ],
+       "tr": "Penisilini keşfeden bilim insanı milyonlarca hayat kurtardı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "author",
+         "a": "yazar",
+         "vurgu": false
+        },
+        {
+         "k": "whom",
+         "a": "ki onu",
+         "en": "whom = insan + NESNE",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "critics",
+         "a": "eleştirmenler",
+         "vurgu": false
+        },
+        {
+         "k": "praised",
+         "a": "övdü",
+         "vurgu": true
+        },
+        {
+         "k": "remained",
+         "a": "kaldı",
+         "vurgu": false
+        },
+        {
+         "k": "modest.",
+         "a": "mütevazı",
+         "vurgu": true
+        }
+       ],
+       "tr": "Eleştirmenlerin övdüğü yazar mütevazı kaldı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "Employees",
+         "a": "çalışanlar",
+         "vurgu": false
+        },
+        {
+         "k": "who",
+         "a": "ki onlar",
+         "vurgu": true
+        },
+        {
+         "k": "meet",
+         "a": "karşılar",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "deadline",
+         "a": "teslim tarihi",
+         "vurgu": false
+        },
+        {
+         "k": "will",
+         "vurgu": false
+        },
+        {
+         "k": "receive",
+         "a": "alacak",
+         "vurgu": false
+        },
+        {
+         "k": "a",
+         "vurgu": false
+        },
+        {
+         "k": "bonus.",
+         "a": "ikramiye",
+         "vurgu": true
+        }
+       ],
+       "tr": "Teslim tarihine yetişen çalışanlar ikramiye alacak."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "doctor",
+         "a": "doktor",
+         "vurgu": false
+        },
+        {
+         "k": "that",
+         "a": "ki o",
+         "en": "that = who yerine kullanılabilir",
+         "vurgu": true
+        },
+        {
+         "k": "treated",
+         "a": "tedavi etti",
+         "vurgu": true
+        },
+        {
+         "k": "me",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "very",
+         "vurgu": false
+        },
+        {
+         "k": "experienced.",
+         "a": "deneyimli",
+         "vurgu": true
+        }
+       ],
+       "tr": "Beni tedavi eden doktor çok deneyimliydi."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "volunteers",
+         "a": "gönüllüler",
+         "vurgu": false
+        },
+        {
+         "k": "who",
+         "a": "ki onlar",
+         "vurgu": true
+        },
+        {
+         "k": "rescued",
+         "a": "kurtardı",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "hikers",
+         "a": "dağcılar",
+         "vurgu": false
+        },
+        {
+         "k": "were",
+         "vurgu": false
+        },
+        {
+         "k": "honored.",
+         "a": "onurlandırıldı",
+         "vurgu": true
+        }
+       ],
+       "tr": "Dağcıları kurtaran gönüllüler onurlandırıldı."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Which / That — Eşya ve Hayvanı Tanımlama",
+   "ust": "SIFAT CÜMLECİĞİ",
+   "ogeler": [
+    {
+     "kural": "isim(eşya/hayvan) + which/that + fiil",
+     "anlam": "Eşya, kavram veya hayvan olan ismi tanımlar. Which ve that genelde birbirinin yerine geçer; ancak virgülden sonra (non-defining) ve edattan sonra SADECE which kullanılır.",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "novel",
+         "a": "roman",
+         "vurgu": false
+        },
+        {
+         "k": "which",
+         "a": "ki o",
+         "en": "which = eşya",
+         "vurgu": true
+        },
+        {
+         "k": "won",
+         "a": "kazandı",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "prize",
+         "a": "ödül",
+         "vurgu": false
+        },
+        {
+         "k": "deals",
+         "a": "ele alır",
+         "vurgu": true
+        },
+        {
+         "k": "with",
+         "vurgu": false
+        },
+        {
+         "k": "migration.",
+         "a": "göç",
+         "vurgu": false
+        }
+       ],
+       "tr": "Ödülü kazanan roman göçü ele alıyor."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "bridge",
+         "a": "köprü",
+         "vurgu": false
+        },
+        {
+         "k": "that",
+         "a": "ki o",
+         "vurgu": true
+        },
+        {
+         "k": "engineers",
+         "a": "mühendisler",
+         "vurgu": false
+        },
+        {
+         "k": "built",
+         "a": "inşa etti",
+         "vurgu": true
+        },
+        {
+         "k": "last",
+         "vurgu": false
+        },
+        {
+         "k": "year",
+         "vurgu": false
+        },
+        {
+         "k": "collapsed",
+         "a": "çöktü",
+         "vurgu": true
+        },
+        {
+         "k": "in",
+         "vurgu": false
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "storm.",
+         "a": "fırtına",
+         "vurgu": false
+        }
+       ],
+       "tr": "Mühendislerin geçen yıl inşa ettiği köprü fırtınada çöktü."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "vaccine",
+         "a": "aşı",
+         "vurgu": false
+        },
+        {
+         "k": "which",
+         "a": "ki o",
+         "vurgu": true
+        },
+        {
+         "k": "researchers",
+         "a": "araştırmacılar",
+         "vurgu": false
+        },
+        {
+         "k": "developed",
+         "a": "geliştirdi",
+         "vurgu": true
+        },
+        {
+         "k": "proved",
+         "a": "kanıtladı",
+         "vurgu": false
+        },
+        {
+         "k": "effective.",
+         "a": "etkili",
+         "vurgu": true
+        }
+       ],
+       "tr": "Araştırmacıların geliştirdiği aşı etkili olduğunu kanıtladı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "factory",
+         "a": "fabrika",
+         "vurgu": false
+        },
+        {
+         "k": "that",
+         "a": "ki o",
+         "vurgu": true
+        },
+        {
+         "k": "pollutes",
+         "a": "kirletir",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "river",
+         "a": "nehir",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "finally",
+         "vurgu": false
+        },
+        {
+         "k": "shut",
+         "a": "kapatıldı",
+         "vurgu": true
+        },
+        {
+         "k": "down.",
+         "a": "(kapatıldı)",
+         "vurgu": false
+        }
+       ],
+       "tr": "Nehri kirleten fabrika sonunda kapatıldı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "ancient",
+         "a": "antik",
+         "vurgu": false
+        },
+        {
+         "k": "manuscript",
+         "a": "el yazması",
+         "vurgu": false
+        },
+        {
+         "k": "which",
+         "a": "ki o",
+         "vurgu": true
+        },
+        {
+         "k": "survived",
+         "a": "hayatta kaldı",
+         "vurgu": true
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "fire",
+         "vurgu": false
+        },
+        {
+         "k": "is",
+         "vurgu": false
+        },
+        {
+         "k": "priceless.",
+         "a": "paha biçilmez",
+         "vurgu": true
+        }
+       ],
+       "tr": "Yangından kurtulan antik el yazması paha biçilmez."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Whose / Where / When — İyelik, Yer, Zaman",
+   "ust": "SIFAT CÜMLECİĞİ",
+   "ogeler": [
+    {
+     "kural": "isim + whose + isim   |   yer + where   |   zaman + when",
+     "anlam": "Whose iyelik (\"-in …-i\") bildirir ve arkasından isim gelir. Where bir yeri, when bir zamanı tanımlar (bunlardan sonra tam cümle gelir).",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "artist",
+         "a": "sanatçı",
+         "vurgu": false
+        },
+        {
+         "k": "whose",
+         "a": "ki onun",
+         "en": "whose = iyelik (-in …-i)",
+         "vurgu": true
+        },
+        {
+         "k": "paintings",
+         "a": "tabloları",
+         "vurgu": false
+        },
+        {
+         "k": "sell",
+         "a": "satılır",
+         "vurgu": true
+        },
+        {
+         "k": "for",
+         "vurgu": false
+        },
+        {
+         "k": "millions",
+         "a": "milyonlar",
+         "vurgu": false
+        },
+        {
+         "k": "lives",
+         "a": "yaşar",
+         "vurgu": false
+        },
+        {
+         "k": "simply.",
+         "a": "sade",
+         "vurgu": false
+        }
+       ],
+       "tr": "Tabloları milyonlara satılan sanatçı sade yaşıyor."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "Students",
+         "a": "öğrenciler",
+         "vurgu": false
+        },
+        {
+         "k": "whose",
+         "a": "ki onların",
+         "vurgu": true
+        },
+        {
+         "k": "grades",
+         "a": "notları",
+         "vurgu": false
+        },
+        {
+         "k": "improved",
+         "a": "yükseldi",
+         "vurgu": true
+        },
+        {
+         "k": "received",
+         "a": "aldı",
+         "vurgu": false
+        },
+        {
+         "k": "a",
+         "vurgu": false
+        },
+        {
+         "k": "scholarship.",
+         "a": "burs",
+         "vurgu": true
+        }
+       ],
+       "tr": "Notları yükselen öğrenciler burs aldı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "town",
+         "a": "kasaba",
+         "vurgu": false
+        },
+        {
+         "k": "where",
+         "a": "ki orada",
+         "en": "where = yer",
+         "vurgu": true
+        },
+        {
+         "k": "I",
+         "vurgu": false
+        },
+        {
+         "k": "grew",
+         "a": "büyüdüm",
+         "vurgu": true
+        },
+        {
+         "k": "up",
+         "vurgu": false
+        },
+        {
+         "k": "has",
+         "vurgu": false
+        },
+        {
+         "k": "changed",
+         "a": "değişti",
+         "vurgu": true
+        },
+        {
+         "k": "completely.",
+         "a": "tamamen",
+         "vurgu": false
+        }
+       ],
+       "tr": "Büyüdüğüm kasaba tamamen değişti."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "1969",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "year",
+         "vurgu": false
+        },
+        {
+         "k": "when",
+         "a": "ki o zaman",
+         "en": "when = zaman",
+         "vurgu": true
+        },
+        {
+         "k": "humans",
+         "a": "insanlar",
+         "vurgu": false
+        },
+        {
+         "k": "first",
+         "vurgu": false
+        },
+        {
+         "k": "landed",
+         "a": "ayak bastı",
+         "vurgu": true
+        },
+        {
+         "k": "on",
+         "vurgu": false
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "Moon.",
+         "a": "Ay",
+         "vurgu": false
+        }
+       ],
+       "tr": "1969, insanların Ay'a ilk ayak bastığı yıldı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "scientist",
+         "a": "bilim insanı",
+         "vurgu": false
+        },
+        {
+         "k": "whose",
+         "a": "ki onun",
+         "vurgu": true
+        },
+        {
+         "k": "theory",
+         "a": "teorisi",
+         "vurgu": false
+        },
+        {
+         "k": "was",
+         "vurgu": false
+        },
+        {
+         "k": "rejected",
+         "a": "reddedildi",
+         "vurgu": true
+        },
+        {
+         "k": "later",
+         "a": "sonra",
+         "vurgu": false
+        },
+        {
+         "k": "won",
+         "a": "kazandı",
+         "vurgu": false
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "Nobel.",
+         "a": "Nobel",
+         "vurgu": false
+        }
+       ],
+       "tr": "Teorisi reddedilen bilim insanı sonra Nobel kazandı."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Non-Defining & Edat + İlgi Zamiri",
+   "ust": "SIFAT CÜMLECİĞİ",
+   "ogeler": [
+    {
+     "kural": "isim, + who/which/whose … ,   |   preposition + which/whom",
+     "anlam": "Virgüllü (non-defining) cümlecikler EK bilgi verir; burada \"that\" KULLANILMAZ ve zamir düşemez. Edattan sonra da that yerine which/whom gelir (in which, of whom …).",
+     "ornekler": [
+      {
+       "tokenlar": [
+        {
+         "k": "Einstein,",
+         "a": "Einstein",
+         "vurgu": true
+        },
+        {
+         "k": "who",
+         "a": "ki o",
+         "en": "virgüllü: ek bilgi (that OLMAZ)",
+         "vurgu": true
+        },
+        {
+         "k": "developed",
+         "a": "geliştirdi",
+         "vurgu": true
+        },
+        {
+         "k": "relativity,",
+         "a": "görelilik",
+         "vurgu": false
+        },
+        {
+         "k": "disliked",
+         "a": "hoşlanmazdı",
+         "vurgu": true
+        },
+        {
+         "k": "rigid",
+         "vurgu": false
+        },
+        {
+         "k": "rules.",
+         "a": "katı kurallar",
+         "vurgu": false
+        }
+       ],
+       "tr": "Göreliliği geliştiren Einstein, katı kurallardan hoşlanmazdı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "My",
+         "vurgu": false
+        },
+        {
+         "k": "laptop,",
+         "a": "dizüstü",
+         "vurgu": false
+        },
+        {
+         "k": "which",
+         "a": "ki o",
+         "en": "virgülden sonra which; that OLMAZ",
+         "vurgu": true
+        },
+        {
+         "k": "I",
+         "vurgu": false
+        },
+        {
+         "k": "bought",
+         "a": "satın aldım",
+         "vurgu": true
+        },
+        {
+         "k": "last",
+         "vurgu": false
+        },
+        {
+         "k": "month,",
+         "a": "ay",
+         "vurgu": false
+        },
+        {
+         "k": "already",
+         "vurgu": false
+        },
+        {
+         "k": "crashed.",
+         "a": "bozuldu",
+         "vurgu": true
+        }
+       ],
+       "tr": "Geçen ay aldığım dizüstü bilgisayarım şimdiden bozuldu."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "committee,",
+         "a": "kurul",
+         "vurgu": false
+        },
+        {
+         "k": "the",
+         "vurgu": false
+        },
+        {
+         "k": "members",
+         "a": "üyeler",
+         "vurgu": false
+        },
+        {
+         "k": "of",
+         "vurgu": false
+        },
+        {
+         "k": "whom",
+         "a": "ki onların",
+         "en": "edat + whom",
+         "vurgu": true
+        },
+        {
+         "k": "were",
+         "vurgu": false
+        },
+        {
+         "k": "experts,",
+         "a": "uzman",
+         "vurgu": true
+        },
+        {
+         "k": "reached",
+         "a": "ulaştı",
+         "vurgu": false
+        },
+        {
+         "k": "consensus.",
+         "a": "uzlaşma",
+         "vurgu": false
+        }
+       ],
+       "tr": "Üyeleri uzman olan kurul uzlaşmaya vardı."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "The",
+         "vurgu": false
+        },
+        {
+         "k": "house",
+         "vurgu": false
+        },
+        {
+         "k": "in",
+         "a": "-de",
+         "en": "edat + which; that OLMAZ",
+         "vurgu": true
+        },
+        {
+         "k": "which",
+         "a": "ki",
+         "vurgu": true
+        },
+        {
+         "k": "she",
+         "vurgu": false
+        },
+        {
+         "k": "grew",
+         "a": "büyüdü",
+         "vurgu": true
+        },
+        {
+         "k": "up",
+         "vurgu": false
+        },
+        {
+         "k": "is",
+         "vurgu": false
+        },
+        {
+         "k": "now",
+         "vurgu": false
+        },
+        {
+         "k": "a",
+         "vurgu": false
+        },
+        {
+         "k": "museum.",
+         "a": "müze",
+         "vurgu": false
+        }
+       ],
+       "tr": "İçinde büyüdüğü ev artık bir müze."
+      },
+      {
+       "tokenlar": [
+        {
+         "k": "Shakespeare,",
+         "a": "Shakespeare",
+         "vurgu": false
+        },
+        {
+         "k": "whose",
+         "a": "ki onun",
+         "vurgu": true
+        },
+        {
+         "k": "plays",
+         "a": "oyunları",
+         "vurgu": false
+        },
+        {
+         "k": "are",
+         "vurgu": false
+        },
+        {
+         "k": "still",
+         "a": "hâlâ",
+         "vurgu": false
+        },
+        {
+         "k": "performed,",
+         "a": "sahnelenir",
+         "vurgu": true
+        },
+        {
+         "k": "died",
+         "a": "öldü",
+         "vurgu": false
+        },
+        {
+         "k": "in",
+         "vurgu": false
+        },
+        {
+         "k": "1616.",
+         "a": "1616",
+         "vurgu": false
+        }
+       ],
+       "tr": "Oyunları hâlâ sahnelenen Shakespeare 1616'da öldü."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "baslik": "Karışık Tanıma — Relative Clauses",
+   "ciftler": [
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "journalist",
+       "a": "gazeteci",
+       "vurgu": false
+      },
+      {
+       "k": "who",
+       "a": "ki o",
+       "vurgu": true
+      },
+      {
+       "k": "exposed",
+       "a": "ifşa etti",
+       "vurgu": true
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "scandal",
+       "a": "skandal",
+       "vurgu": false
+      },
+      {
+       "k": "received",
+       "a": "aldı",
+       "vurgu": false
+      },
+      {
+       "k": "threats.",
+       "a": "tehditler",
+       "vurgu": false
+      }
+     ],
+     "tr": "Skandalı ifşa eden gazeteci tehditler aldı."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "phone",
+       "vurgu": false
+      },
+      {
+       "k": "which",
+       "a": "ki o",
+       "vurgu": true
+      },
+      {
+       "k": "I",
+       "vurgu": false
+      },
+      {
+       "k": "repaired",
+       "a": "tamir ettim",
+       "vurgu": true
+      },
+      {
+       "k": "stopped",
+       "a": "durdu",
+       "vurgu": true
+      },
+      {
+       "k": "working",
+       "a": "çalışmayı",
+       "vurgu": false
+      },
+      {
+       "k": "again.",
+       "a": "tekrar",
+       "vurgu": false
+      }
+     ],
+     "tr": "Tamir ettiğim telefon yine çalışmayı durdurdu."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "woman",
+       "vurgu": false
+      },
+      {
+       "k": "whose",
+       "a": "ki onun",
+       "vurgu": true
+      },
+      {
+       "k": "wallet",
+       "a": "cüzdanı",
+       "vurgu": false
+      },
+      {
+       "k": "was",
+       "vurgu": false
+      },
+      {
+       "k": "stolen",
+       "a": "çalındı",
+       "vurgu": true
+      },
+      {
+       "k": "called",
+       "a": "aradı",
+       "vurgu": false
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "police.",
+       "a": "polis",
+       "vurgu": false
+      }
+     ],
+     "tr": "Cüzdanı çalınan kadın polisi aradı."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "café",
+       "vurgu": false
+      },
+      {
+       "k": "where",
+       "a": "ki orada",
+       "vurgu": true
+      },
+      {
+       "k": "we",
+       "vurgu": false
+      },
+      {
+       "k": "first",
+       "vurgu": false
+      },
+      {
+       "k": "met",
+       "a": "tanıştık",
+       "vurgu": true
+      },
+      {
+       "k": "has",
+       "vurgu": false
+      },
+      {
+       "k": "closed",
+       "a": "kapandı",
+       "vurgu": true
+      },
+      {
+       "k": "down.",
+       "a": "(kapandı)",
+       "vurgu": false
+      }
+     ],
+     "tr": "İlk tanıştığımız kafe kapandı."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "professor",
+       "vurgu": false
+      },
+      {
+       "k": "that",
+       "a": "ki o",
+       "en": "(HATA: virgülden sonra that olmaz)",
+       "vurgu": true
+      },
+      {
+       "k": ",which",
+       "vurgu": true
+      },
+      {
+       "k": "taught",
+       "a": "öğretti",
+       "vurgu": true
+      },
+      {
+       "k": "us",
+       "vurgu": false
+      },
+      {
+       "k": "retired.",
+       "a": "emekli oldu",
+       "vurgu": false
+      }
+     ],
+     "tr": "Bize ders veren profesör emekli oldu. (❌ ,that → ✓ ,who)"
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "discovery",
+       "a": "keşif",
+       "vurgu": false
+      },
+      {
+       "k": "which",
+       "a": "ki o",
+       "vurgu": true
+      },
+      {
+       "k": "shocked",
+       "a": "şoke etti",
+       "vurgu": true
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "world",
+       "vurgu": false
+      },
+      {
+       "k": "transformed",
+       "a": "dönüştürdü",
+       "vurgu": true
+      },
+      {
+       "k": "medicine.",
+       "a": "tıp",
+       "vurgu": false
+      }
+     ],
+     "tr": "Dünyayı şoke eden keşif tıbbı dönüştürdü."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "day",
+       "vurgu": false
+      },
+      {
+       "k": "when",
+       "a": "ki o gün",
+       "vurgu": true
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "war",
+       "a": "savaş",
+       "vurgu": false
+      },
+      {
+       "k": "ended",
+       "a": "bitti",
+       "vurgu": true
+      },
+      {
+       "k": "is",
+       "vurgu": false
+      },
+      {
+       "k": "a",
+       "vurgu": false
+      },
+      {
+       "k": "national",
+       "vurgu": false
+      },
+      {
+       "k": "holiday.",
+       "a": "tatil/bayram",
+       "vurgu": true
+      }
+     ],
+     "tr": "Savaşın bittiği gün ulusal bayramdır."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "athlete",
+       "a": "sporcu",
+       "vurgu": false
+      },
+      {
+       "k": "whom",
+       "a": "ki onu",
+       "vurgu": true
+      },
+      {
+       "k": "everyone",
+       "a": "herkes",
+       "vurgu": false
+      },
+      {
+       "k": "admired",
+       "a": "hayran oldu",
+       "vurgu": true
+      },
+      {
+       "k": "failed",
+       "a": "kaldı",
+       "vurgu": false
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "drug",
+       "a": "doping",
+       "vurgu": false
+      },
+      {
+       "k": "test.",
+       "a": "test",
+       "vurgu": false
+      }
+     ],
+     "tr": "Herkesin hayran olduğu sporcu doping testini geçemedi."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "reason",
+       "a": "sebep",
+       "vurgu": false
+      },
+      {
+       "k": "why",
+       "a": "ki o yüzden",
+       "vurgu": true
+      },
+      {
+       "k": "he",
+       "vurgu": false
+      },
+      {
+       "k": "resigned",
+       "a": "istifa etti",
+       "vurgu": true
+      },
+      {
+       "k": "remains",
+       "a": "kalır",
+       "vurgu": false
+      },
+      {
+       "k": "unclear.",
+       "a": "belirsiz",
+       "vurgu": true
+      }
+     ],
+     "tr": "İstifa etme sebebi belirsizliğini koruyor."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "Paris,",
+       "a": "Paris",
+       "vurgu": false
+      },
+      {
+       "k": "which",
+       "a": "ki o",
+       "vurgu": true
+      },
+      {
+       "k": "attracts",
+       "a": "çeker",
+       "vurgu": true
+      },
+      {
+       "k": "millions,",
+       "a": "milyonlar",
+       "vurgu": false
+      },
+      {
+       "k": "is",
+       "vurgu": false
+      },
+      {
+       "k": "called",
+       "a": "denir",
+       "vurgu": false
+      },
+      {
+       "k": "the",
+       "vurgu": false
+      },
+      {
+       "k": "city",
+       "vurgu": false
+      },
+      {
+       "k": "of",
+       "vurgu": false
+      },
+      {
+       "k": "light.",
+       "a": "ışık",
+       "vurgu": false
+      }
+     ],
+     "tr": "Milyonları cezbeden Paris'e ışık şehri denir."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "Students",
+       "a": "öğrenciler",
+       "vurgu": false
+      },
+      {
+       "k": "who",
+       "a": "ki onlar",
+       "vurgu": true
+      },
+      {
+       "k": "plagiarize",
+       "a": "intihal yapar",
+       "vurgu": true
+      },
+      {
+       "k": "face",
+       "a": "karşılaşır",
+       "vurgu": false
+      },
+      {
+       "k": "serious",
+       "a": "ciddi",
+       "vurgu": false
+      },
+      {
+       "k": "penalties.",
+       "a": "cezalar",
+       "vurgu": true
+      }
+     ],
+     "tr": "İntihal yapan öğrenciler ciddi cezalarla karşılaşır."
+    },
+    {
+     "tokenlar": [
+      {
+       "k": "The",
+       "vurgu": false
+      },
+      {
+       "k": "telescope",
+       "a": "teleskop",
+       "vurgu": false
+      },
+      {
+       "k": "through",
+       "a": "-den",
+       "en": "edat + which",
+       "vurgu": true
+      },
+      {
+       "k": "which",
+       "a": "ki",
+       "vurgu": true
+      },
+      {
+       "k": "we",
+       "vurgu": false
+      },
+      {
+       "k": "observed",
+       "a": "gözlemledik",
+       "vurgu": true
+      },
+      {
+       "k": "Saturn",
+       "vurgu": false
+      },
+      {
+       "k": "was",
+       "vurgu": false
+      },
+      {
+       "k": "powerful.",
+       "a": "güçlü",
+       "vurgu": false
+      }
+     ],
+     "tr": "Satürn'ü gözlemlediğimiz teleskop güçlüydü."
+    }
+   ]
+  }
+ ],
+ "kelimeler": [
+  {
+   "en": "scientist",
+   "tur": "isim",
+   "tr": "bilim insanı",
+   "ornek_tr": "Penisilini keşfeden bilim insanı milyonlarca hayat kurtardı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "scientist",
+     "a": "bilim insanı",
+     "vurgu": true
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "discovered",
+     "a": "keşfetti",
+     "vurgu": false
+    },
+    {
+     "k": "penicillin",
+     "a": "penisilin",
+     "vurgu": false
+    },
+    {
+     "k": "saved",
+     "a": "kurtardı",
+     "vurgu": false
+    },
+    {
+     "k": "millions",
+     "a": "milyonlar",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "lives.",
+     "a": "hayat",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "discover",
+   "tur": "fiil",
+   "tr": "keşfetmek",
+   "ornek_tr": "Penisilini keşfeden bilim insanı milyonlarca hayat kurtardı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "scientist",
+     "a": "bilim insanı",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "discovered",
+     "a": "keşfetti",
+     "vurgu": true
+    },
+    {
+     "k": "penicillin",
+     "a": "penisilin",
+     "vurgu": false
+    },
+    {
+     "k": "saved",
+     "a": "kurtardı",
+     "vurgu": false
+    },
+    {
+     "k": "millions",
+     "a": "milyonlar",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "lives.",
+     "a": "hayat",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "save",
+   "tur": "fiil",
+   "tr": "kurtarmak",
+   "ornek_tr": "Penisilini keşfeden bilim insanı milyonlarca hayat kurtardı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "scientist",
+     "a": "bilim insanı",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "discovered",
+     "a": "keşfetti",
+     "vurgu": false
+    },
+    {
+     "k": "penicillin",
+     "a": "penisilin",
+     "vurgu": false
+    },
+    {
+     "k": "saved",
+     "a": "kurtardı",
+     "vurgu": true
+    },
+    {
+     "k": "millions",
+     "a": "milyonlar",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "lives.",
+     "a": "hayat",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "author",
+   "tur": "isim",
+   "tr": "yazar",
+   "ornek_tr": "Eleştirmenlerin övdüğü yazar mütevazı kaldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "author",
+     "a": "yazar",
+     "vurgu": true
+    },
+    {
+     "k": "whom",
+     "a": "ki onu",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "critics",
+     "a": "eleştirmenler",
+     "vurgu": false
+    },
+    {
+     "k": "praised",
+     "a": "övdü",
+     "vurgu": false
+    },
+    {
+     "k": "remained",
+     "a": "kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "modest.",
+     "a": "mütevazı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "critic",
+   "tur": "isim",
+   "tr": "eleştirmen",
+   "ornek_tr": "Eleştirmenlerin övdüğü yazar mütevazı kaldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "author",
+     "a": "yazar",
+     "vurgu": false
+    },
+    {
+     "k": "whom",
+     "a": "ki onu",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "critics",
+     "a": "eleştirmenler",
+     "vurgu": true
+    },
+    {
+     "k": "praised",
+     "a": "övdü",
+     "vurgu": false
+    },
+    {
+     "k": "remained",
+     "a": "kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "modest.",
+     "a": "mütevazı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "praise",
+   "tur": "fiil",
+   "tr": "övmek",
+   "ornek_tr": "Eleştirmenlerin övdüğü yazar mütevazı kaldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "author",
+     "a": "yazar",
+     "vurgu": false
+    },
+    {
+     "k": "whom",
+     "a": "ki onu",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "critics",
+     "a": "eleştirmenler",
+     "vurgu": false
+    },
+    {
+     "k": "praised",
+     "a": "övdü",
+     "vurgu": true
+    },
+    {
+     "k": "remained",
+     "a": "kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "modest.",
+     "a": "mütevazı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "modest",
+   "tur": "sıfat",
+   "tr": "mütevazı, alçakgönüllü",
+   "ornek_tr": "Eleştirmenlerin övdüğü yazar mütevazı kaldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "author",
+     "a": "yazar",
+     "vurgu": false
+    },
+    {
+     "k": "whom",
+     "a": "ki onu",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "critics",
+     "a": "eleştirmenler",
+     "vurgu": false
+    },
+    {
+     "k": "praised",
+     "a": "övdü",
+     "vurgu": false
+    },
+    {
+     "k": "remained",
+     "a": "kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "modest.",
+     "a": "mütevazı",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "employee",
+   "tur": "isim",
+   "tr": "çalışan",
+   "ornek_tr": "Teslim tarihine yetişen çalışanlar ikramiye alacak.",
+   "ornek_tokenlar": [
+    {
+     "k": "Employees",
+     "a": "çalışanlar",
+     "vurgu": true
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "meet",
+     "a": "karşılar",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "deadline",
+     "a": "teslim tarihi",
+     "vurgu": false
+    },
+    {
+     "k": "will",
+     "vurgu": false
+    },
+    {
+     "k": "receive",
+     "a": "alacak",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "bonus.",
+     "a": "ikramiye",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "deadline",
+   "tur": "isim",
+   "tr": "son teslim tarihi",
+   "ornek_tr": "Teslim tarihine yetişen çalışanlar ikramiye alacak.",
+   "ornek_tokenlar": [
+    {
+     "k": "Employees",
+     "a": "çalışanlar",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "meet",
+     "a": "karşılar",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "deadline",
+     "a": "teslim tarihi",
+     "vurgu": true
+    },
+    {
+     "k": "will",
+     "vurgu": false
+    },
+    {
+     "k": "receive",
+     "a": "alacak",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "bonus.",
+     "a": "ikramiye",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "bonus",
+   "tur": "isim",
+   "tr": "ikramiye, prim",
+   "ornek_tr": "Teslim tarihine yetişen çalışanlar ikramiye alacak.",
+   "ornek_tokenlar": [
+    {
+     "k": "Employees",
+     "a": "çalışanlar",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "meet",
+     "a": "karşılar",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "deadline",
+     "a": "teslim tarihi",
+     "vurgu": false
+    },
+    {
+     "k": "will",
+     "vurgu": false
+    },
+    {
+     "k": "receive",
+     "a": "alacak",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "bonus.",
+     "a": "ikramiye",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "treat",
+   "tur": "fiil",
+   "tr": "tedavi etmek",
+   "ornek_tr": "Beni tedavi eden doktor çok deneyimliydi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "doctor",
+     "a": "doktor",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "treated",
+     "a": "tedavi etti",
+     "vurgu": true
+    },
+    {
+     "k": "me",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "very",
+     "vurgu": false
+    },
+    {
+     "k": "experienced.",
+     "a": "deneyimli",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "experienced",
+   "tur": "sıfat",
+   "tr": "deneyimli",
+   "ornek_tr": "Beni tedavi eden doktor çok deneyimliydi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "doctor",
+     "a": "doktor",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "treated",
+     "a": "tedavi etti",
+     "vurgu": false
+    },
+    {
+     "k": "me",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "very",
+     "vurgu": false
+    },
+    {
+     "k": "experienced.",
+     "a": "deneyimli",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "volunteer",
+   "tur": "isim",
+   "tr": "gönüllü",
+   "ornek_tr": "Dağcıları kurtaran gönüllüler onurlandırıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "volunteers",
+     "a": "gönüllüler",
+     "vurgu": true
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "rescued",
+     "a": "kurtardı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "hikers",
+     "a": "dağcılar",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "honored.",
+     "a": "onurlandırıldı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "rescue",
+   "tur": "fiil",
+   "tr": "kurtarmak",
+   "ornek_tr": "Dağcıları kurtaran gönüllüler onurlandırıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "volunteers",
+     "a": "gönüllüler",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "rescued",
+     "a": "kurtardı",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "hikers",
+     "a": "dağcılar",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "honored.",
+     "a": "onurlandırıldı",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "honor",
+   "tur": "fiil",
+   "tr": "onurlandırmak",
+   "ornek_tr": "Dağcıları kurtaran gönüllüler onurlandırıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "volunteers",
+     "a": "gönüllüler",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "rescued",
+     "a": "kurtardı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "hikers",
+     "a": "dağcılar",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "honored.",
+     "a": "onurlandırıldı",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "novel",
+   "tur": "isim",
+   "tr": "roman",
+   "ornek_tr": "Ödülü kazanan roman göçü ele alıyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "novel",
+     "a": "roman",
+     "vurgu": true
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "won",
+     "a": "kazandı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "prize",
+     "a": "ödül",
+     "vurgu": false
+    },
+    {
+     "k": "deals",
+     "a": "ele alır",
+     "vurgu": false
+    },
+    {
+     "k": "with",
+     "vurgu": false
+    },
+    {
+     "k": "migration.",
+     "a": "göç",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "win",
+   "tur": "fiil",
+   "tr": "kazanmak",
+   "ornek_tr": "Ödülü kazanan roman göçü ele alıyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "novel",
+     "a": "roman",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "won",
+     "a": "kazandı",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "prize",
+     "a": "ödül",
+     "vurgu": false
+    },
+    {
+     "k": "deals",
+     "a": "ele alır",
+     "vurgu": false
+    },
+    {
+     "k": "with",
+     "vurgu": false
+    },
+    {
+     "k": "migration.",
+     "a": "göç",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "prize",
+   "tur": "isim",
+   "tr": "ödül",
+   "ornek_tr": "Ödülü kazanan roman göçü ele alıyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "novel",
+     "a": "roman",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "won",
+     "a": "kazandı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "prize",
+     "a": "ödül",
+     "vurgu": true
+    },
+    {
+     "k": "deals",
+     "a": "ele alır",
+     "vurgu": false
+    },
+    {
+     "k": "with",
+     "vurgu": false
+    },
+    {
+     "k": "migration.",
+     "a": "göç",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "deal with",
+   "tur": "fiil",
+   "tr": "ele almak, ilgilenmek",
+   "ornek_tr": "Ödülü kazanan roman göçü ele alıyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "novel",
+     "a": "roman",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "won",
+     "a": "kazandı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "prize",
+     "a": "ödül",
+     "vurgu": false
+    },
+    {
+     "k": "deals",
+     "a": "ele alır",
+     "vurgu": true
+    },
+    {
+     "k": "with",
+     "vurgu": false
+    },
+    {
+     "k": "migration.",
+     "a": "göç",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "bridge",
+   "tur": "isim",
+   "tr": "köprü",
+   "ornek_tr": "Mühendislerin geçen yıl inşa ettiği köprü fırtınada çöktü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "bridge",
+     "a": "köprü",
+     "vurgu": true
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "engineers",
+     "a": "mühendisler",
+     "vurgu": false
+    },
+    {
+     "k": "built",
+     "a": "inşa etti",
+     "vurgu": false
+    },
+    {
+     "k": "last",
+     "vurgu": false
+    },
+    {
+     "k": "year",
+     "vurgu": false
+    },
+    {
+     "k": "collapsed",
+     "a": "çöktü",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "storm.",
+     "a": "fırtına",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "build",
+   "tur": "fiil",
+   "tr": "inşa etmek",
+   "ornek_tr": "Mühendislerin geçen yıl inşa ettiği köprü fırtınada çöktü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "bridge",
+     "a": "köprü",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "engineers",
+     "a": "mühendisler",
+     "vurgu": false
+    },
+    {
+     "k": "built",
+     "a": "inşa etti",
+     "vurgu": true
+    },
+    {
+     "k": "last",
+     "vurgu": false
+    },
+    {
+     "k": "year",
+     "vurgu": false
+    },
+    {
+     "k": "collapsed",
+     "a": "çöktü",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "storm.",
+     "a": "fırtına",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "collapse",
+   "tur": "fiil",
+   "tr": "çökmek",
+   "ornek_tr": "Mühendislerin geçen yıl inşa ettiği köprü fırtınada çöktü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "bridge",
+     "a": "köprü",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "engineers",
+     "a": "mühendisler",
+     "vurgu": false
+    },
+    {
+     "k": "built",
+     "a": "inşa etti",
+     "vurgu": false
+    },
+    {
+     "k": "last",
+     "vurgu": false
+    },
+    {
+     "k": "year",
+     "vurgu": false
+    },
+    {
+     "k": "collapsed",
+     "a": "çöktü",
+     "vurgu": true
+    },
+    {
+     "k": "in",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "storm.",
+     "a": "fırtına",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "storm",
+   "tur": "isim",
+   "tr": "fırtına",
+   "ornek_tr": "Mühendislerin geçen yıl inşa ettiği köprü fırtınada çöktü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "bridge",
+     "a": "köprü",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "engineers",
+     "a": "mühendisler",
+     "vurgu": false
+    },
+    {
+     "k": "built",
+     "a": "inşa etti",
+     "vurgu": false
+    },
+    {
+     "k": "last",
+     "vurgu": false
+    },
+    {
+     "k": "year",
+     "vurgu": false
+    },
+    {
+     "k": "collapsed",
+     "a": "çöktü",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "storm.",
+     "a": "fırtına",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "vaccine",
+   "tur": "isim",
+   "tr": "aşı",
+   "ornek_tr": "Araştırmacıların geliştirdiği aşı etkili olduğunu kanıtladı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "vaccine",
+     "a": "aşı",
+     "vurgu": true
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "researchers",
+     "a": "araştırmacılar",
+     "vurgu": false
+    },
+    {
+     "k": "developed",
+     "a": "geliştirdi",
+     "vurgu": false
+    },
+    {
+     "k": "proved",
+     "a": "kanıtladı",
+     "vurgu": false
+    },
+    {
+     "k": "effective.",
+     "a": "etkili",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "develop",
+   "tur": "fiil",
+   "tr": "geliştirmek",
+   "ornek_tr": "Araştırmacıların geliştirdiği aşı etkili olduğunu kanıtladı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "vaccine",
+     "a": "aşı",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "researchers",
+     "a": "araştırmacılar",
+     "vurgu": false
+    },
+    {
+     "k": "developed",
+     "a": "geliştirdi",
+     "vurgu": true
+    },
+    {
+     "k": "proved",
+     "a": "kanıtladı",
+     "vurgu": false
+    },
+    {
+     "k": "effective.",
+     "a": "etkili",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "effective",
+   "tur": "sıfat",
+   "tr": "etkili",
+   "ornek_tr": "Araştırmacıların geliştirdiği aşı etkili olduğunu kanıtladı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "vaccine",
+     "a": "aşı",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "researchers",
+     "a": "araştırmacılar",
+     "vurgu": false
+    },
+    {
+     "k": "developed",
+     "a": "geliştirdi",
+     "vurgu": false
+    },
+    {
+     "k": "proved",
+     "a": "kanıtladı",
+     "vurgu": false
+    },
+    {
+     "k": "effective.",
+     "a": "etkili",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "factory",
+   "tur": "isim",
+   "tr": "fabrika",
+   "ornek_tr": "Nehri kirleten fabrika sonunda kapatıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "factory",
+     "a": "fabrika",
+     "vurgu": true
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "pollutes",
+     "a": "kirletir",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "river",
+     "a": "nehir",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "finally",
+     "vurgu": false
+    },
+    {
+     "k": "shut",
+     "a": "kapatıldı",
+     "vurgu": false
+    },
+    {
+     "k": "down.",
+     "a": "(kapatıldı)",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "pollute",
+   "tur": "fiil",
+   "tr": "kirletmek",
+   "ornek_tr": "Nehri kirleten fabrika sonunda kapatıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "factory",
+     "a": "fabrika",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "pollutes",
+     "a": "kirletir",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "river",
+     "a": "nehir",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "finally",
+     "vurgu": false
+    },
+    {
+     "k": "shut",
+     "a": "kapatıldı",
+     "vurgu": false
+    },
+    {
+     "k": "down.",
+     "a": "(kapatıldı)",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "river",
+   "tur": "isim",
+   "tr": "nehir",
+   "ornek_tr": "Nehri kirleten fabrika sonunda kapatıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "factory",
+     "a": "fabrika",
+     "vurgu": false
+    },
+    {
+     "k": "that",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "pollutes",
+     "a": "kirletir",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "river",
+     "a": "nehir",
+     "vurgu": true
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "finally",
+     "vurgu": false
+    },
+    {
+     "k": "shut",
+     "a": "kapatıldı",
+     "vurgu": false
+    },
+    {
+     "k": "down.",
+     "a": "(kapatıldı)",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "manuscript",
+   "tur": "isim",
+   "tr": "el yazması",
+   "ornek_tr": "Yangından kurtulan antik el yazması paha biçilmez.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "ancient",
+     "a": "antik",
+     "vurgu": false
+    },
+    {
+     "k": "manuscript",
+     "a": "el yazması",
+     "vurgu": true
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "survived",
+     "a": "hayatta kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "fire",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "priceless.",
+     "a": "paha biçilmez",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "survive",
+   "tur": "fiil",
+   "tr": "hayatta kalmak, atlatmak",
+   "ornek_tr": "Yangından kurtulan antik el yazması paha biçilmez.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "ancient",
+     "a": "antik",
+     "vurgu": false
+    },
+    {
+     "k": "manuscript",
+     "a": "el yazması",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "survived",
+     "a": "hayatta kaldı",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "fire",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "priceless.",
+     "a": "paha biçilmez",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "priceless",
+   "tur": "sıfat",
+   "tr": "paha biçilmez",
+   "ornek_tr": "Yangından kurtulan antik el yazması paha biçilmez.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "ancient",
+     "a": "antik",
+     "vurgu": false
+    },
+    {
+     "k": "manuscript",
+     "a": "el yazması",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "survived",
+     "a": "hayatta kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "fire",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "priceless.",
+     "a": "paha biçilmez",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "artist",
+   "tur": "isim",
+   "tr": "sanatçı",
+   "ornek_tr": "Tabloları milyonlara satılan sanatçı sade yaşıyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "artist",
+     "a": "sanatçı",
+     "vurgu": true
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "paintings",
+     "a": "tabloları",
+     "vurgu": false
+    },
+    {
+     "k": "sell",
+     "a": "satılır",
+     "vurgu": false
+    },
+    {
+     "k": "for",
+     "vurgu": false
+    },
+    {
+     "k": "millions",
+     "a": "milyonlar",
+     "vurgu": false
+    },
+    {
+     "k": "lives",
+     "a": "yaşar",
+     "vurgu": false
+    },
+    {
+     "k": "simply.",
+     "a": "sade",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "painting",
+   "tur": "isim",
+   "tr": "tablo, resim",
+   "ornek_tr": "Tabloları milyonlara satılan sanatçı sade yaşıyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "artist",
+     "a": "sanatçı",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "paintings",
+     "a": "tabloları",
+     "vurgu": true
+    },
+    {
+     "k": "sell",
+     "a": "satılır",
+     "vurgu": false
+    },
+    {
+     "k": "for",
+     "vurgu": false
+    },
+    {
+     "k": "millions",
+     "a": "milyonlar",
+     "vurgu": false
+    },
+    {
+     "k": "lives",
+     "a": "yaşar",
+     "vurgu": false
+    },
+    {
+     "k": "simply.",
+     "a": "sade",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "sell",
+   "tur": "fiil",
+   "tr": "satılmak, satmak",
+   "ornek_tr": "Tabloları milyonlara satılan sanatçı sade yaşıyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "artist",
+     "a": "sanatçı",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "paintings",
+     "a": "tabloları",
+     "vurgu": false
+    },
+    {
+     "k": "sell",
+     "a": "satılır",
+     "vurgu": true
+    },
+    {
+     "k": "for",
+     "vurgu": false
+    },
+    {
+     "k": "millions",
+     "a": "milyonlar",
+     "vurgu": false
+    },
+    {
+     "k": "lives",
+     "a": "yaşar",
+     "vurgu": false
+    },
+    {
+     "k": "simply.",
+     "a": "sade",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "grade",
+   "tur": "isim",
+   "tr": "not, derece",
+   "ornek_tr": "Notları yükselen öğrenciler burs aldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Students",
+     "a": "öğrenciler",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onların",
+     "vurgu": false
+    },
+    {
+     "k": "grades",
+     "a": "notları",
+     "vurgu": true
+    },
+    {
+     "k": "improved",
+     "a": "yükseldi",
+     "vurgu": false
+    },
+    {
+     "k": "received",
+     "a": "aldı",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "scholarship.",
+     "a": "burs",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "improve",
+   "tur": "fiil",
+   "tr": "gelişmek, yükselmek",
+   "ornek_tr": "Notları yükselen öğrenciler burs aldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Students",
+     "a": "öğrenciler",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onların",
+     "vurgu": false
+    },
+    {
+     "k": "grades",
+     "a": "notları",
+     "vurgu": false
+    },
+    {
+     "k": "improved",
+     "a": "yükseldi",
+     "vurgu": true
+    },
+    {
+     "k": "received",
+     "a": "aldı",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "scholarship.",
+     "a": "burs",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "scholarship",
+   "tur": "isim",
+   "tr": "burs",
+   "ornek_tr": "Notları yükselen öğrenciler burs aldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Students",
+     "a": "öğrenciler",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onların",
+     "vurgu": false
+    },
+    {
+     "k": "grades",
+     "a": "notları",
+     "vurgu": false
+    },
+    {
+     "k": "improved",
+     "a": "yükseldi",
+     "vurgu": false
+    },
+    {
+     "k": "received",
+     "a": "aldı",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "scholarship.",
+     "a": "burs",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "town",
+   "tur": "isim",
+   "tr": "kasaba",
+   "ornek_tr": "Büyüdüğüm kasaba tamamen değişti.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "town",
+     "a": "kasaba",
+     "vurgu": true
+    },
+    {
+     "k": "where",
+     "a": "ki orada",
+     "vurgu": false
+    },
+    {
+     "k": "I",
+     "vurgu": false
+    },
+    {
+     "k": "grew",
+     "a": "büyüdüm",
+     "vurgu": false
+    },
+    {
+     "k": "up",
+     "vurgu": false
+    },
+    {
+     "k": "has",
+     "vurgu": false
+    },
+    {
+     "k": "changed",
+     "a": "değişti",
+     "vurgu": false
+    },
+    {
+     "k": "completely.",
+     "a": "tamamen",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "grow up",
+   "tur": "fiil",
+   "tr": "büyümek",
+   "ornek_tr": "Büyüdüğüm kasaba tamamen değişti.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "town",
+     "a": "kasaba",
+     "vurgu": false
+    },
+    {
+     "k": "where",
+     "a": "ki orada",
+     "vurgu": false
+    },
+    {
+     "k": "I",
+     "vurgu": false
+    },
+    {
+     "k": "grew",
+     "a": "büyüdüm",
+     "vurgu": true
+    },
+    {
+     "k": "up",
+     "vurgu": false
+    },
+    {
+     "k": "has",
+     "vurgu": false
+    },
+    {
+     "k": "changed",
+     "a": "değişti",
+     "vurgu": false
+    },
+    {
+     "k": "completely.",
+     "a": "tamamen",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "change",
+   "tur": "fiil",
+   "tr": "değişmek",
+   "ornek_tr": "Büyüdüğüm kasaba tamamen değişti.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "town",
+     "a": "kasaba",
+     "vurgu": false
+    },
+    {
+     "k": "where",
+     "a": "ki orada",
+     "vurgu": false
+    },
+    {
+     "k": "I",
+     "vurgu": false
+    },
+    {
+     "k": "grew",
+     "a": "büyüdüm",
+     "vurgu": false
+    },
+    {
+     "k": "up",
+     "vurgu": false
+    },
+    {
+     "k": "has",
+     "vurgu": false
+    },
+    {
+     "k": "changed",
+     "a": "değişti",
+     "vurgu": true
+    },
+    {
+     "k": "completely.",
+     "a": "tamamen",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "land",
+   "tur": "fiil",
+   "tr": "ayak basmak, inmek",
+   "ornek_tr": "1969, insanların Ay'a ilk ayak bastığı yıldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "1969",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "year",
+     "vurgu": false
+    },
+    {
+     "k": "when",
+     "a": "ki o zaman",
+     "vurgu": false
+    },
+    {
+     "k": "humans",
+     "a": "insanlar",
+     "vurgu": false
+    },
+    {
+     "k": "first",
+     "vurgu": false
+    },
+    {
+     "k": "landed",
+     "a": "ayak bastı",
+     "vurgu": true
+    },
+    {
+     "k": "on",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "Moon.",
+     "a": "Ay",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "theory",
+   "tur": "isim",
+   "tr": "teori, kuram",
+   "ornek_tr": "Teorisi reddedilen bilim insanı sonra Nobel kazandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "scientist",
+     "a": "bilim insanı",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "theory",
+     "a": "teorisi",
+     "vurgu": true
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "rejected",
+     "a": "reddedildi",
+     "vurgu": false
+    },
+    {
+     "k": "later",
+     "a": "sonra",
+     "vurgu": false
+    },
+    {
+     "k": "won",
+     "a": "kazandı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "Nobel.",
+     "a": "Nobel",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "reject",
+   "tur": "fiil",
+   "tr": "reddetmek",
+   "ornek_tr": "Teorisi reddedilen bilim insanı sonra Nobel kazandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "scientist",
+     "a": "bilim insanı",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "theory",
+     "a": "teorisi",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "rejected",
+     "a": "reddedildi",
+     "vurgu": true
+    },
+    {
+     "k": "later",
+     "a": "sonra",
+     "vurgu": false
+    },
+    {
+     "k": "won",
+     "a": "kazandı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "Nobel.",
+     "a": "Nobel",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "relativity",
+   "tur": "isim",
+   "tr": "görelilik",
+   "ornek_tr": "Göreliliği geliştiren Einstein, katı kurallardan hoşlanmazdı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Einstein,",
+     "a": "Einstein",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "developed",
+     "a": "geliştirdi",
+     "vurgu": false
+    },
+    {
+     "k": "relativity,",
+     "a": "görelilik",
+     "vurgu": true
+    },
+    {
+     "k": "disliked",
+     "a": "hoşlanmazdı",
+     "vurgu": false
+    },
+    {
+     "k": "rigid",
+     "vurgu": false
+    },
+    {
+     "k": "rules.",
+     "a": "katı kurallar",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "dislike",
+   "tur": "fiil",
+   "tr": "hoşlanmamak",
+   "ornek_tr": "Göreliliği geliştiren Einstein, katı kurallardan hoşlanmazdı.",
+   "ornek_tokenlar": [
+    {
+     "k": "Einstein,",
+     "a": "Einstein",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "developed",
+     "a": "geliştirdi",
+     "vurgu": false
+    },
+    {
+     "k": "relativity,",
+     "a": "görelilik",
+     "vurgu": false
+    },
+    {
+     "k": "disliked",
+     "a": "hoşlanmazdı",
+     "vurgu": true
+    },
+    {
+     "k": "rigid",
+     "vurgu": false
+    },
+    {
+     "k": "rules.",
+     "a": "katı kurallar",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "buy",
+   "tur": "fiil",
+   "tr": "satın almak",
+   "ornek_tr": "Geçen ay aldığım dizüstü bilgisayarım şimdiden bozuldu.",
+   "ornek_tokenlar": [
+    {
+     "k": "My",
+     "vurgu": false
+    },
+    {
+     "k": "laptop,",
+     "a": "dizüstü",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "I",
+     "vurgu": false
+    },
+    {
+     "k": "bought",
+     "a": "satın aldım",
+     "vurgu": true
+    },
+    {
+     "k": "last",
+     "vurgu": false
+    },
+    {
+     "k": "month,",
+     "a": "ay",
+     "vurgu": false
+    },
+    {
+     "k": "already",
+     "vurgu": false
+    },
+    {
+     "k": "crashed.",
+     "a": "bozuldu",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "crash",
+   "tur": "fiil",
+   "tr": "çökmek, bozulmak",
+   "ornek_tr": "Geçen ay aldığım dizüstü bilgisayarım şimdiden bozuldu.",
+   "ornek_tokenlar": [
+    {
+     "k": "My",
+     "vurgu": false
+    },
+    {
+     "k": "laptop,",
+     "a": "dizüstü",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "I",
+     "vurgu": false
+    },
+    {
+     "k": "bought",
+     "a": "satın aldım",
+     "vurgu": false
+    },
+    {
+     "k": "last",
+     "vurgu": false
+    },
+    {
+     "k": "month,",
+     "a": "ay",
+     "vurgu": false
+    },
+    {
+     "k": "already",
+     "vurgu": false
+    },
+    {
+     "k": "crashed.",
+     "a": "bozuldu",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "member",
+   "tur": "isim",
+   "tr": "üye",
+   "ornek_tr": "Üyeleri uzman olan kurul uzlaşmaya vardı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "committee,",
+     "a": "kurul",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "members",
+     "a": "üyeler",
+     "vurgu": true
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "whom",
+     "a": "ki onların",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "experts,",
+     "a": "uzman",
+     "vurgu": false
+    },
+    {
+     "k": "reached",
+     "a": "ulaştı",
+     "vurgu": false
+    },
+    {
+     "k": "consensus.",
+     "a": "uzlaşma",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "expert",
+   "tur": "isim",
+   "tr": "uzman",
+   "ornek_tr": "Üyeleri uzman olan kurul uzlaşmaya vardı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "committee,",
+     "a": "kurul",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "members",
+     "a": "üyeler",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "whom",
+     "a": "ki onların",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "experts,",
+     "a": "uzman",
+     "vurgu": true
+    },
+    {
+     "k": "reached",
+     "a": "ulaştı",
+     "vurgu": false
+    },
+    {
+     "k": "consensus.",
+     "a": "uzlaşma",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "consensus",
+   "tur": "isim",
+   "tr": "uzlaşma, fikir birliği",
+   "ornek_tr": "Üyeleri uzman olan kurul uzlaşmaya vardı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "committee,",
+     "a": "kurul",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "members",
+     "a": "üyeler",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "whom",
+     "a": "ki onların",
+     "vurgu": false
+    },
+    {
+     "k": "were",
+     "vurgu": false
+    },
+    {
+     "k": "experts,",
+     "a": "uzman",
+     "vurgu": false
+    },
+    {
+     "k": "reached",
+     "a": "ulaştı",
+     "vurgu": false
+    },
+    {
+     "k": "consensus.",
+     "a": "uzlaşma",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "museum",
+   "tur": "isim",
+   "tr": "müze",
+   "ornek_tr": "İçinde büyüdüğü ev artık bir müze.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "house",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "a": "-de",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki",
+     "vurgu": false
+    },
+    {
+     "k": "she",
+     "vurgu": false
+    },
+    {
+     "k": "grew",
+     "a": "büyüdü",
+     "vurgu": false
+    },
+    {
+     "k": "up",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "now",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "museum.",
+     "a": "müze",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "play",
+   "tur": "isim",
+   "tr": "oyun, piyes",
+   "ornek_tr": "Oyunları hâlâ sahnelenen Shakespeare 1616'da öldü.",
+   "ornek_tokenlar": [
+    {
+     "k": "Shakespeare,",
+     "a": "Shakespeare",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "plays",
+     "a": "oyunları",
+     "vurgu": true
+    },
+    {
+     "k": "are",
+     "vurgu": false
+    },
+    {
+     "k": "still",
+     "a": "hâlâ",
+     "vurgu": false
+    },
+    {
+     "k": "performed,",
+     "a": "sahnelenir",
+     "vurgu": false
+    },
+    {
+     "k": "died",
+     "a": "öldü",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "vurgu": false
+    },
+    {
+     "k": "1616.",
+     "a": "1616",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "perform",
+   "tur": "fiil",
+   "tr": "sahnelemek, icra etmek",
+   "ornek_tr": "Oyunları hâlâ sahnelenen Shakespeare 1616'da öldü.",
+   "ornek_tokenlar": [
+    {
+     "k": "Shakespeare,",
+     "a": "Shakespeare",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "plays",
+     "a": "oyunları",
+     "vurgu": false
+    },
+    {
+     "k": "are",
+     "vurgu": false
+    },
+    {
+     "k": "still",
+     "a": "hâlâ",
+     "vurgu": false
+    },
+    {
+     "k": "performed,",
+     "a": "sahnelenir",
+     "vurgu": true
+    },
+    {
+     "k": "died",
+     "a": "öldü",
+     "vurgu": false
+    },
+    {
+     "k": "in",
+     "vurgu": false
+    },
+    {
+     "k": "1616.",
+     "a": "1616",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "journalist",
+   "tur": "isim",
+   "tr": "gazeteci",
+   "ornek_tr": "Skandalı ifşa eden gazeteci tehditler aldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "journalist",
+     "a": "gazeteci",
+     "vurgu": true
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "exposed",
+     "a": "ifşa etti",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "scandal",
+     "a": "skandal",
+     "vurgu": false
+    },
+    {
+     "k": "received",
+     "a": "aldı",
+     "vurgu": false
+    },
+    {
+     "k": "threats.",
+     "a": "tehditler",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "expose",
+   "tur": "fiil",
+   "tr": "ifşa etmek, açığa çıkarmak",
+   "ornek_tr": "Skandalı ifşa eden gazeteci tehditler aldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "journalist",
+     "a": "gazeteci",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "exposed",
+     "a": "ifşa etti",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "scandal",
+     "a": "skandal",
+     "vurgu": false
+    },
+    {
+     "k": "received",
+     "a": "aldı",
+     "vurgu": false
+    },
+    {
+     "k": "threats.",
+     "a": "tehditler",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "scandal",
+   "tur": "isim",
+   "tr": "skandal, rezalet",
+   "ornek_tr": "Skandalı ifşa eden gazeteci tehditler aldı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "journalist",
+     "a": "gazeteci",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "exposed",
+     "a": "ifşa etti",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "scandal",
+     "a": "skandal",
+     "vurgu": true
+    },
+    {
+     "k": "received",
+     "a": "aldı",
+     "vurgu": false
+    },
+    {
+     "k": "threats.",
+     "a": "tehditler",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "repair",
+   "tur": "fiil",
+   "tr": "tamir etmek",
+   "ornek_tr": "Tamir ettiğim telefon yine çalışmayı durdurdu.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "phone",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "I",
+     "vurgu": false
+    },
+    {
+     "k": "repaired",
+     "a": "tamir ettim",
+     "vurgu": true
+    },
+    {
+     "k": "stopped",
+     "a": "durdu",
+     "vurgu": false
+    },
+    {
+     "k": "working",
+     "a": "çalışmayı",
+     "vurgu": false
+    },
+    {
+     "k": "again.",
+     "a": "tekrar",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "stop",
+   "tur": "fiil",
+   "tr": "durmak, durdurmak",
+   "ornek_tr": "Tamir ettiğim telefon yine çalışmayı durdurdu.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "phone",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "I",
+     "vurgu": false
+    },
+    {
+     "k": "repaired",
+     "a": "tamir ettim",
+     "vurgu": false
+    },
+    {
+     "k": "stopped",
+     "a": "durdu",
+     "vurgu": true
+    },
+    {
+     "k": "working",
+     "a": "çalışmayı",
+     "vurgu": false
+    },
+    {
+     "k": "again.",
+     "a": "tekrar",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "wallet",
+   "tur": "isim",
+   "tr": "cüzdan",
+   "ornek_tr": "Cüzdanı çalınan kadın polisi aradı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "woman",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "wallet",
+     "a": "cüzdanı",
+     "vurgu": true
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "stolen",
+     "a": "çalındı",
+     "vurgu": false
+    },
+    {
+     "k": "called",
+     "a": "aradı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "police.",
+     "a": "polis",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "steal",
+   "tur": "fiil",
+   "tr": "çalmak",
+   "ornek_tr": "Cüzdanı çalınan kadın polisi aradı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "woman",
+     "vurgu": false
+    },
+    {
+     "k": "whose",
+     "a": "ki onun",
+     "vurgu": false
+    },
+    {
+     "k": "wallet",
+     "a": "cüzdanı",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "stolen",
+     "a": "çalındı",
+     "vurgu": true
+    },
+    {
+     "k": "called",
+     "a": "aradı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "police.",
+     "a": "polis",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "meet",
+   "tur": "fiil",
+   "tr": "tanışmak, buluşmak",
+   "ornek_tr": "İlk tanıştığımız kafe kapandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "café",
+     "vurgu": false
+    },
+    {
+     "k": "where",
+     "a": "ki orada",
+     "vurgu": false
+    },
+    {
+     "k": "we",
+     "vurgu": false
+    },
+    {
+     "k": "first",
+     "vurgu": false
+    },
+    {
+     "k": "met",
+     "a": "tanıştık",
+     "vurgu": true
+    },
+    {
+     "k": "has",
+     "vurgu": false
+    },
+    {
+     "k": "closed",
+     "a": "kapandı",
+     "vurgu": false
+    },
+    {
+     "k": "down.",
+     "a": "(kapandı)",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "close",
+   "tur": "fiil",
+   "tr": "kapanmak, kapatmak",
+   "ornek_tr": "İlk tanıştığımız kafe kapandı.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "café",
+     "vurgu": false
+    },
+    {
+     "k": "where",
+     "a": "ki orada",
+     "vurgu": false
+    },
+    {
+     "k": "we",
+     "vurgu": false
+    },
+    {
+     "k": "first",
+     "vurgu": false
+    },
+    {
+     "k": "met",
+     "a": "tanıştık",
+     "vurgu": false
+    },
+    {
+     "k": "has",
+     "vurgu": false
+    },
+    {
+     "k": "closed",
+     "a": "kapandı",
+     "vurgu": true
+    },
+    {
+     "k": "down.",
+     "a": "(kapandı)",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "discovery",
+   "tur": "isim",
+   "tr": "keşif",
+   "ornek_tr": "Dünyayı şoke eden keşif tıbbı dönüştürdü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "discovery",
+     "a": "keşif",
+     "vurgu": true
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "shocked",
+     "a": "şoke etti",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "world",
+     "vurgu": false
+    },
+    {
+     "k": "transformed",
+     "a": "dönüştürdü",
+     "vurgu": false
+    },
+    {
+     "k": "medicine.",
+     "a": "tıp",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "shock",
+   "tur": "fiil",
+   "tr": "şoke etmek",
+   "ornek_tr": "Dünyayı şoke eden keşif tıbbı dönüştürdü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "discovery",
+     "a": "keşif",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "shocked",
+     "a": "şoke etti",
+     "vurgu": true
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "world",
+     "vurgu": false
+    },
+    {
+     "k": "transformed",
+     "a": "dönüştürdü",
+     "vurgu": false
+    },
+    {
+     "k": "medicine.",
+     "a": "tıp",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "transform",
+   "tur": "fiil",
+   "tr": "dönüştürmek",
+   "ornek_tr": "Dünyayı şoke eden keşif tıbbı dönüştürdü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "discovery",
+     "a": "keşif",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "shocked",
+     "a": "şoke etti",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "world",
+     "vurgu": false
+    },
+    {
+     "k": "transformed",
+     "a": "dönüştürdü",
+     "vurgu": true
+    },
+    {
+     "k": "medicine.",
+     "a": "tıp",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "medicine",
+   "tur": "isim",
+   "tr": "tıp, ilaç",
+   "ornek_tr": "Dünyayı şoke eden keşif tıbbı dönüştürdü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "discovery",
+     "a": "keşif",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "shocked",
+     "a": "şoke etti",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "world",
+     "vurgu": false
+    },
+    {
+     "k": "transformed",
+     "a": "dönüştürdü",
+     "vurgu": false
+    },
+    {
+     "k": "medicine.",
+     "a": "tıp",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "end",
+   "tur": "fiil",
+   "tr": "bitmek, sona ermek",
+   "ornek_tr": "Savaşın bittiği gün ulusal bayramdır.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "day",
+     "vurgu": false
+    },
+    {
+     "k": "when",
+     "a": "ki o gün",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "war",
+     "a": "savaş",
+     "vurgu": false
+    },
+    {
+     "k": "ended",
+     "a": "bitti",
+     "vurgu": true
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "national",
+     "vurgu": false
+    },
+    {
+     "k": "holiday.",
+     "a": "tatil/bayram",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "holiday",
+   "tur": "isim",
+   "tr": "tatil, bayram",
+   "ornek_tr": "Savaşın bittiği gün ulusal bayramdır.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "day",
+     "vurgu": false
+    },
+    {
+     "k": "when",
+     "a": "ki o gün",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "war",
+     "a": "savaş",
+     "vurgu": false
+    },
+    {
+     "k": "ended",
+     "a": "bitti",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "a",
+     "vurgu": false
+    },
+    {
+     "k": "national",
+     "vurgu": false
+    },
+    {
+     "k": "holiday.",
+     "a": "tatil/bayram",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "athlete",
+   "tur": "isim",
+   "tr": "sporcu, atlet",
+   "ornek_tr": "Herkesin hayran olduğu sporcu doping testini geçemedi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "athlete",
+     "a": "sporcu",
+     "vurgu": true
+    },
+    {
+     "k": "whom",
+     "a": "ki onu",
+     "vurgu": false
+    },
+    {
+     "k": "everyone",
+     "a": "herkes",
+     "vurgu": false
+    },
+    {
+     "k": "admired",
+     "a": "hayran oldu",
+     "vurgu": false
+    },
+    {
+     "k": "failed",
+     "a": "kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "drug",
+     "a": "doping",
+     "vurgu": false
+    },
+    {
+     "k": "test.",
+     "a": "test",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "admire",
+   "tur": "fiil",
+   "tr": "hayran olmak, takdir etmek",
+   "ornek_tr": "Herkesin hayran olduğu sporcu doping testini geçemedi.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "athlete",
+     "a": "sporcu",
+     "vurgu": false
+    },
+    {
+     "k": "whom",
+     "a": "ki onu",
+     "vurgu": false
+    },
+    {
+     "k": "everyone",
+     "a": "herkes",
+     "vurgu": false
+    },
+    {
+     "k": "admired",
+     "a": "hayran oldu",
+     "vurgu": true
+    },
+    {
+     "k": "failed",
+     "a": "kaldı",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "drug",
+     "a": "doping",
+     "vurgu": false
+    },
+    {
+     "k": "test.",
+     "a": "test",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "reason",
+   "tur": "isim",
+   "tr": "sebep, neden",
+   "ornek_tr": "İstifa etme sebebi belirsizliğini koruyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "reason",
+     "a": "sebep",
+     "vurgu": true
+    },
+    {
+     "k": "why",
+     "a": "ki o yüzden",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "resigned",
+     "a": "istifa etti",
+     "vurgu": false
+    },
+    {
+     "k": "remains",
+     "a": "kalır",
+     "vurgu": false
+    },
+    {
+     "k": "unclear.",
+     "a": "belirsiz",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "resign",
+   "tur": "fiil",
+   "tr": "istifa etmek",
+   "ornek_tr": "İstifa etme sebebi belirsizliğini koruyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "reason",
+     "a": "sebep",
+     "vurgu": false
+    },
+    {
+     "k": "why",
+     "a": "ki o yüzden",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "resigned",
+     "a": "istifa etti",
+     "vurgu": true
+    },
+    {
+     "k": "remains",
+     "a": "kalır",
+     "vurgu": false
+    },
+    {
+     "k": "unclear.",
+     "a": "belirsiz",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "unclear",
+   "tur": "sıfat",
+   "tr": "belirsiz",
+   "ornek_tr": "İstifa etme sebebi belirsizliğini koruyor.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "reason",
+     "a": "sebep",
+     "vurgu": false
+    },
+    {
+     "k": "why",
+     "a": "ki o yüzden",
+     "vurgu": false
+    },
+    {
+     "k": "he",
+     "vurgu": false
+    },
+    {
+     "k": "resigned",
+     "a": "istifa etti",
+     "vurgu": false
+    },
+    {
+     "k": "remains",
+     "a": "kalır",
+     "vurgu": false
+    },
+    {
+     "k": "unclear.",
+     "a": "belirsiz",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "attract",
+   "tur": "fiil",
+   "tr": "cezbetmek, çekmek",
+   "ornek_tr": "Milyonları cezbeden Paris'e ışık şehri denir.",
+   "ornek_tokenlar": [
+    {
+     "k": "Paris,",
+     "a": "Paris",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki o",
+     "vurgu": false
+    },
+    {
+     "k": "attracts",
+     "a": "çeker",
+     "vurgu": true
+    },
+    {
+     "k": "millions,",
+     "a": "milyonlar",
+     "vurgu": false
+    },
+    {
+     "k": "is",
+     "vurgu": false
+    },
+    {
+     "k": "called",
+     "a": "denir",
+     "vurgu": false
+    },
+    {
+     "k": "the",
+     "vurgu": false
+    },
+    {
+     "k": "city",
+     "vurgu": false
+    },
+    {
+     "k": "of",
+     "vurgu": false
+    },
+    {
+     "k": "light.",
+     "a": "ışık",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "plagiarize",
+   "tur": "fiil",
+   "tr": "intihal yapmak",
+   "ornek_tr": "İntihal yapan öğrenciler ciddi cezalarla karşılaşır.",
+   "ornek_tokenlar": [
+    {
+     "k": "Students",
+     "a": "öğrenciler",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "plagiarize",
+     "a": "intihal yapar",
+     "vurgu": true
+    },
+    {
+     "k": "face",
+     "a": "karşılaşır",
+     "vurgu": false
+    },
+    {
+     "k": "serious",
+     "a": "ciddi",
+     "vurgu": false
+    },
+    {
+     "k": "penalties.",
+     "a": "cezalar",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "penalty",
+   "tur": "isim",
+   "tr": "ceza, yaptırım",
+   "ornek_tr": "İntihal yapan öğrenciler ciddi cezalarla karşılaşır.",
+   "ornek_tokenlar": [
+    {
+     "k": "Students",
+     "a": "öğrenciler",
+     "vurgu": false
+    },
+    {
+     "k": "who",
+     "a": "ki onlar",
+     "vurgu": false
+    },
+    {
+     "k": "plagiarize",
+     "a": "intihal yapar",
+     "vurgu": false
+    },
+    {
+     "k": "face",
+     "a": "karşılaşır",
+     "vurgu": false
+    },
+    {
+     "k": "serious",
+     "a": "ciddi",
+     "vurgu": false
+    },
+    {
+     "k": "penalties.",
+     "a": "cezalar",
+     "vurgu": true
+    }
+   ]
+  },
+  {
+   "en": "telescope",
+   "tur": "isim",
+   "tr": "teleskop",
+   "ornek_tr": "Satürn'ü gözlemlediğimiz teleskop güçlüydü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "telescope",
+     "a": "teleskop",
+     "vurgu": true
+    },
+    {
+     "k": "through",
+     "a": "-den",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki",
+     "vurgu": false
+    },
+    {
+     "k": "we",
+     "vurgu": false
+    },
+    {
+     "k": "observed",
+     "a": "gözlemledik",
+     "vurgu": false
+    },
+    {
+     "k": "Saturn",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "powerful.",
+     "a": "güçlü",
+     "vurgu": false
+    }
+   ]
+  },
+  {
+   "en": "observe",
+   "tur": "fiil",
+   "tr": "gözlemlemek",
+   "ornek_tr": "Satürn'ü gözlemlediğimiz teleskop güçlüydü.",
+   "ornek_tokenlar": [
+    {
+     "k": "The",
+     "vurgu": false
+    },
+    {
+     "k": "telescope",
+     "a": "teleskop",
+     "vurgu": false
+    },
+    {
+     "k": "through",
+     "a": "-den",
+     "vurgu": false
+    },
+    {
+     "k": "which",
+     "a": "ki",
+     "vurgu": false
+    },
+    {
+     "k": "we",
+     "vurgu": false
+    },
+    {
+     "k": "observed",
+     "a": "gözlemledik",
+     "vurgu": true
+    },
+    {
+     "k": "Saturn",
+     "vurgu": false
+    },
+    {
+     "k": "was",
+     "vurgu": false
+    },
+    {
+     "k": "powerful.",
+     "a": "güçlü",
+     "vurgu": false
+    }
+   ]
+  }
+ ],
+ "gramer": [],
+ "soru_cozumleri": [],
+ "testler": [
+  {
+   "ad": "Test 1 — İlgi Zamiri Seçimi",
+   "sorular": [
+    {
+     "soru": "The engineer ____ designed the tunnel won an international award.",
+     "secenekler": [
+      "which",
+      "who",
+      "whose",
+      "where"
+     ],
+     "cevap": "who",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "engineer",
+        "a": "mühendis",
+        "vurgu": false
+       },
+       {
+        "k": "who",
+        "a": "ki o",
+        "en": "insan + özne → who",
+        "vurgu": true
+       },
+       {
+        "k": "designed",
+        "a": "tasarladı",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "tunnel",
+        "a": "tünel",
+        "vurgu": false
+       },
+       {
+        "k": "won",
+        "a": "kazandı",
+        "vurgu": false
+       },
+       {
+        "k": "an",
+        "vurgu": false
+       },
+       {
+        "k": "international",
+        "a": "uluslararası",
+        "vurgu": false
+       },
+       {
+        "k": "award.",
+        "a": "ödül",
+        "vurgu": false
+       }
+      ],
+      "tr": "Tüneli tasarlayan mühendis uluslararası bir ödül kazandı."
+     }
+    },
+    {
+     "soru": "The report ____ the analysts prepared contained several errors.",
+     "secenekler": [
+      "who",
+      "whose",
+      "which",
+      "when"
+     ],
+     "cevap": "which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "report",
+        "a": "rapor",
+        "vurgu": false
+       },
+       {
+        "k": "which",
+        "a": "ki o",
+        "en": "eşya → which",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "analysts",
+        "a": "analistler",
+        "vurgu": false
+       },
+       {
+        "k": "prepared",
+        "a": "hazırladı",
+        "vurgu": true
+       },
+       {
+        "k": "contained",
+        "a": "içeriyordu",
+        "vurgu": false
+       },
+       {
+        "k": "several",
+        "a": "birkaç",
+        "vurgu": false
+       },
+       {
+        "k": "errors.",
+        "a": "hata",
+        "vurgu": false
+       }
+      ],
+      "tr": "Analistlerin hazırladığı rapor birkaç hata içeriyordu."
+     }
+    },
+    {
+     "soru": "The novelist ____ books are bestsellers rarely gives interviews.",
+     "secenekler": [
+      "who",
+      "whom",
+      "whose",
+      "which"
+     ],
+     "cevap": "whose",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "novelist",
+        "a": "romancı",
+        "vurgu": false
+       },
+       {
+        "k": "whose",
+        "a": "ki onun",
+        "en": "iyelik → whose",
+        "vurgu": true
+       },
+       {
+        "k": "books",
+        "a": "kitapları",
+        "vurgu": false
+       },
+       {
+        "k": "are",
+        "vurgu": false
+       },
+       {
+        "k": "bestsellers",
+        "a": "çok satan",
+        "vurgu": false
+       },
+       {
+        "k": "rarely",
+        "a": "nadiren",
+        "vurgu": false
+       },
+       {
+        "k": "gives",
+        "a": "verir",
+        "vurgu": false
+       },
+       {
+        "k": "interviews.",
+        "a": "röportaj",
+        "vurgu": false
+       }
+      ],
+      "tr": "Kitapları çok satan romancı nadiren röportaj verir."
+     }
+    },
+    {
+     "soru": "The village ____ my grandparents live has no internet access.",
+     "secenekler": [
+      "which",
+      "that",
+      "where",
+      "when"
+     ],
+     "cevap": "where",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "village",
+        "a": "köy",
+        "vurgu": false
+       },
+       {
+        "k": "where",
+        "a": "ki orada",
+        "en": "yer → where",
+        "vurgu": true
+       },
+       {
+        "k": "my",
+        "vurgu": false
+       },
+       {
+        "k": "grandparents",
+        "a": "büyükanne-baba",
+        "vurgu": false
+       },
+       {
+        "k": "live",
+        "a": "yaşar",
+        "vurgu": true
+       },
+       {
+        "k": "has",
+        "vurgu": false
+       },
+       {
+        "k": "no",
+        "vurgu": false
+       },
+       {
+        "k": "internet",
+        "a": "internet",
+        "vurgu": false
+       },
+       {
+        "k": "access.",
+        "a": "erişim",
+        "vurgu": false
+       }
+      ],
+      "tr": "Büyükannemlerin yaşadığı köyde internet erişimi yok."
+     }
+    },
+    {
+     "soru": "I still remember the summer ____ we traveled across Europe.",
+     "secenekler": [
+      "which",
+      "where",
+      "when",
+      "that"
+     ],
+     "cevap": "when",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "I",
+        "vurgu": false
+       },
+       {
+        "k": "still",
+        "vurgu": false
+       },
+       {
+        "k": "remember",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "summer",
+        "a": "yaz",
+        "vurgu": false
+       },
+       {
+        "k": "when",
+        "a": "ki o zaman",
+        "en": "zaman → when",
+        "vurgu": true
+       },
+       {
+        "k": "we",
+        "vurgu": false
+       },
+       {
+        "k": "traveled",
+        "a": "seyahat ettik",
+        "vurgu": true
+       },
+       {
+        "k": "across",
+        "vurgu": false
+       },
+       {
+        "k": "Europe.",
+        "a": "Avrupa",
+        "vurgu": false
+       }
+      ],
+      "tr": "Avrupa'yı gezdiğimiz yazı hâlâ hatırlıyorum."
+     }
+    },
+    {
+     "soru": "The candidate ____ the board selected has extensive experience.",
+     "secenekler": [
+      "who",
+      "whom",
+      "whose",
+      "which"
+     ],
+     "cevap": "whom",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "candidate",
+        "a": "aday",
+        "vurgu": false
+       },
+       {
+        "k": "whom",
+        "a": "ki onu",
+        "en": "insan + NESNE → whom",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "board",
+        "a": "kurul",
+        "vurgu": false
+       },
+       {
+        "k": "selected",
+        "a": "seçti",
+        "vurgu": true
+       },
+       {
+        "k": "has",
+        "vurgu": false
+       },
+       {
+        "k": "extensive",
+        "a": "kapsamlı",
+        "vurgu": false
+       },
+       {
+        "k": "experience.",
+        "a": "deneyim",
+        "vurgu": false
+       }
+      ],
+      "tr": "Kurulun seçtiği adayın kapsamlı deneyimi var."
+     }
+    },
+    {
+     "soru": "The medication ____ caused side effects was withdrawn from the market.",
+     "secenekler": [
+      "who",
+      "whose",
+      "that",
+      "where"
+     ],
+     "cevap": "that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "medication",
+        "a": "ilaç",
+        "vurgu": false
+       },
+       {
+        "k": "that",
+        "a": "ki o",
+        "en": "eşya + özne → that/which",
+        "vurgu": true
+       },
+       {
+        "k": "caused",
+        "a": "yol açtı",
+        "vurgu": true
+       },
+       {
+        "k": "side",
+        "vurgu": false
+       },
+       {
+        "k": "effects",
+        "a": "yan etkiler",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "withdrawn",
+        "a": "geri çekildi",
+        "vurgu": true
+       },
+       {
+        "k": "from",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "market.",
+        "a": "piyasa",
+        "vurgu": false
+       }
+      ],
+      "tr": "Yan etkilere yol açan ilaç piyasadan geri çekildi."
+     }
+    },
+    {
+     "soru": "The tribe ____ traditions have survived for centuries fascinates researchers.",
+     "secenekler": [
+      "which",
+      "who",
+      "whose",
+      "where"
+     ],
+     "cevap": "whose",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "tribe",
+        "a": "kabile",
+        "vurgu": false
+       },
+       {
+        "k": "whose",
+        "a": "ki onların",
+        "en": "iyelik → whose",
+        "vurgu": true
+       },
+       {
+        "k": "traditions",
+        "a": "gelenekleri",
+        "vurgu": false
+       },
+       {
+        "k": "have",
+        "vurgu": false
+       },
+       {
+        "k": "survived",
+        "a": "hayatta kaldı",
+        "vurgu": true
+       },
+       {
+        "k": "for",
+        "vurgu": false
+       },
+       {
+        "k": "centuries",
+        "a": "yüzyıllar",
+        "vurgu": false
+       },
+       {
+        "k": "fascinates",
+        "a": "büyüler",
+        "vurgu": false
+       },
+       {
+        "k": "researchers.",
+        "a": "araştırmacılar",
+        "vurgu": false
+       }
+      ],
+      "tr": "Gelenekleri yüzyıllardır yaşayan kabile araştırmacıları büyülüyor."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 2 — Non-Defining & Edat",
+   "sorular": [
+    {
+     "soru": "Marie Curie, ____ won two Nobel Prizes, faced great discrimination.",
+     "secenekler": [
+      "that",
+      "which",
+      "who",
+      "whom"
+     ],
+     "cevap": "who",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Marie",
+        "vurgu": false
+       },
+       {
+        "k": "Curie,",
+        "vurgu": false
+       },
+       {
+        "k": "who",
+        "a": "ki o",
+        "en": "virgüllü + insan → who (that OLMAZ)",
+        "vurgu": true
+       },
+       {
+        "k": "won",
+        "a": "kazandı",
+        "vurgu": false
+       },
+       {
+        "k": "two",
+        "vurgu": false
+       },
+       {
+        "k": "Nobel",
+        "vurgu": false
+       },
+       {
+        "k": "Prizes,",
+        "vurgu": false
+       },
+       {
+        "k": "faced",
+        "a": "karşılaştı",
+        "vurgu": false
+       },
+       {
+        "k": "great",
+        "vurgu": false
+       },
+       {
+        "k": "discrimination.",
+        "a": "ayrımcılık",
+        "vurgu": false
+       }
+      ],
+      "tr": "İki Nobel kazanan Marie Curie büyük ayrımcılıkla karşılaştı."
+     }
+    },
+    {
+     "soru": "The Amazon, ____ produces much of our oxygen, is shrinking fast.",
+     "secenekler": [
+      "that",
+      "which",
+      "where",
+      "whose"
+     ],
+     "cevap": "which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "Amazon,",
+        "vurgu": false
+       },
+       {
+        "k": "which",
+        "a": "ki o",
+        "en": "virgüllü + eşya → which (that OLMAZ)",
+        "vurgu": true
+       },
+       {
+        "k": "produces",
+        "a": "üretir",
+        "vurgu": true
+       },
+       {
+        "k": "much",
+        "vurgu": false
+       },
+       {
+        "k": "of",
+        "vurgu": false
+       },
+       {
+        "k": "our",
+        "vurgu": false
+       },
+       {
+        "k": "oxygen,",
+        "a": "oksijen",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "shrinking",
+        "a": "küçülüyor",
+        "vurgu": true
+       },
+       {
+        "k": "fast.",
+        "a": "hızla",
+        "vurgu": false
+       }
+      ],
+      "tr": "Oksijenimizin çoğunu üreten Amazon hızla küçülüyor."
+     }
+    },
+    {
+     "soru": "The company ____ she works is relocating to another city.",
+     "secenekler": [
+      "which",
+      "that",
+      "for which",
+      "where that"
+     ],
+     "cevap": "for which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "company",
+        "a": "şirket",
+        "vurgu": false
+       },
+       {
+        "k": "for",
+        "a": "-de",
+        "en": "edat + which; that OLMAZ",
+        "vurgu": true
+       },
+       {
+        "k": "which",
+        "a": "ki",
+        "vurgu": true
+       },
+       {
+        "k": "she",
+        "vurgu": false
+       },
+       {
+        "k": "works",
+        "a": "çalışır",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "relocating",
+        "a": "taşınıyor",
+        "vurgu": true
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "another",
+        "vurgu": false
+       },
+       {
+        "k": "city.",
+        "a": "şehir",
+        "vurgu": false
+       }
+      ],
+      "tr": "Çalıştığı şirket başka bir şehre taşınıyor."
+     }
+    },
+    {
+     "soru": "My mentor, ____ advice I always trust, encouraged me to apply.",
+     "secenekler": [
+      "who",
+      "whom",
+      "whose",
+      "that"
+     ],
+     "cevap": "whose",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "My",
+        "vurgu": false
+       },
+       {
+        "k": "mentor,",
+        "a": "akıl hocam",
+        "vurgu": false
+       },
+       {
+        "k": "whose",
+        "a": "ki onun",
+        "en": "iyelik → whose",
+        "vurgu": true
+       },
+       {
+        "k": "advice",
+        "a": "tavsiye",
+        "vurgu": false
+       },
+       {
+        "k": "I",
+        "vurgu": false
+       },
+       {
+        "k": "always",
+        "vurgu": false
+       },
+       {
+        "k": "trust,",
+        "a": "güvenirim",
+        "vurgu": false
+       },
+       {
+        "k": "encouraged",
+        "a": "teşvik etti",
+        "vurgu": true
+       },
+       {
+        "k": "me",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "apply.",
+        "a": "başvurmak",
+        "vurgu": false
+       }
+      ],
+      "tr": "Tavsiyesine her zaman güvendiğim akıl hocam beni başvurmaya teşvik etti."
+     }
+    },
+    {
+     "soru": "The mountain, the peak ____ is always snow-covered, attracts climbers.",
+     "secenekler": [
+      "of that",
+      "of which",
+      "which",
+      "that"
+     ],
+     "cevap": "of which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "mountain,",
+        "a": "dağ",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "peak",
+        "a": "zirve",
+        "vurgu": false
+       },
+       {
+        "k": "of",
+        "a": "-in",
+        "en": "edat + which",
+        "vurgu": true
+       },
+       {
+        "k": "which",
+        "a": "ki",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "always",
+        "vurgu": false
+       },
+       {
+        "k": "snow-covered,",
+        "a": "karla kaplı",
+        "vurgu": true
+       },
+       {
+        "k": "attracts",
+        "a": "çeker",
+        "vurgu": false
+       },
+       {
+        "k": "climbers.",
+        "a": "dağcılar",
+        "vurgu": false
+       }
+      ],
+      "tr": "Zirvesi hep karla kaplı olan dağ dağcıları çekiyor."
+     }
+    },
+    {
+     "soru": "The conference, ____ was held online, attracted thousands.",
+     "secenekler": [
+      "that",
+      "where",
+      "which",
+      "when"
+     ],
+     "cevap": "which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "conference,",
+        "a": "konferans",
+        "vurgu": false
+       },
+       {
+        "k": "which",
+        "a": "ki o",
+        "en": "virgüllü + eşya → which",
+        "vurgu": true
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "held",
+        "a": "düzenlendi",
+        "vurgu": true
+       },
+       {
+        "k": "online,",
+        "a": "çevrimiçi",
+        "vurgu": false
+       },
+       {
+        "k": "attracted",
+        "a": "çekti",
+        "vurgu": false
+       },
+       {
+        "k": "thousands.",
+        "a": "binlerce",
+        "vurgu": false
+       }
+      ],
+      "tr": "Çevrimiçi düzenlenen konferans binlerce kişiyi çekti."
+     }
+    },
+    {
+     "soru": "The colleagues with ____ I collaborated became close friends.",
+     "secenekler": [
+      "who",
+      "that",
+      "whom",
+      "which"
+     ],
+     "cevap": "whom",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "colleagues",
+        "a": "meslektaşlar",
+        "vurgu": false
+       },
+       {
+        "k": "with",
+        "vurgu": false
+       },
+       {
+        "k": "whom",
+        "a": "ki onlarla",
+        "en": "edat + whom (insan)",
+        "vurgu": true
+       },
+       {
+        "k": "I",
+        "vurgu": false
+       },
+       {
+        "k": "collaborated",
+        "a": "işbirliği yaptım",
+        "vurgu": true
+       },
+       {
+        "k": "became",
+        "a": "oldu",
+        "vurgu": false
+       },
+       {
+        "k": "close",
+        "vurgu": false
+       },
+       {
+        "k": "friends.",
+        "a": "yakın arkadaş",
+        "vurgu": false
+       }
+      ],
+      "tr": "Birlikte çalıştığım meslektaşlar yakın arkadaş oldu."
+     }
+    },
+    {
+     "soru": "Venice, ____ canals attract tourists, is slowly sinking.",
+     "secenekler": [
+      "which",
+      "that",
+      "whose",
+      "where"
+     ],
+     "cevap": "whose",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Venice,",
+        "vurgu": false
+       },
+       {
+        "k": "whose",
+        "a": "ki onun",
+        "en": "iyelik → whose",
+        "vurgu": true
+       },
+       {
+        "k": "canals",
+        "a": "kanalları",
+        "vurgu": false
+       },
+       {
+        "k": "attract",
+        "a": "çeker",
+        "vurgu": false
+       },
+       {
+        "k": "tourists,",
+        "a": "turistler",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "slowly",
+        "vurgu": false
+       },
+       {
+        "k": "sinking.",
+        "a": "batıyor",
+        "vurgu": true
+       }
+      ],
+      "tr": "Kanalları turistleri çeken Venedik yavaşça batıyor."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 3 — Where / When / Why",
+   "sorular": [
+    {
+     "soru": "The laboratory ____ the experiment was conducted is now closed.",
+     "secenekler": [
+      "which",
+      "that",
+      "where",
+      "when"
+     ],
+     "cevap": "where",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "laboratory",
+        "a": "laboratuvar",
+        "vurgu": false
+       },
+       {
+        "k": "where",
+        "a": "ki orada",
+        "en": "yer → where",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "experiment",
+        "a": "deney",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "conducted",
+        "a": "yürütüldü",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "now",
+        "vurgu": false
+       },
+       {
+        "k": "closed.",
+        "a": "kapalı",
+        "vurgu": false
+       }
+      ],
+      "tr": "Deneyin yürütüldüğü laboratuvar artık kapalı."
+     }
+    },
+    {
+     "soru": "There are moments ____ silence speaks louder than words.",
+     "secenekler": [
+      "which",
+      "when",
+      "where",
+      "that"
+     ],
+     "cevap": "when",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "There",
+        "vurgu": false
+       },
+       {
+        "k": "are",
+        "vurgu": false
+       },
+       {
+        "k": "moments",
+        "a": "anlar",
+        "vurgu": false
+       },
+       {
+        "k": "when",
+        "a": "ki o an",
+        "en": "zaman → when",
+        "vurgu": true
+       },
+       {
+        "k": "silence",
+        "a": "sessizlik",
+        "vurgu": false
+       },
+       {
+        "k": "speaks",
+        "a": "konuşur",
+        "vurgu": true
+       },
+       {
+        "k": "louder",
+        "a": "daha yüksek",
+        "vurgu": false
+       },
+       {
+        "k": "than",
+        "vurgu": false
+       },
+       {
+        "k": "words.",
+        "a": "kelimeler",
+        "vurgu": false
+       }
+      ],
+      "tr": "Sessizliğin sözlerden daha çok konuştuğu anlar vardır."
+     }
+    },
+    {
+     "soru": "Nobody understood the reason ____ the flight was cancelled.",
+     "secenekler": [
+      "which",
+      "where",
+      "why",
+      "when"
+     ],
+     "cevap": "why",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Nobody",
+        "vurgu": false
+       },
+       {
+        "k": "understood",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "reason",
+        "a": "sebep",
+        "vurgu": false
+       },
+       {
+        "k": "why",
+        "a": "ki o yüzden",
+        "en": "sebep → why",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "flight",
+        "a": "uçuş",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "cancelled.",
+        "a": "iptal edildi",
+        "vurgu": true
+       }
+      ],
+      "tr": "Uçuşun neden iptal edildiğini kimse anlamadı."
+     }
+    },
+    {
+     "soru": "The stadium ____ the final will be played holds 80,000 people.",
+     "secenekler": [
+      "which",
+      "where",
+      "that",
+      "when"
+     ],
+     "cevap": "where",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "stadium",
+        "a": "stadyum",
+        "vurgu": false
+       },
+       {
+        "k": "where",
+        "a": "ki orada",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "final",
+        "a": "final",
+        "vurgu": false
+       },
+       {
+        "k": "will",
+        "vurgu": false
+       },
+       {
+        "k": "be",
+        "vurgu": false
+       },
+       {
+        "k": "played",
+        "a": "oynanacak",
+        "vurgu": true
+       },
+       {
+        "k": "holds",
+        "a": "alır",
+        "vurgu": false
+       },
+       {
+        "k": "80,000",
+        "vurgu": false
+       },
+       {
+        "k": "people.",
+        "a": "kişi",
+        "vurgu": false
+       }
+      ],
+      "tr": "Finalin oynanacağı stadyum 80.000 kişi alıyor."
+     }
+    },
+    {
+     "soru": "1453 is the year ____ Constantinople was conquered.",
+     "secenekler": [
+      "which",
+      "where",
+      "when",
+      "that"
+     ],
+     "cevap": "when",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "1453",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "year",
+        "vurgu": false
+       },
+       {
+        "k": "when",
+        "a": "ki o yıl",
+        "vurgu": true
+       },
+       {
+        "k": "Constantinople",
+        "a": "İstanbul",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "conquered.",
+        "a": "fethedildi",
+        "vurgu": true
+       }
+      ],
+      "tr": "1453, İstanbul'un fethedildiği yıldır."
+     }
+    },
+    {
+     "soru": "This is the office ____ important decisions are made.",
+     "secenekler": [
+      "which",
+      "that",
+      "where",
+      "when"
+     ],
+     "cevap": "where",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "This",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "office",
+        "a": "ofis",
+        "vurgu": false
+       },
+       {
+        "k": "where",
+        "a": "ki orada",
+        "vurgu": true
+       },
+       {
+        "k": "important",
+        "a": "önemli",
+        "vurgu": false
+       },
+       {
+        "k": "decisions",
+        "a": "kararlar",
+        "vurgu": false
+       },
+       {
+        "k": "are",
+        "vurgu": false
+       },
+       {
+        "k": "made.",
+        "a": "alınır",
+        "vurgu": true
+       }
+      ],
+      "tr": "Burası önemli kararların alındığı ofis."
+     }
+    },
+    {
+     "soru": "I will never forget the day ____ I received the acceptance letter.",
+     "secenekler": [
+      "which",
+      "where",
+      "when",
+      "why"
+     ],
+     "cevap": "when",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "I",
+        "vurgu": false
+       },
+       {
+        "k": "will",
+        "vurgu": false
+       },
+       {
+        "k": "never",
+        "vurgu": false
+       },
+       {
+        "k": "forget",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "day",
+        "vurgu": false
+       },
+       {
+        "k": "when",
+        "a": "ki o gün",
+        "vurgu": true
+       },
+       {
+        "k": "I",
+        "vurgu": false
+       },
+       {
+        "k": "received",
+        "a": "aldım",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "acceptance",
+        "a": "kabul",
+        "vurgu": false
+       },
+       {
+        "k": "letter.",
+        "a": "mektup",
+        "vurgu": false
+       }
+      ],
+      "tr": "Kabul mektubunu aldığım günü asla unutmayacağım."
+     }
+    },
+    {
+     "soru": "There is no clear reason ____ the ancient city was abandoned.",
+     "secenekler": [
+      "which",
+      "when",
+      "why",
+      "where"
+     ],
+     "cevap": "why",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "There",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "no",
+        "vurgu": false
+       },
+       {
+        "k": "clear",
+        "vurgu": false
+       },
+       {
+        "k": "reason",
+        "a": "sebep",
+        "vurgu": false
+       },
+       {
+        "k": "why",
+        "a": "ki o yüzden",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "ancient",
+        "a": "antik",
+        "vurgu": false
+       },
+       {
+        "k": "city",
+        "a": "şehir",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "abandoned.",
+        "a": "terk edildi",
+        "vurgu": true
+       }
+      ],
+      "tr": "Antik şehrin neden terk edildiğine dair net bir sebep yok."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 4 — Zamir Düşmesi & That",
+   "sorular": [
+    {
+     "soru": "The book ____ on the shelf belongs to the library.",
+     "secenekler": [
+      "who is",
+      "which is",
+      "whose",
+      "where"
+     ],
+     "cevap": "which is",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "book",
+        "vurgu": false
+       },
+       {
+        "k": "which",
+        "a": "ki o",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "a": "olan",
+        "vurgu": true
+       },
+       {
+        "k": "on",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "shelf",
+        "a": "raf",
+        "vurgu": false
+       },
+       {
+        "k": "belongs",
+        "a": "aittir",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "library.",
+        "a": "kütüphane",
+        "vurgu": false
+       }
+      ],
+      "tr": "Rafta duran kitap kütüphaneye aittir."
+     }
+    },
+    {
+     "soru": "The man ____ is standing by the door is our new manager.",
+     "secenekler": [
+      "which",
+      "who",
+      "whom",
+      "whose"
+     ],
+     "cevap": "who",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "man",
+        "vurgu": false
+       },
+       {
+        "k": "who",
+        "a": "ki o",
+        "en": "özne konumu → who (düşemez)",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "standing",
+        "a": "duruyor",
+        "vurgu": false
+       },
+       {
+        "k": "by",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "door",
+        "a": "kapı",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "our",
+        "vurgu": false
+       },
+       {
+        "k": "new",
+        "vurgu": false
+       },
+       {
+        "k": "manager.",
+        "a": "müdür",
+        "vurgu": false
+       }
+      ],
+      "tr": "Kapının yanında duran adam yeni müdürümüz."
+     }
+    },
+    {
+     "soru": "Everything ____ glitters is not gold.",
+     "secenekler": [
+      "which",
+      "who",
+      "that",
+      "whose"
+     ],
+     "cevap": "that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Everything",
+        "vurgu": false
+       },
+       {
+        "k": "that",
+        "a": "ki o",
+        "en": "all/everything sonrası → that tercih edilir",
+        "vurgu": true
+       },
+       {
+        "k": "glitters",
+        "a": "parlar",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "not",
+        "vurgu": false
+       },
+       {
+        "k": "gold.",
+        "a": "altın",
+        "vurgu": false
+       }
+      ],
+      "tr": "Parlayan her şey altın değildir."
+     }
+    },
+    {
+     "soru": "The only person ____ can fix this is on vacation.",
+     "secenekler": [
+      "which",
+      "that",
+      "whose",
+      "where"
+     ],
+     "cevap": "that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "only",
+        "a": "tek",
+        "vurgu": false
+       },
+       {
+        "k": "person",
+        "a": "kişi",
+        "vurgu": false
+       },
+       {
+        "k": "that",
+        "a": "ki o",
+        "en": "'the only' sonrası → that tercih",
+        "vurgu": true
+       },
+       {
+        "k": "can",
+        "vurgu": false
+       },
+       {
+        "k": "fix",
+        "a": "tamir etmek",
+        "vurgu": true
+       },
+       {
+        "k": "this",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "on",
+        "vurgu": false
+       },
+       {
+        "k": "vacation.",
+        "a": "tatilde",
+        "vurgu": false
+       }
+      ],
+      "tr": "Bunu tamir edebilecek tek kişi tatilde."
+     }
+    },
+    {
+     "soru": "The proposal ____ they submitted was rejected by the committee.",
+     "secenekler": [
+      "who",
+      "which",
+      "whose",
+      "where"
+     ],
+     "cevap": "which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "proposal",
+        "a": "öneri",
+        "vurgu": false
+       },
+       {
+        "k": "which",
+        "a": "ki o",
+        "en": "nesne → zamir düşebilir ama which doğru",
+        "vurgu": true
+       },
+       {
+        "k": "they",
+        "vurgu": false
+       },
+       {
+        "k": "submitted",
+        "a": "sundu",
+        "vurgu": true
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "rejected",
+        "a": "reddedildi",
+        "vurgu": true
+       },
+       {
+        "k": "by",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "committee.",
+        "a": "kurul",
+        "vurgu": false
+       }
+      ],
+      "tr": "Sundukları öneri kurul tarafından reddedildi."
+     }
+    },
+    {
+     "soru": "She is the best teacher ____ I have ever had.",
+     "secenekler": [
+      "which",
+      "who",
+      "that",
+      "whose"
+     ],
+     "cevap": "that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "She",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "best",
+        "a": "en iyi",
+        "vurgu": false
+       },
+       {
+        "k": "teacher",
+        "a": "öğretmen",
+        "vurgu": false
+       },
+       {
+        "k": "that",
+        "a": "ki o",
+        "en": "üstünlük derecesi sonrası → that",
+        "vurgu": true
+       },
+       {
+        "k": "I",
+        "vurgu": false
+       },
+       {
+        "k": "have",
+        "vurgu": false
+       },
+       {
+        "k": "ever",
+        "vurgu": false
+       },
+       {
+        "k": "had.",
+        "a": "sahip oldum",
+        "vurgu": true
+       }
+      ],
+      "tr": "O, şimdiye kadar sahip olduğum en iyi öğretmen."
+     }
+    },
+    {
+     "soru": "The passengers ____ were injured received immediate care.",
+     "secenekler": [
+      "which",
+      "who",
+      "whom",
+      "whose"
+     ],
+     "cevap": "who",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "passengers",
+        "a": "yolcular",
+        "vurgu": false
+       },
+       {
+        "k": "who",
+        "a": "ki onlar",
+        "en": "insan + özne → who",
+        "vurgu": true
+       },
+       {
+        "k": "were",
+        "vurgu": false
+       },
+       {
+        "k": "injured",
+        "a": "yaralandı",
+        "vurgu": true
+       },
+       {
+        "k": "received",
+        "a": "aldı",
+        "vurgu": false
+       },
+       {
+        "k": "immediate",
+        "a": "acil",
+        "vurgu": false
+       },
+       {
+        "k": "care.",
+        "a": "bakım",
+        "vurgu": false
+       }
+      ],
+      "tr": "Yaralanan yolculara hemen müdahale edildi."
+     }
+    },
+    {
+     "soru": "The paintings ____ were stolen have been recovered.",
+     "secenekler": [
+      "who",
+      "whom",
+      "that",
+      "whose"
+     ],
+     "cevap": "that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "paintings",
+        "a": "tablolar",
+        "vurgu": false
+       },
+       {
+        "k": "that",
+        "a": "ki o",
+        "en": "eşya + özne → that/which",
+        "vurgu": true
+       },
+       {
+        "k": "were",
+        "vurgu": false
+       },
+       {
+        "k": "stolen",
+        "a": "çalındı",
+        "vurgu": true
+       },
+       {
+        "k": "have",
+        "vurgu": false
+       },
+       {
+        "k": "been",
+        "vurgu": false
+       },
+       {
+        "k": "recovered.",
+        "a": "geri alındı",
+        "vurgu": true
+       }
+      ],
+      "tr": "Çalınan tablolar geri alındı."
+     }
+    }
+   ]
+  },
+  {
+   "ad": "Test 5 — Karma (Zor)",
+   "sorular": [
+    {
+     "soru": "The archaeologist ____ team unearthed the tomb will publish the findings.",
+     "secenekler": [
+      "who",
+      "whom",
+      "whose",
+      "which"
+     ],
+     "cevap": "whose",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "archaeologist",
+        "a": "arkeolog",
+        "vurgu": false
+       },
+       {
+        "k": "whose",
+        "a": "ki onun",
+        "en": "iyelik → whose",
+        "vurgu": true
+       },
+       {
+        "k": "team",
+        "a": "ekip",
+        "vurgu": false
+       },
+       {
+        "k": "unearthed",
+        "a": "gün yüzüne çıkardı",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "tomb",
+        "a": "mezar",
+        "vurgu": false
+       },
+       {
+        "k": "will",
+        "vurgu": false
+       },
+       {
+        "k": "publish",
+        "a": "yayınlayacak",
+        "vurgu": false
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "findings.",
+        "a": "bulgular",
+        "vurgu": false
+       }
+      ],
+      "tr": "Ekibi mezarı gün yüzüne çıkaran arkeolog bulguları yayınlayacak."
+     }
+    },
+    {
+     "soru": "The era ____ these fossils date back is poorly documented.",
+     "secenekler": [
+      "which",
+      "when",
+      "to which",
+      "that"
+     ],
+     "cevap": "to which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "era",
+        "a": "çağ",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "a": "-e",
+        "en": "date back to → edat + which",
+        "vurgu": true
+       },
+       {
+        "k": "which",
+        "a": "ki",
+        "vurgu": true
+       },
+       {
+        "k": "these",
+        "vurgu": false
+       },
+       {
+        "k": "fossils",
+        "a": "fosiller",
+        "vurgu": false
+       },
+       {
+        "k": "date",
+        "a": "tarihlenir",
+        "vurgu": true
+       },
+       {
+        "k": "back",
+        "vurgu": false
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "poorly",
+        "a": "yetersiz",
+        "vurgu": false
+       },
+       {
+        "k": "documented.",
+        "a": "belgelenmiş",
+        "vurgu": false
+       }
+      ],
+      "tr": "Bu fosillerin tarihlendiği çağ yetersiz belgelenmiş."
+     }
+    },
+    {
+     "soru": "Antarctica, ____ few humans have ever set foot, is warming rapidly.",
+     "secenekler": [
+      "which",
+      "where",
+      "on which",
+      "that"
+     ],
+     "cevap": "on which",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Antarctica,",
+        "vurgu": false
+       },
+       {
+        "k": "on",
+        "a": "-e",
+        "en": "set foot on → edat + which",
+        "vurgu": true
+       },
+       {
+        "k": "which",
+        "a": "ki",
+        "vurgu": true
+       },
+       {
+        "k": "few",
+        "vurgu": false
+       },
+       {
+        "k": "humans",
+        "a": "insanlar",
+        "vurgu": false
+       },
+       {
+        "k": "have",
+        "vurgu": false
+       },
+       {
+        "k": "ever",
+        "vurgu": false
+       },
+       {
+        "k": "set",
+        "vurgu": false
+       },
+       {
+        "k": "foot,",
+        "a": "ayak bastı",
+        "vurgu": true
+       },
+       {
+        "k": "is",
+        "vurgu": false
+       },
+       {
+        "k": "warming",
+        "a": "ısınıyor",
+        "vurgu": false
+       },
+       {
+        "k": "rapidly.",
+        "a": "hızla",
+        "vurgu": false
+       }
+      ],
+      "tr": "Çok az insanın ayak bastığı Antarktika hızla ısınıyor."
+     }
+    },
+    {
+     "soru": "The strategy ____ proved most effective was surprisingly simple.",
+     "secenekler": [
+      "who",
+      "that",
+      "whose",
+      "where"
+     ],
+     "cevap": "that",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "strategy",
+        "a": "strateji",
+        "vurgu": false
+       },
+       {
+        "k": "that",
+        "a": "ki o",
+        "vurgu": true
+       },
+       {
+        "k": "proved",
+        "a": "kanıtladı",
+        "vurgu": true
+       },
+       {
+        "k": "most",
+        "vurgu": false
+       },
+       {
+        "k": "effective",
+        "a": "etkili",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "surprisingly",
+        "a": "şaşırtıcı biçimde",
+        "vurgu": false
+       },
+       {
+        "k": "simple.",
+        "a": "basit",
+        "vurgu": false
+       }
+      ],
+      "tr": "En etkili olduğu kanıtlanan strateji şaşırtıcı derecede basitti."
+     }
+    },
+    {
+     "soru": "Darwin, ____ theory revolutionized biology, was initially ridiculed.",
+     "secenekler": [
+      "who",
+      "which",
+      "whose",
+      "whom"
+     ],
+     "cevap": "whose",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "Darwin,",
+        "vurgu": false
+       },
+       {
+        "k": "whose",
+        "a": "ki onun",
+        "en": "iyelik → whose",
+        "vurgu": true
+       },
+       {
+        "k": "theory",
+        "a": "teori",
+        "vurgu": false
+       },
+       {
+        "k": "revolutionized",
+        "a": "devrim yaptı",
+        "vurgu": true
+       },
+       {
+        "k": "biology,",
+        "a": "biyoloji",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "initially",
+        "a": "başlangıçta",
+        "vurgu": false
+       },
+       {
+        "k": "ridiculed.",
+        "a": "alay edildi",
+        "vurgu": true
+       }
+      ],
+      "tr": "Teorisi biyolojide devrim yapan Darwin başta alay konusu oldu."
+     }
+    },
+    {
+     "soru": "The refugees ____ the charity supported have started new lives.",
+     "secenekler": [
+      "which",
+      "whom",
+      "whose",
+      "where"
+     ],
+     "cevap": "whom",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "refugees",
+        "a": "mülteciler",
+        "vurgu": false
+       },
+       {
+        "k": "whom",
+        "a": "ki onları",
+        "en": "insan + nesne → whom",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "charity",
+        "a": "hayır kurumu",
+        "vurgu": false
+       },
+       {
+        "k": "supported",
+        "a": "destekledi",
+        "vurgu": true
+       },
+       {
+        "k": "have",
+        "vurgu": false
+       },
+       {
+        "k": "started",
+        "a": "başladı",
+        "vurgu": false
+       },
+       {
+        "k": "new",
+        "vurgu": false
+       },
+       {
+        "k": "lives.",
+        "a": "hayatlar",
+        "vurgu": false
+       }
+      ],
+      "tr": "Hayır kurumunun desteklediği mülteciler yeni hayatlara başladı."
+     }
+    },
+    {
+     "soru": "There was a time ____ the internet did not exist.",
+     "secenekler": [
+      "which",
+      "where",
+      "when",
+      "that"
+     ],
+     "cevap": "when",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "There",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "a",
+        "vurgu": false
+       },
+       {
+        "k": "time",
+        "a": "zaman",
+        "vurgu": false
+       },
+       {
+        "k": "when",
+        "a": "ki o zaman",
+        "en": "zaman → when",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "internet",
+        "vurgu": false
+       },
+       {
+        "k": "did",
+        "vurgu": false
+       },
+       {
+        "k": "not",
+        "vurgu": false
+       },
+       {
+        "k": "exist.",
+        "a": "var olmak",
+        "vurgu": true
+       }
+      ],
+      "tr": "İnternetin var olmadığı bir zaman vardı."
+     }
+    },
+    {
+     "soru": "The scientist to ____ the grant was awarded published groundbreaking work.",
+     "secenekler": [
+      "who",
+      "that",
+      "whom",
+      "which"
+     ],
+     "cevap": "whom",
+     "ornek": {
+      "tokenlar": [
+       {
+        "k": "The",
+        "vurgu": false
+       },
+       {
+        "k": "scientist",
+        "a": "bilim insanı",
+        "vurgu": false
+       },
+       {
+        "k": "to",
+        "vurgu": false
+       },
+       {
+        "k": "whom",
+        "a": "ki ona",
+        "en": "edat + whom (insan)",
+        "vurgu": true
+       },
+       {
+        "k": "the",
+        "vurgu": false
+       },
+       {
+        "k": "grant",
+        "a": "hibe",
+        "vurgu": false
+       },
+       {
+        "k": "was",
+        "vurgu": false
+       },
+       {
+        "k": "awarded",
+        "a": "verildi",
+        "vurgu": true
+       },
+       {
+        "k": "published",
+        "a": "yayınladı",
+        "vurgu": false
+       },
+       {
+        "k": "groundbreaking",
+        "a": "çığır açan",
+        "vurgu": false
+       },
+       {
+        "k": "work.",
+        "a": "çalışma",
+        "vurgu": false
+       }
+      ],
+      "tr": "Hibenin verildiği bilim insanı çığır açan bir çalışma yayınladı."
+     }
+    }
+   ]
+  }
+ ]
+}

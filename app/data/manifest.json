@@ -95,6 +95,14 @@
       "durum": "hazir",
       "bolum_sayisi": 6,
       "kelime_sayisi": 87
+    },
+    {
+      "id": 13,
+      "dosya": "uniteler/unite-13.json",
+      "baslik": "Ünite 13 — Sıfat Cümlecikleri (Relative Clauses)",
+      "durum": "hazir",
+      "bolum_sayisi": 6,
+      "kelime_sayisi": 79
     }
   ]
 }
