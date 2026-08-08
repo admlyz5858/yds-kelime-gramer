@@ -40,3 +40,6 @@ cikti/
 
 # Mağaza teslim klasörü (indirilen/üretilen, yeniden üretilebilir)
 magaza-varliklari/
+
+# Derlenen APK çıktıları (yeniden üretilebilir)
+*.apk
