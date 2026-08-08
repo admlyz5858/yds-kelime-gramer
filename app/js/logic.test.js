@@ -1,7 +1,7 @@
 // app/js/logic.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { searchLessons, toggleDone, isDone, scoreQuiz, isAnswerCorrect, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
+import { searchLessons, toggleDone, isDone, scoreQuiz, isAnswerCorrect, nextCard, kalanKartlar, dersKilitli, dersDurumEtiket } from './logic.js';
 
 test('searchLessons başlığa göre filtreler (büyük/küçük harf duyarsız)', () => {
   const m = [{ id: 1, baslik: 'Hazırlık 101' }, { id: 2, baslik: 'Deneme 5' }];
@@ -51,4 +51,27 @@ test('dersDurumEtiket duruma göre etiket verir', () => {
   assert.equal(dersDurumEtiket({ durum: 'premium' }), 'Premium — yakında');
   assert.equal(dersDurumEtiket({ durum: 'yakinda' }), 'Yakında');
   assert.equal(dersDurumEtiket({ durum: 'hazir' }), '');
+});
+
+test('kalanKartlar öğrenilen kelimeleri desteden çıkarır', () => {
+  const kelimeler = [{ en: 'discuss' }, { en: 'Reach' }, { en: 'avoid' }];
+  const ogrenilen = { discuss: { en: 'discuss' } };
+  assert.deepEqual(kalanKartlar(kelimeler, ogrenilen).map(w => w.en), ['Reach', 'avoid']);
+});
+
+test('kalanKartlar büyük/küçük harf farkını yok sayar', () => {
+  const kelimeler = [{ en: 'Reach' }, { en: 'avoid' }];
+  assert.deepEqual(kalanKartlar(kelimeler, { reach: {} }).map(w => w.en), ['avoid']);
+});
+
+test('kalanKartlar hepsi öğrenilince boş döner, sırayı bozmaz', () => {
+  const kelimeler = [{ en: 'a' }, { en: 'b' }];
+  assert.deepEqual(kalanKartlar(kelimeler, { a: {}, b: {} }), []);
+  assert.deepEqual(kalanKartlar(kelimeler, {}).map(w => w.en), ['a', 'b']);
+});
+
+test('kalanKartlar boş/eksik girdide çökmez', () => {
+  assert.deepEqual(kalanKartlar(null, null), []);
+  assert.deepEqual(kalanKartlar([], { a: {} }), []);
+  assert.deepEqual(kalanKartlar([{ en: 'x' }], null).map(w => w.en), ['x']);
 });

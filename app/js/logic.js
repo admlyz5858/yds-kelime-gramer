@@ -30,6 +30,13 @@ export function nextCard(index, total) {
   return (index + 1) % total;
 }
 
+// "Biliyorum" işaretlenen kelime deste dışında kalır — tekrar karşına çıkmaz.
+// ogrenilen: { en(küçük harf): kelimeObj }
+export function kalanKartlar(kelimeler, ogrenilen) {
+  const og = ogrenilen || {};
+  return (kelimeler || []).filter(w => !og[String(w && w.en).toLowerCase()]);
+}
+
 export function dersKilitli(ders, premiumAcik) {
   const d = ders && ders.durum;
   if (d === 'premium') return !premiumAcik;   // premium kod ile açıldıysa kilitli değil

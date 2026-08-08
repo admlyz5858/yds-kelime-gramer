@@ -1,5 +1,5 @@
 // app/js/app.js
-import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
+import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, kalanKartlar, dersKilitli, dersDurumEtiket } from './logic.js';
 import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen } from './storage.js';
 
 const icerik = document.getElementById('icerik');
@@ -34,6 +34,17 @@ function ogrenildiEkle(kart) {
   if (_defter[en]) { delete _defter[en]; saveDefter(_defter); }
 }
 function ogrenildiSil(en) { en = String(en).toLowerCase(); if (_ogrenilen[en]) { delete _ogrenilen[en]; saveOgrenilen(_ogrenilen); } }
+// Öğrenilen kelime ünite destesinden düşer. "Öğrendiklerim" ekranı hariç —
+// orada zaten öğrenilenleri tekrar ediyoruz.
+function kartDestesi() {
+  const hepsi = aktifDers?.kelimeler || [];
+  if (aktifDers?._id === 'ogrenilen') return hepsi;
+  return kalanKartlar(hepsi, _ogrenilen);
+}
+// Bu ünitedeki kelimelerin "öğrenildi" işaretini topluca kaldırır.
+function uniteOgrenilenSifirla() {
+  for (const w of (aktifDers?.kelimeler || [])) ogrenildiSil(w.en);
+}
 function defterToggle(kart) {
   const en = String(kart.en).toLowerCase();
   if (_defter[en]) delete _defter[en];
@@ -364,14 +375,19 @@ function vurgu(s) { return esc(s).replace(/\*([^*]+)\*/g, '<mark>$1</mark>'); }
 
 // Task 12: Flashcard (kelime) ekranı
 let _kartIdx = 0, _kartAcik = false;
+let _sonUcus = null;   // son kaydırmanın geri alınabilmesi için önceki durum
 function ekranKelime() {
-  _kartIdx = 0; _kartAcik = false;
+  _kartIdx = 0; _kartAcik = false; _sonUcus = null;
   cizKart();
 }
 function cizKart() {
-  const k = aktifDers.kelimeler;
-  if (!k.length) { render('<div class="bolum"><div class="bolum-satir">Bu ünitede kelime yok.</div></div>'); return; }
+  const toplam = (aktifDers.kelimeler || []).length;
+  if (!toplam) { render('<div class="bolum"><div class="bolum-satir">Bu ünitede kelime yok.</div></div>'); return; }
+  const k = kartDestesi();
+  if (!k.length) { cizHepsiOgrenildi(toplam); return; }
+  if (_kartIdx >= k.length) _kartIdx = 0;
   const kart = k[_kartIdx];
+  const ogrenilenAdet = toplam - k.length;
   const yuz = _kartAcik
     ? `<div class="kart-arka">
          ${kart.tur ? `<div class="kart-arka-tur">${esc(kart.tur)} · ${esc(kart.en)}</div>` : ''}
@@ -388,8 +404,8 @@ function cizKart() {
          <div class="kart-ipucu-on">çevirmek için karta dokun</div>
        </div>`;
   render(`
-    <div class="kart-sayac">🎴 ${_kartIdx + 1} / ${k.length}</div>
-    <div class="kart-ilerleme"><div class="kart-ilerleme-ic" style="width:${Math.round((_kartIdx + 1) / k.length * 100)}%"></div></div>
+    <div class="kart-sayac">🎴 ${_kartIdx + 1} / ${k.length}${ogrenilenAdet ? ` · 🎓 ${ogrenilenAdet} öğrenildi` : ''}</div>
+    <div class="kart-ilerleme"><div class="kart-ilerleme-ic" style="width:${Math.round((aktifDers._id === 'ogrenilen' ? (_kartIdx + 1) / k.length : ogrenilenAdet / toplam) * 100)}%"></div></div>
     <div class="flashcard ${_kartAcik ? 'acik' : ''}" id="kart">
       <div class="kart-et sol">📓 Bilmiyorum</div>
       <div class="kart-et sag">🎓 Biliyorum</div>
@@ -400,7 +416,10 @@ function cizKart() {
       <button class="aksiyon ${defterdeMi(kart.en) ? '' : 'ikincil'} defter-toggle" id="defterBtn">${defterdeMi(kart.en) ? '📓 Defterde ✓' : '📓 Bilmiyorum'}</button>
       <button class="aksiyon" id="sonraki">Sonraki ›</button>
     </div>
-    <div class="btn-satir"><button class="aksiyon ikincil" id="cevir">${_kartAcik ? '↺ Ön yüz' : 'Çevir'}</button></div>`);
+    <div class="btn-satir">
+      <button class="aksiyon ikincil" id="cevir">${_kartAcik ? '↺ Ön yüz' : 'Çevir'}</button>
+      ${_sonUcus ? `<button class="aksiyon ikincil" id="geriAl">↩ “${esc(_sonUcus.kart.en)}” geri al</button>` : ''}
+    </div>`);
   const kartEl = document.getElementById('kart');
   let sx = 0, dx = 0, surukluyor = false, surukledi = false;
   kartEl.addEventListener('pointerdown', e => {
@@ -430,21 +449,67 @@ function cizKart() {
   document.getElementById('cevir').onclick = (e) => { e.stopPropagation(); _kartAcik = !_kartAcik; cizKart(); };
   document.getElementById('sonraki').onclick = (e) => { e.stopPropagation(); gunKaydet(); _kartIdx = nextCard(_kartIdx, k.length); _kartAcik = false; cizKart(); };
   document.getElementById('defterBtn').onclick = (e) => { e.stopPropagation(); defterToggle(kart); cizKart(); };
+  const geriAlBtn = document.getElementById('geriAl');
+  if (geriAlBtn) geriAlBtn.onclick = (e) => { e.stopPropagation(); sonUcusuGeriAl(); };
   const anlamEl = document.getElementById('kartAnlam');
   if (anlamEl) anlamEl.onclick = (e) => { e.stopPropagation(); _kartAcik = false; cizKart(); };
   if (_kartAcik) wireOrnekler(icerik);
 }
 // Kartı kaydırarak gönder: yön>0 biliyorum→öğrenilen, yön<0 bilmiyorum→defter
 function kartUcur(yon) {
-  const k = aktifDers.kelimeler, kart = k[_kartIdx];
+  const k = kartDestesi(), kart = k[_kartIdx];
   const kartEl = document.getElementById('kart');
   kartEl.style.transition = 'transform .32s ease, opacity .32s ease';
   kartEl.style.transform = `translateX(${yon * 520}px) rotate(${yon * 22}deg)`;
   kartEl.style.opacity = '0';
+  // Yanlışlıkla kaydırma artık kartı listeden düşürüyor — önceki durumu sakla.
+  _sonUcus = { kart, ogrenildi: ogrenildiMi(kart.en), defterde: defterdeMi(kart.en) };
   if (yon > 0) ogrenildiEkle(kart);                                  // biliyorum → öğrenilen
   else { if (!defterdeMi(kart.en)) defterToggle(kart); ogrenildiSil(kart.en); }   // bilmiyorum → defter
   gunKaydet();
-  setTimeout(() => { _kartIdx = nextCard(_kartIdx, k.length); _kartAcik = false; cizKart(); }, 300);
+  setTimeout(() => {
+    const kalan = kartDestesi();
+    // Kart desteden düştüyse aynı indekte zaten sıradaki kart var; düşmediyse ilerle.
+    const dustu = !kalan.some(w => String(w.en).toLowerCase() === String(kart.en).toLowerCase());
+    _kartIdx = !kalan.length ? 0
+      : dustu ? (_kartIdx >= kalan.length ? 0 : _kartIdx)
+      : nextCard(_kartIdx, kalan.length);
+    _kartAcik = false;
+    cizKart();
+  }, 300);
+}
+// Son kaydırmayı geri al — kart destesine döner.
+function sonUcusuGeriAl() {
+  if (!_sonUcus) return;
+  const { kart, ogrenildi, defterde } = _sonUcus;
+  if (ogrenildi) ogrenildiEkle(kart); else ogrenildiSil(kart.en);
+  if (defterde !== defterdeMi(kart.en)) defterToggle(kart);   // ogrenildiEkle defteri de temizliyor
+  _sonUcus = null;
+  const kalan = kartDestesi();
+  const i = kalan.findIndex(w => String(w.en).toLowerCase() === String(kart.en).toLowerCase());
+  _kartIdx = i >= 0 ? i : 0;
+  _kartAcik = false;
+  cizKart();
+}
+// Ünitedeki bütün kelimeler öğrenildiğinde kart yerine bu ekran gelir.
+function cizHepsiOgrenildi(toplam) {
+  render(`
+    <div class="kart-sayac">🎓 ${toplam} / ${toplam}</div>
+    <div class="kart-ilerleme"><div class="kart-ilerleme-ic" style="width:100%"></div></div>
+    <div class="cumle"><div class="tr">Bu ünitedeki <b>${toplam} kelimenin hepsini</b> öğrendin. 🎉<br>
+      Kartlar listeden kalktı. Tekrar etmek istersen “Öğrendiklerim”e gidebilir ya da bu ünitenin işaretlerini sıfırlayabilirsin.</div></div>
+    <div class="btn-satir">
+      <button class="aksiyon" id="ogrTekrar">🎓 Öğrendiklerim</button>
+      <button class="aksiyon ikincil" id="ogrSifirla">↺ Bu üniteyi sıfırla</button>
+    </div>
+    ${_sonUcus ? `<div class="btn-satir"><button class="aksiyon ikincil" id="geriAl">↩ “${esc(_sonUcus.kart.en)}” geri al</button></div>` : ''}`);
+  document.getElementById('ogrTekrar').onclick = ogrenilenAc;
+  document.getElementById('ogrSifirla').onclick = () => {
+    if (!confirm('Bu ünitedeki kelimelerin “öğrendim” işareti kaldırılsın mı?')) return;
+    uniteOgrenilenSifirla(); _kartIdx = 0; _sonUcus = null; cizKart();
+  };
+  const g = document.getElementById('geriAl');
+  if (g) g.onclick = sonUcusuGeriAl;
 }
 
 // Etkileşimli örnek HTML — ex: {tokenlar:[{k,a,en?,vurgu?}], tr} ya da {en, tr}
