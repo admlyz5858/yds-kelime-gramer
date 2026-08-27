@@ -9,6 +9,7 @@
 //  • Kapsam seçimi: tüm havuz, tek ünite veya "zorlandıklarım".
 //  • Günlük hedef + seri: her gün en az 20 yeni kelime + biriken tekrarlar.
 import { loadSRS, saveSRS } from './storage.js';
+import { ses, titre } from './efekt.js';
 
 const GUN_MS = 86400000;
 const bugunGun = () => Math.floor(Date.now() / GUN_MS);
@@ -82,7 +83,9 @@ export function kurKelimeOgren(api) {
     c.d = bugunGun() + c.i; c.s = bugunGun();
     srs.kartlar[key] = c;
     if (ilk) srs.gun.yeni++; else srs.gun.tekrar++;
-    gecKaydet(q > 0); kaydet(); gunKaydet(1);
+    gecKaydet(q > 0); kaydet();
+    gunKaydet(1, { dogru: q > 0 });
+    if (q > 0) { ses('dogru'); titre('hafif'); } else { ses('yanlis'); titre('hata'); }
     return ilk;
   }
   function gecKaydet(dogruMu) {
@@ -600,6 +603,7 @@ export function kurKelimeOgren(api) {
 
   // ======================================================= BİTİŞ
   function cizBitis() {
+    gunKaydet(0, { bitir: true });   // "oturum bitir" görevi
     const topl = oturum.dogru + oturum.yanlis, yuzde = topl ? Math.round(oturum.dogru / topl * 100) : 0;
     const s = istat();
     const on = kapsamOnizle();

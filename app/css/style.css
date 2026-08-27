@@ -1129,3 +1129,80 @@ button.aksiyon:active{ transform:translateY(1px); }
 .ogr-detay-durum { font-size: 12px; color: var(--murekkep-2); margin-top: 10px; }
 .ogr-on-tr { color: var(--kil) !important; }
 .ogr-rozet.zor { background: rgba(178,58,58,.14); color: var(--gul); margin-left: 6px; }
+
+/* ===================================================================== */
+/* Trend özellikler: seviye/XP, sınav geri sayımı, görevler, ısı haritası */
+/* ===================================================================== */
+/* Seviye + XP (pano) */
+.pano-sv { font-family: var(--serif); font-weight: 700; font-size: 15px; color: #fff; }
+.pano-xp { height: 7px; background: rgba(255,255,255,.22); border-radius: 6px; overflow: hidden; margin-top: 8px; max-width: 210px; }
+.pano-xp-ic { height: 100%; background: linear-gradient(90deg, #e0a92e, #f6df9b); border-radius: 6px; transition: width .5s ease; }
+.pano-xp-et { font-size: 10.5px; color: rgba(255,255,255,.85); margin-top: 4px; }
+.pano-buz { font-size: 12px; background: rgba(255,255,255,.18); padding: 1px 7px; border-radius: 999px; margin-left: 4px; white-space: nowrap; }
+/* İlerleme modalındaki XP çubuğu koyu metin */
+.ilerleme-sv .pano-xp { background: var(--hat); max-width: none; }
+
+/* Sınav geri sayımı kartı */
+.sinav-kart {
+  display: flex; align-items: center; gap: 13px; width: 100%; text-align: left;
+  background: radial-gradient(130% 130% at 100% 0%, rgba(194,84,47,.14), transparent 55%), var(--yuzey);
+  border: 1px solid var(--hat); border-left: 5px solid var(--kil);
+  border-radius: 16px; padding: 14px 16px; margin-bottom: 14px; cursor: pointer; box-shadow: var(--golge-2); transition: transform .1s;
+}
+.sinav-kart:active { transform: scale(.99); }
+.sinav-kart.ekle { border-left-color: var(--hat-2); }
+.sinav-ikon { font-size: 26px; flex: none; }
+.sinav-sayi { display: flex; flex-direction: column; align-items: center; line-height: 1; flex: none; min-width: 52px; }
+.sinav-sayi b { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--kil); }
+.sinav-sayi span { font-size: 11px; color: var(--murekkep-2); }
+.sinav-metin { flex: 1; display: flex; flex-direction: column; }
+.sinav-metin b { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--murekkep); }
+.sinav-metin i { font-size: 12.5px; color: var(--murekkep-2); font-style: normal; margin-top: 2px; }
+.sinav-metin i b { color: var(--kil); font-style: normal; }
+
+/* Günlük görevler kartı */
+.gorev-kart { background: var(--yuzey); border: 1px solid var(--hat); border-radius: 16px; padding: 14px 16px; margin-bottom: 14px; box-shadow: var(--golge); }
+.gorev-bas { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--murekkep); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.gorev-rozet { font-size: 12px; font-weight: 700; color: #fff; background: var(--orman); border-radius: 999px; padding: 2px 9px; }
+.gorev-satir { display: flex; align-items: center; gap: 10px; padding: 7px 0; }
+.gorev-satir.bitti .gorev-ad { color: var(--murekkep-2); text-decoration: line-through; }
+.gorev-ikon { font-size: 18px; flex: none; width: 22px; text-align: center; }
+.gorev-ic { flex: 1; min-width: 0; }
+.gorev-ad { font-size: 13.5px; color: var(--murekkep); margin-bottom: 5px; }
+.gorev-bar { height: 6px; background: var(--hat); border-radius: 5px; overflow: hidden; }
+.gorev-bar-ic { height: 100%; background: linear-gradient(90deg, var(--orman), var(--teal)); border-radius: 5px; transition: width .4s ease; }
+.gorev-say { font-size: 12px; font-weight: 700; color: var(--murekkep-2); flex: none; }
+
+/* İlerleme modalı */
+.ilerleme-sv-bas { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; }
+.ilerleme-sv-bas b { font-family: var(--serif); font-size: 18px; color: var(--murekkep); }
+.ilerleme-sv-bas span { font-size: 12px; color: var(--murekkep-2); }
+.ilerleme-cip-satir { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0; }
+.ilerleme-cip { background: var(--yuzey-2); border: 1px solid var(--hat); border-radius: 12px; padding: 10px 4px; text-align: center; }
+.ilerleme-cip b { display: block; font-family: var(--serif); font-size: 17px; color: var(--murekkep); }
+.ilerleme-cip span { font-size: 10.5px; color: var(--murekkep-2); }
+.ilerleme-baslik { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--murekkep); margin: 16px 2px 10px; }
+
+/* Aktivite ısı haritası (takvim) */
+.isi-izgara { display: grid; grid-template-rows: repeat(7, 1fr); grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; }
+.isi-hucre { width: 100%; aspect-ratio: 1; border-radius: 3px; background: var(--hat); }
+.isi-hucre.s0 { background: var(--hat); }
+.isi-hucre.s1 { background: #bfe3cd; }
+.isi-hucre.s2 { background: #7fca9f; }
+.isi-hucre.s3 { background: #47a86f; }
+.isi-hucre.s4 { background: var(--orman); }
+.isi-hucre.gelecek { opacity: .25; }
+.isi-lejant { display: flex; align-items: center; gap: 4px; justify-content: flex-end; font-size: 11px; color: var(--murekkep-2); margin-top: 8px; }
+.isi-lejant .isi-hucre { width: 12px; height: 12px; aspect-ratio: auto; }
+:root[data-tema="koyu"] .isi-hucre.s1 { background: #2c5c42; }
+:root[data-tema="koyu"] .isi-hucre.s2 { background: #3c7f5b; }
+:root[data-tema="koyu"] .isi-hucre.s3 { background: #4fa373; }
+
+/* Toast (küçük bildirim balonu) */
+.toast-katman { position: fixed; left: 0; right: 0; bottom: 84px; z-index: 9998; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; padding: 0 16px; }
+.toast {
+  background: var(--murekkep); color: var(--kagit); font-size: 13.5px; font-weight: 600;
+  padding: 11px 18px; border-radius: 999px; box-shadow: var(--golge-2); max-width: 92%; text-align: center;
+  opacity: 0; transform: translateY(12px); transition: opacity .3s, transform .3s;
+}
+.toast.gor { opacity: 1; transform: translateY(0); }

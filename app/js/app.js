@@ -1,7 +1,9 @@
 // app/js/app.js
 import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
-import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen } from './storage.js';
+import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen, loadSRS } from './storage.js';
 import { kurKelimeOgren } from './ogren.js';
+import { titre, ses, konfeti, paylas, efektAyarla } from './efekt.js';
+import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
@@ -71,6 +73,8 @@ async function anaSayfa() {
   const koyu = _ayar.tema === 'koyu';
   render(`
     ${panoHTML()}
+    ${sinavKartHTML()}
+    ${gorevKartHTML()}
     ${gununKartHTML()}
     ${devam}
     <button class="ogren-banner" id="hOgren">
@@ -84,7 +88,7 @@ async function anaSayfa() {
       <button class="hizli-kart" id="hDefter"><span class="hizli-ikon">📓</span><b>Kelime Defteri</b><i>${n} kelime</i></button>
       <button class="hizli-kart" id="hOgrenilen"><span class="hizli-ikon">🎓</span><b>Öğrendiklerim</b><i>${ogrenilenler().length} kelime</i></button>
       <button class="hizli-kart" id="hYanlis"><span class="hizli-ikon">❌</span><b>Yanlışlarım</b><i>${ny} soru</i></button>
-      <button class="hizli-kart" id="hBasarim"><span class="hizli-ikon">🏅</span><b>Başarımlar</b><i>${basarimlar().filter(x => x.ok).length}/${basarimlar().length} rozet</i></button>
+      <button class="hizli-kart" id="hIlerleme"><span class="hizli-ikon">📊</span><b>İlerleme</b><i>Seviye · seri · ısı haritası</i></button>
       <button class="hizli-kart" id="hTema"><span class="hizli-ikon">${koyu ? '☀️' : '🌙'}</span><b>${koyu ? 'Açık tema' : 'Koyu tema'}</b><i>Görünümü değiştir</i></button>
     </div>
   `);
@@ -93,12 +97,14 @@ async function anaSayfa() {
     else if (c.dataset.git === 'yanlis') yanlisAc();
     else if (c.dataset.git === 'ogrenilen') ogrenilenAc();
   });
+  const sk = document.getElementById('sinavKartBtn');
+  if (sk) sk.onclick = sinavAyarAc;
   document.getElementById('hOgren').onclick = () => kelimeOgren.ac();
   document.getElementById('hUniteler').onclick = cekmeceAc;
   document.getElementById('hDefter').onclick = defterAc;
   document.getElementById('hOgrenilen').onclick = ogrenilenAc;
   document.getElementById('hYanlis').onclick = yanlisAc;
-  document.getElementById('hBasarim').onclick = basarimAc;
+  document.getElementById('hIlerleme').onclick = ilerlemeAc;
   document.getElementById('hTema').onclick = () => { temaDegistir(); anaSayfa(); };
   const gb = document.getElementById('gununBtn');
   if (gb) gb.onclick = gununAc;
@@ -697,15 +703,26 @@ function cizQuiz() {
   const gb = document.getElementById('qGeri');
   if (gb) gb.onclick = () => ekranQuiz();
   if (!cevaplandi) {
-    icerik.querySelectorAll('.q-secenek').forEach(b => b.onclick = () => { _quizCevap[i] = b.dataset.o; gunKaydet(); cizQuiz(); });
+    icerik.querySelectorAll('.q-secenek').forEach(b => b.onclick = () => {
+      _quizCevap[i] = b.dataset.o;
+      const dogruMu2 = b.dataset.o === soru.cevap;
+      geriBildirim(dogruMu2);
+      gunKaydet(1, { dogru: dogruMu2 });
+      cizQuiz();
+    });
   } else {
     if (soru.ornek) wireOrnekler(icerik);
     const ns = document.getElementById('qSonraki');
     if (ns) ns.onclick = () => { if (i + 1 < q.length) { _quizIdx++; cizQuiz(); } else cizQuizSonuc(); };
   }
 }
+// Doğru/yanlış anında ses + titreşim
+function geriBildirim(dogruMu) {
+  if (dogruMu) { ses('dogru'); titre('hafif'); } else { ses('yanlis'); titre('hata'); }
+}
 function cizQuizSonuc() {
   if (_yanlisMod) return yanlisSonuc();
+  gunKaydet(0, { bitir: true });   // "test bitir" görevi
   const r = scoreQuiz(_quizSorular, _quizCevap);
   const testler = quizTestleri();
   const sonrakiVar = _aktifTest != null && _aktifTest + 1 < testler.length;
@@ -826,7 +843,12 @@ function cizBosluk() {
   const skor = bitti ? `<div class="bosluk-sonuc ${dogruSay === _bosluk.length ? 'tam' : ''}">✍️ Sonuç: ${dogruSay} / ${_bosluk.length} doğru</div>` : '';
   render(bas + html + skor);
   icerik.querySelectorAll('.q-secenek:not([disabled])').forEach(b => b.onclick = () => {
-    _boslukCevap[Number(b.dataset.i)] = b.dataset.o; gunKaydet(); cizBosluk();
+    const bi = Number(b.dataset.i);
+    _boslukCevap[bi] = b.dataset.o;
+    const dogruMu2 = b.dataset.o.toLowerCase() === _bosluk[bi].dogru.toLowerCase();
+    geriBildirim(dogruMu2);
+    gunKaydet(1, { dogru: dogruMu2 });
+    cizBosluk();
   });
   wireOrnekler(icerik);
 }
@@ -930,6 +952,10 @@ function ayarAc() {
   modalAc('Ayarlar', `
     <button class="ayar-sat" data-is="tema"><span>${_ayar.tema === 'koyu' ? '☀️' : '🌙'}</span><div><b>${_ayar.tema === 'koyu' ? 'Açık tema' : 'Koyu tema'}</b><i>Görünümü değiştir</i></div></button>
     <button class="ayar-sat" data-is="hedef"><span>🎯</span><div><b>Günlük hedef</b><i>${_ayar.hedef || HEDEF_VARSAYILAN} aktivite/gün — değiştirmek için dokun</i></div></button>
+    <button class="ayar-sat" data-is="sinav"><span>📅</span><div><b>Sınav tarihi</b><i>${_ayar.sinavTarih ? _ayar.sinavTarih + ' — geri sayım açık' : 'YDS/YÖKDİL tarihini ekle'}</i></div></button>
+    <button class="ayar-sat" data-is="bildirim"><span>🔔</span><div><b>Günlük hatırlatma</b><i>${_ayar.bildirimAcik ? (_ayar.bildirimSaat || '20:00') + ' — açık' : 'Kapalı'}${bildirimVarMi() ? '' : ' · sadece uygulamada'}</i></div></button>
+    <button class="ayar-sat" data-is="ses"><span>${_ayar.sesKapali ? '🔇' : '🔊'}</span><div><b>Ses efektleri</b><i>${_ayar.sesKapali ? 'Kapalı' : 'Açık'} — değiştirmek için dokun</i></div></button>
+    <button class="ayar-sat" data-is="titresim"><span>📳</span><div><b>Titreşim</b><i>${_ayar.titresimKapali ? 'Kapalı' : 'Açık'} — değiştirmek için dokun</i></div></button>
     <button class="ayar-sat" data-is="giris"><span>👋</span><div><b>Tanıtım ekranını göster</b><i>Karşılama ekranını tekrar aç</i></div></button>
     ${_ayar.premiumAcik
       ? `<button class="ayar-sat" data-is="premiumkapat"><span>✅</span><div><b>Premium açık</b><i>Tüm üniteler açık — kapatmak için dokun</i></div></button>`
@@ -948,6 +974,10 @@ function ayarAc() {
           _ayar.hedef = ops[(ops.indexOf(_ayar.hedef || HEDEF_VARSAYILAN) + 1) % ops.length];
           saveAyar(_ayar); kapat(); ayarAc(); return;
         }
+        if (is === 'sinav') { kapat(); sinavAyarAc(); return; }
+        if (is === 'bildirim') { kapat(); bildirimAyarAc(); return; }
+        if (is === 'ses') { _ayar.sesKapali = !_ayar.sesKapali; saveAyar(_ayar); efektAyarla({ ses: !_ayar.sesKapali }); if (!_ayar.sesKapali) ses('dogru'); kapat(); ayarAc(); return; }
+        if (is === 'titresim') { _ayar.titresimKapali = !_ayar.titresimKapali; saveAyar(_ayar); efektAyarla({ titresim: !_ayar.titresimKapali }); if (!_ayar.titresimKapali) titre('orta'); kapat(); ayarAc(); return; }
         if (is === 'giris') { kapat(); girisEkrani(true); return; }
         if (is === 'premiumkod') { kapat(); premiumKodAc(); return; }
         if (is === 'premiumkapat') { _ayar.premiumAcik = false; saveAyar(_ayar); kapat(); ayarAc(); return; }
@@ -988,20 +1018,108 @@ function _gunStr(off = 0) {
   return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
 const HEDEF_VARSAYILAN = 20;
-// Çalışma aktivitesi kaydı (quiz/boşluk/kart) → günlük sayaç + seri
-function gunKaydet(miktar = 1) {
-  const bugun = _gunStr(0);
-  if (_ayar.gunTarih !== bugun) {            // günün ilk aktivitesi
-    _ayar.seri = (_ayar.sonAktif === _gunStr(-1)) ? (_ayar.seri || 0) + 1 : 1;
-    _ayar.sonAktif = bugun;
-    _ayar.gunTarih = bugun;
-    _ayar.gunSayac = 0;
+
+// ===== Gamifikasyon: XP + seviye + günlük görevler + seri dondurma =====
+const XP_AKTIVITE = 8, XP_DOGRU = 4, XP_HEDEF = 30, XP_GOREV = 25;
+function seviyeBilgi(xp = 0) {
+  let sv = 1, gerek = 120, top = 0;
+  while (xp >= top + gerek) { top += gerek; sv++; gerek = Math.round(gerek * 1.22); }
+  return { seviye: sv, buXp: xp - top, gerek, oran: Math.min(1, (xp - top) / gerek) };
+}
+// Bugünkü 3 görev (sayaç tabanlı)
+function gorevListesi() {
+  const hedef = _ayar.hedef || HEDEF_VARSAYILAN;
+  const bitti = _ayar.gorevBitti || {};
+  return [
+    { id: 'aktivite', ikon: '⚡', ad: `${hedef} aktivite yap`, ilerleme: Math.min(_ayar.gunSayac || 0, hedef), hedef, bitti: !!bitti.aktivite },
+    { id: 'dogru', ikon: '🎯', ad: '15 doğru cevap ver', ilerleme: Math.min(_ayar.gunDogru || 0, 15), hedef: 15, bitti: !!bitti.dogru },
+    { id: 'bitir', ikon: '🏁', ad: '2 test/oturum bitir', ilerleme: Math.min(_ayar.gunBitirilen || 0, 2), hedef: 2, bitti: !!bitti.bitir },
+  ];
+}
+function gorevleriKontrol() {
+  if (!_ayar.gorevBitti) _ayar.gorevBitti = {};
+  let kazanim = false;
+  for (const g of gorevListesi()) {
+    if (!_ayar.gorevBitti[g.id] && g.ilerleme >= g.hedef) {
+      _ayar.gorevBitti[g.id] = true;
+      _ayar.xp = (_ayar.xp || 0) + XP_GOREV;
+      kazanim = true;
+      toast(`✅ Görev tamam: ${g.ad} · +${XP_GOREV} XP`);
+    }
   }
+  return kazanim;
+}
+
+// Çalışma aktivitesi kaydı → günlük sayaç + seri + XP + görev + ısı haritası
+// opt: { dogru:boolean, bitir:boolean }
+function gunKaydet(miktar = 1, opt = {}) {
+  const bugun = _gunStr(0);
+  if (_ayar.gunTarih !== bugun) {            // günün ilk aktivitesi → seri + günlük sıfırlama
+    const dun = _gunStr(-1), oncekiGun = _gunStr(-2);
+    if (_ayar.sonAktif === dun) _ayar.seri = (_ayar.seri || 0) + 1;
+    else if (_ayar.sonAktif === oncekiGun && (_ayar.dondurma || 0) > 0) {   // seri dondurma: 1 gün kaçtı, koru
+      _ayar.dondurma--; _ayar.seri = (_ayar.seri || 0) + 1; _ayar._dondurmaBildir = true;
+    } else _ayar.seri = 1;
+    _ayar.sonAktif = bugun; _ayar.gunTarih = bugun;
+    _ayar.gunSayac = 0; _ayar.gunDogru = 0; _ayar.gunYanlis = 0; _ayar.gunBitirilen = 0; _ayar.gorevBitti = {};
+  }
+  const oncekiSv = seviyeBilgi(_ayar.xp || 0).seviye;
+  const oncekiHedefTam = (_ayar.gunSayac || 0) >= (_ayar.hedef || HEDEF_VARSAYILAN);
+
   _ayar.gunSayac = (_ayar.gunSayac || 0) + miktar;
   _ayar.toplamAktivite = (_ayar.toplamAktivite || 0) + miktar;
   _ayar.enUzunSeri = Math.max(_ayar.enUzunSeri || 0, _ayar.seri || 0);
   if (!_ayar.hedef) _ayar.hedef = HEDEF_VARSAYILAN;
+  if (opt.dogru === true) _ayar.gunDogru = (_ayar.gunDogru || 0) + 1;
+  else if (opt.dogru === false) _ayar.gunYanlis = (_ayar.gunYanlis || 0) + 1;
+  if (opt.bitir) _ayar.gunBitirilen = (_ayar.gunBitirilen || 0) + 1;
+
+  // XP
+  _ayar.xp = (_ayar.xp || 0) + XP_AKTIVITE * miktar + (opt.dogru === true ? XP_DOGRU : 0);
+
+  // ısı haritası günlüğü
+  if (!_ayar.gunlog) _ayar.gunlog = {};
+  _ayar.gunlog[bugun] = (_ayar.gunlog[bugun] || 0) + miktar;
+
+  // günlük hedefe ilk ulaşma → bonus + kutlama
+  const simdiHedefTam = _ayar.gunSayac >= (_ayar.hedef || HEDEF_VARSAYILAN);
+  if (simdiHedefTam && !oncekiHedefTam) {
+    _ayar.xp += XP_HEDEF;
+    toast(`🎯 Günlük hedef tamam! +${XP_HEDEF} XP`);
+    ses('kutlama'); titre('basari'); konfeti();
+  }
+
+  gorevleriKontrol();
+
+  // seviye atlama → kutlama + seri dondurma ödülü
+  const yeniSv = seviyeBilgi(_ayar.xp).seviye;
+  if (yeniSv > oncekiSv) {
+    _ayar.dondurma = Math.min(3, (_ayar.dondurma || 0) + 1);
+    toast(`⭐ Seviye ${yeniSv}! Seri dondurma +1 🧊`);
+    ses('seviye'); titre('basari'); konfeti({ adet: 160, sure: 1700 });
+  }
+  // eski gün kayıtlarını buda (ısı haritası ~120 gün)
+  budaGunlog();
   saveAyar(_ayar);
+}
+function budaGunlog() {
+  if (!_ayar.gunlog) return;
+  const keys = Object.keys(_ayar.gunlog);
+  if (keys.length <= 130) return;
+  const sinir = _gunStr(-129);
+  for (const k of keys) if (k < sinir) delete _ayar.gunlog[k];
+}
+
+// --- Küçük bildirim balonu (toast) ---
+let _toastZ = null;
+function toast(metin) {
+  try {
+    if (!_toastZ) { _toastZ = document.createElement('div'); _toastZ.className = 'toast-katman'; document.body.appendChild(_toastZ); }
+    const t = document.createElement('div'); t.className = 'toast'; t.textContent = metin;
+    _toastZ.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('gor'));
+    setTimeout(() => { t.classList.remove('gor'); setTimeout(() => t.remove(), 300); }, 2600);
+  } catch (_) {}
 }
 
 // --- Tema (açık / koyu) ---
@@ -1087,10 +1205,13 @@ function panoStats() {
   const bugun = _gunStr(0), dun = _gunStr(-1);
   const seri = (_ayar.sonAktif === bugun || _ayar.sonAktif === dun) ? (_ayar.seri || 0) : 0;
   const bugunSay = _ayar.gunTarih === bugun ? (_ayar.gunSayac || 0) : 0;
+  const sv = seviyeBilgi(_ayar.xp || 0);
   return {
     cozTest, dogru: d, toplam: t, yuzde: t ? Math.round(d / t * 100) : 0,
     defter: defterKelimeler().length, yanlis: _yanlis.length, ogrenilen: ogrenilenler().length,
-    seri, bugun: bugunSay, hedef: _ayar.hedef || HEDEF_VARSAYILAN
+    seri, bugun: bugunSay, hedef: _ayar.hedef || HEDEF_VARSAYILAN,
+    xp: _ayar.xp || 0, seviye: sv.seviye, svOran: sv.oran, svBu: sv.buXp, svGerek: sv.gerek,
+    dondurma: _ayar.dondurma || 0
   };
 }
 function panoHTML() {
@@ -1099,11 +1220,14 @@ function panoHTML() {
   const oran = Math.min(1, s.hedef ? s.bugun / s.hedef : 0);
   const dolu = cevre * oran, tamam = s.bugun >= s.hedef;
   const seriYazi = s.seri > 0 ? `🔥 ${s.seri} günlük seri` : '🔥 Bugün seriyi başlat';
+  const dondurmaRozet = s.dondurma > 0 ? `<span class="pano-buz" title="Seri dondurma: bir gün kaçırırsan serin korunur">🧊 ${s.dondurma}</span>` : '';
   return `<div class="pano">
     <div class="pano-ust">
       <div>
-        <div class="pano-selam">Çalışma Defteri</div>
-        <div class="pano-seri ${s.seri > 0 ? 'aktif' : ''}">${seriYazi}</div>
+        <div class="pano-selam"><span class="pano-sv">⭐ Sv ${s.seviye}</span></div>
+        <div class="pano-seri ${s.seri > 0 ? 'aktif' : ''}">${seriYazi} ${dondurmaRozet}</div>
+        <div class="pano-xp"><div class="pano-xp-ic" style="width:${Math.round(s.svOran * 100)}%"></div></div>
+        <div class="pano-xp-et">${s.svBu} / ${s.svGerek} XP · sonraki seviye</div>
       </div>
       <div class="pano-sag">
         <button class="pano-ogr" data-git="ogrenilen"><b>🎓 ${s.ogrenilen}</b><span>öğrenilen</span></button>
@@ -1125,14 +1249,191 @@ function panoHTML() {
   </div>`;
 }
 
+// ===== Sınav geri sayımı =====
+const TOPLAM_KELIME = 2331;   // kelime havuzu tahmini (plan önerisi için)
+function _tarihFark(iso) {     // bugünden hedef tarihe kalan tam gün
+  const [y, m, d] = iso.split('-').map(Number);
+  const hedef = new Date(y, m - 1, d), bugun = new Date();
+  hedef.setHours(0, 0, 0, 0); bugun.setHours(0, 0, 0, 0);
+  return Math.round((hedef - bugun) / 86400000);
+}
+function ogrenilenKelimeSayisi() {
+  try { const s = loadSRS(); return s && s.kartlar ? Object.keys(s.kartlar).length : 0; } catch { return 0; }
+}
+function sinavKartHTML() {
+  if (!_ayar.sinavTarih) {
+    return `<button class="sinav-kart ekle" id="sinavKartBtn">
+      <span class="sinav-ikon">📅</span>
+      <span class="sinav-metin"><b>Sınav tarihini ekle</b><i>YDS/YÖKDİL'e kalan günü ve günlük planı gör</i></span>
+      <span class="ogren-banner-ok">＋</span></button>`;
+  }
+  const kalan = _tarihFark(_ayar.sinavTarih);
+  if (kalan < 0) {
+    return `<button class="sinav-kart" id="sinavKartBtn">
+      <span class="sinav-ikon">📅</span>
+      <span class="sinav-metin"><b>Sınav günü geçti</b><i>Yeni bir hedef tarih eklemek için dokun</i></span>
+      <span class="ogren-banner-ok">›</span></button>`;
+  }
+  const kalanKelime = Math.max(0, TOPLAM_KELIME - ogrenilenKelimeSayisi());
+  const gunluk = kalan > 0 ? Math.ceil(kalanKelime / kalan) : kalanKelime;
+  const plan = kalan > 0 && kalanKelime > 0 ? `Hedefe yetişmek için günde ~<b>${gunluk}</b> kelime` : (kalanKelime === 0 ? 'Tüm kelimeleri çalıştın 🎉' : 'Bugün son gün — bol tekrar!');
+  return `<button class="sinav-kart" id="sinavKartBtn">
+    <div class="sinav-sayi"><b>${kalan}</b><span>gün</span></div>
+    <span class="sinav-metin"><b>Sınava kalan</b><i>${plan}</i></span>
+    <span class="ogren-banner-ok">›</span></button>`;
+}
+function sinavAyarAc() {
+  const mevcut = _ayar.sinavTarih || '';
+  modalAc('Sınav tarihi', `
+    <p class="modal-aciklama">YDS/YÖKDİL sınav tarihini seç; ana sayfada geri sayım ve günlük kelime planı görünsün.</p>
+    <input id="sinavInput" type="date" value="${mevcut}" style="width:100%;box-sizing:border-box;padding:13px;border:1px solid var(--hat);border-radius:12px;background:var(--yuzey);color:var(--murekkep);font-size:16px;margin-bottom:12px;">
+    <div class="btn-satir">
+      ${mevcut ? '<button class="aksiyon ikincil" id="sinavSil">Kaldır</button>' : ''}
+      <button class="aksiyon" id="sinavKaydet">Kaydet</button>
+    </div>`, {
+    onWire: (o, kapat) => {
+      o.querySelector('#sinavKaydet').onclick = () => {
+        const v = o.querySelector('#sinavInput').value;
+        if (v) { _ayar.sinavTarih = v; saveAyar(_ayar); }
+        kapat(); anaSayfa();
+      };
+      const sil = o.querySelector('#sinavSil');
+      if (sil) sil.onclick = () => { delete _ayar.sinavTarih; saveAyar(_ayar); kapat(); anaSayfa(); };
+    }
+  });
+}
+
+// ===== Günlük görevler kartı =====
+function gorevKartHTML() {
+  const gorevler = gorevListesi();
+  const bitenSay = gorevler.filter(g => g.bitti).length;
+  const satirlar = gorevler.map(g => {
+    const yuzde = Math.round(g.ilerleme / g.hedef * 100);
+    return `<div class="gorev-satir ${g.bitti ? 'bitti' : ''}">
+      <span class="gorev-ikon">${g.bitti ? '✅' : g.ikon}</span>
+      <div class="gorev-ic">
+        <div class="gorev-ad">${esc(g.ad)}</div>
+        <div class="gorev-bar"><div class="gorev-bar-ic" style="width:${yuzde}%"></div></div>
+      </div>
+      <span class="gorev-say">${g.ilerleme}/${g.hedef}</span>
+    </div>`;
+  }).join('');
+  return `<div class="gorev-kart">
+    <div class="gorev-bas">🎮 Günlük görevler <span class="gorev-rozet">${bitenSay}/${gorevler.length}</span></div>
+    ${satirlar}
+  </div>`;
+}
+
+// ===== İlerleme (seviye + seri + ısı haritası + paylaşım) =====
+function isiHaritasi() {
+  const log = _ayar.gunlog || {};
+  const HAFTA = 13, gun = HAFTA * 7;
+  // pazartesi hizası: bugünü içeren haftanın sonuna kadar
+  const bugun = new Date(); bugun.setHours(0, 0, 0, 0);
+  const bugunGun = (bugun.getDay() + 6) % 7;   // Pzt=0
+  const bitis = new Date(bugun); bitis.setDate(bitis.getDate() + (6 - bugunGun));
+  const hucreler = [];
+  let enYuksek = 1;
+  for (const v of Object.values(log)) enYuksek = Math.max(enYuksek, v);
+  for (let i = gun - 1; i >= 0; i--) {
+    const d = new Date(bitis); d.setDate(d.getDate() - i);
+    const iso = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const say = log[iso] || 0;
+    const seviye = say === 0 ? 0 : say < 8 ? 1 : say < 20 ? 2 : say < 40 ? 3 : 4;
+    const gelecek = d > bugun;
+    hucreler.push(`<div class="isi-hucre s${seviye}${gelecek ? ' gelecek' : ''}" title="${iso}: ${say} aktivite"></div>`);
+  }
+  return `<div class="isi-izgara">${hucreler.join('')}</div>
+    <div class="isi-lejant">Az <span class="isi-hucre s0"></span><span class="isi-hucre s1"></span><span class="isi-hucre s2"></span><span class="isi-hucre s3"></span><span class="isi-hucre s4"></span> Çok</div>`;
+}
+function ilerlemeAc() {
+  const s = panoStats();
+  const aktifGun = Object.values(_ayar.gunlog || {}).filter(v => v > 0).length;
+  const b = basarimlar(); const kazanilan = b.filter(x => x.ok).length;
+  const rozetGrid = b.map(x => `<div class="basarim ${x.ok ? 'acik' : 'kilit'}">
+      <div class="basarim-ikon">${x.ok ? x.ikon : '🔒'}</div>
+      <div class="basarim-ad">${esc(x.ad)}</div>
+      <div class="basarim-desc">${esc(x.desc)}</div></div>`).join('');
+  modalAc('İlerleme', `
+    <div class="ilerleme-sv">
+      <div class="ilerleme-sv-bas"><b>⭐ Seviye ${s.seviye}</b><span>${s.xp} XP toplam</span></div>
+      <div class="pano-xp"><div class="pano-xp-ic" style="width:${Math.round(s.svOran * 100)}%"></div></div>
+      <div class="pano-xp-et" style="color:var(--murekkep-2)">${s.svBu} / ${s.svGerek} XP · sonraki seviye</div>
+    </div>
+    <div class="ilerleme-cip-satir">
+      <div class="ilerleme-cip"><b>🔥 ${s.seri}</b><span>seri</span></div>
+      <div class="ilerleme-cip"><b>🧊 ${s.dondurma}</b><span>dondurma</span></div>
+      <div class="ilerleme-cip"><b>🏆 ${_ayar.enUzunSeri || 0}</b><span>en uzun</span></div>
+      <div class="ilerleme-cip"><b>📆 ${aktifGun}</b><span>aktif gün</span></div>
+    </div>
+    <div class="ilerleme-baslik">Aktivite ısı haritası</div>
+    ${isiHaritasi()}
+    <button class="aksiyon" id="paylasBtn" style="width:100%;margin:16px 0 6px;">📤 İlerlememi paylaş</button>
+    <div class="ilerleme-baslik">Başarımlar <span style="color:var(--murekkep-2);font-weight:400">${kazanilan}/${b.length}</span></div>
+    <div class="basarim-grid">${rozetGrid}</div>
+  `, {
+    onWire: (o) => {
+      o.querySelector('#paylasBtn').onclick = async () => {
+        const metin = `📚 YDS Çalışma Defteri ilerlemem:\n⭐ Seviye ${s.seviye} · 🔥 ${s.seri} günlük seri\n🎓 ${s.ogrenilen} kelime öğrendim, %${s.yuzde} test başarısı.\nSen de çalış!`;
+        const sonuc = await paylas({ baslik: 'YDS Çalışma ilerlemem', metin });
+        if (sonuc === 'kopyalandi') toast('📋 İlerleme panoya kopyalandı');
+        else if (sonuc === false) toast('Paylaşım bu cihazda desteklenmiyor');
+      };
+    }
+  });
+}
+
+// ===== Günlük hatırlatma (yerel bildirim) =====
+function bildirimAyarAc() {
+  const saat = _ayar.bildirimSaat || '20:00';
+  const acik = !!_ayar.bildirimAcik;
+  const native = bildirimVarMi();
+  modalAc('Günlük hatırlatma', `
+    <p class="modal-aciklama">Her gün seçtiğin saatte “bugünkü kelimeler seni bekliyor” hatırlatması gönderilsin.${native ? '' : ' <b>Not:</b> Bildirimler yalnızca Android uygulamasında çalışır (tarayıcıda değil).'}</p>
+    <label class="ayar-sat" style="cursor:default"><span>🔔</span><div style="flex:1"><b>Hatırlatma</b><i>Açık/Kapalı</i></div>
+      <input type="checkbox" id="bildAcik" ${acik ? 'checked' : ''} style="width:22px;height:22px;accent-color:var(--orman)"></label>
+    <label class="ayar-sat" style="cursor:default"><span>⏰</span><div style="flex:1"><b>Saat</b><i>Hatırlatma vakti</i></div>
+      <input type="time" id="bildSaat" value="${saat}" style="padding:8px;border:1px solid var(--hat);border-radius:10px;background:var(--yuzey);color:var(--murekkep);font-size:15px"></label>
+    <button class="aksiyon" id="bildKaydet" style="width:100%;margin-top:12px">Kaydet</button>
+    <div id="bildMsg" style="margin-top:10px;color:var(--murekkep-2);min-height:1.2em;font-size:13px"></div>
+  `, {
+    onWire: (o, kapat) => {
+      o.querySelector('#bildKaydet').onclick = async () => {
+        const ac = o.querySelector('#bildAcik').checked;
+        const sa = o.querySelector('#bildSaat').value || '20:00';
+        _ayar.bildirimAcik = ac; _ayar.bildirimSaat = sa; saveAyar(_ayar);
+        const msg = o.querySelector('#bildMsg');
+        if (ac && native) {
+          const r = await gunlukKur(sa);
+          if (r.ok) { msg.textContent = `✓ Her gün ${sa} için kuruldu.`; setTimeout(() => { kapat(); ayarAc(); }, 900); }
+          else if (r.sebep === 'izin') msg.textContent = 'Bildirim izni verilmedi. Ayarlardan izin ver.';
+          else msg.textContent = 'Bildirim kurulamadı.';
+        } else if (ac && !native) {
+          msg.textContent = 'Kaydedildi. Uygulamada (Android) etkin olacak.';
+          setTimeout(() => { kapat(); ayarAc(); }, 1100);
+        } else {
+          await iptalEt(); msg.textContent = 'Hatırlatma kapatıldı.';
+          setTimeout(() => { kapat(); ayarAc(); }, 800);
+        }
+      };
+    }
+  });
+}
+
 // Üst bar aksiyon butonları (bir kez bağla)
 menuBtn.onclick = cekmeceAc;
 document.getElementById('yardimBtn').onclick = yardimAc;
 document.getElementById('ayarBtn').onclick = ayarAc;
 
 temaUygula();
+efektAyarla({ ses: !_ayar.sesKapali, titresim: !_ayar.titresimKapali });
 girisEkrani(false);
 anaSayfa();
+
+// Bildirim açıksa uygulama açılışında yeniden kur (Capacitor hazır olunca)
+if (_ayar.bildirimAcik && bildirimVarMi()) {
+  gunlukKur(_ayar.bildirimSaat || '20:00').catch(() => {});
+}
 
 // Geliştirme sırasında: eski service worker'ı kaldır ve önbelleği temizle
 // (içerik sık değiştiği için her zaman güncel görünsün). Uygulama oturunca tekrar açılır.
