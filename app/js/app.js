@@ -1420,6 +1420,39 @@ function bildirimAyarAc() {
   });
 }
 
+// ===== Android donanım geri tuşu: uygulamayı kapatma, içeride geri git =====
+// Öncelik: açık katman(modal/çekmece/giriş) kapat → içerik-içi geri → üst geri → kök(ana ekran) çıkış onayı
+function geriYonet() {
+  const modal = document.querySelector('.modal-katman');
+  if (modal) { modalKapat(); return true; }
+  const cek = document.querySelector('.cekmece-katman');
+  if (cek) { cek.classList.remove('acik'); setTimeout(() => cek.remove(), 300); return true; }
+  const giris = document.querySelector('.giris-katman');
+  if (giris) { giris.classList.remove('acik'); setTimeout(() => giris.remove(), 420); _ayar.girisGoruldu = true; saveAyar(_ayar); return true; }
+  // içerikteki "bir seviye geri" butonları (bölüm/test/oturum/detay)
+  const icBack = document.querySelector('#bolumGeri, #qGeri, #ogrCik, #ogrDetGeri');
+  if (icBack) { icBack.click(); return true; }
+  // üst bar geri butonu (ana ekrana dön)
+  if (!geriBtn.hidden && typeof geriBtn.onclick === 'function') { geriBtn.onclick(); return true; }
+  return false;   // kök: ana ekrandayız
+}
+function cikisOnay() {
+  if (document.querySelector('.cikis-onay')) return;   // zaten açık
+  modalAc('Çıkış', `
+    <p class="modal-aciklama">Uygulamadan çıkmak istiyor musun?</p>
+    <div class="btn-satir">
+      <button class="aksiyon ikincil" id="cikHayir">Hayır</button>
+      <button class="aksiyon onay-evet" id="cikEvet">Evet, çık</button>
+    </div>`, {
+    onWire: (o, kapat) => {
+      o.querySelector('.modal-sheet')?.classList.add('cikis-onay');
+      o.querySelector('#cikHayir').onclick = kapat;
+      o.querySelector('#cikEvet').onclick = () => { try { window.Capacitor?.Plugins?.App?.exitApp(); } catch (_) {} };
+    }
+  });
+}
+window.__geriYonet = geriYonet;   // native köprü + test için
+
 // Üst bar aksiyon butonları (bir kez bağla)
 menuBtn.onclick = cekmeceAc;
 document.getElementById('yardimBtn').onclick = yardimAc;
@@ -1433,6 +1466,12 @@ anaSayfa();
 // Bildirim açıksa uygulama açılışında yeniden kur (Capacitor hazır olunca)
 if (_ayar.bildirimAcik && bildirimVarMi()) {
   gunlukKur(_ayar.bildirimSaat || '20:00').catch(() => {});
+}
+
+// Android donanım geri tuşunu yakala: kapatmak yerine içeride geri git; ana ekranda çıkış sor
+const _capApp = window.Capacitor?.Plugins?.App;
+if (_capApp?.addListener) {
+  _capApp.addListener('backButton', () => { if (!geriYonet()) cikisOnay(); });
 }
 
 // Geliştirme sırasında: eski service worker'ı kaldır ve önbelleği temizle
