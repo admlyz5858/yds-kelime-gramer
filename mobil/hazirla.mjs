@@ -22,17 +22,16 @@ for (const f of ['sunucu.py', 'baslat.sh', 'js/logic.test.js']) {
 // frames klasörü (varsa) pakete girmesin
 rmSync(join(hedef, 'data', 'frames'), { recursive: true, force: true });
 
-// 3) MAĞAZA KİLİDİ: yalnızca bu ünite id'leri ücretsiz; gerisi PWA'da "hazir" olsa bile
-//    mağaza paketinde PREMIUM olarak kilitlenir (PWA manifest'inden bağımsız).
-//    İleride bir üniteyi mağazada açmak için id'sini bu listeye ekle.
-// TUMU=1 → TEST build: premium içerik pakete GİRER ama yine kilitli kalır (kodla açılır).
-// Varsayılan (üretim) → premium içerik paketten ELENİR (sadece ücretsiz üniteler).
+// 3) İÇERİK KAPSAMI: mağaza sürümünde TÜM üniteler ÜCRETSİZ ve açık (kilit yok).
+//    Kilitlemek istenirse aşağıdaki UCRETSIZ listesini daralt (ör. [1]) — o zaman
+//    listede olmayan üniteler premium/kilitli olur ve (TUMU=1 değilse) paketten elenir.
+// TUMU=1 → premium (varsa) içerik pakete GİRER ama kilitli kalır (kodla açılır).
 const TUMU = process.env.TUMU === '1';
-const UCRETSIZ = [1];
 const manifestYol = join(hedef, 'data', 'manifest.json');
 const manifest = JSON.parse(readFileSync(manifestYol, 'utf8'));
+const UCRETSIZ = manifest.dersler.map(d => d.id);   // hepsi ücretsiz
 for (const d of manifest.dersler) {
-  if (!UCRETSIZ.includes(d.id)) d.durum = 'premium';   // durum her zaman kilitli (kod ile açılır)
+  d.durum = UCRETSIZ.includes(d.id) ? 'hazir' : 'premium';   // hepsi açık (kaynakta premium olsa bile)
 }
 // Store manifest'ini (kilitli durumlarla) www'a geri yaz — uygulama bunu okuyup kilitli kart çizer
 writeFileSync(manifestYol, JSON.stringify(manifest, null, 2) + '\n');
