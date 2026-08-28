@@ -1127,12 +1127,12 @@ function temaUygula() {
   const koyu = _ayar.tema === 'koyu';
   document.documentElement.dataset.tema = koyu ? 'koyu' : 'acik';
   const mt = document.querySelector('meta[name="theme-color"]');
-  if (mt) mt.content = koyu ? '#1a1611' : '#f4ecdb';
+  if (mt) mt.content = koyu ? '#0f1114' : '#f1f3f5';
   // Mobil (Capacitor): native durum çubuğunu da temaya uydur (PWA/tarayıcıda atlanır)
   const SB = window.Capacitor?.Plugins?.StatusBar;
   if (SB) {
     SB.setOverlaysWebView?.({ overlay: false }).catch?.(() => {});
-    SB.setBackgroundColor?.({ color: koyu ? '#1a1611' : '#f4ecdb' }).catch?.(() => {});
+    SB.setBackgroundColor?.({ color: koyu ? '#0f1114' : '#f1f3f5' }).catch?.(() => {});
     SB.setStyle?.({ style: koyu ? 'DARK' : 'LIGHT' }).catch?.(() => {});
   }
 }
