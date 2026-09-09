@@ -26,6 +26,18 @@ android {
                 keyPassword System.getenv("ANDROID_KEY_PASSWORD")
             }
         }
+        // SABİT test anahtarı (hassas DEĞİL, sadece .test doğrudan-kurulum sürümü için).
+        // Depoda kalıcı olduğundan container sıfırlansa bile aynı imza → test APK'ları
+        // birbirinin üstüne çakışmadan güncellenir. Mağaza anahtarıyla ilgisi yoktur.
+        testkey {
+            def tks = file("../test-signing.jks")
+            if (tks.exists()) {
+                storeFile tks
+                storePassword "ydstestkey"
+                keyAlias "test"
+                keyPassword "ydstestkey"
+            }
+        }
     }
     buildTypes {
         release {
@@ -38,6 +50,7 @@ android {
             // farklı paket adı (.test) → mevcut uygulamanın YANINA kurulur.
             applicationIdSuffix ".test"
             versionNameSuffix "-test"
+            signingConfig signingConfigs.testkey
         }
     }
 }
