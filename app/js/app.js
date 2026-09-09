@@ -2,7 +2,8 @@
 import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
 import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen, loadSRS } from './storage.js';
 import { kurKelimeOgren } from './ogren.js';
-import { titre, ses, konfeti, paylas, efektAyarla } from './efekt.js';
+import { kurKelimeAkisi } from './akis.js';
+import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
 const icerik = document.getElementById('icerik');
@@ -82,6 +83,12 @@ async function anaSayfa() {
       <span class="ogren-banner-metin"><b>Kelime Öğren</b><i>Tüm kelimeler · aralıklı tekrarla kalıcı öğren</i></span>
       <span class="ogren-banner-ok">›</span>
     </button>
+    <button class="akis-banner" id="hAkis">
+      <span class="ogren-banner-ikon">🎬</span>
+      <span class="ogren-banner-metin"><b>Kelime Akışı</b><i>Yukarı kaydır · Reels tarzı hızlı kelime akışı</i></span>
+      <span class="akis-banner-yeni">YENİ</span>
+      <span class="ogren-banner-ok">›</span>
+    </button>
     <div class="hizli-baslik">Hızlı erişim</div>
     <div class="hizli-grid">
       <button class="hizli-kart vurgu" id="hUniteler"><span class="hizli-ikon">📚</span><b>Üniteler</b><i>Müfredat menüsü</i></button>
@@ -100,6 +107,7 @@ async function anaSayfa() {
   const sk = document.getElementById('sinavKartBtn');
   if (sk) sk.onclick = sinavAyarAc;
   document.getElementById('hOgren').onclick = () => kelimeOgren.ac();
+  document.getElementById('hAkis').onclick = () => kelimeAkisi.ac();
   document.getElementById('hUniteler').onclick = cekmeceAc;
   document.getElementById('hDefter').onclick = defterAc;
   document.getElementById('hOgrenilen').onclick = ogrenilenAc;
@@ -274,6 +282,12 @@ function ekranModu(baslik, geriFn) {
 // "Kelime Öğren" — tüm ünitelerin kelimeleriyle aralıklı-tekrar bölümü (ayrı modül)
 const kelimeOgren = kurKelimeOgren({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu,
+});
+
+// "Kelime Akışı" — TikTok/Reels tarzı, yukarı kaydırmalı kelime akışı (ayrı modül)
+const kelimeAkisi = kurKelimeAkisi({
+  render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu,
+  seslendir, paylas, titre,
 });
 
 // Task 11: Ders okuma ekranı

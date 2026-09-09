@@ -1204,3 +1204,54 @@ button.aksiyon:active{ transform:translateY(1px); }
   opacity: 0; transform: translateY(12px); transition: opacity .3s, transform .3s;
 }
 .toast.gor { opacity: 1; transform: translateY(0); }
+
+/* ===================================================================== */
+/* Kelime Akışı — TikTok/Reels tarzı dikey kaydırma                       */
+/* ===================================================================== */
+.akis-banner {
+  display: flex; align-items: center; gap: 13px; width: 100%; text-align: left;
+  background: linear-gradient(135deg, #1c1f26, #2a2140 70%, #3a2050);
+  border: none; border-radius: 16px; padding: 15px 17px; margin: 0 0 16px;
+  cursor: pointer; box-shadow: var(--golge-2); transition: transform .1s; color: #fff;
+}
+.akis-banner:active { transform: scale(.99); }
+.akis-banner .ogren-banner-metin b { color: #fff; }
+.akis-banner .ogren-banner-metin i { color: rgba(255,255,255,.72); }
+.akis-banner .ogren-banner-ok { color: #fff; }
+.akis-banner-yeni { font-size: 10px; font-weight: 800; letter-spacing: .04em; background: var(--kil); color: #fff; padding: 3px 8px; border-radius: 999px; flex: none; }
+
+/* Tam ekran akış konteyneri */
+.akis { position: fixed; left: 0; right: 0; bottom: 0; top: 56px; background: #0b0d10; overflow: hidden; z-index: 5; }
+.akis-kaydir { height: 100%; overflow-y: scroll; scroll-snap-type: y mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.akis-kaydir::-webkit-scrollbar { display: none; }
+.akis-sentinel { height: 1px; }
+.akis-karis { position: absolute; top: 12px; right: 12px; z-index: 10; background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+.akis-kart { height: 100%; scroll-snap-align: start; scroll-snap-stop: always; position: relative; display: flex; }
+.akis-kart:nth-child(odd) .akis-ic { background: radial-gradient(120% 80% at 50% 12%, #17324a, #0b0d10 70%); }
+.akis-kart:nth-child(even) .akis-ic { background: radial-gradient(120% 80% at 50% 12%, #123328, #0b0d10 70%); }
+.akis-kart:nth-child(3n) .akis-ic { background: radial-gradient(120% 80% at 50% 12%, #3a1f2a, #0b0d10 70%); }
+.akis-ic { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 20px; color: #fff; text-align: center; }
+.akis-ust { position: absolute; top: 16px; left: 16px; font-size: 12px; color: rgba(255,255,255,.6); font-weight: 600; }
+.akis-govde { display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 300px; }
+.akis-on { display: flex; flex-direction: column; align-items: center; gap: 6px; transition: opacity .2s; }
+.akis-on.sonuk { opacity: .45; }
+.akis-tur { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--vurgu); font-weight: 700; }
+.akis-en { font-family: var(--serif); font-size: 44px; font-weight: 700; line-height: 1.05; color: #fff; }
+.akis-ipucu { font-size: 12.5px; color: rgba(255,255,255,.55); margin-top: 4px; }
+.akis-arka { margin-top: 4px; }
+.akis-tr { font-size: 22px; font-weight: 700; color: var(--vurgu); margin-bottom: 12px; }
+.akis-ornek-et { font-size: 11px; color: rgba(255,255,255,.5); margin-bottom: 6px; }
+.akis-arka .ornek-kutu { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+.akis-arka .ornek-cumle { color: #fff; }
+.akis-arka .ornek-ceviri { color: rgba(255,255,255,.7); }
+.akis-arka .tok-vurgu { color: #14171b; }
+.akis-alt { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; font-size: 12px; color: rgba(255,255,255,.4); animation: akisNabiz 1.8s ease-in-out infinite; }
+@keyframes akisNabiz { 0%,100% { transform: translateY(0); opacity: .4; } 50% { transform: translateY(-4px); opacity: .75; } }
+
+/* Sağ dikey aksiyon çubuğu */
+.akis-rail { position: absolute; right: 10px; bottom: 64px; display: flex; flex-direction: column; gap: 18px; z-index: 6; }
+.akis-rbtn { display: flex; flex-direction: column; align-items: center; gap: 3px; background: none; border: none; cursor: pointer; color: #fff; font-size: 11px; font-weight: 600; }
+.akis-rikon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 22px; background: rgba(255,255,255,.14); border-radius: 50%; transition: transform .1s, background .15s; }
+.akis-rbtn:active .akis-rikon { transform: scale(.88); }
+.akis-rbtn.aktif .akis-rikon { background: var(--kil); }

@@ -52,6 +52,16 @@ export function ses(tip) {
   } catch (_) {}
 }
 
+// ---- Telaffuz (İngilizce; Web Speech API) ----
+export function seslendir(text) {
+  try {
+    if (!window.speechSynthesis) return;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.92;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  } catch (_) {}
+}
+
 // ---- Konfeti (canvas, kütüphanesiz) ----
 export function konfeti(opt = {}) {
   try {
