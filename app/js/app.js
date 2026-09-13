@@ -256,6 +256,7 @@ function setAktifMenu(ekran) {
 }
 
 function ekranGoster(ekran) {
+  if (ekran !== 'kelime') kelimeAkisi.temizle();   // başka sekmeye geçince akış sesini/gözlemcisini durdur
   baslikEl.textContent = aktifDers.baslik;
   setAktifMenu(ekran);
   _acikBolum = null;
@@ -402,9 +403,13 @@ function esc(s) { return String(s ?? '').replace(/[&<>]/g, m => ({'&':'&amp;','<
 // *kelime* -> vurgulu (highlight). Önce kaçışlanır, sonra yıldız çiftleri <mark>'a çevrilir.
 function vurgu(s) { return esc(s).replace(/\*([^*]+)\*/g, '<mark>$1</mark>'); }
 
-// Task 12: Flashcard (kelime) ekranı
+// Kelime ekranı — artık akış (Reels) tarzı: ünitenin/defterin kelimeleri gömülü akışta, telaffuzlu
 let _kartIdx = 0, _kartAcik = false;
 function ekranKelime() {
+  kelimeAkisi.ac({ kelimeler: aktifDers.kelimeler || [], baslik: aktifDers.baslik, gomulu: true });
+}
+// (eski flashcard çizimi — artık kullanılmıyor, referans için korunuyor)
+function ekranKelimeEski() {
   _kartIdx = 0; _kartAcik = false;
   cizKart();
 }

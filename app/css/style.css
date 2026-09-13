@@ -1255,3 +1255,18 @@ button.aksiyon:active{ transform:translateY(1px); }
 .akis-rikon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 22px; background: rgba(255,255,255,.14); border-radius: 50%; transition: transform .1s, background .15s; }
 .akis-rbtn:active .akis-rikon { transform: scale(.88); }
 .akis-rbtn.aktif .akis-rikon { background: var(--kil); }
+
+/* Kelime Akışı — gömülü (ünite Kelime sekmesi) + telaffuz kontrolleri */
+.akis.gomulu { bottom: 84px; border-radius: 16px; overflow: hidden; left: 12px; right: 12px; box-shadow: var(--golge-2); }
+.akis-ust-btnler { position: absolute; top: 12px; right: 12px; z-index: 10; display: flex; gap: 8px; }
+.akis-mini {
+  width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.16); color: #fff;
+  border: 1px solid rgba(255,255,255,.22); font-size: 17px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.akis-mini:active { transform: scale(.9); }
+.akis-en-ses {
+  background: none; border: none; cursor: pointer; font-size: .5em; vertical-align: middle;
+  opacity: .8; padding: 2px 4px;
+}
+.akis-en-ses:active { transform: scale(.85); }
