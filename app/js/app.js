@@ -1,11 +1,12 @@
 // app/js/app.js
-import { searchLessons, toggleDone, isDone, isAnswerCorrect, scoreQuiz, nextCard, dersKilitli, dersDurumEtiket } from './logic.js';
-import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen, loadSRS } from './storage.js';
+import { searchLessons, toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr, dersKilitli, dersDurumEtiket } from './logic.js';
+import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen, loadSRS, saveSRS } from './storage.js';
 import { kurKelimeOgren } from './ogren.js';
 import { kurKelimeAkisi } from './akis.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
+const SURUM = '1.1.3';
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
 const geriBtn = document.getElementById('geri');
@@ -25,7 +26,6 @@ let _acikBolum = null;   // Oku ekranında açık olan bölüm indeksi (null = b
 // ===== Kelime Defteri =====
 let _defter = loadDefter();   // { en(küçük): kelimeObj }
 let _ogrenilen = loadOgrenilen();   // { en(küçük): kelimeObj } — "biliyorum" işaretlenenler
-const shuffle = (a) => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
 function defterdeMi(en) { return !!_defter[String(en).toLowerCase()]; }
 function defterKelimeler() { return Object.values(_defter); }
 function ogrenilenler() { return Object.values(_ogrenilen); }
@@ -37,7 +37,6 @@ function ogrenildiEkle(kart) {
   saveOgrenilen(_ogrenilen);
   if (_defter[en]) { delete _defter[en]; saveDefter(_defter); }
 }
-function ogrenildiSil(en) { en = String(en).toLowerCase(); if (_ogrenilen[en]) { delete _ogrenilen[en]; saveOgrenilen(_ogrenilen); } }
 function defterToggle(kart) {
   const en = String(kart.en).toLowerCase();
   if (_defter[en]) delete _defter[en];
@@ -58,12 +57,36 @@ function ogrenEkle(el) {
 
 async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url); return r.json(); }
 
+// Kelime havuzu (tüm üniteler) — bir kez yüklenir, Kelime Öğren / Akış / sınav planı paylaşır
+let _havuz = null;
+async function havuzYukle() {
+  if (!_havuz) _havuz = (await getJSON('data/kelime-havuz.json')).kelimeler || [];
+  return _havuz;
+}
+// Eski sürümde Akış/Öğren "favori" ayrı bir depodaydı (srs.favori); Kelime Defteri'ne taşı
+async function favoriTasi() {
+  const s = loadSRS();
+  if (!s || !s.favori) return;
+  const keys = Object.keys(s.favori);
+  if (keys.length) {
+    try {
+      for (const w of await havuzYukle()) {
+        const k = w.en.toLowerCase();
+        if (s.favori[k] && !_defter[k]) defterToggle(w);
+      }
+    } catch { return; }
+  }
+  delete s.favori; saveSRS(s);
+}
+
 async function anaSayfa() {
   aktifDers = null;
   geriBtn.hidden = true; menuBtn.hidden = false; altMenu.hidden = true;
   baslikEl.textContent = 'Çalışma Defteri';
   if (!manifest) manifest = await getJSON('data/manifest.json');
   await gununKelimesiYukle();
+  await favoriTasi();
+  if (_ayar.sinavTarih) await havuzYukle().catch(() => {});
   const son = _ayar.sonDers;
   const devam = son ? `<button class="hizli-devam" id="devamBtn">
       <div><div class="hizli-devam-ust">▶ Kaldığın yerden devam et</div>
@@ -191,48 +214,34 @@ async function dersAc(dosya, id) {
   }
   aktifDers._id = id;
   _ayar.sonDers = { dosya, id, baslik: aktifDers.baslik }; saveAyar(_ayar);
-  geriBtn.hidden = false; menuBtn.hidden = true; altMenu.hidden = false;
-  geriBtn.onclick = anaSayfa;
-  altMenu.querySelectorAll('button').forEach(b =>
-    b.onclick = () => ekranGoster(b.dataset.ekran));
-  // Kelime ünitesi ise doğrudan flashcard ekranıyla aç
+  altMenuKur(['oku', 'kelime', 'quiz', 'bosluk']);
   const ilk = (aktifDers.kelimeler?.length && !(aktifDers.bolumler?.length) && !(aktifDers.cumleler?.length)) ? 'kelime' : 'oku';
   ekranGoster(ilk);
 }
 
-// Kelime Defterini sanal bir ünite gibi aç
-function defterAc() {
-  const kelimeler = defterKelimeler();
-  aktifDers = {
-    _id: 'defter', baslik: 'Kelime Defterim', konu_ozeti: '',
-    bolumler: [], cumleler: [], gramer: [], soru_cozumleri: [],
-    kelimeler, quiz: defterQuizUret(kelimeler)
-  };
+// Alt menüyü verilen sekmelerle kur (sanal ünitelerde Oku yok); geri → ana sayfa
+function altMenuKur(ekranlar) {
   geriBtn.hidden = false; menuBtn.hidden = true; altMenu.hidden = false;
   geriBtn.onclick = anaSayfa;
-  altMenu.querySelectorAll('button').forEach(b => b.onclick = () => ekranGoster(b.dataset.ekran));
-  ekranGoster(kelimeler.length ? 'kelime' : 'oku');
+  altMenu.querySelectorAll('button').forEach(b => {
+    b.hidden = !ekranlar.includes(b.dataset.ekran);
+    b.onclick = () => ekranGoster(b.dataset.ekran);
+  });
 }
 
-// Öğrenilen kelimeleri sanal ünite gibi aç (tekrar/çalışma)
-function ogrenilenAc() {
-  const kelimeler = ogrenilenler();
-  aktifDers = {
-    _id: 'ogrenilen', baslik: 'Öğrendiklerim', konu_ozeti: '',
-    bolumler: [], cumleler: [], gramer: [], soru_cozumleri: [],
-    kelimeler, quiz: defterQuizUret(kelimeler)
-  };
-  geriBtn.hidden = false; menuBtn.hidden = true;
-  geriBtn.onclick = anaSayfa;
-  baslikEl.textContent = 'Öğrendiklerim';
-  if (!kelimeler.length) {
-    altMenu.hidden = true;
-    render('<div class="cumle"><div class="tr">Henüz öğrenilen kelime yok. 🎴 Kelime kartında sağa kaydır (✓ Biliyorum) → kelime buraya gelir. Burada tekrar edebilir, quiz/boşluk ile pekiştirebilirsin.</div></div>');
-    return;
-  }
-  altMenu.hidden = false;
-  altMenu.querySelectorAll('button').forEach(b => b.onclick = () => ekranGoster(b.dataset.ekran));
+// Kelime Defteri / Öğrendiklerim: kelime listesini sanal ünite gibi aç (Kelime · Quiz · Boşluk)
+function sanalUniteAc(id, baslik, kelimeler, bosMesaj) {
+  aktifDers = { _id: id, baslik, kelimeler, quiz: defterQuizUret(kelimeler), bosMesaj };
+  altMenuKur(['kelime', 'quiz', 'bosluk']);
   ekranGoster('kelime');
+}
+function defterAc() {
+  sanalUniteAc('defter', 'Kelime Defterim', defterKelimeler(),
+    'Defterin boş. Kelime Akışı\'nda ⭐ Kaydet\'e dokun ya da örnek cümlede kelimeye dokunup 📓 Öğren de → kelime buraya gelir.');
+}
+function ogrenilenAc() {
+  sanalUniteAc('ogrenilen', 'Öğrendiklerim', ogrenilenler(),
+    'Henüz öğrenilen kelime yok. Kelime Akışı\'nda 🎓 Biliyorum\'a dokun → kelime buraya gelir; burada tekrar edip quiz/boşlukla pekiştirirsin.');
 }
 
 // Defter kelimelerinden çoktan seçmeli (kelime → anlam) quiz üret
@@ -262,15 +271,9 @@ function ekranGoster(ekran) {
   _acikBolum = null;
   if (ekran === 'oku') return ekranOku();
   if (ekran === 'kelime') return ekranKelime();
-  if (ekran === 'gramer') return ekranGramer();
-  if (ekran === 'soru') return ekranSoru();
   if (ekran === 'quiz') return ekranQuiz();
   if (ekran === 'bosluk') return ekranBosluk();
 }
-
-window.ekranGoster = ekranGoster; // diğer ekran modülleri için
-window.__app = { get aktifDers(){return aktifDers;}, render, progress, saveProgress, toggleDone,
-  isAnswerCorrect, scoreQuiz, nextCard };
 
 // Tam-ekran alt modül modu: geri butonu + başlık, alt menü/müfredat gizli
 function ekranModu(baslik, geriFn) {
@@ -283,12 +286,13 @@ function ekranModu(baslik, geriFn) {
 // "Kelime Öğren" — tüm ünitelerin kelimeleriyle aralıklı-tekrar bölümü (ayrı modül)
 const kelimeOgren = kurKelimeOgren({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu,
+  havuzYukle, defterdeMi, defterToggle,
 });
 
 // "Kelime Akışı" — TikTok/Reels tarzı, yukarı kaydırmalı kelime akışı (ayrı modül)
 const kelimeAkisi = kurKelimeAkisi({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu,
-  seslendir, paylas, titre,
+  seslendir, paylas, titre, havuzYukle, defterdeMi, defterToggle, ogrenildiMi, ogrenildiEkle,
 });
 
 // Task 11: Ders okuma ekranı
@@ -403,93 +407,9 @@ function esc(s) { return String(s ?? '').replace(/[&<>]/g, m => ({'&':'&amp;','<
 // *kelime* -> vurgulu (highlight). Önce kaçışlanır, sonra yıldız çiftleri <mark>'a çevrilir.
 function vurgu(s) { return esc(s).replace(/\*([^*]+)\*/g, '<mark>$1</mark>'); }
 
-// Kelime ekranı — artık akış (Reels) tarzı: ünitenin/defterin kelimeleri gömülü akışta, telaffuzlu
-let _kartIdx = 0, _kartAcik = false;
+// Kelime ekranı — akış (Reels) tarzı: ünitenin/defterin kelimeleri gömülü akışta, telaffuzlu
 function ekranKelime() {
-  kelimeAkisi.ac({ kelimeler: aktifDers.kelimeler || [], baslik: aktifDers.baslik, gomulu: true });
-}
-// (eski flashcard çizimi — artık kullanılmıyor, referans için korunuyor)
-function ekranKelimeEski() {
-  _kartIdx = 0; _kartAcik = false;
-  cizKart();
-}
-function cizKart() {
-  const k = aktifDers.kelimeler;
-  if (!k.length) { render('<div class="bolum"><div class="bolum-satir">Bu ünitede kelime yok.</div></div>'); return; }
-  const kart = k[_kartIdx];
-  const yuz = _kartAcik
-    ? `<div class="kart-arka">
-         ${kart.tur ? `<div class="kart-arka-tur">${esc(kart.tur)} · ${esc(kart.en)}</div>` : ''}
-         <div class="kart-anlam" id="kartAnlam">
-           <span>${esc(kart.tr)}</span>
-           <span class="kart-anlam-ipucu">↑ ön yüze dön</span>
-         </div>
-         <div class="kart-ornek-etiket">Örnek cümle · kelimeye dokun, çeviri için kaydır</div>
-         ${ornekInteraktifHTML({ tokenlar: kart.ornek_tokenlar, tr: kart.ornek_tr })}
-       </div>`
-    : `<div class="kart-on-grup">
-         ${kart.tur ? `<div class="kart-tur">${esc(kart.tur)}</div>` : ''}
-         <div class="kart-on">${esc(kart.en)}</div>
-         <div class="kart-ipucu-on">çevirmek için karta dokun</div>
-       </div>`;
-  render(`
-    <div class="kart-sayac">🎴 ${_kartIdx + 1} / ${k.length}</div>
-    <div class="kart-ilerleme"><div class="kart-ilerleme-ic" style="width:${Math.round((_kartIdx + 1) / k.length * 100)}%"></div></div>
-    <div class="flashcard ${_kartAcik ? 'acik' : ''}" id="kart">
-      <div class="kart-et sol">📓 Bilmiyorum</div>
-      <div class="kart-et sag">🎓 Biliyorum</div>
-      ${yuz}
-    </div>
-    <div class="kart-kaydir-ipucu">← bilmiyorum (defter)&nbsp;&nbsp;·&nbsp;&nbsp;kaydır&nbsp;&nbsp;·&nbsp;&nbsp;biliyorum (öğrenilen) →</div>
-    <div class="btn-satir">
-      <button class="aksiyon ${defterdeMi(kart.en) ? '' : 'ikincil'} defter-toggle" id="defterBtn">${defterdeMi(kart.en) ? '📓 Defterde ✓' : '📓 Bilmiyorum'}</button>
-      <button class="aksiyon" id="sonraki">Sonraki ›</button>
-    </div>
-    <div class="btn-satir"><button class="aksiyon ikincil" id="cevir">${_kartAcik ? '↺ Ön yüz' : 'Çevir'}</button></div>`);
-  const kartEl = document.getElementById('kart');
-  let sx = 0, dx = 0, surukluyor = false, surukledi = false;
-  kartEl.addEventListener('pointerdown', e => {
-    if (e.target.closest('.tok-anlamli')) return;   // örnekte kelime baloncuğu öncelikli
-    surukluyor = true; surukledi = false; sx = e.clientX; dx = 0;
-    kartEl.style.transition = 'none';
-    try { kartEl.setPointerCapture(e.pointerId); } catch (_) {}
-  });
-  kartEl.addEventListener('pointermove', e => {
-    if (!surukluyor) return;
-    dx = e.clientX - sx;
-    if (Math.abs(dx) > 6) surukledi = true;
-    kartEl.style.transform = `translateX(${dx}px) rotate(${dx / 24}deg)`;
-    kartEl.classList.toggle('swipe-sag', dx > 45);
-    kartEl.classList.toggle('swipe-sol', dx < -45);
-  });
-  const bitir = () => {
-    if (!surukluyor) return;
-    surukluyor = false; kartEl.style.transition = '';
-    if (dx > 95) kartUcur(1);
-    else if (dx < -95) kartUcur(-1);
-    else { kartEl.style.transform = ''; kartEl.classList.remove('swipe-sag', 'swipe-sol'); }
-  };
-  kartEl.addEventListener('pointerup', bitir);
-  kartEl.addEventListener('pointercancel', bitir);
-  kartEl.onclick = () => { if (surukledi) { surukledi = false; return; } if (!_kartAcik) { _kartAcik = true; cizKart(); } };
-  document.getElementById('cevir').onclick = (e) => { e.stopPropagation(); _kartAcik = !_kartAcik; cizKart(); };
-  document.getElementById('sonraki').onclick = (e) => { e.stopPropagation(); gunKaydet(); _kartIdx = nextCard(_kartIdx, k.length); _kartAcik = false; cizKart(); };
-  document.getElementById('defterBtn').onclick = (e) => { e.stopPropagation(); defterToggle(kart); cizKart(); };
-  const anlamEl = document.getElementById('kartAnlam');
-  if (anlamEl) anlamEl.onclick = (e) => { e.stopPropagation(); _kartAcik = false; cizKart(); };
-  if (_kartAcik) wireOrnekler(icerik);
-}
-// Kartı kaydırarak gönder: yön>0 biliyorum→öğrenilen, yön<0 bilmiyorum→defter
-function kartUcur(yon) {
-  const k = aktifDers.kelimeler, kart = k[_kartIdx];
-  const kartEl = document.getElementById('kart');
-  kartEl.style.transition = 'transform .32s ease, opacity .32s ease';
-  kartEl.style.transform = `translateX(${yon * 520}px) rotate(${yon * 22}deg)`;
-  kartEl.style.opacity = '0';
-  if (yon > 0) ogrenildiEkle(kart);                                  // biliyorum → öğrenilen
-  else { if (!defterdeMi(kart.en)) defterToggle(kart); ogrenildiSil(kart.en); }   // bilmiyorum → defter
-  gunKaydet();
-  setTimeout(() => { _kartIdx = nextCard(_kartIdx, k.length); _kartAcik = false; cizKart(); }, 300);
+  kelimeAkisi.ac({ kelimeler: aktifDers.kelimeler || [], baslik: aktifDers.baslik, gomulu: true, bosMesaj: aktifDers.bosMesaj });
 }
 
 // Etkileşimli örnek HTML — ex: {tokenlar:[{k,a,en?,vurgu?}], tr} ya da {en, tr}
@@ -595,39 +515,7 @@ function wireOrnekler(root) {
   });
 }
 
-// Task 13: Gramer ekranı
-function ekranGramer() {
-  const g = aktifDers.gramer;
-  if (!g.length) { render('<div class="cumle"><div class="tr">Bu derste gramer notu yok.</div></div>'); return; }
-  render(g.map(x => `
-    <div class="cumle">
-      <div class="en">${esc(x.konu)}</div>
-      <div class="tr">${esc(x.aciklama)}</div>
-      ${(x.ornekler || []).map(o => `<div class="not">• ${esc(o)}</div>`).join('')}
-    </div>`).join(''));
-}
-
-// Task 14: Soru çözümleri ekranı
-function ekranSoru() {
-  const s = aktifDers.soru_cozumleri;
-  if (!s.length) { render('<div class="cumle"><div class="tr">Bu derste soru çözümü yok.</div></div>'); return; }
-  render(s.map((q, i) => `
-    <div class="cumle" data-i="${i}">
-      <div class="en">${i + 1}. ${esc(q.soru)}</div>
-      ${(q.secenekler || []).map(o => `<div class="tr">• ${esc(o)}</div>`).join('')}
-      <button class="secenek goster" data-i="${i}" style="margin-top:8px">Cevabı göster</button>
-      <div class="cozum" id="cozum-${i}" hidden>
-        <div class="not">Cevap: ${esc(q.cevap)}</div>
-        ${q.hoca_aciklama ? `<div class="tr">${esc(q.hoca_aciklama)}</div>` : ''}
-      </div>
-    </div>`).join(''));
-  icerik.querySelectorAll('.goster').forEach(b => b.onclick = () => {
-    document.getElementById('cozum-' + b.dataset.i).hidden = false;
-    b.hidden = true;
-  });
-}
-
-// Task 15: Quiz ekranı — testlere bölünmüş (Test 1 Kolay → Test N Zor), tek tek soru
+// Quiz ekranı — testlere bölünmüş (Test 1 Kolay → Test N Zor), tek tek soru
 let _quizCevap = [], _quizIdx = 0, _quizSorular = [], _aktifTest = null, _yanlisMod = false;
 // Dersin testleri: yeni `testler` alanı; yoksa eski düz `quiz`'i tek test sayar
 function quizTestleri() {
@@ -819,7 +707,7 @@ function yanlisSonuc() {
 let _bosluk = [], _boslukCevap = [];
 function ekranBosluk() {
   const k = (aktifDers.kelimeler || []).filter(w => Array.isArray(w.ornek_tokenlar) && w.ornek_tokenlar.some(t => t.vurgu));
-  if (k.length < 2) { render('<div class="cumle"><div class="tr">Boşluk doldurma için yeterli örnekli kelime yok. (Kelime sekmesinden “Bilmiyorum” ile deftere ekle.)</div></div>'); return; }
+  if (k.length < 2) { render('<div class="cumle"><div class="tr">Boşluk doldurma için yeterli örnekli kelime yok. Örnek cümlesi olan en az 2 kelime gerekir.</div></div>'); return; }
   _bosluk = shuffle(k).slice(0, 15).map(w => {
     const toks = w.ornek_tokenlar;
     const hedefIdx = toks.findIndex(t => t.vurgu);
@@ -909,9 +797,9 @@ function girisEkrani(zorla) {
       <div class="giris-baslik">Çalışma Defteri</div>
       <div class="giris-alt">YDS · YÖKDİL İngilizce</div>
       <div class="giris-ozellik">
-        <div class="giris-sat"><span>🎴</span><div><b>Akıllı kartlar</b><i>Kelimeye dokun, çeviriyi kaydır</i></div></div>
-        <div class="giris-sat"><span>🧠</span><div><b>Seviyeli testler</b><i>Kolaydan zora, istatistikli</i></div></div>
-        <div class="giris-sat"><span>❌</span><div><b>Yanlışlarım</b><i>Hatalar biriksin, tekrar çöz</i></div></div>
+        <div class="giris-sat"><span>🎬</span><div><b>Kelime Akışı</b><i>Yukarı kaydır, dokun, dinle — Reels tarzı</i></div></div>
+        <div class="giris-sat"><span>🌱</span><div><b>Aralıklı tekrar</b><i>Unutmadan önce tekrar, kalıcı öğren</i></div></div>
+        <div class="giris-sat"><span>🧠</span><div><b>Seviyeli testler</b><i>Kolaydan zora; yanlışlar birikir, tekrar çöz</i></div></div>
       </div>
       <button class="aksiyon giris-basla" id="girisBasla">Çalışmaya Başla →</button>
     </div>`;
@@ -928,10 +816,11 @@ function girisEkrani(zorla) {
 function yardimAc() {
   modalAc('Nasıl çalışılır?', `
     <div class="yardim-sat"><span>📖</span><div><b>Oku</b> — Konu anlatımı şeması, edat kartları ve etkileşimli örnek cümleler.</div></div>
-    <div class="yardim-sat"><span>🎴</span><div><b>Kelime</b> — Karta dokun çevrilir; örnekte kelimeye dokun → baloncuk, sağa kaydır → çeviri.</div></div>
+    <div class="yardim-sat"><span>🎴</span><div><b>Kelime</b> — Yukarı kaydır; karta dokun → anlam, 🔊 telaffuz. ⭐ Kaydet → Kelime Defteri, 🎓 Biliyorum → Öğrendiklerim.</div></div>
+    <div class="yardim-sat"><span>🌱</span><div><b>Kelime Öğren</b> — Aralıklı tekrar: kelimeler unutulmadan önce tekrar gelir; kart, test, yazım ve boşluk modları.</div></div>
     <div class="yardim-sat"><span>🧠</span><div><b>Quiz</b> — Test 1’den başla, kolaydan zora. Her testin skoru ve ✓’si saklanır.</div></div>
     <div class="yardim-sat"><span>✍️</span><div><b>Boşluk</b> — Cümledeki boşluğa doğru kelimeyi seç; cevap sonrası cümle etkileşimli olur.</div></div>
-    <div class="yardim-sat"><span>📓</span><div><b>Kelime Defterim</b> — Bilmediğin kelimeyi “Bilmiyorum/Öğren” ile ekle, burada çalış.</div></div>
+    <div class="yardim-sat"><span>📓</span><div><b>Kelime Defterim</b> — Akışta ⭐ Kaydet ya da örnek cümlede kelimeye dokunup “Öğren” ile ekle; burada çalış.</div></div>
     <div class="yardim-sat"><span>❌</span><div><b>Yanlışlarım</b> — Testlerde yanlış yaptığın sorular birikir; doğru çözünce silinir.</div></div>
   `);
 }
@@ -982,7 +871,7 @@ function ayarAc() {
     <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>Biriken yanlış soruları sıfırla</i></div></button>
     <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>Eklenen kelimeleri sil</i></div></button>
     <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Test skorları, defter, yanlışlar — hepsi</i></div></button>
-    <div class="ayar-hakkinda">Çalışma Defteri · YDS/YÖKDİL · sürüm 44</div>
+    <div class="ayar-hakkinda">Çalışma Defteri · YDS/YÖKDİL · v${SURUM}</div>
   `, {
     onWire: (o, kapat) => {
       o.querySelectorAll('.ayar-sat').forEach(b => b.onclick = () => {
@@ -1032,10 +921,6 @@ function onayAc(mesaj, evet) {
 }
 
 // --- Çalışma serisi (streak) + günlük hedef ---
-function _gunStr(off = 0) {
-  const d = new Date(); d.setDate(d.getDate() + off);
-  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-}
 const HEDEF_VARSAYILAN = 20;
 
 // ===== Gamifikasyon: XP + seviye + günlük görevler + seri dondurma =====
@@ -1072,9 +957,9 @@ function gorevleriKontrol() {
 // Çalışma aktivitesi kaydı → günlük sayaç + seri + XP + görev + ısı haritası
 // opt: { dogru:boolean, bitir:boolean }
 function gunKaydet(miktar = 1, opt = {}) {
-  const bugun = _gunStr(0);
+  const bugun = gunStr(0);
   if (_ayar.gunTarih !== bugun) {            // günün ilk aktivitesi → seri + günlük sıfırlama
-    const dun = _gunStr(-1), oncekiGun = _gunStr(-2);
+    const dun = gunStr(-1), oncekiGun = gunStr(-2);
     if (_ayar.sonAktif === dun) _ayar.seri = (_ayar.seri || 0) + 1;
     else if (_ayar.sonAktif === oncekiGun && (_ayar.dondurma || 0) > 0) {   // seri dondurma: 1 gün kaçtı, koru
       _ayar.dondurma--; _ayar.seri = (_ayar.seri || 0) + 1; _ayar._dondurmaBildir = true;
@@ -1125,7 +1010,7 @@ function budaGunlog() {
   if (!_ayar.gunlog) return;
   const keys = Object.keys(_ayar.gunlog);
   if (keys.length <= 130) return;
-  const sinir = _gunStr(-129);
+  const sinir = gunStr(-129);
   for (const k of keys) if (k < sinir) delete _ayar.gunlog[k];
 }
 
@@ -1176,17 +1061,6 @@ function basarimlar() {
     { ikon: '✨', ad: 'Tertemiz', desc: 'Tüm yanlışlarını temizle', ok: s.cozTest > 0 && s.yanlis === 0 },
   ];
 }
-function basarimAc() {
-  const b = basarimlar();
-  const kazanilan = b.filter(x => x.ok).length;
-  const grid = b.map(x => `<div class="basarim ${x.ok ? 'acik' : 'kilit'}">
-      <div class="basarim-ikon">${x.ok ? x.ikon : '🔒'}</div>
-      <div class="basarim-ad">${esc(x.ad)}</div>
-      <div class="basarim-desc">${esc(x.desc)}</div>
-    </div>`).join('');
-  modalAc('Başarımlar', `<div class="basarim-ozet">${kazanilan} / ${b.length} kazanıldı</div><div class="basarim-grid">${grid}</div>`);
-}
-
 // --- Günün kelimesi ---
 let _gununHavuz = null;
 function _yilGunu() {
@@ -1221,7 +1095,7 @@ function panoStats() {
   const cozTest = Object.keys(_istat).length;
   let d = 0, t = 0;
   Object.values(_istat).forEach(s => { d += s.dogru; t += s.toplam; });
-  const bugun = _gunStr(0), dun = _gunStr(-1);
+  const bugun = gunStr(0), dun = gunStr(-1);
   const seri = (_ayar.sonAktif === bugun || _ayar.sonAktif === dun) ? (_ayar.seri || 0) : 0;
   const bugunSay = _ayar.gunTarih === bugun ? (_ayar.gunSayac || 0) : 0;
   const sv = seviyeBilgi(_ayar.xp || 0);
@@ -1269,15 +1143,11 @@ function panoHTML() {
 }
 
 // ===== Sınav geri sayımı =====
-const TOPLAM_KELIME = 2331;   // kelime havuzu tahmini (plan önerisi için)
 function _tarihFark(iso) {     // bugünden hedef tarihe kalan tam gün
   const [y, m, d] = iso.split('-').map(Number);
   const hedef = new Date(y, m - 1, d), bugun = new Date();
   hedef.setHours(0, 0, 0, 0); bugun.setHours(0, 0, 0, 0);
   return Math.round((hedef - bugun) / 86400000);
-}
-function ogrenilenKelimeSayisi() {
-  try { const s = loadSRS(); return s && s.kartlar ? Object.keys(s.kartlar).length : 0; } catch { return 0; }
 }
 function sinavKartHTML() {
   if (!_ayar.sinavTarih) {
@@ -1293,7 +1163,8 @@ function sinavKartHTML() {
       <span class="sinav-metin"><b>Sınav günü geçti</b><i>Yeni bir hedef tarih eklemek için dokun</i></span>
       <span class="ogren-banner-ok">›</span></button>`;
   }
-  const kalanKelime = Math.max(0, TOPLAM_KELIME - ogrenilenKelimeSayisi());
+  const toplamKelime = _havuz ? _havuz.length : 0;
+  const kalanKelime = Math.max(0, toplamKelime - ogrenilenler().length);
   const gunluk = kalan > 0 ? Math.ceil(kalanKelime / kalan) : kalanKelime;
   const plan = kalan > 0 && kalanKelime > 0 ? `Hedefe yetişmek için günde ~<b>${gunluk}</b> kelime` : (kalanKelime === 0 ? 'Tüm kelimeleri çalıştın 🎉' : 'Bugün son gün — bol tekrar!');
   return `<button class="sinav-kart" id="sinavKartBtn">
@@ -1356,7 +1227,7 @@ function isiHaritasi() {
   for (const v of Object.values(log)) enYuksek = Math.max(enYuksek, v);
   for (let i = gun - 1; i >= 0; i--) {
     const d = new Date(bitis); d.setDate(d.getDate() - i);
-    const iso = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const iso = isoGun(d);
     const say = log[iso] || 0;
     const seviye = say === 0 ? 0 : say < 8 ? 1 : say < 20 ? 2 : say < 40 ? 3 : 4;
     const gelecek = d > bugun;
@@ -1492,10 +1363,3 @@ const _capApp = window.Capacitor?.Plugins?.App;
 if (_capApp?.addListener) {
   _capApp.addListener('backButton', () => { if (!geriYonet()) cikisOnay(); });
 }
-
-// Geliştirme sırasında: eski service worker'ı kaldır ve önbelleği temizle
-// (içerik sık değiştiği için her zaman güncel görünsün). Uygulama oturunca tekrar açılır.
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(() => {});
-}
-if (window.caches) { caches.keys().then(ks => ks.forEach(k => caches.delete(k))).catch(() => {}); }

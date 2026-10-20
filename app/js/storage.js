@@ -22,7 +22,7 @@ export function saveDefter(defter) {
   localStorage.setItem(DKEY, JSON.stringify(defter));
 }
 
-// ===== Öğrenilen kelimeler — { en(küçük): kelimeObj } (flashcard'da "biliyorum") =====
+// ===== Öğrenilen kelimeler — { en(küçük): kelimeObj } (Akış'ta "biliyorum") =====
 const OGKEY = 'yds-ogrenilen-v1';
 
 export function loadOgrenilen() {

@@ -3,52 +3,42 @@
 //   1) Bağımsız (ana sayfa): tüm havuzdan sonsuz akış — ac() / ac({})
 //   2) Gömülü (ünite/defter/öğrenilen "Kelime" sekmesi): verilen kelime kümesi — ac({kelimeler, baslik, gomulu:true})
 // Kart öne gelince otomatik seslendirme (kapatılabilir) + 🔊 butonu.
-import { loadSRS, saveSRS, loadOgrenilen, saveOgrenilen } from './storage.js';
+// ⭐ Kaydet → Kelime Defteri, 🎓 Biliyorum → Öğrendiklerim (app.js ile aynı depolar).
+import { shuffle } from './logic.js';
 
-const shuffle = (a) => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
 const SES_KEY = 'yds-akis-ses';
 const otoSesYukle = () => { try { return localStorage.getItem(SES_KEY) !== '0'; } catch { return true; } };
 const otoSesYaz = (v) => { try { localStorage.setItem(SES_KEY, v ? '1' : '0'); } catch {} };
 
 export function kurKelimeAkisi(api) {
-  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu, seslendir, paylas, titre } = api;
+  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu, seslendir, paylas, titre,
+    havuzYukle, defterdeMi, defterToggle, ogrenildiMi, ogrenildiEkle } = api;
 
-  let havuz = null, srs = null, ogrenilen = null;
   let sira = [], render_i = 0, karisik = false;
-  let gomulu = false, baslik = 'Kelime Akışı', kaynakKelimeler = null;
+  let gomulu = false, baslik = 'Kelime Akışı', kaynakKelimeler = null, bosMesaj = '';
   let otoSes = otoSesYukle();
   const gorulen = new Set();
-  let gozlemci = null, sentinelGozlemci = null, aktifGozlemci = null;
+  let sentinelGozlemci = null, aktifGozlemci = null;
   const BATCH = 15;
-
-  async function yukle(havuzGerek) {
-    srs = loadSRS() || { favori: {} }; if (!srs.favori) srs.favori = {};
-    ogrenilen = loadOgrenilen() || {};
-    if (havuzGerek && !havuz) {
-      const r = await fetch('data/kelime-havuz.json');
-      if (!r.ok) throw new Error('havuz');
-      havuz = (await r.json()).kelimeler || [];
-    }
-  }
-  const favoriMi = (en) => !!srs.favori[String(en).toLowerCase()];
-  const bilinenMi = (en) => !!ogrenilen[String(en).toLowerCase()];
 
   function ac(opts = {}) {
     gomulu = !!opts.gomulu;
     baslik = opts.baslik || 'Kelime Akışı';
     kaynakKelimeler = Array.isArray(opts.kelimeler) ? opts.kelimeler : null;
+    bosMesaj = opts.bosMesaj || 'Bu bölümde kelime yok.';
     if (!gomulu) ekranModu(baslik, () => { temizle(); anaSayfa(); });
-    yukle(!kaynakKelimeler).then(basla).catch(() => render('<div class="cumle"><div class="tr">Akış yüklenemedi.</div></div>'));
+    (kaynakKelimeler ? Promise.resolve(kaynakKelimeler) : havuzYukle())
+      .then(basla)
+      .catch(() => render('<div class="cumle"><div class="tr">Akış yüklenemedi.</div></div>'));
   }
 
-  function basla() {
+  function basla(kaynak) {
     temizle();
-    const kaynak = kaynakKelimeler || havuz || [];
     if (!kaynak.length) {
-      render('<div class="cumle"><div class="tr">Bu bölümde kelime yok.</div></div>');
+      render(`<div class="cumle"><div class="tr">${esc(bosMesaj)}</div></div>`);
       return;
     }
-    sira = karisik ? shuffle(kaynak.slice()) : kaynak.slice();
+    sira = karisik ? shuffle(kaynak) : kaynak.slice();
     render_i = 0; gorulen.clear();
     const ustPx = (document.getElementById('ust-bar')?.offsetHeight || 56);
     render(`
@@ -61,7 +51,7 @@ export function kurKelimeAkisi(api) {
       </div>`);
     const kaydir = document.getElementById('akisKaydir');
     daha(kaydir);
-    document.getElementById('akisKaris').onclick = () => { karisik = !karisik; basla(); };
+    document.getElementById('akisKaris').onclick = () => { karisik = !karisik; basla(kaynak); };
     document.getElementById('akisSes').onclick = (e) => {
       otoSes = !otoSes; otoSesYaz(otoSes);
       e.currentTarget.textContent = otoSes ? '🔊' : '🔇';
@@ -72,6 +62,7 @@ export function kurKelimeAkisi(api) {
 
   function kartHTML(w, i) {
     const uni = w.u ? `Ünite ${w.u}` : '';
+    const defterde = defterdeMi(w.en), bilinen = ogrenildiMi(w.en);
     return `<section class="akis-kart" data-i="${i}" data-en="${esc(w.en)}">
       <div class="akis-ic">
         <div class="akis-ust">${esc(uni)}${uni ? ' · ' : ''}${i + 1}/${sira.length}</div>
@@ -90,8 +81,8 @@ export function kurKelimeAkisi(api) {
       </div>
       <div class="akis-rail">
         <button class="akis-rbtn" data-akt="ses"><span class="akis-rikon">🔊</span><span>Dinle</span></button>
-        <button class="akis-rbtn ${favoriMi(w.en) ? 'aktif' : ''}" data-akt="favori"><span class="akis-rikon">${favoriMi(w.en) ? '⭐' : '☆'}</span><span>Kaydet</span></button>
-        <button class="akis-rbtn ${bilinenMi(w.en) ? 'aktif' : ''}" data-akt="biliyorum"><span class="akis-rikon">${bilinenMi(w.en) ? '✅' : '🎓'}</span><span>Biliyorum</span></button>
+        <button class="akis-rbtn ${defterde ? 'aktif' : ''}" data-akt="defter"><span class="akis-rikon">${defterde ? '⭐' : '☆'}</span><span>Kaydet</span></button>
+        <button class="akis-rbtn ${bilinen ? 'aktif' : ''}" data-akt="biliyorum"><span class="akis-rikon">${bilinen ? '✅' : '🎓'}</span><span>Biliyorum</span></button>
         <button class="akis-rbtn" data-akt="paylas"><span class="akis-rikon">📤</span><span>Paylaş</span></button>
       </div>
     </section>`;
@@ -134,19 +125,16 @@ export function kurKelimeAkisi(api) {
       e.stopPropagation();
       const akt = b.dataset.akt;
       if (akt === 'ses') { seslendir(w.en); titre('hafif'); }
-      else if (akt === 'favori') {
-        const key = w.en.toLowerCase();
-        if (srs.favori[key]) delete srs.favori[key]; else srs.favori[key] = true;
-        saveSRS(srs);
-        const on2 = srs.favori[key];
+      else if (akt === 'defter') {
+        defterToggle(w);
+        const on2 = defterdeMi(w.en);
         b.classList.toggle('aktif', on2); b.querySelector('.akis-rikon').textContent = on2 ? '⭐' : '☆'; titre('hafif');
       } else if (akt === 'biliyorum') {
-        const key = w.en.toLowerCase();
-        if (!ogrenilen[key]) {
-          ogrenilen[key] = { en: w.en, tur: w.tur, tr: w.tr, ornek_tokenlar: w.ornek_tokenlar, ornek_tr: w.ornek_tr };
-          saveOgrenilen(ogrenilen); gunKaydet(1, { dogru: true }); titre('basari');
-        }
+        if (!ogrenildiMi(w.en)) { ogrenildiEkle(w); gunKaydet(1, { dogru: true }); titre('basari'); }
         b.classList.add('aktif'); b.querySelector('.akis-rikon').textContent = '✅';
+        // "biliyorum" defterden çıkarır → Kaydet rozetini de güncelle
+        const db = kart.querySelector('[data-akt="defter"]');
+        if (db) { db.classList.remove('aktif'); db.querySelector('.akis-rikon').textContent = '☆'; }
       } else if (akt === 'paylas') {
         paylas({ baslik: w.en, metin: `${w.en} — ${w.tr}${w.ornek_tr ? '\n"' + w.ornek_tr + '"' : ''}\n\n📚 YDS Çalışma Defteri` });
       }
@@ -167,15 +155,14 @@ export function kurKelimeAkisi(api) {
     kaydir.querySelectorAll('.akis-kart').forEach(k => aktifGozlemci.observe(k));
   }
   function seslendirAktif(kaydir) {
-    // görünür kartı seslendir
     const kartlar = [...kaydir.querySelectorAll('.akis-kart')];
     const k3 = kartlar.find(k => { const r = k.getBoundingClientRect(); return r.top >= 0 && r.top < window.innerHeight * 0.5; });
     if (k3) seslendir(k3.dataset.en || '');
   }
 
   function temizle() {
-    [gozlemci, sentinelGozlemci, aktifGozlemci].forEach(o => { if (o) o.disconnect(); });
-    gozlemci = sentinelGozlemci = aktifGozlemci = null;
+    [sentinelGozlemci, aktifGozlemci].forEach(o => { if (o) o.disconnect(); });
+    sentinelGozlemci = aktifGozlemci = null;
     try { window.speechSynthesis && speechSynthesis.cancel(); } catch {}
   }
 

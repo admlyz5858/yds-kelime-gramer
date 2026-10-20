@@ -123,34 +123,21 @@ main > *:nth-child(n+5){ animation-delay:.16s; }
 .bolum-link .baslik{ font-family:var(--serif); font-size:19px; font-weight:700; color:var(--murekkep); }
 .bolum-link:active{ transform:scale(.99); border-color:var(--teal); }
 
-/* ===== Flashcard ===== */
-.flashcard{
-  background:var(--yuzey); border:1px solid var(--hat); border-radius:16px;
-  padding:38px 24px; min-height:360px;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:var(--golge); cursor:pointer; animation:flip .35s ease;
-}
-.kart-on-grup{ text-align:center; }
+/* ===== Kart tipografisi (Kelime Öğren kartları) ===== */
 .kart-tur{ font-family:var(--sans); font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); margin-bottom:18px; font-weight:600; }
 .kart-on{
   font-family:var(--serif); font-size:60px; font-weight:600; line-height:1.05; color:var(--murekkep);
   display:inline; background:linear-gradient(transparent 62%, var(--vurgu) 62%, var(--vurgu) 92%, transparent 92%);
   padding:0 4px;
 }
-.kart-ipucu-on{ margin-top:18px; font-size:12px; color:var(--murekkep-2); }
 mark{ background:var(--vurgu); color:var(--murekkep); padding:0 3px; border-radius:3px; font-weight:600; }
-.kart-arka{ width:100%; text-align:left; }
 .kart-anlam{
   font-family:var(--serif); font-size:25px; font-weight:700; line-height:1.3; color:var(--murekkep);
-  display:flex; align-items:baseline; justify-content:space-between; gap:10px; cursor:pointer;
+  display:flex; align-items:baseline; justify-content:space-between; gap:10px;
 }
-.kart-anlam-ipucu{ font-family:var(--sans); font-size:11px; font-weight:400; color:var(--murekkep-2); white-space:nowrap; }
-.kart-ayrac{ border:none; border-top:1px solid var(--hat); margin:14px 0; }
 .kart-sayac{ text-align:center; color:var(--murekkep-2); font-size:13px; margin-bottom:12px; }
-@keyframes flip{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
 
 /* ===== Etkileşimli örnek cümle ===== */
-.flashcard.acik{ align-items:flex-start; }
 .ornek-kutu{ width:100%; margin:8px 0; }
 .ornek-cumle{
   font-family:var(--serif); font-size:17.5px; line-height:1.95;
@@ -586,7 +573,6 @@ button.ikincil{ background:none; color:var(--kil); border:1px solid var(--hat-2)
 .tok-vurgu{ box-shadow:0 1px 0 rgba(160,80,30,.25); }
 
 /* Flashcard arka yüz örnek etiketi ile örnek arası nefes */
-.kart-arka .ornek-kutu{ margin-top:2px; }
 
 /* Üst bar hafif cam efekti */
 #ust-bar{ backdrop-filter:saturate(1.1); }
@@ -828,22 +814,6 @@ button.aksiyon:active{ transform:translateY(1px); }
 :root[data-tema="koyu"] .balon { background:#0d0b08; }
 :root[data-tema="koyu"] #alt-menu { background:rgba(20,23,28,.82); }
 :root[data-tema="koyu"] .q-aciklama { background:var(--yuzey-2); }
-
-/* ===== Flashcard kaydırma ===== */
-.flashcard { position: relative; touch-action: pan-y; }
-.kart-et {
-  position: absolute; top: 18px; z-index: 4;
-  font-family: var(--sans); font-weight: 800; font-size: 15px; letter-spacing: .04em;
-  padding: 7px 13px; border-radius: 10px; border: 2px solid; opacity: 0;
-  transition: opacity .12s; pointer-events: none;
-}
-.kart-et.sag { right: 18px; color: var(--orman); border-color: var(--orman); transform: rotate(8deg); }
-.kart-et.sol { left: 18px; color: var(--kil); border-color: var(--kil); transform: rotate(-8deg); }
-.flashcard.swipe-sag { border-color: var(--orman); }
-.flashcard.swipe-sag .kart-et.sag { opacity: 1; }
-.flashcard.swipe-sol { border-color: var(--kil); }
-.flashcard.swipe-sol .kart-et.sol { opacity: 1; }
-.kart-kaydir-ipucu { text-align: center; font-size: 11.5px; color: var(--murekkep-2); margin: 10px 0 2px; }
 
 /* ===== Günün kelimesi kartı ===== */
 .gunun-kart {

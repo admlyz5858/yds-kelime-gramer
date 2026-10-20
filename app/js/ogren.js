@@ -9,12 +9,11 @@
 //  • Kapsam seçimi: tüm havuz, tek ünite veya "zorlandıklarım".
 //  • Günlük hedef + seri: her gün en az 20 yeni kelime + biriken tekrarlar.
 import { loadSRS, saveSRS } from './storage.js';
-import { ses, titre } from './efekt.js';
+import { ses, titre, seslendir } from './efekt.js';
+import { shuffle, gunStr } from './logic.js';
 
 const GUN_MS = 86400000;
 const bugunGun = () => Math.floor(Date.now() / GUN_MS);
-const bugunStr = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
-const shuffle = (a) => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 const PEKISME = 21;              // gün: bu aralığa ulaşan kelime "pekişmiş" sayılır
 const LEECH = 4;                 // bu kadar kez yanlış yapılan kelime "zor" (leech) sayılır
@@ -26,12 +25,12 @@ const UNITE_ADI = {
 };
 
 function bosSRS() {
-  return { surum: 1, kartlar: {}, favori: {}, gun: { tarih: '', yeni: 0, tekrar: 0 }, gec: [],
+  return { surum: 1, kartlar: {}, gun: { tarih: '', yeni: 0, tekrar: 0 }, gec: [],
     ayar: { yeniHedef: YENI_HEDEF_VARSAYILAN, kapsam: 'tum', yon: 'karisik', mod: 'akilli' } };
 }
 
 export function kurKelimeOgren(api) {
-  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu } = api;
+  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu, havuzYukle, defterdeMi, defterToggle } = api;
 
   let havuz = null, havuzIndex = null, srs = null, oturum = null;
   let listeDurum = { q: '', filtre: 'tum' };
@@ -39,22 +38,18 @@ export function kurKelimeOgren(api) {
   // ---- yükleme ----
   async function yukle() {
     if (havuz) return;
-    const r = await fetch('data/kelime-havuz.json');
-    if (!r.ok) throw new Error('kelime-havuz.json yüklenemedi');
-    const j = await r.json();
-    havuz = j.kelimeler || [];
+    havuz = await havuzYukle();
     havuzIndex = new Map(havuz.map(k => [k.en.toLowerCase(), k]));
     srs = loadSRS() || bosSRS();
     // eski kayıtları güvenle tamamla
     srs.ayar = Object.assign({ yeniHedef: YENI_HEDEF_VARSAYILAN, kapsam: 'tum', yon: 'karisik', mod: 'akilli' }, srs.ayar || {});
     if (!srs.gun) srs.gun = { tarih: '', yeni: 0, tekrar: 0 };
     if (!srs.gec) srs.gec = [];
-    if (!srs.favori) srs.favori = {};
     gunSifirla();
   }
   function kaydet() { saveSRS(srs); }
   function gunSifirla() {
-    const t = bugunStr();
+    const t = gunStr();
     if (srs.gun.tarih !== t) { srs.gun = { tarih: t, yeni: 0, tekrar: 0 }; kaydet(); }
   }
 
@@ -89,7 +84,7 @@ export function kurKelimeOgren(api) {
     return ilk;
   }
   function gecKaydet(dogruMu) {
-    const t = bugunStr();
+    const t = gunStr();
     let g = srs.gec.find(x => x.t === t);
     if (!g) { g = { t, y: 0, r: 0, d: 0, w: 0 }; srs.gec.push(g); if (srs.gec.length > 21) srs.gec.shift(); }
     g.y = srs.gun.yeni; g.r = srs.gun.tekrar;
@@ -186,15 +181,6 @@ export function kurKelimeOgren(api) {
     return Math.random() < 0.5 ? 'en2tr' : 'tr2en';
   }
 
-  // ---- telaffuz ----
-  function seslendir(text) {
-    try {
-      if (!window.speechSynthesis) return;
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US'; u.rate = 0.92;
-      speechSynthesis.cancel(); speechSynthesis.speak(u);
-    } catch (_) {}
-  }
   const sesVar = () => !!window.speechSynthesis;
 
   // ======================================================= PANEL
@@ -204,6 +190,8 @@ export function kurKelimeOgren(api) {
       render('<div class="cumle"><div class="tr">Kelime havuzu yüklenemedi. İnternet/önbelleği kontrol et.</div></div>');
     });
   }
+  // Liste/oturumdan panele dönüş: başlık ve üst "Geri" (→ ana sayfa) yeniden kurulur
+  function panelEkrani() { ekranModu('Kelime Öğren', anaSayfa); cizPanel(); }
 
   function cizPanel() {
     gunSifirla();
@@ -316,10 +304,10 @@ export function kurKelimeOgren(api) {
   }
 
   function grafikVeri(gunSayisi) {
-    const out = [], bugun = bugunStr(), gunAdi = ['Pz', 'Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct'];
+    const out = [], bugun = gunStr(), gunAdi = ['Pz', 'Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct'];
     for (let off = gunSayisi - 1; off >= 0; off--) {
       const d = new Date(); d.setDate(d.getDate() - off);
-      const t = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      const t = gunStr(-off);
       const g = srs.gec.find(x => x.t === t);
       out.push({ et: gunAdi[d.getDay()], toplam: g ? (g.y + g.r) : 0, bugun: t === bugun });
     }
@@ -328,7 +316,7 @@ export function kurKelimeOgren(api) {
 
   // ======================================================= KELİME LİSTESİ
   function kelimeListesi() {
-    ekranModu('Kelime Listesi', () => cizPanel());
+    ekranModu('Kelime Listesi', panelEkrani);
     cizListe();
   }
   function listeFiltreli() {
@@ -338,34 +326,39 @@ export function kurKelimeOgren(api) {
     if (f === 'yeni') arr = arr.filter(w => durum(w.en) === 'yeni');
     else if (f === 'ogreniliyor') arr = arr.filter(w => durum(w.en) === 'ogreniliyor');
     else if (f === 'pekisti') arr = arr.filter(w => durum(w.en) === 'pekisti');
-    else if (f === 'favori') arr = arr.filter(w => srs.favori[w.en.toLowerCase()]);
+    else if (f === 'defter') arr = arr.filter(w => defterdeMi(w.en));
     else if (f === 'zor') arr = arr.filter(w => leechMi(w.en));
     if (q) arr = arr.filter(w => w.en.toLowerCase().includes(q) || (w.tr || '').toLowerCase().includes(q));
     return arr;
   }
+  const GOSTER = 250;
+  const DURUM_NOKTA = { yeni: '<span class="ogr-durum yeni"></span>', ogreniliyor: '<span class="ogr-durum ogreniliyor"></span>', pekisti: '<span class="ogr-durum pekisti"></span>' };
+  function listeSatirHTML(w) {
+    const fav = defterdeMi(w.en), lc = leechMi(w.en);
+    return `<div class="ogr-liste-oge" data-en="${esc(w.en)}">
+      ${DURUM_NOKTA[durum(w.en)]}
+      <div class="ogr-liste-ic"><div class="ogr-liste-en">${esc(w.en)}${lc ? ' <span class="ogr-liste-zor">🔥</span>' : ''}</div><div class="ogr-liste-tr">${esc(w.tr)}</div></div>
+      ${sesVar() ? `<button class="ogr-liste-ses" data-ses="${esc(w.en)}" aria-label="Seslendir">🔊</button>` : ''}
+      <button class="ogr-liste-yildiz ${fav ? 'aktif' : ''}" data-fav="${esc(w.en)}" aria-label="Deftere ekle">${fav ? '★' : '☆'}</button>
+    </div>`;
+  }
+  function listeGovdeHTML(arr) {
+    return arr.slice(0, GOSTER).map(listeSatirHTML).join('') || '<div class="cumle"><div class="tr">Bu filtrede kelime yok.</div></div>';
+  }
+  function listeSayMetni(arr) {
+    return `${arr.length} kelime${arr.length > GOSTER ? ` · ilk ${GOSTER} gösteriliyor (aramayla daralt)` : ''}`;
+  }
   function cizListe() {
-    const filtreler = [['tum', 'Tümü'], ['yeni', '✨ Yeni'], ['ogreniliyor', '🌿 Öğreniliyor'], ['pekisti', '🌳 Pekişti'], ['favori', '⭐ Favori'], ['zor', '🔥 Zor']];
+    const filtreler = [['tum', 'Tümü'], ['yeni', '✨ Yeni'], ['ogreniliyor', '🌿 Öğreniliyor'], ['pekisti', '🌳 Pekişti'], ['defter', '📓 Defter'], ['zor', '🔥 Zor']];
     const cipler = filtreler.map(([id, ad]) => `<button class="ogr-liste-cip ${listeDurum.filtre === id ? 'aktif' : ''}" data-f="${id}">${ad}</button>`).join('');
     const arr = listeFiltreli();
-    const GOSTER = 250;
-    const gosterilen = arr.slice(0, GOSTER);
-    const durumNokta = { yeni: '<span class="ogr-durum yeni"></span>', ogreniliyor: '<span class="ogr-durum ogreniliyor"></span>', pekisti: '<span class="ogr-durum pekisti"></span>' };
-    const satirlar = gosterilen.map(w => {
-      const key = w.en.toLowerCase(), fav = srs.favori[key], lc = leechMi(w.en);
-      return `<div class="ogr-liste-oge" data-en="${esc(w.en)}">
-        ${durumNokta[durum(w.en)]}
-        <div class="ogr-liste-ic"><div class="ogr-liste-en">${esc(w.en)}${lc ? ' <span class="ogr-liste-zor">🔥</span>' : ''}</div><div class="ogr-liste-tr">${esc(w.tr)}</div></div>
-        ${sesVar() ? `<button class="ogr-liste-ses" data-ses="${esc(w.en)}" aria-label="Seslendir">🔊</button>` : ''}
-        <button class="ogr-liste-yildiz ${fav ? 'aktif' : ''}" data-fav="${esc(w.en)}" aria-label="Favori">${fav ? '★' : '☆'}</button>
-      </div>`;
-    }).join('');
     const calisBtn = arr.length ? `<button class="ogr-basla" id="ogrListeCalis"><span class="ogr-basla-bas">Bu listeyi çalış</span><span class="ogr-basla-alt">${Math.min(arr.length, 60)} kelime · karışık mod</span></button>` : '';
     render(`
       <div class="ogr-liste-ara-satir"><input id="ogrAra" class="ogr-liste-ara" type="text" placeholder="Kelime veya anlam ara…" value="${esc(listeDurum.q)}"></div>
       <div class="ogr-liste-cipler">${cipler}</div>
-      <div class="ogr-liste-say">${arr.length} kelime${arr.length > GOSTER ? ` · ilk ${GOSTER} gösteriliyor (aramayla daralt)` : ''}</div>
+      <div class="ogr-liste-say">${listeSayMetni(arr)}</div>
       ${calisBtn}
-      <div class="ogr-liste">${satirlar || '<div class="cumle"><div class="tr">Bu filtrede kelime yok.</div></div>'}</div>
+      <div class="ogr-liste">${listeGovdeHTML(arr)}</div>
     `);
     const ara = document.getElementById('ogrAra');
     ara.oninput = () => { listeDurum.q = ara.value; cizListeSadeceListe(); };
@@ -377,31 +370,21 @@ export function kurKelimeOgren(api) {
   // Arama sırasında yalnız liste + sayaç güncellensin (input odağı kaybolmasın)
   function cizListeSadeceListe() {
     const arr = listeFiltreli();
-    const GOSTER = 250, gosterilen = arr.slice(0, GOSTER);
-    const durumNokta = { yeni: '<span class="ogr-durum yeni"></span>', ogreniliyor: '<span class="ogr-durum ogreniliyor"></span>', pekisti: '<span class="ogr-durum pekisti"></span>' };
     const kut = document.querySelector('.ogr-liste');
     const say = document.querySelector('.ogr-liste-say');
-    if (say) say.textContent = `${arr.length} kelime${arr.length > GOSTER ? ` · ilk ${GOSTER} gösteriliyor (aramayla daralt)` : ''}`;
+    if (say) say.textContent = listeSayMetni(arr);
     if (!kut) return;
-    kut.innerHTML = gosterilen.map(w => {
-      const key = w.en.toLowerCase(), fav = srs.favori[key], lc = leechMi(w.en);
-      return `<div class="ogr-liste-oge" data-en="${esc(w.en)}">
-        ${durumNokta[durum(w.en)]}
-        <div class="ogr-liste-ic"><div class="ogr-liste-en">${esc(w.en)}${lc ? ' <span class="ogr-liste-zor">🔥</span>' : ''}</div><div class="ogr-liste-tr">${esc(w.tr)}</div></div>
-        ${sesVar() ? `<button class="ogr-liste-ses" data-ses="${esc(w.en)}" aria-label="Seslendir">🔊</button>` : ''}
-        <button class="ogr-liste-yildiz ${fav ? 'aktif' : ''}" data-fav="${esc(w.en)}" aria-label="Favori">${fav ? '★' : '☆'}</button>
-      </div>`;
-    }).join('') || '<div class="cumle"><div class="tr">Bu filtrede kelime yok.</div></div>';
+    kut.innerHTML = listeGovdeHTML(arr);
     wireListeSatir();
   }
   function wireListeSatir() {
     document.querySelectorAll('.ogr-liste-ses').forEach(b => b.onclick = (e) => { e.stopPropagation(); seslendir(b.dataset.ses); });
     document.querySelectorAll('.ogr-liste-yildiz').forEach(b => b.onclick = (e) => {
       e.stopPropagation();
-      const key = b.dataset.fav.toLowerCase();
-      if (srs.favori[key]) delete srs.favori[key]; else srs.favori[key] = true;
-      kaydet();
-      b.classList.toggle('aktif'); b.textContent = srs.favori[key] ? '★' : '☆';
+      const w = havuzIndex.get(b.dataset.fav.toLowerCase()); if (!w) return;
+      defterToggle(w);
+      const on = defterdeMi(w.en);
+      b.classList.toggle('aktif', on); b.textContent = on ? '★' : '☆';
     });
     document.querySelectorAll('.ogr-liste-oge').forEach(o => o.onclick = () => {
       const w = havuzIndex.get(o.dataset.en.toLowerCase()); if (w) kelimeDetay(w);
@@ -420,15 +403,13 @@ export function kurKelimeOgren(api) {
       </div>
       ${w.ornek_tokenlar ? `<div class="kart-ornek-etiket">Örnek · kelimeye dokun, çeviri için kaydır</div>${ornekHTML({ tokenlar: w.ornek_tokenlar, tr: w.ornek_tr })}` : ''}
       <div class="btn-satir">
-        <button class="aksiyon ${srs.favori[w.en.toLowerCase()] ? '' : 'ikincil'}" id="ogrDetFav">${srs.favori[w.en.toLowerCase()] ? '★ Favoride' : '☆ Favoriye ekle'}</button>
+        <button class="aksiyon ${defterdeMi(w.en) ? '' : 'ikincil'}" id="ogrDetFav">${defterdeMi(w.en) ? '📓 Defterde ✓' : '📓 Deftere ekle'}</button>
         <button class="aksiyon" id="ogrDetCalis">Bu kelimeyi çalış ›</button>
       </div>`);
     document.getElementById('ogrDetGeri').onclick = () => cizListe();
     const ses = document.getElementById('ogrDetSes'); if (ses) ses.onclick = () => seslendir(w.en);
     if (w.ornek_tokenlar) wireOrnekler(document.getElementById('icerik'));
-    document.getElementById('ogrDetFav').onclick = () => {
-      const key = w.en.toLowerCase(); if (srs.favori[key]) delete srs.favori[key]; else srs.favori[key] = true; kaydet(); kelimeDetay(w);
-    };
+    document.getElementById('ogrDetFav').onclick = () => { defterToggle(w); kelimeDetay(w); };
     document.getElementById('ogrDetCalis').onclick = () => listedenOturum([w]);
   }
 
@@ -455,7 +436,7 @@ export function kurKelimeOgren(api) {
     const zor = leechMi(item.w.en) ? '<span class="ogr-rozet zor">🔥 Zor</span>' : '';
     return (item.yeniMi ? '<span class="ogr-rozet yeni">✨ Yeni</span>' : '<span class="ogr-rozet tekrar">🔁 Tekrar</span>') + zor;
   }
-  function wireCik() { const b = document.getElementById('ogrCik'); if (b) b.onclick = () => cizPanel(); }
+  function wireCik() { const b = document.getElementById('ogrCik'); if (b) b.onclick = panelEkrani; }
 
   // --- Kart (tanıma) / Dinle — çift yönlü ---
   function cizKart(item, mod) {
@@ -628,8 +609,8 @@ export function kurKelimeOgren(api) {
         <button class="aksiyon ikincil" id="ogrPanel">Panele dön</button>
       </div>`);
     const dv = document.getElementById('ogrDevamOturum');
-    if (dv) dv.onclick = () => { if (oturumKur() > 0) cizOturum(); else cizPanel(); };
-    document.getElementById('ogrPanel').onclick = () => cizPanel();
+    if (dv) dv.onclick = () => { if (oturumKur() > 0) cizOturum(); else panelEkrani(); };
+    document.getElementById('ogrPanel').onclick = panelEkrani;
   }
 
   return { ac: panel };
