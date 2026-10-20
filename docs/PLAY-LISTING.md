@@ -12,14 +12,18 @@ Bu dosya, Play Console'da kopyala-yapıştır yapacağın tüm metinleri ve form
 
 ## Kısa açıklama (max 80 karakter)
 ```
-YDS/YÖKDİL: 2300+ kelime, Reels tarzı akış, eşleştirme oyunu, aralıklı tekrar.
+YDS/YÖKDİL: 2300+ kelime tek sözlükte, 13 gramer ünitesi, oyun, aralıklı tekrar.
 ```
 
 ## Tam açıklama (max 4000 karakter)
 ```
-Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 14 ünite ve 2300'den fazla kelime tamamen ücretsiz.
+Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 2300'den fazla kelime ve 13 gramer ünitesi tamamen ücretsiz.
 
 ÖNE ÇIKAN ÖZELLİKLER
+
+• Tüm kelimeler tek yerde — 2300+ kelime tek sözlükte. Seviyeye (S1 temel → S5 akademik), türe (isim, fiil, sıfat, zarf, edat…) ve duruma (yeni / öğreniliyor / öğrendim) göre süz; ara, A→Z sırala, listeyi doğrudan çalış.
+
+• Bugün sekmesi — Günün planı tek ekranda: vadesi gelen tekrarlar, günün eşleştirmesi, kaldığın ünite.
 
 • Kelime Akışı — Yukarı kaydır, kelimeleri Reels tarzında hızlıca gez. Karta dokun anlamı ve örnek cümlesi açılsın; kelime otomatik seslendirilsin. Beğendiğini kaydet, bildiğini işaretle.
 
@@ -33,9 +37,9 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Telaffuz — Her kelimeyi ve örnek cümledeki kelimeleri tek dokunuşla dinle.
 
-• Konu anlatımı ve seviyeli testler — Edatlar, zamanlar, modallar, fiilimsiler, koşul cümleleri, isim/sıfat cümlecikleri, bağlaçlar. Kolaydan zora testler, istatistik, Yanlışlarım listesi.
+• Müfredat — Edatlar, zamanlar, modallar, fiilimsiler, etken-edilgen, koşul cümleleri, isim/sıfat cümlecikleri, bağlaçlar. Her ünitede konu anlatımı (Oku), ünitenin kendi cümlelerinden üretilen alıştırmalar (boşluk doldurma ve sınıflandırma), kolaydan zora testler ve çeviri çalışması. Yanlışların birikir, doğru çözünce silinir.
 
-• Kelime Defteri ve Öğrendiklerim — Bilmediklerini biriktir, öğrendiklerini pekiştir; quiz ve boşluk doldurma ile tekrar et.
+• Kelime Defteri — Bilmediklerini biriktir; “Biliyorum” dediklerin aralıklı tekrara pekişmiş olarak girer.
 
 • Motivasyon — Günlük seri, XP ve seviye, günlük görevler, başarımlar, aktivite ısı haritası, sınav geri sayımı ve günlük hatırlatma.
 
@@ -44,7 +48,18 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
 
-## Sürüm notları (1.2.0, max 500 karakter)
+## Sürüm notları (1.3.0, max 500 karakter)
+```
+• Yeni tasarım: Bugün · Kelimeler · Müfredat · Oyun · Ben sekmeleri
+• Tüm kelimeler tek sözlükte: seviye (S1–S5), tür ve durum filtreleri, arama, A→Z
+• Ünitelerde yeni Alıştırma: ünitenin kendi cümlelerinden boşluk ve sınıflandırma soruları
+• Çeviri çalışması (edat, zaman ve modal öbekleri)
+• Bugün sekmesinde günün planı: tekrarlar, günün eşleştirmesi, kaldığın ünite
+• Tüm testler açık; sıradaki vurgulu
+• Öğrendiklerim ve Defter aralıklı tekrarla birleşti
+```
+
+## Sürüm notları (1.2.0)
 ```
 • Yeni: Eşleştirme Oyunu — 42 bölüm, kolaydan zora, süreli seviyeler
 • Günün Eşleştirmesi ve arkadaşınla Düello

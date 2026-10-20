@@ -16,11 +16,10 @@
     }
     if (window.caches) { caches.keys().then(ks => ks.forEach(k => caches.delete(k))).catch(() => {}); }
   </script>
-  <link rel="stylesheet" href="css/style.css?v=63">
+  <link rel="stylesheet" href="css/style.css?v=65">
 </head>
 <body>
   <header id="ust-bar">
-    <button id="menuBtn" class="ust-ikon" aria-label="Müfredat menüsü" hidden>☰</button>
     <button id="geri" hidden>‹ Geri</button>
     <h1 id="baslik">Üniteler</h1>
     <div id="ust-aksiyon">
@@ -29,12 +28,13 @@
     </div>
   </header>
   <main id="icerik"></main>
-  <nav id="alt-menu" hidden>
-    <button data-ekran="oku"><span class="nav-ikon">📖</span><span class="nav-etiket">Oku</span></button>
-    <button data-ekran="kelime"><span class="nav-ikon">🎴</span><span class="nav-etiket">Kelime</span></button>
-    <button data-ekran="quiz"><span class="nav-ikon">🧠</span><span class="nav-etiket">Quiz</span></button>
-    <button data-ekran="bosluk"><span class="nav-ikon">✍️</span><span class="nav-etiket">Boşluk</span></button>
+  <nav id="sekme-bar">
+    <button data-sekme="bugun" class="aktif"><span class="nav-ikon">🏠</span><span class="nav-etiket">Bugün</span></button>
+    <button data-sekme="kelimeler"><span class="nav-ikon">📖</span><span class="nav-etiket">Kelimeler</span></button>
+    <button data-sekme="mufredat"><span class="nav-ikon">🎓</span><span class="nav-etiket">Müfredat</span></button>
+    <button data-sekme="oyun"><span class="nav-ikon">🧩</span><span class="nav-etiket">Oyun</span></button>
+    <button data-sekme="ben"><span class="nav-ikon">👤</span><span class="nav-etiket">Ben</span></button>
   </nav>
-  <script type="module" src="js/app.js?v=63"></script>
+  <script type="module" src="js/app.js?v=65"></script>
 </body>
 </html>

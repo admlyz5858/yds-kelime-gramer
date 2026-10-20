@@ -94,3 +94,15 @@ export function loadEslestir() {
 export function saveEslestir(d) {
   localStorage.setItem(EKEY, JSON.stringify(d));
 }
+
+// ===== Ünite alıştırmaları — { uniteId: { yapilan, dogru, zayif:{etiket: yanlisSayisi} } } =====
+const ALKEY = 'yds-alistirma-v1';
+
+export function loadAlistirma() {
+  try { return JSON.parse(localStorage.getItem(ALKEY)) || {}; }
+  catch { return {}; }
+}
+
+export function saveAlistirma(a) {
+  localStorage.setItem(ALKEY, JSON.stringify(a));
+}

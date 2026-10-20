@@ -33,16 +33,3 @@ export function gunStr(off = 0) {
   const d = new Date(); d.setDate(d.getDate() + off);
   return isoGun(d);
 }
-
-export function dersKilitli(ders, premiumAcik) {
-  const d = ders && ders.durum;
-  if (d === 'premium') return !premiumAcik;   // premium kod ile açıldıysa kilitli değil
-  return d === 'yakinda';
-}
-
-export function dersDurumEtiket(ders) {
-  const d = ders && ders.durum;
-  if (d === 'premium') return 'Premium — yakında';
-  if (d === 'yakinda') return 'Yakında';
-  return '';
-}

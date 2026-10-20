@@ -8,7 +8,7 @@
 //  • Zor kelime (leech) takibi: çok yanlış yapılan kelimeler işaretlenir, odaklı tekrar edilir.
 //  • Kapsam seçimi: tüm havuz, tek ünite veya "zorlandıklarım".
 //  • Günlük hedef + seri: her gün en az 20 yeni kelime + biriken tekrarlar.
-import { loadSRS, saveSRS } from './storage.js';
+import { srs, srsKaydet } from './durum.js';
 import { ses, titre, seslendir } from './efekt.js';
 import { shuffle, gunStr } from './logic.js';
 
@@ -24,15 +24,11 @@ const UNITE_ADI = {
   11: 'Koşul Cümleleri', 12: 'İsim Cümlecikleri', 13: 'Sıfat Cümlecikleri', 14: 'Bağlaçlar',
 };
 
-function bosSRS() {
-  return { surum: 1, kartlar: {}, gun: { tarih: '', yeni: 0, tekrar: 0 }, gec: [],
-    ayar: { yeniHedef: YENI_HEDEF_VARSAYILAN, kapsam: 'tum', yon: 'karisik', mod: 'akilli' } };
-}
-
 export function kurKelimeOgren(api) {
   const { render, esc, ornekHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu, havuzYukle, defterdeMi, defterToggle } = api;
+  let ust = '';   // panelin üstüne sekme/segment HTML'i (Kelimeler sekmesi)
 
-  let havuz = null, havuzIndex = null, srs = null, oturum = null;
+  let havuz = null, havuzIndex = null, oturum = null;
   let listeDurum = { q: '', filtre: 'tum' };
 
   // ---- yükleme ----
@@ -40,14 +36,13 @@ export function kurKelimeOgren(api) {
     if (havuz) return;
     havuz = await havuzYukle();
     havuzIndex = new Map(havuz.map(k => [k.en.toLowerCase(), k]));
-    srs = loadSRS() || bosSRS();
     // eski kayıtları güvenle tamamla
     srs.ayar = Object.assign({ yeniHedef: YENI_HEDEF_VARSAYILAN, kapsam: 'tum', yon: 'karisik', mod: 'akilli' }, srs.ayar || {});
     if (!srs.gun) srs.gun = { tarih: '', yeni: 0, tekrar: 0 };
     if (!srs.gec) srs.gec = [];
     gunSifirla();
   }
-  function kaydet() { saveSRS(srs); }
+  function kaydet() { srsKaydet(); }
   function gunSifirla() {
     const t = gunStr();
     if (srs.gun.tarih !== t) { srs.gun = { tarih: t, yeni: 0, tekrar: 0 }; kaydet(); }
@@ -159,8 +154,12 @@ export function kurKelimeOgren(api) {
   function listedenOturum(words) {
     const kuyruk = shuffle(words).slice(0, 60).map(w => ({ w, yeniMi: yeniMi(w.en) }));
     oturum = kuyruktanOturum(kuyruk);
-    if (kuyruk.length) cizOturum();
+    if (kuyruk.length) { ekranModu('Kelime Öğren', panelEkrani); cizOturum(); }
   }
+  // Sözlükten "çalış": havuz hazır olunca verilen listeyle oturum
+  function calis(words) { yukle().then(() => listedenOturum(words)).catch(() => {}); }
+  // Bugün sekmesi için özet: vadesi gelen tekrar + bugünkü yeni hakkı
+  async function ozet() { await yukle(); gunSifirla(); const on = kapsamOnizle(); const s = istat(); return { due: on.due, yeni: on.yeni, toplam: on.toplam, pekisti: s.pekisti, gorulen: s.gorulen, hepsi: s.toplam, bugunYeni: s.bugunYeni, bugunTekrar: s.bugunTekrar }; }
 
   // Karta uygun çalışma modu ve yön
   function clozeHazir(w) { return Array.isArray(w.ornek_tokenlar) && w.ornek_tokenlar.some(t => t.vurgu); }
@@ -226,7 +225,7 @@ export function kurKelimeOgren(api) {
     const kaps = srs.ayar.kapsam;
     const kapsamEt = kaps === 'tum' ? '' : kaps === 'zor' ? ' · 🔥 zor kelimeler' : ` · Ünite ${kaps}`;
 
-    render(`
+    render(`${ust}
       <div class="ogr-hero">
         <div class="ogr-hero-sol">
           <div class="ogr-hero-et">🌱 Aralıklı tekrarla kalıcı öğren</div>
@@ -613,5 +612,7 @@ export function kurKelimeOgren(api) {
     document.getElementById('ogrPanel').onclick = panelEkrani;
   }
 
-  return { ac: panel };
+  function ac(opts = {}) { ust = opts.ustHTML || ''; panel(); }
+  function ustAyarla(html) { ust = html || ''; }
+  return { ac, calis, ozet, ustAyarla };
 }

@@ -9,8 +9,15 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Bir kelime kaydını normalize et (yalnız gerekli alanlar, tutarlı sıra)
+// Tür etiketi: "İsim" / "isim" / "fiil " → "İsim", "Fiil"; bileşikler korunur ("Edat / Bağlaç")
+export function turNormalize(t) {
+  return String(t || '').trim().split(/\s*\/\s*/).map(p => {
+    const k = p.trim().toLocaleLowerCase('tr-TR');
+    return k ? k.charAt(0).toLocaleUpperCase('tr-TR') + k.slice(1) : '';
+  }).filter(Boolean).join(' / ');
+}
 function normalize(k, uniteId) {
-  const o = { en: k.en, tur: k.tur || '', tr: k.tr || '' };
+  const o = { en: k.en, tur: turNormalize(k.tur), tr: k.tr || '' };
   if (k.ornek_tr) o.ornek_tr = k.ornek_tr;
   if (Array.isArray(k.ornek_tokenlar)) o.ornek_tokenlar = k.ornek_tokenlar;
   o.u = uniteId;                       // kaynak ünite (grup/filtre için)
@@ -44,8 +51,13 @@ export function havuzUret(uniteDir) {
     }
   }
 
+  // Seviye bandı: Ünite 1 sıklık sırasına göre S1–S4 (dört dilim), gramer ünitelerinin kelimeleri S5 (akademik)
+  const u1 = kelimeler.filter(w => w.u === 1);
+  u1.forEach((w, i) => { w.sv = 1 + Math.min(3, Math.floor(i / Math.ceil(u1.length / 4))); });
+  kelimeler.forEach(w => { if (!w.sv) w.sv = 5; });
+
   return {
-    surum: 1,
+    surum: 2,
     uretim: 'kelime-havuz.mjs',
     toplam: kelimeler.length,
     uniteler: Object.keys(uniteSayac).map(Number).sort((a, b) => a - b),

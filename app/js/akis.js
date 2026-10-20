@@ -6,14 +6,14 @@
 // ⭐ Kaydet → Kelime Defteri, 🎓 Biliyorum → Öğrendiklerim (app.js ile aynı depolar).
 import { shuffle } from './logic.js';
 import { seslendirDurdur } from './efekt.js';
+import { defterdeMi, defterToggle, pekistiMi, pekistir } from './durum.js';
 
 const SES_KEY = 'yds-akis-ses';
 const otoSesYukle = () => { try { return localStorage.getItem(SES_KEY) !== '0'; } catch { return true; } };
 const otoSesYaz = (v) => { try { localStorage.setItem(SES_KEY, v ? '1' : '0'); } catch {} };
 
 export function kurKelimeAkisi(api) {
-  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu, seslendir, paylas, titre,
-    havuzYukle, defterdeMi, defterToggle, ogrenildiMi, ogrenildiEkle } = api;
+  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu, seslendir, paylas, titre, havuzYukle } = api;
 
   let sira = [], render_i = 0, karisik = false;
   let gomulu = false, baslik = 'Kelime Akışı', kaynakKelimeler = null, bosMesaj = '';
@@ -62,8 +62,8 @@ export function kurKelimeAkisi(api) {
   }
 
   function kartHTML(w, i) {
-    const uni = w.u ? `Ünite ${w.u}` : '';
-    const defterde = defterdeMi(w.en), bilinen = ogrenildiMi(w.en);
+    const uni = w.sv ? `S${w.sv}` : (w.u ? `Ünite ${w.u}` : '');
+    const defterde = defterdeMi(w.en), bilinen = pekistiMi(w.en);
     return `<section class="akis-kart" data-i="${i}" data-en="${esc(w.en)}">
       <div class="akis-ic">
         <div class="akis-ust">${esc(uni)}${uni ? ' · ' : ''}${i + 1}/${sira.length}</div>
@@ -82,7 +82,7 @@ export function kurKelimeAkisi(api) {
       </div>
       <div class="akis-rail">
         <button class="akis-rbtn" data-akt="ses"><span class="akis-rikon">🔊</span><span>Dinle</span></button>
-        <button class="akis-rbtn ${defterde ? 'aktif' : ''}" data-akt="defter"><span class="akis-rikon">${defterde ? '⭐' : '☆'}</span><span>Kaydet</span></button>
+        <button class="akis-rbtn ${defterde ? 'aktif' : ''}" data-akt="defter"><span class="akis-rikon">${defterde ? '📓' : '📑'}</span><span>Defter</span></button>
         <button class="akis-rbtn ${bilinen ? 'aktif' : ''}" data-akt="biliyorum"><span class="akis-rikon">${bilinen ? '✅' : '🎓'}</span><span>Biliyorum</span></button>
         <button class="akis-rbtn" data-akt="paylas"><span class="akis-rikon">📤</span><span>Paylaş</span></button>
       </div>
@@ -129,13 +129,13 @@ export function kurKelimeAkisi(api) {
       else if (akt === 'defter') {
         defterToggle(w);
         const on2 = defterdeMi(w.en);
-        b.classList.toggle('aktif', on2); b.querySelector('.akis-rikon').textContent = on2 ? '⭐' : '☆'; titre('hafif');
+        b.classList.toggle('aktif', on2); b.querySelector('.akis-rikon').textContent = on2 ? '📓' : '📑'; titre('hafif');
       } else if (akt === 'biliyorum') {
-        if (!ogrenildiMi(w.en)) { ogrenildiEkle(w); gunKaydet(1, { dogru: true }); titre('basari'); }
+        if (!pekistiMi(w.en)) { pekistir(w); gunKaydet(1, { dogru: true }); titre('basari'); }
         b.classList.add('aktif'); b.querySelector('.akis-rikon').textContent = '✅';
         // "biliyorum" defterden çıkarır → Kaydet rozetini de güncelle
         const db = kart.querySelector('[data-akt="defter"]');
-        if (db) { db.classList.remove('aktif'); db.querySelector('.akis-rikon').textContent = '☆'; }
+        if (db) { db.classList.remove('aktif'); db.querySelector('.akis-rikon').textContent = '📑'; }
       } else if (akt === 'paylas') {
         paylas({ baslik: w.en, metin: `${w.en} — ${w.tr}${w.ornek_tr ? '\n"' + w.ornek_tr + '"' : ''}\n\n📏 Kelimetre · YDS` });
       }

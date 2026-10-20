@@ -1,7 +1,7 @@
 // app/js/logic.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { searchLessons, toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr, dersKilitli, dersDurumEtiket } from './logic.js';
+import { searchLessons, toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr } from './logic.js';
 
 test('searchLessons başlığa göre filtreler (büyük/küçük harf duyarsız)', () => {
   const m = [{ id: 1, baslik: 'Hazırlık 101' }, { id: 2, baslik: 'Deneme 5' }];
@@ -33,24 +33,4 @@ test('isoGun/gunStr yerel günü YYYY-AA-GG verir', () => {
   assert.equal(isoGun(new Date(2026, 0, 5)), '2026-01-05');
   assert.match(gunStr(), /^\d{4}-\d{2}-\d{2}$/);
   assert.notEqual(gunStr(-1), gunStr(0));
-});
-
-test('dersKilitli premium ve yakinda için true, hazir için false', () => {
-  assert.equal(dersKilitli({ durum: 'premium' }), true);
-  assert.equal(dersKilitli({ durum: 'yakinda' }), true);
-  assert.equal(dersKilitli({ durum: 'hazir' }), false);
-  assert.equal(dersKilitli({}), false);
-  assert.equal(dersKilitli(null), false);
-});
-
-test('dersKilitli premium kod açılınca premium kilidini kaldırır', () => {
-  assert.equal(dersKilitli({ durum: 'premium' }, true), false);   // kod açık
-  assert.equal(dersKilitli({ durum: 'premium' }, false), true);   // kod kapalı
-  assert.equal(dersKilitli({ durum: 'yakinda' }, true), true);    // yakinda yine kilitli
-});
-
-test('dersDurumEtiket duruma göre etiket verir', () => {
-  assert.equal(dersDurumEtiket({ durum: 'premium' }), 'Premium — yakında');
-  assert.equal(dersDurumEtiket({ durum: 'yakinda' }), 'Yakında');
-  assert.equal(dersDurumEtiket({ durum: 'hazir' }), '');
 });

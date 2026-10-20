@@ -143,8 +143,11 @@ export function kurEslestirme(api) {
   }
 
   // ---------- giriş ----------
-  function ac() {
-    yukle().then(panelEkrani).catch(() => { ekranModu('Eşleştirme', anaSayfa); render('<div class="cumle"><div class="tr">Kelime havuzu yüklenemedi.</div></div>'); });
+  function ac(opts = {}) {
+    yukle().then(() => {
+      if (opts.gunluk && !durum.gunluk[bugun()]) { gunlukBasla(); return; }
+      panelEkrani();
+    }).catch(() => { ekranModu('Eşleştirme', anaSayfa); render('<div class="cumle"><div class="tr">Kelime havuzu yüklenemedi.</div></div>'); });
   }
   function panelEkrani() { temizle(); ekranModu('Eşleştirme', anaSayfa); cizPanel(); }
 
@@ -582,5 +585,5 @@ export function kurEslestirme(api) {
   }
   function temizle() { if (sayac) { clearInterval(sayac); sayac = null; } }
 
-  return { ac, ozet, istat, temizle };
+  return { ac, ozet, istat, temizle, rekorlar: () => yukle().then(cizRekorlar), lig: () => yukle().then(() => cizLig('gunluk')) };
 }

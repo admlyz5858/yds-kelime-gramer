@@ -43,21 +43,34 @@ await guvenli('ana', async () => {
     localStorage.setItem('yds-ayar-v1', JSON.stringify(a));
   });
   await page.reload({ waitUntil: 'networkidle' }); await bekle(900);
-  await cek('02-ana-sayfa.png');
+  await cek('02-bugun.png');
 });
 
-// 3) Kelime Akışı (Reels tarzı) — anlam açık
+const sekme = async (ad) => { await page.locator(`#sekme-bar button[data-sekme="${ad}"]`).click(); await bekle(800); };
+
+// 3) Kelimeler — tek sözlük, seviye/tür çipleri
+await guvenli('kelimeler', async () => {
+  await sekme('kelimeler');
+  await page.locator('.sz-cip[data-sv="2"]').click(); await bekle(500);
+  await cek('03-kelimeler.png');
+  await page.locator('.sz-satir').nth(2).click(); await bekle(600);
+  await cek('04-kelime-detay.png');
+  await page.locator('#geri').click(); await bekle(400);
+});
+
+// 5) Kelime Akışı (Reels tarzı) — anlam açık
 await guvenli('akis', async () => {
-  await page.locator('#hAkis').click(); await bekle(1200);
-  await page.locator('#akisKaris').click(); await bekle(900);   // karışık: 'the' yerine rastgele kelime
+  await sekme('bugun');
+  await page.locator('#pAkis').click(); await bekle(1200);
+  const k = page.locator('#akisKaris'); if (await k.count()) { await k.click(); await bekle(900); }
   await page.locator('.akis-kart').first().locator('.akis-govde').click(); await bekle(400);
-  await cek('03-kelime-akisi.png');
-  await anaSayfa();
+  await cek('05-kelime-akisi.png');
+  await page.locator('#geri').click(); await bekle(500);
 });
 
-// 4) Eşleştirme oyunu — süreli seviye, birkaç eşleşme yapılmış
+// 6) Eşleştirme oyunu — süreli seviye, birkaç eşleşme yapılmış
 await guvenli('eslestirme', async () => {
-  await page.locator('#hEslestir').click(); await bekle(1000);
+  await sekme('oyun');
   await page.locator('.es-bolum[data-k="0"]').click(); await bekle(500);
   await eslestirHepsi(false); await bekle(500);                 // S1
   await page.locator('#esDevamSv').click(); await bekle(400);
@@ -65,32 +78,39 @@ await guvenli('eslestirme', async () => {
   await page.locator('#esDevamSv').click(); await bekle(500);   // S3 (60 sn)
   for (let i = 0; i < 4; i++) { await page.locator(`.es-en[data-i="${i}"]`).click(); await page.locator(`.es-tr[data-i="${i}"]`).click(); await bekle(80); }
   await page.locator('.es-en[data-i="6"]').click(); await bekle(200);
-  await cek('04-eslestirme.png');
+  await cek('06-eslestirme.png');
   for (let i = 4; i < 10; i++) { await page.locator(`.es-en[data-i="${i}"]`).click(); await page.locator(`.es-tr[data-i="${i}"]`).click(); await bekle(60); }
-  await bekle(500); await cek('05-eslestirme-sonuc.png');
+  await bekle(500); await cek('07-eslestirme-sonuc.png');
   await page.locator('#esCik').click(); await bekle(400);
-  await cek('06-eslestirme-bolumler.png');
-  await anaSayfa();
 });
 
-// 7) Kelime Öğren (aralıklı tekrar) paneli
+// 8) Kelime Öğren (aralıklı tekrar) paneli
 await guvenli('ogren', async () => {
-  await page.locator('#hOgren').click(); await bekle(1200);
-  await cek('07-kelime-ogren.png');
-  await anaSayfa();
+  await sekme('kelimeler');
+  await page.locator('.segment button[data-seg="ogren"]').click(); await bekle(1200);
+  await cek('08-kelime-ogren.png');
 });
 
-// 8) Ünite — Oku (edat kartı) ve 9) Quiz
+// 9) Müfredat, 10) Oku (edat kartı), 11) Alıştırma, 12) Test
 await guvenli('unite', async () => {
-  await page.locator('#menuBtn').click(); await page.waitForSelector('.cek-ders', { timeout: 4000 }); await bekle(500);
-  await cek('08-uniteler.png');
-  await page.locator('.cek-ders[data-id="2"]').click(); await bekle(1200);
+  await sekme('mufredat');
+  await cek('09-mufredat.png');
+  await page.locator('.mf-kart[data-id="2"]').click(); await bekle(1200);
   const b = page.locator('.bolum-link').nth(1); if (await b.count()) { await b.click(); await bekle(800); }
-  await cek('09-oku-edat.png');
-  await page.locator('#alt-menu button[data-ekran="quiz"]').click(); await bekle(900);
+  await cek('10-oku-edat.png');
+  await page.locator('#bolumGeri').click(); await bekle(400);
+  await page.locator('.segment button[data-seg="alistirma"]').click(); await bekle(800);
+  await page.locator('.al-tur').first().click(); await bekle(600);
+  await page.locator('.q-secenek').first().click(); await bekle(500);
+  await cek('11-alistirma.png');
+  await page.locator('#alGeri').click(); await bekle(400);
+  await page.locator('.segment button[data-seg="test"]').click(); await bekle(900);
   const t = page.locator('.test-link').first(); if (await t.count()) { await t.click(); await bekle(700); }
-  await cek('10-test.png');
+  await cek('12-test.png');
 });
+
+// 13) Ben — ilerleme
+await guvenli('ben', async () => { const g = page.locator('#geri:not([hidden])'); if (await g.count()) { await g.click(); await bekle(500); } await sekme('ben'); await cek('13-ben.png'); });
 
 await browser.close();
 console.log('Ekran görüntüleri tamam.');
