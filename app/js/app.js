@@ -6,7 +6,7 @@ import { kurKelimeAkisi } from './akis.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
-const SURUM = '1.1.3';
+const SURUM = '1.1.4';
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
 const geriBtn = document.getElementById('geri');
@@ -477,8 +477,10 @@ function wireOrnekler(root) {
         const eklenmis = defterdeMi(kelimeHam);
         const b = document.createElement('span'); b.className = 'balon';
         b.innerHTML = `<span class="balon-en">${esc(enText)}</span><span class="balon-tr">${esc(el.dataset.a || '')}</span>` +
-          `<button class="balon-ogren"${eklenmis ? ' disabled' : ''}>${eklenmis ? '✓ Defterde' : '📓 Öğren'}</button>`;
+          `<span class="balon-btnler"><button class="balon-ses" aria-label="Seslendir">🔊</button>` +
+          `<button class="balon-ogren"${eklenmis ? ' disabled' : ''}>${eklenmis ? '✓ Defterde' : '📓 Öğren'}</button></span>`;
         el.appendChild(b); el.classList.add('acik');
+        b.querySelector('.balon-ses').onclick = (ev) => { ev.stopPropagation(); seslendir(enText); titre('hafif'); };
         const ob = b.querySelector('.balon-ogren');
         if (ob) ob.onclick = (ev) => { ev.stopPropagation(); ogrenEkle(el); ob.textContent = '✓ Defterde'; ob.disabled = true; };
       }
@@ -815,7 +817,7 @@ function girisEkrani(zorla) {
 // --- Yardım modalı ---
 function yardimAc() {
   modalAc('Nasıl çalışılır?', `
-    <div class="yardim-sat"><span>📖</span><div><b>Oku</b> — Konu anlatımı şeması, edat kartları ve etkileşimli örnek cümleler.</div></div>
+    <div class="yardim-sat"><span>📖</span><div><b>Oku</b> — Konu anlatımı şeması, edat kartları ve etkileşimli örnekler: cümlede kelimeye dokun → anlam, 🔊 telaffuz, 📓 Öğren.</div></div>
     <div class="yardim-sat"><span>🎴</span><div><b>Kelime</b> — Yukarı kaydır; karta dokun → anlam, 🔊 telaffuz. ⭐ Kaydet → Kelime Defteri, 🎓 Biliyorum → Öğrendiklerim.</div></div>
     <div class="yardim-sat"><span>🌱</span><div><b>Kelime Öğren</b> — Aralıklı tekrar: kelimeler unutulmadan önce tekrar gelir; kart, test, yazım ve boşluk modları.</div></div>
     <div class="yardim-sat"><span>🧠</span><div><b>Quiz</b> — Test 1’den başla, kolaydan zora. Her testin skoru ve ✓’si saklanır.</div></div>

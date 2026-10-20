@@ -158,10 +158,12 @@ mark{ background:var(--vurgu); color:var(--murekkep); padding:0 3px; border-radi
 }
 .balon-en{ color:var(--vurgu); font-weight:700; font-size:13.5px; }
 .balon-tr{ color:#f6f8fa; font-size:12.5px; }
-.balon-ogren{
-  margin-top:5px; background:var(--vurgu); color:var(--murekkep); border:none; border-radius:6px;
+.balon-btnler{ display:flex; gap:6px; margin-top:5px; }
+.balon-ogren, .balon-ses{
+  background:var(--vurgu); color:var(--murekkep); border:none; border-radius:6px;
   padding:3px 9px; font-size:11.5px; font-weight:700; font-family:var(--sans); cursor:pointer;
 }
+.balon-ses{ padding:3px 8px; font-size:13px; }
 .balon-ogren:disabled{ background:none; color:var(--vurgu); }
 .balon::after{ content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:var(--murekkep); }
 .ornek-ceviri{

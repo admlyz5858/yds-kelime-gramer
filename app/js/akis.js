@@ -5,6 +5,7 @@
 // Kart öne gelince otomatik seslendirme (kapatılabilir) + 🔊 butonu.
 // ⭐ Kaydet → Kelime Defteri, 🎓 Biliyorum → Öğrendiklerim (app.js ile aynı depolar).
 import { shuffle } from './logic.js';
+import { seslendirDurdur } from './efekt.js';
 
 const SES_KEY = 'yds-akis-ses';
 const otoSesYukle = () => { try { return localStorage.getItem(SES_KEY) !== '0'; } catch { return true; } };
@@ -163,7 +164,7 @@ export function kurKelimeAkisi(api) {
   function temizle() {
     [sentinelGozlemci, aktifGozlemci].forEach(o => { if (o) o.disconnect(); });
     sentinelGozlemci = aktifGozlemci = null;
-    try { window.speechSynthesis && speechSynthesis.cancel(); } catch {}
+    seslendirDurdur();
   }
 
   return { ac, temizle };

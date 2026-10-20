@@ -52,13 +52,31 @@ export function ses(tip) {
   } catch (_) {}
 }
 
-// ---- Telaffuz (İngilizce; Web Speech API) ----
+// ---- Telaffuz (İngilizce) ----
+// Android WebView'de Web Speech API sessiz kalır; uygulamada yerel TTS eklentisi
+// (@capacitor-community/text-to-speech) kullanılır, PWA/tarayıcıda Web Speech'e düşer.
 export function seslendir(text) {
+  text = String(text || '').trim();
+  if (!text) return;
   try {
+    const T = window.Capacitor?.Plugins?.TextToSpeech;
+    if (T) {
+      Promise.resolve(T.stop?.()).catch(() => {})
+        .then(() => T.speak({ text, lang: 'en-US', rate: 0.9, pitch: 1, volume: 1, category: 'ambient' }))
+        .catch(() => {});
+      return;
+    }
     if (!window.speechSynthesis) return;
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'en-US'; u.rate = 0.92;
     speechSynthesis.cancel(); speechSynthesis.speak(u);
+  } catch (_) {}
+}
+export function seslendirDurdur() {
+  try {
+    const T = window.Capacitor?.Plugins?.TextToSpeech;
+    if (T) { Promise.resolve(T.stop?.()).catch(() => {}); return; }
+    window.speechSynthesis && speechSynthesis.cancel();
   } catch (_) {}
 }
 
