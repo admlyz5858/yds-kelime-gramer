@@ -1,0 +1,40 @@
+name: Gizlilik Sayfası (GitHub Pages)
+
+# Yalnızca docs/gizlilik/ yayınlanır (diğer dokümanlar paketlenmez).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['docs/gizlilik/**', '.github/workflows/pages.yml']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  yayinla:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Site klasörünü hazırla
+        run: |
+          mkdir -p _site/gizlilik
+          cp docs/gizlilik/index.html _site/gizlilik/index.html
+          printf '<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=gizlilik/"><title>YDS Çalışma Defteri</title><a href="gizlilik/">Gizlilik Politikası</a>' > _site/index.html
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
