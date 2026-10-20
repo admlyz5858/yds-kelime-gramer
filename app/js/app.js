@@ -6,7 +6,7 @@ import { kurKelimeAkisi } from './akis.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
-const SURUM = '1.1.4';
+const SURUM = '1.1.5';
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
 const geriBtn = document.getElementById('geri');
