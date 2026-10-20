@@ -3,10 +3,11 @@ import { searchLessons, toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr, 
 import { loadProgress, saveProgress, loadDefter, saveDefter, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar, loadOgrenilen, saveOgrenilen, loadSRS, saveSRS } from './storage.js';
 import { kurKelimeOgren } from './ogren.js';
 import { kurKelimeAkisi } from './akis.js';
+import { kurEslestirme } from './eslestir.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
-const SURUM = '1.1.6';
+const SURUM = '1.2.0';
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
 const geriBtn = document.getElementById('geri');
@@ -109,6 +110,11 @@ async function anaSayfa() {
     <button class="akis-banner" id="hAkis">
       <span class="ogren-banner-ikon">🎬</span>
       <span class="ogren-banner-metin"><b>Kelime Akışı</b><i>Yukarı kaydır · Reels tarzı hızlı kelime akışı</i></span>
+      <span class="ogren-banner-ok">›</span>
+    </button>
+    <button class="es-banner" id="hEslestir">
+      <span class="ogren-banner-ikon">🧩</span>
+      <span class="ogren-banner-metin"><b>Eşleştirme Oyunu</b><i>${esc(esOzetMetni())}</i></span>
       <span class="akis-banner-yeni">YENİ</span>
       <span class="ogren-banner-ok">›</span>
     </button>
@@ -131,6 +137,7 @@ async function anaSayfa() {
   if (sk) sk.onclick = sinavAyarAc;
   document.getElementById('hOgren').onclick = () => kelimeOgren.ac();
   document.getElementById('hAkis').onclick = () => kelimeAkisi.ac();
+  document.getElementById('hEslestir').onclick = () => eslestirme.ac();
   document.getElementById('hUniteler').onclick = cekmeceAc;
   document.getElementById('hDefter').onclick = defterAc;
   document.getElementById('hOgrenilen').onclick = ogrenilenAc;
@@ -294,6 +301,17 @@ const kelimeAkisi = kurKelimeAkisi({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, anaSayfa, ekranModu,
   seslendir, paylas, titre, havuzYukle, defterdeMi, defterToggle, ogrenildiMi, ogrenildiEkle,
 });
+
+// "Eşleştirme" — EN↔TR eşleştirme oyunu: bölümler, günlük bulmaca, düello, yerel rekorlar (ayrı modül)
+const eslestirme = kurEslestirme({
+  render, esc, gunKaydet, anaSayfa, ekranModu, paylas, titre, ses, konfeti, toast,
+  havuzYukle, defterdeMi, defterToggle,
+});
+function esOzetMetni() {
+  const o = eslestirme.ozet();
+  if (o.devam) return `Bölüm ${o.devam.bolum + 1} · Seviye ${o.devam.seviye + 1}/6 kaldığın yerden`;
+  return `Bölüm ${o.bolum} · ${o.gunlukOynandi ? 'günün bulmacası ✓' : 'günün bulmacası seni bekliyor'}`;
+}
 
 // Task 11: Ders okuma ekranı
 function ekranOku() {
@@ -819,6 +837,7 @@ function yardimAc() {
   modalAc('Nasıl çalışılır?', `
     <div class="yardim-sat"><span>📖</span><div><b>Oku</b> — Konu anlatımı şeması, edat kartları ve etkileşimli örnekler: cümlede kelimeye dokun → anlam, 🔊 telaffuz, 📓 Öğren.</div></div>
     <div class="yardim-sat"><span>🎴</span><div><b>Kelime</b> — Yukarı kaydır; karta dokun → anlam, 🔊 telaffuz. ⭐ Kaydet → Kelime Defteri, 🎓 Biliyorum → Öğrendiklerim.</div></div>
+    <div class="yardim-sat"><span>🧩</span><div><b>Eşleştirme</b> — İngilizce↔Türkçe eşleştir; 6 seviyeli bölümler (5 → 8 → 10 kelime, sonra süreli), Günün Eşleştirmesi, arkadaşınla düello, rekorlar.</div></div>
     <div class="yardim-sat"><span>🌱</span><div><b>Kelime Öğren</b> — Aralıklı tekrar: kelimeler unutulmadan önce tekrar gelir; kart, test, yazım ve boşluk modları.</div></div>
     <div class="yardim-sat"><span>🧠</span><div><b>Quiz</b> — Test 1’den başla, kolaydan zora. Her testin skoru ve ✓’si saklanır.</div></div>
     <div class="yardim-sat"><span>✍️</span><div><b>Boşluk</b> — Cümledeki boşluğa doğru kelimeyi seç; cevap sonrası cümle etkileşimli olur.</div></div>
@@ -1050,6 +1069,7 @@ function basarimlar() {
   const top = _ayar.toplamAktivite || 0;
   const enSeri = _ayar.enUzunSeri || 0;
   const tamTest = Object.values(_istat).filter(x => x.dogru === x.toplam).length;
+  const es = eslestirme.istat();
   return [
     { ikon: '🌱', ad: 'İlk Adım', desc: 'İlk çalışmanı yap', ok: top >= 1 },
     { ikon: '⚡', ad: 'Isınma', desc: '50 aktivite tamamla', ok: top >= 50 },
@@ -1061,6 +1081,10 @@ function basarimlar() {
     { ikon: '🎯', ad: 'Kusursuz', desc: 'Bir testi %100 çöz', ok: tamTest >= 1 },
     { ikon: '🧠', ad: 'Test Ustası', desc: '5 test tamamla', ok: s.cozTest >= 5 },
     { ikon: '✨', ad: 'Tertemiz', desc: 'Tüm yanlışlarını temizle', ok: s.cozTest > 0 && s.yanlis === 0 },
+    { ikon: '🧩', ad: 'Eşleştirici', desc: 'Bir eşleştirme bölümünü bitir', ok: es.bitenBolum >= 1 },
+    { ikon: '🌟', ad: 'Üç Yıldız', desc: 'Bir bölümü 3 yıldızla bitir', ok: es.ucYildiz >= 1 },
+    { ikon: '📅', ad: 'Bulmacacı', desc: '5 günün eşleştirmesini çöz', ok: es.gunlukSayi >= 5 },
+    { ikon: '⚔️', ad: 'Düellocu', desc: 'Bir düello kazan', ok: es.duelloKazanilan >= 1 },
   ];
 }
 // --- Günün kelimesi ---

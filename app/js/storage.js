@@ -82,3 +82,15 @@ export function loadAyar() {
 export function saveAyar(ayar) {
   localStorage.setItem(AKEY, JSON.stringify(ayar));
 }
+
+// ===== Eşleştirme oyunu — bölüm ilerlemesi, rekorlar, günlük bulmaca, düello =====
+const EKEY = 'yds-eslestir-v1';
+
+export function loadEslestir() {
+  try { return JSON.parse(localStorage.getItem(EKEY)) || null; }
+  catch { return null; }
+}
+
+export function saveEslestir(d) {
+  localStorage.setItem(EKEY, JSON.stringify(d));
+}
