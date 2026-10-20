@@ -7,7 +7,7 @@ import { kurEslestirme } from './eslestir.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
-const SURUM = '1.2.0';
+const SURUM = '1.2.1';
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
 const geriBtn = document.getElementById('geri');
@@ -83,7 +83,7 @@ async function favoriTasi() {
 async function anaSayfa() {
   aktifDers = null;
   geriBtn.hidden = true; menuBtn.hidden = false; altMenu.hidden = true;
-  baslikEl.textContent = 'Çalışma Defteri';
+  baslikEl.textContent = 'Kelimetre';
   if (!manifest) manifest = await getJSON('data/manifest.json');
   await gununKelimesiYukle();
   await favoriTasi();
@@ -94,44 +94,37 @@ async function anaSayfa() {
       <div class="hizli-devam-bas">${esc(son.baslik)}</div></div>
       <span class="ok">›</span>
     </button>` : '';
-  const n = defterKelimeler().length, ny = _yanlis.length;
   const koyu = _ayar.tema === 'koyu';
   render(`
     ${panoHTML()}
-    ${sinavKartHTML()}
-    ${gorevKartHTML()}
-    ${gununKartHTML()}
+    <div class="ana-satir">${sinavKartHTML()}${gununKartHTML()}</div>
     ${devam}
-    <button class="ogren-banner" id="hOgren">
+    <button class="ogren-banner kompakt" id="hOgren">
       <span class="ogren-banner-ikon">🌱</span>
-      <span class="ogren-banner-metin"><b>Kelime Öğren</b><i>Tüm kelimeler · aralıklı tekrarla kalıcı öğren</i></span>
+      <span class="ogren-banner-metin"><b>Kelime Öğren</b><i>Aralıklı tekrarla kalıcı öğren</i></span>
       <span class="ogren-banner-ok">›</span>
     </button>
-    <button class="akis-banner" id="hAkis">
+    <button class="akis-banner kompakt" id="hAkis">
       <span class="ogren-banner-ikon">🎬</span>
-      <span class="ogren-banner-metin"><b>Kelime Akışı</b><i>Yukarı kaydır · Reels tarzı hızlı kelime akışı</i></span>
+      <span class="ogren-banner-metin"><b>Kelime Akışı</b><i>Yukarı kaydır, dinle, kaydet</i></span>
       <span class="ogren-banner-ok">›</span>
     </button>
-    <button class="es-banner" id="hEslestir">
+    <button class="es-banner kompakt" id="hEslestir">
       <span class="ogren-banner-ikon">🧩</span>
-      <span class="ogren-banner-metin"><b>Eşleştirme Oyunu</b><i>${esc(esOzetMetni())}</i></span>
-      <span class="akis-banner-yeni">YENİ</span>
+      <span class="ogren-banner-metin"><b>Eşleştirme</b><i>${esc(esOzetMetni())}</i></span>
       <span class="ogren-banner-ok">›</span>
     </button>
-    <div class="hizli-baslik">Hızlı erişim</div>
-    <div class="hizli-grid">
-      <button class="hizli-kart vurgu" id="hUniteler"><span class="hizli-ikon">📚</span><b>Üniteler</b><i>Müfredat menüsü</i></button>
-      <button class="hizli-kart" id="hDefter"><span class="hizli-ikon">📓</span><b>Kelime Defteri</b><i>${n} kelime</i></button>
-      <button class="hizli-kart" id="hOgrenilen"><span class="hizli-ikon">🎓</span><b>Öğrendiklerim</b><i>${ogrenilenler().length} kelime</i></button>
-      <button class="hizli-kart" id="hYanlis"><span class="hizli-ikon">❌</span><b>Yanlışlarım</b><i>${ny} soru</i></button>
-      <button class="hizli-kart" id="hIlerleme"><span class="hizli-ikon">📊</span><b>İlerleme</b><i>Seviye · seri · ısı haritası</i></button>
-      <button class="hizli-kart" id="hTema"><span class="hizli-ikon">${koyu ? '☀️' : '🌙'}</span><b>${koyu ? 'Açık tema' : 'Koyu tema'}</b><i>Görünümü değiştir</i></button>
+    <div class="hizli-grid uc">
+      <button class="hizli-kart vurgu" id="hUniteler"><span class="hizli-ikon">📚</span><b>Üniteler</b></button>
+      <button class="hizli-kart" id="hIlerleme"><span class="hizli-ikon">📊</span><b>İlerleme</b></button>
+      <button class="hizli-kart" id="hTema"><span class="hizli-ikon">${koyu ? '☀️' : '🌙'}</span><b>${koyu ? 'Açık tema' : 'Koyu tema'}</b></button>
     </div>
   `);
   icerik.querySelectorAll('[data-git]').forEach(c => c.onclick = () => {
     if (c.dataset.git === 'defter') defterAc();
     else if (c.dataset.git === 'yanlis') yanlisAc();
     else if (c.dataset.git === 'ogrenilen') ogrenilenAc();
+    else if (c.dataset.git === 'ilerleme') ilerlemeAc();
   });
   const sk = document.getElementById('sinavKartBtn');
   if (sk) sk.onclick = sinavAyarAc;
@@ -139,9 +132,6 @@ async function anaSayfa() {
   document.getElementById('hAkis').onclick = () => kelimeAkisi.ac();
   document.getElementById('hEslestir').onclick = () => eslestirme.ac();
   document.getElementById('hUniteler').onclick = cekmeceAc;
-  document.getElementById('hDefter').onclick = defterAc;
-  document.getElementById('hOgrenilen').onclick = ogrenilenAc;
-  document.getElementById('hYanlis').onclick = yanlisAc;
   document.getElementById('hIlerleme').onclick = ilerlemeAc;
   document.getElementById('hTema').onclick = () => { temaDegistir(); anaSayfa(); };
   const gb = document.getElementById('gununBtn');
@@ -153,14 +143,7 @@ async function anaSayfa() {
 function gununKartHTML() {
   const w = gununKelimesi();
   if (!w) return '';
-  return `<button class="gunun-kart" id="gununBtn">
-      <div class="gunun-sol">
-        <div class="gunun-et">📅 Günün Kelimesi</div>
-        <div class="gunun-bas">${esc(w.en)}</div>
-        <div class="gunun-altt">${esc(w.tr)}</div>
-      </div>
-      <span class="gunun-ok">→</span>
-    </button>`;
+  return `<button class="mini-kart gunun" id="gununBtn"><small>Günün kelimesi</small><b>${esc(w.en)}</b><i>${esc(w.tr)}</i></button>`;
 }
 
 // Müfredat çekmecesi (soldan açılan ünite listesi)
@@ -814,8 +797,8 @@ function girisEkrani(zorla) {
   o.innerHTML = `
     <div class="giris-ic">
       <div class="giris-amblem">📖</div>
-      <div class="giris-baslik">Çalışma Defteri</div>
-      <div class="giris-alt">YDS · YÖKDİL İngilizce</div>
+      <div class="giris-baslik">Kelimetre</div>
+      <div class="giris-alt">YDS · YÖKDİL kelime &amp; gramer</div>
       <div class="giris-ozellik">
         <div class="giris-sat"><span>🎬</span><div><b>Kelime Akışı</b><i>Yukarı kaydır, dokun, dinle — Reels tarzı</i></div></div>
         <div class="giris-sat"><span>🌱</span><div><b>Aralıklı tekrar</b><i>Unutmadan önce tekrar, kalıcı öğren</i></div></div>
@@ -892,7 +875,7 @@ function ayarAc() {
     <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>Biriken yanlış soruları sıfırla</i></div></button>
     <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>Eklenen kelimeleri sil</i></div></button>
     <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Test skorları, defter, yanlışlar — hepsi</i></div></button>
-    <div class="ayar-hakkinda">Çalışma Defteri · YDS/YÖKDİL · v${SURUM}</div>
+    <div class="ayar-hakkinda">Kelimetre · YDS/YÖKDİL · v${SURUM}</div>
   `, {
     onWire: (o, kapat) => {
       o.querySelectorAll('.ayar-sat').forEach(b => b.onclick = () => {
@@ -1054,12 +1037,8 @@ function temaUygula() {
   const mt = document.querySelector('meta[name="theme-color"]');
   if (mt) mt.content = koyu ? '#0f1114' : '#f1f3f5';
   // Mobil (Capacitor): native durum çubuğunu da temaya uydur (PWA/tarayıcıda atlanır)
-  const SB = window.Capacitor?.Plugins?.StatusBar;
-  if (SB) {
-    SB.setOverlaysWebView?.({ overlay: false }).catch?.(() => {});
-    SB.setBackgroundColor?.({ color: koyu ? '#0f1114' : '#f1f3f5' }).catch?.(() => {});
-    SB.setStyle?.({ style: koyu ? 'DARK' : 'LIGHT' }).catch?.(() => {});
-  }
+  const K = window.Capacitor?.Plugins?.Kenar;
+  if (K) K.renk({ renk: koyu ? '#0f1114' : '#f1f3f5', koyu }).catch?.(() => {});
 }
 function temaDegistir() { _ayar.tema = _ayar.tema === 'koyu' ? 'acik' : 'koyu'; saveAyar(_ayar); temaUygula(); }
 
@@ -1138,32 +1117,29 @@ function panoHTML() {
   const r = 34, cevre = 2 * Math.PI * r;
   const oran = Math.min(1, s.hedef ? s.bugun / s.hedef : 0);
   const dolu = cevre * oran, tamam = s.bugun >= s.hedef;
-  const seriYazi = s.seri > 0 ? `🔥 ${s.seri} günlük seri` : '🔥 Bugün seriyi başlat';
-  const dondurmaRozet = s.dondurma > 0 ? `<span class="pano-buz" title="Seri dondurma: bir gün kaçırırsan serin korunur">🧊 ${s.dondurma}</span>` : '';
+  const seriYazi = s.seri > 0 ? `🔥 ${s.seri} gün` : '🔥 seriyi başlat';
+  const dondurmaRozet = s.dondurma > 0 ? `<span class="pano-buz" title="Seri dondurma">🧊 ${s.dondurma}</span>` : '';
+  const gorevler = gorevListesi(), bitenGorev = gorevler.filter(g => g.bitti).length;
   return `<div class="pano">
     <div class="pano-ust">
-      <div>
-        <div class="pano-selam"><span class="pano-sv">⭐ Sv ${s.seviye}</span></div>
-        <div class="pano-seri ${s.seri > 0 ? 'aktif' : ''}">${seriYazi} ${dondurmaRozet}</div>
+      <div class="pano-sol">
+        <div class="pano-selam"><span class="pano-sv">⭐ Sv ${s.seviye}</span><span class="pano-seri ${s.seri > 0 ? 'aktif' : ''}">${seriYazi}</span>${dondurmaRozet}</div>
         <div class="pano-xp"><div class="pano-xp-ic" style="width:${Math.round(s.svOran * 100)}%"></div></div>
         <div class="pano-xp-et">${s.svBu} / ${s.svGerek} XP · sonraki seviye</div>
       </div>
-      <div class="pano-sag">
-        <button class="pano-ogr" data-git="ogrenilen"><b>🎓 ${s.ogrenilen}</b><span>öğrenilen</span></button>
-        <div class="pano-ring ${tamam ? 'tamam' : ''}">
-          <svg viewBox="0 0 80 80" width="76" height="76">
-            <circle class="ring-arka" cx="40" cy="40" r="${r}"/>
-            <circle class="ring-on" cx="40" cy="40" r="${r}" stroke-dasharray="${dolu.toFixed(1)} ${cevre.toFixed(1)}" transform="rotate(-90 40 40)"/>
-          </svg>
-          <div class="pano-ring-yazi">${tamam ? '<b class="ring-tik">✓</b>' : `<b>${s.bugun}</b>`}<span>${tamam ? 'hedef!' : '/' + s.hedef + ' bugün'}</span></div>
-        </div>
+      <div class="pano-ring ${tamam ? 'tamam' : ''}">
+        <svg viewBox="0 0 80 80" width="68" height="68">
+          <circle class="ring-arka" cx="40" cy="40" r="${r}"/>
+          <circle class="ring-on" cx="40" cy="40" r="${r}" stroke-dasharray="${dolu.toFixed(1)} ${cevre.toFixed(1)}" transform="rotate(-90 40 40)"/>
+        </svg>
+        <div class="pano-ring-yazi">${tamam ? '<b class="ring-tik">✓</b>' : `<b>${s.bugun}</b>`}<span>${tamam ? 'hedef!' : '/' + s.hedef}</span></div>
       </div>
     </div>
     <div class="pano-stat">
-      <div class="pano-cip dur"><b>%${s.yuzde}</b><span>✔ Başarı</span></div>
+      <button class="pano-cip" data-git="ogrenilen"><b>${s.ogrenilen}</b><span>🎓 Öğrenilen</span></button>
       <button class="pano-cip" data-git="defter"><b>${s.defter}</b><span>📓 Defter</span></button>
       <button class="pano-cip" data-git="yanlis"><b>${s.yanlis}</b><span>❌ Yanlış</span></button>
-      <div class="pano-cip dur"><b>${s.cozTest}</b><span>📝 Test</span></div>
+      <button class="pano-cip" data-git="ilerleme"><b>${bitenGorev}/${gorevler.length}</b><span>🎮 Görev</span></button>
     </div>
   </div>`;
 }
@@ -1177,26 +1153,18 @@ function _tarihFark(iso) {     // bugünden hedef tarihe kalan tam gün
 }
 function sinavKartHTML() {
   if (!_ayar.sinavTarih) {
-    return `<button class="sinav-kart ekle" id="sinavKartBtn">
-      <span class="sinav-ikon">📅</span>
-      <span class="sinav-metin"><b>Sınav tarihini ekle</b><i>YDS/YÖKDİL'e kalan günü ve günlük planı gör</i></span>
-      <span class="ogren-banner-ok">＋</span></button>`;
+    return `<button class="mini-kart sinav" id="sinavKartBtn"><small>Sınav</small><b>📅 Tarih ekle</b><i>geri sayım ve günlük plan</i></button>`;
   }
   const kalan = _tarihFark(_ayar.sinavTarih);
   if (kalan < 0) {
-    return `<button class="sinav-kart" id="sinavKartBtn">
-      <span class="sinav-ikon">📅</span>
-      <span class="sinav-metin"><b>Sınav günü geçti</b><i>Yeni bir hedef tarih eklemek için dokun</i></span>
-      <span class="ogren-banner-ok">›</span></button>`;
+    return `<button class="mini-kart sinav" id="sinavKartBtn"><small>Sınav</small><b>Günü geçti</b><i>yeni tarih ekle</i></button>`;
   }
   const toplamKelime = _havuz ? _havuz.length : 0;
   const kalanKelime = Math.max(0, toplamKelime - ogrenilenler().length);
   const gunluk = kalan > 0 ? Math.ceil(kalanKelime / kalan) : kalanKelime;
   const plan = kalan > 0 && kalanKelime > 0 ? `Hedefe yetişmek için günde ~<b>${gunluk}</b> kelime` : (kalanKelime === 0 ? 'Tüm kelimeleri çalıştın 🎉' : 'Bugün son gün — bol tekrar!');
-  return `<button class="sinav-kart" id="sinavKartBtn">
-    <div class="sinav-sayi"><b>${kalan}</b><span>gün</span></div>
-    <span class="sinav-metin"><b>Sınava kalan</b><i>${plan}</i></span>
-    <span class="ogren-banner-ok">›</span></button>`;
+  const planKisa = kalan > 0 && kalanKelime > 0 ? `günde ~${gunluk} kelime` : (kalanKelime === 0 ? 'hepsi çalışıldı 🎉' : 'bugün son gün');
+  return `<button class="mini-kart sinav" id="sinavKartBtn"><small>Sınava kalan</small><b>${kalan} gün</b><i>${planKisa}</i></button>`;
 }
 function sinavAyarAc() {
   const mevcut = _ayar.sinavTarih || '';
@@ -1271,6 +1239,13 @@ function ilerlemeAc() {
       <div class="basarim-ad">${esc(x.ad)}</div>
       <div class="basarim-desc">${esc(x.desc)}</div></div>`).join('');
   modalAc('İlerleme', `
+    ${gorevKartHTML()}
+    <div class="ilerleme-cip-satir">
+      <div class="ilerleme-cip"><b>%${s.yuzde}</b><span>test başarısı</span></div>
+      <div class="ilerleme-cip"><b>📝 ${s.cozTest}</b><span>çözülen test</span></div>
+      <div class="ilerleme-cip"><b>🎓 ${s.ogrenilen}</b><span>öğrenilen</span></div>
+      <div class="ilerleme-cip"><b>📓 ${s.defter}</b><span>defter</span></div>
+    </div>
     <div class="ilerleme-sv">
       <div class="ilerleme-sv-bas"><b>⭐ Seviye ${s.seviye}</b><span>${s.xp} XP toplam</span></div>
       <div class="pano-xp"><div class="pano-xp-ic" style="width:${Math.round(s.svOran * 100)}%"></div></div>
@@ -1290,8 +1265,8 @@ function ilerlemeAc() {
   `, {
     onWire: (o) => {
       o.querySelector('#paylasBtn').onclick = async () => {
-        const metin = `📚 YDS Çalışma Defteri ilerlemem:\n⭐ Seviye ${s.seviye} · 🔥 ${s.seri} günlük seri\n🎓 ${s.ogrenilen} kelime öğrendim, %${s.yuzde} test başarısı.\nSen de çalış!`;
-        const sonuc = await paylas({ baslik: 'YDS Çalışma ilerlemem', metin });
+        const metin = `📏 Kelimetre · YDS ilerlemem:\n⭐ Seviye ${s.seviye} · 🔥 ${s.seri} günlük seri\n🎓 ${s.ogrenilen} kelime öğrendim, %${s.yuzde} test başarısı.\nSen de çalış!`;
+        const sonuc = await paylas({ baslik: 'Kelimetre ilerlemem', metin });
         if (sonuc === 'kopyalandi') toast('📋 İlerleme panoya kopyalandı');
         else if (sonuc === false) toast('Paylaşım bu cihazda desteklenmiyor');
       };

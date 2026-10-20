@@ -1,9 +1,9 @@
-# Play Console Mağaza Girişi — YDS Kelime ve Gramer
+# Play Console Mağaza Girişi — Kelimetre
 
 Bu dosya, Play Console'da kopyala-yapıştır yapacağın tüm metinleri ve form yanıtlarını içerir.
 
 ## Temel bilgiler
-- **Uygulama adı (max 30):** `YDS Kelime ve Gramer`
+- **Uygulama adı (max 30):** `Kelimetre: YDS & YÖKDİL Kelime` (30 karakter) · cihazda görünen ad: `Kelimetre`
 - **Paket adı:** `com.admlyz.ydsders`
 - **Kategori:** Eğitim (Education)
 - **Etiketler:** eğitim, dil öğrenme, İngilizce, sınav hazırlık
@@ -17,7 +17,7 @@ YDS/YÖKDİL: 2300+ kelime, Reels tarzı akış, eşleştirme oyunu, aralıklı 
 
 ## Tam açıklama (max 4000 karakter)
 ```
-YDS Kelime ve Gramer, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 14 ünite ve 2300'den fazla kelime tamamen ücretsiz.
+Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 14 ünite ve 2300'den fazla kelime tamamen ücretsiz.
 
 ÖNE ÇIKAN ÖZELLİKLER
 

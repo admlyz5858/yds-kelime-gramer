@@ -8,7 +8,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="manifest" href="manifest.webmanifest">
-  <title>YDS Çalışma</title>
+  <title>Kelimetre</title>
   <script>
     /* Önbellek/eski sürüm sorununu kökten önle: her açılışta SW'leri kaldır, cache temizle */
     if ('serviceWorker' in navigator) {
@@ -16,7 +16,7 @@
     }
     if (window.caches) { caches.keys().then(ks => ks.forEach(k => caches.delete(k))).catch(() => {}); }
   </script>
-  <link rel="stylesheet" href="css/style.css?v=62">
+  <link rel="stylesheet" href="css/style.css?v=63">
 </head>
 <body>
   <header id="ust-bar">
@@ -35,6 +35,6 @@
     <button data-ekran="quiz"><span class="nav-ikon">🧠</span><span class="nav-etiket">Quiz</span></button>
     <button data-ekran="bosluk"><span class="nav-ikon">✍️</span><span class="nav-etiket">Boşluk</span></button>
   </nav>
-  <script type="module" src="js/app.js?v=62"></script>
+  <script type="module" src="js/app.js?v=63"></script>
 </body>
 </html>

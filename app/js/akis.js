@@ -137,7 +137,7 @@ export function kurKelimeAkisi(api) {
         const db = kart.querySelector('[data-akt="defter"]');
         if (db) { db.classList.remove('aktif'); db.querySelector('.akis-rikon').textContent = '☆'; }
       } else if (akt === 'paylas') {
-        paylas({ baslik: w.en, metin: `${w.en} — ${w.tr}${w.ornek_tr ? '\n"' + w.ornek_tr + '"' : ''}\n\n📚 YDS Çalışma Defteri` });
+        paylas({ baslik: w.en, metin: `${w.en} — ${w.tr}${w.ornek_tr ? '\n"' + w.ornek_tr + '"' : ''}\n\n📏 Kelimetre · YDS` });
       }
     });
   }

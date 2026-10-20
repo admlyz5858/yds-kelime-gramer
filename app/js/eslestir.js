@@ -226,7 +226,7 @@ export function kurEslestirme(api) {
     `);
     document.getElementById('esRekorPaylas').onclick = async () => {
       const toplamYildiz = Object.values(durum.bolumler).reduce((s, b) => s + (b.yildiz || 0), 0);
-      const metin = `🏆 YDS Eşleştirme rekorlarım\n${tum[0] ? `En iyi bölüm: ${tum[0].skor} puan (Bölüm ${tum[0].bolum + 1})\n` : ''}⭐ ${toplamYildiz} yıldız · ${Object.keys(durum.bolumler).length} bölüm · 📅 ${gunler.length} günlük bulmaca\n📚 YDS Çalışma Defteri`;
+      const metin = `🏆 YDS Eşleştirme rekorlarım\n${tum[0] ? `En iyi bölüm: ${tum[0].skor} puan (Bölüm ${tum[0].bolum + 1})\n` : ''}⭐ ${toplamYildiz} yıldız · ${Object.keys(durum.bolumler).length} bölüm · 📅 ${gunler.length} günlük bulmaca\n📏 Kelimetre · YDS`;
       const r = await paylas({ baslik: 'Eşleştirme rekorlarım', metin });
       if (r === 'kopyalandi') toast('📋 Panoya kopyalandı');
     };
@@ -435,7 +435,7 @@ export function kurEslestirme(api) {
     const sn = document.getElementById('esSonraki'); if (sn) sn.onclick = () => bolumBasla(k + 1);
     document.getElementById('esTekrarB').onclick = () => bolumBasla(k);
     document.getElementById('esPaylas').onclick = async () => {
-      const r = await paylas({ baslik: 'Eşleştirme', metin: `🧩 YDS Eşleştirme · Bölüm ${k + 1} tamamlandı\n${'⭐'.repeat(yildiz)} ${toplam} puan · ${oyun.yanlis.length} karıştırma\n📚 YDS Çalışma Defteri` });
+      const r = await paylas({ baslik: 'Eşleştirme', metin: `🧩 YDS Eşleştirme · Bölüm ${k + 1} tamamlandı\n${'⭐'.repeat(yildiz)} ${toplam} puan · ${oyun.yanlis.length} karıştırma\n📏 Kelimetre · YDS` });
       if (r === 'kopyalandi') toast('📋 Panoya kopyalandı');
     };
     wireCipler(tumKelimeler);
@@ -484,14 +484,14 @@ export function kurEslestirme(api) {
   }
   async function gunlukPaylas(g) {
     const t = bugun();
-    const metin = `🧩 YDS Günün Eşleştirmesi · ${t.slice(8)}.${t.slice(5, 7)}\n${g.izgara}\n${g.skor} puan${g.kalan ? ` · ⏱ ${g.kalan} sn kaldı` : ''}\n📚 YDS Çalışma Defteri`;
+    const metin = `🧩 YDS Günün Eşleştirmesi · ${t.slice(8)}.${t.slice(5, 7)}\n${g.izgara}\n${g.skor} puan${g.kalan ? ` · ⏱ ${g.kalan} sn kaldı` : ''}\n📏 Kelimetre · YDS`;
     const r = await paylas({ baslik: 'Günün Eşleştirmesi', metin });
     if (r === 'kopyalandi') toast('📋 Panoya kopyalandı');
   }
   async function duelloPaylas(k) {
     const metin = k.rakip == null
-      ? `⚔️ YDS Eşleştirme Düellosu!\nKod: ${k.kod} · Skorum: ${k.skorum}\nUygulamada Eşleştirme → 🔑 Kod gir → beni geç!\n📚 YDS Çalışma Defteri`
-      : `⚔️ YDS Eşleştirme Düellosu · Kod ${k.kod}\nBen ${k.skorum} · Sen ${k.rakip} → ${k.skorum > k.rakip ? 'kazandım 🏆' : k.skorum === k.rakip ? 'berabere 🤝' : 'sen kazandın 😅'}\n📚 YDS Çalışma Defteri`;
+      ? `⚔️ YDS Eşleştirme Düellosu!\nKod: ${k.kod} · Skorum: ${k.skorum}\nUygulamada Eşleştirme → 🔑 Kod gir → beni geç!\n📏 Kelimetre · YDS`
+      : `⚔️ YDS Eşleştirme Düellosu · Kod ${k.kod}\nBen ${k.skorum} · Sen ${k.rakip} → ${k.skorum > k.rakip ? 'kazandım 🏆' : k.skorum === k.rakip ? 'berabere 🤝' : 'sen kazandın 😅'}\n📏 Kelimetre · YDS`;
     const r = await paylas({ baslik: 'Düello', metin });
     if (r === 'kopyalandi') toast('📋 Panoya kopyalandı');
   }

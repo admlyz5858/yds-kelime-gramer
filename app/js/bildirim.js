@@ -27,7 +27,7 @@ export async function gunlukKur(saat, mesaj) {
     await LN.schedule({
       notifications: [{
         id: BILDIRIM_ID,
-        title: 'YDS Çalışma Defteri',
+        title: 'Kelimetre',
         body: mesaj || 'Bugünkü kelimeler seni bekliyor 🌱 Serini koru!',
         schedule: { on: { hour: sa, minute: dk }, repeats: true, allowWhileIdle: true },
         smallIcon: 'ic_launcher',
