@@ -4,6 +4,7 @@
 // süre dolarsa −10 ve yeni kelimelerle tekrar. Günün Eşleştirmesi (tarih tohumlu), Düello (kodla), yerel rekorlar.
 import { loadEslestir, saveEslestir } from './storage.js';
 import { gunStr } from './logic.js';
+import { cihazId, skorGonder, liderAl, takmaAdDegistir, ligdenAyril, adGecerli } from './lig.js';
 
 // ======================================================= SAF MANTIK (test edilebilir)
 export function mulberry32(seed) {
@@ -119,7 +120,7 @@ export function kurEslestirme(api) {
   const { render, esc, gunKaydet, anaSayfa, ekranModu, paylas, titre, ses, konfeti, toast, havuzYukle, defterdeMi, defterToggle } = api;
 
   let sirali = null, durum = null, oyun = null, sayac = null;
-  const bosDurum = () => ({ surum: 1, bolumler: {}, acikBolum: 0, kayitlar: [], gunluk: {}, duello: [], toplamDogru: 0, toplamYanlis: 0, enIyiSeri: 0, devam: null });
+  const bosDurum = () => ({ surum: 1, bolumler: {}, acikBolum: 0, kayitlar: [], gunluk: {}, duello: [], toplamDogru: 0, toplamYanlis: 0, enIyiSeri: 0, devam: null, lig: null });
   const kaydet = () => saveEslestir(durum);
   async function yukle() {
     if (!sirali) sirali = zorlukSirala(await havuzYukle());
@@ -163,7 +164,10 @@ export function kurEslestirme(api) {
       <div class="es-hero">
         <div><div class="es-hero-et">🧩 Kelime eşleştir · kolaydan zora</div><div class="es-hero-bas">Eşleştirme</div>
           <div class="es-hero-alt">${Object.keys(durum.bolumler).length}/${bolumAdet()} bölüm · ⭐ ${toplamYildiz}${enIyi ? ` · rekor <b>${enIyi.skor}</b>` : ''}</div></div>
-        <button class="es-rekor-btn" id="esRekorlar">🏆<span>Rekorlar</span></button>
+        <div class="es-hero-btnler">
+          <button class="es-rekor-btn" id="esRekorlar">🏆<span>Rekorlar</span></button>
+          <button class="es-rekor-btn lig" id="esLig">🌍<span>${durum.lig && durum.lig.ad ? 'Lig' : 'Lige katıl'}</span></button>
+        </div>
       </div>
 
       <button class="es-gunluk ${g ? 'oynandi' : ''}" id="esGunluk">
@@ -188,6 +192,7 @@ export function kurEslestirme(api) {
         <p>Doğru <b>+10</b> (3 seri sonrası <b>15</b>, 5 seri sonrası <b>20</b>), yanlış <b>−5</b>, hatasız seviye <b>+20</b>. Süreli seviyelerde kalan her saniye <b>+1</b>; süre dolarsa <b>−10</b> ve yeni kelimelerle tekrar.</p></div>
     `);
     document.getElementById('esRekorlar').onclick = cizRekorlar;
+    document.getElementById('esLig').onclick = () => cizLig('gunluk');
     document.getElementById('esGunluk').onclick = () => g ? gunlukPaylas(g) : gunlukBasla();
     const d = document.getElementById('esDevam'); if (d) d.onclick = devamEt;
     document.querySelectorAll('.es-bolum').forEach(b => b.onclick = () => {
@@ -411,6 +416,7 @@ export function kurEslestirme(api) {
     durum.kayitlar.push({ t: new Date().toISOString(), bolum: k, skor: toplam, yildiz });
     if (durum.kayitlar.length > 100) durum.kayitlar = durum.kayitlar.slice().sort((a, b) => b.skor - a.skor).slice(0, 100);
     kaydet();
+    ligeGonder({ tur: 'bolum', bolum: k, skor: toplam });
     gunKaydet(0, { bitir: true });
     if (rekor) { ses('kutlama'); titre('basari'); konfeti(); } else { ses('seviye'); titre('basari'); }
     const tumKelimeler = oyun.setler.flat().concat(oyun.havuz);
@@ -446,10 +452,12 @@ export function kurEslestirme(api) {
     if (mod === 'gunluk') {
       kayit = { skor: sonuc.puan, izgara: grid, kalan, tamam };
       durum.gunluk[t] = kayit; kaydet();
+      ligeGonder({ tur: 'gunluk', tarih: t, skor: sonuc.puan });
     } else {
       const kod = kodUret(oyun.seed, sonuc.puan);
       kayit = { kod, skorum: sonuc.puan, rakip: oyun.rakip, t: new Date().toISOString() };
       durum.duello.push(kayit); if (durum.duello.length > 50) durum.duello.shift(); kaydet();
+      ligeGonder({ tur: 'duello', skor: sonuc.puan });
     }
     if (tamam && sonuc.yanlis === 0) { ses('kutlama'); konfeti(); } else ses(tamam ? 'seviye' : 'yanlis');
     titre('basari');
@@ -486,6 +494,85 @@ export function kurEslestirme(api) {
       : `⚔️ YDS Eşleştirme Düellosu · Kod ${k.kod}\nBen ${k.skorum} · Sen ${k.rakip} → ${k.skorum > k.rakip ? 'kazandım 🏆' : k.skorum === k.rakip ? 'berabere 🤝' : 'sen kazandın 😅'}\n📚 YDS Çalışma Defteri`;
     const r = await paylas({ baslik: 'Düello', metin });
     if (r === 'kopyalandi') toast('📋 Panoya kopyalandı');
+  }
+
+  // ---------- ÇEVRİMİÇİ LİG ----------
+  const ligde = () => !!(durum.lig && durum.lig.ad);
+  function ligeGonder(kayit) {
+    if (!ligde()) return;
+    durum.lig.kuyruk = (durum.lig.kuyruk || []).concat([kayit]).slice(-30); kaydet();
+    kuyrukBosalt(kayit);
+  }
+  let _bosaltiyor = false;
+  async function kuyrukBosalt(sonKayit) {
+    if (_bosaltiyor || !ligde()) return; _bosaltiyor = true;
+    const cihaz = cihazId();
+    try {
+      while (durum.lig.kuyruk && durum.lig.kuyruk.length) {
+        const k = durum.lig.kuyruk[0];
+        try { await skorGonder({ cihaz, takma_ad: durum.lig.ad, tur: k.tur, bolum: k.bolum ?? null, tarih: k.tarih ?? null, skor: k.skor }); }
+        catch (e) { if (!(e && e.status >= 400 && e.status < 500)) throw e; }   // 4xx (tekrar/sahte) → düşür, ağ hatası → bekle
+        durum.lig.kuyruk.shift(); kaydet();
+      }
+      if (sonKayit && (sonKayit.tur === 'gunluk' || sonKayit.tur === 'bolum')) {
+        const tur = sonKayit.tur === 'gunluk' ? 'gunluk' : 'hafta';
+        const r = await liderAl(tur, cihaz);
+        if (r && r.benim) toast(`🌍 ${tur === 'gunluk' ? 'Bugün' : 'Bu hafta'} ${r.benim.sira}. sıradasın (${r.toplam} kişi)`);
+      }
+    } catch (_) { /* çevrimdışı: kuyruk kalır, sonraki açılışta denenir */ }
+    finally { _bosaltiyor = false; }
+  }
+  function ligKatil(ad) {
+    durum.lig = { ad, katilim: new Date().toISOString(), kuyruk: [] };
+    // mevcut rekorlar da sayılsın
+    for (const [k, b] of Object.entries(durum.bolumler)) durum.lig.kuyruk.push({ tur: 'bolum', bolum: Number(k), skor: b.enIyi });
+    const g = durum.gunluk[bugun()]; if (g) durum.lig.kuyruk.push({ tur: 'gunluk', tarih: bugun(), skor: g.skor });
+    kaydet(); kuyrukBosalt(null);
+  }
+  function cizLig(sekme) {
+    ekranModu('Çevrimiçi Lig', panelEkrani);
+    if (!ligde()) {
+      render(`<div class="es-sonuc"><div class="es-sonuc-amblem">🌍</div><div class="es-sonuc-bas">Lige katıl</div>
+        <div class="es-sonuc-alt">Takma adınla günün bulmacası, haftalık toplam puan ve en iyi bölüm sıralamalarına gir.</div>
+        <div class="es-sonuc-not">Sunucuya yalnızca <b>takma adın, skorların ve rastgele bir cihaz kimliği</b> gider; e-posta, isim veya başka kişisel veri yok. İstediğin an "Ligden ayrıl" ile tüm kayıtların silinir.</div></div>
+        <div class="ogr-yazim-alan"><input id="esAd" class="ogr-yazi-input" type="text" maxlength="16" autocomplete="off" placeholder="Takma ad (2–16 karakter)">
+        <button class="aksiyon" id="esKatil">🌍 Katıl</button></div>
+        <div id="esAdMsg" class="alt-bilgi" style="margin-top:10px;color:var(--kil)"></div>`);
+      const inp = document.getElementById('esAd');
+      const dene = () => { const ad = adGecerli(inp.value); if (!ad) { document.getElementById('esAdMsg').textContent = '2–16 karakter; harf, rakam, boşluk, _ . - kullanılabilir.'; titre('hata'); return; } ligKatil(ad); toast('🌍 Lige katıldın: ' + ad); cizLig('gunluk'); };
+      document.getElementById('esKatil').onclick = dene;
+      inp.onkeydown = (e) => { if (e.key === 'Enter') dene(); };
+      setTimeout(() => inp.focus(), 60);
+      return;
+    }
+    const sekmeler = [['gunluk', '📅 Bugün'], ['hafta', '📆 Bu hafta'], ['tum', '🏆 Tüm zamanlar']];
+    render(`<div class="es-lig-sekmeler">${sekmeler.map(([id, ad]) => `<button class="ogr-liste-cip ${sekme === id ? 'aktif' : ''}" data-s="${id}">${ad}</button>`).join('')}</div>
+      <div class="es-lig-aciklama">${sekme === 'gunluk' ? 'Bugünün bulmacasını çözenler (herkese aynı kelimeler)' : sekme === 'hafta' ? 'Bu hafta kazanılan toplam puan (Pazartesi sıfırlanır)' : 'En iyi tek bölüm skoru'}</div>
+      <div id="esLigListe"><div class="cumle"><div class="tr">Yükleniyor…</div></div></div>
+      <div class="btn-satir"><button class="aksiyon ikincil" id="esAdDegis">✏️ Takma ad: ${esc(durum.lig.ad)}</button><button class="aksiyon ikincil" id="esAyril">🚪 Ligden ayrıl</button></div>`);
+    document.querySelectorAll('.es-lig-sekmeler .ogr-liste-cip').forEach(b => b.onclick = () => cizLig(b.dataset.s));
+    document.getElementById('esAdDegis').onclick = () => {
+      const yeni = adGecerli(prompt('Yeni takma ad (2–16 karakter):', durum.lig.ad));
+      if (!yeni) return;
+      durum.lig.ad = yeni; kaydet();
+      takmaAdDegistir(cihazId(), yeni).then(() => toast('✏️ Takma ad güncellendi')).catch(() => toast('Çevrimdışı — sonraki skorla güncellenir'));
+      cizLig(sekme);
+    };
+    document.getElementById('esAyril').onclick = () => {
+      if (!confirm('Ligden ayrılınca sunucudaki tüm skorların silinir. Emin misin?')) return;
+      ligdenAyril(cihazId()).catch(() => {});
+      durum.lig = null; kaydet(); toast('🚪 Ligden ayrıldın, kayıtların silindi'); panelEkrani();
+    };
+    const cihaz = cihazId();
+    kuyrukBosalt(null).then(() => liderAl(sekme, cihaz)).then(r => {
+      const kut = document.getElementById('esLigListe'); if (!kut) return;
+      const liste = (r && r.liste) || [];
+      kut.innerHTML = (liste.length ? liste.map(x => `<div class="es-rekor-satir ${x.ben ? 'ben' : ''}"><span class="es-rekor-no">${x.sira <= 3 ? ['🥇', '🥈', '🥉'][x.sira - 1] : x.sira}</span><div><b>${esc(x.ad)}${x.ben ? ' <i>(sen)</i>' : ''}</b></div><span class="es-lig-skor">${x.skor}</span></div>`).join('')
+        : '<div class="cumle"><div class="tr">Henüz kayıt yok — ilk sen ol!</div></div>')
+        + (r && r.benim && r.benim.sira > 50 ? `<div class="es-lig-ben">Sen: ${r.benim.sira}. · ${r.benim.skor} puan · ${r.toplam} kişi</div>` : r && !r.benim ? `<div class="es-lig-ben">Bu listede henüz skorun yok${sekme === 'gunluk' ? ' — günün bulmacasını çöz' : ''}.</div>` : `<div class="es-lig-ben">${r.toplam} kişi</div>`);
+    }).catch(() => {
+      const kut = document.getElementById('esLigListe'); if (kut) kut.innerHTML = '<div class="cumle"><div class="tr">Lig yüklenemedi — internet bağlantını kontrol et.</div></div>';
+    });
   }
 
   function cikis() {

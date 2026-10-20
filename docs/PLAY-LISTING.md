@@ -68,3 +68,12 @@ Sınav başarısı için her gün biraz çalış — gerisini uygulama hatırlat
 https://admlyz5858.github.io/yds-kelime-gramer/gizlilik/
 ```
 (Kaynak: bu repodaki `docs/gizlilik/index.html`, GitHub Pages ile yayınlanır. Pages ayarı: Settings → Pages → Source: Deploy from a branch → Branch: `main`, Folder: `/docs`.)
+
+## Veri güvenliği formu (Play Console → Uygulama içeriği → Veri güvenliği)
+Eşleştirme oyunu çevrimiçi ligi (isteğe bağlı) için:
+- **Veri toplanıyor mu?** Evet — yalnızca kullanıcı "Lige katıl" derse.
+- **Uygulama etkinliği → Diğer kullanıcı tarafından oluşturulan içerik:** takma ad (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
+- **Uygulama etkinliği → Uygulama etkileşimleri:** oyun skorları (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
+- **Cihaz veya diğer kimlikler:** rastgele uygulama kimliği (isteğe bağlı; amaç: uygulama işlevselliği). Reklam kimliği YOK.
+- Veriler aktarımda şifrelenir (HTTPS). Kullanıcı silme isteyebilir: uygulama içi "Ligden ayrıl".
+- Üçüncü taraf: Supabase (veri işleyen, AB/Frankfurt).
