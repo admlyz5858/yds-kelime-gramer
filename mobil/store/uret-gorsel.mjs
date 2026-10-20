@@ -33,8 +33,8 @@ const feature = `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="50
   <!-- sağ: metin -->
   <text x="430" y="205" font-family="DejaVu Serif, Georgia, serif" font-size="62" font-weight="700" fill="#c2542f">YDS Kelime</text>
   <text x="430" y="280" font-family="DejaVu Serif, Georgia, serif" font-size="62" font-weight="700" fill="#c2542f">ve Gramer</text>
-  <text x="432" y="345" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#3a3327">1000 Kelime · Akıllı Kartlar · Testler</text>
-  <text x="432" y="392" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#6b5d44">Çevrimdışı · YDS &amp; YÖKDİL</text>
+  <text x="432" y="340" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#3a3327">2300+ Kelime · Eşleştirme Oyunu</text>
+  <text x="432" y="382" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#6b5d44">Aralıklı Tekrar · Çevrimdışı · YDS &amp; YÖKDİL</text>
 </svg>`;
 await sharp(Buffer.from(feature)).png().toFile(join(out, 'feature-1024x500.png'));
 

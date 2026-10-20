@@ -12,56 +12,63 @@ Bu dosya, Play Console'da kopyala-yapıştır yapacağın tüm metinleri ve form
 
 ## Kısa açıklama (max 80 karakter)
 ```
-YDS & YÖKDİL için 1000 temel kelime, akıllı kartlar ve seviyeli testler.
+YDS/YÖKDİL: 2300+ kelime, Reels tarzı akış, eşleştirme oyunu, aralıklı tekrar.
 ```
 
 ## Tam açıklama (max 4000 karakter)
 ```
-YDS Kelime ve Gramer, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, tamamen çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır.
-
-Bu sürümde "En Sık Kullanılan 1000 Kelime" ünitesi ücretsiz olarak sunulur. Sınavlarda en çok karşına çıkan temel kelimeleri, anlamları ve gerçek örnek cümleleriyle birlikte kalıcı şekilde öğrenirsin.
+YDS Kelime ve Gramer, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 14 ünite ve 2300'den fazla kelime tamamen ücretsiz.
 
 ÖNE ÇIKAN ÖZELLİKLER
 
-• Akıllı kelime kartları — Kartın ön yüzünde kelime, arkasında anlamı ve etkileşimli örnek cümle. Cümledeki kelimeye dokun, anlamı baloncukta çıksın; cümleyi kaydır, tam çevirisini gör.
+• Kelime Akışı — Yukarı kaydır, kelimeleri Reels tarzında hızlıca gez. Karta dokun anlamı ve örnek cümlesi açılsın; kelime otomatik seslendirilsin. Beğendiğini kaydet, bildiğini işaretle.
 
-• Seviyeli testler — Kolaydan zora sıralanmış, istatistik tutan çoktan seçmeli testlerle kendini ölç.
+• Eşleştirme Oyunu — İngilizce ve Türkçe kelimeleri eşleştir. 42 bölüm, kolaydan zora: 5 kelimeyle başla, süreli seviyelere kadar ilerle. Puan, yıldız ve rekorlarını takip et.
 
-• Kelime Defteri — Öğrenmek istediğin kelimeleri tek dokunuşla deftere ekle, daha sonra kart ve testlerle tekrar et.
+• Günün Eşleştirmesi — Her gün herkese aynı 10 kelime. Sonucunu arkadaşlarınla paylaş, çevrimiçi ligde sıralamaya gir (isteğe bağlı, takma adla).
 
-• Yanlışlarım — Testlerde yanlış yaptığın sorular otomatik birikir; doğru çözene kadar karşına çıkar.
+• Düello — Bir kod paylaş, arkadaşın aynı kelimelerle oynasın; kim daha yüksek puan alacak?
 
-• Çalışma Defteri teması — Göz yormayan, sıcak kâğıt görünümlü sade arayüz.
+• Kelime Öğren (aralıklı tekrar) — Bilimsel SM-2 yöntemiyle her kelime tam unutmadan önce tekrar karşına gelir. Kart, çoktan seçmeli, yazım ve cümle içi boşluk modları; günlük hedef ve ilerleme grafiği.
 
-• Tamamen çevrimdışı — İnternet gerekmez. Hiçbir kişisel veri toplanmaz, hesap açmana gerek yoktur. İlerlemen yalnızca cihazında saklanır.
+• Telaffuz — Her kelimeyi ve örnek cümledeki kelimeleri tek dokunuşla dinle.
 
-Geniş gramer müfredatı (zamanlar, edatlar, modallar, fiilimsiler, koşul cümleleri ve daha fazlası) yakında premium olarak eklenecektir.
+• Konu anlatımı ve seviyeli testler — Edatlar, zamanlar, modallar, fiilimsiler, koşul cümleleri, isim/sıfat cümlecikleri, bağlaçlar. Kolaydan zora testler, istatistik, Yanlışlarım listesi.
 
-Sınav başarısı için her gün biraz çalış — gerisini uygulama hatırlatır.
+• Kelime Defteri ve Öğrendiklerim — Bilmediklerini biriktir, öğrendiklerini pekiştir; quiz ve boşluk doldurma ile tekrar et.
+
+• Motivasyon — Günlük seri, XP ve seviye, günlük görevler, başarımlar, aktivite ısı haritası, sınav geri sayımı ve günlük hatırlatma.
+
+• Gizlilik — Hesap gerekmez, reklam ve izleme yoktur. İlerlemen cihazında kalır. Yalnızca çevrimiçi lige katılırsan takma adın ve skorların sunucuya gider; istediğin an silebilirsin.
+
+Her gün birkaç dakika — gerisini uygulama hatırlatır.
+```
+
+## Sürüm notları (1.2.0, max 500 karakter)
+```
+• Yeni: Eşleştirme Oyunu — 42 bölüm, kolaydan zora, süreli seviyeler
+• Günün Eşleştirmesi ve arkadaşınla Düello
+• Çevrimiçi lig (isteğe bağlı, takma adla)
+• Telaffuz artık Android'de çalışıyor; örnek cümlede kelimeye dokununca 🔊
+• Kelime sekmesi Reels tarzı akışa dönüştü
+• Sadeleştirmeler ve hata düzeltmeleri
 ```
 
 ## İçerik derecelendirme anketi (IARC) — önerilen yanıtlar
 - Uygulama türü: **Uygulama (oyun değil)** → Eğitim/Referans
 - Şiddet, korku, cinsellik, küfür, kumar, uyuşturucu, vb.: **Hiçbiri / Hayır**
-- Kullanıcılar arası etkileşim / mesajlaşma: **Hayır**
+- Kullanıcılar arası etkileşim / mesajlaşma: **Hayır** (lig yalnızca takma ad + skor gösterir; mesajlaşma/içerik paylaşımı yok)
 - Konum paylaşımı: **Hayır**
 - Dijital satın alma: **Hayır** (şimdilik)
 - Beklenen sonuç: **3+ / Herkes (Everyone)**
-
-## Veri güvenliği formu (Data safety) — önerilen yanıtlar
-- **Uygulaman herhangi bir kullanıcı verisi topluyor veya paylaşıyor mu?** → **HAYIR**
-  - Gerekçe: Tüm ilerleme (kelime defteri, test istatistikleri, yanlışlar, ayarlar) yalnızca cihazda `localStorage`'da tutulur; hiçbir sunucuya gönderilmez. Ağ isteği yapılmaz, analitik/reklam SDK'sı yoktur.
-- **Veriler aktarım sırasında şifrelenir mi?** → Uygulama veri aktarmaz (uygulanamaz).
-- **Kullanıcı veri silinmesini isteyebilir mi?** → Veriler cihazda; uygulamadaki "Ayarlar → tüm ilerlemeyi sıfırla" ile silinir.
-- **Hedef kitle:** Genel kitle / 13+ (sınav hazırlık). Çocuklara yönelik değil.
 
 ## Hedef kitle ve içerik
 - Hedef yaş grubu: **18+ veya 13-17 dahil** (sınav adayları). "Çocuklara yönelik" = **Hayır**.
 - Reklam içerir mi: **Hayır**.
 
 ## Yayın kanalı sırası
-1. Önce **İç test (Internal testing)** → AAB yükle, kendi cihazında dene.
-2. Sorun yoksa **Üretim (Production)**'a yükselt.
+1. **Kapalı test (Alpha)** → AAB yükle. Yeni kişisel geliştirici hesaplarında üretim için en az **12 test kullanıcısıyla 14 gün** kesintisiz kapalı test şart.
+2. Süre dolunca Kontrol paneli → "Üretim için başvur" → onaylanınca **Üretim**'e yükselt.
 
 ## Gizlilik politikası URL'si
 ```

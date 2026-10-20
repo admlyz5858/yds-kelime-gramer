@@ -22,7 +22,7 @@ export function tohumluKaristir(arr, rnd) {
   for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
   return a;
 }
-export function kisaTR(tr) { return String(tr || '').replace(/\([^)]*\)?/g, ' ').split(/[,;/—]| - /)[0].replace(/\s+/g, ' ').trim(); }
+export function kisaTR(tr) { return String(tr || '').replace(/\([^)]*\)?/g, ' ').split(/[,;/—·]| - /)[0].replace(/\s+/g, ' ').trim(); }
 const turAd = (w) => (String(w.tur || '').toLowerCase().split(/[\s(]/)[0] || 'diğer');
 
 // Havuzu kolaydan zora sırala: Ünite 1 sıklık sırasıyla önce, sonra diğer üniteler; oyuna uygun olmayanlar elenir

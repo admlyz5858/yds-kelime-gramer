@@ -23,6 +23,7 @@ test('kisaTR ilk anlamı alır', () => {
   assert.equal(kisaTR('izin vermek; bırakmak'), 'izin vermek');
   assert.equal(kisaTR('belirli artikel — çevrilmez'), 'belirli artikel');
   assert.equal(kisaTR('o (cansız nesne, hayvan)'), 'o');
+  assert.equal(kisaTR('orada · there is'), 'orada');
   assert.equal(kisaTR('(bir şeyi) yapmak, etmek'), 'yapmak');
 });
 

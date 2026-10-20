@@ -1,7 +1,6 @@
-// mobil/store/ekran-goruntu.mjs — gerçek uygulamadan telefon ekran görüntüleri çeker.
-// Playwright (chromium) ile http://localhost:8100 (www/ statik sunucu) gezilir.
-// Çıktı: cikti/01-karsilama.png ... savunmacı: bir adım patlarsa atlar.
-import { chromium, devices } from 'playwright';
+// mobil/store/ekran-goruntu.mjs — gerçek uygulamadan telefon ekran görüntüleri çeker (Play: 1080×2160, oran 2:1).
+// Playwright (chromium) ile BASE_URL (www/ statik sunucu) gezilir. Çıktı: cikti/01-*.png … bir adım patlarsa atlanır.
+import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,55 +10,86 @@ const out = join(here, 'cikti');
 mkdirSync(out, { recursive: true });
 const BASE = process.env.BASE_URL || 'http://localhost:8100';
 
-const browser = await chromium.launch();
-const context = await browser.newContext({ ...devices['Pixel 5'] });
+const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+const context = await browser.newContext({ viewport: { width: 400, height: 800 }, deviceScaleFactor: 2.7, isMobile: true, hasTouch: true });
 const page = await context.newPage();
 
 const cek = async (ad) => { await page.screenshot({ path: join(out, ad) }); console.log('çekildi:', ad); };
 const bekle = (ms) => page.waitForTimeout(ms);
 const guvenli = async (etiket, fn) => { try { await fn(); } catch (e) { console.log('ATLANDI', etiket, '-', e.message); } };
+const anaSayfa = async () => { for (let i = 0; i < 3 && await page.locator('#geri:not([hidden])').count(); i++) { await page.locator('#geri').click(); await bekle(350); } };
+const eslestirHepsi = async (yanlisIlk) => {
+  const n = await page.locator('.es-en').count();
+  if (yanlisIlk) { await page.locator('.es-en[data-i="0"]').click(); await page.locator('.es-tr[data-i="1"]').click(); await bekle(500); }
+  for (let i = 0; i < n; i++) { await page.locator(`.es-en[data-i="${i}"]`).click(); await page.locator(`.es-tr[data-i="${i}"]`).click(); await bekle(60); }
+};
 
 await page.goto(BASE, { waitUntil: 'networkidle' });
-await bekle(1200);
+await page.evaluate(() => localStorage.clear());
+await page.reload({ waitUntil: 'networkidle' });
+await bekle(900);
 
-// 1) Karşılama (giriş) ekranı
-await guvenli('karsilama', async () => {
-  await page.waitForSelector('.giris-katman', { timeout: 4000 });
-  await cek('01-karsilama.png');
-});
+// 1) Karşılama
+await guvenli('karsilama', async () => { await page.waitForSelector('.giris-katman', { timeout: 4000 }); await cek('01-karsilama.png'); });
 
-// 2) Ana sayfa (giriş kapanır)
+// Biraz "yaşanmış" bir ana sayfa için küçük ilerleme üret (seri, XP, öğrenilen)
 await guvenli('ana', async () => {
-  const btn = page.locator('#girisBasla');
-  if (await btn.count()) { await btn.click(); await bekle(900); }
+  const btn = page.locator('#girisBasla'); if (await btn.count()) { await btn.click(); await bekle(900); }
+  await page.evaluate(() => {
+    const a = JSON.parse(localStorage.getItem('yds-ayar-v1') || '{}');
+    const bugun = new Date(); const iso = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const log = {}; for (let i = 0; i < 40; i++) { const d = new Date(bugun); d.setDate(d.getDate() - i); if (i % 3 !== 2) log[iso(d)] = 8 + (i * 7) % 30; }
+    Object.assign(a, { seri: 6, sonAktif: iso(bugun), gunTarih: iso(bugun), gunSayac: 14, gunDogru: 9, xp: 760, gunlog: log, hedef: 20, sinavTarih: '2027-03-21' });
+    localStorage.setItem('yds-ayar-v1', JSON.stringify(a));
+  });
+  await page.reload({ waitUntil: 'networkidle' }); await bekle(900);
   await cek('02-ana-sayfa.png');
 });
 
-// 3) Müfredat çekmecesi (premium kilitler görünür)
-await guvenli('cekmece', async () => {
-  await page.locator('#menuBtn').click();
-  await page.waitForSelector('.cek-ders', { timeout: 4000 });
-  await bekle(700);
-  await cek('03-uniteler-premium.png');
+// 3) Kelime Akışı (Reels tarzı) — anlam açık
+await guvenli('akis', async () => {
+  await page.locator('#hAkis').click(); await bekle(1200);
+  await page.locator('#akisKaris').click(); await bekle(900);   // karışık: 'the' yerine rastgele kelime
+  await page.locator('.akis-kart').first().locator('.akis-govde').click(); await bekle(400);
+  await cek('03-kelime-akisi.png');
+  await anaSayfa();
 });
 
-// 4) Ünite 1 — kelime kartı
-await guvenli('kelime', async () => {
-  await page.locator('.cek-ders[data-id="1"]').click();
-  await bekle(1300);
-  await cek('04-kelime-kart.png');
+// 4) Eşleştirme oyunu — süreli seviye, birkaç eşleşme yapılmış
+await guvenli('eslestirme', async () => {
+  await page.locator('#hEslestir').click(); await bekle(1000);
+  await page.locator('.es-bolum[data-k="0"]').click(); await bekle(500);
+  await eslestirHepsi(false); await bekle(500);                 // S1
+  await page.locator('#esDevamSv').click(); await bekle(400);
+  await eslestirHepsi(false); await bekle(500);                 // S2
+  await page.locator('#esDevamSv').click(); await bekle(500);   // S3 (60 sn)
+  for (let i = 0; i < 4; i++) { await page.locator(`.es-en[data-i="${i}"]`).click(); await page.locator(`.es-tr[data-i="${i}"]`).click(); await bekle(80); }
+  await page.locator('.es-en[data-i="6"]').click(); await bekle(200);
+  await cek('04-eslestirme.png');
+  for (let i = 4; i < 10; i++) { await page.locator(`.es-en[data-i="${i}"]`).click(); await page.locator(`.es-tr[data-i="${i}"]`).click(); await bekle(60); }
+  await bekle(500); await cek('05-eslestirme-sonuc.png');
+  await page.locator('#esCik').click(); await bekle(400);
+  await cek('06-eslestirme-bolumler.png');
+  await anaSayfa();
 });
 
-// 5) Test ekranı
-await guvenli('quiz', async () => {
-  const q = page.locator('#alt-menu button[data-ekran="quiz"]');
-  if (await q.count()) { await q.click(); await bekle(1100); await cek('05-test.png'); }
+// 7) Kelime Öğren (aralıklı tekrar) paneli
+await guvenli('ogren', async () => {
+  await page.locator('#hOgren').click(); await bekle(1200);
+  await cek('07-kelime-ogren.png');
+  await anaSayfa();
 });
 
-// 6) Oku / konu ekranı
-await guvenli('oku', async () => {
-  const o = page.locator('#alt-menu button[data-ekran="oku"]');
-  if (await o.count()) { await o.click(); await bekle(1100); await cek('06-oku.png'); }
+// 8) Ünite — Oku (edat kartı) ve 9) Quiz
+await guvenli('unite', async () => {
+  await page.locator('#menuBtn').click(); await page.waitForSelector('.cek-ders', { timeout: 4000 }); await bekle(500);
+  await cek('08-uniteler.png');
+  await page.locator('.cek-ders[data-id="2"]').click(); await bekle(1200);
+  const b = page.locator('.bolum-link').nth(1); if (await b.count()) { await b.click(); await bekle(800); }
+  await cek('09-oku-edat.png');
+  await page.locator('#alt-menu button[data-ekran="quiz"]').click(); await bekle(900);
+  const t = page.locator('.test-link').first(); if (await t.count()) { await t.click(); await bekle(700); }
+  await cek('10-test.png');
 });
 
 await browser.close();
