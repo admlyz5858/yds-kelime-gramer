@@ -34,6 +34,8 @@ await guvenli('karsilama', async () => { await page.waitForSelector('.giris-katm
 
 // Biraz "yaşanmış" bir ana sayfa için küçük ilerleme üret (seri, XP, öğrenilen)
 await guvenli('ana', async () => {
+  for (const id of ['#girisIleri', '#girisIleri']) { const b = page.locator(id); if (await b.count()) { await b.click(); await bekle(350); } }
+  if (await page.locator('.giris-secim[data-n="20"]').count()) { await page.locator('.giris-secim[data-n="20"]').click(); await bekle(200); await page.locator('#girisIleri').click(); await bekle(350); }
   const btn = page.locator('#girisBasla'); if (await btn.count()) { await btn.click(); await bekle(900); }
   await page.evaluate(() => {
     const a = JSON.parse(localStorage.getItem('yds-ayar-v1') || '{}');
@@ -71,7 +73,7 @@ await guvenli('akis', async () => {
 // 6) Eşleştirme oyunu — süreli seviye, birkaç eşleşme yapılmış
 await guvenli('eslestirme', async () => {
   await sekme('oyun');
-  await page.locator('.es-bolum[data-k="0"]').click(); await bekle(500);
+  await page.locator('.es-dugum[data-k="0"]').click(); await bekle(500);
   await eslestirHepsi(false); await bekle(500);                 // S1
   await page.locator('#esDevamSv').click(); await bekle(400);
   await eslestirHepsi(false); await bekle(500);                 // S2

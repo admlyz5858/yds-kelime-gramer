@@ -24,6 +24,11 @@ function normalize(k, uniteId) {
   return o;
 }
 
+function frekansYukle() {
+  try { return JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), 'kaynak', 'frekans-sira.json'), 'utf8')); }
+  catch { return {}; }
+}
+
 // uniteDir içindeki unite-*.json dosyalarından benzersiz kelime havuzu üret.
 // Dedup: en (küçük harf) — düşük ünite id'si önce (Ünite 1 en sık kelimeler).
 export function havuzUret(uniteDir) {
@@ -51,10 +56,25 @@ export function havuzUret(uniteDir) {
     }
   }
 
-  // Seviye bandı: Ünite 1 sıklık sırasına göre S1–S4 (dört dilim), gramer ünitelerinin kelimeleri S5 (akademik)
+  // Seviye bandı (S1 Temel … S5 Akademik):
+  //  - Ünite 1 (sınav sıklığına göre sıralı "en sık 1000"): listedeki sıraya göre dört dilim → S1–S4
+  //  - Gramer ünitelerinin kelimeleri: İngilizce genel sıklık sırası (kaynak/frekans-sira.json, Norvig count_1w)
+  //    ≤2000 S1 · ≤5000 S2 · ≤10000 S3 · ≤20000 S4 · daha seyrek ya da listede yok → S5
   const u1 = kelimeler.filter(w => w.u === 1);
-  u1.forEach((w, i) => { w.sv = 1 + Math.min(3, Math.floor(i / Math.ceil(u1.length / 4))); });
-  kelimeler.forEach(w => { if (!w.sv) w.sv = 5; });
+  u1.forEach((w, i) => { w.sv = 1 + Math.min(3, Math.floor(i / Math.ceil(u1.length / 4))); w._s = i; });
+  const frekans = frekansYukle();
+  const ESIK = [2000, 5000, 10000, 20000];
+  kelimeler.forEach(w => {
+    if (w.sv) return;
+    const r = frekans[w.en.toLowerCase()] || 0;
+    w.sv = r ? 1 + ESIK.findIndex(e => r <= e) : 5;
+    if (w.sv === 0) w.sv = 5;
+    if (/\s/.test(w.en.trim())) w.sv = Math.min(5, w.sv + 1);   // öbek/deyimsel fiil: parçalarından bir bant zor
+    w._s = 100000 + (r || 999999);
+  });
+  // Havuz sırası = seviye, ardından sıklık (Ünite 1 sırası önce, sonra genel sıklık)
+  kelimeler.sort((a, b) => a.sv - b.sv || a._s - b._s);
+  kelimeler.forEach(w => { delete w._s; });
 
   return {
     surum: 2,

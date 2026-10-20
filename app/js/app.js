@@ -212,6 +212,16 @@ const GRUPLAR = [
   { ad: 'Bağlayıcılar', ikon: '🔗', ids: [2, 14] },
 ];
 function uniteTestSayisi(id) { return Object.keys(_istat).filter(k => k.startsWith(id + '#')).length; }
+// Ünite ilerlemesi 0–1: testler %50, "çalışıldı" %30, alıştırma (20 soru) %20
+function uniteOrani(d, tS, al, bitti) {
+  const test = d.test_sayisi ? Math.min(1, tS / d.test_sayisi) : (tS ? 1 : 0);
+  const alis = al ? Math.min(1, (al.yapilan || 0) / 20) : 0;
+  return Math.min(1, 0.5 * test + 0.3 * (bitti ? 1 : 0) + 0.2 * alis);
+}
+function halkaHTML(oran, etiket) {
+  const r = 16, c = 2 * Math.PI * r, tam = oran >= 0.999;
+  return `<span class="mf-halka ${tam ? 'tam' : ''} ${oran > 0 ? 'var' : ''}"><svg viewBox="0 0 40 40"><circle class="arka" cx="20" cy="20" r="${r}"/><circle class="on" cx="20" cy="20" r="${r}" stroke-dasharray="${(c * oran).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 20 20)"/></svg><b>${tam ? '✓' : etiket}</b></span>`;
+}
 async function mufredatAc() {
   await manifestYukle();
   const dersler = manifest.dersler.filter(d => d.id !== 1);
@@ -219,21 +229,25 @@ async function mufredatAc() {
   const cozTest = Object.keys(_istat).length;
   const son = _ayar.sonDers;
   const grup = GRUPLAR.map(g => {
-    const kartlar = g.ids.map(id => manifest.dersler.find(d => d.id === id)).filter(Boolean).map(d => {
+    const dersListe = g.ids.map(id => manifest.dersler.find(d => d.id === id)).filter(Boolean);
+    let grupOran = 0;
+    const kartlar = dersListe.map(d => {
       const tS = uniteTestSayisi(d.id), al = alistirma.ozet(d.id), bitti = isDone(progress, d.id);
+      const oran = uniteOrani(d, tS, al, bitti); grupOran += oran;
       const rozetler = [
         bitti ? '<span class="mf-rozet ok">✓ çalışıldı</span>' : '',
-        tS ? `<span class="mf-rozet">🧠 ${tS} test</span>` : '',
+        tS ? `<span class="mf-rozet">🧠 ${tS}/${d.test_sayisi || tS} test</span>` : '',
         al && al.yapilan ? `<span class="mf-rozet">✍️ %${Math.round(al.dogru / al.yapilan * 100)}</span>` : '',
       ].filter(Boolean).join('');
       return `<button class="mf-kart ${son && son.id === d.id ? 'son' : ''}" data-id="${d.id}" data-dosya="${d.dosya}">
-        <span class="mf-no">${d.id}</span>
+        ${halkaHTML(oran, d.id)}
         <span class="mf-ic"><span class="mf-bas">${esc(dersKisaAd(d.id))}</span>
           <span class="mf-alt">${d.bolum_sayisi || 0} bölüm${rozetler ? ' · ' : ''}${rozetler}${!rozetler && !tS ? ' · henüz başlanmadı' : ''}</span></span>
         <span class="ok">›</span>
       </button>`;
     }).join('');
-    return `<div class="mf-grup"><div class="mf-grup-bas">${g.ikon} ${g.ad}</div>${kartlar}</div>`;
+    const gOran = Math.round(grupOran / dersListe.length * 100);
+    return `<div class="mf-grup"><div class="mf-grup-bas">${g.ikon} ${g.ad}<span class="mf-grup-oran ${gOran >= 100 ? 'tam' : ''}">${gOran >= 100 ? '✓ tamam' : '%' + gOran}</span></div>${kartlar}</div>`;
   }).join('');
   render(`
     <div class="mf-ozet">
@@ -708,29 +722,68 @@ function modalAc(baslik, govde, opt = {}) {
 }
 function modalKapat() { if (_modalKapat) _modalKapat(); }
 
+// 3 adımlı karşılama: tanıtım → günlük hedef → sınav tarihi
 function girisEkrani(zorla) {
   if (!zorla && _ayar.girisGoruldu) return false;
   const o = document.createElement('div');
   o.className = 'giris-katman';
-  o.innerHTML = `
-    <div class="giris-ic">
-      <div class="giris-amblem">📏</div>
-      <div class="giris-baslik">Kelimetre</div>
-      <div class="giris-alt">YDS · YÖKDİL kelime &amp; gramer</div>
-      <div class="giris-ozellik">
-        <div class="giris-sat"><span>📖</span><div><b>2.300+ kelime tek yerde</b><i>Seviye (S1–S5), tür ve duruma göre süz; akışta gez</i></div></div>
-        <div class="giris-sat"><span>🌱</span><div><b>Aralıklı tekrar</b><i>Unutmadan önce tekrar; “Bugün” sekmesi planı verir</i></div></div>
-        <div class="giris-sat"><span>🎓</span><div><b>13 gramer ünitesi</b><i>Oku, alıştırma yap, test çöz, çeviri çalış</i></div></div>
-        <div class="giris-sat"><span>🧩</span><div><b>Eşleştirme oyunu</b><i>Günün bulmacası, düello ve çevrimiçi lig</i></div></div>
-      </div>
-      <button class="aksiyon giris-basla" id="girisBasla">Çalışmaya Başla →</button>
-    </div>`;
   document.body.appendChild(o);
   requestAnimationFrame(() => o.classList.add('acik'));
-  o.querySelector('#girisBasla').onclick = () => {
-    _ayar.girisGoruldu = true; saveAyar(_ayar);
+  let adim = 0, hedef = _ayar.hedef || HEDEF_VARSAYILAN, tarih = _ayar.sinavTarih || '';
+  const noktalar = () => `<div class="giris-noktalar">${[0, 1, 2].map(i => `<span class="${i === adim ? 'aktif' : ''}"></span>`).join('')}</div>`;
+  const kapat = () => {
+    _ayar.girisGoruldu = true; _ayar.hedef = hedef;
+    if (tarih) _ayar.sinavTarih = tarih;
+    saveAyar(_ayar);
     o.classList.remove('acik'); setTimeout(() => o.remove(), 420);
+    yenile();
   };
+  const ciz = () => {
+    if (adim === 0) {
+      o.innerHTML = `<div class="giris-ic">
+        <div class="giris-amblem">📏</div>
+        <div class="giris-baslik">Kelimetre</div>
+        <div class="giris-alt">YDS · YÖKDİL kelime &amp; gramer</div>
+        <div class="giris-ozellik">
+          <div class="giris-sat"><span>📖</span><div><b>2.300+ kelime tek yerde</b><i>Seviye (S1–S5), tür ve duruma göre süz; akışta gez</i></div></div>
+          <div class="giris-sat"><span>🌱</span><div><b>Aralıklı tekrar</b><i>Unutmadan önce tekrar; “Bugün” sekmesi planı verir</i></div></div>
+          <div class="giris-sat"><span>🎓</span><div><b>13 gramer ünitesi</b><i>Oku, alıştırma yap, test çöz, çeviri çalış</i></div></div>
+          <div class="giris-sat"><span>🧩</span><div><b>Eşleştirme oyunu</b><i>Günün bulmacası, düello ve çevrimiçi lig</i></div></div>
+        </div>
+        ${noktalar()}
+        <button class="aksiyon giris-basla" id="girisIleri">Devam →</button>
+      </div>`;
+      o.querySelector('#girisIleri').onclick = () => { adim = 1; ciz(); };
+    } else if (adim === 1) {
+      const sec = [[10, 'Hafif', '~5 dk/gün'], [20, 'Dengeli', '~10 dk/gün'], [30, 'Yoğun', '~15 dk/gün'], [50, 'Sınav modu', '~25 dk/gün']];
+      o.innerHTML = `<div class="giris-ic">
+        <div class="giris-amblem kucuk">🎯</div>
+        <div class="giris-baslik">Günlük hedefin?</div>
+        <div class="giris-alt">Aktivite = bir kart, bir soru, bir eşleşme</div>
+        <div class="giris-secimler">${sec.map(([n, ad, sure]) => `<button class="giris-secim ${hedef === n ? 'aktif' : ''}" data-n="${n}"><b>${n}</b><span>${ad}</span><i>${sure}</i></button>`).join('')}</div>
+        <p class="giris-not">Sonradan Ben › Ayarlar’dan değiştirebilirsin.</p>
+        ${noktalar()}
+        <div class="btn-satir"><button class="aksiyon ikincil" id="girisGeri">‹ Geri</button><button class="aksiyon giris-basla" id="girisIleri">Devam →</button></div>
+      </div>`;
+      o.querySelectorAll('.giris-secim').forEach(b => b.onclick = () => { hedef = Number(b.dataset.n); titre('hafif'); ciz(); });
+      o.querySelector('#girisGeri').onclick = () => { adim = 0; ciz(); };
+      o.querySelector('#girisIleri').onclick = () => { adim = 2; ciz(); };
+    } else {
+      o.innerHTML = `<div class="giris-ic">
+        <div class="giris-amblem kucuk">📅</div>
+        <div class="giris-baslik">Sınav tarihin var mı?</div>
+        <div class="giris-alt">Geri sayım ve günlük kelime planı için</div>
+        <input id="girisTarih" type="date" value="${esc(tarih)}" class="giris-tarih">
+        <p class="giris-not">İstersen boş bırak; Bugün sekmesinden sonra da ekleyebilirsin.</p>
+        ${noktalar()}
+        <div class="btn-satir"><button class="aksiyon ikincil" id="girisGeri">‹ Geri</button><button class="aksiyon giris-basla" id="girisBasla">Çalışmaya Başla →</button></div>
+      </div>`;
+      o.querySelector('#girisTarih').onchange = (e) => { tarih = e.target.value; };
+      o.querySelector('#girisGeri').onclick = () => { adim = 1; ciz(); };
+      o.querySelector('#girisBasla').onclick = () => { tarih = o.querySelector('#girisTarih').value; kapat(); };
+    }
+  };
+  ciz();
   return true;
 }
 

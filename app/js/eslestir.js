@@ -31,10 +31,11 @@ export function zorlukSirala(havuz) {
     const t = kisaTR(w.tr);
     return w.en && w.en.length >= 2 && t.length >= 2 && t.length <= 24 && !/^-/.test(t) && !/artikel|fiili$/i.test(t);
   });
+  // Önce seviye bandı (S1 → S5), bant içinde Ünite 1 sıklık sırası, sonra diğer üniteler; uzun kelime biraz geriye
   const z = new Map();
   const u1 = uygun.filter(w => w.u === 1), diger = uygun.filter(w => w.u !== 1);
-  u1.forEach((w, i) => z.set(w, i / u1.length + w.en.length / 200));
-  diger.forEach(w => z.set(w, 1 + ((w.u || 2) - 2) / 13 + w.en.length / 200));
+  u1.forEach((w, i) => z.set(w, (w.sv || 1) * 10 + i / u1.length + w.en.length / 200));
+  diger.forEach(w => z.set(w, (w.sv || 5) * 10 + 1 + ((w.u || 2) - 2) / 13 + w.en.length / 200));
   return [...u1, ...diger].sort((a, b) => z.get(a) - z.get(b));
 }
 
@@ -157,11 +158,23 @@ export function kurEslestirme(api) {
     const toplamYildiz = Object.values(durum.bolumler).reduce((s, b) => s + (b.yildiz || 0), 0);
     const enIyi = durum.kayitlar.slice().sort((a, b) => b.skor - a.skor)[0];
     const dv = durum.devam;
-    const hucreler = Array.from({ length: bolumAdet() }, (_, k) => {
-      const b = durum.bolumler[k], acik = k <= durum.acikBolum;
-      const yildiz = b ? '★'.repeat(b.yildiz) + '☆'.repeat(3 - b.yildiz) : (acik ? '' : '🔒');
-      return `<button class="es-bolum ${acik ? 'acik' : 'kilit'} ${b ? 'biten' : ''} ${k === durum.acikBolum && !b ? 'sirada' : ''}" data-k="${k}">
-        <b>${k + 1}</b><span>${yildiz}</span>${b ? `<i>${b.enIyi}</i>` : ''}</button>`;
+    const SEZON = 6, adet = bolumAdet(), sezonSay = Math.ceil(adet / SEZON);
+    const bantEt = (k) => { const say = {}; for (const w of bolumKelimeleri(sirali, k)) say[w.sv || 0] = (say[w.sv || 0] || 0) + 1; const sv = Object.entries(say).sort((a, b) => b[1] - a[1])[0]?.[0]; return sv && sv !== '0' ? `S${sv}` : ''; };
+    const dugum = (k) => {
+      const b = durum.bolumler[k], acik = k <= durum.acikBolum, sirada = k === durum.acikBolum && !b;
+      const yildiz = b ? '★'.repeat(b.yildiz) + '☆'.repeat(3 - b.yildiz) : '';
+      return `<button class="es-dugum ${acik ? 'acik' : 'kilit'} ${b ? 'biten' : ''} ${sirada ? 'sirada' : ''}" data-k="${k}" aria-label="Bölüm ${k + 1}">
+        <b>${k + 1}</b>${yildiz ? `<span>${yildiz}</span>` : (acik ? '' : '<span class="kilit-ikon">🔒</span>')}${sirada ? '<em>Oyna</em>' : ''}</button>`;
+    };
+    const sezonlar = Array.from({ length: sezonSay }, (_, si) => {
+      const bas = si * SEZON, bit = Math.min(adet, bas + SEZON);
+      const ks = Array.from({ length: bit - bas }, (_, j) => bas + j);
+      const biten = ks.filter(k => durum.bolumler[k]).length, yildiz = ks.reduce((t, k) => t + (durum.bolumler[k]?.yildiz || 0), 0);
+      const durumu = biten === ks.length ? 'tamam' : (bas <= durum.acikBolum ? 'aktif' : 'kilit');
+      const bant = bantEt(bas + Math.floor(ks.length / 2));
+      const bas2 = `<div class="es-sezon-bas"><div><b>Sezon ${si + 1}</b><i>Bölüm ${bas + 1}–${bit}${bant ? ` · ${bant} kelimeler` : ''}</i></div><span>${durumu === 'kilit' ? '🔒' : `⭐ ${yildiz}/${ks.length * 3}`}</span></div>`;
+      if (durumu === 'kilit') return `<div class="es-sezon kilit" data-s="${si}">${bas2}</div>`;
+      return `<div class="es-sezon ${durumu}" data-s="${si}">${bas2}<div class="es-yol">${ks.map(dugum).join('')}</div></div>`;
     }).join('');
     render(`
       <div class="es-hero">
@@ -182,8 +195,8 @@ export function kurEslestirme(api) {
 
       ${dv ? `<button class="es-devam" id="esDevam"><div><div class="hizli-devam-ust">▶ Kaldığın yerden devam et</div><div class="hizli-devam-bas">Bölüm ${dv.bolum + 1} · Seviye ${dv.seviye + 1}/6 · ${dv.puan} puan</div></div><span class="ok">›</span></button>` : ''}
 
-      <div class="es-baslik">Bölümler <span>${SEVIYELER.length} seviye · 5 → 8 → 10 kelime, sonra süreli</span></div>
-      <div class="es-harita">${hucreler}</div>
+      <div class="es-baslik">Yol <span>her bölüm ${SEVIYELER.length} seviye · 5 → 8 → 10 kelime, sonra süreli</span></div>
+      ${sezonlar}
 
       <div class="es-baslik">Düello <span>aynı kelimeler, kim daha yüksek?</span></div>
       <div class="btn-satir">
@@ -198,11 +211,13 @@ export function kurEslestirme(api) {
     document.getElementById('esLig').onclick = () => cizLig('gunluk');
     document.getElementById('esGunluk').onclick = () => g ? gunlukPaylas(g) : gunlukBasla();
     const d = document.getElementById('esDevam'); if (d) d.onclick = devamEt;
-    document.querySelectorAll('.es-bolum').forEach(b => b.onclick = () => {
+    document.querySelectorAll('.es-dugum').forEach(b => b.onclick = () => {
       const k = Number(b.dataset.k);
       if (k > durum.acikBolum) { toast('🔒 Önce önceki bölümü bitir'); titre('hata'); return; }
       bolumBasla(k);
     });
+    document.querySelectorAll('.es-sezon.kilit').forEach(b => b.onclick = () => { toast('🔒 Önceki sezonu bitirince açılır'); titre('hata'); });
+    const sirada = document.querySelector('.es-dugum.sirada'); if (sirada) sirada.scrollIntoView({ block: 'center' });
     document.getElementById('esDuelloBasla').onclick = () => duelloBasla(null);
     document.getElementById('esDuelloKod').onclick = cizKodGir;
   }

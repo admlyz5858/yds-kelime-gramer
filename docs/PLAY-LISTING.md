@@ -55,6 +55,8 @@ Her gün birkaç dakika — gerisini uygulama hatırlatır.
 • Ünitelerde yeni Alıştırma: ünitenin kendi cümlelerinden boşluk ve sınıflandırma soruları
 • Çeviri çalışması (edat, zaman ve modal öbekleri)
 • Bugün sekmesinde günün planı: tekrarlar, günün eşleştirmesi, kaldığın ünite
+• Eşleştirme: sezon yolu (6'şar bölüm), bölümler seviye bandıyla etiketli
+• Müfredatta ünite ilerleme halkaları; 3 adımlı karşılama (hedef + sınav tarihi)
 • Tüm testler açık; sıradaki vurgulu
 • Öğrendiklerim ve Defter aralıklı tekrarla birleşti
 ```
