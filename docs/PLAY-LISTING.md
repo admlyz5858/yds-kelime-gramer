@@ -65,6 +65,6 @@ Sınav başarısı için her gün biraz çalış — gerisini uygulama hatırlat
 
 ## Gizlilik politikası URL'si
 ```
-https://admlyz5858.github.io/yds-gizlilik/
+https://admlyz5858.github.io/yds-kelime-gramer/gizlilik/
 ```
-(Kaynak: public repo `admlyz5858/yds-gizlilik`, GitHub Pages. Güncellemek için o repodaki `index.html`'i değiştir.)
+(Kaynak: bu repodaki `docs/gizlilik/index.html`, GitHub Pages ile yayınlanır. Pages ayarı: Settings → Pages → Source: Deploy from a branch → Branch: `main`, Folder: `/docs`.)
