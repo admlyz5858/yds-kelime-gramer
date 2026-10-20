@@ -1,14 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-  <rect width="1024" height="1024" fill="#f4ecdb"/>
-  <rect x="232" y="300" width="560" height="430" rx="28" fill="#fffaf0" stroke="#c2542f" stroke-width="18"/>
-  <line x1="512" y1="318" x2="512" y2="712" stroke="#c2542f" stroke-width="14"/>
-  <g stroke="#3a3327" stroke-width="12" stroke-linecap="round">
-    <line x1="300" y1="392" x2="464" y2="392"/>
-    <line x1="300" y1="452" x2="464" y2="452"/>
-    <line x1="300" y1="512" x2="430" y2="512"/>
-    <line x1="560" y1="392" x2="724" y2="392"/>
-    <line x1="560" y1="452" x2="724" y2="452"/>
-    <line x1="560" y1="512" x2="690" y2="512"/>
-  </g>
-  <text x="512" y="855" font-family="Georgia, 'Times New Roman', serif" font-size="170" font-weight="700" fill="#c2542f" text-anchor="middle">YDS</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1f26"/><stop offset="1" stop-color="#2a2140"/></linearGradient></defs><rect width="1024" height="1024" fill="url(#g)"/><g transform="translate(0 0) scale(1)">
+  <path d="M150 560 Q512 500 880 560 L880 700 Q512 640 150 700 Z" fill="#ffe08a" opacity=".95"/>
+  <text x="512" y="672" font-family="DejaVu Serif, Georgia, serif" font-size="330" font-weight="700" fill="#fffdf6" text-anchor="middle" letter-spacing="-8">YDS</text>
+  <rect x="330" y="760" width="364" height="22" rx="11" fill="#d24f2b"/>
+  <rect x="412" y="806" width="200" height="22" rx="11" fill="#0d7d72"/></g></svg>

@@ -16,25 +16,21 @@ await sharp(logo).resize(512, 512, { fit: 'cover' }).png().toFile(join(out, 'iko
 
 // 2) 1024x500 öne çıkan grafik (feature graphic)
 const feature = `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
-  <rect width="1024" height="500" fill="#f4ecdb"/>
-  <!-- sol: kitap amblemi -->
-  <g transform="translate(70,110)">
-    <rect x="0" y="0" width="300" height="280" rx="20" fill="#fffaf0" stroke="#c2542f" stroke-width="12"/>
-    <line x1="150" y1="14" x2="150" y2="266" stroke="#c2542f" stroke-width="9"/>
-    <g stroke="#3a3327" stroke-width="8" stroke-linecap="round">
-      <line x1="36" y1="64" x2="128" y2="64"/>
-      <line x1="36" y1="104" x2="128" y2="104"/>
-      <line x1="36" y1="144" x2="110" y2="144"/>
-      <line x1="172" y1="64" x2="264" y2="64"/>
-      <line x1="172" y1="104" x2="264" y2="104"/>
-      <line x1="172" y1="144" x2="246" y2="144"/>
-    </g>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1f26"/><stop offset="1" stop-color="#2a2140"/></linearGradient></defs>
+  <rect width="1024" height="500" fill="url(#g)"/>
+  <!-- sol: ikon işareti -->
+  <g transform="translate(40 -10) scale(0.5)">
+    <path d="M150 560 Q512 500 880 560 L880 700 Q512 640 150 700 Z" fill="#ffe08a" opacity=".95"/>
+    <text x="512" y="672" font-family="DejaVu Serif, Georgia, serif" font-size="330" font-weight="700" fill="#fffdf6" text-anchor="middle" letter-spacing="-8">YDS</text>
+    <rect x="330" y="760" width="364" height="22" rx="11" fill="#d24f2b"/>
+    <rect x="412" y="806" width="200" height="22" rx="11" fill="#0d7d72"/>
   </g>
   <!-- sağ: metin -->
-  <text x="430" y="205" font-family="DejaVu Serif, Georgia, serif" font-size="62" font-weight="700" fill="#c2542f">YDS Kelime</text>
-  <text x="430" y="280" font-family="DejaVu Serif, Georgia, serif" font-size="62" font-weight="700" fill="#c2542f">ve Gramer</text>
-  <text x="432" y="340" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#3a3327">2300+ Kelime · Eşleştirme Oyunu</text>
-  <text x="432" y="382" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#6b5d44">Aralıklı Tekrar · Çevrimdışı · YDS &amp; YÖKDİL</text>
+  <text x="560" y="190" font-family="DejaVu Serif, Georgia, serif" font-size="58" font-weight="700" fill="#fffdf6">YDS Kelime</text>
+  <text x="560" y="262" font-family="DejaVu Serif, Georgia, serif" font-size="58" font-weight="700" fill="#fffdf6">ve Gramer</text>
+  <rect x="560" y="292" width="300" height="12" rx="6" fill="#ffe08a"/>
+  <text x="560" y="345" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#fffdf6">2300+ Kelime · Eşleştirme Oyunu</text>
+  <text x="560" y="385" font-family="DejaVu Sans, sans-serif" font-size="22" fill="rgba(255,255,255,.75)">Aralıklı Tekrar · Çevrimdışı · YDS &amp; YÖKDİL</text>
 </svg>`;
 await sharp(Buffer.from(feature)).png().toFile(join(out, 'feature-1024x500.png'));
 
