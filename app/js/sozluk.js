@@ -73,7 +73,7 @@ export function kurSozluk(api) {
     if (gozlemci) { gozlemci.disconnect(); gozlemci = null; }
     sonuc = filtrele(havuz, f); gosterilen = 0;
     const uniteEt = f.unite ? `<button class="sz-cip aktif" id="szUniteKaldir">📚 ${esc(UNITE_ADI[f.unite] || 'Ünite ' + f.unite)} ✕</button>` : '';
-    render(`${ust}
+    render(`${typeof ust === 'function' ? ust() : ust}
       <div class="sz-ara-satir"><span class="sz-ara-ikon">🔍</span><input id="szAra" class="sz-ara" type="search" placeholder="Kelime veya anlam ara…" value="${esc(f.q)}" autocomplete="off"></div>
       ${cipler()}
       ${uniteEt ? `<div class="sz-cipler">${uniteEt}</div>` : ''}

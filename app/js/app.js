@@ -62,7 +62,7 @@ function sekmeAc(sekme, opts = {}) {
   sekmeKokChrome(sekme);
   if (sekme === 'kelimeler') return kelimelerAc(opts.segment, opts);
   if (sekme === 'mufredat') return mufredatAc();
-  if (sekme === 'oyun') return eslestirme.ac(opts);
+  if (sekme === 'oyun') return eslestirme.ac(Object.assign({ ustHTML: () => ipucuHTML('oyun') }, opts));
   if (sekme === 'ben') return benAc();
   return anaSayfa();
 }
@@ -83,6 +83,25 @@ function ekranModu(baslik, geriFn) {
 }
 function render(html) { icerik.innerHTML = html; window.scrollTo(0, 0); }
 function esc(s) { return String(s ?? '').replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m])); }
+
+// Her sekmede ilk açılışta tek satırlık ipucu (kapatınca bir daha görünmez)
+const IPUCU = {
+  bugun: '🏠 Bugünün planı burada: tekrarlar, günün eşleştirmesi ve kaldığın ünite.',
+  kelimeler: '📖 S1 → S5 çiplerle seviyeyi, türle kelime türünü süz; bir kelimeye dokununca detay açılır.',
+  mufredat: '🎓 Her ünitede Oku → Alıştırma → Test sırası önerilir; halka ilerlemeni gösterir.',
+  oyun: '🧩 Sezonlar sırayla açılır; günün eşleştirmesi herkese aynı 10 kelimedir.',
+  ben: '👤 Tema, günlük hedef ve hatırlatma ayarları aşağıda; ilerlemeni paylaşabilirsin.',
+};
+function ipucuHTML(sekme) {
+  const g = _ayar.ipucuGoruldu || {};
+  if (g[sekme] || !IPUCU[sekme]) return '';
+  return `<div class="ipucu" data-sekme="${sekme}"><span>${IPUCU[sekme]}</span><button class="ipucu-kapat" aria-label="Kapat">✕</button></div>`;
+}
+icerik.addEventListener('click', (e) => {
+  const b = e.target.closest('.ipucu-kapat'); if (!b) return;
+  const k = b.closest('.ipucu'); _ayar.ipucuGoruldu = Object.assign(_ayar.ipucuGoruldu || {}, { [k.dataset.sekme]: true }); saveAyar(_ayar);
+  k.remove();
+});
 
 // Segment (sekme içi alt bölümler) — tıklamalar icerik üstünde delege edilir
 function segmentHTML(alan, secenekler, aktif) {
@@ -114,7 +133,7 @@ const eslestirme = kurEslestirme({
 });
 const sozluk = kurSozluk({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran,
-  calis: (words) => { kelimeOgren.ustAyarla(kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words); },
+  calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words); },
   akisBaslat: (words, baslik) => kelimeAkisi.ac({ kelimeler: words, baslik: baslik || 'Kelime Akışı' }),
 });
 const alistirma = kurAlistirma({ render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti });
@@ -144,10 +163,13 @@ async function anaSayfa() {
   const oz = await kelimeOgren.ozet().catch(() => null);
   const es = eslestirme.ozet();
   const son = _ayar.sonDers;
-  const tekrarBitti = oz && (oz.due + oz.yeni) === 0;
-  const tekrarMetin = !oz ? 'Aralıklı tekrar' : tekrarBitti ? 'Bugünlük tamam — istersen yine çalış' : `${oz.due} tekrar · ${oz.yeni} yeni kelime`;
+  bildirimYenile(oz);
+  const yarim = kelimeOgren.devamBilgi();
+  const tekrarBitti = !yarim && oz && (oz.due + oz.yeni) === 0;
+  const tekrarMetin = yarim ? `Yarım kalan oturum · ${yarim.i}/${yarim.n} tamamlandı` : !oz ? 'Aralıklı tekrar' : tekrarBitti ? 'Bugünlük tamam — istersen yine çalış' : `${oz.due} tekrar · ${oz.yeni} yeni kelime`;
   const sonAd = son ? dersKisaAd(son.id) : '';
   render(`
+    ${ipucuHTML('bugun')}
     ${panoHTML()}
     <div class="ana-satir">${sinavKartHTML()}${gununKartHTML()}</div>
     <div class="plan-baslik">Bugünün planı</div>
@@ -173,7 +195,7 @@ async function anaSayfa() {
   });
   const sk = document.getElementById('sinavKartBtn');
   if (sk) sk.onclick = sinavAyarAc;
-  document.getElementById('pOgren').onclick = () => kelimeOgren.ac();
+  document.getElementById('pOgren').onclick = () => yarim ? kelimeOgren.devamEt() : kelimeOgren.ac();
   document.getElementById('pGunluk').onclick = () => eslestirme.ac({ gunluk: true });
   document.getElementById('pDers').onclick = () => son ? dersAc(son.dosya, son.id) : sekmeAc('mufredat');
   document.getElementById('pAkis').onclick = () => kelimeAkisi.ac({ baslik: 'Kelime Akışı' });
@@ -194,7 +216,8 @@ const KELIME_SEGMENTLER = [['liste', '📖 Liste'], ['ogren', '🌱 Öğren'], [
 const kelimelerSegmentHTML = (seg) => segmentHTML('kelimeler', KELIME_SEGMENTLER, seg);
 function kelimelerAc(segment, opts = {}) {
   kelimelerSegment = segment || kelimelerSegment || 'liste';
-  const ust = kelimelerSegmentHTML(kelimelerSegment);
+  const seg = kelimelerSegment;
+  const ust = () => ipucuHTML('kelimeler') + kelimelerSegmentHTML(seg);
   const geri = () => sekmeKokChrome('kelimeler');
   if (kelimelerSegment === 'ogren') return kelimeOgren.ac({ ustHTML: ust });
   if (kelimelerSegment === 'defter') return sozluk.ac({ ustHTML: ust, filtre: { durum: 'defter' }, geri });
@@ -250,6 +273,7 @@ async function mufredatAc() {
     return `<div class="mf-grup"><div class="mf-grup-bas">${g.ikon} ${g.ad}<span class="mf-grup-oran ${gOran >= 100 ? 'tam' : ''}">${gOran >= 100 ? '✓ tamam' : '%' + gOran}</span></div>${kartlar}</div>`;
   }).join('');
   render(`
+    ${ipucuHTML('mufredat')}
     <div class="mf-ozet">
       <div><b>${calisilan}/${dersler.length}</b><span>ünite çalışıldı</span></div>
       <div><b>${cozTest}</b><span>test çözüldü</span></div>
@@ -534,6 +558,17 @@ function quizTestleri() {
   if (Array.isArray(d.quiz) && d.quiz.length) return [{ ad: 'Test', sorular: d.quiz }];
   return [];
 }
+// Testin konu etiketi: kısa cevaplardan en sık 3'ü (at · in · on) ya da soru biçimi
+function testEtiket(t) {
+  const say = {};
+  for (const q of t.sorular || []) { const c = String(q.cevap || '').trim(); if (c && !/\s/.test(c) && c.length <= 14) say[c] = (say[c] || 0) + 1; }
+  const top = Object.entries(say).sort((a, b) => b[1] - a[1]).slice(0, 3).map(x => x[0]);
+  if (top.length >= 2 && Object.keys(say).length <= 14) return top.join(' · ');
+  const n = (t.sorular || []).length, bosluk = (t.sorular || []).filter(q => /_{2,}/.test(q.soru)).length, ceviri = (t.sorular || []).filter(q => /çeviri/i.test(q.soru)).length;
+  if (ceviri > n / 2) return 'çeviri';
+  if (bosluk > n / 2) return 'boşluk doldurma';
+  return 'karma';
+}
 function zorlukRozet(i, n) {
   const r = n <= 1 ? 0 : i / (n - 1);
   if (r < 0.34) return '<span class="zorluk-rozet z-kolay">Kolay</span>';
@@ -554,7 +589,7 @@ function ekranQuiz() {
       ? `<span class="test-skor ${st.dogru === st.toplam ? 'tam' : ''}">✓ ${st.dogru}/${st.toplam}</span>`
       : (i === siradaki ? '<span class="siradaki-rozet">Sıradaki</span>' : '');
     return `<div class="test-link${st ? ' biten' : ''}${i === siradaki ? ' siradaki' : ''}" data-i="${i}">
-      <div><div class="baslik">${esc(t.ad || ('Test ' + (i + 1)))}</div><div class="alt-bilgi">${(t.sorular || []).length} soru</div></div>
+      <div><div class="baslik">${esc(t.ad || ('Test ' + (i + 1)))}</div><div class="alt-bilgi">${(t.sorular || []).length} soru · <span class="test-konu">${esc(testEtiket(t))}</span></div></div>
       ${durum}${zorlukRozet(i, testler.length)}<span class="ok">›</span>
     </div>`;
   }).join('');
@@ -808,7 +843,7 @@ function ayarSatirlariHTML() {
     <button class="ayar-sat" data-is="rekor"><span>🏅</span><div><b>Rekorlarım</b><i>Eşleştirme skorların</i></div></button>
     <button class="ayar-sat" data-is="lig"><span>🌍</span><div><b>Çevrimiçi lig</b><i>Günün bulmacası, haftalık ve en iyi bölüm sıralaması</i></div></button>
     <div class="ben-baslik">Ayarlar</div>
-    <button class="ayar-sat" data-is="tema"><span>${_ayar.tema === 'koyu' ? '☀️' : '🌙'}</span><div><b>${_ayar.tema === 'koyu' ? 'Açık tema' : 'Koyu tema'}</b><i>Görünümü değiştir</i></div></button>
+    <button class="ayar-sat" data-is="tema"><span>${TEMA_AD[temaSecimi()][0]}</span><div><b>${TEMA_AD[temaSecimi()][1]}</b><i>${TEMA_AD[temaSecimi()][2]} — değiştirmek için dokun</i></div></button>
     <button class="ayar-sat" data-is="hedef"><span>🎯</span><div><b>Günlük hedef</b><i>${_ayar.hedef || HEDEF_VARSAYILAN} aktivite/gün — değiştirmek için dokun</i></div></button>
     <button class="ayar-sat" data-is="sinav"><span>📅</span><div><b>Sınav tarihi</b><i>${_ayar.sinavTarih ? _ayar.sinavTarih + ' — geri sayım açık' : 'YDS/YÖKDİL tarihini ekle'}</i></div></button>
     <button class="ayar-sat" data-is="bildirim"><span>🔔</span><div><b>Günlük hatırlatma</b><i>${_ayar.bildirimAcik ? (_ayar.bildirimSaat || '20:00') + ' — açık' : 'Kapalı'}${bildirimVarMi() ? '' : ' · sadece uygulamada'}</i></div></button>
@@ -864,6 +899,7 @@ function benAc() {
       <div class="basarim-ad">${esc(x.ad)}</div>
       <div class="basarim-desc">${esc(x.desc)}</div></div>`).join('');
   render(`
+    ${ipucuHTML('ben')}
     <div class="ilerleme-sv">
       <div class="ilerleme-sv-bas"><b>⭐ Seviye ${s.seviye}</b><span>${s.xp} XP toplam</span></div>
       <div class="pano-xp"><div class="pano-xp-ic" style="width:${Math.round(s.svOran * 100)}%"></div></div>
@@ -1002,15 +1038,21 @@ function toast(metin) {
   } catch (_) {}
 }
 
+const _sistemKoyu = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+const TEMA_SIRA = ['sistem', 'acik', 'koyu'];
+const TEMA_AD = { sistem: ['📱', 'Tema: Sistem', 'Cihaz ayarını izler'], acik: ['☀️', 'Tema: Açık', 'Her zaman açık'], koyu: ['🌙', 'Tema: Koyu', 'Her zaman koyu'] };
+function temaSecimi() { return TEMA_SIRA.includes(_ayar.tema) ? _ayar.tema : 'sistem'; }
 function temaUygula() {
-  const koyu = _ayar.tema === 'koyu';
+  const secim = temaSecimi();
+  const koyu = secim === 'koyu' || (secim === 'sistem' && !!(_sistemKoyu && _sistemKoyu.matches));
   document.documentElement.dataset.tema = koyu ? 'koyu' : 'acik';
   const mt = document.querySelector('meta[name="theme-color"]');
   if (mt) mt.content = koyu ? '#0f1114' : '#f1f3f5';
   const K = window.Capacitor?.Plugins?.Kenar;
   if (K) K.renk({ renk: koyu ? '#0f1114' : '#f1f3f5', koyu }).catch?.(() => {});
 }
-function temaDegistir() { _ayar.tema = _ayar.tema === 'koyu' ? 'acik' : 'koyu'; saveAyar(_ayar); temaUygula(); }
+function temaDegistir() { _ayar.tema = TEMA_SIRA[(TEMA_SIRA.indexOf(temaSecimi()) + 1) % TEMA_SIRA.length]; saveAyar(_ayar); temaUygula(); }
+if (_sistemKoyu && _sistemKoyu.addEventListener) _sistemKoyu.addEventListener('change', () => { if (temaSecimi() === 'sistem') temaUygula(); });
 
 function basarimlar() {
   const s = panoStats();
@@ -1196,6 +1238,22 @@ function isiHaritasi() {
     <div class="isi-lejant">Az <span class="isi-hucre s0"></span><span class="isi-hucre s1"></span><span class="isi-hucre s2"></span><span class="isi-hucre s3"></span><span class="isi-hucre s4"></span> Çok</div>`;
 }
 
+// Hatırlatma metni kişiselleşir: vadesi gelen tekrar, seri, günün bulmacası
+let _sonBildirimMetin = '';
+function bildirimMetni(oz) {
+  const seri = panoStats().seri;
+  const seriEk = seri >= 2 ? ` · ${seri} günlük serini koru 🔥` : '';
+  if (oz && oz.due > 0) return `${oz.due} tekrar seni bekliyor${seriEk}`;
+  if (oz && oz.yeni > 0) return `Bugün ${oz.yeni} yeni kelime öğren 🌱${seriEk}`;
+  return `Günün eşleştirmesi hazır 🧩${seriEk}`;
+}
+function bildirimYenile(oz) {
+  if (!_ayar.bildirimAcik || !bildirimVarMi()) return;
+  const m = bildirimMetni(oz);
+  if (m === _sonBildirimMetin) return;
+  _sonBildirimMetin = m;
+  gunlukKur(_ayar.bildirimSaat || '20:00', m).catch(() => {});
+}
 function bildirimAyarAc() {
   const saat = _ayar.bildirimSaat || '20:00';
   const acik = !!_ayar.bildirimAcik;
@@ -1217,7 +1275,7 @@ function bildirimAyarAc() {
         const msg = o.querySelector('#bildMsg');
         const bitir = (ms) => setTimeout(() => { kapat(); if (aktifSekme === 'ben') benAc(); }, ms);
         if (ac && native) {
-          const r = await gunlukKur(sa);
+          const r = await gunlukKur(sa, bildirimMetni(await kelimeOgren.ozet().catch(() => null)));
           if (r.ok) { msg.textContent = `✓ Her gün ${sa} için kuruldu.`; bitir(900); }
           else if (r.sebep === 'izin') msg.textContent = 'Bildirim izni verilmedi. Ayarlardan izin ver.';
           else msg.textContent = 'Bildirim kurulamadı.';
@@ -1276,9 +1334,6 @@ efektAyarla({ ses: !_ayar.sesKapali, titresim: !_ayar.titresimKapali });
 girisEkrani(false);
 sekmeAc('bugun');
 
-if (_ayar.bildirimAcik && bildirimVarMi()) {
-  gunlukKur(_ayar.bildirimSaat || '20:00').catch(() => {});
-}
 const _capApp = window.Capacitor?.Plugins?.App;
 if (_capApp?.addListener) {
   _capApp.addListener('backButton', () => { if (!geriYonet()) cikisOnay(); });

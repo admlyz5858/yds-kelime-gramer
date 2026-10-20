@@ -57,7 +57,9 @@ Her gün birkaç dakika — gerisini uygulama hatırlatır.
 • Bugün sekmesinde günün planı: tekrarlar, günün eşleştirmesi, kaldığın ünite
 • Eşleştirme: sezon yolu (6'şar bölüm), bölümler seviye bandıyla etiketli
 • Müfredatta ünite ilerleme halkaları; 3 adımlı karşılama (hedef + sınav tarihi)
-• Tüm testler açık; sıradaki vurgulu
+• Tüm testler açık; sıradaki vurgulu, konu etiketli
+• Öğren: kartı kaydırarak derecelendir, yarım kalan oturuma devam
+• Sistem/açık/koyu tema; kişiselleşen hatırlatma metni
 • Öğrendiklerim ve Defter aralıklı tekrarla birleşti
 ```
 

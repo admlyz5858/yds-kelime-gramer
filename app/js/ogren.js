@@ -154,7 +154,7 @@ export function kurKelimeOgren(api) {
   function listedenOturum(words) {
     const kuyruk = shuffle(words).slice(0, 60).map(w => ({ w, yeniMi: yeniMi(w.en) }));
     oturum = kuyruktanOturum(kuyruk);
-    if (kuyruk.length) { ekranModu('Kelime Öğren', panelEkrani); cizOturum(); }
+    if (kuyruk.length) oturumBaslat();
   }
   // Sözlükten "çalış": havuz hazır olunca verilen listeyle oturum
   function calis(words) { yukle().then(() => listedenOturum(words)).catch(() => {}); }
@@ -225,7 +225,7 @@ export function kurKelimeOgren(api) {
     const kaps = srs.ayar.kapsam;
     const kapsamEt = kaps === 'tum' ? '' : kaps === 'zor' ? ' · 🔥 zor kelimeler' : ` · Ünite ${kaps}`;
 
-    render(`${ust}
+    render(`${typeof ust === 'function' ? ust() : ust}
       <div class="ogr-hero">
         <div class="ogr-hero-sol">
           <div class="ogr-hero-et">🌱 Aralıklı tekrarla kalıcı öğren</div>
@@ -256,6 +256,7 @@ export function kurKelimeOgren(api) {
         <select id="ogrKapsam" class="ogr-kapsam-sec">${kapsamOps}</select>
       </div>
 
+      ${(() => { const d = devamBilgi(); return d ? `<button class="hizli-devam ogr-devam-kayit" id="ogrDevamKayit"><div><div class="hizli-devam-ust">▶ Yarım kalan oturuma devam et</div><div class="hizli-devam-bas">${d.i} / ${d.n} kelime tamamlandı</div></div><span class="ok">›</span></button>` : ''; })()}
       <button class="ogr-basla ${oturumAdet ? '' : 'bitti'}" id="ogrBasla">
         ${oturumAdet
         ? `<span class="ogr-basla-bas">Oturuma başla${kapsamEt}</span><span class="ogr-basla-alt">${on.due} tekrar · ${on.yeni} yeni · ${oturumAdet} kelime</span>`
@@ -287,7 +288,8 @@ export function kurKelimeOgren(api) {
       </div>
     `);
 
-    document.getElementById('ogrBasla').onclick = () => { if (oturumKur() > 0) cizOturum(); else cizPanel(); };
+    document.getElementById('ogrBasla').onclick = () => { if (oturumKur() > 0) oturumBaslat(); else cizPanel(); };
+    const dvb = document.getElementById('ogrDevamKayit'); if (dvb) dvb.onclick = devamEt;
     document.getElementById('ogrListeAc').onclick = () => kelimeListesi();
     const kapsamSec = document.getElementById('ogrKapsam');
     kapsamSec.value = kapsamDeger;
@@ -427,15 +429,14 @@ export function kurKelimeOgren(api) {
   }
   function ustBar() {
     const n = oturum.kuyruk.length, i = oturum.i, yuzde = Math.round(i / n * 100);
-    return `<button class="aksiyon ikincil" id="ogrCik" style="margin-bottom:12px">‹ Panele dön</button>
-      <div class="kart-sayac">Oturum · ${i + 1} / ${n} · ✓ ${oturum.dogru} ✕ ${oturum.yanlis}</div>
+    return `<div class="kart-sayac">Oturum · ${i + 1} / ${n} · ✓ ${oturum.dogru} ✕ ${oturum.yanlis}</div>
       <div class="kart-ilerleme"><div class="kart-ilerleme-ic" style="width:${yuzde}%"></div></div>`;
   }
   function rozet(item) {
     const zor = leechMi(item.w.en) ? '<span class="ogr-rozet zor">🔥 Zor</span>' : '';
     return (item.yeniMi ? '<span class="ogr-rozet yeni">✨ Yeni</span>' : '<span class="ogr-rozet tekrar">🔁 Tekrar</span>') + zor;
   }
-  function wireCik() { const b = document.getElementById('ogrCik'); if (b) b.onclick = panelEkrani; }
+  function wireCik() { /* üst bar Geri panele döner; oturum kaydı korunur */ }
 
   // --- Kart (tanıma) / Dinle — çift yönlü ---
   function cizKart(item, mod) {
@@ -459,7 +460,34 @@ export function kurKelimeOgren(api) {
     ['ogrSes', 'ogrSes2'].forEach(id => { const el = document.getElementById(id); if (el) el.onclick = () => seslendir(w.en); });
     if (dinle && !_acik) seslendir(w.en);
     if (!_acik) { const g = document.getElementById('ogrGoster'); if (g) g.onclick = () => { _acik = true; cizKart(item, mod); }; }
-    else { if (w.ornek_tokenlar) wireOrnekler(document.getElementById('icerik')); wireDerece(item); }
+    else { if (w.ornek_tokenlar) wireOrnekler(document.getElementById('icerik')); wireDerece(item); wireKaydir(item); }
+  }
+  // Kartı sola kaydır → Tekrar, sağa kaydır → Kolay (düğmelerle aynı)
+  function wireKaydir(item) {
+    const kart = document.querySelector('.ogr-calisma-kart'); if (!kart) return;
+    kart.insertAdjacentHTML('beforeend', '<span class="ogr-kaydir-et sol">↺ Tekrar</span><span class="ogr-kaydir-et sag">Kolay ✓</span>');
+    const sol = kart.querySelector('.ogr-kaydir-et.sol'), sag = kart.querySelector('.ogr-kaydir-et.sag');
+    const ESIK = 90; let x0 = null, y0 = null, dx = 0, yatay = null;
+    kart.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; dx = 0; yatay = null; kart.style.transition = 'none'; }, { passive: true });
+    kart.addEventListener('touchmove', (e) => {
+      if (x0 == null) return;
+      const mx = e.touches[0].clientX - x0, my = e.touches[0].clientY - y0;
+      if (yatay == null && (Math.abs(mx) > 8 || Math.abs(my) > 8)) yatay = Math.abs(mx) > Math.abs(my);
+      if (!yatay) return;
+      dx = Math.max(-160, Math.min(160, mx));
+      kart.style.transform = `translateX(${dx}px) rotate(${dx / 18}deg)`;
+      sol.style.opacity = Math.min(1, Math.max(0, -dx / ESIK)); sag.style.opacity = Math.min(1, Math.max(0, dx / ESIK));
+    }, { passive: true });
+    kart.addEventListener('touchend', () => {
+      if (x0 == null) return;
+      kart.style.transition = 'transform .25s ease';
+      if (yatay && Math.abs(dx) >= ESIK) {
+        const q = dx > 0 ? 2 : 0;
+        kart.style.transform = `translateX(${dx > 0 ? 420 : -420}px) rotate(${dx > 0 ? 20 : -20}deg)`;
+        setTimeout(() => { derecelendir(item.w, q); if (q === 0) oturum.yanlis++; else oturum.dogru++; ilerle(); }, 160);
+      } else { kart.style.transform = ''; sol.style.opacity = 0; sag.style.opacity = 0; }
+      x0 = null;
+    });
   }
   function derecelendirmeBtnleri() {
     return `<div class="ogr-derece">
@@ -579,10 +607,32 @@ export function kurKelimeOgren(api) {
     } else { wireOrnekler(document.getElementById('icerik')); document.getElementById('ogrDevam').onclick = ilerle; }
   }
 
-  function ilerle() { oturum.i++; cizOturum(); }
+  function ilerle() { oturum.i++; oturumKaydet(); cizOturum(); }
+  // Oturum ekranı her zaman alt ekrandır: üst "Geri" panele döner (kayıt korunur)
+  function oturumBaslat() { oturumKaydet(); ekranModu('Kelime Öğren', panelEkrani); cizOturum(); }
+  // Yarım kalan oturum: kuyruk (kelime anahtarı + mod/yön) ve konum saklanır; panelden devam edilir
+  function oturumKaydet() {
+    if (!oturum || oturum.i >= oturum.kuyruk.length) { delete srs.devam; kaydet(); return; }
+    srs.devam = { kuyruk: oturum.kuyruk.map(x => ({ en: x.w.en, yeniMi: !!x.yeniMi, mod: x.mod, yon: x.yon })), i: oturum.i, dogru: oturum.dogru, yanlis: oturum.yanlis, t: Date.now() };
+    kaydet();
+  }
+  function devamBilgi() {
+    const d = srs.devam;
+    if (!d || !Array.isArray(d.kuyruk) || d.i >= d.kuyruk.length) return null;
+    if (Date.now() - (d.t || 0) > 3 * 86400000) { delete srs.devam; kaydet(); return null; }   // 3 günden eski kayıt düşer
+    return { i: d.i, n: d.kuyruk.length };
+  }
+  function devamEt() {
+    const d = srs.devam; if (!d) return panelEkrani();
+    const kuyruk = d.kuyruk.map(x => { const w = havuzIndex.get(String(x.en).toLowerCase()); return w ? { w, yeniMi: x.yeniMi, mod: x.mod, yon: x.yon } : null; }).filter(Boolean);
+    if (!kuyruk.length) { delete srs.devam; kaydet(); return panelEkrani(); }
+    oturum = { kuyruk, i: Math.min(d.i, kuyruk.length - 1), dogru: d.dogru || 0, yanlis: d.yanlis || 0 };
+    ekranModu('Kelime Öğren', panelEkrani); cizOturum();
+  }
 
   // ======================================================= BİTİŞ
   function cizBitis() {
+    delete srs.devam; kaydet();
     gunKaydet(0, { bitir: true });   // "oturum bitir" görevi
     const topl = oturum.dogru + oturum.yanlis, yuzde = topl ? Math.round(oturum.dogru / topl * 100) : 0;
     const s = istat();
@@ -608,11 +658,11 @@ export function kurKelimeOgren(api) {
         <button class="aksiyon ikincil" id="ogrPanel">Panele dön</button>
       </div>`);
     const dv = document.getElementById('ogrDevamOturum');
-    if (dv) dv.onclick = () => { if (oturumKur() > 0) cizOturum(); else panelEkrani(); };
+    if (dv) dv.onclick = () => { if (oturumKur() > 0) oturumBaslat(); else panelEkrani(); };
     document.getElementById('ogrPanel').onclick = panelEkrani;
   }
 
   function ac(opts = {}) { ust = opts.ustHTML || ''; panel(); }
   function ustAyarla(html) { ust = html || ''; }
-  return { ac, calis, ozet, ustAyarla };
+  return { ac, calis, ozet, ustAyarla, devamBilgi, devamEt };
 }

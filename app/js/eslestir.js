@@ -144,7 +144,9 @@ export function kurEslestirme(api) {
   }
 
   // ---------- giriş ----------
+  let ust = '';
   function ac(opts = {}) {
+    ust = opts.ustHTML || '';
     yukle().then(() => {
       if (opts.gunluk && !durum.gunluk[bugun()]) { gunlukBasla(); return; }
       panelEkrani();
@@ -176,7 +178,7 @@ export function kurEslestirme(api) {
       if (durumu === 'kilit') return `<div class="es-sezon kilit" data-s="${si}">${bas2}</div>`;
       return `<div class="es-sezon ${durumu}" data-s="${si}">${bas2}<div class="es-yol">${ks.map(dugum).join('')}</div></div>`;
     }).join('');
-    render(`
+    render(`${typeof ust === 'function' ? ust() : ust}
       <div class="es-hero">
         <div><div class="es-hero-et">🧩 Kelime eşleştir · kolaydan zora</div><div class="es-hero-bas">Eşleştirme</div>
           <div class="es-hero-alt">${Object.keys(durum.bolumler).length}/${bolumAdet()} bölüm · ⭐ ${toplamYildiz}${enIyi ? ` · rekor <b>${enIyi.skor}</b>` : ''}</div></div>
