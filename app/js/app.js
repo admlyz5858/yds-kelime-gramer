@@ -10,7 +10,7 @@ import { kurAlistirma } from './alistirma.js';
 import { kurBanka } from './banka.js';
 import { kurDeneme } from './deneme.js';
 import { kurTarayici } from './tarayici.js';
-import { disaAktar, iceAktarSec } from './yedek.js';
+import * as bulut from './bulut.js';
 import { loadOzel, saveOzel } from './storage.js';
 import { notAl, notKaydet } from './notlar.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
@@ -276,6 +276,7 @@ async function anaSayfa() {
     <button class="plan-kart" id="pDers">
       <span class="plan-ikon">🎓</span><span class="plan-ic"><b>${son ? 'Müfredata devam' : 'Müfredata başla'}</b><i>${son ? esc(sonAd) + ' · kaldığın yerden' : 'Edatlar, zamanlar, modallar…'}</i></span><span class="plan-durum">›</span>
     </button>
+    ${!bulut.durum().girili && !_ayar.bulutKapatildi && (_ayar.toplamAktivite || 0) >= 30 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni yedekle</b><i>E-posta ile kayıt ol; telefon değişse de devam et</i></span><button class="ipucu-kapat" id="pBulutKapat" aria-label="Kapat">✕</button></button>` : ''}
     ${deneme.onerilsinMi() ? `<button class="plan-kart kucuk" id="pDeneme"><span class="plan-ikon">🧪</span><span class="plan-ic"><b>Haftalık mini deneme</b><i>${deneme.ozet().son ? `Son: ${deneme.ozet().son.puan} puan · ` : ''}20 soru · 25 dakika</i></span><span class="plan-durum">›</span></button>` : ''}
     ${zayif ? `<button class="plan-kart zayif" id="pZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konunu güçlendir</b><i>${esc(zayif.ad)} · %${Math.round(zayif.oran * 100)} doğruluk · 10 soru</i></span><span class="plan-durum">›</span></button>` : ''}
     <button class="plan-kart kucuk" id="pAkis">
@@ -296,6 +297,7 @@ async function anaSayfa() {
   document.getElementById('pDers').onclick = () => son ? dersAc(son.dosya, son.id) : sekmeAc('mufredat');
   document.getElementById('pAkis').onclick = () => kelimeAkisi.ac({ baslik: 'Kelime Akışı' });
   const pd = document.getElementById('pDeneme'); if (pd) pd.onclick = () => deneme.ac(() => sekmeAc('bugun'));
+  const pb = document.getElementById('pBulut'); if (pb) pb.onclick = (e) => { if (e.target.closest('#pBulutKapat')) { _ayar.bulutKapatildi = true; saveAyar(_ayar); anaSayfa(); return; } girisAc(); };
   const pz = document.getElementById('pZayif'); if (pz) pz.onclick = () => banka.basla({ konu: zayif.konu, alt: zayif.alt, baslik: zayif.ad, geri: () => sekmeAc('bugun') });
   const gb = document.getElementById('gununBtn');
   if (gb) gb.onclick = gununAc;
@@ -945,7 +947,7 @@ function yardimAc() {
     <div class="yardim-sat"><span>🧪</span><div><b>Mini deneme</b> — Soru Bankası'ndan 20 soru, 25 dakika; tahmini YDS puanı ve konu kırılımı. Bugün'de haftada bir önerilir.</div></div>
     <div class="yardim-sat"><span>📄</span><div><b>Metin tara</b> — Kelimeler › Tara: bir metin yapıştır, havuzdaki kelimeler seviye rengiyle işaretlenir; bilmediklerini deftere al ya da çalış.</div></div>
     <div class="yardim-sat"><span>➕</span><div><b>Kendi kelimen</b> — Defterim › "Kendi kelimeni ekle"; her karta 📝 hafıza ipucu yazabilirsin.</div></div>
-    <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, başarımlar, ısı haritası, ayarlar; 📤 yedek al / 📥 yedek yükle ile ilerlemeni cihazlar arasında taşı.</div></div>
+    <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, başarımlar, ısı haritası, ayarlar; ☁️ e-posta ile kayıt olunca ilerlemen buluta yedeklenir ve cihazlar arasında taşınır.</div></div>
     <div class="yardim-sat"><span>❌</span><div><b>Yanlışlarım</b> — Testlerde yanlış yaptığın sorular birikir; doğru çözünce silinir (Müfredat ve Bugün’den ulaşılır).</div></div>
   `);
 }
@@ -968,9 +970,8 @@ function ayarSatirlariHTML() {
     <button class="ayar-sat" data-is="titresim"><span>📳</span><div><b>Titreşim</b><i>${_ayar.titresimKapali ? 'Kapalı' : 'Açık'}</i></div></button>
     <button class="ayar-sat" data-is="yardim"><span>❓</span><div><b>Nasıl çalışılır?</b><i>Sekmeler ve çalışma biçimleri</i></div></button>
     <button class="ayar-sat" data-is="giris"><span>👋</span><div><b>Tanıtım ekranı</b><i>Karşılama ekranını tekrar aç</i></div></button>
-    <div class="ben-baslik">Yedek</div>
-    <button class="ayar-sat" data-is="yedekal"><span>📤</span><div><b>Yedek al</b><i>Tüm ilerlemeni dosya olarak kaydet / paylaş (telefon değişimi, iPhone ↔ Android)</i></div></button>
-    <button class="ayar-sat" data-is="yedekyukle"><span>📥</span><div><b>Yedek yükle</b><i>Dosyadan geri getir — mevcut veriler üzerine yazılır</i></div></button>
+    <div class="ben-baslik">Hesap ve bulut yedek</div>
+    ${hesapSatirlariHTML()}
     <div class="ben-baslik">Veri</div>
     <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>${_yanlis.length} biriken soruyu sıfırla</i></div></button>
     <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>${defterKelimeler().length} kelimeyi sil</i></div></button>
@@ -982,14 +983,10 @@ function ayarBagla(root) {
     const is = b.dataset.is;
     if (is === 'rekor') { eslestirme.rekorlar(); return; }
     if (is === 'deneme') { deneme.ac(() => sekmeAc('ben')); return; }
-    if (is === 'yedekal') { disaAktar().then(r => { if (r === 'indirildi') toast('📤 Yedek dosyası indirildi'); else if (r === false) toast('Yedek alınamadı'); }); return; }
-    if (is === 'yedekyukle') {
-      iceAktarSec().then(r => {
-        if (!r) return; if (r.hata) { toast(r.hata); return; }
-        onayAc(`Yedek (${r.ozet.tarih}): ${r.ozet.kart} kelime kaydı, ${r.ozet.defter} defter, ${r.ozet.test} test, ${r.ozet.xp} XP. Mevcut verilerin üzerine yazılsın mı?`, () => { try { r.uygula(); toast('📥 Yedek yüklendi, yeniden başlatılıyor'); setTimeout(() => location.reload(), 900); } catch (e) { toast('Yedek yüklenemedi'); } });
-      });
-      return;
-    }
+    if (is === 'giris-yap') { girisAc(); return; }
+    if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulut.hemenYaz().then(() => bulutEsitle(true)).then(() => benAc()); return; }
+    if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); return; }
+    if (is === 'hesap-sil') { onayAc('Hesabın ve buluttaki yedeğin kalıcı olarak silinsin mi? Bu cihazdaki ilerleme silinmez.', () => { bulut.hesabiSil().then((r) => { toast(r === 'tam' ? 'Hesap ve yedek silindi' : 'Bulut yedeği silindi, oturum kapatıldı'); benAc(); }).catch(() => toast('Silinemedi, tekrar dene')); }); return; }
     if (is === 'lig') { eslestirme.lig(); return; }
     if (is === 'tema') { temaDegistir(); benAc(); return; }
     if (is === 'hedef') {
@@ -1367,6 +1364,79 @@ function isiHaritasi() {
     <div class="isi-lejant">Az <span class="isi-hucre s0"></span><span class="isi-hucre s1"></span><span class="isi-hucre s2"></span><span class="isi-hucre s3"></span><span class="isi-hucre s4"></span> Çok</div>`;
 }
 
+// ===== Hesap (e-posta kodu) ve bulut yedek =====
+function hesapSatirlariHTML() {
+  const d = bulut.durum();
+  if (!d.girili) return `<button class="ayar-sat" data-is="giris-yap"><span>☁️</span><div><b>E-posta ile kayıt ol / giriş yap</b><i>İlerlemen otomatik yedeklenir; telefon değişince ya da iPhone'da aynı yerden devam edersin. Şifre yok, e-postana kod gelir.</i></div></button>`;
+  const zaman = d.sonSenkron ? new Date(d.sonSenkron).toLocaleString('tr-TR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : 'henüz yok';
+  return `<div class="ayar-sat hesap-sat"><span>✅</span><div><b>${esc(d.eposta)}</b><i>Bulut yedek açık · son eşitleme: ${zaman}${d.kirli ? ' · bekleyen değişiklik var' : ''}${d.hata ? ` · <span style="color:var(--gul)">hata: ${esc(d.hata)}</span>` : ''}</i></div></div>
+    <button class="ayar-sat" data-is="esitle"><span>🔄</span><div><b>Şimdi eşitle</b><i>Değişiklikler normalde 20 saniye içinde kendiliğinden yazılır</i></div></button>
+    <button class="ayar-sat" data-is="cikis-yap"><span>🚪</span><div><b>Çıkış yap</b><i>Cihazdaki ilerleme kalır</i></div></button>
+    <button class="ayar-sat tehlike" data-is="hesap-sil"><span>🗑️</span><div><b>Hesabımı ve bulut yedeğimi sil</b><i>Geri alınamaz</i></div></button>`;
+}
+function girisAc() {
+  let eposta = '';
+  const m = modalAc('E-posta ile giriş', `
+    <p class="modal-aciklama">Şifre yok: e-postana 6 haneli bir kod gelir. İlk girişte hesabın oluşturulur; ilerlemen bu hesapta yedeklenir.</p>
+    <input id="hsEposta" class="giris-tarih" style="margin-top:0" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="e-posta adresin">
+    <div id="hsMsg" style="margin-top:8px;min-height:1.2em;font-size:13px;color:var(--murekkep-2)"></div>
+    <button class="aksiyon" id="hsGonder" style="width:100%;margin-top:4px">Kod gönder</button>
+    <div id="hsKodAlan" hidden>
+      <input id="hsKod" class="giris-tarih" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="E-postadaki kod" style="margin-top:10px;letter-spacing:.3em;text-align:center;font-size:22px">
+      <button class="aksiyon" id="hsDogrula" style="width:100%;margin-top:8px">Giriş yap</button>
+      <button class="dn-bitir-link" id="hsTekrar">Kod gelmedi, tekrar gönder</button>
+    </div>
+    <p class="giris-not" style="text-align:left">Hesap verisi: e-posta adresin ve ilerleme yedeğin. Lig takma adından bağımsızdır. İstediğin an Ben › Hesabımı sil ile her şey silinir.</p>`, {
+    onWire: (o, kapat) => {
+      const msg = o.querySelector('#hsMsg'), ep = o.querySelector('#hsEposta');
+      setTimeout(() => ep.focus(), 120);
+      const gonder = async () => {
+        eposta = ep.value.trim().toLowerCase();
+        if (!bulut.epostaGecerli(eposta)) { msg.textContent = 'Geçerli bir e-posta yaz.'; return; }
+        msg.textContent = 'Gönderiliyor…'; o.querySelector('#hsGonder').disabled = true;
+        try { await bulut.kodGonder(eposta); msg.textContent = `Kod ${eposta} adresine gönderildi (spam klasörünü de kontrol et).`; o.querySelector('#hsKodAlan').hidden = false; o.querySelector('#hsGonder').hidden = true; setTimeout(() => o.querySelector('#hsKod').focus(), 100); }
+        catch (e) { msg.textContent = /rate|limit|429/i.test(String(e.message)) ? 'Çok sık denendi; birkaç dakika sonra tekrar dene.' : 'Gönderilemedi: ' + (e.message || 'bağlantı hatası'); o.querySelector('#hsGonder').disabled = false; }
+      };
+      o.querySelector('#hsGonder').onclick = gonder;
+      o.querySelector('#hsTekrar').onclick = gonder;
+      ep.onkeydown = (e) => { if (e.key === 'Enter') gonder(); };
+      const dogrula = async () => {
+        const kod = o.querySelector('#hsKod').value.trim();
+        if (kod.length < 6) { msg.textContent = 'Koddaki tüm haneleri gir.'; return; }
+        msg.textContent = 'Doğrulanıyor…';
+        try { await bulut.kodDogrula(eposta, kod); kapat(); titre('basari'); toast('☁️ Giriş yapıldı, yedekleme açık'); await bulutEsitle(true); benAc(); }
+        catch (e) { msg.textContent = /expired|invalid|otp/i.test(String(e.message)) ? 'Kod hatalı ya da süresi dolmuş; tekrar gönder.' : 'Doğrulanamadı: ' + (e.message || 'bağlantı hatası'); }
+      };
+      o.querySelector('#hsDogrula').onclick = dogrula;
+      o.querySelector('#hsKod').onkeydown = (e) => { if (e.key === 'Enter') dogrula(); };
+    }
+  });
+  return m;
+}
+// Çakışma sorusu: bulut mu, bu cihaz mı?
+function bulutSor(b) {
+  return new Promise((resolve) => {
+    const t = new Date(b.guncelleme).toLocaleString('tr-TR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+    modalAc('Hangi ilerleme kalsın?', `
+      <p class="modal-aciklama">Hem bu cihazda hem bulutta farklı değişiklikler var.</p>
+      <button class="ayar-sat" id="bsIndir"><span>☁️</span><div><b>Buluttaki yedeği kullan</b><i>${t} · ${b.ozet.kart} kelime kaydı · ${b.ozet.defter} defter · ${b.ozet.test} test · ${b.ozet.xp} XP (${esc(b.cihaz || '')})</i></div></button>
+      <button class="ayar-sat" id="bsYukle"><span>📱</span><div><b>Bu cihazdakini kullan</b><i>Bulut yedeği bu cihazın verisiyle değiştirilir</i></div></button>`, {
+      onWire: (o, kapat) => {
+        o.querySelector('#bsIndir').onclick = () => { kapat(); resolve('indir'); };
+        o.querySelector('#bsYukle').onclick = () => { kapat(); resolve('yukle'); };
+        o.addEventListener('click', (e) => { if (e.target === o) resolve(null); });
+      }
+    });
+  });
+}
+async function bulutEsitle(bildir) {
+  const r = await bulut.esitle(bulutSor);
+  if (r === 'indir') { toast('☁️ Bulut yedeği yüklendi, yeniden başlatılıyor'); setTimeout(() => location.reload(), 900); return r; }
+  if (bildir) { if (r === 'yukle') toast('☁️ Buluta yazıldı'); else if (r === 'esit') toast('☁️ Zaten güncel'); else if (r === 'hata') toast('Bulut hatası: ' + (bulut.durum().hata || 'bağlantı')); }
+  return r;
+}
+window.__bulut = bulut;   // test
+
 // Hatırlatma metni kişiselleşir: vadesi gelen tekrar, seri, günün bulmacası
 let _sonBildirimMetin = '';
 function bildirimMetni(oz) {
@@ -1460,6 +1530,7 @@ document.getElementById('ayarBtn').onclick = () => sekmeAc('ben');
 
 temaUygula();
 efektAyarla({ ses: !_ayar.sesKapali, titresim: !_ayar.titresimKapali });
+if (bulut.durum().girili) setTimeout(() => bulutEsitle(false), 1500);   // açılışta sessiz eşitleme (bulut yeniyse indirir)
 girisEkrani(false);
 sekmeAc('bugun');
 

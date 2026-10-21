@@ -1,4 +1,8 @@
 // app/js/storage.js — localStorage üstüne ince sarmalayıcı
+// Her save*() bir kayıt bildirimi yayar (bulut eşitleme bunu dinler): kayitDinle(fn) → fn(anahtar)
+const dinleyiciler = [];
+export function kayitDinle(fn) { dinleyiciler.push(fn); }
+function kaydet(anahtar, deger) { localStorage.setItem(anahtar, JSON.stringify(deger)); for (const f of dinleyiciler) { try { f(anahtar); } catch {} } }
 const KEY = 'yds-ilerleme-v1';
 
 export function loadProgress() {
@@ -7,7 +11,7 @@ export function loadProgress() {
 }
 
 export function saveProgress(progress) {
-  localStorage.setItem(KEY, JSON.stringify(progress));
+  kaydet(KEY, progress);
 }
 
 // ===== Kelime Defteri (kişisel) — { en(küçük): kelimeObj } =====
@@ -19,7 +23,7 @@ export function loadDefter() {
 }
 
 export function saveDefter(defter) {
-  localStorage.setItem(DKEY, JSON.stringify(defter));
+  kaydet(DKEY, defter);
 }
 
 // ===== Öğrenilen kelimeler — { en(küçük): kelimeObj } (Akış'ta "biliyorum") =====
@@ -31,7 +35,7 @@ export function loadOgrenilen() {
 }
 
 export function saveOgrenilen(o) {
-  localStorage.setItem(OGKEY, JSON.stringify(o));
+  kaydet(OGKEY, o);
 }
 
 // ===== Test istatistikleri — { "unitId#testIdx": {dogru, toplam, tamam} } (en iyi skor) =====
@@ -43,7 +47,7 @@ export function loadIstat() {
 }
 
 export function saveIstat(istat) {
-  localStorage.setItem(IKEY, JSON.stringify(istat));
+  kaydet(IKEY, istat);
 }
 
 // ===== Yanlışlarım — [{ key, soru, unite }] tüm üniteler boyunca birikir =====
@@ -55,7 +59,7 @@ export function loadYanlis() {
 }
 
 export function saveYanlis(yanlis) {
-  localStorage.setItem(YKEY, JSON.stringify(yanlis));
+  kaydet(YKEY, yanlis);
 }
 
 // ===== Kelime Öğren — aralıklı tekrar (SRS) durumu =====
@@ -68,7 +72,7 @@ export function loadSRS() {
 }
 
 export function saveSRS(srs) {
-  localStorage.setItem(SKEY, JSON.stringify(srs));
+  kaydet(SKEY, srs);
 }
 
 // ===== Uygulama ayarları / bayraklar — { girisGoruldu, ... } =====
@@ -80,7 +84,7 @@ export function loadAyar() {
 }
 
 export function saveAyar(ayar) {
-  localStorage.setItem(AKEY, JSON.stringify(ayar));
+  kaydet(AKEY, ayar);
 }
 
 // ===== Eşleştirme oyunu — bölüm ilerlemesi, rekorlar, günlük bulmaca, düello =====
@@ -92,7 +96,7 @@ export function loadEslestir() {
 }
 
 export function saveEslestir(d) {
-  localStorage.setItem(EKEY, JSON.stringify(d));
+  kaydet(EKEY, d);
 }
 
 // ===== Ünite alıştırmaları — { uniteId: { yapilan, dogru, zayif:{etiket: yanlisSayisi} } } =====
@@ -104,7 +108,7 @@ export function loadAlistirma() {
 }
 
 export function saveAlistirma(a) {
-  localStorage.setItem(ALKEY, JSON.stringify(a));
+  kaydet(ALKEY, a);
 }
 
 // ===== Soru Bankası istatistikleri — { "konu/alt": { yapilan, dogru, yanlisId: [] } } =====
@@ -113,7 +117,7 @@ export function loadBanka() {
   try { return JSON.parse(localStorage.getItem(BKEY)) || {}; }
   catch { return {}; }
 }
-export function saveBanka(v) { localStorage.setItem(BKEY, JSON.stringify(v)); }
+export function saveBanka(v) { kaydet(BKEY, v); }
 
 // ===== Kullanıcının kendi kelimeleri — [{ en, tr, tur, ornek_tokenlar?, ornek_tr?, t }] =====
 const OZKEY = 'yds-ozel-v1';
@@ -121,7 +125,7 @@ export function loadOzel() {
   try { return JSON.parse(localStorage.getItem(OZKEY)) || []; }
   catch { return []; }
 }
-export function saveOzel(v) { localStorage.setItem(OZKEY, JSON.stringify(v)); }
+export function saveOzel(v) { kaydet(OZKEY, v); }
 
 // ===== Hafıza ipuçları — { en(küçük): metin } =====
 const NKEY = 'yds-not-v1';
@@ -129,7 +133,7 @@ export function loadNot() {
   try { return JSON.parse(localStorage.getItem(NKEY)) || {}; }
   catch { return {}; }
 }
-export function saveNot(v) { localStorage.setItem(NKEY, JSON.stringify(v)); }
+export function saveNot(v) { kaydet(NKEY, v); }
 
 // ===== Mini deneme geçmişi — [{ tarih, dogru, yanlis, bos, puan, sure, kirilim }] =====
 const DNKEY = 'yds-deneme-v1';
@@ -137,7 +141,7 @@ export function loadDeneme() {
   try { return JSON.parse(localStorage.getItem(DNKEY)) || []; }
   catch { return []; }
 }
-export function saveDeneme(v) { localStorage.setItem(DNKEY, JSON.stringify(v)); }
+export function saveDeneme(v) { kaydet(DNKEY, v); }
 
 // ===== Yedek: tüm yds-* anahtarları tek nesnede =====
 export function yedekAl() {
@@ -154,7 +158,7 @@ export function yedekYukle(obj) {
   let n = 0;
   for (const [k, v] of Object.entries(obj.veri)) {
     if (!k.startsWith('yds-')) continue;
-    localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v)); n++;
+    localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v)); n++;   // bildirimsiz (buluttan indirme)
   }
   return n;
 }

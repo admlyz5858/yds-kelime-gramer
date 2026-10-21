@@ -45,14 +45,14 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Motivasyon — Günlük seri, XP ve seviye, günlük görevler, başarımlar, aktivite ısı haritası, sınav geri sayımı ve günlük hatırlatma.
 
-• Gizlilik — Hesap gerekmez, reklam ve izleme yoktur. İlerlemen cihazında kalır. Yalnızca çevrimiçi lige katılırsan takma adın ve skorların sunucuya gider; istediğin an silebilirsin.
+• Gizlilik — Hesap zorunlu değildir, reklam ve izleme yoktur. İlerlemen cihazında kalır. İstersen e-postanla kayıt olup ilerlemeni buluta yedekleyebilirsin; çevrimiçi lige katılırsan takma adın ve skorların sunucuya gider. Hesabını ve yedeğini istediğin an silebilirsin.
 
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
 
-## Sürüm notları (1.4.0, Play Console'a yapıştırılacak kısa sürüm · 408 karakter)
+## Sürüm notları (1.4.0, Play Console'a yapıştırılacak kısa sürüm · 434 karakter)
 ```
-• Yedek al / yedek yükle: ilerlemeni dosyayla taşı (Android ↔ iPhone)
+• E-posta ile kayıt ol: ilerlemen otomatik buluta yedeklenir, Android ↔ iPhone arasında taşınır
 • Mini deneme: 20 soru, 25 dakika, tahmini YDS puanı ve konu kırılımı
 • Metin tara: yapıştırdığın metindeki kelimeler seviye rengiyle işaretlenir, bilmediklerini deftere al
 • Kendi kelimeni ekle ve her karta hafıza ipucu yaz
@@ -121,6 +121,11 @@ https://admlyz5858.github.io/yds-kelime-gramer/gizlilik/
 (Kaynak: bu repodaki `docs/gizlilik/index.html`, GitHub Pages ile yayınlanır. Pages ayarı: Settings → Pages → Source: Deploy from a branch → Branch: `main`, Folder: `/docs`.)
 
 ## Veri güvenliği formu (Play Console → Uygulama içeriği → Veri güvenliği)
+E-posta hesabı ve bulut yedekleme (isteğe bağlı, 1.4.0+) için:
+- **Kişisel bilgiler → E-posta adresi:** isteğe bağlı, toplanır, paylaşılmaz; amaç: hesap yönetimi. Kullanıcı silebilir (uygulama içi "Hesabımı ve bulut yedeğimi sil").
+- **Uygulama etkinliği → Uygulama etkileşimleri:** çalışma ilerlemesi yedeği (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
+- Hesap oluşturma: e-posta + tek kullanımlık kod (şifre yok). Aktarımda şifreli (HTTPS). Sunucu: Supabase (AB/Frankfurt).
+
 Eşleştirme oyunu çevrimiçi ligi (isteğe bağlı) için:
 - **Veri toplanıyor mu?** Evet — yalnızca kullanıcı "Lige katıl" derse.
 - **Uygulama etkinliği → Diğer kullanıcı tarafından oluşturulan içerik:** takma ad (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
