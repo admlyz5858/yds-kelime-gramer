@@ -106,3 +106,11 @@ export function loadAlistirma() {
 export function saveAlistirma(a) {
   localStorage.setItem(ALKEY, JSON.stringify(a));
 }
+
+// ===== Soru Bankası istatistikleri — { "konu/alt": { yapilan, dogru, yanlisId: [] } } =====
+const BKEY = 'yds-banka-v1';
+export function loadBanka() {
+  try { return JSON.parse(localStorage.getItem(BKEY)) || {}; }
+  catch { return {}; }
+}
+export function saveBanka(v) { localStorage.setItem(BKEY, JSON.stringify(v)); }

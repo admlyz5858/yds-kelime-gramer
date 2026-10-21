@@ -39,6 +39,8 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Müfredat — Edatlar, zamanlar, modallar, fiilimsiler, etken-edilgen, koşul cümleleri, isim/sıfat cümlecikleri, bağlaçlar. Her ünitede konu anlatımı (Oku), ünitenin kendi cümlelerinden üretilen alıştırmalar (boşluk doldurma ve sınıflandırma), kolaydan zora testler ve çeviri çalışması. Yanlışların birikir, doğru çözünce silinir.
 
+• Soru Bankası — 1.500'den fazla test sorusu konuya göre: Past Perfect, geçmiş çıkarım modalları, Type 3 koşul, sıfat cümlecikleri… Alt konu seç, 10 soru çöz; doğruluk konu bazında saklanır, zayıf konun günün planına düşer.
+
 • Kelime Defteri — Bilmediklerini biriktir; “Biliyorum” dediklerin aralıklı tekrara pekişmiş olarak girer.
 
 • Motivasyon — Günlük seri, XP ve seviye, günlük görevler, başarımlar, aktivite ısı haritası, sınav geri sayımı ve günlük hatırlatma.
@@ -57,6 +59,7 @@ Her gün birkaç dakika — gerisini uygulama hatırlatır.
 • Bugün sekmesinde günün planı: tekrarlar, günün eşleştirmesi, kaldığın ünite
 • Eşleştirme: sezon yolu (6'şar bölüm), bölümler seviye bandıyla etiketli
 • Müfredatta ünite ilerleme halkaları; 3 adımlı karşılama (hedef + sınav tarihi)
+• Soru Bankası: 1.500+ test sorusu 9 konu ve 40+ alt konuda; zayıf konun Bugün'e düşer
 • Tüm testler açık; sıradaki vurgulu, konu etiketli
 • Öğren: kartı kaydırarak derecelendir, yarım kalan oturuma devam
 • Sistem/açık/koyu tema; kişiselleşen hatırlatma metni

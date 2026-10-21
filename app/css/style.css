@@ -1586,3 +1586,15 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .ogr-kaydir-et.sag { right: 14px; color: var(--orman); border: 2px solid var(--orman); background: rgba(24,138,79,.1); }
 .ogr-derece::after { content: "ya da kartı sola (tekrar) / sağa (kolay) kaydır"; grid-column: 1 / -1; text-align: center; font-size: 11.5px; color: var(--murekkep-2); margin-top: 2px; }
 .ogr-devam-kayit { margin-bottom: 12px; }
+
+/* ===== Faz 4: Soru Bankası ===== */
+.mf-kelime-link.banka { background: linear-gradient(135deg, #7b4fd6, #5a37a8); margin: 0 0 12px; }
+.plan-kart.zayif { border-color: color-mix(in srgb, var(--kil) 45%, var(--hat)); }
+.plan-kart.zayif .plan-ikon { filter: none; }
+.bk-oran { flex: none; min-width: 48px; text-align: center; font-size: 13px; font-weight: 800; padding: 6px 4px; border-radius: 10px; background: var(--yuzey-2); color: var(--murekkep-2); }
+.bk-oran.iyi { background: rgba(24,138,79,.12); color: var(--orman); }
+.bk-oran.zayif { background: rgba(216,58,58,.12); color: var(--gul); }
+.bk-oran.bos { color: var(--hat-2); }
+.bk-unite { color: var(--murekkep-2); font-weight: 500; text-transform: none; letter-spacing: 0; }
+.bk-gorunum { margin: -4px 0 10px; }
+.bk-gorunum .sz-cip { flex: 1; text-align: center; }

@@ -7,6 +7,7 @@ import { kurKelimeAkisi } from './akis.js';
 import { kurEslestirme } from './eslestir.js';
 import { kurSozluk, UNITE_ADI } from './sozluk.js';
 import { kurAlistirma } from './alistirma.js';
+import { kurBanka } from './banka.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
@@ -137,6 +138,15 @@ const sozluk = kurSozluk({
   akisBaslat: (words, baslik) => kelimeAkisi.ac({ kelimeler: words, baslik: baslik || 'Kelime Akışı' }),
 });
 const alistirma = kurAlistirma({ render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti });
+// Soru Bankası — tüm test soruları konu › alt konu ağacında; yanlışlar Yanlışlarım'a da düşer
+const banka = kurBanka({
+  render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti, altEkran, toast,
+  uniteAdi: (u) => dersKisaAd(u),
+  yanlisEkle: (q, etiket) => {
+    const sk = soruKey(q); if (_yanlis.some(y => y.key === sk)) return;
+    _yanlis.push({ key: sk, soru: { soru: q.soru, secenekler: q.secenekler, cevap: q.cevap, aciklama: q.aciklama, ornek: q.ornek }, unite: etiket }); saveYanlis(_yanlis);
+  },
+});
 
 // Örnek cümledeki bir kelimeyi (o cümleyi örnek alarak) deftere ekle
 function ogrenEkle(el) {
@@ -164,6 +174,8 @@ async function anaSayfa() {
   const es = eslestirme.ozet();
   const son = _ayar.sonDers;
   bildirimYenile(oz);
+  await banka.yukle().catch(() => {});
+  const zayif = banka.zayifKonu();
   const yarim = kelimeOgren.devamBilgi();
   const tekrarBitti = !yarim && oz && (oz.due + oz.yeni) === 0;
   const tekrarMetin = yarim ? `Yarım kalan oturum · ${yarim.i}/${yarim.n} tamamlandı` : !oz ? 'Aralıklı tekrar' : tekrarBitti ? 'Bugünlük tamam — istersen yine çalış' : `${oz.due} tekrar · ${oz.yeni} yeni kelime`;
@@ -182,6 +194,7 @@ async function anaSayfa() {
     <button class="plan-kart" id="pDers">
       <span class="plan-ikon">🎓</span><span class="plan-ic"><b>${son ? 'Müfredata devam' : 'Müfredata başla'}</b><i>${son ? esc(sonAd) + ' · kaldığın yerden' : 'Edatlar, zamanlar, modallar…'}</i></span><span class="plan-durum">›</span>
     </button>
+    ${zayif ? `<button class="plan-kart zayif" id="pZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konunu güçlendir</b><i>${esc(zayif.ad)} · %${Math.round(zayif.oran * 100)} doğruluk · 10 soru</i></span><span class="plan-durum">›</span></button>` : ''}
     <button class="plan-kart kucuk" id="pAkis">
       <span class="plan-ikon">🎬</span><span class="plan-ic"><b>Kelime Akışı</b><i>Yukarı kaydır, dinle, kaydet</i></span><span class="plan-durum">›</span>
     </button>
@@ -199,6 +212,7 @@ async function anaSayfa() {
   document.getElementById('pGunluk').onclick = () => eslestirme.ac({ gunluk: true });
   document.getElementById('pDers').onclick = () => son ? dersAc(son.dosya, son.id) : sekmeAc('mufredat');
   document.getElementById('pAkis').onclick = () => kelimeAkisi.ac({ baslik: 'Kelime Akışı' });
+  const pz = document.getElementById('pZayif'); if (pz) pz.onclick = () => banka.basla({ konu: zayif.konu, alt: zayif.alt, baslik: zayif.ad, geri: () => sekmeAc('bugun') });
   const gb = document.getElementById('gununBtn');
   if (gb) gb.onclick = gununAc;
 }
@@ -247,6 +261,8 @@ function halkaHTML(oran, etiket) {
 }
 async function mufredatAc() {
   await manifestYukle();
+  await banka.yukle().catch(() => {});
+  const bo = banka.ozet();
   const dersler = manifest.dersler.filter(d => d.id !== 1);
   const calisilan = dersler.filter(d => isDone(progress, d.id)).length;
   const cozTest = Object.keys(_istat).length;
@@ -279,12 +295,14 @@ async function mufredatAc() {
       <div><b>${cozTest}</b><span>test çözüldü</span></div>
       <button class="mf-ozet-btn" id="mfYanlis"><b>${_yanlis.length}</b><span>❌ yanlış soru</span></button>
     </div>
+    <button class="mf-kelime-link banka" id="mfBanka"><span>📝</span><span><b>Soru Bankası</b><i>${bo.toplam || '1.500+'} soru · ${bo.konu || 9} konu · konuya göre çöz${bo.oran != null ? ` · %${bo.oran} doğruluk` : ''}</i></span><span class="ok">›</span></button>
     ${son ? `<button class="hizli-devam" id="devamBtn"><div><div class="hizli-devam-ust">▶ Kaldığın yerden devam et</div><div class="hizli-devam-bas">${esc(dersKisaAd(son.id))}</div></div><span class="ok">›</span></button>` : ''}
     ${grup}
     <button class="mf-kelime-link" id="mfKelimeler"><span>📖</span><span><b>Tüm kelimeler tek yerde</b><i>2.300+ kelime · seviye ve türe göre</i></span><span class="ok">›</span></button>
   `);
   icerik.querySelectorAll('.mf-kart').forEach(b => b.onclick = () => dersAc(b.dataset.dosya, Number(b.dataset.id)));
   document.getElementById('mfYanlis').onclick = yanlisAc;
+  document.getElementById('mfBanka').onclick = () => banka.ac(() => sekmeAc('mufredat'));
   document.getElementById('mfKelimeler').onclick = () => sekmeAc('kelimeler', { segment: 'liste' });
   const db = document.getElementById('devamBtn');
   if (db) db.onclick = () => dersAc(son.dosya, son.id);
@@ -575,8 +593,16 @@ function zorlukRozet(i, n) {
   if (r < 0.67) return '<span class="zorluk-rozet z-orta">Orta</span>';
   return '<span class="zorluk-rozet z-zor">Zor</span>';
 }
+let _testGorunum = 'testler';
+const testGorunumHTML = () => `<div class="sz-cipler bk-gorunum"><button class="sz-cip ${_testGorunum === 'testler' ? 'aktif' : ''}" data-g="testler">🧠 Testler</button><button class="sz-cip ${_testGorunum === 'konular' ? 'aktif' : ''}" data-g="konular">📝 Konuya göre</button></div>`;
+function testGorunumBagla() { icerik.querySelectorAll('.bk-gorunum .sz-cip').forEach(b => b.onclick = () => { _testGorunum = b.dataset.g; ekranQuiz(); }); }
 function ekranQuiz() {
   _aktifTest = null; _yanlisMod = false;
+  if (_testGorunum === 'konular') {
+    const d = aktifDers;
+    banka.uniteKonular(d._id, { ustHTML: uniteUstHTML('test') + testGorunumHTML(), geri: () => { aktifDers = d; ekranGoster('test'); } }).then(testGorunumBagla);
+    return;
+  }
   const testler = quizTestleri();
   if (!testler.length) { render(uniteUstHTML('test') + '<div class="cumle"><div class="tr">Bu ünitede test yok.</div></div>'); return; }
   const id = aktifDers._id;
@@ -596,8 +622,9 @@ function ekranQuiz() {
   const ozet = bitenSayi
     ? `<div class="quiz-ozet">Çözülen: ${bitenSayi}/${testler.length} test · Toplam doğru: ${topD}/${topT} (%${Math.round(topD / topT * 100)})</div>`
     : '';
-  render(uniteUstHTML('test') + `<div class="cumle"><div class="tr">Testler kolaydan zora sıralı; hepsi açık, sıradaki vurgulu. Yanlışların “Yanlışlarım”da birikir.</div></div>${ozet}${liste}`);
+  render(uniteUstHTML('test') + testGorunumHTML() + `<div class="cumle"><div class="tr">Testler kolaydan zora sıralı; hepsi açık, sıradaki vurgulu. Yanlışların “Yanlışlarım”da birikir.</div></div>${ozet}${liste}`);
   icerik.querySelectorAll('.test-link').forEach(el => el.onclick = () => baslatTest(Number(el.dataset.i)));
+  testGorunumBagla();
 }
 function baslatTest(ti) {
   _aktifTest = ti; _yanlisMod = false;
@@ -828,6 +855,7 @@ function yardimAc() {
     <div class="yardim-sat"><span>📖</span><div><b>Kelimeler</b> — Tüm kelimeler tek listede. S1 (temel) → S5 (akademik) seviye, tür ve durum çipleriyle süz; bir kelimeye dokun → anlam, örnek, 🔊, 📓 Defter, 🎓 Biliyorum. “Bu listeyi çalış” ile aralıklı tekrara al.</div></div>
     <div class="yardim-sat"><span>🌱</span><div><b>Öğren</b> — Aralıklı tekrar: kelimeler unutulmadan önce tekrar gelir; kart, test, yazım ve boşluk modları.</div></div>
     <div class="yardim-sat"><span>🎓</span><div><b>Müfredat</b> — Her ünitede Oku (kurallar + etkileşimli örnekler), Alıştırma (ünitenin kendi cümlelerinden boşluk ve sınıflandırma), Test (kolaydan zora) ve Çeviri.</div></div>
+    <div class="yardim-sat"><span>📝</span><div><b>Soru Bankası</b> — Tüm test soruları konuya göre: Edatlar, Zamanlar, Modallar, Koşul… Alt konu seç, 10 soru çöz; doğruluk konu bazında saklanır, zayıf konun Bugün’e düşer.</div></div>
     <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme; bölümler, günün bulmacası, düello, rekorlar ve çevrimiçi lig.</div></div>
     <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, başarımlar, ısı haritası, ayarlar.</div></div>
     <div class="yardim-sat"><span>❌</span><div><b>Yanlışlarım</b> — Testlerde yanlış yaptığın sorular birikir; doğru çözünce silinir (Müfredat ve Bugün’den ulaşılır).</div></div>
