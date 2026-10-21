@@ -1,0 +1,144 @@
+{
+ "uretim_tarihi": "2026-06-15",
+ "dersler": [
+  {
+   "id": 1,
+   "dosya": "uniteler/unite-01.json",
+   "baslik": "Ünite 1 — En Sık Kullanılan 1000 Kelime",
+   "kelime_sayisi": 1034,
+   "durum": "hazir",
+   "test_sayisi": 0,
+   "cift_sayisi": 0
+  },
+  {
+   "id": 2,
+   "dosya": "uniteler/unite-02.json",
+   "baslik": "Ünite 2 — Edatlar (Prepositions)",
+   "kelime_sayisi": 147,
+   "durum": "hazir",
+   "bolum_sayisi": 77,
+   "test_sayisi": 10,
+   "cift_sayisi": 182
+  },
+  {
+   "id": 3,
+   "dosya": "uniteler/unite-03.json",
+   "baslik": "Ünite 3 — Geniş ve Şimdiki Zamanlar (Present Tenses)",
+   "durum": "hazir",
+   "bolum_sayisi": 5,
+   "kelime_sayisi": 79,
+   "test_sayisi": 2,
+   "cift_sayisi": 0
+  },
+  {
+   "id": 4,
+   "dosya": "uniteler/unite-04.json",
+   "baslik": "Ünite 4 — Geçmiş Zamanlar (Past Tenses)",
+   "durum": "hazir",
+   "bolum_sayisi": 6,
+   "kelime_sayisi": 214,
+   "test_sayisi": 20,
+   "cift_sayisi": 7
+  },
+  {
+   "id": 5,
+   "dosya": "uniteler/unite-05.json",
+   "baslik": "Ünite 5 — Gelecek Zamanlar (Future Tenses)",
+   "kelime_sayisi": 63,
+   "durum": "hazir",
+   "bolum_sayisi": 6,
+   "test_sayisi": 3,
+   "cift_sayisi": 24
+  },
+  {
+   "id": 6,
+   "dosya": "uniteler/unite-06.json",
+   "baslik": "Ünite 6 — Zaman Tekrarı (Tense Revision)",
+   "kelime_sayisi": 347,
+   "durum": "hazir",
+   "bolum_sayisi": 2,
+   "test_sayisi": 15,
+   "cift_sayisi": 80
+  },
+  {
+   "id": 7,
+   "dosya": "uniteler/unite-07.json",
+   "baslik": "Ünite 7 — Modallar (Modals)",
+   "durum": "hazir",
+   "bolum_sayisi": 7,
+   "kelime_sayisi": 286,
+   "test_sayisi": 23,
+   "cift_sayisi": 20
+  },
+  {
+   "id": 8,
+   "dosya": "uniteler/unite-08.json",
+   "baslik": "Ünite 8 — Modal Tekrarı (Modal Revision)",
+   "kelime_sayisi": 287,
+   "durum": "hazir",
+   "bolum_sayisi": 2,
+   "test_sayisi": 41,
+   "cift_sayisi": 50
+  },
+  {
+   "id": 9,
+   "dosya": "uniteler/unite-09.json",
+   "baslik": "Ünite 9 — Fiilimsiler (Verbals)",
+   "durum": "hazir",
+   "bolum_sayisi": 5,
+   "kelime_sayisi": 283,
+   "test_sayisi": 10,
+   "cift_sayisi": 10
+  },
+  {
+   "id": 10,
+   "dosya": "uniteler/unite-10.json",
+   "baslik": "Ünite 10 — Etken ve Edilgen Çatı (Active & Passive)",
+   "durum": "hazir",
+   "bolum_sayisi": 5,
+   "kelime_sayisi": 127,
+   "test_sayisi": 11,
+   "cift_sayisi": 0
+  },
+  {
+   "id": 11,
+   "dosya": "uniteler/unite-11.json",
+   "baslik": "Ünite 11 — Koşul Cümleleri (Conditionals)",
+   "durum": "hazir",
+   "bolum_sayisi": 6,
+   "kelime_sayisi": 145,
+   "test_sayisi": 25,
+   "cift_sayisi": 15
+  },
+  {
+   "id": 12,
+   "dosya": "uniteler/unite-12.json",
+   "baslik": "Ünite 12 — İsim Cümlecikleri (Noun Clauses)",
+   "durum": "hazir",
+   "bolum_sayisi": 6,
+   "kelime_sayisi": 87,
+   "test_sayisi": 5,
+   "cift_sayisi": 12
+  },
+  {
+   "id": 13,
+   "dosya": "uniteler/unite-13.json",
+   "baslik": "Ünite 13 — Sıfat Cümlecikleri (Relative Clauses)",
+   "durum": "hazir",
+   "bolum_sayisi": 6,
+   "kelime_sayisi": 79,
+   "test_sayisi": 5,
+   "cift_sayisi": 12
+  },
+  {
+   "id": 14,
+   "dosya": "uniteler/unite-14.json",
+   "baslik": "Ünite 14 — Bağlaçlar ve Geçiş İfadeleri (Connectors)",
+   "durum": "hazir",
+   "bolum_sayisi": 6,
+   "kelime_sayisi": 46,
+   "test_sayisi": 5,
+   "cift_sayisi": 12
+  }
+ ]
+}

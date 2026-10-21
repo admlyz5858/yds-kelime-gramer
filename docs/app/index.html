@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f1f3f5">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Kelimetre">
+  <style>
+    /* iOS ana ekran: alt güvenli alan (home çubuğu) */
+    #sekme-bar { bottom: calc(12px + env(safe-area-inset-bottom)); }
+    main { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+    .akis { bottom: env(safe-area-inset-bottom); }
+    .akis-rail { bottom: calc(64px + env(safe-area-inset-bottom)); }
+  </style>
+  <title>Kelimetre</title>
+  <script>
+    /* PWA: çevrimdışı önbellek (sürümlü service worker) */
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=32ccad1d92">
+</head>
+<body>
+  <header id="ust-bar">
+    <button id="geri" hidden>‹ Geri</button>
+    <h1 id="baslik">Üniteler</h1>
+    <div id="ust-aksiyon">
+      <button id="yardimBtn" class="ust-ikon" aria-label="Nasıl çalışılır">?</button>
+      <button id="ayarBtn" class="ust-ikon" aria-label="Ayarlar">⚙</button>
+    </div>
+  </header>
+  <main id="icerik"></main>
+  <nav id="sekme-bar">
+    <button data-sekme="bugun" class="aktif"><span class="nav-ikon">🏠</span><span class="nav-etiket">Bugün</span></button>
+    <button data-sekme="kelimeler"><span class="nav-ikon">📖</span><span class="nav-etiket">Kelimeler</span></button>
+    <button data-sekme="mufredat"><span class="nav-ikon">🎓</span><span class="nav-etiket">Müfredat</span></button>
+    <button data-sekme="oyun"><span class="nav-ikon">🧩</span><span class="nav-etiket">Oyun</span></button>
+    <button data-sekme="ben"><span class="nav-ikon">👤</span><span class="nav-etiket">Ben</span></button>
+  </nav>
+  <script type="module" src="js/app.js?v=32ccad1d92"></script>
+</body>
+</html>
