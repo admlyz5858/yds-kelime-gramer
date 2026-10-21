@@ -1,5 +1,6 @@
 // app/js/kart.js — Kelime kartı ortak parçaları (Öğren · Akış · Sözlük): seviye/tür/biçim çipleri,
 // örnek bloğu (ana örnek + "biçim" notu + açılır ek örnekler). Saf HTML üretir; esc/ornekHTML dışarıdan gelir.
+import { notAl } from './notlar.js';
 export const SEVIYE_AD = { 1: 'Temel', 2: 'Sık', 3: 'Orta', 4: 'İleri', 5: 'Akademik' };
 const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z]/g, '');
 
@@ -18,6 +19,7 @@ export function vurguBicimi(w, tokenlar) {
 export function kartCiplerHTML(w, esc, opt = {}) {
   const parca = [];
   if (w.sv) parca.push(`<span class="kart-cip sv s${w.sv}">S${w.sv} ${SEVIYE_AD[w.sv] || ''}</span>`);
+  else if (w.ozel) parca.push('<span class="kart-cip ozel">Özel kelime</span>');
   if (w.tur && !opt.tursuz) parca.push(`<span class="kart-cip tur">${esc(w.tur)}</span>`);
   if (Array.isArray(w.bicimler) && w.bicimler.length) parca.push(`<span class="kart-cip bicim" title="Diğer biçimler">${w.bicimler.map(esc).join(' · ')}</span>`);
   return parca.length ? `<div class="kart-cipler">${parca.join('')}</div>` : '';
@@ -25,10 +27,12 @@ export function kartCiplerHTML(w, esc, opt = {}) {
 
 // Örnek bloğu. opt.hepsi: ek örnekler açık gelsin; opt.etiketsiz: "Örnek · dokun" etiketi yazılmasın
 export function ornekBlokHTML(w, esc, ornekHTML, opt = {}) {
-  if (!w.ornek_tokenlar) return '';
+  const not = notAl(w.en);
+  let h = not ? `<div class="kart-not">📝 ${esc(not)}</div>` : '';
+  if (!w.ornek_tokenlar) return h;
   const bicim = vurguBicimi(w);
   const ek = Array.isArray(w.ornekler) ? w.ornekler : [];
-  let h = opt.etiketsiz ? '' : `<div class="kart-ornek-etiket">Örnek · kelimeye dokun, çeviri için kaydır</div>`;
+  h += opt.etiketsiz ? '' : `<div class="kart-ornek-etiket">Örnek · kelimeye dokun, çeviri için kaydır</div>`;
   h += ornekHTML({ tokenlar: w.ornek_tokenlar, tr: w.ornek_tr });
   if (bicim) h += `<div class="kart-bicim-not">Cümledeki biçim: <b>${esc(bicim)}</b> — kart başlığı <b>${esc(w.en)}</b></div>`;
   if (ek.length) {

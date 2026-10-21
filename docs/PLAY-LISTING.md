@@ -50,6 +50,16 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
 
+## Sürüm notları (1.4.0, Play Console'a yapıştırılacak kısa sürüm · 408 karakter)
+```
+• Yedek al / yedek yükle: ilerlemeni dosyayla taşı (Android ↔ iPhone)
+• Mini deneme: 20 soru, 25 dakika, tahmini YDS puanı ve konu kırılımı
+• Metin tara: yapıştırdığın metindeki kelimeler seviye rengiyle işaretlenir, bilmediklerini deftere al
+• Kendi kelimeni ekle ve her karta hafıza ipucu yaz
+• Kelime kartları yenilendi, çekimli biçimler kök kartta
+• Soru Bankası: 1.500+ soru konuya göre 10'luk testlerde
+```
+
 ## Sürüm notları (1.3.0, Play Console'a yapıştırılacak kısa sürüm · 431 karakter)
 ```
 • Yeni tasarım: Bugün · Kelimeler · Müfredat · Oyun · Ben sekmeleri

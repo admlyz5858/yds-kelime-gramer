@@ -1,6 +1,6 @@
 // mobil/hazirla.mjs — app/ PWA'sını www/'a hazırlar, premium ünite JSON'larını eler.
 // Saf Node, bağımlılıksız. Hem yerelde hem CI'da çalışır.
-import { cpSync, rmSync, mkdirSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, rmSync, mkdirSync, existsSync, readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { havuzYaz } from './kelime-havuz.mjs';
@@ -16,9 +16,8 @@ mkdirSync(hedef, { recursive: true });
 cpSync(kaynak, hedef, { recursive: true });
 
 // 2) Geliştirme-only dosyaları at
-for (const f of ['sunucu.py', 'baslat.sh', 'js/logic.test.js', 'js/eslestir.test.js', 'js/lig.test.js', 'js/sozluk.test.js', 'js/alistirma.test.js', 'js/banka.test.js']) {
-  rmSync(join(hedef, f), { force: true });
-}
+for (const f of ['sunucu.py', 'baslat.sh']) rmSync(join(hedef, f), { force: true });
+for (const f of readdirSync(join(hedef, 'js'))) if (/\.test\.js$/.test(f)) rmSync(join(hedef, 'js', f), { force: true });
 // frames klasörü (varsa) pakete girmesin
 rmSync(join(hedef, 'data', 'frames'), { recursive: true, force: true });
 

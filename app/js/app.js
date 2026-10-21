@@ -8,10 +8,15 @@ import { kurEslestirme } from './eslestir.js';
 import { kurSozluk, UNITE_ADI } from './sozluk.js';
 import { kurAlistirma } from './alistirma.js';
 import { kurBanka } from './banka.js';
+import { kurDeneme } from './deneme.js';
+import { kurTarayici } from './tarayici.js';
+import { disaAktar, iceAktarSec } from './yedek.js';
+import { loadOzel, saveOzel } from './storage.js';
+import { notAl, notKaydet } from './notlar.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
-const SURUM = '1.3.0';
+const SURUM = '1.4.0';
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
 const geriBtn = document.getElementById('geri');
@@ -31,9 +36,70 @@ async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new E
 
 // Kelime havuzu (tüm üniteler) — bir kez yüklenir; sözlük / öğren / akış / oyun paylaşır
 let _havuz = null;
+let _ozel = loadOzel();   // kullanıcının kendi kelimeleri (sv 0, u 0, ozel: true)
+const ozelKart = (o) => Object.assign({ sv: 0, u: 0, ozel: true }, o);
 async function havuzYukle() {
-  if (!_havuz) _havuz = (await getJSON('data/kelime-havuz.json')).kelimeler || [];
+  if (!_havuz) { _havuz = (await getJSON('data/kelime-havuz.json')).kelimeler || []; for (const o of _ozel) _havuz.push(ozelKart(o)); }
   return _havuz;
+}
+// Kendi kelimesini ekle / sil (Defter'e de girer)
+function ozelEkle(o) {
+  const key = o.en.toLowerCase();
+  if (_ozel.some(x => x.en.toLowerCase() === key) || (_havuz || []).some(w => w.en.toLowerCase() === key)) return false;
+  _ozel.push(o); saveOzel(_ozel);
+  const w = ozelKart(o); if (_havuz) _havuz.push(w);
+  defterEkle(w); return true;
+}
+function ozelSil(en) {
+  const key = en.toLowerCase();
+  _ozel = _ozel.filter(x => x.en.toLowerCase() !== key); saveOzel(_ozel);
+  if (_havuz) { const i = _havuz.findIndex(w => w.ozel && w.en.toLowerCase() === key); if (i >= 0) _havuz.splice(i, 1); }
+  if (defter[key]) { delete defter[key]; defterKaydet(); }
+}
+// Cümleyi tokenlara böl, hedef kelimeyi vurgula (özel kelime örneği için)
+function cumleTokenla(cumle, hedef) {
+  const h = hedef.toLowerCase().replace(/[^a-z]/g, '');
+  return cumle.trim().split(/\s+/).map(k => { const t = { k }; const n = k.toLowerCase().replace(/[^a-z]/g, ''); if (h && n && (n === h || n.startsWith(h) && n.length - h.length <= 3)) t.vurgu = true; return t; });
+}
+function ozelEkleAc(sonra) {
+  modalAc('Kendi kelimeni ekle', `
+    <p class="modal-aciklama">Kelime Defter'e girer, aralıklı tekrar ve akışta diğer kelimeler gibi çalışılır.</p>
+    <input id="ozEn" class="giris-tarih" style="margin-top:0" placeholder="İngilizce kelime (ör. resilient)" autocapitalize="off" autocomplete="off">
+    <input id="ozTr" class="giris-tarih" style="margin-top:8px" placeholder="Türkçe anlamı">
+    <select id="ozTur" class="giris-tarih" style="margin-top:8px"><option>İsim</option><option>Fiil</option><option>Sıfat</option><option>Zarf</option><option>Edat</option><option>Bağlaç</option><option>Öbek</option></select>
+    <input id="ozOrnek" class="giris-tarih" style="margin-top:8px" placeholder="Örnek cümle (isteğe bağlı)" autocapitalize="off">
+    <input id="ozOrnekTr" class="giris-tarih" style="margin-top:8px" placeholder="Örnek cümlenin çevirisi (isteğe bağlı)">
+    <input id="ozNot" class="giris-tarih" style="margin-top:8px" placeholder="Hafıza ipucu (isteğe bağlı)">
+    <div id="ozMsg" style="margin-top:8px;color:var(--gul);min-height:1.2em;font-size:13px"></div>
+    <button class="aksiyon" id="ozKaydet" style="width:100%;margin-top:6px">Ekle</button>`, {
+    onWire: (o, kapat) => {
+      setTimeout(() => o.querySelector('#ozEn').focus(), 120);
+      o.querySelector('#ozKaydet').onclick = () => {
+        const en = o.querySelector('#ozEn').value.trim(), tr = o.querySelector('#ozTr').value.trim();
+        const msg = o.querySelector('#ozMsg');
+        if (!en || !tr) { msg.textContent = 'Kelime ve anlamı gerekli.'; return; }
+        const kayit = { en, tr, tur: o.querySelector('#ozTur').value, t: Date.now() };
+        const ornek = o.querySelector('#ozOrnek').value.trim();
+        if (ornek) { kayit.ornek_tokenlar = cumleTokenla(ornek, en); kayit.ornek_tr = o.querySelector('#ozOrnekTr').value.trim(); }
+        if (!ozelEkle(kayit)) { msg.textContent = 'Bu kelime zaten var (sözlükte ara).'; return; }
+        const not = o.querySelector('#ozNot').value.trim(); if (not) notKaydet(en, not);
+        titre('basari'); toast(`📓 "${en}" eklendi`); kapat(); if (sonra) sonra();
+      };
+    }
+  });
+}
+// Hafıza ipucu düzenleme
+function notDuzenleAc(w, sonra) {
+  modalAc('Hafıza ipucu', `
+    <p class="modal-aciklama"><b>${esc(w.en)}</b> için kendi ipucun: çağrışım, benzer kelime, kısa bir cümle… Kartın arkasında görünür.</p>
+    <textarea id="notMetin" class="tr-metin" rows="3" placeholder="ör. re-silient → yaylanıp geri gelen, dirençli">${esc(notAl(w.en))}</textarea>
+    <div class="btn-satir"><button class="aksiyon ikincil" id="notSil">Sil</button><button class="aksiyon" id="notKaydetBtn">Kaydet</button></div>`, {
+    onWire: (o, kapat) => {
+      setTimeout(() => o.querySelector('#notMetin').focus(), 120);
+      o.querySelector('#notKaydetBtn').onclick = () => { notKaydet(w.en, o.querySelector('#notMetin').value); kapat(); if (sonra) sonra(); };
+      o.querySelector('#notSil').onclick = () => { notKaydet(w.en, ''); kapat(); if (sonra) sonra(); };
+    }
+  });
 }
 async function manifestYukle() {
   if (!manifest) manifest = await getJSON('data/manifest.json');
@@ -98,6 +164,7 @@ function ipucuHTML(sekme) {
   if (g[sekme] || !IPUCU[sekme]) return '';
   return `<div class="ipucu" data-sekme="${sekme}"><span>${IPUCU[sekme]}</span><button class="ipucu-kapat" aria-label="Kapat">✕</button></div>`;
 }
+icerik.addEventListener('click', (e) => { if (e.target.closest('#ozelEkleBtn')) ozelEkleAc(() => kelimelerAc('defter')); });
 icerik.addEventListener('click', (e) => {
   const b = e.target.closest('.ipucu-kapat'); if (!b) return;
   const k = b.closest('.ipucu'); _ayar.ipucuGoruldu = Object.assign(_ayar.ipucuGoruldu || {}, { [k.dataset.sekme]: true }); saveAyar(_ayar);
@@ -136,8 +203,16 @@ const sozluk = kurSozluk({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran,
   calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words); },
   akisBaslat: (words, baslik) => kelimeAkisi.ac({ kelimeler: words, baslik: baslik || 'Kelime Akışı' }),
+  notDuzenle: notDuzenleAc, ozelSil: (w, sonra) => onayAc(`"${w.en}" kelimen silinsin mi?`, () => { ozelSil(w.en); sonra(); }),
+});
+// Metin tarayıcı — yapıştırılan metindeki kelimeleri havuzla eşler
+const tarayici = kurTarayici({
+  render, esc, havuzYukle, wireOrnekler, toast, titre, altEkran,
+  calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words); },
 });
 const alistirma = kurAlistirma({ render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti });
+// Mini deneme — Soru Bankası'ndan 20 soru, 25 dakika
+let deneme = null;
 // Soru Bankası — tüm test soruları konu › alt konu ağacında; yanlışlar Yanlışlarım'a da düşer
 const banka = kurBanka({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti, altEkran, toast,
@@ -146,6 +221,12 @@ const banka = kurBanka({
     const sk = soruKey(q); if (_yanlis.some(y => y.key === sk)) return;
     _yanlis.push({ key: sk, soru: { soru: q.soru, secenekler: q.secenekler, cevap: q.cevap, aciklama: q.aciklama, ornek: q.ornek }, unite: etiket }); saveYanlis(_yanlis);
   },
+  denemeAc: (geri) => deneme.ac(geri),
+});
+deneme = kurDeneme({
+  render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, altEkran, toast, ses, titre, konfeti,
+  bankaYukle: () => banka.yukle(), konuAd: (k) => banka.konuAd(k),
+  yanlisEkle: (q, etiket) => { const sk = soruKey(q); if (_yanlis.some(y => y.key === sk)) return; _yanlis.push({ key: sk, soru: { soru: q.soru, secenekler: q.secenekler, cevap: q.cevap, aciklama: q.aciklama, ornek: q.ornek }, unite: etiket }); saveYanlis(_yanlis); },
 });
 
 // Örnek cümledeki bir kelimeyi (o cümleyi örnek alarak) deftere ekle
@@ -156,7 +237,8 @@ function ogrenEkle(el) {
   const idx = spans.indexOf(el); if (idx >= 0) toks[idx].vurgu = true;
   const word = (el.dataset.k || '').replace(/[.,!?;:"'’]+$/g, '');
   const tr = kutu ? (kutu.querySelector('.ornek-ceviri')?.textContent || '') : '';
-  const havuzW = (_havuz || []).find(w => w.en.toLowerCase() === word.toLowerCase());
+  const hedefEn = (el.dataset.en || word).toLowerCase();
+  const havuzW = (_havuz || []).find(w => w.en.toLowerCase() === hedefEn) || (_havuz || []).find(w => w.en.toLowerCase() === word.toLowerCase());
   defterEkle(havuzW || { en: word, tur: '', tr: el.dataset.a || '', ornek_tokenlar: toks, ornek_tr: tr });
 }
 
@@ -194,6 +276,7 @@ async function anaSayfa() {
     <button class="plan-kart" id="pDers">
       <span class="plan-ikon">🎓</span><span class="plan-ic"><b>${son ? 'Müfredata devam' : 'Müfredata başla'}</b><i>${son ? esc(sonAd) + ' · kaldığın yerden' : 'Edatlar, zamanlar, modallar…'}</i></span><span class="plan-durum">›</span>
     </button>
+    ${deneme.onerilsinMi() ? `<button class="plan-kart kucuk" id="pDeneme"><span class="plan-ikon">🧪</span><span class="plan-ic"><b>Haftalık mini deneme</b><i>${deneme.ozet().son ? `Son: ${deneme.ozet().son.puan} puan · ` : ''}20 soru · 25 dakika</i></span><span class="plan-durum">›</span></button>` : ''}
     ${zayif ? `<button class="plan-kart zayif" id="pZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konunu güçlendir</b><i>${esc(zayif.ad)} · %${Math.round(zayif.oran * 100)} doğruluk · 10 soru</i></span><span class="plan-durum">›</span></button>` : ''}
     <button class="plan-kart kucuk" id="pAkis">
       <span class="plan-ikon">🎬</span><span class="plan-ic"><b>Kelime Akışı</b><i>Yukarı kaydır, dinle, kaydet</i></span><span class="plan-durum">›</span>
@@ -212,6 +295,7 @@ async function anaSayfa() {
   document.getElementById('pGunluk').onclick = () => eslestirme.ac({ gunluk: true });
   document.getElementById('pDers').onclick = () => son ? dersAc(son.dosya, son.id) : sekmeAc('mufredat');
   document.getElementById('pAkis').onclick = () => kelimeAkisi.ac({ baslik: 'Kelime Akışı' });
+  const pd = document.getElementById('pDeneme'); if (pd) pd.onclick = () => deneme.ac(() => sekmeAc('bugun'));
   const pz = document.getElementById('pZayif'); if (pz) pz.onclick = () => banka.basla({ konu: zayif.konu, alt: zayif.alt, baslik: zayif.ad, geri: () => sekmeAc('bugun') });
   const gb = document.getElementById('gununBtn');
   if (gb) gb.onclick = gununAc;
@@ -226,7 +310,7 @@ function gununKartHTML() {
 // ============================================================
 // KELİMELER (Liste · Öğren · Defterim)
 // ============================================================
-const KELIME_SEGMENTLER = [['liste', '📖 Liste'], ['ogren', '🌱 Öğren'], ['defter', '📓 Defterim']];
+const KELIME_SEGMENTLER = [['liste', '📖 Liste'], ['ogren', '🌱 Öğren'], ['defter', '📓 Defterim'], ['tara', '📄 Tara']];
 const kelimelerSegmentHTML = (seg) => segmentHTML('kelimeler', KELIME_SEGMENTLER, seg);
 function kelimelerAc(segment, opts = {}) {
   kelimelerSegment = segment || kelimelerSegment || 'liste';
@@ -234,7 +318,8 @@ function kelimelerAc(segment, opts = {}) {
   const ust = () => ipucuHTML('kelimeler') + kelimelerSegmentHTML(seg);
   const geri = () => sekmeKokChrome('kelimeler');
   if (kelimelerSegment === 'ogren') return kelimeOgren.ac({ ustHTML: ust });
-  if (kelimelerSegment === 'defter') return sozluk.ac({ ustHTML: ust, filtre: { durum: 'defter' }, geri });
+  if (kelimelerSegment === 'tara') return tarayici.ac({ ustHTML: ust });
+  if (kelimelerSegment === 'defter') return sozluk.ac({ ustHTML: () => ust() + `<button class="plan-kart kucuk" id="ozelEkleBtn"><span class="plan-ikon">➕</span><span class="plan-ic"><b>Kendi kelimeni ekle</b><i>${_ozel.length ? _ozel.length + ' özel kelime' : 'Listelerde olmayan kelimeleri deftere al'}</i></span><span class="plan-durum">›</span></button>`, filtre: { durum: 'defter' }, geri });
   return sozluk.ac({ ustHTML: ust, filtre: opts.filtre || {}, geri });
 }
 
@@ -857,7 +942,10 @@ function yardimAc() {
     <div class="yardim-sat"><span>🎓</span><div><b>Müfredat</b> — Her ünitede Oku (kurallar + etkileşimli örnekler), Alıştırma (ünitenin kendi cümlelerinden boşluk ve sınıflandırma), Test (kolaydan zora) ve Çeviri.</div></div>
     <div class="yardim-sat"><span>📝</span><div><b>Soru Bankası</b> — Tüm test soruları konuya göre: Edatlar, Zamanlar, Modallar, Koşul… Alt konu seç, 10 soru çöz; doğruluk konu bazında saklanır, zayıf konun Bugün’e düşer.</div></div>
     <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme; bölümler, günün bulmacası, düello, rekorlar ve çevrimiçi lig.</div></div>
-    <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, başarımlar, ısı haritası, ayarlar.</div></div>
+    <div class="yardim-sat"><span>🧪</span><div><b>Mini deneme</b> — Soru Bankası'ndan 20 soru, 25 dakika; tahmini YDS puanı ve konu kırılımı. Bugün'de haftada bir önerilir.</div></div>
+    <div class="yardim-sat"><span>📄</span><div><b>Metin tara</b> — Kelimeler › Tara: bir metin yapıştır, havuzdaki kelimeler seviye rengiyle işaretlenir; bilmediklerini deftere al ya da çalış.</div></div>
+    <div class="yardim-sat"><span>➕</span><div><b>Kendi kelimen</b> — Defterim › "Kendi kelimeni ekle"; her karta 📝 hafıza ipucu yazabilirsin.</div></div>
+    <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, başarımlar, ısı haritası, ayarlar; 📤 yedek al / 📥 yedek yükle ile ilerlemeni cihazlar arasında taşı.</div></div>
     <div class="yardim-sat"><span>❌</span><div><b>Yanlışlarım</b> — Testlerde yanlış yaptığın sorular birikir; doğru çözünce silinir (Müfredat ve Bugün’den ulaşılır).</div></div>
   `);
 }
@@ -870,6 +958,7 @@ function ayarSatirlariHTML() {
     <div class="ben-baslik">Oyun</div>
     <button class="ayar-sat" data-is="rekor"><span>🏅</span><div><b>Rekorlarım</b><i>Eşleştirme skorların</i></div></button>
     <button class="ayar-sat" data-is="lig"><span>🌍</span><div><b>Çevrimiçi lig</b><i>Günün bulmacası, haftalık ve en iyi bölüm sıralaması</i></div></button>
+    <button class="ayar-sat" data-is="deneme"><span>🧪</span><div><b>Mini deneme</b><i>${deneme.ozet().sayi ? `${deneme.ozet().sayi} deneme · son ${deneme.ozet().son.puan} · en iyi ${deneme.ozet().enIyi}` : 'Henüz deneme çözülmedi'}</i></div></button>
     <div class="ben-baslik">Ayarlar</div>
     <button class="ayar-sat" data-is="tema"><span>${TEMA_AD[temaSecimi()][0]}</span><div><b>${TEMA_AD[temaSecimi()][1]}</b><i>${TEMA_AD[temaSecimi()][2]} — değiştirmek için dokun</i></div></button>
     <button class="ayar-sat" data-is="hedef"><span>🎯</span><div><b>Günlük hedef</b><i>${_ayar.hedef || HEDEF_VARSAYILAN} aktivite/gün — değiştirmek için dokun</i></div></button>
@@ -879,6 +968,9 @@ function ayarSatirlariHTML() {
     <button class="ayar-sat" data-is="titresim"><span>📳</span><div><b>Titreşim</b><i>${_ayar.titresimKapali ? 'Kapalı' : 'Açık'}</i></div></button>
     <button class="ayar-sat" data-is="yardim"><span>❓</span><div><b>Nasıl çalışılır?</b><i>Sekmeler ve çalışma biçimleri</i></div></button>
     <button class="ayar-sat" data-is="giris"><span>👋</span><div><b>Tanıtım ekranı</b><i>Karşılama ekranını tekrar aç</i></div></button>
+    <div class="ben-baslik">Yedek</div>
+    <button class="ayar-sat" data-is="yedekal"><span>📤</span><div><b>Yedek al</b><i>Tüm ilerlemeni dosya olarak kaydet / paylaş (telefon değişimi, iPhone ↔ Android)</i></div></button>
+    <button class="ayar-sat" data-is="yedekyukle"><span>📥</span><div><b>Yedek yükle</b><i>Dosyadan geri getir — mevcut veriler üzerine yazılır</i></div></button>
     <div class="ben-baslik">Veri</div>
     <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>${_yanlis.length} biriken soruyu sıfırla</i></div></button>
     <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>${defterKelimeler().length} kelimeyi sil</i></div></button>
@@ -889,6 +981,15 @@ function ayarBagla(root) {
   root.querySelectorAll('.ayar-sat').forEach(b => b.onclick = () => {
     const is = b.dataset.is;
     if (is === 'rekor') { eslestirme.rekorlar(); return; }
+    if (is === 'deneme') { deneme.ac(() => sekmeAc('ben')); return; }
+    if (is === 'yedekal') { disaAktar().then(r => { if (r === 'indirildi') toast('📤 Yedek dosyası indirildi'); else if (r === false) toast('Yedek alınamadı'); }); return; }
+    if (is === 'yedekyukle') {
+      iceAktarSec().then(r => {
+        if (!r) return; if (r.hata) { toast(r.hata); return; }
+        onayAc(`Yedek (${r.ozet.tarih}): ${r.ozet.kart} kelime kaydı, ${r.ozet.defter} defter, ${r.ozet.test} test, ${r.ozet.xp} XP. Mevcut verilerin üzerine yazılsın mı?`, () => { try { r.uygula(); toast('📥 Yedek yüklendi, yeniden başlatılıyor'); setTimeout(() => location.reload(), 900); } catch (e) { toast('Yedek yüklenemedi'); } });
+      });
+      return;
+    }
     if (is === 'lig') { eslestirme.lig(); return; }
     if (is === 'tema') { temaDegistir(); benAc(); return; }
     if (is === 'hedef') {

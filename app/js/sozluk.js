@@ -2,6 +2,7 @@
 // arama, parça parça yüklenen liste, kelime detayı. Durum (yeni/öğreniliyor/pekişti) ve Defter durum.js'ten.
 import { ogrenmeDurumu, defterdeMi, defterToggle, pekistir, pekistiMi } from './durum.js';
 import { ornekBlokHTML } from './kart.js';
+import { notAl } from './notlar.js';
 
 export const SEVIYE_AD = { 1: 'Temel', 2: 'Sık', 3: 'Orta', 4: 'İleri', 5: 'Akademik' };
 export const UNITE_ADI = {
@@ -29,7 +30,7 @@ export function filtrele(havuz, f, durumFn = ogrenmeDurumu, defterFn = defterdeM
 }
 
 export function kurSozluk(api) {
-  const { render, esc, ornekHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran, calis, akisBaslat } = api;
+  const { render, esc, ornekHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran, calis, akisBaslat, notDuzenle, ozelSil } = api;
   let havuz = null, ust = '', geriKok = null;
   const f = { q: '', sv: 0, tur: '', unite: 0, durum: '', sira: 'seviye' };
   const PARCA = 60;
@@ -46,7 +47,7 @@ export function kurSozluk(api) {
   function satirHTML(w) {
     const d = ogrenmeDurumu(w.en);
     return `<button class="sz-satir" data-en="${esc(w.en)}">
-      <span class="sz-sv s${w.sv}">S${w.sv}</span>
+      <span class="sz-sv s${w.sv || 0}">${w.sv ? 'S' + w.sv : 'Ö'}</span>
       <span class="sz-ic"><b>${esc(w.en)}</b><i>${esc(w.tr)}</i></span>
       <span class="sz-sag">${Array.isArray(w.bicimler) && w.bicimler.length ? `<span class="sz-bicim-say" title="${esc(w.bicimler.join(', '))}">+${w.bicimler.length}</span>` : ''}${defterdeMi(w.en) ? '📓' : ''}<span class="sz-durum" title="${d}">${DURUM_NOKTA[d]}</span></span>
     </button>`;
@@ -125,7 +126,7 @@ export function kurSozluk(api) {
     const durumYazi = d === 'pekisti' ? '🌳 Öğrendin — tekrarlar seyrek gelir' : d === 'ogreniliyor' ? '🌿 Öğreniliyor — aralıklı tekrarda' : '✨ Henüz çalışılmadı';
     render(`
       <div class="sz-detay">
-        <div class="sz-detay-ust"><span class="sz-sv s${w.sv}">S${w.sv} ${SEVIYE_AD[w.sv] || ''}</span><span class="sz-rozet">${esc(w.tur || '')}</span>${w.u ? `<span class="sz-rozet">📚 ${esc(UNITE_ADI[w.u] || 'Ünite ' + w.u)}</span>` : ''}</div>
+        <div class="sz-detay-ust"><span class="sz-sv s${w.sv || 0}">${w.sv ? `S${w.sv} ${SEVIYE_AD[w.sv] || ''}` : 'Özel kelime'}</span><span class="sz-rozet">${esc(w.tur || '')}</span>${w.u ? `<span class="sz-rozet">📚 ${esc(UNITE_ADI[w.u] || 'Ünite ' + w.u)}</span>` : ''}</div>
         <div class="sz-detay-en">${esc(w.en)} <button class="ogr-ses" id="szSes" aria-label="Seslendir">🔊</button></div>
         ${Array.isArray(w.bicimler) && w.bicimler.length ? `<div class="sz-bicimler">Biçimler: ${w.bicimler.map(b => `<b>${esc(b)}</b>`).join(' · ')}</div>` : ''}
         <div class="sz-detay-tr">${esc(w.tr)}</div>
@@ -136,7 +137,10 @@ export function kurSozluk(api) {
         <button class="aksiyon ${defterdeMi(w.en) ? '' : 'ikincil'}" id="szDefter">${defterdeMi(w.en) ? '📓 Defterde ✓' : '📓 Deftere ekle'}</button>
         <button class="aksiyon ${pekistiMi(w.en) ? '' : 'ikincil'}" id="szBiliyorum">${pekistiMi(w.en) ? '✅ Biliyorum' : '🎓 Biliyorum'}</button>
       </div>
+      <div class="btn-satir"><button class="aksiyon ikincil" id="szNot">📝 ${notAl(w.en) ? 'İpucunu düzenle' : 'Hafıza ipucu ekle'}</button>${w.ozel && ozelSil ? '<button class="aksiyon ikincil" id="szSil">🗑 Sil</button>' : ''}</div>
       <div class="btn-satir"><button class="aksiyon" id="szCalisTek">🌱 Bu kelimeyi çalış ›</button></div>`);
+    const nb = document.getElementById('szNot'); if (nb) nb.onclick = () => notDuzenle(w, () => detay(w));
+    const sb = document.getElementById('szSil'); if (sb) sb.onclick = () => ozelSil(w, () => { altEkranKapat(); ciz(); });
     document.getElementById('szSes').onclick = () => seslendir(w.en);
     if (w.ornek_tokenlar) wireOrnekler(document.getElementById('icerik'));
     document.getElementById('szDefter').onclick = () => { defterToggle(w); titre('hafif'); detay(w); };

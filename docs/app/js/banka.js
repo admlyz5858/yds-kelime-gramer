@@ -12,7 +12,7 @@ export function testlereBol(sorular, n = N) {
   return out;
 }
 export function kurBanka(api) {
-  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, ses, titre, konfeti, altEkran, toast, yanlisEkle, uniteAdi } = api;
+  const { render, esc, ornekHTML, wireOrnekler, gunKaydet, ses, titre, konfeti, altEkran, toast, yanlisEkle, uniteAdi, denemeAc } = api;
   let veri = null, istat = loadBanka(), oturum = null;
   const kaydet = () => saveBanka(istat);
   const anahtar = (konu, alt) => konu + '/' + alt;
@@ -72,6 +72,7 @@ export function kurBanka(api) {
         <div><b>${o.oran == null ? '—' : '%' + o.oran}</b><span>doğruluk</span></div>
       </div>
       ${z ? `<button class="plan-kart zayif" id="bkZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konu: ${esc(z.ad)}</b><i>${esc(z.konuAd)} · %${Math.round(z.oran * 100)} doğruluk — 10 soruyla güçlendir</i></span><span class="plan-durum">›</span></button>` : ''}
+      ${denemeAc ? `<button class="plan-kart" id="bkDeneme"><span class="plan-ikon">🧪</span><span class="plan-ic"><b>Mini deneme</b><i>20 soru · 25 dakika · tahmini YDS puanı</i></span><span class="plan-durum">›</span></button>` : ''}
       <button class="plan-kart" id="bkKarma"><span class="plan-ikon">🔀</span><span class="plan-ic"><b>Karışık 10 soru</b><i>Tüm konulardan rastgele</i></span><span class="plan-durum">›</span></button>
       <div class="plan-baslik">Konular</div>
       ${veri.konular.map(k => { const s = konuOzet(k.id); if (!s.soru) return ''; return `<button class="mf-kart bk-konu" data-konu="${k.id}">
@@ -81,6 +82,7 @@ export function kurBanka(api) {
     `);
     document.querySelectorAll('.bk-konu').forEach(b => b.onclick = () => cizAltlar(b.dataset.konu));
     document.getElementById('bkKarma').onclick = () => basla({ geri: cizKonular, baslik: 'Karışık' });
+    const dn = document.getElementById('bkDeneme'); if (dn) dn.onclick = () => denemeAc(() => cizKonular());
     const zb = document.getElementById('bkZayif'); if (zb) zb.onclick = () => basla({ konu: z.konu, alt: z.alt, geri: cizKonular, baslik: z.ad });
   }
   function cizAltlar(konuId, uId, geriFn) {
@@ -210,5 +212,5 @@ export function kurBanka(api) {
     document.getElementById('bkGeri').onclick = () => { oturum = null; o.f.geri(); };
   }
 
-  return { ac, uniteKonular, basla, zayifKonu, ozet, yukle };
+  return { ac, uniteKonular, basla, zayifKonu, ozet, yukle, konuAd };
 }
