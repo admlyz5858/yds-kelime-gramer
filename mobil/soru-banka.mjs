@@ -152,11 +152,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const f of readdirSync(uniteDir).filter(f => /^unite-\d+\.json$/.test(f)).sort()) {
     const u = JSON.parse(readFileSync(join(uniteDir, f), 'utf8'));
     const uId = +f.match(/\d+/)[0];   // manifest id = dosya numarası
-    for (const t of u.testler || []) for (const q of t.sorular || []) {
+    (u.testler || []).forEach((t, ti) => t.sorular.forEach((q, qi) => {
       let [konu, alt] = etiketle(uId, q);
       const id = hash(uId + '|' + q.soru + '|' + q.cevap);
       if (duzeltme[id]) ({ konu, alt } = duzeltme[id]);
-      const kayit = { id, u: uId, konu, alt, soru: q.soru, secenekler: q.secenekler, cevap: q.cevap };
+      const kayit = { id, u: uId, t: ti, q: qi, konu, alt, soru: q.soru, secenekler: q.secenekler, cevap: q.cevap };   // t/q: kaynak test sırası (kolaydan zora)
       if (q.aciklama) kayit.aciklama = q.aciklama;
       if (q.ornek) kayit.ornek = q.ornek;
       sorular.push(kayit);
@@ -164,7 +164,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       // Belirsizlik: ünite beklentisi dışı konu ya da genel "kelime" etiketi
       const beklenen = { 2: 'edat', 3: 'zaman', 4: 'zaman', 5: 'zaman', 6: 'zaman', 7: 'modal', 8: 'modal', 9: 'fiilimsi', 10: 'cati', 11: 'kosul', 12: 'cumlecik', 13: 'cumlecik', 14: 'baglac' }[uId];
       if (konu !== beklenen && !duzeltme[id]) belirsiz.push({ id, u: uId, konu, alt, soru: q.soru.slice(0, 80), cevap: q.cevap });
-    }
+    }));
   }
   const konular = KONULAR.map(k => ({ id: k.id, ad: k.ad, ikon: k.ikon, alt: k.alt.map(([id, ad]) => ({ id, ad })) }));
   writeFileSync(join(buGun, '..', 'app', 'data', 'sorular.json'), JSON.stringify({ surum: 1, konular, sorular }) + '\n');

@@ -3,7 +3,14 @@
 import { shuffle } from './logic.js';
 import { loadBanka, saveBanka } from './storage.js';
 
-const N = 10;
+const N = 10;   // bir test / oturum en fazla 10 soru
+// Alt konunun soruları zorluk sırasında (ünite → ünitedeki test sırası → soru sırası) 10'arlık testlere bölünür
+export function testlereBol(sorular, n = N) {
+  const sirali = sorular.slice().sort((a, b) => a.u - b.u || (a.t || 0) - (b.t || 0) || (a.q || 0) - (b.q || 0));
+  const out = [];
+  for (let i = 0; i < sirali.length; i += n) out.push(sirali.slice(i, i + n));
+  return out;
+}
 export function kurBanka(api) {
   const { render, esc, ornekHTML, wireOrnekler, gunKaydet, ses, titre, konfeti, altEkran, toast, yanlisEkle, uniteAdi } = api;
   let veri = null, istat = loadBanka(), oturum = null;
@@ -80,19 +87,41 @@ export function kurBanka(api) {
     const k = veri.konuMap[konuId];
     const geri = geriFn || cizKonular;
     altEkran(k.ad, geri);
-    const altlar = k.alt.map(a => ({ ...a, n: veri.sorular.filter(q => q.konu === konuId && q.alt === a.id && (!uId || q.u === uId)).length, s: st(konuId, a.id) })).filter(a => a.n);
+    const altlar = k.alt.map(a => { const n = veri.sorular.filter(q => q.konu === konuId && q.alt === a.id && (!uId || q.u === uId)).length; const s = st(konuId, a.id); const tn = Math.ceil(n / N); const biten = Object.keys(s.testler || {}).filter(key => uId ? key.startsWith(`u${uId}:`) : !key.includes(':')).length; return { ...a, n, s, tn, biten }; }).filter(a => a.n);
     const toplam = altlar.reduce((t, a) => t + a.n, 0);
     render(`
       <button class="plan-kart" id="bkHepsi"><span class="plan-ikon">${k.ikon}</span><span class="plan-ic"><b>${esc(k.ad)} · karışık</b><i>${toplam} sorudan rastgele ${N}</i></span><span class="plan-durum">›</span></button>
       <div class="plan-baslik">Alt konular</div>
       ${altlar.map(a => `<button class="mf-kart bk-alt" data-alt="${a.id}">
         <span class="bk-oran ${a.s.yapilan ? (a.s.dogru / a.s.yapilan >= 0.8 ? 'iyi' : a.s.dogru / a.s.yapilan < 0.6 ? 'zayif' : '') : 'bos'}">${a.s.yapilan ? '%' + Math.round(a.s.dogru / a.s.yapilan * 100) : '—'}</span>
-        <span class="mf-ic"><span class="mf-bas">${esc(a.ad)}</span><span class="mf-alt">${a.n} soru${a.s.yapilan ? ` · ${a.s.yapilan} cevap · ${a.s.cozulen.length}/${a.n} görüldü` : ''}</span></span>
+        <span class="mf-ic"><span class="mf-bas">${esc(a.ad)}</span><span class="mf-alt">${a.n} soru · ${a.tn} test${a.biten ? ` · ${a.biten}/${a.tn} çözüldü` : ''}</span></span>
         <span class="ok">›</span></button>`).join('')}
     `);
     const tekrar = () => cizAltlar(konuId, uId, geriFn);
     document.getElementById('bkHepsi').onclick = () => basla({ konu: konuId, u: uId, geri: tekrar, baslik: k.ad });
-    document.querySelectorAll('.bk-alt').forEach(b => b.onclick = () => basla({ konu: konuId, alt: b.dataset.alt, u: uId, geri: tekrar, baslik: altAd(konuId, b.dataset.alt) }));
+    document.querySelectorAll('.bk-alt').forEach(b => b.onclick = () => cizTestler(konuId, b.dataset.alt, uId, tekrar));
+  }
+  // ---------- Alt konu test listesi (Test 1 · Test 2 … kolaydan zora) ----------
+  const testKey = (uId, i) => (uId ? `u${uId}:` : '') + 't' + i;
+  function cizTestler(konuId, altId, uId, geriFn) {
+    const ad = altAd(konuId, altId);
+    altEkran(ad, geriFn);
+    const sorular = veri.sorular.filter(q => q.konu === konuId && q.alt === altId && (!uId || q.u === uId));
+    const testler = testlereBol(sorular);
+    const s = st(konuId, altId); const skorlar = s.testler || {};
+    const siradaki = testler.findIndex((_, i) => !skorlar[testKey(uId, i)]);
+    const zorluk = (i, n) => { const r = n <= 1 ? 0 : i / (n - 1); return r < 0.34 ? '<span class="zorluk-rozet z-kolay">Kolay</span>' : r < 0.67 ? '<span class="zorluk-rozet z-orta">Orta</span>' : '<span class="zorluk-rozet z-zor">Zor</span>'; };
+    const uniteler = [...new Set(sorular.map(q => q.u))].sort((a, b) => a - b);
+    render(`
+      <div class="cumle"><div class="tr"><b>${esc(konuAd(konuId))} › ${esc(ad)}</b> · ${sorular.length} soru, ${testler.length} test. Kolaydan zora sıralı${uniteler.length > 1 ? ` (${uniteler.map(u => uniteAdi(u)).join(' → ')})` : ''}; her test en fazla ${N} soru.</div></div>
+      ${testler.map((t, i) => { const sk = skorlar[testKey(uId, i)]; return `<div class="test-link${sk ? ' biten' : ''}${i === siradaki ? ' siradaki' : ''}" data-i="${i}">
+        <div><div class="baslik">Test ${i + 1}</div><div class="alt-bilgi">${t.length} soru · <span class="test-konu">${esc(uniteAdi(t[0].u))}${t[t.length - 1].u !== t[0].u ? ' → ' + esc(uniteAdi(t[t.length - 1].u)) : ''}</span></div></div>
+        ${sk ? `<span class="test-skor ${sk.dogru === sk.toplam ? 'tam' : ''}">✓ ${sk.dogru}/${sk.toplam}</span>` : (i === siradaki ? '<span class="siradaki-rozet">Sıradaki</span>' : '')}${zorluk(i, testler.length)}<span class="ok">›</span>
+      </div>`; }).join('')}
+      <div class="btn-satir"><button class="aksiyon ikincil" id="bkKarisik">🔀 Rastgele ${N} soru</button></div>`);
+    const tekrar = () => cizTestler(konuId, altId, uId, geriFn);
+    document.querySelectorAll('.test-link').forEach(el => el.onclick = () => { const i = Number(el.dataset.i); basla({ konu: konuId, alt: altId, u: uId, test: i, testSay: testler.length, liste: testler[i], geri: tekrar, baslik: `${ad} · Test ${i + 1}` }); });
+    document.getElementById('bkKarisik').onclick = () => basla({ konu: konuId, alt: altId, u: uId, geri: tekrar, baslik: ad });
   }
   // Ünite içi görünüm: o ünitenin soruları konuya göre (ünite ekranının segmentiyle birlikte)
   async function uniteKonular(uId, opts = {}) {
@@ -116,7 +145,7 @@ export function kurBanka(api) {
     return havuz.slice(0, N);
   }
   function basla(f) {
-    const liste = secSorular(f);
+    const liste = f.liste ? f.liste.slice() : secSorular(f);
     if (!liste.length) { toast('Bu konuda soru yok'); return; }
     oturum = { f, liste, i: 0, dogru: 0, cevap: null, yanlis: [] };
     altEkran(f.baslik || 'Soru Bankası', () => { oturum = null; f.geri(); });
@@ -161,14 +190,23 @@ export function kurBanka(api) {
   function bitis() {
     const o = oturum, yuzde = Math.round(o.dogru / o.liste.length * 100);
     gunKaydet(0, { bitir: true });
+    if (o.f.test != null) {   // sabit test: en iyi skoru sakla
+      const key = anahtar(o.f.konu, o.f.alt); const s = istat[key] || (istat[key] = { yapilan: 0, dogru: 0, yanlis: [], cozulen: [] });
+      s.testler = s.testler || {}; const tk = testKey(o.f.u, o.f.test); const onceki = s.testler[tk];
+      if (!onceki || o.dogru > onceki.dogru) s.testler[tk] = { dogru: o.dogru, toplam: o.liste.length };
+      kaydet();
+    }
+    const sonrakiVar = o.f.test != null && o.f.test + 1 < o.f.testSay;
     if (yuzde >= 80) { ses('kutlama'); konfeti(); } else ses('seviye');
     const z = zayifKonu();
     render(`<div class="es-sonuc"><div class="es-sonuc-amblem">${yuzde >= 80 ? '🌟' : yuzde >= 50 ? '👏' : '💪'}</div><div class="es-sonuc-bas">${esc(o.f.baslik || 'Soru Bankası')}</div>
       <div class="es-sonuc-skor">${o.dogru} / ${o.liste.length}</div><div class="es-sonuc-alt">%${yuzde} doğru</div>
       ${o.yanlis.length ? `<div class="es-sonuc-not">Yanlışlar “Yanlışlarım”a eklendi: <b>${o.yanlis.map(q => esc(q.cevap)).join(' · ')}</b></div>` : '<div class="es-sonuc-not">Hiç yanlış yok — bu konu oturmuş.</div>'}
       ${z && (z.konu !== o.f.konu || z.alt !== o.f.alt) ? `<div class="es-sonuc-not">🎯 Zayıf konun: <b>${esc(z.ad)}</b> (%${Math.round(z.oran * 100)})</div>` : ''}</div>
-      <div class="btn-satir"><button class="aksiyon" id="bkYeni">🔁 Yeni 10 soru</button><button class="aksiyon ikincil" id="bkGeri">Konular</button></div>`);
+      <div class="btn-satir">${sonrakiVar ? '<button class="aksiyon" id="bkSonraki">Sonraki test ›</button>' : ''}<button class="aksiyon ${sonrakiVar ? 'ikincil' : ''}" id="bkYeni">${o.f.test != null ? '🔁 Tekrar çöz' : '🔁 Yeni 10 soru'}</button><button class="aksiyon ikincil" id="bkGeri">${o.f.test != null ? 'Testler' : 'Konular'}</button></div>`);
     document.getElementById('bkYeni').onclick = () => basla(o.f);
+    const sn = document.getElementById('bkSonraki');
+    if (sn) sn.onclick = () => { const i = o.f.test + 1; const sorular = veri.sorular.filter(q => q.konu === o.f.konu && q.alt === o.f.alt && (!o.f.u || q.u === o.f.u)); const testler = testlereBol(sorular); basla({ ...o.f, test: i, liste: testler[i], baslik: `${altAd(o.f.konu, o.f.alt)} · Test ${i + 1}` }); };
     document.getElementById('bkGeri').onclick = () => { oturum = null; o.f.geri(); };
   }
 

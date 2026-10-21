@@ -99,8 +99,9 @@ await guvenli('unite', async () => {
   await cek('09-mufredat.png');
   await page.locator('#mfBanka').click(); await bekle(900);
   await page.locator('.bk-konu[data-konu="modal"]').click(); await bekle(600);
+  await page.locator('.bk-alt[data-alt="cikarim"]').click(); await bekle(600);
   await cek('14-soru-bankasi.png');
-  await page.locator('#geri').click(); await bekle(400); await page.locator('#geri').click(); await bekle(600);
+  for (let i = 0; i < 3; i++) { await page.locator('#geri').click(); await bekle(400); }
   await page.locator('.mf-kart[data-id="2"]').click(); await bekle(1200);
   const b = page.locator('.bolum-link').nth(1); if (await b.count()) { await b.click(); await bekle(800); }
   await cek('10-oku-edat.png');

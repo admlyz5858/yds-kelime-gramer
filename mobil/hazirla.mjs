@@ -16,7 +16,7 @@ mkdirSync(hedef, { recursive: true });
 cpSync(kaynak, hedef, { recursive: true });
 
 // 2) Geliştirme-only dosyaları at
-for (const f of ['sunucu.py', 'baslat.sh', 'js/logic.test.js', 'js/eslestir.test.js', 'js/lig.test.js', 'js/sozluk.test.js', 'js/alistirma.test.js']) {
+for (const f of ['sunucu.py', 'baslat.sh', 'js/logic.test.js', 'js/eslestir.test.js', 'js/lig.test.js', 'js/sozluk.test.js', 'js/alistirma.test.js', 'js/banka.test.js']) {
   rmSync(join(hedef, f), { force: true });
 }
 // frames klasörü (varsa) pakete girmesin
