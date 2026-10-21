@@ -1,5 +1,5 @@
-// Kelimetre PWA service worker — sürüm bd6906e9e4 (pwa-uret.mjs üretir)
-const SURUM = 'kelimetre-bd6906e9e4';
+// Kelimetre PWA service worker — sürüm f6dd8003df (pwa-uret.mjs üretir)
+const SURUM = 'kelimetre-f6dd8003df';
 const DOSYALAR = ["./css/style.css","./data/gunun.json","./data/kelime-havuz.json","./data/manifest.json","./data/sorular.json","./data/uniteler/unite-01.json","./data/uniteler/unite-02.json","./data/uniteler/unite-03.json","./data/uniteler/unite-04.json","./data/uniteler/unite-05.json","./data/uniteler/unite-06.json","./data/uniteler/unite-07.json","./data/uniteler/unite-08.json","./data/uniteler/unite-09.json","./data/uniteler/unite-10.json","./data/uniteler/unite-11.json","./data/uniteler/unite-12.json","./data/uniteler/unite-13.json","./data/uniteler/unite-14.json","./fonts/fraunces.woff2","./fonts/hanken.woff2","./icon-180.png","./icon-192.png","./icon-512.png","./index.html","./js/akis.js","./js/alistirma.js","./js/app.js","./js/banka.js","./js/bildirim.js","./js/bulut.js","./js/deneme.js","./js/durum.js","./js/efekt.js","./js/eslestir.js","./js/kart.js","./js/lig.js","./js/logic.js","./js/notlar.js","./js/ogren.js","./js/sozluk.js","./js/storage.js","./js/tarayici.js","./manifest.webmanifest","./"];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SURUM).then(async (c) => {

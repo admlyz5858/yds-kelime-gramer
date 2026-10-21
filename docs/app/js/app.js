@@ -253,6 +253,7 @@ async function anaSayfa() {
   const havuz = await havuzYukle().catch(() => []);
   if (!_tasindi) { _tasindi = true; try { eskiKayitlariTasi(havuz); } catch (_) {} }
   const oz = await kelimeOgren.ozet().catch(() => null);
+  if (aktifSekme !== 'bugun') return;   // beklerken başka sekmeye geçildiyse (ör. Google dönüşü → Ben) ezme
   const es = eslestirme.ozet();
   const son = _ayar.sonDers;
   bildirimYenile(oz);
@@ -276,7 +277,7 @@ async function anaSayfa() {
     <button class="plan-kart" id="pDers">
       <span class="plan-ikon">🎓</span><span class="plan-ic"><b>${son ? 'Müfredata devam' : 'Müfredata başla'}</b><i>${son ? esc(sonAd) + ' · kaldığın yerden' : 'Edatlar, zamanlar, modallar…'}</i></span><span class="plan-durum">›</span>
     </button>
-    ${!bulut.durum().girili && !_ayar.bulutKapatildi && (_ayar.toplamAktivite || 0) >= 30 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni yedekle</b><i>E-posta ile kayıt ol; telefon değişse de devam et</i></span><button class="ipucu-kapat" id="pBulutKapat" aria-label="Kapat">✕</button></button>` : ''}
+    ${!bulut.durum().girili && !_ayar.bulutKapatildi && (_ayar.toplamAktivite || 0) >= 1 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni kaydet</b><i>Google ya da e-posta ile kayıt ol; telefon değişse de devam et</i></span><button class="ipucu-kapat" id="pBulutKapat" aria-label="Kapat">✕</button></button>` : ''}
     ${deneme.onerilsinMi() ? `<button class="plan-kart kucuk" id="pDeneme"><span class="plan-ikon">🧪</span><span class="plan-ic"><b>Haftalık mini deneme</b><i>${deneme.ozet().son ? `Son: ${deneme.ozet().son.puan} puan · ` : ''}20 soru · 25 dakika</i></span><span class="plan-durum">›</span></button>` : ''}
     ${zayif ? `<button class="plan-kart zayif" id="pZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konunu güçlendir</b><i>${esc(zayif.ad)} · %${Math.round(zayif.oran * 100)} doğruluk · 10 soru</i></span><span class="plan-durum">›</span></button>` : ''}
     <button class="plan-kart kucuk" id="pAkis">
@@ -1125,7 +1126,7 @@ function gunKaydet(miktar = 1, opt = {}) {
   if (!_ayar.hedef) _ayar.hedef = HEDEF_VARSAYILAN;
   if (opt.dogru === true) _ayar.gunDogru = (_ayar.gunDogru || 0) + 1;
   else if (opt.dogru === false) _ayar.gunYanlis = (_ayar.gunYanlis || 0) + 1;
-  if (opt.bitir) _ayar.gunBitirilen = (_ayar.gunBitirilen || 0) + 1;
+  if (opt.bitir) { _ayar.gunBitirilen = (_ayar.gunBitirilen || 0) + 1; if (!_ayar.kayitSoruldu && !bulut.durum().girili && _ayar.toplamAktivite >= 5) { _ayar.kayitSoruldu = true; setTimeout(() => { if (!document.querySelector('.modal-katman')) girisAc({ oner: true }); }, 1400); } }
   _ayar.xp = (_ayar.xp || 0) + XP_AKTIVITE * miktar + (opt.dogru === true ? XP_DOGRU : 0);
   if (!_ayar.gunlog) _ayar.gunlog = {};
   _ayar.gunlog[bugun] = (_ayar.gunlog[bugun] || 0) + miktar;
@@ -1367,17 +1368,19 @@ function isiHaritasi() {
 // ===== Hesap (e-posta kodu) ve bulut yedek =====
 function hesapSatirlariHTML() {
   const d = bulut.durum();
-  if (!d.girili) return `<button class="ayar-sat" data-is="giris-yap"><span>☁️</span><div><b>E-posta ile kayıt ol / giriş yap</b><i>İlerlemen otomatik yedeklenir; telefon değişince ya da iPhone'da aynı yerden devam edersin. Şifre yok, e-postana kod gelir.</i></div></button>`;
+  if (!d.girili) return `<button class="ayar-sat" data-is="giris-yap"><span>☁️</span><div><b>Kayıt ol / giriş yap</b><i>Google ile tek dokunuş ya da e-posta kodu. İlerlemen otomatik yedeklenir; telefon değişince ya da iPhone'da aynı yerden devam edersin.</i></div></button>`;
   const zaman = d.sonSenkron ? new Date(d.sonSenkron).toLocaleString('tr-TR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : 'henüz yok';
-  return `<div class="ayar-sat hesap-sat"><span>✅</span><div><b>${esc(d.eposta)}</b><i>Bulut yedek açık · son eşitleme: ${zaman}${d.kirli ? ' · bekleyen değişiklik var' : ''}${d.hata ? ` · <span style="color:var(--gul)">hata: ${esc(d.hata)}</span>` : ''}</i></div></div>
+  return `<div class="ayar-sat hesap-sat"><span>✅</span><div><b>${esc(d.eposta)}</b><i>${d.saglayici === 'google' ? 'Google hesabı · ' : ''}Bulut yedek açık · son eşitleme: ${zaman}${d.kirli ? ' · bekleyen değişiklik var' : ''}${d.hata ? ` · <span style="color:var(--gul)">hata: ${esc(d.hata)}</span>` : ''}</i></div></div>
     <button class="ayar-sat" data-is="esitle"><span>🔄</span><div><b>Şimdi eşitle</b><i>Değişiklikler normalde 20 saniye içinde kendiliğinden yazılır</i></div></button>
     <button class="ayar-sat" data-is="cikis-yap"><span>🚪</span><div><b>Çıkış yap</b><i>Cihazdaki ilerleme kalır</i></div></button>
     <button class="ayar-sat tehlike" data-is="hesap-sil"><span>🗑️</span><div><b>Hesabımı ve bulut yedeğimi sil</b><i>Geri alınamaz</i></div></button>`;
 }
-function girisAc() {
+function girisAc(opt = {}) {
   let eposta = '';
-  const m = modalAc('E-posta ile giriş', `
-    <p class="modal-aciklama">Şifre yok: e-postana 6 haneli bir kod gelir. İlk girişte hesabın oluşturulur; ilerlemen bu hesapta yedeklenir.</p>
+  const m = modalAc(opt.oner ? '🎉 İlk oturum tamam!' : 'Kayıt ol / giriş yap', `
+    <p class="modal-aciklama">${opt.oner ? 'İlerlemen şu an sadece bu telefonda. Kayıt olursan buluta yedeklenir; telefon değişse de kaldığın yerden devam edersin.' : 'İlk girişte hesabın oluşturulur; ilerlemen bu hesapta yedeklenir.'}</p>
+    <button class="g-btn" id="hsGoogle" type="button"><svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.1z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.7 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.9l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>Google ile devam et</button>
+    <div class="ayrac"><span>ya da e-posta ile</span></div>
     <input id="hsEposta" class="giris-tarih" style="margin-top:0" type="email" inputmode="email" autocapitalize="off" autocomplete="email" placeholder="e-posta adresin">
     <div id="hsMsg" style="margin-top:8px;min-height:1.2em;font-size:13px;color:var(--murekkep-2)"></div>
     <button class="aksiyon" id="hsGonder" style="width:100%;margin-top:4px">Kod gönder</button>
@@ -1386,10 +1389,17 @@ function girisAc() {
       <button class="aksiyon" id="hsDogrula" style="width:100%;margin-top:8px">Giriş yap</button>
       <button class="dn-bitir-link" id="hsTekrar">Kod gelmedi, tekrar gönder</button>
     </div>
+    ${opt.oner ? '<button class="dn-bitir-link" id="hsGec">Şimdilik geç</button>' : ''}
     <p class="giris-not" style="text-align:left">Hesap verisi: e-posta adresin ve ilerleme yedeğin. Lig takma adından bağımsızdır. İstediğin an Ben › Hesabımı sil ile her şey silinir.</p>`, {
     onWire: (o, kapat) => {
       const msg = o.querySelector('#hsMsg'), ep = o.querySelector('#hsEposta');
-      setTimeout(() => ep.focus(), 120);
+      if (!opt.oner) setTimeout(() => ep.focus(), 120);
+      const gec = o.querySelector('#hsGec'); if (gec) gec.onclick = kapat;
+      o.querySelector('#hsGoogle').onclick = async () => {
+        const g = o.querySelector('#hsGoogle'); g.disabled = true; msg.textContent = 'Google penceresi açılıyor…';
+        try { await bulut.googleIleGiris(); kapat(); titre('basari'); toast('☁️ Google ile giriş yapıldı, yedekleme açık'); await bulutEsitle(true); benAc(); }
+        catch (e) { g.disabled = false; msg.textContent = /denied|iptal|aşımı/i.test(String(e.message)) ? 'Google girişi iptal edildi.' : 'Google ile giriş yapılamadı: ' + (e.message || 'bağlantı hatası') + ' — e-posta ile deneyebilirsin.'; }
+      };
       const gonder = async () => {
         eposta = ep.value.trim().toLowerCase();
         if (!bulut.epostaGecerli(eposta)) { msg.textContent = 'Geçerli bir e-posta yaz.'; return; }
@@ -1530,7 +1540,10 @@ document.getElementById('ayarBtn').onclick = () => sekmeAc('ben');
 
 temaUygula();
 efektAyarla({ ses: !_ayar.sesKapali, titresim: !_ayar.titresimKapali });
-if (bulut.durum().girili) setTimeout(() => bulutEsitle(false), 1500);   // açılışta sessiz eşitleme (bulut yeniyse indirir)
+bulut.donusIsle().then(async (geldi) => {
+  if (geldi) { titre('basari'); toast('☁️ Google ile giriş yapıldı, yedekleme açık'); await bulutEsitle(true); sekmeAc('ben'); return; }
+  if (bulut.durum().girili) setTimeout(() => bulutEsitle(false), 1500);   // açılışta sessiz eşitleme (bulut yeniyse indirir)
+}).catch(e => toast('Google ile giriş yapılamadı: ' + (e.message || 'hata')));
 girisEkrani(false);
 sekmeAc('bugun');
 

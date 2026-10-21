@@ -50,9 +50,9 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
 
-## Sürüm notları (1.4.0, Play Console'a yapıştırılacak kısa sürüm · 434 karakter)
+## Sürüm notları (1.4.0, Play Console'a yapıştırılacak kısa sürüm · 447 karakter)
 ```
-• E-posta ile kayıt ol: ilerlemen otomatik buluta yedeklenir, Android ↔ iPhone arasında taşınır
+• Google ya da e-posta ile kayıt ol: ilerlemen otomatik buluta yedeklenir, Android ↔ iPhone arasında taşınır
 • Mini deneme: 20 soru, 25 dakika, tahmini YDS puanı ve konu kırılımı
 • Metin tara: yapıştırdığın metindeki kelimeler seviye rengiyle işaretlenir, bilmediklerini deftere al
 • Kendi kelimeni ekle ve her karta hafıza ipucu yaz
@@ -124,7 +124,7 @@ https://admlyz5858.github.io/yds-kelime-gramer/gizlilik/
 E-posta hesabı ve bulut yedekleme (isteğe bağlı, 1.4.0+) için:
 - **Kişisel bilgiler → E-posta adresi:** isteğe bağlı, toplanır, paylaşılmaz; amaç: hesap yönetimi. Kullanıcı silebilir (uygulama içi "Hesabımı ve bulut yedeğimi sil").
 - **Uygulama etkinliği → Uygulama etkileşimleri:** çalışma ilerlemesi yedeği (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
-- Hesap oluşturma: e-posta + tek kullanımlık kod (şifre yok). Aktarımda şifreli (HTTPS). Sunucu: Supabase (AB/Frankfurt).
+- Hesap oluşturma: Google ile giriş (OAuth; yalnızca e-posta + hesap kimliği alınır) ya da e-posta + tek kullanımlık kod (şifre yok). Aktarımda şifreli (HTTPS). Sunucu: Supabase (AB/Frankfurt).
 
 Eşleştirme oyunu çevrimiçi ligi (isteğe bağlı) için:
 - **Veri toplanıyor mu?** Evet — yalnızca kullanıcı "Lige katıl" derse.

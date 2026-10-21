@@ -29,6 +29,19 @@ Supabase'in yerleşik e-posta servisi yalnızca deneme içindir: saatte birkaç 
 ### 3. Auth ayarları
 Authentication → Providers → Email: **Enable email provider** açık, **Confirm email** açık kalabilir (kod doğrulaması zaten e-postayı onaylar). Authentication → Rate Limits: e-posta gönderimi varsayılan (saatte 30) yeterli.
 
+### 3b. Google ile giriş (1.4.0+, "Google ile devam et" düğmesi)
+Uygulama SDK'sız OAuth kullanır: `/auth/v1/authorize?provider=google&redirect_to=…` adresine gider, Supabase Google'dan dönüşte tokenları `redirect_to` adresinin `#` parçasında geri yollar. Üç adım:
+
+1. **Google Cloud Console** (console.cloud.google.com, ücretsiz) → yeni proje "Kelimetre" → **APIs & Services → OAuth consent screen**: External, uygulama adı Kelimetre, destek e-postası; scope eklemeye gerek yok (email/profile varsayılan). Yayın durumu "In production" yapın (Testing'de yalnızca eklediğiniz test kullanıcıları girebilir).
+2. **Credentials → Create credentials → OAuth client ID → Web application**. Authorized redirect URI: `https://thftjeecotladgnuqwhd.supabase.co/auth/v1/callback`. Oluşan **Client ID** ve **Client secret**'ı kopyalayın. (Android/iOS tipi istemci, SHA-1 vb. GEREKMEZ; giriş sistem tarayıcısında yapılır.)
+3. **Supabase → Authentication → Providers → Google**: Enable açık, Client ID + Client Secret yapıştır, kaydet. Ardından **Authentication → URL Configuration**:
+   - Site URL: `https://admlyz5858.github.io/yds-kelime-gramer/app/`
+   - Additional Redirect URLs (her satır ayrı): `kelimetre://auth` · `https://admlyz5858.github.io/yds-kelime-gramer/**` · geliştirme için `http://localhost:8901/**`
+
+`kelimetre://auth` Android uygulamasının derin bağlantısıdır (AndroidManifest intent-filter). Giriş Chrome Custom Tab'da açılır, Google hesap seçildikten sonra uygulamaya döner. iPhone PWA'da ve web'de aynı sekmede Google'a gidilir ve geri dönülür.
+
+Aynı e-posta hem Google hem kod ile girerse Supabase ikisini tek hesapta birleştirir (Google e-postayı doğrulanmış gönderir), yedek de tek olur.
+
 ### 4. Hesap silme RPC'si (önerilir)
 Uygulamadaki "Hesabımı ve bulut yedeğimi sil" önce `hesabimi_sil` RPC'sini dener; yoksa yalnızca yedek satırını silip çıkış yapar (e-posta kaydı auth tablosunda kalır). Tam silme için SQL Editor'da bir kez çalıştırın:
 

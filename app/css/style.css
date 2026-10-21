@@ -1675,3 +1675,10 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .hesap-sat { cursor: default; border-color: rgba(24,138,79,.35); }
 .plan-kart.bulut { position: relative; border-color: rgba(13,125,114,.4); }
 .plan-kart.bulut .ipucu-kapat { position: absolute; top: 6px; right: 8px; }
+
+/* Google ile giriş düğmesi + "ya da" ayracı */
+.g-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--hat-2, var(--hat)); background: var(--yuzey); color: var(--murekkep); font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
+.g-btn:disabled { opacity: .6; }
+.g-btn:active { transform: scale(.985); }
+.ayrac { display: flex; align-items: center; gap: 10px; margin: 14px 0 10px; color: var(--murekkep-2); font-size: 12px; }
+.ayrac::before, .ayrac::after { content: ""; flex: 1; height: 1px; background: var(--hat); }

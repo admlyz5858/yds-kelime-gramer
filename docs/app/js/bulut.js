@@ -1,5 +1,5 @@
 // app/js/bulut.js — E-posta hesabı + bulut yedekleme (Supabase Auth e-posta kodu + PostgREST, SDK'sız).
-// Akış: e-posta → 6 haneli kod → oturum (yds-hesap-v1; yedeğe GİRMEZ). Oturum varken:
+// Akış: Google ile giriş (OAuth yönlendirme) ya da e-posta → 6 haneli kod → oturum (yds-hesap-v1; yedeğe GİRMEZ). Oturum varken:
 //   - her yerel kayıtta "kirli" bayrağı → 20 sn sonra (ya da uygulama arka plana geçince) buluta yazılır
 //   - açılışta bulut sürümü yerelden yeniyse ve yerelde bekleyen değişiklik yoksa bulut cihaza indirilir
 //   - ikisi de değişmişse kullanıcıya sorulur (bulut mu, bu cihaz mı)
@@ -16,7 +16,7 @@ function oku() { try { return JSON.parse(localStorage.getItem(HKEY)) || null; } 
 function yaz(h) { hesap = h; if (h) localStorage.setItem(HKEY, JSON.stringify(h)); else localStorage.removeItem(HKEY); bildir(); }
 function bildir() { for (const f of dinleyiciler) { try { f(durum()); } catch {} } }
 export function dinle(f) { dinleyiciler.push(f); }
-export function durum() { return { girili: !!hesap, eposta: hesap?.eposta || '', sonSenkron: hesap?.sonSenkron || 0, kirli, hata: hesap?.hata || '' }; }
+export function durum() { return { girili: !!hesap, eposta: hesap?.eposta || '', saglayici: hesap?.saglayici || 'eposta', sonSenkron: hesap?.sonSenkron || 0, kirli, hata: hesap?.hata || '' }; }
 
 async function istek(yol, { method = 'GET', govde, yetki, prefer } = {}) {
   const ac = new AbortController(); const z = setTimeout(() => ac.abort(), 12000);
@@ -43,6 +43,56 @@ export async function kodDogrula(eposta, kod) {
   if (!r || !r.access_token) throw new Error('Oturum açılamadı');
   yaz({ eposta: r.user?.email || eposta, kullanici: r.user?.id, erisim: r.access_token, yenileme: r.refresh_token, bitis: Date.now() + (r.expires_in || 3600) * 1000, sonSenkron: 0 });
   return durum();
+}
+
+// ---- Google ile giriş (Supabase OAuth, SDK'sız; tokenlar dönüş adresinin #parçasında gelir) ----
+const DONUS_ANDROID = 'kelimetre://auth';
+export const donusAdresi = () => (typeof window !== 'undefined' && window.Capacitor?.Plugins?.Browser) ? DONUS_ANDROID : (location.origin + location.pathname);
+export const googleUrl = (donus) => `${URL}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(donus)}`;
+// "#access_token=…&refresh_token=…" ya da "?error=…" → {erisim, yenileme, bitis} | {hata} | null
+export function donusCoz(url) {
+  const u = String(url || ''); const h = u.indexOf('#'); const q = u.indexOf('?');
+  const parca = new URLSearchParams((h >= 0 ? u.slice(h + 1) : '') + '&' + (q >= 0 ? u.slice(q + 1, h >= 0 && h > q ? h : undefined) : ''));
+  const hata = parca.get('error_description') || parca.get('error');
+  if (hata) return { hata: decodeURIComponent(String(hata).replace(/\+/g, ' ')) };
+  const erisim = parca.get('access_token'), yenileme = parca.get('refresh_token');
+  if (!erisim || !yenileme) return null;
+  return { erisim, yenileme, bitis: Date.now() + (Number(parca.get('expires_in')) || 3600) * 1000 };
+}
+async function oturumTamamla(t) {
+  const k = await istek('/auth/v1/user', { yetki: t.erisim });
+  if (!k || !k.id) throw new Error('Kullanıcı bilgisi alınamadı');
+  yaz({ eposta: k.email || '', kullanici: k.id, erisim: t.erisim, yenileme: t.yenileme, bitis: t.bitis, sonSenkron: 0, saglayici: 'google' });
+  return durum();
+}
+let googleBekleyen = null;
+// Android: sistem tarayıcı sekmesi + kelimetre://auth derin bağlantısı · Web/PWA: aynı pencerede yönlendirme (dönüşte donusIsle)
+export async function googleIleGiris() {
+  const B = typeof window !== 'undefined' && window.Capacitor?.Plugins?.Browser, A = typeof window !== 'undefined' && window.Capacitor?.Plugins?.App;
+  const url = googleUrl(donusAdresi());
+  if (!B || !A) { location.href = url; return new Promise(() => {}); }
+  return new Promise((coz, red) => {
+    const zaman = setTimeout(() => { temizle(); red(new Error('Zaman aşımı')); }, 5 * 60000);
+    const temizle = () => { clearTimeout(zaman); googleBekleyen = null; try { B.close(); } catch {} };
+    googleBekleyen = async (gelen) => {
+      const t = donusCoz(gelen); if (!t) return;   // başka bir derin bağlantı
+      temizle();
+      if (t.hata) { red(new Error(t.hata)); return; }
+      try { coz(await oturumTamamla(t)); } catch (e) { red(e); }
+    };
+    B.open({ url, presentationStyle: 'popover' }).catch(e => { temizle(); red(e); });
+  });
+}
+if (typeof window !== 'undefined' && window.Capacitor?.Plugins?.App?.addListener) {
+  window.Capacitor.Plugins.App.addListener('appUrlOpen', ({ url }) => { if (googleBekleyen && String(url).startsWith(DONUS_ANDROID)) googleBekleyen(url); });
+}
+// Web/PWA açılışı: adres çubuğunda token varsa oturumu kur, adresi temizle. → Promise<true|false>, hata fırlatır
+export async function donusIsle() {
+  if (typeof location === 'undefined') return false;
+  const t = donusCoz(location.href); if (!t) return false;
+  try { history.replaceState(null, '', location.pathname); } catch {}
+  if (t.hata) throw new Error(t.hata);
+  await oturumTamamla(t); return true;
 }
 async function erisimAl() {
   if (!hesap) throw new Error('Oturum yok');
