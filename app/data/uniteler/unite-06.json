@@ -28923,59 +28923,6 @@
           }
         },
         {
-          "soru": "9. We had dinner ____.",
-          "secenekler": [
-            "before the movie started",
-            "once I reach home",
-            "as soon as the clock strikes twelve",
-            "since you've been gone"
-          ],
-          "cevap": "before the movie started",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "9.",
-                "vurgu": false
-              },
-              {
-                "k": "We",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "yedik",
-                "vurgu": true,
-                "en": "had (Past Simple)"
-              },
-              {
-                "k": "dinner",
-                "a": "akşam yemeği",
-                "vurgu": false
-              },
-              {
-                "k": "before",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "movie",
-                "a": "film",
-                "vurgu": false
-              },
-              {
-                "k": "started.",
-                "a": "başladı",
-                "vurgu": true,
-                "en": "started (Past Simple)"
-              }
-            ],
-            "tr": "Film başlamadan önce akşam yemeği yedik."
-          }
-        },
-        {
           "soru": "They ____ around the world since January.",
           "secenekler": [
             "travel",
@@ -29031,129 +28978,6 @@
           }
         },
         {
-          "soru": "2. By 2025, humans ____ foot on Mars.",
-          "secenekler": [
-            "will set",
-            "are setting",
-            "will have set",
-            "set"
-          ],
-          "cevap": "will have set",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "2.",
-                "vurgu": false
-              },
-              {
-                "k": "By",
-                "vurgu": false
-              },
-              {
-                "k": "2025,",
-                "a": "2025 yılına kadar",
-                "vurgu": false
-              },
-              {
-                "k": "humans",
-                "a": "insanlık",
-                "vurgu": false
-              },
-              {
-                "k": "will",
-                "a": "gelecekte tamamlanmış",
-                "en": "will have + V3 (Future Perfect)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": true
-              },
-              {
-                "k": "set",
-                "a": "ayak basmış olacak",
-                "vurgu": true
-              },
-              {
-                "k": "foot",
-                "a": "ayak basmak",
-                "vurgu": false
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "Mars.",
-                "a": "Mars",
-                "vurgu": false
-              }
-            ],
-            "tr": "2025 yılına kadar insanlık Mars'a ayak basmış olacak."
-          }
-        },
-        {
-          "soru": "1. They ____ around the world since January.",
-          "secenekler": [
-            "travel",
-            "have been traveling",
-            "are traveling",
-            "had traveled"
-          ],
-          "cevap": "have been traveling",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "1.",
-                "vurgu": false
-              },
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "a": "geçmişten bugüne süren",
-                "en": "have been + V-ing (Present Perfect Continuous)",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": true
-              },
-              {
-                "k": "traveling",
-                "a": "seyahat ediyor",
-                "vurgu": true
-              },
-              {
-                "k": "around",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "world",
-                "a": "dünya",
-                "vurgu": false
-              },
-              {
-                "k": "since",
-                "a": "beri",
-                "vurgu": false
-              },
-              {
-                "k": "January.",
-                "a": "Ocak",
-                "vurgu": false
-              }
-            ],
-            "tr": "Ocak ayından beri dünya turuna çıkıyorlar."
-          }
-        },
-        {
           "soru": "She ____ a book when the lights went out.",
           "secenekler": [
             "was reading",
@@ -29165,7 +28989,7 @@
           "ornek": null
         },
         {
-          "soru": "15. We ____ dinner together every night this week.",
+          "soru": "We ____ dinner together every night this week.",
           "secenekler": [
             "cook",
             "have cooked",
@@ -29226,7 +29050,7 @@
           }
         },
         {
-          "soru": "4. Engineers ____ sustainable energy solutions for several years.",
+          "soru": "Engineers ____ sustainable energy solutions for several years.",
           "secenekler": [
             "had been teaching",
             "teaches",
@@ -29289,7 +29113,7 @@
           }
         },
         {
-          "soru": "17. The mechanic ____ the car by tomorrow afternoon.",
+          "soru": "The mechanic ____ the car by tomorrow afternoon.",
           "secenekler": [
             "repairs",
             "has repaired",
@@ -29355,7 +29179,7 @@
           }
         },
         {
-          "soru": "2. I ____ Kyoto's temples at this time tomorrow.",
+          "soru": "I ____ Kyoto's temples at this time tomorrow.",
           "secenekler": [
             "will be visiting",
             "was visiting",
@@ -29421,7 +29245,7 @@
           }
         },
         {
-          "soru": "7. The author ____ a groundbreaking novel last year.",
+          "soru": "The author ____ a groundbreaking novel last year.",
           "secenekler": [
             "releases",
             "has been releasing",
@@ -29493,7 +29317,7 @@
           "ornek": null
         },
         {
-          "soru": "11. The athlete ____ in international competitions since 2012.",
+          "soru": "The athlete ____ in international competitions since 2012.",
           "secenekler": [
             "had competed",
             "was competing",
@@ -29798,7 +29622,7 @@
           }
         },
         {
-          "soru": "41. The restaurant ____ delicious cuisine for over twenty years.",
+          "soru": "The restaurant ____ delicious cuisine for over twenty years.",
           "secenekler": [
             "served",
             "is serving",
@@ -29866,74 +29690,7 @@
           }
         },
         {
-          "soru": "4. She ____ a book when the lights went out.",
-          "secenekler": [
-            "was reading",
-            "read",
-            "is reading",
-            "has read"
-          ],
-          "cevap": "was reading",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "4.",
-                "vurgu": false
-              },
-              {
-                "k": "She",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "okuyordu",
-                "en": "was + V-ing (Past Continuous)",
-                "vurgu": true
-              },
-              {
-                "k": "reading",
-                "a": "okumak",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "book",
-                "a": "kitap",
-                "vurgu": false
-              },
-              {
-                "k": "when",
-                "a": "ne zaman",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "lights",
-                "a": "ışıklar",
-                "vurgu": false
-              },
-              {
-                "k": "went",
-                "a": "gitti/kesildi",
-                "en": "Simple Past (went out = kesildi)",
-                "vurgu": true
-              },
-              {
-                "k": "out.",
-                "vurgu": false
-              }
-            ],
-            "tr": "Işıklar kesildiğinde o kitap okuyordu."
-          }
-        },
-        {
-          "soru": "20. The gardener watered the plants ____.",
+          "soru": "The gardener watered the plants ____.",
           "secenekler": [
             "until he picks all the flowers",
             "by the time summer comes",
@@ -30074,7 +29831,7 @@
           }
         },
         {
-          "soru": "50. Marie Curie ____ radium and polonium in 1898.",
+          "soru": "Marie Curie ____ radium and polonium in 1898.",
           "secenekler": [
             "will have discovered",
             "has discovered",
@@ -30224,72 +29981,7 @@
           }
         },
         {
-          "soru": "8. Researchers ____ the phenomenon for over a decade.",
-          "secenekler": [
-            "are investigating",
-            "will investigate",
-            "have been investigating",
-            "had investigated"
-          ],
-          "cevap": "have been investigating",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "8.",
-                "vurgu": false
-              },
-              {
-                "k": "Researchers",
-                "a": "araştırmacılar",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "a": "süregelmiş",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "a": "devam ediyor",
-                "vurgu": true
-              },
-              {
-                "k": "investigating",
-                "a": "araştırıyor",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "phenomenon",
-                "a": "olgu",
-                "vurgu": false
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "over",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "decade.",
-                "a": "on yıl",
-                "vurgu": false
-              }
-            ],
-            "tr": "Araştırmacılar on yılı aşkın süredir bu olguyu araştırmaktadır."
-          }
-        },
-        {
-          "soru": "27. She ____ the piano for an hour yesterday afternoon.",
+          "soru": "She ____ the piano for an hour yesterday afternoon.",
           "secenekler": [
             "has practised",
             "was practising",
@@ -30355,7 +30047,7 @@
           }
         },
         {
-          "soru": "20. They ____ tirelessly on the project since early morning.",
+          "soru": "They ____ tirelessly on the project since early morning.",
           "secenekler": [
             "have been working",
             "will work",
@@ -30425,7 +30117,7 @@
           }
         },
         {
-          "soru": "8. ____ before the storm hits.",
+          "soru": "____ before the storm hits.",
           "secenekler": [
             "People took shelter in underground bunkers",
             "The city has experienced several disasters",
@@ -30490,7 +30182,7 @@
           }
         },
         {
-          "soru": "15. She ____ at the local animal shelter every weekend.",
+          "soru": "She ____ at the local animal shelter every weekend.",
           "secenekler": [
             "volunteers",
             "had volunteered",
@@ -30501,63 +30193,7 @@
           "ornek": null
         },
         {
-          "soru": "4. As temperatures rise, ____.",
-          "secenekler": [
-            "scientists studied the variations in the region last summer",
-            "the rate of evaporation increases",
-            "the Earth's climate has undergone significant changes",
-            "many species had faced extinction"
-          ],
-          "cevap": "the rate of evaporation increases",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "4.",
-                "vurgu": false
-              },
-              {
-                "k": "As",
-                "vurgu": false
-              },
-              {
-                "k": "temperatures",
-                "a": "sıcaklık",
-                "vurgu": false
-              },
-              {
-                "k": "rise,",
-                "a": "yükselir",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "rate",
-                "a": "oran",
-                "vurgu": false
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "evaporation",
-                "a": "buharlaşma",
-                "vurgu": false
-              },
-              {
-                "k": "increases.",
-                "a": "artar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Sıcaklıklar yükseldikçe buharlaşma oranı artar."
-          }
-        },
-        {
-          "soru": "5. After the rain stopped, ____.",
+          "soru": "After the rain stopped, ____.",
           "secenekler": [
             "we will have experienced all four seasons",
             "we are experiencing some strong winds",
@@ -30638,7 +30274,7 @@
           "ornek": null
         },
         {
-          "soru": "38. He ____ the book before he watched the movie adaptation.",
+          "soru": "He ____ the book before he watched the movie adaptation.",
           "secenekler": [
             "is reading",
             "reads",
@@ -30709,7 +30345,7 @@
           }
         },
         {
-          "soru": "11. ____ until everyone is ready.",
+          "soru": "____ until everyone is ready.",
           "secenekler": [
             "We won't leave for the airport",
             "She will fly to New York for her sister's wedding",
@@ -30846,7 +30482,7 @@
       "ad": "Test 4",
       "sorular": [
         {
-          "soru": "6. The plane will depart ____.",
+          "soru": "The plane will depart ____.",
           "secenekler": [
             "as soon as the passengers are all on board",
             "when the airport staff arrived at the gate",
@@ -31073,77 +30709,7 @@
           }
         },
         {
-          "soru": "5. ____, books became more accessible.",
-          "secenekler": [
-            "As the literary scene evolves",
-            "As soon as the book hit the shelves",
-            "After Johannes Gutenberg invented the printing press",
-            "By the time the author had finished his novel"
-          ],
-          "cevap": "After Johannes Gutenberg invented the printing press",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "5.",
-                "vurgu": false
-              },
-              {
-                "k": "After",
-                "vurgu": false
-              },
-              {
-                "k": "Johannes",
-                "vurgu": false
-              },
-              {
-                "k": "Gutenberg",
-                "a": "Gutenberg",
-                "vurgu": false
-              },
-              {
-                "k": "invented",
-                "a": "icat etti",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "printing",
-                "a": "matbaa",
-                "vurgu": false
-              },
-              {
-                "k": "press,",
-                "a": "baskı makinesi",
-                "vurgu": false
-              },
-              {
-                "k": "books",
-                "a": "kitap",
-                "vurgu": false
-              },
-              {
-                "k": "became",
-                "a": "oldu",
-                "vurgu": true
-              },
-              {
-                "k": "more",
-                "vurgu": false
-              },
-              {
-                "k": "accessible.",
-                "a": "erişilebilir",
-                "vurgu": false
-              }
-            ],
-            "tr": "Johannes Gutenberg matbaayı icat ettikten sonra kitaplar daha erişilebilir hale geldi."
-          }
-        },
-        {
-          "soru": "18. We ____ the presents when everyone gathers around the tree.",
+          "soru": "We ____ the presents when everyone gathers around the tree.",
           "secenekler": [
             "will open",
             "had opened",
@@ -31280,7 +30846,7 @@
           }
         },
         {
-          "soru": "1. The room fills with laughter ____.",
+          "soru": "The room fills with laughter ____.",
           "secenekler": [
             "by the time my cousins arrived",
             "after she heard the funny joke",
@@ -31357,7 +30923,7 @@
           }
         },
         {
-          "soru": "17. Shakespeare ____ \"Romeo and Juliet\" in the late 16th century.",
+          "soru": "Shakespeare ____ \"Romeo and Juliet\" in the late 16th century.",
           "secenekler": [
             "writes",
             "had written",
@@ -31422,7 +30988,7 @@
           }
         },
         {
-          "soru": "9. While we ____ in the mountains, it started raining heavily.",
+          "soru": "While we ____ in the mountains, it started raining heavily.",
           "secenekler": [
             "are hiking",
             "were hiking",
@@ -31494,7 +31060,7 @@
           }
         },
         {
-          "soru": "39. He ____ the city during his business trip next weekend.",
+          "soru": "He ____ the city during his business trip next weekend.",
           "secenekler": [
             "has explored",
             "explores",
@@ -31566,7 +31132,7 @@
           }
         },
         {
-          "soru": "42. She will call her parents once she ____ her homework.",
+          "soru": "She will call her parents once she ____ her homework.",
           "secenekler": [
             "is finishing",
             "finishes",
@@ -31637,7 +31203,7 @@
       "ad": "Test 5",
       "sorular": [
         {
-          "soru": "48. We ____ the old castle before it closed for renovations.",
+          "soru": "We ____ the old castle before it closed for renovations.",
           "secenekler": [
             "are visiting",
             "had visited",
@@ -31648,7 +31214,7 @@
           "ornek": null
         },
         {
-          "soru": "19. He ____ for the marathon for the past three months.",
+          "soru": "He ____ for the marathon for the past three months.",
           "secenekler": [
             "will train",
             "trained",
@@ -31799,7 +31365,7 @@
           }
         },
         {
-          "soru": "28. They ____ their travel plans for the summer right now.",
+          "soru": "They ____ their travel plans for the summer right now.",
           "secenekler": [
             "discussed",
             "have discussed",
@@ -31940,7 +31506,7 @@
           }
         },
         {
-          "soru": "5. They usually ____ yoga classes at the gym on Tuesdays.",
+          "soru": "They usually ____ yoga classes at the gym on Tuesdays.",
           "secenekler": [
             "are attending",
             "had been attending",
@@ -32006,7 +31572,7 @@
           }
         },
         {
-          "soru": "36. They ____ the family business for three generations by 2030.",
+          "soru": "They ____ the family business for three generations by 2030.",
           "secenekler": [
             "run",
             "had been running",
@@ -32087,7 +31653,7 @@
           }
         },
         {
-          "soru": "40. The team ____ for weeks before they won the championship.",
+          "soru": "The team ____ for weeks before they won the championship.",
           "secenekler": [
             "had been practising",
             "practises",
@@ -32163,75 +31729,7 @@
           }
         },
         {
-          "soru": "3. Since the pandemic began, ____.",
-          "secenekler": [
-            "researchers will monitor the new variants",
-            "remote work has become increasingly common",
-            "the virus had claimed thousands of lives",
-            "governments will have distributed vaccines to most people"
-          ],
-          "cevap": "remote work has become increasingly common",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "3.",
-                "vurgu": false
-              },
-              {
-                "k": "Since",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "pandemic",
-                "a": "salgın",
-                "vurgu": false
-              },
-              {
-                "k": "began,",
-                "a": "başladı",
-                "vurgu": true,
-                "en": "began (Past Simple)"
-              },
-              {
-                "k": "remote",
-                "a": "uzaktan",
-                "vurgu": false
-              },
-              {
-                "k": "work",
-                "a": "çalışma",
-                "vurgu": false
-              },
-              {
-                "k": "has",
-                "vurgu": true
-              },
-              {
-                "k": "become",
-                "a": "yaygınlaştı",
-                "vurgu": true,
-                "en": "Present Perfect"
-              },
-              {
-                "k": "increasingly",
-                "a": "giderek artan",
-                "vurgu": false
-              },
-              {
-                "k": "common.",
-                "a": "yaygın",
-                "vurgu": false
-              }
-            ],
-            "tr": "Salgın başladığından bu yana uzaktan çalışma giderek daha yaygın hale geldi."
-          }
-        },
-        {
-          "soru": "7. ____ we will begin the project.",
+          "soru": "____ we will begin the project.",
           "secenekler": [
             "Once they concluded the terms",
             "As soon as the company signs the contract",
@@ -32306,78 +31804,6 @@
               }
             ],
             "tr": "Şirket sözleşmeyi imzalar imzalamaz projeye başlayacağız."
-          }
-        },
-        {
-          "soru": "3. The gardener ____ new flowers in the community park every spring.",
-          "secenekler": [
-            "planted",
-            "will plant",
-            "plants",
-            "had planted"
-          ],
-          "cevap": "plants",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "3.",
-                "vurgu": false
-              },
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "gardener",
-                "a": "bahçıvan",
-                "vurgu": false
-              },
-              {
-                "k": "plants",
-                "a": "dikiyor",
-                "en": "Simple Present",
-                "vurgu": true
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "flowers",
-                "a": "çiçekler",
-                "vurgu": false
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "community",
-                "a": "topluluk",
-                "vurgu": false
-              },
-              {
-                "k": "park",
-                "a": "park",
-                "vurgu": false
-              },
-              {
-                "k": "every",
-                "a": "her",
-                "vurgu": false
-              },
-              {
-                "k": "spring.",
-                "a": "ilkbahar",
-                "vurgu": false
-              }
-            ],
-            "tr": "Bahçıvan her ilkbaharda topluluk parkına yeni çiçekler diker."
           }
         },
         {
@@ -32533,7 +31959,7 @@
           }
         },
         {
-          "soru": "13. ____, all the students paid attention.",
+          "soru": "____, all the students paid attention.",
           "secenekler": [
             "Before schools adopt digital textbooks",
             "Until they understand the concept completely",
@@ -32605,7 +32031,7 @@
           }
         },
         {
-          "soru": "35. He ____ in New York City since he graduated from college.",
+          "soru": "He ____ in New York City since he graduated from college.",
           "secenekler": [
             "has lived",
             "lived",
@@ -32681,7 +32107,7 @@
           }
         },
         {
-          "soru": "6. ____ when the bus finally arrived.",
+          "soru": "____ when the bus finally arrived.",
           "secenekler": [
             "The bus driver checks the tickets of all passengers",
             "They have announced a new bus route in our neighborhood",
@@ -32821,7 +32247,7 @@
           }
         },
         {
-          "soru": "34. The software will select winners ____ from the list of participants.",
+          "soru": "The software will select winners ____ from the list of participants.",
           "secenekler": [
             "relatively",
             "extensively",
@@ -33038,7 +32464,7 @@
           }
         },
         {
-          "soru": "21. They ____ in the park when they met their old friend.",
+          "soru": "They ____ in the park when they met their old friend.",
           "secenekler": [
             "have walked",
             "were walking",
@@ -33106,7 +32532,7 @@
           }
         },
         {
-          "soru": "7. He ____ from university next year with a degree in engineering.",
+          "soru": "He ____ from university next year with a degree in engineering.",
           "secenekler": [
             "graduates",
             "has graduated",
@@ -33181,7 +32607,7 @@
           }
         },
         {
-          "soru": "6. He ____ at the university for thirty years before he retired.",
+          "soru": "He ____ at the university for thirty years before he retired.",
           "secenekler": [
             "had been teaching",
             "teaches",
@@ -33259,7 +32685,7 @@
           }
         },
         {
-          "soru": "47. They ____ money for their dream house since they got married.",
+          "soru": "They ____ money for their dream house since they got married.",
           "secenekler": [
             "have been saving",
             "will be saving",
@@ -33275,7 +32701,7 @@
       "ad": "Test 7",
       "sorular": [
         {
-          "soru": "20. When you wake up tomorrow morning, I ____ the entire house.",
+          "soru": "When you wake up tomorrow morning, I ____ the entire house.",
           "secenekler": [
             "have cleaned",
             "cleaned",
@@ -33428,7 +32854,7 @@
           }
         },
         {
-          "soru": "16. We ____ our kitchen last year, and it looks amazing now.",
+          "soru": "We ____ our kitchen last year, and it looks amazing now.",
           "secenekler": [
             "will be renovating",
             "renovate",
@@ -33500,7 +32926,7 @@
           }
         },
         {
-          "soru": "9. Scientists ____ a new vaccine by the end of the year.",
+          "soru": "Scientists ____ a new vaccine by the end of the year.",
           "secenekler": [
             "will have developed",
             "have developed",
@@ -33579,7 +33005,7 @@
           }
         },
         {
-          "soru": "30. He ____ his friends for dinner at the new restaurant downtown tomorrow.",
+          "soru": "He ____ his friends for dinner at the new restaurant downtown tomorrow.",
           "secenekler": [
             "has met",
             "meets",
@@ -33658,7 +33084,7 @@
           }
         },
         {
-          "soru": "6. The construction crew ____ the bridge before the rainy season began.",
+          "soru": "The construction crew ____ the bridge before the rainy season began.",
           "secenekler": [
             "are completing",
             "had completed",
@@ -33809,7 +33235,7 @@
           }
         },
         {
-          "soru": "22. We ____ several museums before we attended the cultural festival downtown.",
+          "soru": "We ____ several museums before we attended the cultural festival downtown.",
           "secenekler": [
             "had visited",
             "will visit",
@@ -33884,7 +33310,7 @@
           }
         },
         {
-          "soru": "24. In five years, he ____ at the university for twenty years.",
+          "soru": "In five years, he ____ at the university for twenty years.",
           "secenekler": [
             "teaches",
             "is teaching",
@@ -34207,7 +33633,7 @@
           }
         },
         {
-          "soru": "26. She ____ all the books in the Harry Potter series multiple times.",
+          "soru": "She ____ all the books in the Harry Potter series multiple times.",
           "secenekler": [
             "read",
             "has read",
@@ -34288,7 +33714,7 @@
           }
         },
         {
-          "soru": "45. The team ____ three goals in the first half of yesterday's game.",
+          "soru": "The team ____ three goals in the first half of yesterday's game.",
           "secenekler": [
             "had scored",
             "was scoring",
@@ -34386,86 +33812,6 @@
           "ornek": null
         },
         {
-          "soru": "43. Scientists ____ a new vaccine by the end of the year.",
-          "secenekler": [
-            "have been developing",
-            "develop",
-            "will have developed",
-            "have developed"
-          ],
-          "cevap": "will have developed",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "43.",
-                "vurgu": false
-              },
-              {
-                "k": "Scientists",
-                "a": "bilim insanları",
-                "vurgu": false
-              },
-              {
-                "k": "will",
-                "a": "gelecek",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "a": "tamamlamış",
-                "vurgu": true
-              },
-              {
-                "k": "developed",
-                "a": "geliştirmiş olacaklar",
-                "en": "will have developed = Future Perfect",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "vaccine",
-                "a": "aşı",
-                "vurgu": false
-              },
-              {
-                "k": "by",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "end",
-                "a": "sonuna kadar",
-                "vurgu": false
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "year.",
-                "a": "yıl",
-                "vurgu": false
-              }
-            ],
-            "tr": "Bilim insanları yıl sonuna kadar yeni bir aşı geliştirmiş olacaklar."
-          }
-        },
-        {
           "soru": "You ____ for more than two hours when her plane finally arrives.",
           "secenekler": [
             "will wait",
@@ -34547,7 +33893,7 @@
           }
         },
         {
-          "soru": "18. The novelist ____ several award-winning books over the course of her career.",
+          "soru": "The novelist ____ several award-winning books over the course of her career.",
           "secenekler": [
             "was writing",
             "has written",
@@ -34626,7 +33972,7 @@
           }
         },
         {
-          "soru": "16. ____ when she reached the interview location.",
+          "soru": "____ when she reached the interview location.",
           "secenekler": [
             "The HR department has posted several job openings",
             "She will complete several job interviews",
@@ -34787,7 +34133,7 @@
           }
         },
         {
-          "soru": "37. The workers ____ the broken pipe in the basement at the moment.",
+          "soru": "The workers ____ the broken pipe in the basement at the moment.",
           "secenekler": [
             "fixed",
             "are fixing",
@@ -34866,7 +34212,7 @@
           }
         },
         {
-          "soru": "49. This time next week, I ____ to Paris for a business trip.",
+          "soru": "This time next week, I ____ to Paris for a business trip.",
           "secenekler": [
             "have flied",
             "was flying",
@@ -34961,7 +34307,7 @@
           }
         },
         {
-          "soru": "10. ____, the model had already been discontinued.",
+          "soru": "____, the model had already been discontinued.",
           "secenekler": [
             "Since she got her motorcycle license",
             "By the time he had saved enough money for his dream car",
@@ -35064,7 +34410,7 @@
           }
         },
         {
-          "soru": "34. He ____ the championship last season with his exceptional performance on the field.",
+          "soru": "He ____ the championship last season with his exceptional performance on the field.",
           "secenekler": [
             "has won",
             "won",
@@ -35143,7 +34489,7 @@
           }
         },
         {
-          "soru": "44. We ____ a surprise party right now for her birthday next week.",
+          "soru": "We ____ a surprise party right now for her birthday next week.",
           "secenekler": [
             "plan",
             "were planning",
@@ -35234,7 +34580,7 @@
           "ornek": null
         },
         {
-          "soru": "19. By the end of the debate, the politician ____ all the concerns.",
+          "soru": "By the end of the debate, the politician ____ all the concerns.",
           "secenekler": [
             "addressed",
             "addresses",
@@ -35397,94 +34743,6 @@
           }
         },
         {
-          "soru": "10. Once the repairman completes his job, ____.",
-          "secenekler": [
-            "the renovation project had faced delays",
-            "we've filled all the cracks in the exterior walls",
-            "their neighbors repaint their house every five years",
-            "the car will be ready for the road trip"
-          ],
-          "cevap": "the car will be ready for the road trip",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "10.",
-                "vurgu": false
-              },
-              {
-                "k": "Once",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "repairman",
-                "a": "tamirci",
-                "vurgu": false
-              },
-              {
-                "k": "completes",
-                "a": "tamamlar",
-                "vurgu": true
-              },
-              {
-                "k": "his",
-                "vurgu": false
-              },
-              {
-                "k": "job,",
-                "a": "iş",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "car",
-                "a": "araba",
-                "vurgu": false
-              },
-              {
-                "k": "will",
-                "a": "gelecek zaman",
-                "vurgu": true
-              },
-              {
-                "k": "be",
-                "a": "olacak",
-                "vurgu": true
-              },
-              {
-                "k": "ready",
-                "a": "hazır",
-                "vurgu": false
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "road",
-                "a": "yol",
-                "vurgu": false
-              },
-              {
-                "k": "trip.",
-                "a": "gezi",
-                "vurgu": false
-              }
-            ],
-            "tr": "Tamirci işini bitirince araba yol gezisi için hazır olacak."
-          }
-        },
-        {
           "soru": "____, the music's enchanting melody captivated the audience.",
           "secenekler": [
             "After you attend a mesmerizing concert",
@@ -35496,7 +34754,7 @@
           "ornek": null
         },
         {
-          "soru": "25. He ____ a cup of tea every morning when he was on vacation.",
+          "soru": "He ____ a cup of tea every morning when he was on vacation.",
           "secenekler": [
             "drinks",
             "will drink",
@@ -35575,7 +34833,7 @@
           }
         },
         {
-          "soru": "17. As the project deadline approached, ____.",
+          "soru": "As the project deadline approached, ____.",
           "secenekler": [
             "team members felt a sense of urgency and worked relentlessly",
             "our strategy has yielded positive results",
@@ -35664,7 +34922,7 @@
           }
         },
         {
-          "soru": "5. He will ____ smoking next month because it is bad for his health.",
+          "soru": "He will ____ smoking next month because it is bad for his health.",
           "secenekler": [
             "turn out",
             "break down",
@@ -35751,85 +35009,6 @@
       "ad": "Test 10",
       "sorular": [
         {
-          "soru": "13. The children ____ a snowman in the yard when the snow began.",
-          "secenekler": [
-            "will be building",
-            "have been building",
-            "were building",
-            "are building"
-          ],
-          "cevap": "were building",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "13.",
-                "vurgu": false
-              },
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "children",
-                "a": "çocuklar",
-                "vurgu": false
-              },
-              {
-                "k": "were",
-                "a": "geçm. sürekli",
-                "vurgu": true
-              },
-              {
-                "k": "building",
-                "a": "yapıyordu",
-                "en": "build (past continuous)",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "snowman",
-                "a": "kardan adam",
-                "vurgu": false
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "yard",
-                "a": "avlu",
-                "vurgu": false
-              },
-              {
-                "k": "when",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "snow",
-                "a": "kar",
-                "vurgu": false
-              },
-              {
-                "k": "began.",
-                "a": "başladı",
-                "vurgu": false
-              }
-            ],
-            "tr": "Kar yağmaya başladığında çocuklar avluda kardan adam yapıyordu."
-          }
-        },
-        {
           "soru": "We won't know the results of the experiment ____.",
           "secenekler": [
             "while the analysis was ongoing",
@@ -35910,92 +35089,6 @@
           }
         },
         {
-          "soru": "1. When the train arrives, ____.",
-          "secenekler": [
-            "passengers checked their luggage and confirmed their seats",
-            "we have become adept at navigating train stations",
-            "we'll gather our belongings and wait for our departure announcement",
-            "I travelled to Europe and visited several iconic attractions"
-          ],
-          "cevap": "we'll gather our belongings and wait for our departure announcement",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "1.",
-                "vurgu": false
-              },
-              {
-                "k": "When",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "train",
-                "a": "tren",
-                "vurgu": false
-              },
-              {
-                "k": "arrives,",
-                "a": "gelir",
-                "vurgu": true,
-                "en": "arrives (Present Simple → future)"
-              },
-              {
-                "k": "we'll",
-                "vurgu": true,
-                "en": "we will"
-              },
-              {
-                "k": "gather",
-                "a": "toplayacağız",
-                "vurgu": true,
-                "en": "Future Simple"
-              },
-              {
-                "k": "our",
-                "vurgu": false
-              },
-              {
-                "k": "belongings",
-                "a": "eşyalar",
-                "vurgu": false
-              },
-              {
-                "k": "and",
-                "vurgu": false
-              },
-              {
-                "k": "wait",
-                "a": "bekleyeceğiz",
-                "vurgu": true,
-                "en": "Future Simple"
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "our",
-                "vurgu": false
-              },
-              {
-                "k": "departure",
-                "a": "kalkış",
-                "vurgu": false
-              },
-              {
-                "k": "announcement.",
-                "a": "anons",
-                "vurgu": false
-              }
-            ],
-            "tr": "Tren geldiğinde eşyalarımızı toplayacak ve kalkış anonsunu bekleyeceğiz."
-          }
-        },
-        {
           "soru": "Can you buy this for me? I ____ you the money on Wednesday.",
           "secenekler": [
             "will have given",
@@ -36072,7 +35165,7 @@
           }
         },
         {
-          "soru": "4. She will be studying in the library ____.",
+          "soru": "She will be studying in the library ____.",
           "secenekler": [
             "while her friends go out for a movie tonight",
             "before she left for her trip to Japan",
@@ -36167,7 +35260,7 @@
           }
         },
         {
-          "soru": "3. Since I started exercising regularly, ____.",
+          "soru": "Since I started exercising regularly, ____.",
           "secenekler": [
             "I completed a yoga session early this morning for relaxation",
             "my body will have adapted to the new workout regimen",
@@ -36250,7 +35343,7 @@
           }
         },
         {
-          "soru": "24. She catches colds easily; by winter, her susceptibility ____ illness will be a concern.",
+          "soru": "She catches colds easily; by winter, her susceptibility ____ illness will be a concern.",
           "secenekler": [
             "over",
             "into",
@@ -36415,7 +35508,7 @@
           }
         },
         {
-          "soru": "5. The family ____ a vegetable garden at their new home this coming spring.",
+          "soru": "The family ____ a vegetable garden at their new home this coming spring.",
           "secenekler": [
             "had planted",
             "planted",
@@ -36426,7 +35519,7 @@
           "ornek": null
         },
         {
-          "soru": "12. The curator ____ a rare collection of artifacts at the museum next week.",
+          "soru": "The curator ____ a rare collection of artifacts at the museum next week.",
           "secenekler": [
             "unveils",
             "will unveil",
@@ -36511,7 +35604,7 @@
           }
         },
         {
-          "soru": "1. The concert last night was phenomenal; the band ____ all of their hits.",
+          "soru": "The concert last night was phenomenal; the band ____ all of their hits.",
           "secenekler": [
             "is playing",
             "has played",
@@ -36599,7 +35692,7 @@
           }
         },
         {
-          "soru": "19. The library will stay open ____.",
+          "soru": "The library will stay open ____.",
           "secenekler": [
             "when librarians encounter challenges with book organization",
             "until students return all the books to the librarian",
@@ -36690,7 +35783,7 @@
       "ad": "Test 11",
       "sorular": [
         {
-          "soru": "2. As soon as the alarm clock rang, ____.",
+          "soru": "As soon as the alarm clock rang, ____.",
           "secenekler": [
             "my mother will have breakfast ready",
             "she jumped out of bed and started her morning routine",
@@ -36872,91 +35965,7 @@
           }
         },
         {
-          "soru": "10. The chef ____ a five-course meal for tonight's dinner service at the moment.",
-          "secenekler": [
-            "has been preparing",
-            "has prepared",
-            "is preparing",
-            "prepared"
-          ],
-          "cevap": "is preparing",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "10.",
-                "vurgu": false
-              },
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "chef",
-                "a": "aşçı",
-                "vurgu": false
-              },
-              {
-                "k": "is",
-                "a": "şu an yapıyor",
-                "vurgu": true
-              },
-              {
-                "k": "preparing",
-                "a": "hazırlıyor",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "five-course",
-                "a": "beş çeşit",
-                "vurgu": false
-              },
-              {
-                "k": "meal",
-                "a": "yemek",
-                "vurgu": false
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "tonight's",
-                "a": "bu geceki",
-                "vurgu": false
-              },
-              {
-                "k": "dinner",
-                "a": "akşam yemeği",
-                "vurgu": false
-              },
-              {
-                "k": "service",
-                "a": "servis",
-                "vurgu": false
-              },
-              {
-                "k": "at",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "moment.",
-                "a": "şu an",
-                "vurgu": false
-              }
-            ],
-            "tr": "Aşçı şu an bu geceki akşam yemeği servisi için beş çeşitlik bir yemek hazırlıyor."
-          }
-        },
-        {
-          "soru": "14. At this time next year, she ____ on her novel for six months.",
+          "soru": "At this time next year, she ____ on her novel for six months.",
           "secenekler": [
             "is working",
             "had been working",
@@ -37133,98 +36142,6 @@
           }
         },
         {
-          "soru": "2. ____, the music's enchanting melody captivated the audience.",
-          "secenekler": [
-            "After you attend a mesmerizing concert",
-            "Until the encore performance begins",
-            "Once the drummer starts the rhythm of a lively beat",
-            "While the orchestra played Tchaikovsky's Swan Lake Suite"
-          ],
-          "cevap": "While the orchestra played Tchaikovsky's Swan Lake Suite",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "2.",
-                "vurgu": false
-              },
-              {
-                "k": "While",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "orchestra",
-                "a": "orkestra",
-                "vurgu": false
-              },
-              {
-                "k": "played",
-                "a": "çalıyordu",
-                "vurgu": true,
-                "en": "played (Past Simple)"
-              },
-              {
-                "k": "Tchaikovsky's",
-                "a": "Çaykovski'nin",
-                "vurgu": false
-              },
-              {
-                "k": "Swan",
-                "a": "Kuğu",
-                "vurgu": false
-              },
-              {
-                "k": "Lake",
-                "a": "Gölü",
-                "vurgu": false
-              },
-              {
-                "k": "Suite,",
-                "a": "süiti",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "music's",
-                "a": "müziğin",
-                "vurgu": false
-              },
-              {
-                "k": "enchanting",
-                "a": "büyüleyici",
-                "vurgu": false
-              },
-              {
-                "k": "melody",
-                "a": "melodi",
-                "vurgu": false
-              },
-              {
-                "k": "captivated",
-                "a": "büyüledi",
-                "vurgu": true,
-                "en": "captivated (Past Simple)"
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "audience.",
-                "a": "seyirci",
-                "vurgu": false
-              }
-            ],
-            "tr": "Orkestra Çaykovski'nin Kuğu Gölü süitini çalarken, müziğin büyüleyici melodisi seyirciyi büyüledi."
-          }
-        },
-        {
           "soru": "The scientist is hopeful; by next month, he ____ a breakthrough in his research.",
           "secenekler": [
             "will make",
@@ -37397,90 +36314,6 @@
           }
         },
         {
-          "soru": "8. We won't know the results of the experiment ____.",
-          "secenekler": [
-            "while the analysis was ongoing",
-            "until the committee completes their evaluation",
-            "when the scientist activated the apparatus",
-            "since they introduced the new methodology"
-          ],
-          "cevap": "until the committee completes their evaluation",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "8.",
-                "vurgu": false
-              },
-              {
-                "k": "We",
-                "vurgu": false
-              },
-              {
-                "k": "won't",
-                "vurgu": true,
-                "en": "will not"
-              },
-              {
-                "k": "know",
-                "a": "bilmeyeceğiz",
-                "vurgu": true,
-                "en": "Future Simple (negative)"
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "results",
-                "a": "sonuçlar",
-                "vurgu": false
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "experiment",
-                "a": "deney",
-                "vurgu": false
-              },
-              {
-                "k": "until",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "committee",
-                "a": "komite",
-                "vurgu": false
-              },
-              {
-                "k": "completes",
-                "a": "tamamlar",
-                "vurgu": true,
-                "en": "completes (Present Simple → future)"
-              },
-              {
-                "k": "their",
-                "vurgu": false
-              },
-              {
-                "k": "evaluation.",
-                "a": "değerlendirme",
-                "vurgu": false
-              }
-            ],
-            "tr": "Komite değerlendirmesini tamamlayana kadar deneyin sonuçlarını bilmeyeceğiz."
-          }
-        },
-        {
           "soru": "He's always planning his future; by next year, he ____ in three marathons.",
           "secenekler": [
             "will be participating",
@@ -37565,7 +36398,7 @@
           }
         },
         {
-          "soru": "19. Smoking is ____ to health, and we will be educating people about its risks.",
+          "soru": "Smoking is ____ to health, and we will be educating people about its risks.",
           "secenekler": [
             "immense",
             "detrimental",
@@ -37647,7 +36480,7 @@
           }
         },
         {
-          "soru": "25. The app is currently in development; next year, there will be access ____ more users.",
+          "soru": "The app is currently in development; next year, there will be access ____ more users.",
           "secenekler": [
             "for",
             "at",
@@ -37739,7 +36572,7 @@
       "ad": "Test 12",
       "sorular": [
         {
-          "soru": "35. The company will be ____ more resources to the project in the coming months.",
+          "soru": "The company will be ____ more resources to the project in the coming months.",
           "secenekler": [
             "expressing",
             "allocating",
@@ -37822,7 +36655,7 @@
           }
         },
         {
-          "soru": "14. Scientists will be studying the ____ of bacteria to antibiotics in their upcoming research.",
+          "soru": "Scientists will be studying the ____ of bacteria to antibiotics in their upcoming research.",
           "secenekler": [
             "obligation",
             "restriction",
@@ -37905,7 +36738,7 @@
           }
         },
         {
-          "soru": "33. Once I have saved enough money, I ____ a new car by next year.",
+          "soru": "Once I have saved enough money, I ____ a new car by next year.",
           "secenekler": [
             "bought",
             "had bought",
@@ -38002,7 +36835,7 @@
           }
         },
         {
-          "soru": "3. The artist ____ her sculptures in galleries around the world for over twenty years.",
+          "soru": "The artist ____ her sculptures in galleries around the world for over twenty years.",
           "secenekler": [
             "exhibited",
             "has exhibited",
@@ -38173,7 +37006,7 @@
           }
         },
         {
-          "soru": "12. The team will ____ their captain's experience during the final match; his leadership is crucial.",
+          "soru": "The team will ____ their captain's experience during the final match; his leadership is crucial.",
           "secenekler": [
             "rely on",
             "search for",
@@ -38265,7 +37098,7 @@
           }
         },
         {
-          "soru": "23. The building has a/an ____ design, so it will be attracting many photographers this summer.",
+          "soru": "The building has a/an ____ design, so it will be attracting many photographers this summer.",
           "secenekler": [
             "fragile",
             "distinctive",
@@ -38352,7 +37185,7 @@
           }
         },
         {
-          "soru": "8. Before she moved to the city, she ____ in a small village for twenty years.",
+          "soru": "Before she moved to the city, she ____ in a small village for twenty years.",
           "secenekler": [
             "has been living",
             "had lived",
@@ -38532,7 +37365,7 @@
           }
         },
         {
-          "soru": "26. He finds maths challenging; by next semester, he will be struggling ____ even more complex problems.",
+          "soru": "He finds maths challenging; by next semester, he will be struggling ____ even more complex problems.",
           "secenekler": [
             "at",
             "with",
@@ -38624,7 +37457,7 @@
           }
         },
         {
-          "soru": "46. Ever since I joined a yoga class, my flexibility ____.",
+          "soru": "Ever since I joined a yoga class, my flexibility ____.",
           "secenekler": [
             "had improved",
             "has improved",
@@ -38635,7 +37468,7 @@
           "ornek": null
         },
         {
-          "soru": "11. The students are collaborating on projects; soon, there will be more ____ between different groups.",
+          "soru": "The students are collaborating on projects; soon, there will be more ____ between different groups.",
           "secenekler": [
             "exploration",
             "susceptibility",
@@ -38732,7 +37565,7 @@
       "ad": "Test 13",
       "sorular": [
         {
-          "soru": "13. He will ____ the research paper in his presentation tomorrow; this will support his arguments effectively.",
+          "soru": "He will ____ the research paper in his presentation tomorrow; this will support his arguments effectively.",
           "secenekler": [
             "vary",
             "appear",
@@ -38825,7 +37658,7 @@
           }
         },
         {
-          "soru": "CLOZE TEST – 9. By looking (9) ____ and planning carefully, scientists hope to learn new things.",
+          "soru": "By looking ____ and planning carefully, scientists hope to learn new things.",
           "secenekler": [
             "blankly",
             "quickly",
@@ -38922,7 +37755,7 @@
           }
         },
         {
-          "soru": "12. ____, the medical team will monitor the vital signs closely.",
+          "soru": "____, the medical team will monitor the vital signs closely.",
           "secenekler": [
             "By the time the patient woke up from anesthesia",
             "While the surgeon was performing the operation",
@@ -39085,7 +37918,7 @@
           }
         },
         {
-          "soru": "29. He ____ all the levels of the video game before his friends even started playing.",
+          "soru": "He ____ all the levels of the video game before his friends even started playing.",
           "secenekler": [
             "had completed",
             "has completed",
@@ -39374,7 +38207,7 @@
           }
         },
         {
-          "soru": "16. By the time they arrived at the airport, the flight ____.",
+          "soru": "By the time they arrived at the airport, the flight ____.",
           "secenekler": [
             "has departed",
             "will depart",
@@ -39385,87 +38218,7 @@
           "ornek": null
         },
         {
-          "soru": "7. By the time she graduates, ____.",
-          "secenekler": [
-            "the university awarded her a scholarship",
-            "she has attended several workshops this semester",
-            "she'll have studied for four years at university",
-            "her professors will provide valuable guidance"
-          ],
-          "cevap": "she'll have studied for four years at university",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "7.",
-                "vurgu": false
-              },
-              {
-                "k": "By",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "time",
-                "a": "zaman",
-                "vurgu": false
-              },
-              {
-                "k": "she",
-                "vurgu": false
-              },
-              {
-                "k": "graduates,",
-                "a": "mezun olur",
-                "vurgu": true,
-                "en": "graduates (Present Simple → future)"
-              },
-              {
-                "k": "she'll",
-                "vurgu": true,
-                "en": "she will"
-              },
-              {
-                "k": "have",
-                "vurgu": true
-              },
-              {
-                "k": "studied",
-                "a": "okumuş olacak",
-                "vurgu": true,
-                "en": "Future Perfect"
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "four",
-                "a": "dört",
-                "vurgu": false
-              },
-              {
-                "k": "years",
-                "a": "yıl",
-                "vurgu": false
-              },
-              {
-                "k": "at",
-                "vurgu": false
-              },
-              {
-                "k": "university.",
-                "a": "üniversite",
-                "vurgu": false
-              }
-            ],
-            "tr": "O mezun olduğunda, üniversitede dört yıl boyunca okumuş olacak."
-          }
-        },
-        {
-          "soru": "14. ____, her parents will take her for a walk in the stroller.",
+          "soru": "____, her parents will take her for a walk in the stroller.",
           "secenekler": [
             "As soon as the baby took her first steps",
             "After the baby wakes up from her nap",
@@ -39571,7 +38324,7 @@
           }
         },
         {
-          "soru": "CLOZE TEST – 7. Scientists spend money (7) ____ fancy tools and stuff to help them do their work.",
+          "soru": "Scientists spend money ____ fancy tools and stuff to help them do their work.",
           "secenekler": [
             "on",
             "at",
@@ -39674,7 +38427,7 @@
           }
         },
         {
-          "soru": "15. The machine will measure the data ____ in the upcoming tests, so we expect highly accurate results.",
+          "soru": "The machine will measure the data ____ in the upcoming tests, so we expect highly accurate results.",
           "secenekler": [
             "apparently",
             "precisely",
@@ -39956,7 +38709,7 @@
           }
         },
         {
-          "soru": "1. (CLOZE TEST) In medicine, researchers (1) ____ that the body is capable (2) ---- healing itself.",
+          "soru": "In medicine, researchers ____ that the body is capable (2) ---- healing itself.",
           "secenekler": [
             "had discovered",
             "had been discovering",
@@ -40051,7 +38804,7 @@
           }
         },
         {
-          "soru": "6. (CLOZE TEST) In science, scientists (6) ____ to get rid of things that might mess up their tests.",
+          "soru": "In science, scientists ____ to get rid of things that might mess up their tests.",
           "secenekler": [
             "had tried",
             "tried",
@@ -40149,7 +38902,7 @@
           }
         },
         {
-          "soru": "CLOZE TEST – 10. Scientists hope to learn new things and make (10) ____ in their area of study.",
+          "soru": "Scientists hope to learn new things and make ____ in their area of study.",
           "secenekler": [
             "manner",
             "seed",
@@ -40253,7 +39006,7 @@
           }
         },
         {
-          "soru": "1. By 2030, we will have raised awareness about the ____ of endangered animals.",
+          "soru": "By 2030, we will have raised awareness about the ____ of endangered animals.",
           "secenekler": [
             "release",
             "adoption",
@@ -40333,7 +39086,7 @@
           }
         },
         {
-          "soru": "2. The artist has just finished a new piece, and it will be ____ display at the gallery next month.",
+          "soru": "The artist has just finished a new piece, and it will be ____ display at the gallery next month.",
           "secenekler": [
             "off",
             "on",
@@ -40730,18 +39483,7 @@
           }
         },
         {
-          "soru": "CLOZE TEST – 1. In medicine, researchers (1) ____ that the body is capable (2) ---- healing itself.",
-          "secenekler": [
-            "had discovered",
-            "had been discovering",
-            "have discovered",
-            "will have discovered"
-          ],
-          "cevap": "have discovered",
-          "ornek": null
-        },
-        {
-          "soru": "9. ____, my sister has been immersing herself in French culture.",
+          "soru": "____, my sister has been immersing herself in French culture.",
           "secenekler": [
             "As soon as we arrived in Paris",
             "By the time she learned French",
@@ -40833,7 +39575,7 @@
       "ad": "Test 15",
       "sorular": [
         {
-          "soru": "4. The community centre opens its doors; soon, everyone will have access ____ the new facilities.",
+          "soru": "The community centre opens its doors; soon, everyone will have access ____ the new facilities.",
           "secenekler": [
             "at",
             "on",
@@ -41206,7 +39948,7 @@
           }
         },
         {
-          "soru": "33. By next year, they will have seen a significant increase in the ____ of eco-friendly technologies.",
+          "soru": "By next year, they will have seen a significant increase in the ____ of eco-friendly technologies.",
           "secenekler": [
             "display",
             "adoption",
@@ -41297,7 +40039,7 @@
           }
         },
         {
-          "soru": "18. By the time the conference starts, ____.",
+          "soru": "By the time the conference starts, ____.",
           "secenekler": [
             "the keynote speaker has just finished his speech about the climate change",
             "presenters engage with attendees through interactive sessions",
@@ -41380,7 +40122,7 @@
           }
         },
         {
-          "soru": "28. By the end of the year, they will have completed their ____ of the ocean depths.",
+          "soru": "By the end of the year, they will have completed their ____ of the ocean depths.",
           "secenekler": [
             "abundance",
             "restriction",
@@ -41470,7 +40212,7 @@
           }
         },
         {
-          "soru": "32. They will not ____ the project halfway through; by next month, they will have completed it successfully.",
+          "soru": "They will not ____ the project halfway through; by next month, they will have completed it successfully.",
           "secenekler": [
             "disturb",
             "allocate",
@@ -41565,7 +40307,7 @@
           }
         },
         {
-          "soru": "3. I'm currently learning to play the guitar, and by next year, I will have mastered it ____.",
+          "soru": "I'm currently learning to play the guitar, and by next year, I will have mastered it ____.",
           "secenekler": [
             "entirely",
             "relatively",
@@ -41664,7 +40406,7 @@
           }
         },
         {
-          "soru": "27. They will have ____ the entire plan by the time the meeting ends.",
+          "soru": "They will have ____ the entire plan by the time the meeting ends.",
           "secenekler": [
             "altered",
             "appeared",
@@ -41988,14 +40730,9 @@
             ],
             "tr": "Yarım saat içinde mola veriyor olacağız çünkü altı saattir araba sürüyor olmuş olacaksın ve çok yorgun hissediyor olacaksın."
           }
-        }
-      ]
-    },
-    {
-      "ad": "Test 16",
-      "sorular": [
+        },
         {
-          "soru": "6. They will have ____ the old methods by the end of the year; new strategies will replace them.",
+          "soru": "They will have ____ the old methods by the end of the year; new strategies will replace them.",
           "secenekler": [
             "abandoned",
             "wondered",
@@ -42099,7 +40836,7 @@
           }
         },
         {
-          "soru": "36. She received ____ to the university; by the time classes start, she will have moved to the city.",
+          "soru": "She received ____ to the university; by the time classes start, she will have moved to the city.",
           "secenekler": [
             "admission",
             "exchange",

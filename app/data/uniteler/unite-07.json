@@ -20973,60 +20973,6 @@
       "ad": "Test 1",
       "sorular": [
         {
-          "soru": "\"yürüyemez\" çevirisi hangisidir?",
-          "secenekler": [
-            "didn't have to walk",
-            "can't walk"
-          ],
-          "cevap": "can't walk",
-          "ornek": null
-        },
-        {
-          "soru": "(17.) ... children. ____",
-          "secenekler": [
-            "need to harm",
-            "could harm",
-            "would harm",
-            "had to harm"
-          ],
-          "cevap": "could harm",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "...",
-                "vurgu": false
-              },
-              {
-                "k": "children.",
-                "a": "çocuklar",
-                "vurgu": true
-              },
-              {
-                "k": "It",
-                "a": "o/bu",
-                "vurgu": false
-              },
-              {
-                "k": "could",
-                "a": "-ebilir",
-                "en": "could = olasılık",
-                "vurgu": true
-              },
-              {
-                "k": "harm",
-                "a": "zarar vermek",
-                "vurgu": true
-              },
-              {
-                "k": "children.",
-                "a": "çocuklar",
-                "vurgu": true
-              }
-            ],
-            "tr": "... çocuklar. Bu çocuklara zarar verebilir."
-          }
-        },
-        {
           "soru": "\"reddederdi\" çevirisi hangisidir?",
           "secenekler": [
             "were able to reject",
@@ -21453,7 +21399,7 @@
           "ornek": null
         },
         {
-          "soru": "17. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "must appear",
             "could recognize",
@@ -21563,7 +21509,7 @@
           }
         },
         {
-          "soru": "19. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "can assess",
             "might disrupt",
@@ -21594,7 +21540,7 @@
       "ad": "Test 3",
       "sorular": [
         {
-          "soru": "18. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "is able to apply",
             "would make up",
@@ -21644,7 +21590,7 @@
           }
         },
         {
-          "soru": "25. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "would threaten",
             "could undergo",
@@ -21735,89 +21681,7 @@
           }
         },
         {
-          "soru": "... boss was out of town.",
-          "secenekler": [
-            "had to attend",
-            "are able to attend",
-            "could attend",
-            "might attend"
-          ],
-          "cevap": "had to attend",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "zorunda kaldı",
-                "en": "had to = -mek zorunda kaldı (geçmiş zorunluluk)",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "attend",
-                "a": "katılmak",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "meeting",
-                "a": "toplantı",
-                "vurgu": true
-              },
-              {
-                "k": "herself",
-                "a": "kendisi",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü",
-                "vurgu": false
-              },
-              {
-                "k": "her",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "boss",
-                "a": "patron",
-                "vurgu": true
-              },
-              {
-                "k": "was",
-                "vurgu": false
-              },
-              {
-                "k": "out",
-                "a": "dışında",
-                "en": "out of town = şehir dışında",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "town.",
-                "a": "şehir",
-                "vurgu": true
-              }
-            ],
-            "tr": "Patronu şehir dışında olduğu için toplantıya kendisi katılmak zorunda kaldı."
-          }
-        },
-        {
-          "soru": "28. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "might come from",
             "need to receive",
@@ -21843,7 +21707,7 @@
           }
         },
         {
-          "soru": "21. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "had better confirm",
             "could replace",
@@ -21873,7 +21737,7 @@
           }
         },
         {
-          "soru": "29. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "must obtain",
             "are able to add",
@@ -21928,7 +21792,7 @@
           }
         },
         {
-          "soru": "24. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "ought to collect",
             "was able to join",
@@ -21995,7 +21859,7 @@
           }
         },
         {
-          "soru": "22. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "may accompany",
             "had to withdraw",
@@ -22121,7 +21985,7 @@
           }
         },
         {
-          "soru": "26. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "had better occur",
             "could relate to",
@@ -22252,7 +22116,7 @@
           }
         },
         {
-          "soru": "27. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "are able to combine",
             "would provide",
@@ -22278,14 +22142,14 @@
           }
         },
         {
-          "soru": "10. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
-            "A) need to go on",
-            "B) used to ensure",
-            "C) might lead to",
-            "D) could reduce"
+            "need to go on",
+            "used to ensure",
+            "might lead to",
+            "could reduce"
           ],
-          "cevap": "A) need to go on",
+          "cevap": "need to go on",
           "ornek": {
             "tokenlar": [
               {
@@ -22333,14 +22197,14 @@
           }
         },
         {
-          "soru": "4. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
-            "A) may depend",
-            "B) ought to contain",
-            "C) would comply",
-            "D) used to struggle"
+            "may depend",
+            "ought to contain",
+            "would comply",
+            "used to struggle"
           ],
-          "cevap": "B) ought to contain",
+          "cevap": "ought to contain",
           "ornek": {
             "tokenlar": [
               {
@@ -22493,60 +22357,13 @@
           }
         },
         {
-          "soru": "1. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
-            "A) would invest",
-            "B) had better delay",
-            "C) should enforce",
-            "D) might involve"
+            "would break down",
+            "could bring about",
+            "(görünmüyor)"
           ],
-          "cevap": "D) might involve",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "This",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "decision",
-                "a": "karar",
-                "vurgu": true
-              },
-              {
-                "k": "might",
-                "a": "-ebilir (olasılık)",
-                "en": "might = zayıf olasılık",
-                "vurgu": true
-              },
-              {
-                "k": "involve",
-                "a": "kapsamak/içermek",
-                "vurgu": true
-              },
-              {
-                "k": "several",
-                "a": "birkaç",
-                "vurgu": true
-              },
-              {
-                "k": "stakeholders.",
-                "a": "paydaşlar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Bu karar birkaç paydaşı kapsayabilir (ilgilendirebilir)."
-          }
-        },
-        {
-          "soru": "15. Hangisi \"zorunluluk\" bildiren bir modaldır?",
-          "secenekler": [
-            "A) would break down",
-            "B) could bring about",
-            "C) (görünmüyor)",
-            "D) (görünmüyor)"
-          ],
-          "cevap": "A) would break down",
+          "cevap": "would break down",
           "ornek": {
             "tokenlar": [
               {
@@ -22606,17 +22423,6 @@
     {
       "ad": "Test 5",
       "sorular": [
-        {
-          "soru": "... due to a scheduling conflict.",
-          "secenekler": [
-            "mustn't attend",
-            "are unable to attend",
-            "don't have to attend",
-            "shouldn't attend"
-          ],
-          "cevap": "are unable to attend",
-          "ornek": null
-        },
         {
           "soru": "Hangisi \"zorunluluk\" bildiren bir modaldir? ____",
           "secenekler": [
@@ -22682,14 +22488,14 @@
           "ornek": null
         },
         {
-          "soru": "20. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
-            "A) should enforce",
-            "B) could imagine",
-            "C) would contribute to",
-            "D) may appreciate"
+            "should enforce",
+            "could imagine",
+            "would contribute to",
+            "may appreciate"
           ],
-          "cevap": "A) should enforce",
+          "cevap": "should enforce",
           "ornek": {
             "tokenlar": [
               {
@@ -22731,14 +22537,14 @@
           }
         },
         {
-          "soru": "19. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) had to attempt",
-            "B) ought to sustain",
-            "C) used to encompass",
-            "D) might date back"
+            "had to attempt",
+            "ought to sustain",
+            "used to encompass",
+            "might date back"
           ],
-          "cevap": "D) might date back",
+          "cevap": "might date back",
           "ornek": {
             "tokenlar": [
               {
@@ -22913,7 +22719,7 @@
           }
         },
         {
-          "soru": "23. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "used to determine",
             "were able to reveal",
@@ -22993,7 +22799,7 @@
           "ornek": null
         },
         {
-          "soru": "17. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "could have discussed",
             "must have explored",
@@ -23008,72 +22814,6 @@
     {
       "ad": "Test 6",
       "sorular": [
-        {
-          "soru": "2. Hangisi \"yetenek\" bildiren bir modaldır?",
-          "secenekler": [
-            "A) can engage in",
-            "B) used to inspire",
-            "C) will need to undergo",
-            "D) had better examine"
-          ],
-          "cevap": "A) can engage in",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Children",
-                "a": "çocuklar",
-                "vurgu": true
-              },
-              {
-                "k": "can",
-                "a": "-ebilir",
-                "en": "can = yetenek/imkan",
-                "vurgu": true
-              },
-              {
-                "k": "engage",
-                "a": "katılmak/girişmek",
-                "en": "engage in = -e katılmak",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "a": "-e",
-                "vurgu": false
-              },
-              {
-                "k": "creative",
-                "a": "yaratıcı",
-                "vurgu": true
-              },
-              {
-                "k": "play",
-                "a": "oyun",
-                "vurgu": true
-              },
-              {
-                "k": "from",
-                "a": "-den",
-                "vurgu": false
-              },
-              {
-                "k": "an",
-                "vurgu": false
-              },
-              {
-                "k": "early",
-                "a": "erken",
-                "vurgu": true
-              },
-              {
-                "k": "age.",
-                "a": "yaş",
-                "vurgu": true
-              }
-            ],
-            "tr": "Çocuklar erken yaştan itibaren yaratıcı oyunlara katılabilirler."
-          }
-        },
         {
           "soru": "People with high cholesterol always ____ low-fat foods.",
           "secenekler": [
@@ -23135,7 +22875,7 @@
           }
         },
         {
-          "soru": "16. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "would have evolved",
             "ought to have abandoned",
@@ -23146,7 +22886,7 @@
           "ornek": null
         },
         {
-          "soru": "20. Hangisi \"unreal present\" bildiren bir modaldır?",
+          "soru": "Hangisi \"unreal present\" bildiren bir modaldır?",
           "secenekler": [
             "ought to improve",
             "used to bring about",
@@ -23240,7 +22980,7 @@
           }
         },
         {
-          "soru": "6. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "would have given up",
             "should have maintained",
@@ -23262,7 +23002,7 @@
           "ornek": null
         },
         {
-          "soru": "18. Hangisi \"azarlama\" bildiren bir modaldır?",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır?",
           "secenekler": [
             "mustn't have won",
             "mightn't have ensured",
@@ -23273,7 +23013,7 @@
           "ornek": null
         },
         {
-          "soru": "7. Hangisi \"azarlama\" bildiren bir modaldır?",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır?",
           "secenekler": [
             "may have allocated",
             "ought to have avoided",
@@ -23282,69 +23022,6 @@
           ],
           "cevap": "ought to have avoided",
           "ornek": null
-        },
-        {
-          "soru": "3. Hangisi \"zorunluluk\" bildiren bir modaldır?",
-          "secenekler": [
-            "A) could come up with",
-            "B) were able to establish",
-            "C) might reverse",
-            "D) had better replace"
-          ],
-          "cevap": "D) had better replace",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-sen iyi olur",
-                "en": "had better = -sen iyi olur (öneri)",
-                "vurgu": true
-              },
-              {
-                "k": "better",
-                "a": "-sen iyi olur",
-                "vurgu": true
-              },
-              {
-                "k": "replace",
-                "a": "değiştirmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "worn-out",
-                "a": "yıpranmış",
-                "vurgu": true
-              },
-              {
-                "k": "parts",
-                "a": "parçalar",
-                "vurgu": true
-              },
-              {
-                "k": "before",
-                "a": "-den önce",
-                "vurgu": false
-              },
-              {
-                "k": "they",
-                "vurgu": false
-              },
-              {
-                "k": "fail.",
-                "a": "arızalanmak",
-                "vurgu": true
-              }
-            ],
-            "tr": "Yıpranmış parçaları arızalanmadan önce değiştirsen iyi olur."
-          }
         }
       ]
     },
@@ -23352,14 +23029,14 @@
       "ad": "Test 7",
       "sorular": [
         {
-          "soru": "9. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
-            "A) couldn't compete",
-            "B) mightn't restrict",
-            "C) mustn't eliminate",
-            "D) doesn't have to apply"
+            "couldn't compete",
+            "mightn't restrict",
+            "mustn't eliminate",
+            "doesn't have to apply"
           ],
-          "cevap": "A) couldn't compete",
+          "cevap": "couldn't compete",
           "ornek": {
             "tokenlar": [
               {
@@ -23411,14 +23088,14 @@
           }
         },
         {
-          "soru": "14. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) had better not do with",
-            "B) is unable to flow",
-            "C) should not extend",
-            "D) may not disrupt"
+            "had better not do with",
+            "is unable to flow",
+            "should not extend",
+            "may not disrupt"
           ],
-          "cevap": "D) may not disrupt",
+          "cevap": "may not disrupt",
           "ornek": {
             "tokenlar": [
               {
@@ -23583,7 +23260,7 @@
           }
         },
         {
-          "soru": "30. Hangisi \"zorunluluk\" bildiren bir modaldır?",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "wouldn't trigger",
             "didn't use to determine",
@@ -23716,7 +23393,7 @@
           "ornek": null
         },
         {
-          "soru": "11. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "must have promoted",
             "may have brought about",
@@ -23727,14 +23404,14 @@
           "ornek": null
         },
         {
-          "soru": "18. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
-            "A) mustn't take over",
-            "B) were unable to receive",
-            "C) wouldn't refer to",
-            "D) shouldn't make up"
+            "mustn't take over",
+            "were unable to receive",
+            "wouldn't refer to",
+            "shouldn't make up"
           ],
-          "cevap": "B) were unable to receive",
+          "cevap": "were unable to receive",
           "ornek": {
             "tokenlar": [
               {
@@ -23860,25 +23537,25 @@
       "ad": "Test 8",
       "sorular": [
         {
-          "soru": "15. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) should have examined",
-            "B) would have burnt",
-            "C) ought to have led to",
-            "D) might have replaced"
+            "should have examined",
+            "would have burnt",
+            "ought to have led to",
+            "might have replaced"
           ],
-          "cevap": "D) might have replaced",
+          "cevap": "might have replaced",
           "ornek": null
         },
         {
-          "soru": "12. Hangisi \"yetenek\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
-            "A) wouldn't withdraw",
-            "B) isn't able to relieve",
-            "C) oughtn't to finish",
-            "D) doesn't need to hinder"
+            "wouldn't withdraw",
+            "isn't able to relieve",
+            "oughtn't to finish",
+            "doesn't need to hinder"
           ],
-          "cevap": "B) isn't able to relieve",
+          "cevap": "isn't able to relieve",
           "ornek": {
             "tokenlar": [
               {
@@ -23993,7 +23670,7 @@
           }
         },
         {
-          "soru": "13. Hangisi \"azarlama\" bildiren bir modaldır?",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır?",
           "secenekler": [
             "ought to have concentrated",
             "might have come up with",
@@ -24015,58 +23692,58 @@
           "ornek": null
         },
         {
-          "soru": "6. Hangisi \"azarlama\" bildiren bir modaldır?",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır?",
           "secenekler": [
-            "A) ought to have involved",
-            "B) may have established",
-            "C) must have hindered",
-            "D) could have replaced"
+            "ought to have involved",
+            "may have established",
+            "must have hindered",
+            "could have replaced"
           ],
-          "cevap": "A) ought to have involved",
+          "cevap": "ought to have involved",
           "ornek": null
         },
         {
-          "soru": "12. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) ought to have offered",
-            "B) must have provided",
-            "C) would have come from",
-            "D) should have resisted"
+            "ought to have offered",
+            "must have provided",
+            "would have come from",
+            "should have resisted"
           ],
-          "cevap": "B) must have provided",
+          "cevap": "must have provided",
           "ornek": null
         },
         {
-          "soru": "13. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) ought to have applied",
-            "B) can't have received",
-            "C) should have exceeded",
-            "D) would have assessed"
+            "ought to have applied",
+            "can't have received",
+            "should have exceeded",
+            "would have assessed"
           ],
-          "cevap": "B) can't have received",
+          "cevap": "can't have received",
           "ornek": null
         },
         {
-          "soru": "4. Hangisi \"azarlama\" bildiren bir modaldır?",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır?",
           "secenekler": [
-            "A) couldn't have emitted",
-            "B) may not have flown",
-            "C) shouldn't have extended",
-            "D) can't have delayed"
+            "couldn't have emitted",
+            "may not have flown",
+            "shouldn't have extended",
+            "can't have delayed"
           ],
-          "cevap": "C) shouldn't have extended",
+          "cevap": "shouldn't have extended",
           "ornek": null
         },
         {
-          "soru": "10. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) would have reversed",
-            "B) must have examined",
-            "C) ought to have broken",
-            "D) should have appreciated"
+            "would have reversed",
+            "must have examined",
+            "ought to have broken",
+            "should have appreciated"
           ],
-          "cevap": "B) must have examined",
+          "cevap": "must have examined",
           "ornek": null
         }
       ]
@@ -24075,7 +23752,7 @@
       "ad": "Test 9",
       "sorular": [
         {
-          "soru": "10. Hangisi \"azarlama\" bildiren bir modaldır?",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır?",
           "secenekler": [
             "shouldn't to have hindered",
             "can't have determined",
@@ -24207,18 +23884,18 @@
           }
         },
         {
-          "soru": "7. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) would have reversed",
-            "B) should have competed",
-            "C) could have finished",
-            "D) ought to have restricted"
+            "would have reversed",
+            "should have competed",
+            "could have finished",
+            "ought to have restricted"
           ],
-          "cevap": "C) could have finished",
+          "cevap": "could have finished",
           "ornek": null
         },
         {
-          "soru": "8. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "might not have coughed",
             "shouldn't have sponsored",
@@ -24297,18 +23974,18 @@
           }
         },
         {
-          "soru": "3. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) should have engaged in",
-            "B) ought to have settled",
-            "C) would have constructed",
-            "D) may have undergone"
+            "should have engaged in",
+            "ought to have settled",
+            "would have constructed",
+            "may have undergone"
           ],
-          "cevap": "D) may have undergone",
+          "cevap": "may have undergone",
           "ornek": null
         },
         {
-          "soru": "20. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "shouldn't have responded",
             "mustn't have prevented",
@@ -24319,14 +23996,14 @@
           "ornek": null
         },
         {
-          "soru": "11. Hangisi \"past alışkanlık\" bildiren bir modaldır?",
+          "soru": "Hangisi \"past alışkanlık\" bildiren bir modaldır?",
           "secenekler": [
-            "A) will have to reject",
-            "B) used to depend on",
-            "C) need to prevent",
-            "D) had better adopt"
+            "will have to reject",
+            "used to depend on",
+            "need to prevent",
+            "had better adopt"
           ],
-          "cevap": "B) used to depend on",
+          "cevap": "used to depend on",
           "ornek": {
             "tokenlar": [
               {
@@ -24400,7 +24077,7 @@
       "ad": "Test 10",
       "sorular": [
         {
-          "soru": "9. Hangisi \"unreal past\" bildiren bir modaldır?",
+          "soru": "Hangisi \"unreal past\" bildiren bir modaldır?",
           "secenekler": [
             "should have contained",
             "would have forgotten",
@@ -24411,14 +24088,14 @@
           "ornek": null
         },
         {
-          "soru": "5. Hangisi \"ihtimal\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
-            "A) wouldn't have explained",
-            "B) can't have checked",
-            "C) shouldn't have invested",
-            "D) oughtn't to have embarked"
+            "wouldn't have explained",
+            "can't have checked",
+            "shouldn't have invested",
+            "oughtn't to have embarked"
           ],
-          "cevap": "B) can't have checked",
+          "cevap": "can't have checked",
           "ornek": null
         },
         {
@@ -24557,65 +24234,6 @@
           }
         },
         {
-          "soru": "18. Without the ozone layer, we ____ in danger.",
-          "secenekler": [
-            "used to be",
-            "should be",
-            "would be",
-            "were going to be"
-          ],
-          "cevap": "would be",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Without",
-                "a": "-sız/olmadan",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "ozone",
-                "a": "ozon",
-                "vurgu": true
-              },
-              {
-                "k": "layer,",
-                "a": "tabaka",
-                "vurgu": true
-              },
-              {
-                "k": "we",
-                "a": "biz",
-                "vurgu": false
-              },
-              {
-                "k": "would",
-                "a": "-erdi",
-                "en": "would = koşullu sonuç",
-                "vurgu": true
-              },
-              {
-                "k": "be",
-                "a": "olmak",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "danger.",
-                "a": "tehlike",
-                "vurgu": true
-              }
-            ],
-            "tr": "Ozon tabakası olmasaydı, tehlikede olurduk."
-          }
-        },
-        {
           "soru": "YOUR TURN 4. Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "may not emit",
@@ -24627,25 +24245,14 @@
           "ornek": null
         },
         {
-          "soru": "11. Hangisi \"azarlama\" bildiren bir modaldır?",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
-            "A) may not have based on",
-            "B) mustn't have maintained",
-            "C) can't have taken place",
-            "D) oughtn't to have assessed"
+            "couldn't have improved",
+            "shouldn't have hindered",
+            "oughtn't to have forgotten",
+            "may not have involved"
           ],
-          "cevap": "D) oughtn't to have assessed",
-          "ornek": null
-        },
-        {
-          "soru": "16. Hangisi \"yetenek\" bildiren bir modaldır?",
-          "secenekler": [
-            "A) couldn't have improved",
-            "B) shouldn't have hindered",
-            "C) oughtn't to have forgotten",
-            "D) may not have involved"
-          ],
-          "cevap": "A) couldn't have improved",
+          "cevap": "couldn't have improved",
           "ornek": null
         },
         {
@@ -24775,99 +24382,25 @@
           }
         },
         {
-          "soru": "14. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) would have suffered",
-            "B) can't have adopted",
-            "C) could have enhanced",
-            "D) may have regulated"
+            "would have suffered",
+            "can't have adopted",
+            "could have enhanced",
+            "may have regulated"
           ],
-          "cevap": "B) can't have adopted",
+          "cevap": "can't have adopted",
           "ornek": null
         },
         {
-          "soru": "8. Hangisi \"unreal present\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) aren't able to assess",
-            "B) wouldn't expose",
-            "C) don't have to avoid",
-            "D) needn't to carry out"
+            "should have examined",
+            "would have burnt",
+            "ought to have led to",
+            "might have replaced"
           ],
-          "cevap": "B) wouldn't expose",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "If",
-                "a": "eğer",
-                "vurgu": false
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "were",
-                "a": "olsaydı",
-                "en": "if + were = olsaydı (tip 2 koşul)",
-                "vurgu": true
-              },
-              {
-                "k": "more",
-                "a": "daha",
-                "vurgu": false
-              },
-              {
-                "k": "careful,",
-                "a": "dikkatli",
-                "vurgu": true
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "wouldn't",
-                "a": "-mazdı",
-                "en": "wouldn't = -mazdı (koşul sonucu)",
-                "vurgu": true
-              },
-              {
-                "k": "expose",
-                "a": "maruz bırakmak",
-                "vurgu": true
-              },
-              {
-                "k": "himself",
-                "a": "kendini",
-                "vurgu": false
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "such",
-                "a": "böyle",
-                "vurgu": false
-              },
-              {
-                "k": "risks.",
-                "a": "riskler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Daha dikkatli olsaydı kendini böyle risklere maruz bırakmazdı."
-          }
-        },
-        {
-          "soru": "15. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
-          "secenekler": [
-            "A) should have examined",
-            "B) would have burnt",
-            "C) ought to have led to",
-            "D) might have replaced"
-          ],
-          "cevap": "D) might have replaced",
+          "cevap": "might have replaced",
           "ornek": null
         },
         {
@@ -24971,25 +24504,25 @@
           "ornek": null
         },
         {
-          "soru": "6. Hangisi \"azarlama\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) ought to have involved",
-            "B) may have established",
-            "C) must have hindered",
-            "D) could have replaced"
+            "ought to have involved",
+            "may have established",
+            "must have hindered",
+            "could have replaced"
           ],
-          "cevap": "A) ought to have involved",
+          "cevap": "ought to have involved",
           "ornek": null
         },
         {
-          "soru": "12. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) ought to have offered",
-            "B) must have provided",
-            "C) would have come from",
-            "D) should have resisted"
+            "ought to have offered",
+            "must have provided",
+            "would have come from",
+            "should have resisted"
           ],
-          "cevap": "B) must have provided",
+          "cevap": "must have provided",
           "ornek": null
         }
       ]
@@ -24998,14 +24531,14 @@
       "ad": "Test 12",
       "sorular": [
         {
-          "soru": "13. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) ought to have applied",
-            "B) can't have received",
-            "C) should have exceeded",
-            "D) would have assessed"
+            "ought to have applied",
+            "can't have received",
+            "should have exceeded",
+            "would have assessed"
           ],
-          "cevap": "B) can't have received",
+          "cevap": "can't have received",
           "ornek": null
         },
         {
@@ -25077,36 +24610,36 @@
           }
         },
         {
-          "soru": "8. Hangisi \"unreal past\" bildiren bir modaldır?",
+          "soru": "Hangisi \"unreal past\" bildiren bir modaldır?",
           "secenekler": [
-            "A) would have occurred",
-            "B) might have threatened",
-            "C) can't have triggered",
-            "D) should have utilized"
+            "would have occurred",
+            "might have threatened",
+            "can't have triggered",
+            "should have utilized"
           ],
-          "cevap": "A) would have occurred",
+          "cevap": "would have occurred",
           "ornek": null
         },
         {
-          "soru": "4. Hangisi \"azarlama\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) couldn't have emitted",
-            "B) may not have flown",
-            "C) shouldn't have extended",
-            "D) can't have delayed"
+            "couldn't have emitted",
+            "may not have flown",
+            "shouldn't have extended",
+            "can't have delayed"
           ],
-          "cevap": "C) shouldn't have extended",
+          "cevap": "shouldn't have extended",
           "ornek": null
         },
         {
-          "soru": "10. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) would have reversed",
-            "B) must have examined",
-            "C) ought to have broken",
-            "D) should have appreciated"
+            "would have reversed",
+            "must have examined",
+            "ought to have broken",
+            "should have appreciated"
           ],
-          "cevap": "B) must have examined",
+          "cevap": "must have examined",
           "ornek": null
         },
         {
@@ -25121,7 +24654,7 @@
           "ornek": null
         },
         {
-          "soru": "14. Hangisi \"unreal past\" bildiren bir modaldır?",
+          "soru": "Hangisi \"unreal past\" bildiren bir modaldır?",
           "secenekler": [
             "oughtn't to have applied",
             "mustn't have allocated",
@@ -25132,36 +24665,25 @@
           "ornek": null
         },
         {
-          "soru": "2. Hangisi \"unreal past\" bildiren bir modaldır?",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) should have focused on",
-            "B) may not have attempted",
-            "C) would have given up",
-            "D) could have enforced"
+            "might have sustained",
+            "would have extended",
+            "should have delayed",
+            "ought to have taken over"
           ],
-          "cevap": "C) would have given up",
+          "cevap": "might have sustained",
           "ornek": null
         },
         {
-          "soru": "1. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) might have sustained",
-            "B) would have extended",
-            "C) should have delayed",
-            "D) ought to have taken over"
+            "would have reversed",
+            "should have competed",
+            "could have finished",
+            "ought to have restricted"
           ],
-          "cevap": "A) might have sustained",
-          "ornek": null
-        },
-        {
-          "soru": "7. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
-          "secenekler": [
-            "A) would have reversed",
-            "B) should have competed",
-            "C) could have finished",
-            "D) ought to have restricted"
-          ],
-          "cevap": "C) could have finished",
+          "cevap": "could have finished",
           "ornek": null
         }
       ]
@@ -25170,25 +24692,25 @@
       "ad": "Test 13",
       "sorular": [
         {
-          "soru": "9. Hangisi \"yetenek\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) can't have promoted",
-            "B) may not have exposed",
-            "C) mustn't have accepted",
-            "D) couldn't have finished"
+            "can't have promoted",
+            "may not have exposed",
+            "mustn't have accepted",
+            "couldn't have finished"
           ],
-          "cevap": "D) couldn't have finished",
+          "cevap": "couldn't have finished",
           "ornek": null
         },
         {
-          "soru": "3. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) should have engaged in",
-            "B) ought to have settled",
-            "C) would have constructed",
-            "D) may have undergone"
+            "should have engaged in",
+            "ought to have settled",
+            "would have constructed",
+            "may have undergone"
           ],
-          "cevap": "D) may have undergone",
+          "cevap": "may have undergone",
           "ornek": null
         },
         {
@@ -25463,14 +24985,14 @@
           "ornek": null
         },
         {
-          "soru": "5. Hangisi \"ihtimal\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) wouldn't have explained",
-            "B) can't have checked",
-            "C) shouldn't have invested",
-            "D) oughtn't to have embarked"
+            "wouldn't have explained",
+            "can't have checked",
+            "shouldn't have invested",
+            "oughtn't to have embarked"
           ],
-          "cevap": "B) can't have checked",
+          "cevap": "can't have checked",
           "ornek": null
         },
         {
@@ -25536,75 +25058,6 @@
     {
       "ad": "Test 14",
       "sorular": [
-        {
-          "soru": "23. Any diabetic ____ constant watch on blood sugar levels.",
-          "secenekler": [
-            "would keep",
-            "has to keep",
-            "must keep",
-            "used to keep"
-          ],
-          "cevap": "has to keep",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Any",
-                "a": "herhangi bir",
-                "vurgu": false
-              },
-              {
-                "k": "diabetic",
-                "a": "diyabet hastası",
-                "vurgu": true
-              },
-              {
-                "k": "has",
-                "a": "zorunda",
-                "en": "has to = zorunda (zorunluluk)",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "keep",
-                "a": "tutmak",
-                "vurgu": true
-              },
-              {
-                "k": "constant",
-                "a": "sürekli/sabit",
-                "vurgu": true
-              },
-              {
-                "k": "watch",
-                "a": "gözetim/takip",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "blood",
-                "a": "kan",
-                "vurgu": true
-              },
-              {
-                "k": "sugar",
-                "a": "şeker",
-                "vurgu": true
-              },
-              {
-                "k": "levels.",
-                "a": "seviyeler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Herhangi bir diyabet hastası kan şekeri seviyelerini sürekli kontrol altında tutmak zorundadır."
-          }
-        },
         {
           "soru": "YOUR TURN 3. Hangisi \"unreal present\" bildiren bir modaldır?",
           "secenekler": [
@@ -25828,14 +25281,14 @@
           }
         },
         {
-          "soru": "11. Hangisi \"azarlama\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"azarlama\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) may not have based on",
-            "B) mustn't have maintained",
-            "C) can't have taken place",
-            "D) oughtn't to have assessed"
+            "may not have based on",
+            "mustn't have maintained",
+            "can't have taken place",
+            "oughtn't to have assessed"
           ],
-          "cevap": "D) oughtn't to have assessed",
+          "cevap": "oughtn't to have assessed",
           "ornek": null
         },
         {
@@ -25850,7 +25303,7 @@
           "ornek": null
         },
         {
-          "soru": "4. Hangisi \"unreal past\" bildiren bir modaldır?",
+          "soru": "Hangisi \"unreal past\" bildiren bir modaldır?",
           "secenekler": [
             "would not have come from",
             "may not have contributed to",
@@ -25930,14 +25383,14 @@
           }
         },
         {
-          "soru": "16. Hangisi \"yetenek\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) couldn't have improved",
-            "B) shouldn't have hindered",
-            "C) oughtn't to have forgotten",
-            "D) may not have involved"
+            "couldn't have improved",
+            "shouldn't have hindered",
+            "oughtn't to have forgotten",
+            "may not have involved"
           ],
-          "cevap": "A) couldn't have improved",
+          "cevap": "couldn't have improved",
           "ornek": null
         }
       ]
@@ -26176,17 +25629,6 @@
           "ornek": null
         },
         {
-          "soru": "We ____ a pet, but last month we adopted a cat.",
-          "secenekler": [
-            "shouldn't have had",
-            "haven't had",
-            "",
-            ""
-          ],
-          "cevap": "haven't had",
-          "ornek": null
-        },
-        {
           "soru": "I feel a bit ill. I ____ to work today.",
           "secenekler": [
             "must not go",
@@ -26198,82 +25640,14 @@
           "ornek": null
         },
         {
-          "soru": "22. We ____ for a while because she is tired.",
+          "soru": "Hangisi \"unreal past\" bildiren bir modaldır? ____",
           "secenekler": [
-            "had better stop",
-            "must stop",
-            "would stop",
-            "were going to stop"
+            "would have occurred",
+            "might have threatened",
+            "can't have triggered",
+            "should have utilized"
           ],
-          "cevap": "had better stop",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "We",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "iyi olur",
-                "en": "had better = -sek iyi olur (tavsiye)",
-                "vurgu": true
-              },
-              {
-                "k": "better",
-                "a": "daha iyi",
-                "en": "had better = -sak iyi olur",
-                "vurgu": true
-              },
-              {
-                "k": "stop",
-                "a": "durmak",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "while",
-                "a": "bir süre",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü",
-                "vurgu": false
-              },
-              {
-                "k": "she",
-                "vurgu": false
-              },
-              {
-                "k": "is",
-                "a": "-dir",
-                "vurgu": false
-              },
-              {
-                "k": "tired.",
-                "a": "yorgun",
-                "vurgu": true
-              }
-            ],
-            "tr": "Yorgun olduğu için bir süreliğine dursak iyi olur."
-          }
-        },
-        {
-          "soru": "8. Hangisi \"unreal past\" bildiren bir modaldır? ____",
-          "secenekler": [
-            "A) would have occurred",
-            "B) might have threatened",
-            "C) can't have triggered",
-            "D) should have utilized"
-          ],
-          "cevap": "A) would have occurred",
+          "cevap": "would have occurred",
           "ornek": null
         },
         {
@@ -26433,69 +25807,15 @@
           "ornek": null
         },
         {
-          "soru": "2. Hangisi \"unreal past\" bildiren bir modaldır? ____",
+          "soru": "Hangisi \"unreal past\" bildiren bir modaldır? ____",
           "secenekler": [
-            "A) should have focused on",
-            "B) may not have attempted",
-            "C) would have given up",
-            "D) could have enforced"
+            "should have focused on",
+            "may not have attempted",
+            "would have given up",
+            "could have enforced"
           ],
-          "cevap": "C) would have given up",
+          "cevap": "would have given up",
           "ornek": null
-        },
-        {
-          "soru": "13. Hangisi \"will'in past hali\" olan bir modaldır?",
-          "secenekler": [
-            "A) wouldn't establish",
-            "B) won't have to comply",
-            "C) doesn't need to explain",
-            "D) had better not undergo"
-          ],
-          "cevap": "A) wouldn't establish",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "wouldn't",
-                "a": "-mazdı",
-                "en": "wouldn't = -mazdı (geçmiş alışkanlık/red)",
-                "vurgu": true
-              },
-              {
-                "k": "establish",
-                "a": "kurmak",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "company",
-                "a": "şirket",
-                "vurgu": true
-              },
-              {
-                "k": "back",
-                "a": "o zamanlar",
-                "vurgu": false
-              },
-              {
-                "k": "then.",
-                "a": "o zamanlar",
-                "vurgu": false
-              }
-            ],
-            "tr": "O zamanlar yeni bir şirket kurmazdı."
-          }
         },
         {
           "soru": "Mary ____ at her desk; she's not answering her phone.",
@@ -26849,137 +26169,6 @@
           ],
           "cevap": "will have celebrated",
           "ornek": null
-        },
-        {
-          "soru": "8. You ____ that painting; it's very old and fragile.",
-          "secenekler": [
-            "mustn't touch",
-            "couldn't touch",
-            "don't have to touch",
-            "wouldn't touch"
-          ],
-          "cevap": "mustn't touch",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "a": "sen",
-                "vurgu": false
-              },
-              {
-                "k": "mustn't",
-                "a": "-memeli (yasak)",
-                "en": "mustn't = kesin yasak",
-                "vurgu": true
-              },
-              {
-                "k": "touch",
-                "a": "dokunmak",
-                "vurgu": true
-              },
-              {
-                "k": "that",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "painting;",
-                "a": "tablo",
-                "vurgu": true
-              },
-              {
-                "k": "it's",
-                "a": "o ...-dir",
-                "vurgu": false
-              },
-              {
-                "k": "very",
-                "a": "çok",
-                "vurgu": false
-              },
-              {
-                "k": "old",
-                "a": "eski",
-                "vurgu": true
-              },
-              {
-                "k": "and",
-                "a": "ve",
-                "vurgu": false
-              },
-              {
-                "k": "fragile.",
-                "a": "kırılgan",
-                "vurgu": true
-              }
-            ],
-            "tr": "O tabloya dokunmamalısın; çok eski ve kırılgan."
-          }
-        },
-        {
-          "soru": "33. Without algae, the rest of the food chain ____.",
-          "secenekler": [
-            "should collapse",
-            "need to collapse",
-            "would collapse",
-            "used to collapse"
-          ],
-          "cevap": "would collapse",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Without",
-                "a": "-sız/olmadan",
-                "vurgu": true
-              },
-              {
-                "k": "algae,",
-                "a": "algler",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "rest",
-                "a": "geri kalanı",
-                "en": "the rest of = geri kalanı",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "food",
-                "a": "besin",
-                "vurgu": true
-              },
-              {
-                "k": "chain",
-                "a": "zincir",
-                "en": "food chain = besin zinciri",
-                "vurgu": true
-              },
-              {
-                "k": "would",
-                "a": "-erdi",
-                "en": "would = -erdi (koşullu sonuç)",
-                "vurgu": true
-              },
-              {
-                "k": "collapse.",
-                "a": "çökmek",
-                "vurgu": true
-              }
-            ],
-            "tr": "Algler olmadan, besin zincirinin geri kalanı çökerdi."
-          }
         },
         {
           "soru": "James ____ the meeting tomorrow because of his tight schedule.",
@@ -27338,158 +26527,6 @@
           "ornek": null
         },
         {
-          "soru": "32. He's not answering his phone. He ____ right now.",
-          "secenekler": [
-            "had better be sleeping",
-            "might be sleeping",
-            "would be sleeping",
-            "should be sleeping"
-          ],
-          "cevap": "might be sleeping",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He's",
-                "a": "o",
-                "en": "He's = He is",
-                "vurgu": false
-              },
-              {
-                "k": "not",
-                "a": "-mıyor",
-                "vurgu": false
-              },
-              {
-                "k": "answering",
-                "a": "cevap veriyor",
-                "en": "is not answering = cevap vermiyor (şu an)",
-                "vurgu": true
-              },
-              {
-                "k": "his",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "phone.",
-                "a": "telefon",
-                "vurgu": true
-              },
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "might",
-                "a": "-ebilir",
-                "en": "might be V-ing = -yor olabilir",
-                "vurgu": true
-              },
-              {
-                "k": "be",
-                "a": "olmak",
-                "vurgu": false
-              },
-              {
-                "k": "sleeping",
-                "a": "uyuyor",
-                "en": "might be sleeping = uyuyor olabilir",
-                "vurgu": true
-              },
-              {
-                "k": "right",
-                "a": "tam",
-                "vurgu": false
-              },
-              {
-                "k": "now.",
-                "a": "şimdi",
-                "en": "right now = şu anda",
-                "vurgu": true
-              }
-            ],
-            "tr": "Telefonuna cevap vermiyor. Şu anda uyuyor olabilir."
-          }
-        },
-        {
-          "soru": "24. She's not here right now; she ____ back in twenty minutes.",
-          "secenekler": [
-            "would be",
-            "used to be",
-            "might be",
-            "has to be"
-          ],
-          "cevap": "might be",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She's",
-                "a": "o değil",
-                "en": "She's = She is",
-                "vurgu": false
-              },
-              {
-                "k": "not",
-                "a": "değil",
-                "vurgu": false
-              },
-              {
-                "k": "here",
-                "a": "burada",
-                "vurgu": true
-              },
-              {
-                "k": "right",
-                "a": "tam",
-                "vurgu": false
-              },
-              {
-                "k": "now;",
-                "a": "şimdi",
-                "en": "right now = şu anda",
-                "vurgu": true
-              },
-              {
-                "k": "she",
-                "vurgu": false
-              },
-              {
-                "k": "might",
-                "a": "-ebilir",
-                "en": "might = ihtimal (belki)",
-                "vurgu": true
-              },
-              {
-                "k": "be",
-                "a": "olmak",
-                "vurgu": false
-              },
-              {
-                "k": "back",
-                "a": "dönmüş",
-                "en": "be back = geri dönmek",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "a": "-içinde",
-                "vurgu": false
-              },
-              {
-                "k": "twenty",
-                "a": "yirmi",
-                "vurgu": true
-              },
-              {
-                "k": "minutes.",
-                "a": "dakika",
-                "vurgu": true
-              }
-            ],
-            "tr": "Şu anda burada değil; yirmi dakika içinde dönmüş olabilir."
-          }
-        },
-        {
           "soru": "The study is concerned ____ social behaviours, so it may involve extensive fieldwork.",
           "secenekler": [
             "for",
@@ -27573,81 +26610,6 @@
           }
         },
         {
-          "soru": "9. I ____ coffee every morning, but now I prefer tea.",
-          "secenekler": [
-            "needed to drink",
-            "have to drink",
-            "used to drink",
-            "am able to drink"
-          ],
-          "cevap": "used to drink",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "I",
-                "a": "ben",
-                "vurgu": false
-              },
-              {
-                "k": "used",
-                "a": "eskiden -erdi",
-                "en": "used to = geçmiş alışkanlık",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "drink",
-                "a": "içmek",
-                "vurgu": true
-              },
-              {
-                "k": "coffee",
-                "a": "kahve",
-                "vurgu": true
-              },
-              {
-                "k": "every",
-                "a": "her",
-                "vurgu": false
-              },
-              {
-                "k": "morning,",
-                "a": "sabah",
-                "vurgu": true
-              },
-              {
-                "k": "but",
-                "a": "ama",
-                "vurgu": false
-              },
-              {
-                "k": "now",
-                "a": "şimdi",
-                "vurgu": false
-              },
-              {
-                "k": "I",
-                "a": "ben",
-                "vurgu": false
-              },
-              {
-                "k": "prefer",
-                "a": "tercih etmek",
-                "vurgu": true
-              },
-              {
-                "k": "tea.",
-                "a": "çay",
-                "vurgu": true
-              }
-            ],
-            "tr": "Eskiden her sabah kahve içerdim, ama şimdi çayı tercih ediyorum."
-          }
-        },
-        {
           "soru": "He might invest ____ the new company; the potential for growth is significant.",
           "secenekler": [
             "out of",
@@ -27656,17 +26618,6 @@
             "against"
           ],
           "cevap": "in",
-          "ornek": null
-        },
-        {
-          "soru": "..., so I had to learn. (countryside) I ____ to drive.",
-          "secenekler": [
-            "am unable to drive",
-            "mustn't drive",
-            "couldn't drive",
-            "shouldn't drive"
-          ],
-          "cevap": "couldn't drive",
           "ornek": null
         },
         {
@@ -27685,152 +26636,6 @@
     {
       "ad": "Test 19",
       "sorular": [
-        {
-          "soru": "20. You ____ too much about the test; you've studied hard.",
-          "secenekler": [
-            "mustn't worry",
-            "needn't worry",
-            "wouldn't worry",
-            "weren't going to worry"
-          ],
-          "cevap": "needn't worry",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "a": "sen",
-                "vurgu": false
-              },
-              {
-                "k": "needn't",
-                "a": "-mene gerek yok",
-                "en": "needn't = gereksizlik",
-                "vurgu": true
-              },
-              {
-                "k": "worry",
-                "a": "endişelenmek",
-                "vurgu": true
-              },
-              {
-                "k": "too",
-                "a": "çok/fazla",
-                "vurgu": false
-              },
-              {
-                "k": "much",
-                "a": "çok",
-                "vurgu": false
-              },
-              {
-                "k": "about",
-                "a": "hakkında",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "test;",
-                "a": "sınav",
-                "vurgu": true
-              },
-              {
-                "k": "you've",
-                "a": "sen -dın",
-                "vurgu": false
-              },
-              {
-                "k": "studied",
-                "a": "çalışmak",
-                "en": "have studied = present perfect",
-                "vurgu": true
-              },
-              {
-                "k": "hard.",
-                "a": "sıkı/çok",
-                "vurgu": true
-              }
-            ],
-            "tr": "Sınav hakkında çok endişelenmene gerek yok; çok çalıştın."
-          }
-        },
-        {
-          "soru": "35. Green sea turtles ____ underwater for as long as five hours.",
-          "secenekler": [
-            "have to stay",
-            "used to stay",
-            "can stay",
-            "would stay"
-          ],
-          "cevap": "can stay",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Green",
-                "a": "yeşil",
-                "vurgu": true
-              },
-              {
-                "k": "sea",
-                "a": "deniz",
-                "vurgu": true
-              },
-              {
-                "k": "turtles",
-                "a": "kaplumbağalar",
-                "vurgu": true
-              },
-              {
-                "k": "can",
-                "a": "-ebilir",
-                "en": "can = yetenek/olasılık modalı",
-                "vurgu": true
-              },
-              {
-                "k": "stay",
-                "a": "kalmak",
-                "vurgu": true
-              },
-              {
-                "k": "underwater",
-                "a": "su altında",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "as",
-                "a": "kadar",
-                "en": "as long as = kadar uzun süre",
-                "vurgu": true
-              },
-              {
-                "k": "long",
-                "a": "uzun",
-                "vurgu": false
-              },
-              {
-                "k": "as",
-                "vurgu": false
-              },
-              {
-                "k": "five",
-                "a": "beş",
-                "vurgu": true
-              },
-              {
-                "k": "hours.",
-                "a": "saat",
-                "vurgu": true
-              }
-            ],
-            "tr": "Yeşil deniz kaplumbağaları su altında beş saate kadar kalabilir."
-          }
-        },
         {
           "soru": "They ____ a new car soon; their old one is breaking down.",
           "secenekler": [
@@ -28356,15 +27161,6 @@
       "ad": "Test 20",
       "sorular": [
         {
-          "soru": "The doctors ought to ____ monitor the patient's recovery process.",
-          "secenekler": [
-            "closely",
-            "excessively"
-          ],
-          "cevap": "closely",
-          "ornek": null
-        },
-        {
           "soru": "This is a hospital. You ____ here. Please, put off your cigarette!",
           "secenekler": [
             "wouldn't smoke",
@@ -28743,90 +27539,6 @@
           ],
           "cevap": "the government had issued the warning",
           "ornek": null
-        },
-        {
-          "soru": "19. Before the digital era, people ____ letters for communication over long distances.",
-          "secenekler": [
-            "might send",
-            "are able to send",
-            "had better send",
-            "used to send"
-          ],
-          "cevap": "used to send",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Before",
-                "a": "-den önce",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "digital",
-                "a": "dijital",
-                "vurgu": true
-              },
-              {
-                "k": "era,",
-                "a": "çağ/dönem",
-                "vurgu": true
-              },
-              {
-                "k": "people",
-                "a": "insanlar",
-                "vurgu": true
-              },
-              {
-                "k": "used",
-                "a": "eskiden -erdi",
-                "en": "used to = geçmiş alışkanlık",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "send",
-                "a": "göndermek",
-                "vurgu": true
-              },
-              {
-                "k": "letters",
-                "a": "mektuplar",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "a": "için",
-                "vurgu": false
-              },
-              {
-                "k": "communication",
-                "a": "iletişim",
-                "vurgu": true
-              },
-              {
-                "k": "over",
-                "a": "boyunca/üzerinden",
-                "vurgu": false
-              },
-              {
-                "k": "long",
-                "a": "uzun",
-                "vurgu": true
-              },
-              {
-                "k": "distances.",
-                "a": "mesafeler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Dijital çağdan önce, insanlar uzun mesafelerde iletişim için mektup gönderirdi."
-          }
         }
       ]
     },
@@ -28931,86 +27643,6 @@
           "ornek": null
         },
         {
-          "soru": "10. This is a hospital. You ____ here. Please, put off your cigarette!",
-          "secenekler": [
-            "wouldn't smoke",
-            "might not smoke",
-            "mustn't smoke",
-            "don't need to smoke"
-          ],
-          "cevap": "mustn't smoke",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "This",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "is",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "hospital.",
-                "a": "hastane",
-                "vurgu": true
-              },
-              {
-                "k": "You",
-                "a": "sen",
-                "vurgu": false
-              },
-              {
-                "k": "mustn't",
-                "a": "-memeli (yasak)",
-                "en": "mustn't = yasak",
-                "vurgu": true
-              },
-              {
-                "k": "smoke",
-                "a": "sigara içmek",
-                "vurgu": true
-              },
-              {
-                "k": "here.",
-                "a": "burada",
-                "vurgu": true
-              },
-              {
-                "k": "Please,",
-                "a": "lütfen",
-                "vurgu": false
-              },
-              {
-                "k": "put",
-                "a": "söndür",
-                "en": "put off = söndürmek",
-                "vurgu": true
-              },
-              {
-                "k": "off",
-                "a": "söndür (off)",
-                "vurgu": true
-              },
-              {
-                "k": "your",
-                "a": "senin",
-                "vurgu": false
-              },
-              {
-                "k": "cigarette!",
-                "a": "sigara",
-                "vurgu": true
-              }
-            ],
-            "tr": "Burası bir hastane. Burada sigara içmemelisin. Lütfen sigaranı söndür!"
-          }
-        },
-        {
           "soru": "The study may reveal potential ____ from excessive screen time; awareness is crucial for health.",
           "secenekler": [
             "trait",
@@ -29020,94 +27652,6 @@
           ],
           "cevap": "harm",
           "ornek": null
-        },
-        {
-          "soru": "34. You ____ your own food to the event; they will provide snacks.",
-          "secenekler": [
-            "might not bring",
-            "wouldn't bring",
-            "didn't used to bring",
-            "don't have to bring"
-          ],
-          "cevap": "don't have to bring",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "vurgu": false
-              },
-              {
-                "k": "don't",
-                "a": "-maz",
-                "en": "don't have to = -mek zorunda değil",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "a": "zorunda",
-                "en": "have to = zorunda",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "bring",
-                "a": "getirmek",
-                "vurgu": true
-              },
-              {
-                "k": "your",
-                "a": "kendi",
-                "vurgu": false
-              },
-              {
-                "k": "own",
-                "a": "kendi",
-                "vurgu": true
-              },
-              {
-                "k": "food",
-                "a": "yiyecek",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "event;",
-                "a": "etkinlik",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "vurgu": false
-              },
-              {
-                "k": "will",
-                "a": "-acak",
-                "en": "will = gelecek zaman",
-                "vurgu": true
-              },
-              {
-                "k": "provide",
-                "a": "sağlamak",
-                "vurgu": true
-              },
-              {
-                "k": "snacks.",
-                "a": "atıştırmalıklar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Etkinliğe kendi yiyeceğinizi getirmek zorunda değilsiniz; atıştırmalıkları onlar sağlayacak."
-          }
         },
         {
           "soru": "You ____ to the grocery store. We have some milk in the fridge.",
@@ -29196,15 +27740,6 @@
             ],
             "tr": "Markete gitmene gerek yok. Buzdolabında biraz süt var."
           }
-        },
-        {
-          "soru": "He ____ his wallet at the restaurant, because he always checks his pockets before leaving.",
-          "secenekler": [
-            "can't have left",
-            "might not have left"
-          ],
-          "cevap": "can't have left",
-          "ornek": null
         },
         {
           "soru": "I didn't expect that Oliver ____ at the party, so I was a little surprised.",
@@ -29620,100 +28155,6 @@
           "ornek": null
         },
         {
-          "soru": "25. At the concert, despite the crowd, we ____ a good view of the stage.",
-          "secenekler": [
-            "were able to get",
-            "should get",
-            "needed to get",
-            "had better get"
-          ],
-          "cevap": "were able to get",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "At",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "concert,",
-                "a": "konser",
-                "vurgu": true
-              },
-              {
-                "k": "despite",
-                "a": "-e rağmen",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "crowd,",
-                "a": "kalabalık",
-                "vurgu": true
-              },
-              {
-                "k": "we",
-                "vurgu": false
-              },
-              {
-                "k": "were",
-                "a": "-dik",
-                "en": "were able to = -ebildik (geçmiş yetenek)",
-                "vurgu": true
-              },
-              {
-                "k": "able",
-                "a": "yapabilen",
-                "en": "be able to = -ebilmek",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "get",
-                "a": "elde etmek",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "good",
-                "a": "iyi",
-                "vurgu": true
-              },
-              {
-                "k": "view",
-                "a": "görüntü/manzara",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "stage.",
-                "a": "sahne",
-                "vurgu": true
-              }
-            ],
-            "tr": "Konserde, kalabalığa rağmen, sahneyi iyi görebildik."
-          }
-        },
-        {
           "soru": "She's seven years old, but she ____ yet. Her parents are getting her private lessons.",
           "secenekler": [
             "couldn't read",
@@ -29805,160 +28246,6 @@
             ],
             "tr": "Yedi yaşında ama henüz okuyamıyor. Ailesi ona özel ders aldırıyor."
           }
-        },
-        {
-          "soru": "... leg. A) wouldn't come B) cannot come C) mustn't come D) didn't use to come",
-          "secenekler": [
-            "wouldn't come",
-            "cannot come",
-            "mustn't come",
-            "didn't use to come"
-          ],
-          "cevap": "cannot come",
-          "ornek": null
-        },
-        {
-          "soru": "They should have ____ the bridge more carefully; it collapsed after only a year.",
-          "secenekler": [
-            "constructed",
-            "embarked"
-          ],
-          "cevap": "constructed",
-          "ornek": null
-        },
-        {
-          "soru": "7. She's seven years old, but she ____ yet. Her parents are getting her private lessons.",
-          "secenekler": [
-            "couldn't read",
-            "doesn't need to read",
-            "was unable to read",
-            "can't read"
-          ],
-          "cevap": "can't read",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She's",
-                "a": "o ...-dir",
-                "vurgu": false
-              },
-              {
-                "k": "seven",
-                "a": "yedi",
-                "vurgu": true
-              },
-              {
-                "k": "years",
-                "a": "yaş/yıl",
-                "vurgu": true
-              },
-              {
-                "k": "old,",
-                "a": "yaşında",
-                "vurgu": true
-              },
-              {
-                "k": "but",
-                "a": "ama",
-                "vurgu": false
-              },
-              {
-                "k": "she",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-emez",
-                "en": "can't = yetenek yokluğu",
-                "vurgu": true
-              },
-              {
-                "k": "read",
-                "a": "okumak",
-                "vurgu": true
-              },
-              {
-                "k": "yet.",
-                "a": "henüz",
-                "vurgu": true
-              },
-              {
-                "k": "Her",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "parents",
-                "a": "ailesi/anne-baba",
-                "vurgu": true
-              },
-              {
-                "k": "are",
-                "vurgu": false
-              },
-              {
-                "k": "getting",
-                "a": "aldırıyor/sağlıyor",
-                "en": "get sb sth = birine bir şey aldırmak",
-                "vurgu": true
-              },
-              {
-                "k": "her",
-                "a": "ona",
-                "vurgu": false
-              },
-              {
-                "k": "private",
-                "a": "özel",
-                "vurgu": true
-              },
-              {
-                "k": "lessons.",
-                "a": "ders",
-                "vurgu": true
-              }
-            ],
-            "tr": "Yedi yaşında ama henüz okuyamıyor. Ailesi ona özel ders aldırıyor."
-          }
-        }
-      ]
-    },
-    {
-      "ad": "Test 23",
-      "sorular": [
-        {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) must appear\nB) could recognize\nC) used to cite\nD) might embark",
-          "secenekler": [
-            "must appear",
-            "could recognize",
-            "used to cite",
-            "might embark"
-          ],
-          "cevap": "must appear",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?\nA) can assess\nB) might disrupt\nC) would depress\nD) needed to extend",
-          "secenekler": [
-            "can assess",
-            "might disrupt",
-            "would depress",
-            "needed to extend"
-          ],
-          "cevap": "can assess",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) would threaten\nB) could undergo\nC) may deal with\nD) must eliminate",
-          "secenekler": [
-            "would threaten",
-            "could undergo",
-            "may deal with",
-            "must eliminate"
-          ],
-          "cevap": "must eliminate",
-          "ornek": null
         },
         {
           "soru": "I ____ a car until I was 34. Then, I moved to the countryside, so I had to learn.",
@@ -30074,7 +28361,7 @@
           }
         },
         {
-          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?\nA) may not emit\nB) couldn't admit\nC) didn't use to suffer\nD) shouldn't contain",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "may not emit",
             "couldn't admit",
@@ -30085,7 +28372,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) couldn't take to\nB) can't destroy\nC) didn't use to abandon\nD) oughtn't to claim",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "couldn't take to",
             "can't destroy",
@@ -30096,40 +28383,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) had better confirm\nB) could replace\nC) might sustain\nD) would regulate",
-          "secenekler": [
-            "had better confirm",
-            "could replace",
-            "might sustain",
-            "would regulate"
-          ],
-          "cevap": "had better confirm",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) are able to combine\nB) would provide\nC) may determine\nD) should demonstrate",
-          "secenekler": [
-            "are able to combine",
-            "would provide",
-            "may determine",
-            "should demonstrate"
-          ],
-          "cevap": "should demonstrate",
-          "ornek": null
-        },
-        {
-          "soru": "____ play (He ... a kid). A) may play B) are able to play C) used to play D) must play",
-          "secenekler": [
-            "may play",
-            "are able to play",
-            "used to play",
-            "must play"
-          ],
-          "cevap": "used to play",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?\nA) mustn't offer\nB) might not exceed\nC) isn't able to allocate\nD) shouldn't abandon",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "mustn't offer",
             "might not exceed",
@@ -30142,21 +28396,10 @@
       ]
     },
     {
-      "ad": "Test 24",
+      "ad": "Test 23",
       "sorular": [
         {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) is able to apply\nB) would make up\nC) may contribute\nD) has to emit",
-          "secenekler": [
-            "is able to apply",
-            "would make up",
-            "may contribute",
-            "has to emit"
-          ],
-          "cevap": "has to emit",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) should expand\nB) are able to comply\nC) would make up\nD) can suffer from",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "should expand",
             "are able to comply",
@@ -30167,29 +28410,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) must obtain\nB) are able to add\nC) would consist of\nD) used to associate",
-          "secenekler": [
-            "must obtain",
-            "are able to add",
-            "would consist of",
-            "used to associate"
-          ],
-          "cevap": "must obtain",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?\nA) may accompany\nB) had to withdraw\nC) is able to adopt\nD) should depend on",
-          "secenekler": [
-            "may accompany",
-            "had to withdraw",
-            "is able to adopt",
-            "should depend on"
-          ],
-          "cevap": "may accompany",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) could contribute\nB) was able to join\nC) used to threaten\nD) has to constitute",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "could contribute",
             "was able to join",
@@ -30200,18 +28421,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"unreal present\" bildiren bir modaldır?\nA) ought to improve\nB) used to bring about\nC) might do with\nD) would enforce",
-          "secenekler": [
-            "ought to improve",
-            "used to bring about",
-            "might do with",
-            "would enforce"
-          ],
-          "cevap": "would enforce",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?\nA) had to sustain\nB) should apply to\nC) used to give up\nD) were able to cure",
+          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?",
           "secenekler": [
             "had to sustain",
             "should apply to",
@@ -30222,29 +28432,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?\nA) might come from\nB) need to receive\nC) could resist\nD) ought to offer",
-          "secenekler": [
-            "might come from",
-            "need to receive",
-            "could resist",
-            "ought to offer"
-          ],
-          "cevap": "could resist",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"yetenek\" bildiren bir modaldır?\nA) ought to collect\nB) was able to join\nC) might base on\nD) would maintain",
-          "secenekler": [
-            "ought to collect",
-            "was able to join",
-            "might base on",
-            "would maintain"
-          ],
-          "cevap": "was able to join",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"will'in past hali\" olan bir modaldır?\nA) would evolve\nB) might discriminate\nC) had better contain\nD) will have to enforce",
+          "soru": "Hangisi \"will'in past hali\" olan bir modaldır?",
           "secenekler": [
             "would evolve",
             "might discriminate",
@@ -30253,14 +28441,9 @@
           ],
           "cevap": "would evolve",
           "ornek": null
-        }
-      ]
-    },
-    {
-      "ad": "Test 25",
-      "sorular": [
+        },
         {
-          "soru": "Hangisi \"will'in past hali\" olan bir modaldır?\nA) could depress\nB) would emit\nC) will need to sustain\nD) ought to deal with",
+          "soru": "Hangisi \"will'in past hali\" olan bir modaldır?",
           "secenekler": [
             "could depress",
             "would emit",
@@ -30271,18 +28454,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?\nA) had better occur\nB) could relate to\nC) is able to boost\nD) used to make up",
-          "secenekler": [
-            "had better occur",
-            "could relate to",
-            "is able to boost",
-            "used to make up"
-          ],
-          "cevap": "could relate to",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?\nA) had better not depend\nB) mustn't lead to\nC) may take place\nD) don't need to receive",
+          "soru": "Hangisi \"ihtimal\" bildiren bir modaldır?",
           "secenekler": [
             "had better not depend",
             "mustn't lead to",
@@ -30293,18 +28465,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) wouldn't trigger\nB) didn't use to determine\nC) doesn't need to prepare\nD) isn't able to promote",
-          "secenekler": [
-            "wouldn't trigger",
-            "didn't use to determine",
-            "doesn't need to prepare",
-            "isn't able to promote"
-          ],
-          "cevap": "doesn't need to prepare",
-          "ornek": null
-        },
-        {
-          "soru": "Hangisi \"past alışkanlık\" bildiren bir modaldır?\nA) is unable to delay\nB) didn't use to resist\nC) oughtn't to involve\nD) doesn't need to enforce",
+          "soru": "Hangisi \"past alışkanlık\" bildiren bir modaldır?",
           "secenekler": [
             "is unable to delay",
             "didn't use to resist",
@@ -30315,7 +28476,7 @@
           "ornek": null
         },
         {
-          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?\nA) used to determine\nB) were able to reveal\nC) will need to reduce\nD) had better relate to",
+          "soru": "Hangisi \"zorunluluk\" bildiren bir modaldır?",
           "secenekler": [
             "used to determine",
             "were able to reveal",

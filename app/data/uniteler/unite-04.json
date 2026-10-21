@@ -16020,40 +16020,6 @@
       "ad": "Test 1",
       "sorular": [
         {
-          "soru": "____ the rules ____",
-          "secenekler": [
-            "under",
-            "on",
-            "at",
-            "with"
-          ],
-          "cevap": "on",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "On",
-                "a": "üzerine/göre",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "rules",
-                "a": "kurallar",
-                "vurgu": true
-              },
-              {
-                "k": "on.",
-                "a": "göre",
-                "vurgu": false
-              }
-            ],
-            "tr": "Kurallara göre."
-          }
-        },
-        {
           "soru": "____ high-quality ingredients.",
           "secenekler": [
             "used",
@@ -16091,83 +16057,6 @@
               }
             ],
             "tr": "Yüksek kaliteli malzemeler kullanmışlardı."
-          }
-        },
-        {
-          "soru": "____ thirty.",
-          "secenekler": [
-            "travelled",
-            "had travelled",
-            "was travelling",
-            "has been travelling"
-          ],
-          "cevap": "was travelling",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "When",
-                "a": "-diğinde",
-                "en": "when + past simple kesintiye uğratır",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "accident",
-                "a": "kaza",
-                "vurgu": true
-              },
-              {
-                "k": "happened,",
-                "a": "oldu",
-                "vurgu": true
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "was + V-ing = -yordu",
-                "vurgu": true
-              },
-              {
-                "k": "travelling",
-                "a": "gidiyor/seyahat ediyor",
-                "vurgu": true
-              },
-              {
-                "k": "at",
-                "a": "-de (hızda)",
-                "vurgu": false
-              },
-              {
-                "k": "thirty.",
-                "a": "otuz",
-                "vurgu": true
-              }
-            ],
-            "tr": "Kaza olduğunda saatte otuz (mil/km) hızla gidiyordu."
-          }
-        },
-        {
-          "soru": "____ C) defect D) diagnosis",
-          "secenekler": [
-            "defect",
-            "diagnosis"
-          ],
-          "cevap": "diagnosis",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "diagnosis",
-                "a": "teşhis",
-                "vurgu": true
-              }
-            ],
-            "tr": "teşhis"
           }
         },
         {
@@ -16598,59 +16487,6 @@
           }
         },
         {
-          "soru": "40. The ground was wet. It ____.",
-          "secenekler": [
-            "A) rained",
-            "B) was raining",
-            "C) had rained",
-            "D) had been raining"
-          ],
-          "cevap": "D) had been raining",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "ground",
-                "a": "yer/zemin",
-                "vurgu": true
-              },
-              {
-                "k": "was",
-                "a": "-idi",
-                "vurgu": false
-              },
-              {
-                "k": "wet.",
-                "a": "ıslak",
-                "vurgu": true
-              },
-              {
-                "k": "It",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "en": "had been + V-ing = yağıyordu (past perfect cont.)",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": true
-              },
-              {
-                "k": "raining.",
-                "a": "yağmur yağıyor",
-                "vurgu": true
-              }
-            ],
-            "tr": "Yer ıslaktı. Yağmur yağıyordu (yağmıştı)."
-          }
-        },
-        {
           "soru": "When water is heated, it ____ into gas.",
           "secenekler": [
             "turns",
@@ -16704,52 +16540,6 @@
               }
             ],
             "tr": "Su ısıtıldığında gaza dönüşür."
-          }
-        },
-        {
-          "soru": "36. She ____ her phone screen yesterday.",
-          "secenekler": [
-            "A) broke",
-            "B) was breaking",
-            "C) had broken",
-            "D) had been breaking"
-          ],
-          "cevap": "A) broke",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "a": "o (kadın)",
-                "vurgu": false
-              },
-              {
-                "k": "broke",
-                "a": "kırdı",
-                "en": "break-broke-broken (V2)",
-                "vurgu": true
-              },
-              {
-                "k": "her",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "phone",
-                "a": "telefon",
-                "vurgu": true
-              },
-              {
-                "k": "screen",
-                "a": "ekran",
-                "vurgu": true
-              },
-              {
-                "k": "yesterday.",
-                "a": "dün",
-                "vurgu": true
-              }
-            ],
-            "tr": "Dün telefonunun ekranını kırdı."
           }
         },
         {
@@ -16808,82 +16598,6 @@
               }
             ],
             "tr": "Öğretmen, zorlanan öğrencileri için büyük bir endişe gösterdi."
-          }
-        },
-        {
-          "soru": "____, the music's enchanting melody captivated the audience.",
-          "secenekler": [
-            "After you attend a mesmerizing concert",
-            "",
-            "",
-            ""
-          ],
-          "cevap": "After you attend a mesmerizing concert",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "After",
-                "a": "-den sonra",
-                "vurgu": false
-              },
-              {
-                "k": "you",
-                "vurgu": false
-              },
-              {
-                "k": "attend",
-                "a": "katılmak",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "mesmerizing",
-                "a": "büyüleyici",
-                "vurgu": true
-              },
-              {
-                "k": "concert,",
-                "a": "konser",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "music's",
-                "a": "müziğin",
-                "vurgu": true
-              },
-              {
-                "k": "enchanting",
-                "a": "büyüleyici",
-                "vurgu": true
-              },
-              {
-                "k": "melody",
-                "a": "melodi",
-                "vurgu": true
-              },
-              {
-                "k": "captivated",
-                "a": "hayran bıraktı",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "audience.",
-                "a": "izleyiciler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Büyüleyici bir konsere katıldıktan sonra, müziğin büyüleyici melodisi izleyicileri kendine hayran bıraktı."
           }
         },
         {
@@ -17433,75 +17147,6 @@
           }
         },
         {
-          "soru": "She has been ____ rare stamps since she was a teenager.",
-          "secenekler": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "cevap": "collecting",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "has",
-                "en": "has been + V-ing = -dir/-dır beri süregelen",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "en": "present perfect continuous",
-                "vurgu": true
-              },
-              {
-                "k": "collecting",
-                "a": "topluyor",
-                "vurgu": true
-              },
-              {
-                "k": "rare",
-                "a": "nadir",
-                "vurgu": true
-              },
-              {
-                "k": "stamps",
-                "a": "pullar",
-                "vurgu": true
-              },
-              {
-                "k": "since",
-                "a": "-den beri",
-                "en": "since = belirli başlangıç noktası",
-                "vurgu": true
-              },
-              {
-                "k": "she",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "teenager.",
-                "a": "genç",
-                "vurgu": true
-              }
-            ],
-            "tr": "O, gençliğinden beri nadir pullar topluyor."
-          }
-        },
-        {
           "soru": "I ____ a lost puppy on my way home.",
           "secenekler": [
             "found",
@@ -17872,78 +17517,6 @@
               }
             ],
             "tr": "Yeni program, ekip üyelerinin çoğu için uygundu."
-          }
-        },
-        {
-          "soru": "The company ____ a significant profit increase in the last quarter.",
-          "secenekler": [
-            "sees",
-            "is seeing",
-            "",
-            ""
-          ],
-          "cevap": "is seeing",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "company",
-                "a": "şirket",
-                "vurgu": true
-              },
-              {
-                "k": "is",
-                "a": "-iyor",
-                "en": "is + V-ing = present continuous",
-                "vurgu": true
-              },
-              {
-                "k": "seeing",
-                "a": "görmek",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "significant",
-                "a": "önemli",
-                "vurgu": true
-              },
-              {
-                "k": "profit",
-                "a": "kâr",
-                "vurgu": true
-              },
-              {
-                "k": "increase",
-                "a": "artış",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "last",
-                "a": "son",
-                "vurgu": false
-              },
-              {
-                "k": "quarter.",
-                "a": "çeyrek",
-                "vurgu": true
-              }
-            ],
-            "tr": "Şirket son çeyrekte önemli bir kâr artışı görüyor."
           }
         },
         {
@@ -18748,14 +18321,14 @@
           }
         },
         {
-          "soru": "22. When I ____ the room, everyone was talking.",
+          "soru": "When I ____ the room, everyone was talking.",
           "secenekler": [
-            "A) entered",
-            "B) had entered",
-            "C) had been entering",
-            "D) was entering"
+            "entered",
+            "had entered",
+            "had been entering",
+            "was entering"
           ],
-          "cevap": "D) was entering",
+          "cevap": "was entering",
           "ornek": {
             "tokenlar": [
               {
@@ -19445,65 +19018,6 @@
           }
         },
         {
-          "soru": "23. I ____ a lost puppy on my way home.",
-          "secenekler": [
-            "A) found",
-            "B) was finding",
-            "C) had found",
-            "D) had been finding"
-          ],
-          "cevap": "A) found",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "I",
-                "a": "ben",
-                "vurgu": false
-              },
-              {
-                "k": "found",
-                "a": "buldum",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "lost",
-                "a": "kayıp",
-                "vurgu": true
-              },
-              {
-                "k": "puppy",
-                "a": "köpek yavrusu",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "my",
-                "a": "benim",
-                "vurgu": false
-              },
-              {
-                "k": "way",
-                "a": "yol",
-                "vurgu": true
-              },
-              {
-                "k": "home.",
-                "a": "ev (eve)",
-                "en": "on my way home = eve giderken",
-                "vurgu": true
-              }
-            ],
-            "tr": "Eve giderken kayıp bir köpek yavrusu buldum."
-          }
-        },
-        {
           "soru": "The expert ____ the painting's value at over a million dollars.",
           "secenekler": [
             "preserved",
@@ -19567,66 +19081,6 @@
               }
             ],
             "tr": "Uzman, tablonun değerini bir milyon doların üzerinde tahmin etti."
-          }
-        },
-        {
-          "soru": "28. The children ____ because they were too tired.",
-          "secenekler": [
-            "A) didn't study",
-            "B) weren't studying",
-            "C) hadn't studied",
-            "D) hadn't been studying"
-          ],
-          "cevap": "C) hadn't studied",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "children",
-                "a": "çocuklar",
-                "vurgu": true
-              },
-              {
-                "k": "hadn't",
-                "a": "-memişti",
-                "en": "hadn't + V3 = past perfect olumsuz",
-                "vurgu": true
-              },
-              {
-                "k": "studied",
-                "a": "ders çalıştı (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü/-dığı için",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "were",
-                "a": "-di (idiler)",
-                "vurgu": false
-              },
-              {
-                "k": "too",
-                "a": "çok/fazla",
-                "vurgu": true
-              },
-              {
-                "k": "tired.",
-                "a": "yorgun",
-                "vurgu": true
-              }
-            ],
-            "tr": "Çocuklar çok yorgun oldukları için ders çalışmamışlardı."
           }
         },
         {
@@ -21206,14 +20660,14 @@
           }
         },
         {
-          "soru": "39. They were all quiet because John ____ an important email.",
+          "soru": "They were all quiet because John ____ an important email.",
           "secenekler": [
-            "A) wrote",
-            "B) was writing",
-            "C) had written",
-            "D) had been writing"
+            "wrote",
+            "was writing",
+            "had written",
+            "had been writing"
           ],
-          "cevap": "D) had been writing",
+          "cevap": "had been writing",
           "ornek": {
             "tokenlar": [
               {
@@ -21427,78 +20881,6 @@
               }
             ],
             "tr": "Gürültü bodrumdan geldi ve evdeki herkesi ürküttü."
-          }
-        },
-        {
-          "soru": "38. They ____ all night and were exhausted in the morning.",
-          "secenekler": [
-            "A) had danced",
-            "B) danced",
-            "C) were dancing",
-            "D) had been dancing"
-          ],
-          "cevap": "D) had been dancing",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "en": "had been + V-ing = -mekteydi (past perfect cont.)",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": true
-              },
-              {
-                "k": "dancing",
-                "a": "dans ediyor",
-                "vurgu": true
-              },
-              {
-                "k": "all",
-                "a": "bütün",
-                "vurgu": false
-              },
-              {
-                "k": "night",
-                "a": "gece",
-                "vurgu": true
-              },
-              {
-                "k": "and",
-                "a": "ve",
-                "vurgu": false
-              },
-              {
-                "k": "were",
-                "a": "-idiler",
-                "vurgu": false
-              },
-              {
-                "k": "exhausted",
-                "a": "bitkin",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "morning.",
-                "a": "sabah",
-                "vurgu": true
-              }
-            ],
-            "tr": "Bütün gece dans etmişlerdi ve sabah bitkin haldeydiler."
           }
         },
         {
@@ -21970,86 +21352,6 @@
           }
         },
         {
-          "soru": "The athletes train hard because the competition is very ____ at the national level.",
-          "secenekler": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "cevap": "competitive",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "athletes",
-                "a": "sporcular",
-                "vurgu": true
-              },
-              {
-                "k": "train",
-                "a": "antrenman yapar",
-                "vurgu": true
-              },
-              {
-                "k": "hard",
-                "a": "sıkı",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "competition",
-                "a": "rekabet",
-                "vurgu": true
-              },
-              {
-                "k": "is",
-                "vurgu": false
-              },
-              {
-                "k": "very",
-                "a": "çok",
-                "vurgu": false
-              },
-              {
-                "k": "competitive",
-                "a": "rekabetçi",
-                "vurgu": true
-              },
-              {
-                "k": "at",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "national",
-                "a": "ulusal",
-                "vurgu": true
-              },
-              {
-                "k": "level.",
-                "a": "düzey",
-                "vurgu": true
-              }
-            ],
-            "tr": "Sporcular sıkı çalışıyor çünkü rekabet ulusal düzeyde çok yoğun (rekabetçi)."
-          }
-        },
-        {
           "soru": "He ____ less than an hour when he ran out of petrol.",
           "secenekler": [
             "drove",
@@ -22364,55 +21666,6 @@
               }
             ],
             "tr": "Bu kursu bitirdiğimde, yirmi yıldır İngilizce öğreniyor olacağım."
-          }
-        },
-        {
-          "soru": "37. They ____ to Europe before 2020.",
-          "secenekler": [
-            "A) travelled",
-            "B) were travelling",
-            "C) had travelled",
-            "D) had been travelling"
-          ],
-          "cevap": "C) had travelled",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "en": "had + V3 = -mişti (past perfect)",
-                "vurgu": true
-              },
-              {
-                "k": "travelled",
-                "a": "seyahat etmişti",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "Europe",
-                "a": "Avrupa",
-                "vurgu": true
-              },
-              {
-                "k": "before",
-                "a": "önce",
-                "vurgu": true
-              },
-              {
-                "k": "2020.",
-                "a": "2020",
-                "vurgu": false
-              }
-            ],
-            "tr": "2020'den önce Avrupa'ya seyahat etmişlerdi."
           }
         },
         {
@@ -23649,81 +22902,6 @@
           }
         },
         {
-          "soru": "32. By 1903, the Wright brothers ____ the first powered flight successfully.",
-          "secenekler": [
-            "A) conducted",
-            "B) were conducting",
-            "C) had conducted",
-            "D) had been conducting"
-          ],
-          "cevap": "C) had conducted",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "By",
-                "a": "-e kadar/gelindiğinde",
-                "en": "by + zaman = o zamana kadar",
-                "vurgu": true
-              },
-              {
-                "k": "1903,",
-                "a": "1903",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "Wright",
-                "a": "Wright",
-                "vurgu": false
-              },
-              {
-                "k": "brothers",
-                "a": "kardeşler",
-                "vurgu": true
-              },
-              {
-                "k": "had",
-                "a": "-mişti",
-                "en": "had + V3 = past perfect",
-                "vurgu": true
-              },
-              {
-                "k": "conducted",
-                "a": "gerçekleştirdi (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "first",
-                "a": "ilk",
-                "vurgu": true
-              },
-              {
-                "k": "powered",
-                "a": "motorlu",
-                "vurgu": true
-              },
-              {
-                "k": "flight",
-                "a": "uçuş",
-                "vurgu": true
-              },
-              {
-                "k": "successfully.",
-                "a": "başarıyla",
-                "vurgu": true
-              }
-            ],
-            "tr": "1903'e gelindiğinde Wright kardeşler ilk motorlu uçuşu başarıyla gerçekleştirmişlerdi."
-          }
-        },
-        {
           "soru": "The milk smelt bad because I ____ to put it in the fridge.",
           "secenekler": [
             "forgot",
@@ -24271,91 +23449,6 @@
               }
             ],
             "tr": "Beni saat 8'den önce arama, akşam yemeği yiyor olacağız."
-          }
-        },
-        {
-          "soru": "He was ____ responsible for the delay because he didn't submit the report on time.",
-          "secenekler": [
-            "recklessly",
-            "randomly",
-            "",
-            ""
-          ],
-          "cevap": "recklessly",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "vurgu": false
-              },
-              {
-                "k": "recklessly",
-                "a": "dikkatsizce",
-                "vurgu": true
-              },
-              {
-                "k": "responsible",
-                "a": "sorumlu",
-                "vurgu": true,
-                "en": "responsible for = -den sorumlu"
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "delay",
-                "a": "gecikme",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü",
-                "vurgu": false
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "didn't",
-                "vurgu": false
-              },
-              {
-                "k": "submit",
-                "a": "teslim etmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "report",
-                "a": "rapor",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "time.",
-                "a": "zamanında",
-                "vurgu": true,
-                "en": "on time = zamanında"
-              }
-            ],
-            "tr": "Raporu zamanında teslim etmediği için gecikmeden dikkatsizce sorumluydu."
           }
         },
         {
@@ -25024,7 +24117,7 @@
           }
         },
         {
-          "soru": "In medicine, researchers ____ that the body is capable (2) ____ healing itself.",
+          "soru": "In medicine, researchers ____ that the body is capable ____ healing itself.",
           "secenekler": [
             "had discovered",
             "had been discovering",
@@ -25710,103 +24803,6 @@
             ],
             "tr": "Eski evi gördüğünde çocukluk günlerini düşündü; anılar çok canlıydı."
           }
-        },
-        {
-          "soru": "The construction is slow but steady; by the end of this month, they ____ the foundation.",
-          "secenekler": [
-            "will lay",
-            "will be laying",
-            "",
-            ""
-          ],
-          "cevap": "will lay",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "construction",
-                "a": "inşaat",
-                "vurgu": true
-              },
-              {
-                "k": "is",
-                "a": "-dir",
-                "vurgu": false
-              },
-              {
-                "k": "slow",
-                "a": "yavaş",
-                "vurgu": true
-              },
-              {
-                "k": "but",
-                "a": "ama",
-                "vurgu": false
-              },
-              {
-                "k": "steady;",
-                "a": "istikrarlı/sabit",
-                "vurgu": true
-              },
-              {
-                "k": "by",
-                "a": "-e kadar",
-                "en": "by + zaman = o zamana kadar",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "end",
-                "a": "son",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "this",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "month,",
-                "a": "ay",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "will",
-                "a": "-acak",
-                "vurgu": true
-              },
-              {
-                "k": "lay",
-                "a": "atmak/sermek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "foundation.",
-                "a": "temel",
-                "vurgu": true
-              }
-            ],
-            "tr": "İnşaat yavaş ama istikrarlı; bu ayın sonunda temeli atacaklar."
-          }
         }
       ]
     },
@@ -26058,7 +25054,7 @@
           }
         },
         {
-          "soru": "In science, scientists (6) ____ to get rid of things that might mess up their tests.",
+          "soru": "In science, scientists ____ to get rid of things that might mess up their tests.",
           "secenekler": [
             "had tried",
             "tried",
@@ -26236,89 +25232,6 @@
               }
             ],
             "tr": "Eski fotoğraf albümlerini karıştırıyorlardı; her resim bir sürü anıyı geri getiriyordu."
-          }
-        },
-        {
-          "soru": "30. She was waiting for the bus when she ____ her friend across the street.",
-          "secenekler": [
-            "A) had seen",
-            "B) had been seeing",
-            "C) saw",
-            "D) was seeing"
-          ],
-          "cevap": "C) saw",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "a": "o (kadın)",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "-yordu",
-                "en": "was + V-ing = past continuous",
-                "vurgu": true
-              },
-              {
-                "k": "waiting",
-                "a": "bekliyor",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "bus",
-                "a": "otobüs",
-                "vurgu": true
-              },
-              {
-                "k": "when",
-                "a": "-dığında/-ken",
-                "vurgu": true
-              },
-              {
-                "k": "she",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "saw",
-                "a": "gördü",
-                "vurgu": true
-              },
-              {
-                "k": "her",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "friend",
-                "a": "arkadaş",
-                "vurgu": true
-              },
-              {
-                "k": "across",
-                "a": "karşısında",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "street.",
-                "a": "cadde/sokak",
-                "vurgu": true
-              }
-            ],
-            "tr": "O, otobüsü beklerken caddenin karşısında arkadaşını gördü."
           }
         },
         {
@@ -26559,75 +25472,6 @@
             ],
             "tr": "James otuz yaşına geldiğinde dünyayı dolaşmıştı."
           }
-        },
-        {
-          "soru": "31. While they ____ through the countryside, they saw a deer.",
-          "secenekler": [
-            "A) drove",
-            "B) had driven",
-            "C) were driving",
-            "D) had been driving"
-          ],
-          "cevap": "C) were driving",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "While",
-                "a": "-iken",
-                "en": "while + past continuous",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "were",
-                "a": "-yordu",
-                "vurgu": true
-              },
-              {
-                "k": "driving",
-                "a": "araba sürüyor",
-                "vurgu": true
-              },
-              {
-                "k": "through",
-                "a": "içinden/boyunca",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "countryside,",
-                "a": "kırsal kesim",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "saw",
-                "a": "gördü",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "deer.",
-                "a": "geyik",
-                "vurgu": true
-              }
-            ],
-            "tr": "Kırsal kesimde araba sürerlerken bir geyik gördüler."
-          }
         }
       ]
     },
@@ -26704,80 +25548,6 @@
               }
             ],
             "tr": "Dün, alışveriş merkezinde alışveriş yaparken arkadaşını gördü."
-          }
-        },
-        {
-          "soru": "25. They ____ happily for hours before they noticed the time.",
-          "secenekler": [
-            "A) were chatting",
-            "B) chatted",
-            "C) had chatted",
-            "D) had been chatting"
-          ],
-          "cevap": "D) had been chatting",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-yordu (öncesinde)",
-                "en": "had been + V-ing = past perfect continuous",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": true
-              },
-              {
-                "k": "chatting",
-                "a": "sohbet ediyor",
-                "vurgu": true
-              },
-              {
-                "k": "happily",
-                "a": "neşeyle",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "a": "-dir/boyunca",
-                "vurgu": false
-              },
-              {
-                "k": "hours",
-                "a": "saatler",
-                "vurgu": true
-              },
-              {
-                "k": "before",
-                "a": "-den önce",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "noticed",
-                "a": "fark etti",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "time.",
-                "a": "zaman/saat",
-                "vurgu": true
-              }
-            ],
-            "tr": "Saati fark etmeden önce saatlerce neşeyle sohbet ediyorlardı."
           }
         },
         {
@@ -26932,85 +25702,6 @@
               }
             ],
             "tr": "Erkek kardeşi akşam yemeğini pişirirken o en sevdiği televizyon programını izliyordu."
-          }
-        },
-        {
-          "soru": "35. The couple ____ for hours by the time we joined them.",
-          "secenekler": [
-            "A) argued",
-            "B) was arguing",
-            "C) had argued",
-            "D) had been arguing"
-          ],
-          "cevap": "D) had been arguing",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "couple",
-                "a": "çift",
-                "vurgu": true
-              },
-              {
-                "k": "had",
-                "a": "-yordu (öncesinde)",
-                "en": "had been + V-ing = past perfect continuous",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": true
-              },
-              {
-                "k": "arguing",
-                "a": "tartışıyor",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "a": "-dir/boyunca",
-                "vurgu": false
-              },
-              {
-                "k": "hours",
-                "a": "saatler",
-                "vurgu": true
-              },
-              {
-                "k": "by",
-                "a": "-e kadar",
-                "en": "by the time = -dığı zamana kadar",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "time",
-                "a": "zaman",
-                "vurgu": true
-              },
-              {
-                "k": "we",
-                "a": "biz",
-                "vurgu": false
-              },
-              {
-                "k": "joined",
-                "a": "katıldı",
-                "vurgu": true
-              },
-              {
-                "k": "them.",
-                "a": "onlara",
-                "vurgu": false
-              }
-            ],
-            "tr": "Biz onlara katıldığımızda çift saatlerdir tartışıyordu."
           }
         },
         {
@@ -27855,81 +26546,6 @@
           }
         },
         {
-          "soru": "27. James ____ around the world by the time he was thirty.",
-          "secenekler": [
-            "A) travelled",
-            "B) had travelled",
-            "C) was travelling",
-            "D) has been travelling"
-          ],
-          "cevap": "B) had travelled",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "James",
-                "a": "James",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-mişti",
-                "en": "had + V3 = past perfect",
-                "vurgu": true
-              },
-              {
-                "k": "travelled",
-                "a": "seyahat etti (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "around",
-                "a": "etrafında",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "world",
-                "a": "dünya",
-                "vurgu": true
-              },
-              {
-                "k": "by",
-                "a": "-e kadar",
-                "en": "by the time = -dığı zamana kadar",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "time",
-                "a": "zaman",
-                "vurgu": true
-              },
-              {
-                "k": "he",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "-di (idi)",
-                "vurgu": false
-              },
-              {
-                "k": "thirty.",
-                "a": "otuz",
-                "vurgu": true
-              }
-            ],
-            "tr": "James otuz yaşına geldiğinde dünyayı dolaşmıştı."
-          }
-        },
-        {
           "soru": "While I ____ to music, my brother came into my room without knocking.",
           "secenekler": [
             "listened",
@@ -28089,87 +26705,6 @@
               }
             ],
             "tr": "Ebeveynler son kazadan sonra oyun alanının güvenliği konusunda endişe gösterdiler."
-          }
-        },
-        {
-          "soru": "34. She was watching her favourite TV show while her brother ____ dinner.",
-          "secenekler": [
-            "A) cooked",
-            "B) was cooking",
-            "C) had cooked",
-            "D) had been cooking"
-          ],
-          "cevap": "B) was cooking",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "a": "o (kadın)",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "-yordu",
-                "en": "was + V-ing = past continuous",
-                "vurgu": true
-              },
-              {
-                "k": "watching",
-                "a": "izliyor",
-                "vurgu": true
-              },
-              {
-                "k": "her",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "favourite",
-                "a": "en sevdiği",
-                "vurgu": true
-              },
-              {
-                "k": "TV",
-                "a": "TV",
-                "vurgu": true
-              },
-              {
-                "k": "show",
-                "a": "program",
-                "vurgu": true
-              },
-              {
-                "k": "while",
-                "a": "-iken",
-                "vurgu": true
-              },
-              {
-                "k": "her",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "brother",
-                "a": "erkek kardeş",
-                "vurgu": true
-              },
-              {
-                "k": "was",
-                "a": "-yordu",
-                "vurgu": true
-              },
-              {
-                "k": "cooking",
-                "a": "pişiriyor",
-                "vurgu": true
-              },
-              {
-                "k": "dinner.",
-                "a": "akşam yemeği",
-                "vurgu": true
-              }
-            ],
-            "tr": "Erkek kardeşi akşam yemeğini pişirirken o en sevdiği TV programını izliyordu."
           }
         },
         {
@@ -28864,93 +27399,6 @@
           }
         },
         {
-          "soru": "29. The employees ____ on the project for weeks before they finally completed it.",
-          "secenekler": [
-            "A) worked",
-            "B) were working",
-            "C) had worked",
-            "D) had been working"
-          ],
-          "cevap": "D) had been working",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "employees",
-                "a": "çalışanlar",
-                "vurgu": true
-              },
-              {
-                "k": "had",
-                "a": "-yordu (öncesinde)",
-                "en": "had been + V-ing = past perfect continuous",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": true
-              },
-              {
-                "k": "working",
-                "a": "çalışıyor",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "project",
-                "a": "proje",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "a": "-dir/boyunca",
-                "vurgu": false
-              },
-              {
-                "k": "weeks",
-                "a": "haftalar",
-                "vurgu": true
-              },
-              {
-                "k": "before",
-                "a": "-den önce",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "finally",
-                "a": "nihayet",
-                "vurgu": false
-              },
-              {
-                "k": "completed",
-                "a": "tamamladı",
-                "vurgu": true
-              },
-              {
-                "k": "it.",
-                "a": "onu",
-                "vurgu": false
-              }
-            ],
-            "tr": "Çalışanlar projeyi nihayet tamamlamadan önce haftalarca üzerinde çalışıyorlardı."
-          }
-        },
-        {
           "soru": "The boat ____ almost immediately after it had struck the rock.",
           "secenekler": [
             "sank",
@@ -29024,171 +27472,6 @@
     {
       "ad": "Test 19",
       "sorular": [
-        {
-          "soru": "The negotiator had been ____ the crisis for hours; a resolution came unexpectedly.",
-          "secenekler": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "cevap": "dealing with",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "negotiator",
-                "a": "müzakereci",
-                "vurgu": true
-              },
-              {
-                "k": "had",
-                "vurgu": false
-              },
-              {
-                "k": "been",
-                "vurgu": false
-              },
-              {
-                "k": "dealing",
-                "a": "uğraşıyordu",
-                "vurgu": true,
-                "en": "had been + V-ing = uğraşıyordu (geçmişte süregelen)"
-              },
-              {
-                "k": "with",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "crisis",
-                "a": "kriz",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "hours;",
-                "a": "saatlerce",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "resolution",
-                "a": "çözüm",
-                "vurgu": true
-              },
-              {
-                "k": "came",
-                "a": "geldi",
-                "vurgu": true
-              },
-              {
-                "k": "unexpectedly.",
-                "a": "beklenmedik şekilde",
-                "vurgu": true
-              }
-            ],
-            "tr": "Müzakereci saatlerce krizle uğraşıyordu; çözüm beklenmedik bir şekilde geldi."
-          }
-        },
-        {
-          "soru": "24. While I ____ to music, my brother came into my room without knocking.",
-          "secenekler": [
-            "A) listened",
-            "B) was listening",
-            "C) had listened",
-            "D) had been listening"
-          ],
-          "cevap": "B) was listening",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "While",
-                "a": "-iken",
-                "en": "while + past continuous",
-                "vurgu": true
-              },
-              {
-                "k": "I",
-                "a": "ben",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "-yordu",
-                "vurgu": true
-              },
-              {
-                "k": "listening",
-                "a": "dinliyor",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "music,",
-                "a": "müzik",
-                "vurgu": true
-              },
-              {
-                "k": "my",
-                "a": "benim",
-                "vurgu": false
-              },
-              {
-                "k": "brother",
-                "a": "erkek kardeş",
-                "vurgu": true
-              },
-              {
-                "k": "came",
-                "a": "geldi",
-                "vurgu": true
-              },
-              {
-                "k": "into",
-                "a": "-in içine",
-                "vurgu": false
-              },
-              {
-                "k": "my",
-                "a": "benim",
-                "vurgu": false
-              },
-              {
-                "k": "room",
-                "a": "oda",
-                "vurgu": true
-              },
-              {
-                "k": "without",
-                "a": "-madan/-meden",
-                "en": "without + V-ing = -madan",
-                "vurgu": true
-              },
-              {
-                "k": "knocking.",
-                "a": "kapı çalma",
-                "vurgu": true
-              }
-            ],
-            "tr": "Ben müzik dinlerken kardeşim kapıyı çalmadan odama girdi."
-          }
-        },
         {
           "soru": "They had made ____ progress on the project before the deadline.",
           "secenekler": [
@@ -29349,95 +27632,6 @@
               }
             ],
             "tr": "Zirveye ulaştığımızda saatlerdir tırmanıyorduk ve oldukça yorgunduk."
-          }
-        },
-        {
-          "soru": "21. Oliver ____ her for a long time before he finally got married to her.",
-          "secenekler": [
-            "A) knew",
-            "B) was knowing",
-            "C) had known",
-            "D) had been knowing"
-          ],
-          "cevap": "C) had known",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Oliver",
-                "a": "Oliver",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-mişti (geçmişin geçmişi)",
-                "en": "had + V3 = past perfect",
-                "vurgu": true
-              },
-              {
-                "k": "known",
-                "a": "tanımak (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "her",
-                "a": "onu",
-                "vurgu": false
-              },
-              {
-                "k": "for",
-                "a": "-dir/süredir",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "long",
-                "a": "uzun",
-                "vurgu": false
-              },
-              {
-                "k": "time",
-                "a": "süre",
-                "vurgu": false
-              },
-              {
-                "k": "before",
-                "a": "-den önce",
-                "vurgu": true
-              },
-              {
-                "k": "he",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "finally",
-                "a": "nihayet",
-                "vurgu": false
-              },
-              {
-                "k": "got",
-                "a": "-di (oldu)",
-                "vurgu": true
-              },
-              {
-                "k": "married",
-                "a": "evli",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "her.",
-                "a": "ona",
-                "vurgu": false
-              }
-            ],
-            "tr": "Oliver onunla nihayet evlenmeden önce onu uzun süredir tanıyordu."
           }
         },
         {
@@ -29930,110 +28124,6 @@
           }
         },
         {
-          "soru": "____ ____ when ... (She needed some exercise because she ____ in an office all day in front of a computer.)",
-          "secenekler": [
-            "sat",
-            "had sat",
-            "was sitting",
-            "had been sitting"
-          ],
-          "cevap": "had been sitting",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "vurgu": false
-              },
-              {
-                "k": "needed",
-                "a": "ihtiyacı vardı",
-                "vurgu": true
-              },
-              {
-                "k": "some",
-                "a": "biraz",
-                "vurgu": false
-              },
-              {
-                "k": "exercise",
-                "a": "egzersiz",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü",
-                "vurgu": false
-              },
-              {
-                "k": "she",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-iyordu (geçmişin sürekliliği)",
-                "en": "had been + V-ing = past perfect continuous",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": true
-              },
-              {
-                "k": "sitting",
-                "a": "oturmak",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "an",
-                "vurgu": false
-              },
-              {
-                "k": "office",
-                "a": "ofis",
-                "vurgu": true
-              },
-              {
-                "k": "all",
-                "a": "bütün",
-                "vurgu": false
-              },
-              {
-                "k": "day",
-                "a": "gün",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "front",
-                "a": "ön",
-                "en": "in front of = -in önünde",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "computer.",
-                "a": "bilgisayar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Biraz egzersize ihtiyacı vardı çünkü bütün gün bir ofiste bilgisayar başında oturuyordu."
-          }
-        },
-        {
           "soru": "Until recently, few people with Zika virus ____ even five years after diagnosis.",
           "secenekler": [
             "were surviving",
@@ -30386,102 +28476,6 @@
           }
         },
         {
-          "soru": "33. While the scientists were studying a virus, they ____ new facts about the structure of the cell.",
-          "secenekler": [
-            "A) discovered",
-            "B) were discovering",
-            "C) had discovered",
-            "D) had been discovering"
-          ],
-          "cevap": "A) discovered",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "While",
-                "a": "-iken",
-                "en": "while + past continuous",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "scientists",
-                "a": "bilim insanları",
-                "vurgu": true
-              },
-              {
-                "k": "were",
-                "a": "-yordu",
-                "vurgu": true
-              },
-              {
-                "k": "studying",
-                "a": "inceliyor",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "virus,",
-                "a": "virüs",
-                "vurgu": true
-              },
-              {
-                "k": "they",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "discovered",
-                "a": "keşfetti",
-                "vurgu": true
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": true
-              },
-              {
-                "k": "facts",
-                "a": "gerçekler",
-                "vurgu": true
-              },
-              {
-                "k": "about",
-                "a": "hakkında",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "structure",
-                "a": "yapı",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "cell.",
-                "a": "hücre",
-                "vurgu": true
-              }
-            ],
-            "tr": "Bilim insanları bir virüsü incelerken, hücrenin yapısı hakkında yeni gerçekler keşfettiler."
-          }
-        },
-        {
           "soru": "She had been ____ practising the piano for months before the recital.",
           "secenekler": [
             "commonly",
@@ -30723,12 +28717,7 @@
             ],
             "tr": "Jane, üniversitede 4 yıldan fazla okuduktan sonra 2011'de bir diploma aldı."
           }
-        }
-      ]
-    },
-    {
-      "ad": "Test 21",
-      "sorular": [
+        },
         {
           "soru": "By the time the movie ____, we had already eaten all the popcorn.",
           "secenekler": [
@@ -30804,85 +28793,6 @@
               }
             ],
             "tr": "Film başladığında, biz çoktan bütün patlamış mısırı yemiştik."
-          }
-        },
-        {
-          "soru": "26. By the time the movie ____, we had already eaten all the popcorn.",
-          "secenekler": [
-            "A) had been starting",
-            "B) had started",
-            "C) was starting",
-            "D) started"
-          ],
-          "cevap": "D) started",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "By",
-                "a": "-e kadar",
-                "en": "by the time = -dığı zamana kadar",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "time",
-                "a": "zaman",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "movie",
-                "a": "film",
-                "vurgu": true
-              },
-              {
-                "k": "started,",
-                "a": "başladı",
-                "vurgu": true
-              },
-              {
-                "k": "we",
-                "a": "biz",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-mişti",
-                "en": "had + V3 = past perfect",
-                "vurgu": true
-              },
-              {
-                "k": "already",
-                "a": "çoktan/zaten",
-                "vurgu": true
-              },
-              {
-                "k": "eaten",
-                "a": "yemek (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "all",
-                "a": "hepsi/bütün",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "popcorn.",
-                "a": "patlamış mısır",
-                "vurgu": true
-              }
-            ],
-            "tr": "Film başladığında biz çoktan bütün patlamış mısırı yemiştik."
           }
         },
         {

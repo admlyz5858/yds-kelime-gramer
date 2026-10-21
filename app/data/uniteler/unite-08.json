@@ -21444,215 +21444,6 @@
       "ad": "Test 1",
       "sorular": [
         {
-          "soru": "(Q5) ____",
-          "secenekler": [
-            "to",
-            "by",
-            "as",
-            "of"
-          ],
-          "cevap": "by",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Scientists",
-                "a": "bilim insanları",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false,
-                "en": "have been = -dir/uzun süredir (present perfect)"
-              },
-              {
-                "k": "long",
-                "a": "uzun zamandır",
-                "vurgu": false
-              },
-              {
-                "k": "been",
-                "vurgu": false
-              },
-              {
-                "k": "intrigued",
-                "a": "meraklandırılmış",
-                "en": "be intrigued by = ... tarafından meraklandırılmak (passive)",
-                "vurgu": true
-              },
-              {
-                "k": "by",
-                "a": "tarafından",
-                "vurgu": false
-              },
-              {
-                "k": "this",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "mysterious",
-                "a": "gizemli",
-                "vurgu": true
-              },
-              {
-                "k": "element.",
-                "a": "element",
-                "vurgu": true
-              }
-            ],
-            "tr": "Bilim insanları uzun zamandır bu gizemli element tarafından meraklandırılmıştır."
-          }
-        },
-        {
-          "soru": "____ move",
-          "secenekler": [
-            "",
-            "may have moved",
-            "move",
-            "were moving"
-          ],
-          "cevap": "move",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Planets",
-                "a": "gezegenler",
-                "vurgu": true
-              },
-              {
-                "k": "move",
-                "a": "hareket etmek",
-                "en": "move = geniş zaman (bilimsel gerçek)",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "elliptical",
-                "a": "eliptik",
-                "vurgu": true
-              },
-              {
-                "k": "orbits",
-                "a": "yörüngeler",
-                "vurgu": true
-              },
-              {
-                "k": "around",
-                "a": "etrafında",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "Sun.",
-                "a": "Güneş",
-                "vurgu": true
-              }
-            ],
-            "tr": "Gezegenler eliptik yörüngelerde hareket eder."
-          }
-        },
-        {
-          "soru": "____",
-          "secenekler": [
-            "must have undergone",
-            "had undergone",
-            "is undergoing",
-            "undergoes"
-          ],
-          "cevap": "must have undergone",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "must",
-                "a": "-mış olmalı",
-                "en": "must have + V3 = geçmişe kesin tahmin",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "a": "-mış",
-                "en": "must have + V3 = -mış olmalı",
-                "vurgu": true
-              },
-              {
-                "k": "undergone",
-                "a": "geçirmiş (V3)",
-                "en": "undergo-underwent-undergone",
-                "vurgu": true
-              }
-            ],
-            "tr": "geçirmiş olmalı"
-          }
-        },
-        {
-          "soru": "\"yürüyemez\" çevirisi hangisidir?",
-          "secenekler": [
-            "didn't have to walk",
-            "can't walk",
-            "",
-            ""
-          ],
-          "cevap": "can't walk",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-emez",
-                "en": "can't = yeteneksizlik/olumsuz",
-                "vurgu": true
-              },
-              {
-                "k": "walk.",
-                "a": "yürümek",
-                "vurgu": true
-              }
-            ],
-            "tr": "O yürüyemez."
-          }
-        },
-        {
-          "soru": "\"yürüyemez\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "didn't have to walk",
-            "can't walk",
-            "",
-            ""
-          ],
-          "cevap": "can't walk",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-emez",
-                "en": "can't = yapamamak (yetenek yokluğu)",
-                "vurgu": true
-              },
-              {
-                "k": "walk.",
-                "a": "yürümek",
-                "vurgu": true
-              }
-            ],
-            "tr": "Yürüyemez."
-          }
-        },
-        {
           "soru": "\"may divide\" çevirisi hangisidir?",
           "secenekler": [
             "bölmeli",
@@ -21707,44 +21498,6 @@
               }
             ],
             "tr": "O reddederdi."
-          }
-        },
-        {
-          "soru": "(stem kesik) ____ ",
-          "secenekler": [
-            "(seçenek kesik)",
-            "may have moved",
-            "move",
-            "were moving"
-          ],
-          "cevap": "may have moved",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "(stem",
-                "vurgu": false
-              },
-              {
-                "k": "kesik)",
-                "vurgu": false
-              },
-              {
-                "k": "may",
-                "a": "-mış olabilir",
-                "en": "may have + V3 = geçmiş olasılık",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "moved",
-                "a": "hareket etti/taşındı",
-                "vurgu": true
-              }
-            ],
-            "tr": "(cümle kesik) hareket etmiş olabilir"
           }
         },
         {
@@ -21881,12 +21634,7 @@
             ],
             "tr": "Şirket rekabetçi kalmak için yeni pazarlara genişlemeli."
           }
-        }
-      ]
-    },
-    {
-      "ad": "Test 2",
-      "sorular": [
+        },
         {
           "soru": "\"azaltmalıydı\" çevirisi hangisidir?",
           "secenekler": [
@@ -22157,7 +21905,7 @@
           }
         },
         {
-          "soru": "20. \"should melt\" çevirisi hangisidir?",
+          "soru": "\"should melt\" çevirisi hangisidir?",
           "secenekler": [
             "erimeliydi",
             "eriyebilir",
@@ -22209,65 +21957,6 @@
               }
             ],
             "tr": "Sıcaklık yükselince buz erimeli."
-          }
-        },
-        {
-          "soru": "21. \"may divide\" çevirisi hangisidir?",
-          "secenekler": [
-            "bölmeli",
-            "bölebilirdi",
-            "bölebilir",
-            "bölmek zorunda"
-          ],
-          "cevap": "bölebilir",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "teacher",
-                "a": "öğretmen",
-                "vurgu": true
-              },
-              {
-                "k": "may",
-                "a": "-ebilir",
-                "en": "may = -ebilir (olasılık/izin)",
-                "vurgu": true
-              },
-              {
-                "k": "divide",
-                "a": "bölmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "class",
-                "a": "sınıf",
-                "vurgu": true
-              },
-              {
-                "k": "into",
-                "a": "-e (içine)",
-                "vurgu": false
-              },
-              {
-                "k": "smaller",
-                "a": "daha küçük",
-                "vurgu": false
-              },
-              {
-                "k": "groups.",
-                "a": "gruplar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Öğretmen sınıfı daha küçük gruplara bölebilir."
           }
         },
         {
@@ -22392,7 +22081,7 @@
       ]
     },
     {
-      "ad": "Test 3",
+      "ad": "Test 2",
       "sorular": [
         {
           "soru": "\"reddederdi\" çevirisi ____ hangisidir?",
@@ -22879,7 +22568,7 @@
           }
         },
         {
-          "soru": "26. \"used to emit\" çevirisi hangisidir?",
+          "soru": "\"used to emit\" çevirisi hangisidir?",
           "secenekler": [
             "yayacaktı",
             "yayardı",
@@ -22982,7 +22671,7 @@
       ]
     },
     {
-      "ad": "Test 4",
+      "ad": "Test 3",
       "sorular": [
         {
           "soru": "\"must delay\" çevirisi ____ hangisidir?",
@@ -23402,7 +23091,7 @@
           }
         },
         {
-          "soru": "27. \"mustn't sustain\" çevirisi hangisidir?",
+          "soru": "\"mustn't sustain\" çevirisi hangisidir?",
           "secenekler": [
             "sürdürmemeli",
             "sürdürmeyecekti",
@@ -23488,7 +23177,7 @@
       ]
     },
     {
-      "ad": "Test 5",
+      "ad": "Test 4",
       "sorular": [
         {
           "soru": "\"başa çıkmalı\" çevirisi hangisidir?",
@@ -23529,65 +23218,6 @@
               }
             ],
             "tr": "O bununla başa çıkmalı."
-          }
-        },
-        {
-          "soru": "\"used to emit\" çevirisi hangisidir?",
-          "secenekler": [
-            "yayacaktı",
-            "yayardı",
-            "yaysa iyi olur",
-            "erimeli / erise iyi olur"
-          ],
-          "cevap": "yayardı",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "old",
-                "a": "eski",
-                "vurgu": false
-              },
-              {
-                "k": "factory",
-                "a": "fabrika",
-                "vurgu": true
-              },
-              {
-                "k": "used",
-                "a": "-ardı/eskiden",
-                "en": "used to = eskiden -ardı",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "emit",
-                "a": "yaymak",
-                "vurgu": true
-              },
-              {
-                "k": "thick",
-                "a": "yoğun/kalın",
-                "vurgu": true
-              },
-              {
-                "k": "black",
-                "a": "siyah",
-                "vurgu": false
-              },
-              {
-                "k": "smoke.",
-                "a": "duman",
-                "vurgu": true
-              }
-            ],
-            "tr": "Eski fabrika yoğun siyah duman yayardı."
           }
         },
         {
@@ -23698,7 +23328,7 @@
           }
         },
         {
-          "soru": "3. \"yürüyemez\" çevirisi hangisidir? ____",
+          "soru": "\"yürüyemez\" çevirisi hangisidir? ____",
           "secenekler": [
             "didn't have to walk",
             "can't walk",
@@ -23729,7 +23359,7 @@
           }
         },
         {
-          "soru": "20. \"should melt\" çevirisi hangisidir? ____",
+          "soru": "\"should melt\" çevirisi hangisidir? ____",
           "secenekler": [
             "erimeliydi",
             "eriyebilir",
@@ -23783,7 +23413,7 @@
           }
         },
         {
-          "soru": "21. \"may divide\" çevirisi hangisidir? ____",
+          "soru": "\"may divide\" çevirisi hangisidir? ____",
           "secenekler": [
             "bölmeli",
             "bölebilirdi",
@@ -24000,7 +23630,7 @@
       ]
     },
     {
-      "ad": "Test 6",
+      "ad": "Test 5",
       "sorular": [
         {
           "soru": "\"would admire\" çevirisi ____ hangisidir?",
@@ -24039,51 +23669,6 @@
               }
             ],
             "tr": "Manzaraya hayran olurdu."
-          }
-        },
-        {
-          "soru": "...unlike most metals which are (3) ____.",
-          "secenekler": [
-            "solid",
-            "fluid",
-            "volatile",
-            "soft"
-          ],
-          "cevap": "solid",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "...unlike",
-                "a": "aksine",
-                "vurgu": true,
-                "en": "unlike = ...nin aksine"
-              },
-              {
-                "k": "most",
-                "a": "çoğu",
-                "vurgu": false
-              },
-              {
-                "k": "metals",
-                "a": "metaller",
-                "vurgu": true
-              },
-              {
-                "k": "which",
-                "vurgu": false,
-                "en": "which = ...olan (sıfat cümlesi)"
-              },
-              {
-                "k": "are",
-                "vurgu": false
-              },
-              {
-                "k": "solid.",
-                "a": "katı",
-                "vurgu": true
-              }
-            ],
-            "tr": "...katı olan çoğu metalin aksine."
           }
         },
         {
@@ -24247,45 +23832,6 @@
           }
         },
         {
-          "soru": "8. \"reddederdi\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "were able to reject",
-            "ought to reject",
-            "would reject",
-            "had better reject"
-          ],
-          "cevap": "would reject",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "vurgu": false
-              },
-              {
-                "k": "would",
-                "a": "-erdi/-ardı",
-                "en": "would = geçmiş alışkanlık/şart",
-                "vurgu": true
-              },
-              {
-                "k": "reject",
-                "a": "reddetmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "offer.",
-                "a": "teklif",
-                "vurgu": true
-              }
-            ],
-            "tr": "O teklifi reddederdi."
-          }
-        },
-        {
           "soru": "\"reddetmek zorundaydı\" çevirisi ____ hangisidir?",
           "secenekler": [
             "had to refuse",
@@ -24408,75 +23954,11 @@
             ],
             "tr": "Yeterli çabayla zorlukların üstesinden gelebilir."
           }
-        },
-        {
-          "soru": "... ____.",
-          "secenekler": [
-            "as soon as I find a new apartment in the neighbourhood",
-            "until I get a new job as a teacher",
-            "as soon as she saved money for a car"
-          ],
-          "cevap": "as soon as I find a new apartment in the neighbourhood",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "As",
-                "vurgu": false
-              },
-              {
-                "k": "soon",
-                "vurgu": false
-              },
-              {
-                "k": "as",
-                "a": "-ir -mez",
-                "en": "as soon as = ... -ir -mez",
-                "vurgu": true
-              },
-              {
-                "k": "I",
-                "vurgu": false
-              },
-              {
-                "k": "find",
-                "a": "bulmak",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "apartment",
-                "a": "daire",
-                "vurgu": true
-              },
-              {
-                "k": "in",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "neighbourhood.",
-                "a": "mahalle",
-                "vurgu": true
-              }
-            ],
-            "tr": "Mahallede yeni bir daire bulur bulmaz."
-          }
         }
       ]
     },
     {
-      "ad": "Test 7",
+      "ad": "Test 6",
       "sorular": [
         {
           "soru": "\"bağımlı olabilir\" çevirisi hangisidir? ____",
@@ -24776,72 +24258,6 @@
           }
         },
         {
-          "soru": "29. \"can't have received\" çevirisi hangisidir?",
-          "secenekler": [
-            "almamalıydı",
-            "almış olamaz",
-            "alamazdı",
-            "almamış olurdu"
-          ],
-          "cevap": "almış olamaz",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-mış olamaz",
-                "en": "can't have + V3 = geçmişe dair kesin olumsuz çıkarım",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "received",
-                "a": "aldı",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "message",
-                "a": "mesaj",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü",
-                "vurgu": false
-              },
-              {
-                "k": "his",
-                "vurgu": false
-              },
-              {
-                "k": "phone",
-                "a": "telefon",
-                "vurgu": true
-              },
-              {
-                "k": "was",
-                "vurgu": false
-              },
-              {
-                "k": "off.",
-                "a": "kapalı",
-                "vurgu": true
-              }
-            ],
-            "tr": "Telefonu kapalı olduğu için mesajı almış olamaz."
-          }
-        },
-        {
           "soru": "\"rahatsız edebilir\" çevirisi hangisidir? ____",
           "secenekler": [
             "could disturb",
@@ -24917,67 +24333,6 @@
           }
         },
         {
-          "soru": "20. \"yavaşlayabiliyordu\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "would slow down",
-            "could slow down",
-            "had better slow down",
-            "need to slow down"
-          ],
-          "cevap": "could slow down",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "train",
-                "a": "tren",
-                "vurgu": true
-              },
-              {
-                "k": "could",
-                "a": "-ebiliyordu",
-                "en": "could = geçmiş yetenek/olasılık",
-                "vurgu": true
-              },
-              {
-                "k": "slow",
-                "a": "yavaşlamak",
-                "en": "slow down = yavaşlamak",
-                "vurgu": true
-              },
-              {
-                "k": "down",
-                "a": "aşağı",
-                "en": "slow down = yavaşlamak",
-                "vurgu": true
-              },
-              {
-                "k": "before",
-                "a": "-den önce",
-                "vurgu": false
-              },
-              {
-                "k": "reaching",
-                "a": "varmak (-ing)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "station.",
-                "a": "istasyon",
-                "vurgu": true
-              }
-            ],
-            "tr": "Tren istasyona varmadan önce yavaşlayabiliyordu."
-          }
-        },
-        {
           "soru": "\"gelişmek zorunda\" çevirisi ____ hangisidir?",
           "secenekler": [
             "should have improved",
@@ -25044,7 +24399,7 @@
       ]
     },
     {
-      "ad": "Test 8",
+      "ad": "Test 7",
       "sorular": [
         {
           "soru": "\"bitirmemeliydi\" çevirisi hangisidir? ____",
@@ -25079,56 +24434,6 @@
               }
             ],
             "tr": "Bitirmemeliydi."
-          }
-        },
-        {
-          "soru": "22. \"genişlemeli\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "will need to expand",
-            "used to expand",
-            "should expand",
-            "ought to have expanded"
-          ],
-          "cevap": "should expand",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "company",
-                "a": "şirket",
-                "vurgu": true
-              },
-              {
-                "k": "should",
-                "a": "-meli",
-                "en": "should = tavsiye/zorunluluk",
-                "vurgu": true
-              },
-              {
-                "k": "expand",
-                "a": "genişlemek",
-                "vurgu": true
-              },
-              {
-                "k": "into",
-                "a": "-e doğru/içine",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "markets.",
-                "a": "pazarlar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Şirket yeni pazarlara genişlemeli."
           }
         },
         {
@@ -25177,233 +24482,6 @@
               }
             ],
             "tr": "Olay, krizi tetiklemiş olabilir."
-          }
-        },
-        {
-          "soru": "24. \"could foster\" çevirisi hangisidir?",
-          "secenekler": [
-            "teşvik edebilir",
-            "teşvik etmeli",
-            "teşvik etse iyi olur",
-            "teşvik etmiş olabilir"
-          ],
-          "cevap": "teşvik edebilir",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "This",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "approach",
-                "a": "yaklaşım",
-                "vurgu": true
-              },
-              {
-                "k": "could",
-                "a": "-ebilir",
-                "en": "could = olasılık/yetenek",
-                "vurgu": true
-              },
-              {
-                "k": "foster",
-                "a": "teşvik etmek",
-                "vurgu": true
-              },
-              {
-                "k": "greater",
-                "a": "daha fazla",
-                "vurgu": true
-              },
-              {
-                "k": "collaboration",
-                "a": "iş birliği",
-                "vurgu": true
-              },
-              {
-                "k": "among",
-                "a": "arasında",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "team.",
-                "a": "ekip",
-                "vurgu": false
-              }
-            ],
-            "tr": "Bu yaklaşım ekip arasında daha fazla iş birliğini teşvik edebilir."
-          }
-        },
-        {
-          "soru": "24. \"bırakabilirdi\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "could have given up",
-            "should have given up",
-            "may have given up",
-            "might give up"
-          ],
-          "cevap": "could have given up",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "vurgu": false
-              },
-              {
-                "k": "could",
-                "a": "-ebilirdi",
-                "en": "could have + V3 = yapabilirdi (ama yapmadı)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false,
-                "en": "could have + V3 = geçmiş olasılık"
-              },
-              {
-                "k": "given",
-                "a": "vazgeçmek (V3)",
-                "en": "give up = vazgeçmek",
-                "vurgu": true
-              },
-              {
-                "k": "up,",
-                "a": "yukarı",
-                "en": "give up = vazgeçmek",
-                "vurgu": true
-              },
-              {
-                "k": "but",
-                "a": "ama",
-                "vurgu": false
-              },
-              {
-                "k": "she",
-                "vurgu": false
-              },
-              {
-                "k": "kept",
-                "a": "devam etti",
-                "en": "kept + V-ing = -meye devam etti",
-                "vurgu": true
-              },
-              {
-                "k": "trying.",
-                "a": "denemek (-ing)",
-                "vurgu": true
-              }
-            ],
-            "tr": "Vazgeçebilirdi/bırakabilirdi ama denemeye devam etti."
-          }
-        },
-        {
-          "soru": "6. \"must delay\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "ertelemeli",
-            "erteleyebilir",
-            "erteleyecekti",
-            "ertelemeliydi"
-          ],
-          "cevap": "ertelemeli",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "a": "sen",
-                "vurgu": false
-              },
-              {
-                "k": "must",
-                "a": "-meli (zorunluluk)",
-                "en": "must + V1 = -meli/-malı",
-                "vurgu": true
-              },
-              {
-                "k": "delay",
-                "a": "ertelemek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "meeting",
-                "a": "toplantı",
-                "vurgu": true
-              },
-              {
-                "k": "until",
-                "a": "-e kadar",
-                "vurgu": false
-              },
-              {
-                "k": "next",
-                "a": "gelecek",
-                "vurgu": false
-              },
-              {
-                "k": "week.",
-                "a": "hafta",
-                "vurgu": true
-              }
-            ],
-            "tr": "Toplantıyı gelecek haftaya ertelemeli."
-          }
-        },
-        {
-          "soru": "3. \"might indicate\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "göstermek zorunda",
-            "gösterirdi",
-            "gösterebilir",
-            "göstermeli"
-          ],
-          "cevap": "gösterebilir",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "These",
-                "a": "bunlar",
-                "vurgu": false
-              },
-              {
-                "k": "symptoms",
-                "a": "belirtiler",
-                "vurgu": true
-              },
-              {
-                "k": "might",
-                "a": "-ebilir (olasılık)",
-                "en": "might + V1 = -ebilir (zayıf olasılık)",
-                "vurgu": true
-              },
-              {
-                "k": "indicate",
-                "a": "göstermek",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "serious",
-                "a": "ciddi",
-                "vurgu": true
-              },
-              {
-                "k": "illness.",
-                "a": "hastalık",
-                "vurgu": true
-              }
-            ],
-            "tr": "Bu belirtiler ciddi bir hastalığı gösterebilir."
           }
         },
         {
@@ -25510,7 +24588,7 @@
           }
         },
         {
-          "soru": "24. (teşvik et) çevirisi hangisidir?",
+          "soru": "(teşvik et) çevirisi hangisidir?",
           "secenekler": [
             "teşvik edebilir",
             "teşvik etmeli",
@@ -25572,7 +24650,7 @@
       ]
     },
     {
-      "ad": "Test 9",
+      "ad": "Test 8",
       "sorular": [
         {
           "soru": "\"can't have eliminated\" çevirisi hangisidir?",
@@ -25632,55 +24710,6 @@
               }
             ],
             "tr": "temin etmek zorunda"
-          }
-        },
-        {
-          "soru": "30. \"azaltmalıydı\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "should have reduced",
-            "may have reduced",
-            "would have reduced",
-            "had better reduce"
-          ],
-          "cevap": "should have reduced",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "government",
-                "a": "hükümet",
-                "vurgu": true
-              },
-              {
-                "k": "should",
-                "a": "-meliydi",
-                "en": "should have + V3 = -meliydi (yapmadı pişmanlık)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": true
-              },
-              {
-                "k": "reduced",
-                "a": "azaltmak",
-                "vurgu": true
-              },
-              {
-                "k": "taxes",
-                "a": "vergiler",
-                "vurgu": true
-              },
-              {
-                "k": "earlier.",
-                "a": "daha önce",
-                "vurgu": false
-              }
-            ],
-            "tr": "Hükümet vergileri daha önce azaltmalıydı."
           }
         },
         {
@@ -25745,50 +24774,6 @@
               }
             ],
             "tr": "O günlerde takımımız en iyilerle rekabet edebiliyordu."
-          }
-        },
-        {
-          "soru": "10. \"kırabilirdi\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "could have broken",
-            "ought to have broken",
-            "might have broken",
-            "would have broken"
-          ],
-          "cevap": "could have broken",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "could",
-                "a": "-ebilirdi",
-                "en": "could have + V3 = -mış olabilir/yapabilirdi",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false,
-                "en": "could have + V3 = geçmiş olasılık"
-              },
-              {
-                "k": "broken",
-                "a": "kırmak (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "window.",
-                "a": "pencere",
-                "vurgu": true
-              }
-            ],
-            "tr": "O pencereyi kırabilirdi."
           }
         },
         {
@@ -25940,7 +24925,7 @@
           }
         },
         {
-          "soru": "27. \"mustn't sustain\" çevirisi hangisidir? ____",
+          "soru": "\"mustn't sustain\" çevirisi hangisidir? ____",
           "secenekler": [
             "sürdürmemeli",
             "sürdürmeyecekti",
@@ -25992,70 +24977,11 @@
             ],
             "tr": "Bir şirket çok uzun süre zarar sürdürmemeli."
           }
-        },
-        {
-          "soru": "22. \"wouldn't arise\" çevirisi hangisidir?",
-          "secenekler": [
-            "ortaya çıkmazdı",
-            "ortaya çıkmamalı",
-            "ortaya çıkmamış olurdu",
-            "ortaya çıkmayabilir"
-          ],
-          "cevap": "ortaya çıkmazdı",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "If",
-                "a": "eğer",
-                "vurgu": false
-              },
-              {
-                "k": "we",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-saydık",
-                "en": "had been = olsaydık (3. tip koşul)",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "vurgu": false
-              },
-              {
-                "k": "careful,",
-                "a": "dikkatli",
-                "vurgu": true
-              },
-              {
-                "k": "this",
-                "vurgu": false
-              },
-              {
-                "k": "problem",
-                "a": "sorun",
-                "vurgu": true
-              },
-              {
-                "k": "wouldn't",
-                "a": "-mazdı",
-                "en": "wouldn't = -mazdı (koşullu sonuç)",
-                "vurgu": true
-              },
-              {
-                "k": "arise.",
-                "a": "ortaya çıkmak",
-                "vurgu": true
-              }
-            ],
-            "tr": "Dikkatli olsaydık, bu sorun ortaya çıkmazdı."
-          }
         }
       ]
     },
     {
-      "ad": "Test 10",
+      "ad": "Test 9",
       "sorular": [
         {
           "soru": "\"başa çıkmalı\" çevirisi hangisidir? ____",
@@ -26297,59 +25223,6 @@
           }
         },
         {
-          "soru": "30. \"shouldn't have exceeded\" çevirisi hangisidir?",
-          "secenekler": [
-            "aşmamış olurdu",
-            "aşmamalıydı",
-            "aşmamış olmalı",
-            "aşmamış olabilir"
-          ],
-          "cevap": "aşmamalıydı",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "project",
-                "a": "proje",
-                "vurgu": true
-              },
-              {
-                "k": "shouldn't",
-                "a": "-memeliydi",
-                "en": "shouldn't have + V3 = geçmişte yapılmaması gereken",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "exceeded",
-                "a": "aştı",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "allocated",
-                "a": "ayrılan/tahsis edilen",
-                "vurgu": true
-              },
-              {
-                "k": "budget.",
-                "a": "bütçe",
-                "vurgu": true
-              }
-            ],
-            "tr": "Proje ayrılan bütçeyi aşmamalıydı."
-          }
-        },
-        {
           "soru": "\"would have accelerated\" çevirisi hangisidir? ____",
           "secenekler": [
             "hızlanabilirdi",
@@ -26443,217 +25316,6 @@
           }
         },
         {
-          "soru": "27. \"devralmayabilir\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "oughtn't take over",
-            "may not take over",
-            "could have taken over",
-            "was unable to take over"
-          ],
-          "cevap": "may not take over",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "manager",
-                "a": "müdür",
-                "vurgu": true
-              },
-              {
-                "k": "may",
-                "a": "-ebilir",
-                "en": "may not = -mayabilir (olasılık)",
-                "vurgu": true
-              },
-              {
-                "k": "not",
-                "vurgu": false
-              },
-              {
-                "k": "take",
-                "a": "devralmak",
-                "en": "take over = devralmak",
-                "vurgu": true
-              },
-              {
-                "k": "over",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "department",
-                "a": "departman",
-                "vurgu": true
-              },
-              {
-                "k": "next",
-                "a": "gelecek",
-                "vurgu": false
-              },
-              {
-                "k": "month.",
-                "a": "ay",
-                "vurgu": false
-              }
-            ],
-            "tr": "Yeni müdür gelecek ay departmanı devralmayabilir."
-          }
-        },
-        {
-          "soru": "(... take over) çevirisi hangisidir?",
-          "secenekler": [
-            "(seçenek görünmüyor)",
-            "may not take over",
-            "could have taken over",
-            "was unable to take over"
-          ],
-          "cevap": "could have taken over",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "A",
-                "vurgu": false
-              },
-              {
-                "k": "larger",
-                "a": "daha büyük",
-                "vurgu": false
-              },
-              {
-                "k": "firm",
-                "a": "firma",
-                "vurgu": true
-              },
-              {
-                "k": "could",
-                "a": "-ebilirdi",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "a": "",
-                "vurgu": false
-              },
-              {
-                "k": "taken",
-                "a": "almak",
-                "en": "could have taken = devralabilirdi (geçmiş olasılık)",
-                "vurgu": true
-              },
-              {
-                "k": "over",
-                "a": "",
-                "en": "take over = devralmak",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "struggling",
-                "a": "zorlanan",
-                "vurgu": true
-              },
-              {
-                "k": "business.",
-                "a": "işletme",
-                "vurgu": true
-              }
-            ],
-            "tr": "Daha büyük bir firma zorlanan işletmeyi devralabilirdi."
-          }
-        }
-      ]
-    },
-    {
-      "ad": "Test 11",
-      "sorular": [
-        {
-          "soru": "23. \"oughtn't to depend\" çevirisi hangisidir?",
-          "secenekler": [
-            "bağlı olmayacaktı",
-            "bağlı olmayabilir",
-            "bağlı olmamalı",
-            "bağlı olmazdı"
-          ],
-          "cevap": "bağlı olmamalı",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "This",
-                "vurgu": false
-              },
-              {
-                "k": "conclusion",
-                "a": "sonuç",
-                "vurgu": true
-              },
-              {
-                "k": "oughtn't",
-                "a": "-memeli",
-                "en": "oughtn't to = -memeli (öğüt/gereklilik)",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "depend",
-                "a": "bağlı olmak",
-                "en": "depend on = -e bağlı olmak",
-                "vurgu": true
-              },
-              {
-                "k": "solely",
-                "a": "yalnızca, sadece",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "single",
-                "a": "tek",
-                "vurgu": true
-              },
-              {
-                "k": "piece",
-                "a": "parça",
-                "en": "a piece of evidence = bir kanıt",
-                "vurgu": false
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "evidence.",
-                "a": "kanıt",
-                "vurgu": true
-              }
-            ],
-            "tr": "Bu sonuç yalnızca tek bir kanıta bağlı olmamalı."
-          }
-        },
-        {
           "soru": "He always ____ his hands before eating.",
           "secenekler": [
             "has washed",
@@ -26703,159 +25365,6 @@
           }
         },
         {
-          "soru": "26. \"aramalı\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "may have searched for",
-            "needed to search for",
-            "must have searched for",
-            "ought to search for"
-          ],
-          "cevap": "ought to search for",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "vurgu": false
-              },
-              {
-                "k": "ought",
-                "a": "-meli/-malı",
-                "en": "ought to = -meli/-malı (tavsiye)",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "search",
-                "a": "aramak",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "better",
-                "a": "daha iyi",
-                "vurgu": true
-              },
-              {
-                "k": "solution.",
-                "a": "çözüm",
-                "vurgu": true
-              }
-            ],
-            "tr": "Daha iyi bir çözüm aramalısın."
-          }
-        },
-        {
-          "soru": "13. \"would admire\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "hayran olabilirdi",
-            "hayran olurdu",
-            "hayran olmalı",
-            "hayran olmuş olurdu"
-          ],
-          "cevap": "hayran olurdu",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Everyone",
-                "a": "herkes",
-                "vurgu": true
-              },
-              {
-                "k": "would",
-                "a": "-erdi (geçmiş alışkanlık)",
-                "en": "would + V1 = eskiden -erdi",
-                "vurgu": true
-              },
-              {
-                "k": "admire",
-                "a": "hayran olmak",
-                "vurgu": true
-              },
-              {
-                "k": "her",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "courage.",
-                "a": "cesaret",
-                "vurgu": true
-              }
-            ],
-            "tr": "Herkes onun cesaretine hayran olurdu."
-          }
-        },
-        {
-          "soru": "... significant challenges for businesses, especially small enterprises.",
-          "secenekler": [
-            "pose",
-            "catch",
-            "identify",
-            "arise"
-          ],
-          "cevap": "pose",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "pose",
-                "a": "teşkil etmek/oluşturmak",
-                "en": "pose challenges = zorluk teşkil etmek",
-                "vurgu": true
-              },
-              {
-                "k": "significant",
-                "a": "önemli/ciddi",
-                "vurgu": true
-              },
-              {
-                "k": "challenges",
-                "a": "zorluklar",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "businesses,",
-                "a": "işletmeler",
-                "vurgu": true
-              },
-              {
-                "k": "especially",
-                "a": "özellikle",
-                "vurgu": true
-              },
-              {
-                "k": "small",
-                "a": "küçük",
-                "vurgu": true
-              },
-              {
-                "k": "enterprises.",
-                "a": "işletmeler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Özellikle küçük işletmeler olmak üzere işletmeler için önemli zorluklar teşkil ediyorlar."
-          }
-        },
-        {
           "soru": "\"çökmemiş olabilir\" çevirisi hangisidir? ____",
           "secenekler": [
             "might not have collapsed",
@@ -26893,103 +25402,6 @@
               }
             ],
             "tr": "Çökmemiş olabilir."
-          }
-        },
-        {
-          "soru": "1. \"reddetmek zorundaydı\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "had to refuse",
-            "must have refused",
-            "needs to refuse",
-            "was able to refuse"
-          ],
-          "cevap": "had to refuse",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "zorundaydı",
-                "en": "had to = -mek zorundaydı",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "refuse",
-                "a": "reddetmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "offer.",
-                "a": "teklif",
-                "vurgu": true
-              }
-            ],
-            "tr": "Teklifi reddetmek zorundaydı."
-          }
-        },
-        {
-          "soru": "28. \"ortaya çıkaracaktı\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "would reveal",
-            "will need to reveal",
-            "ought to reveal",
-            "had better reveal"
-          ],
-          "cevap": "would reveal",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "said",
-                "a": "söyledi",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "investigation",
-                "a": "soruşturma",
-                "vurgu": true
-              },
-              {
-                "k": "would",
-                "a": "-ecekti",
-                "en": "would = -ecek (geçmişte gelecek/dolaylı)",
-                "vurgu": true
-              },
-              {
-                "k": "reveal",
-                "a": "ortaya çıkarmak",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "truth.",
-                "a": "gerçek",
-                "vurgu": true
-              }
-            ],
-            "tr": "Soruşturmanın gerçeği ortaya çıkaracağını söyledi."
           }
         },
         {
@@ -27088,171 +25500,8 @@
       ]
     },
     {
-      "ad": "Test 12",
+      "ad": "Test 10",
       "sorular": [
-        {
-          "soru": "11. \"iddia ederdi\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "will have to claim",
-            "was able to claim",
-            "had better claim",
-            "used to claim"
-          ],
-          "cevap": "used to claim",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "used",
-                "a": "-erdi (eskiden)",
-                "en": "used to = eskiden yapardı",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false,
-                "en": "used to = eskiden yapardı"
-              },
-              {
-                "k": "claim",
-                "a": "iddia etmek",
-                "vurgu": true
-              },
-              {
-                "k": "that",
-                "a": "-diğini",
-                "vurgu": false
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "-idi",
-                "vurgu": false
-              },
-              {
-                "k": "innocent.",
-                "a": "masum",
-                "vurgu": true
-              }
-            ],
-            "tr": "O masum olduğunu iddia ederdi."
-          }
-        },
-        {
-          "soru": "25. \"bağımlı olabilir\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "would depend on",
-            "may have depended on",
-            "can depend on",
-            "has to depend on"
-          ],
-          "cevap": "can depend on",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "result",
-                "a": "sonuç",
-                "vurgu": true
-              },
-              {
-                "k": "can",
-                "a": "-ebilir",
-                "en": "can = olasılık",
-                "vurgu": true
-              },
-              {
-                "k": "depend",
-                "a": "bağlı olmak",
-                "en": "depend on = -e bağlı olmak",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "a": "-e",
-                "en": "depend on = -e bağlı olmak",
-                "vurgu": false
-              },
-              {
-                "k": "several",
-                "a": "birçok",
-                "vurgu": false
-              },
-              {
-                "k": "factors.",
-                "a": "faktörler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Sonuç birçok faktöre bağlı olabilir."
-          }
-        },
-        {
-          "soru": "29. \"kazanmamış olabilir\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "shouldn't have won",
-            "could not win",
-            "wouldn't have won",
-            "may not have won"
-          ],
-          "cevap": "may not have won",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "may",
-                "a": "-ebilir",
-                "en": "may not have + V3 = -mamış olabilir",
-                "vurgu": true
-              },
-              {
-                "k": "not",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "vurgu": true
-              },
-              {
-                "k": "won",
-                "a": "kazanmak",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "match",
-                "a": "maç",
-                "vurgu": true
-              },
-              {
-                "k": "last",
-                "a": "geçen",
-                "vurgu": false
-              },
-              {
-                "k": "night.",
-                "a": "gece",
-                "vurgu": false
-              }
-            ],
-            "tr": "Dün gece maçı kazanmamış olabilirler."
-          }
-        },
         {
           "soru": "\"need to restrict\" çevirisi ____ hangisidir?",
           "secenekler": [
@@ -27312,7 +25561,7 @@
           }
         },
         {
-          "soru": "26. \"used to emit\" çevirisi hangisidir? ____",
+          "soru": "\"used to emit\" çevirisi hangisidir? ____",
           "secenekler": [
             "yayacaktı",
             "yayardı",
@@ -27376,7 +25625,7 @@
           }
         },
         {
-          "soru": "29. \"can't have received\" çevirisi hangisidir? ____",
+          "soru": "\"can't have received\" çevirisi hangisidir? ____",
           "secenekler": [
             "almamalıydı",
             "almış olamaz",
@@ -27534,50 +25783,6 @@
           }
         },
         {
-          "soru": "15. \"rahatsız edebilir\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "could disturb",
-            "used to disturb",
-            "could have disturbed",
-            "had better disturb"
-          ],
-          "cevap": "could disturb",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "noise",
-                "a": "gürültü",
-                "vurgu": true
-              },
-              {
-                "k": "could",
-                "a": "-ebilir",
-                "en": "could = olasılık",
-                "vurgu": true
-              },
-              {
-                "k": "disturb",
-                "a": "rahatsız etmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "neighbors.",
-                "a": "komşular",
-                "vurgu": true
-              }
-            ],
-            "tr": "Gürültü komşuları rahatsız edebilir."
-          }
-        },
-        {
           "soru": "\"neden olmuş olmalı\" çevirisi ____ hangisidir?",
           "secenekler": [
             "must have led to",
@@ -27638,7 +25843,7 @@
       ]
     },
     {
-      "ad": "Test 13",
+      "ad": "Test 11",
       "sorular": [
         {
           "soru": "\"shouldn't have allowed\" çevirisi hangisidir? ____",
@@ -27699,56 +25904,6 @@
           }
         },
         {
-          "soru": "17. \"bitirmemeliydi\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "mustn't have finished",
-            "couldn't have finished",
-            "shouldn't have finished",
-            "wouldn't have finished"
-          ],
-          "cevap": "shouldn't have finished",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "vurgu": false
-              },
-              {
-                "k": "shouldn't",
-                "a": "-memeliydi",
-                "en": "shouldn't have + V3 = -memeliydi",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false,
-                "en": "shouldn't have + V3 = geçmiş pişmanlık"
-              },
-              {
-                "k": "finished",
-                "a": "bitirmek (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "it",
-                "a": "onu",
-                "vurgu": false
-              },
-              {
-                "k": "so",
-                "a": "bu kadar",
-                "vurgu": false
-              },
-              {
-                "k": "quickly.",
-                "a": "çabuk/hızlı",
-                "vurgu": true
-              }
-            ],
-            "tr": "Onu bu kadar çabuk bitirmemeliydi."
-          }
-        },
-        {
           "soru": "\"shouldn't have allowed\" çevirisi ____ hangisidir?",
           "secenekler": [
             "izin vermiş olamaz",
@@ -27787,127 +25942,7 @@
           }
         },
         {
-          "soru": "16. \"can't have eliminated\" çevirisi hangisidir?",
-          "secenekler": [
-            "yok etmemeliydi",
-            "yok etmemiş olurdu",
-            "yok etmiş olamaz",
-            "yok etmemiş olabilir"
-          ],
-          "cevap": "yok etmiş olamaz",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-mış olamaz",
-                "en": "can't have + V3 = geçmişe dair kesin olumsuz çıkarım",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "eliminated",
-                "a": "yok etmek/elemek",
-                "vurgu": true
-              },
-              {
-                "k": "all",
-                "a": "tüm",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "evidence",
-                "a": "kanıt",
-                "vurgu": true
-              },
-              {
-                "k": "so",
-                "a": "bu kadar",
-                "vurgu": false
-              },
-              {
-                "k": "quickly.",
-                "a": "çabuk",
-                "vurgu": true
-              }
-            ],
-            "tr": "Tüm kanıtları bu kadar çabuk yok etmiş olamazlar."
-          }
-        },
-        {
-          "soru": "18. \"has to ensure\" çevirisi hangisidir?",
-          "secenekler": [
-            "temin etmeliydi",
-            "temin etmek zorunda",
-            "temin etse iyi olur",
-            "temin edebilirdi"
-          ],
-          "cevap": "temin etmek zorunda",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "company",
-                "a": "şirket",
-                "vurgu": true
-              },
-              {
-                "k": "has",
-                "a": "-mak zorunda",
-                "en": "has to = zorunluluk",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "ensure",
-                "a": "temin etmek/sağlamak",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "safety",
-                "a": "güvenlik",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "its",
-                "a": "kendi",
-                "vurgu": false
-              },
-              {
-                "k": "employees.",
-                "a": "çalışanlar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Şirket çalışanlarının güvenliğini temin etmek zorunda."
-          }
-        },
-        {
-          "soru": "24. \"could foster\" çevirisi hangisidir? ____",
+          "soru": "\"could foster\" çevirisi hangisidir? ____",
           "secenekler": [
             "teşvik edebilir",
             "teşvik etmeli",
@@ -28133,157 +26168,14 @@
             ],
             "tr": "Bu yaklaşım sınıfta yaratıcılığı teşvik ederdi."
           }
-        },
-        {
-          "soru": "11. \"could compete\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "rekabet etse iyi olur",
-            "rekabet edebiliyordu",
-            "rekabet etmeli",
-            "rekabet edecekti"
-          ],
-          "cevap": "rekabet edebiliyordu",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "When",
-                "a": "-dığında",
-                "vurgu": false
-              },
-              {
-                "k": "she",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "was",
-                "a": "-di",
-                "vurgu": false
-              },
-              {
-                "k": "younger,",
-                "a": "daha genç",
-                "vurgu": true
-              },
-              {
-                "k": "she",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "could",
-                "a": "-ebiliyordu",
-                "en": "could = geçmiş yetenek",
-                "vurgu": true
-              },
-              {
-                "k": "compete",
-                "a": "rekabet etmek",
-                "vurgu": true
-              },
-              {
-                "k": "with",
-                "a": "ile",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "best",
-                "a": "en iyi",
-                "vurgu": false
-              },
-              {
-                "k": "athletes.",
-                "a": "sporcular",
-                "vurgu": true
-              }
-            ],
-            "tr": "Daha gençken, en iyi sporcularla rekabet edebiliyordu."
-          }
         }
       ]
     },
     {
-      "ad": "Test 14",
+      "ad": "Test 12",
       "sorular": [
         {
-          "soru": "21. \"gerçekleşmeyebilir\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "oughtn't to take place",
-            "doesn't need to take place",
-            "might not have taken place",
-            "may not take place"
-          ],
-          "cevap": "may not take place",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "meeting",
-                "a": "toplantı",
-                "vurgu": true
-              },
-              {
-                "k": "may",
-                "a": "-ebilir",
-                "en": "may not = -mayabilir (olasılık)",
-                "vurgu": true
-              },
-              {
-                "k": "not",
-                "a": "-me",
-                "en": "may not = -mayabilir",
-                "vurgu": false
-              },
-              {
-                "k": "take",
-                "a": "gerçekleşmek",
-                "en": "take place = gerçekleşmek",
-                "vurgu": true
-              },
-              {
-                "k": "place",
-                "a": "yer",
-                "en": "take place = gerçekleşmek",
-                "vurgu": true
-              },
-              {
-                "k": "due",
-                "a": "-den dolayı",
-                "en": "due to = nedeniyle",
-                "vurgu": false
-              },
-              {
-                "k": "to",
-                "vurgu": false,
-                "en": "due to = nedeniyle"
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "bad",
-                "a": "kötü",
-                "vurgu": false
-              },
-              {
-                "k": "weather.",
-                "a": "hava",
-                "vurgu": true
-              }
-            ],
-            "tr": "Toplantı kötü hava nedeniyle gerçekleşmeyebilir."
-          }
-        },
-        {
-          "soru": "22. \"wouldn't arise\" çevirisi hangisidir? ____",
+          "soru": "\"wouldn't arise\" çevirisi hangisidir? ____",
           "secenekler": [
             "ortaya çıkmazdı",
             "ortaya çıkmamalı",
@@ -28394,52 +26286,7 @@
           }
         },
         {
-          "soru": "9. \"başa çıkmalı\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "must deal with",
-            "is able to deal with",
-            "should have dealt with",
-            "used to deal with"
-          ],
-          "cevap": "must deal with",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "We",
-                "vurgu": false
-              },
-              {
-                "k": "must",
-                "a": "-meli/-malı",
-                "en": "must = zorunluluk",
-                "vurgu": true
-              },
-              {
-                "k": "deal",
-                "a": "başa çıkmak",
-                "vurgu": true
-              },
-              {
-                "k": "with",
-                "a": "ile",
-                "vurgu": false
-              },
-              {
-                "k": "this",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "issue.",
-                "a": "konu/mesele",
-                "vurgu": true
-              }
-            ],
-            "tr": "Bu konuyla başa çıkmalıyız."
-          }
-        },
-        {
-          "soru": "8. \"can slow down\" çevirisi hangisidir? ____",
+          "soru": "\"can slow down\" çevirisi hangisidir? ____",
           "secenekler": [
             "yavaşlamalı",
             "yavaşlamak zorunda",
@@ -28494,7 +26341,7 @@
           }
         },
         {
-          "soru": "30. \"shouldn't have exceeded\" çevirisi hangisidir? ____",
+          "soru": "\"shouldn't have exceeded\" çevirisi hangisidir? ____",
           "secenekler": [
             "aşmamış olurdu",
             "aşmamalıydı",
@@ -28545,61 +26392,6 @@
               }
             ],
             "tr": "Sürücü hız sınırını aşmamalıydı."
-          }
-        },
-        {
-          "soru": "... and not do these things (10) ____ much.",
-          "secenekler": [
-            "too",
-            "such",
-            "enough",
-            "as"
-          ],
-          "cevap": "too",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "...",
-                "vurgu": false
-              },
-              {
-                "k": "and",
-                "a": "ve",
-                "vurgu": false
-              },
-              {
-                "k": "not",
-                "a": "-ma/-me (olumsuz)",
-                "vurgu": true
-              },
-              {
-                "k": "do",
-                "a": "yapmak",
-                "vurgu": true
-              },
-              {
-                "k": "these",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "things",
-                "a": "şeyler",
-                "vurgu": true
-              },
-              {
-                "k": "too",
-                "a": "çok fazla",
-                "vurgu": false,
-                "en": "too much = çok fazla"
-              },
-              {
-                "k": "much.",
-                "a": "fazla",
-                "vurgu": false
-              }
-            ],
-            "tr": "... ve bu şeyleri çok fazla yapmamak."
           }
         },
         {
@@ -28655,61 +26447,6 @@
               }
             ],
             "tr": "Bilim insanları deneylerinde kesin ölçümler kullanmalıdır."
-          }
-        },
-        {
-          "soru": "4. \"would have accelerated\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "hızlanabilirdi",
-            "hızlanmış olmalı",
-            "hızlanmış olurdu",
-            "hızlanırdı"
-          ],
-          "cevap": "hızlanmış olurdu",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "With",
-                "a": "ile",
-                "vurgu": false
-              },
-              {
-                "k": "more",
-                "a": "daha fazla",
-                "vurgu": false
-              },
-              {
-                "k": "funding,",
-                "a": "fon/finansman",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "project",
-                "a": "proje",
-                "vurgu": true
-              },
-              {
-                "k": "would",
-                "a": "-olurdu",
-                "en": "would have + V3 = -mış olurdu (geçmişe yönelik koşul)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "accelerated.",
-                "a": "hızlandı",
-                "en": "would have accelerated = hızlanmış olurdu",
-                "vurgu": true
-              }
-            ],
-            "tr": "Daha fazla fonla, proje hızlanmış olurdu."
           }
         },
         {
@@ -28772,10 +26509,10 @@
       ]
     },
     {
-      "ad": "Test 15",
+      "ad": "Test 13",
       "sorular": [
         {
-          "soru": "23. \"oughtn't to depend\" çevirisi hangisidir? ____",
+          "soru": "\"oughtn't to depend\" çevirisi hangisidir? ____",
           "secenekler": [
             "bağlı olmayacaktı",
             "bağlı olmayabilir",
@@ -28892,7 +26629,7 @@
           }
         },
         {
-          "soru": "17. \"mustn't have responded\" çevirisi hangisidir?",
+          "soru": "\"mustn't have responded\" çevirisi hangisidir?",
           "secenekler": [
             "cevap vermemiş olmalı",
             "cevap vermemiş olabilir",
@@ -28941,49 +26678,6 @@
               }
             ],
             "tr": "Mesaja henüz cevap vermemiş olmalı."
-          }
-        },
-        {
-          "soru": "2. \"çökmemiş olabilir\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "might not have collapsed",
-            "can't have collapsed",
-            "may not collapse",
-            "wouldn't have collapsed"
-          ],
-          "cevap": "might not have collapsed",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "bridge",
-                "a": "köprü",
-                "vurgu": true
-              },
-              {
-                "k": "might",
-                "a": "-ebilir",
-                "en": "might not have + V3 = -memiş olabilir",
-                "vurgu": true
-              },
-              {
-                "k": "not",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "collapsed.",
-                "a": "çökmek",
-                "vurgu": true
-              }
-            ],
-            "tr": "Köprü çökmemiş olabilir."
           }
         },
         {
@@ -29059,7 +26753,7 @@
           }
         },
         {
-          "soru": "15. \"need to restrict\" çevirisi hangisidir? ____",
+          "soru": "\"need to restrict\" çevirisi hangisidir? ____",
           "secenekler": [
             "sınırlayabilir",
             "sınırlamak zorunda",
@@ -29167,121 +26861,6 @@
           }
         },
         {
-          "soru": "19. \"ileri sürmeli\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "ought to put forward",
-            "needed to put forward",
-            "should have put forward",
-            "is able to put forward"
-          ],
-          "cevap": "ought to put forward",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "ought",
-                "a": "-meli",
-                "en": "ought to = -meli",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false,
-                "en": "ought to = -meli"
-              },
-              {
-                "k": "put",
-                "a": "ileri sürmek",
-                "en": "put forward = ileri sürmek",
-                "vurgu": true
-              },
-              {
-                "k": "forward",
-                "a": "ileri",
-                "en": "put forward = ileri sürmek",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "proposal.",
-                "a": "öneri",
-                "vurgu": true
-              }
-            ],
-            "tr": "Yeni bir öneri ileri sürmeliler."
-          }
-        },
-        {
-          "soru": "2. \"shouldn't have allowed\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "izin vermiş olamaz",
-            "izin vermezdi",
-            "izin vermemeliydi",
-            "izin vermemiş olurdu"
-          ],
-          "cevap": "izin vermemeliydi",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "shouldn't",
-                "a": "-memeliydi",
-                "en": "shouldn't have + V3 = -mamalıydı",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "allowed",
-                "a": "izin verdi",
-                "en": "shouldn't have allowed = izin vermemeliydi",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "children",
-                "a": "çocuklar",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "play",
-                "a": "oynamak",
-                "vurgu": true
-              },
-              {
-                "k": "there.",
-                "a": "orada",
-                "vurgu": false
-              }
-            ],
-            "tr": "Çocukların orada oynamasına izin vermemeliydiler."
-          }
-        },
-        {
           "soru": "\"used to make use of\" çevirisi hangisidir? ____",
           "secenekler": [
             "kullanırdı",
@@ -29347,7 +26926,7 @@
       ]
     },
     {
-      "ad": "Test 16",
+      "ad": "Test 14",
       "sorular": [
         {
           "soru": "\"used to make use of\" çevirisi ____ hangisidir?",
@@ -29403,7 +26982,7 @@
           }
         },
         {
-          "soru": "16. \"can't have eliminated\" çevirisi hangisidir? ____",
+          "soru": "\"can't have eliminated\" çevirisi hangisidir? ____",
           "secenekler": [
             "yok etmemeliydi",
             "yok etmemiş olurdu",
@@ -29461,7 +27040,7 @@
           }
         },
         {
-          "soru": "18. \"has to ensure\" çevirisi hangisidir? ____",
+          "soru": "\"has to ensure\" çevirisi hangisidir? ____",
           "secenekler": [
             "temin etmeliydi",
             "temin etmek zorunda",
@@ -29887,7 +27466,7 @@
       ]
     },
     {
-      "ad": "Test 17",
+      "ad": "Test 15",
       "sorular": [
         {
           "soru": "You ____ your room; it's a complete mess!",
@@ -30073,79 +27652,7 @@
           }
         },
         {
-          "soru": "The candidate kept silent after he ____ the first two questions.",
-          "secenekler": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "cevap": "had answered",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "candidate",
-                "a": "aday",
-                "vurgu": true
-              },
-              {
-                "k": "kept",
-                "a": "kalmak/sürdürmek",
-                "vurgu": true
-              },
-              {
-                "k": "silent",
-                "a": "sessiz",
-                "vurgu": true
-              },
-              {
-                "k": "after",
-                "a": "-den sonra",
-                "vurgu": false
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "vurgu": false
-              },
-              {
-                "k": "answered",
-                "a": "yanıtlamak",
-                "en": "had answered = yanıtlamıştı (önce olan geçmiş)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "first",
-                "a": "ilk",
-                "vurgu": true
-              },
-              {
-                "k": "two",
-                "a": "iki",
-                "vurgu": false
-              },
-              {
-                "k": "questions.",
-                "a": "sorular",
-                "vurgu": true
-              }
-            ],
-            "tr": "Aday, ilk iki soruyu yanıtladıktan sonra sessiz kaldı."
-          }
-        },
-        {
-          "soru": "17. \"mustn't have responded\" çevirisi hangisidir? ____",
+          "soru": "\"mustn't have responded\" çevirisi hangisidir? ____",
           "secenekler": [
             "cevap vermemiş olmalı",
             "cevap vermemiş olabilir",
@@ -30280,323 +27787,12 @@
             ],
             "tr": "Jack telefon etmeliydi ama aramadı."
           }
-        },
-        {
-          "soru": "18. \"kontrol etmemiş olurdu\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "may not have checked",
-            "mustn't have checked",
-            "oughtn't to have checked",
-            "wouldn't have checked"
-          ],
-          "cevap": "wouldn't have checked",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "wouldn't",
-                "a": "-mezdi/-mamış olurdu",
-                "en": "wouldn't have + V3 = -memiş olurdu",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false,
-                "en": "wouldn't have + V3"
-              },
-              {
-                "k": "checked",
-                "a": "kontrol etmek (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "results.",
-                "a": "sonuçlar",
-                "vurgu": true
-              }
-            ],
-            "tr": "O sonuçları kontrol etmemiş olurdu."
-          }
-        },
-        {
-          "soru": "\"could have enforced\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "zorla kabul ettirmeliydi",
-            "-",
-            "-",
-            "-"
-          ],
-          "cevap": "zorla kabul ettirmeliydi",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "government",
-                "a": "hükümet",
-                "vurgu": true
-              },
-              {
-                "k": "could",
-                "a": "-ebilirdi",
-                "en": "could have + V3 = geçmişte mümkündü ama olmadı",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "enforced",
-                "a": "zorla uygulamak",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "regulations",
-                "a": "düzenlemeler",
-                "vurgu": true
-              },
-              {
-                "k": "earlier.",
-                "a": "daha erken",
-                "vurgu": true
-              }
-            ],
-            "tr": "Hükümet yeni düzenlemeleri daha erken zorla kabul ettirebilirdi."
-          }
-        },
-        {
-          "soru": "5. \"used to make use of\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "kullanırdı",
-            "kullanacaktı",
-            "kullanmalı",
-            "kullansa iyi olur"
-          ],
-          "cevap": "kullanırdı",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "used",
-                "a": "-erdi (geçmiş alışkanlık)",
-                "en": "used to + V1 = eskiden -erdi",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "make",
-                "a": "yapmak",
-                "vurgu": true
-              },
-              {
-                "k": "use",
-                "a": "kullanım",
-                "en": "make use of = -den yararlanmak",
-                "vurgu": true
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "every",
-                "a": "her",
-                "vurgu": false
-              },
-              {
-                "k": "opportunity.",
-                "a": "fırsat",
-                "vurgu": true
-              }
-            ],
-            "tr": "Her fırsatı kullanırdı."
-          }
-        },
-        {
-          "soru": "23. \"askıya almış olamaz\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "wouldn't have suspended",
-            "had better not suspend",
-            "shouldn't have suspended",
-            "can't have suspended"
-          ],
-          "cevap": "can't have suspended",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-mış olamaz",
-                "en": "can't have + V3 = -mış olamaz (kesin değil)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false,
-                "en": "can't have + V3 = geçmiş kesin tahmin"
-              },
-              {
-                "k": "suspended",
-                "a": "askıya almak (V3)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "project",
-                "a": "proje",
-                "vurgu": true
-              },
-              {
-                "k": "so",
-                "a": "bu kadar",
-                "vurgu": false
-              },
-              {
-                "k": "quickly.",
-                "a": "çabuk/hızlı",
-                "vurgu": true
-              }
-            ],
-            "tr": "Projeyi bu kadar çabuk askıya almış olamaz."
-          }
         }
       ]
     },
     {
-      "ad": "Test 18",
+      "ad": "Test 16",
       "sorular": [
-        {
-          "soru": "Before smartphones, people ____ phone numbers.",
-          "secenekler": [
-            "remember (seçenekler kısmen kesik)",
-            "(seçenekler kısmen kesik)",
-            "(seçenekler kısmen kesik)",
-            "(seçenekler kısmen kesik)"
-          ],
-          "cevap": "remember (seçenekler kısmen kesik)",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Before",
-                "a": "-den önce",
-                "vurgu": false
-              },
-              {
-                "k": "smartphones,",
-                "a": "akıllı telefonlar",
-                "vurgu": true
-              },
-              {
-                "k": "people",
-                "a": "insanlar",
-                "vurgu": true
-              },
-              {
-                "k": "used",
-                "a": "eskiden -erdi",
-                "en": "used to = geçmiş alışkanlık",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "remember",
-                "a": "hatırlamak/ezbere bilmek",
-                "vurgu": true
-              },
-              {
-                "k": "phone",
-                "a": "telefon",
-                "vurgu": true
-              },
-              {
-                "k": "numbers.",
-                "a": "numaralar",
-                "vurgu": true
-              }
-            ],
-            "tr": "Akıllı telefonlardan önce insanlar telefon numaralarını ezbere bilirdi."
-          }
-        },
-        {
-          "soru": "4. \"tespit etse iyi olur\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "has to identify",
-            "will need to identify",
-            "used to identify",
-            "had better identify"
-          ],
-          "cevap": "had better identify",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "-meli/iyi olur",
-                "en": "had better = -se iyi olur",
-                "vurgu": true
-              },
-              {
-                "k": "better",
-                "a": "-meli/iyi olur",
-                "en": "had better = -se iyi olur",
-                "vurgu": true
-              },
-              {
-                "k": "identify",
-                "a": "tespit etmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "problem.",
-                "a": "sorun",
-                "vurgu": true
-              }
-            ],
-            "tr": "Sorunu tespit etseler iyi olur."
-          }
-        },
         {
           "soru": "You ____ so early. You missed the fun.",
           "secenekler": [
@@ -30663,7 +27859,7 @@
           }
         },
         {
-          "soru": "28. \"may not have applied to\" çevirisi hangisidir?",
+          "soru": "\"may not have applied to\" çevirisi hangisidir?",
           "secenekler": [
             "başvurmamış olabilir",
             "başvurmamış olurdu",
@@ -30795,10 +27991,10 @@
         {
           "soru": "The professor might explain ____ the theory in tomorrow's lecture.",
           "secenekler": [
-            "A) towards",
-            "B) beyond",
-            "C) about",
-            "D) over"
+            "towards",
+            "beyond",
+            "about",
+            "over"
           ],
           "cevap": "about",
           "ornek": {
@@ -30856,7 +28052,7 @@
           }
         },
         {
-          "soru": "7. \"may not have confirmed\" çevirisi hangisidir? ____",
+          "soru": "\"may not have confirmed\" çevirisi hangisidir? ____",
           "secenekler": [
             "doğrulamamış olabilir",
             "doğrulamamış olurdu",
@@ -31092,57 +28288,8 @@
       ]
     },
     {
-      "ad": "Test 19",
+      "ad": "Test 17",
       "sorular": [
-        {
-          "soru": "16. \"yok etmek zorunda olacak\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "will be able to destroy",
-            "would destroy",
-            "will need to destroy",
-            "would have destroyed"
-          ],
-          "cevap": "will need to destroy",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "will",
-                "a": "-ecek",
-                "en": "will need to = -mek zorunda olacak",
-                "vurgu": true
-              },
-              {
-                "k": "need",
-                "a": "gerekmek/zorunda",
-                "en": "need to = -mek zorunda",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "destroy",
-                "a": "yok etmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "evidence.",
-                "a": "kanıt",
-                "vurgu": true
-              }
-            ],
-            "tr": "Kanıtları yok etmek zorunda olacaklar."
-          }
-        },
         {
           "soru": "This custom may ____ centuries, but its origin remains unclear.",
           "secenekler": [
@@ -31214,87 +28361,6 @@
               }
             ],
             "tr": "Bu gelenek yüzyıllar öncesine dayanıyor olabilir, ancak kökeni belirsizliğini koruyor."
-          }
-        },
-        {
-          "soru": "When Jack finishes his education, he ____ French for 4 years.",
-          "secenekler": [
-            "has been studying",
-            "",
-            "",
-            ""
-          ],
-          "cevap": "has been studying",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "When",
-                "a": "-diğinde",
-                "vurgu": false
-              },
-              {
-                "k": "Jack",
-                "a": "Jack",
-                "vurgu": false
-              },
-              {
-                "k": "finishes",
-                "a": "bitirmek",
-                "vurgu": true
-              },
-              {
-                "k": "his",
-                "vurgu": false
-              },
-              {
-                "k": "education,",
-                "a": "eğitim",
-                "vurgu": true
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "will",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "been",
-                "vurgu": false
-              },
-              {
-                "k": "studying",
-                "a": "çalışıyor olmak",
-                "en": "will have been studying = -yor olacak (gelecekte süregelen)",
-                "vurgu": true
-              },
-              {
-                "k": "French",
-                "a": "Fransızca",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "a": "-dır/süredir",
-                "vurgu": false
-              },
-              {
-                "k": "4",
-                "a": "4",
-                "vurgu": false
-              },
-              {
-                "k": "years.",
-                "a": "yıl",
-                "vurgu": true
-              }
-            ],
-            "tr": "Jack eğitimini bitirdiğinde, 4 yıldır Fransızca çalışıyor olacak."
           }
         },
         {
@@ -31765,7 +28831,7 @@
       ]
     },
     {
-      "ad": "Test 20",
+      "ad": "Test 18",
       "sorular": [
         {
           "soru": "The brain ____ only 2 percent of the body's weight.",
@@ -32448,7 +29514,7 @@
       ]
     },
     {
-      "ad": "Test 21",
+      "ad": "Test 19",
       "sorular": [
         {
           "soru": "Emily ____ as a teacher since she graduated from university.",
@@ -32663,7 +29729,6 @@
           "secenekler": [
             "shouldn't have had",
             "haven't had",
-            "—",
             "—"
           ],
           "cevap": "haven't had",
@@ -32875,7 +29940,7 @@
           }
         },
         {
-          "soru": "28. \"may not have applied to\" çevirisi hangisidir? ____",
+          "soru": "\"may not have applied to\" çevirisi hangisidir? ____",
           "secenekler": [
             "başvurmamış olabilir",
             "başvurmamış olurdu",
@@ -33067,7 +30132,7 @@
           }
         },
         {
-          "soru": "(Q4) Mercury ____ some fascinating changes in its atomic structure.",
+          "soru": "Mercury ____ some fascinating changes in its atomic structure.",
           "secenekler": [
             "must have undergone",
             "had undergone",
@@ -33129,7 +30194,7 @@
       ]
     },
     {
-      "ad": "Test 22",
+      "ad": "Test 20",
       "sorular": [
         {
           "soru": "The new CEO might ____ operations as early as next week.",
@@ -33825,7 +30890,7 @@
       ]
     },
     {
-      "ad": "Test 23",
+      "ad": "Test 21",
       "sorular": [
         {
           "soru": "You ____ quieter last night. The baby was trying to sleep.",
@@ -34559,7 +31624,7 @@
       ]
     },
     {
-      "ad": "Test 24",
+      "ad": "Test 22",
       "sorular": [
         {
           "soru": "Peter always goes for a run ____.",
@@ -34684,7 +31749,7 @@
           }
         },
         {
-          "soru": "19. \"could have explained\" çevirisi hangisidir?",
+          "soru": "\"could have explained\" çevirisi hangisidir?",
           "secenekler": [
             "açıklamış olabilir",
             "açıklamış olmalı",
@@ -35165,10 +32230,10 @@
         {
           "soru": "This new policy will be ____ to all departments next month.",
           "secenekler": [
-            "A) inevitable",
-            "B) applicable",
-            "C) precise",
-            "D) internal"
+            "inevitable",
+            "applicable",
+            "precise",
+            "internal"
           ],
           "cevap": "applicable",
           "ornek": {
@@ -35235,7 +32300,7 @@
       ]
     },
     {
-      "ad": "Test 25",
+      "ad": "Test 23",
       "sorular": [
         {
           "soru": "Before his injury, he ____ marathons, but now he can't.",
@@ -35989,7 +33054,7 @@
       ]
     },
     {
-      "ad": "Test 26",
+      "ad": "Test 24",
       "sorular": [
         {
           "soru": "We lost the match, because we ____ the days before.",
@@ -36365,77 +33430,7 @@
           }
         },
         {
-          "soru": "32. He's not at the party. He ____ a last-minute emergency.",
-          "secenekler": [
-            "might have had",
-            "should have had",
-            "would have had",
-            "can't have had"
-          ],
-          "cevap": "might have had",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He's",
-                "a": "o ... değil",
-                "vurgu": false
-              },
-              {
-                "k": "not",
-                "vurgu": false
-              },
-              {
-                "k": "at",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "party.",
-                "a": "parti",
-                "vurgu": true
-              },
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "might",
-                "a": "-mış olabilir",
-                "en": "might have + V3 = -mış olabilir (geçmiş ihtimal)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "sahip olmak",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "last-minute",
-                "a": "son dakika",
-                "vurgu": true
-              },
-              {
-                "k": "emergency.",
-                "a": "acil durum",
-                "vurgu": true
-              }
-            ],
-            "tr": "Partide değil. Son dakika bir acil durumu olmuş olabilir."
-          }
-        },
-        {
-          "soru": "9. \"might have won\" çevirisi hangisidir? ____",
+          "soru": "\"might have won\" çevirisi hangisidir? ____",
           "secenekler": [
             "kazanabilirdi",
             "kazanmış olmalı",
@@ -36739,7 +33734,7 @@
       ]
     },
     {
-      "ad": "Test 27",
+      "ad": "Test 25",
       "sorular": [
         {
           "soru": "You must ____ your career choices carefully; they will shape your future.",
@@ -37134,73 +34129,6 @@
           }
         },
         {
-          "soru": "36. He ____ so fast; he got a speeding ticket.",
-          "secenekler": [
-            "can't have driven",
-            "might not have driven",
-            "shouldn't have driven",
-            "wouldn't have driven"
-          ],
-          "cevap": "shouldn't have driven",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "shouldn't",
-                "a": "-memeliydi",
-                "en": "shouldn't have + V3 = -memeliydi (geçmiş pişmanlık)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "driven",
-                "a": "araba kullanmak",
-                "vurgu": true
-              },
-              {
-                "k": "so",
-                "a": "o kadar",
-                "vurgu": false
-              },
-              {
-                "k": "fast;",
-                "a": "hızlı",
-                "vurgu": true
-              },
-              {
-                "k": "he",
-                "vurgu": false
-              },
-              {
-                "k": "got",
-                "a": "almak/yemek",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "speeding",
-                "a": "hız",
-                "vurgu": true
-              },
-              {
-                "k": "ticket.",
-                "a": "ceza",
-                "vurgu": true
-              }
-            ],
-            "tr": "O kadar hızlı araba kullanmamalıydı; hız cezası yedi."
-          }
-        },
-        {
           "soru": "It's too bad you didn't practise for the marathon. You ____.",
           "secenekler": [
             "ought to have won",
@@ -37509,7 +34437,7 @@
       ]
     },
     {
-      "ad": "Test 28",
+      "ad": "Test 26",
       "sorular": [
         {
           "soru": "You ____ for the job interview. You had all the qualifications.",
@@ -38053,7 +34981,7 @@
           }
         },
         {
-          "soru": "19. \"could have explained\" çevirisi hangisidir? ____",
+          "soru": "\"could have explained\" çevirisi hangisidir? ____",
           "secenekler": [
             "açıklamış olabilir",
             "açıklamış olmalı",
@@ -38256,7 +35184,7 @@
       ]
     },
     {
-      "ad": "Test 29",
+      "ad": "Test 27",
       "sorular": [
         {
           "soru": "\"are able to stand\" çevirisi hangisidir? ____",
@@ -38929,10 +35857,10 @@
       ]
     },
     {
-      "ad": "Test 30",
+      "ad": "Test 28",
       "sorular": [
         {
-          "soru": "It's famous for being a liquid metal (2) ____ room temperature, unlike most metals.",
+          "soru": "It's famous for being a liquid metal ____ room temperature, unlike most metals.",
           "secenekler": [
             "in",
             "on",
@@ -39236,77 +36164,6 @@
               }
             ],
             "tr": "Randevusunu unutmuş olamaz. Onu dört gözle bekliyordu."
-          }
-        },
-        {
-          "soru": "37. He ____ the train; it's always running late on Mondays.",
-          "secenekler": [
-            "ought to have missed",
-            "would have missed",
-            "should have missed",
-            "might have missed"
-          ],
-          "cevap": "might have missed",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "vurgu": false
-              },
-              {
-                "k": "might",
-                "a": "-mış olabilir",
-                "en": "might have + V3 = -mış olabilir (geçmiş ihtimal)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "missed",
-                "a": "kaçırmak",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "train;",
-                "a": "tren",
-                "vurgu": true
-              },
-              {
-                "k": "it's",
-                "vurgu": false
-              },
-              {
-                "k": "always",
-                "a": "hep/her zaman",
-                "vurgu": true
-              },
-              {
-                "k": "running",
-                "a": "olmak/gitmek",
-                "vurgu": false
-              },
-              {
-                "k": "late",
-                "a": "geç",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "Mondays.",
-                "a": "pazartesileri",
-                "vurgu": true
-              }
-            ],
-            "tr": "Treni kaçırmış olabilir; pazartesileri hep geç kalıyor."
           }
         },
         {
@@ -39700,10 +36557,10 @@
       ]
     },
     {
-      "ad": "Test 31",
+      "ad": "Test 29",
       "sorular": [
         {
-          "soru": "They think these things (9) ____ problems like heart disease or cancer.",
+          "soru": "They think these things ____ problems like heart disease or cancer.",
           "secenekler": [
             "have caused",
             "might cause",
@@ -39995,69 +36852,6 @@
           }
         },
         {
-          "soru": "The doctors ought to ____ monitor the patient's recovery process.",
-          "secenekler": [
-            "closely",
-            "",
-            "excessively",
-            ""
-          ],
-          "cevap": "closely",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "doctors",
-                "a": "doktorlar",
-                "vurgu": true
-              },
-              {
-                "k": "ought",
-                "a": "-meli/-malı (ought to)",
-                "en": "ought to = should",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "closely",
-                "a": "yakından",
-                "vurgu": true
-              },
-              {
-                "k": "monitor",
-                "a": "izlemek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "patient's",
-                "a": "hastanın",
-                "vurgu": true
-              },
-              {
-                "k": "recovery",
-                "a": "iyileşme",
-                "vurgu": true
-              },
-              {
-                "k": "process.",
-                "a": "süreç",
-                "vurgu": true
-              }
-            ],
-            "tr": "Doktorlar hastanın iyileşme sürecini yakından izlemeli."
-          }
-        },
-        {
           "soru": "Nobody answered the phone at the clinic. They ____ the clinic early.",
           "secenekler": [
             "would close",
@@ -40226,156 +37020,6 @@
           }
         },
         {
-          "soru": "33. We ____ the project on time without the unexpected delays.",
-          "secenekler": [
-            "must have finished",
-            "would have finished",
-            "ought to have finished",
-            "can't have finished"
-          ],
-          "cevap": "would have finished",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "We",
-                "vurgu": false
-              },
-              {
-                "k": "would",
-                "a": "-mış olurduk",
-                "en": "would have + V3 = -mış olurduk (geçmiş şart)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "finished",
-                "a": "bitirmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "project",
-                "a": "proje",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "time",
-                "a": "zamanında",
-                "vurgu": true
-              },
-              {
-                "k": "without",
-                "a": "-sız/olmasaydı",
-                "en": "without = olmasaydı (şart)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "unexpected",
-                "a": "beklenmedik",
-                "vurgu": true
-              },
-              {
-                "k": "delays.",
-                "a": "gecikmeler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Beklenmedik gecikmeler olmasaydı projeyi zamanında bitirmiş olurduk."
-          }
-        },
-        {
-          "soru": "38. Without the support from their fans, the team ____ the game.",
-          "secenekler": [
-            "would have lost",
-            "should have lost",
-            "must have lost",
-            "may have lost"
-          ],
-          "cevap": "would have lost",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Without",
-                "a": "-sız/olmasaydı",
-                "en": "without = olmasaydı (şart)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "support",
-                "a": "destek",
-                "vurgu": true
-              },
-              {
-                "k": "from",
-                "a": "-den",
-                "vurgu": false
-              },
-              {
-                "k": "their",
-                "a": "onların",
-                "vurgu": false
-              },
-              {
-                "k": "fans,",
-                "a": "taraftarlar",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "team",
-                "a": "takım",
-                "vurgu": true
-              },
-              {
-                "k": "would",
-                "a": "-erdi",
-                "en": "would have + V3 = -mış olurdu (geçmiş şart)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "lost",
-                "a": "kaybetmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "game.",
-                "a": "maç/oyun",
-                "vurgu": true
-              }
-            ],
-            "tr": "Taraftarlarının desteği olmasaydı takım maçı kaybederdi."
-          }
-        },
-        {
           "soru": "____ the truth about the incident; everyone seems to know but me.",
           "secenekler": [
             "cannot be",
@@ -40491,7 +37135,7 @@
       ]
     },
     {
-      "ad": "Test 32",
+      "ad": "Test 30",
       "sorular": [
         {
           "soru": "As soon as the gates opened, ____.",
@@ -41240,7 +37884,7 @@
       ]
     },
     {
-      "ad": "Test 33",
+      "ad": "Test 31",
       "sorular": [
         {
           "soru": "\"had better not disturb\" çevirisi ____ hangisidir?",
@@ -41981,7 +38625,7 @@
       ]
     },
     {
-      "ad": "Test 34",
+      "ad": "Test 32",
       "sorular": [
         {
           "soru": "The government must change its economic policies ____; otherwise, the recession will deepen.",
@@ -42062,132 +38706,6 @@
               }
             ],
             "tr": "Hükümet ekonomik politikalarını köklü bir şekilde değiştirmeli; aksi takdirde durgunluk derinleşecek."
-          }
-        },
-        {
-          "soru": "1. \"are able to stand\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "ayakta durmak zorunda",
-            "ayakta durmalı",
-            "ayakta durabilir",
-            "ayakta dururdu"
-          ],
-          "cevap": "ayakta durabilir",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "are",
-                "vurgu": false
-              },
-              {
-                "k": "able",
-                "a": "yapabilen",
-                "en": "be able to + V1 = -ebilmek",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "stand",
-                "a": "ayakta durmak",
-                "vurgu": true
-              },
-              {
-                "k": "on",
-                "vurgu": false
-              },
-              {
-                "k": "their",
-                "a": "kendi",
-                "vurgu": false
-              },
-              {
-                "k": "own.",
-                "a": "kendi başına",
-                "en": "on their own = kendi başlarına",
-                "vurgu": true
-              }
-            ],
-            "tr": "Onlar kendi başlarına ayakta durabilirler."
-          }
-        },
-        {
-          "soru": "12. \"ought to have accepted\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "kabul etmeliydi",
-            "kabul etmiş olmalı",
-            "kabul etmiş olabilir",
-            "kabul etmeli"
-          ],
-          "cevap": "kabul etmeliydi",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "ought",
-                "a": "-meliydi",
-                "en": "ought to have + V3 = yapmalıydı (ama yapmadı)",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "accepted",
-                "a": "kabul etmek",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "offer",
-                "a": "teklif",
-                "vurgu": true
-              },
-              {
-                "k": "when",
-                "a": "-dığında",
-                "vurgu": false
-              },
-              {
-                "k": "he",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "a": "sahipti",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "chance.",
-                "a": "şans",
-                "vurgu": true
-              }
-            ],
-            "tr": "Şansı varken teklifi kabul etmeliydi."
           }
         },
         {
@@ -42272,83 +38790,6 @@
               }
             ],
             "tr": "Yetkililer yeni yasayı daha sıkı uygulamalı; bu kamu güvenliği için hayati önem taşıyor."
-          }
-        },
-        {
-          "soru": "29. You ____ him at the station; he left an hour ago.",
-          "secenekler": [
-            "can't have met",
-            "might not have met",
-            "shouldn't have met",
-            "wouldn't have met"
-          ],
-          "cevap": "can't have met",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "a": "sen",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-mış olamazsın",
-                "en": "can't have + V3 = -mış olamaz (geçmiş imkânsızlık)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "met",
-                "a": "karşılaşmak",
-                "vurgu": true
-              },
-              {
-                "k": "him",
-                "a": "onu",
-                "vurgu": false
-              },
-              {
-                "k": "at",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "station;",
-                "a": "istasyon",
-                "vurgu": true
-              },
-              {
-                "k": "he",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "left",
-                "a": "ayrılmak",
-                "vurgu": true
-              },
-              {
-                "k": "an",
-                "vurgu": false
-              },
-              {
-                "k": "hour",
-                "a": "saat",
-                "vurgu": true
-              },
-              {
-                "k": "ago.",
-                "a": "önce",
-                "vurgu": true
-              }
-            ],
-            "tr": "Onunla istasyonda karşılaşmış olamazsın; bir saat önce ayrıldı."
           }
         },
         {
@@ -42517,157 +38958,6 @@
           }
         },
         {
-          "soru": "...scientists have been studying how certain things can be (8) ____ to our health.",
-          "secenekler": [
-            "profound",
-            "harmful",
-            "accurate",
-            "rapid"
-          ],
-          "cevap": "harmful",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "...scientists",
-                "a": "bilim insanları",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": true,
-                "en": "have been + V-ing = -mektedir (Present Perfect Continuous)"
-              },
-              {
-                "k": "been",
-                "vurgu": false
-              },
-              {
-                "k": "studying",
-                "a": "incelemek",
-                "vurgu": true
-              },
-              {
-                "k": "how",
-                "a": "nasıl",
-                "vurgu": false
-              },
-              {
-                "k": "certain",
-                "a": "bazı/belirli",
-                "vurgu": true
-              },
-              {
-                "k": "things",
-                "a": "şeyler",
-                "vurgu": true
-              },
-              {
-                "k": "can",
-                "vurgu": true,
-                "en": "can be = olabilir (olasılık)"
-              },
-              {
-                "k": "be",
-                "vurgu": false
-              },
-              {
-                "k": "harmful",
-                "a": "zararlı",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "our",
-                "a": "bizim",
-                "vurgu": false
-              },
-              {
-                "k": "health.",
-                "a": "sağlık",
-                "vurgu": true
-              }
-            ],
-            "tr": "...bilim insanları bazı şeylerin sağlığımıza nasıl zararlı olabileceğini incelemektedir."
-          }
-        },
-        {
-          "soru": "30. The company ____ into new markets without the additional funding.",
-          "secenekler": [
-            "shouldn't have expanded",
-            "wouldn't have expanded",
-            "ought not have expanded",
-            "mustn't have expanded"
-          ],
-          "cevap": "wouldn't have expanded",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "company",
-                "a": "şirket",
-                "vurgu": true
-              },
-              {
-                "k": "wouldn't",
-                "a": "-mezdi",
-                "en": "wouldn't have + V3 = -mezdi (geçmiş şart)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "expanded",
-                "a": "genişlemek/açılmak",
-                "vurgu": true
-              },
-              {
-                "k": "into",
-                "a": "-e doğru",
-                "vurgu": false
-              },
-              {
-                "k": "new",
-                "a": "yeni",
-                "vurgu": false
-              },
-              {
-                "k": "markets",
-                "a": "pazarlar",
-                "vurgu": true
-              },
-              {
-                "k": "without",
-                "a": "-sız/olmasaydı",
-                "en": "without = olmasaydı (şart)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "additional",
-                "a": "ek",
-                "vurgu": true
-              },
-              {
-                "k": "funding.",
-                "a": "finansman",
-                "vurgu": true
-              }
-            ],
-            "tr": "Şirket, ek finansman olmasaydı yeni pazarlara açılmazdı."
-          }
-        },
-        {
           "soru": "She is ____ charge of the event, so she should make all the final decisions.",
           "secenekler": [
             "over",
@@ -42757,7 +39047,7 @@
       ]
     },
     {
-      "ad": "Test 35",
+      "ad": "Test 33",
       "sorular": [
         {
           "soru": "The team hasn't won any matches lately. They ____ strong opponents.",
@@ -43040,7 +39330,7 @@
           }
         },
         {
-          "soru": "In the world of chemistry, some elements are famous for their (1) ____ properties.",
+          "soru": "In the world of chemistry, some elements are famous for their ____ properties.",
           "secenekler": [
             "renowned",
             "constant",
@@ -43546,7 +39836,7 @@
       ]
     },
     {
-      "ad": "Test 36",
+      "ad": "Test 34",
       "sorular": [
         {
           "soru": "The contract's terms could have been ____ issue during the negotiations.",
@@ -43870,7 +40160,7 @@
           }
         },
         {
-          "soru": "14. \"could have enforced\" çevirisi hangisidir? ____",
+          "soru": "\"could have enforced\" çevirisi hangisidir? ____",
           "secenekler": [
             "zorla kabul ettirmeliydi",
             "zorla kabul ettirebilirdi",
@@ -44311,72 +40601,8 @@
       ]
     },
     {
-      "ad": "Test 37",
+      "ad": "Test 35",
       "sorular": [
-        {
-          "soru": "10. \"had better not disturb\" çevirisi hangisidir? ____",
-          "secenekler": [
-            "rahatsız etmese iyi olur",
-            "rahatsız etmeyebilir",
-            "rahatsız etmemeli",
-            "rahatsız etmeyecekti"
-          ],
-          "cevap": "rahatsız etmese iyi olur",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "You",
-                "a": "sen",
-                "vurgu": false
-              },
-              {
-                "k": "had",
-                "vurgu": false
-              },
-              {
-                "k": "better",
-                "a": "-sen iyi olur",
-                "en": "had better not + V1 = -mesen iyi olur (tavsiye)",
-                "vurgu": true
-              },
-              {
-                "k": "not",
-                "vurgu": false
-              },
-              {
-                "k": "disturb",
-                "a": "rahatsız etmek",
-                "vurgu": true
-              },
-              {
-                "k": "him",
-                "a": "onu",
-                "vurgu": false
-              },
-              {
-                "k": "while",
-                "a": "-iken",
-                "vurgu": false
-              },
-              {
-                "k": "he",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "is",
-                "vurgu": false
-              },
-              {
-                "k": "studying.",
-                "a": "ders çalışmak",
-                "en": "is studying = ders çalışıyor (sürüyor)",
-                "vurgu": true
-              }
-            ],
-            "tr": "O ders çalışırken onu rahatsız etmesen iyi olur."
-          }
-        },
         {
           "soru": "The company should have addressed the issue ____ workplace safety earlier.",
           "secenekler": [
@@ -45043,80 +41269,11 @@
             ],
             "tr": "Politikadaki ani bir değişiklik tüm iş akışını bozabilir ve ayarlamalar gerekli olacaktır."
           }
-        },
-        {
-          "soru": "25. \"is unable to take into account\" çevirisi hangisidir?",
-          "secenekler": [
-            "hesaba katmamalı",
-            "hesaba katamayacaktı",
-            "hesaba katamaz",
-            "hesaba katmış olamaz"
-          ],
-          "cevap": "hesaba katamaz",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "model",
-                "a": "model",
-                "vurgu": true
-              },
-              {
-                "k": "is",
-                "a": "-dir",
-                "vurgu": false
-              },
-              {
-                "k": "unable",
-                "a": "-emez/yetersiz",
-                "en": "be unable to = -emez/yapamaz",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "take",
-                "a": "katmak",
-                "vurgu": true
-              },
-              {
-                "k": "into",
-                "vurgu": false
-              },
-              {
-                "k": "account",
-                "a": "hesap",
-                "en": "take into account = hesaba katmak",
-                "vurgu": true
-              },
-              {
-                "k": "all",
-                "a": "tüm",
-                "vurgu": false
-              },
-              {
-                "k": "relevant",
-                "a": "ilgili",
-                "vurgu": true
-              },
-              {
-                "k": "variables.",
-                "a": "değişkenler",
-                "vurgu": true
-              }
-            ],
-            "tr": "Model, ilgili tüm değişkenleri hesaba katamaz."
-          }
         }
       ]
     },
     {
-      "ad": "Test 38",
+      "ad": "Test 36",
       "sorular": [
         {
           "soru": "The star is invisible ____ the naked eye, but you can see it with a telescope.",
@@ -45447,102 +41604,6 @@
               }
             ],
             "tr": "Yeni proje sorunun tüm yönlerini kapsamalı ve kapsamlı çözümlere ihtiyacımız var."
-          }
-        },
-        {
-          "soru": "He ____ his wallet at the restaurant, because he always checks his pockets before leaving.",
-          "secenekler": [
-            "can't have left",
-            "might not have left"
-          ],
-          "cevap": "can't have left",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "He",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-miş olamaz",
-                "en": "can't have + V3 = -miş olamaz (geçmiş kesin imkânsızlık)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "left",
-                "a": "bırakmak",
-                "vurgu": true
-              },
-              {
-                "k": "his",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "wallet",
-                "a": "cüzdan",
-                "vurgu": true
-              },
-              {
-                "k": "at",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "restaurant,",
-                "a": "restoran",
-                "vurgu": true
-              },
-              {
-                "k": "because",
-                "a": "çünkü",
-                "vurgu": false
-              },
-              {
-                "k": "he",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "always",
-                "a": "her zaman",
-                "vurgu": false
-              },
-              {
-                "k": "checks",
-                "a": "kontrol etmek",
-                "vurgu": true
-              },
-              {
-                "k": "his",
-                "a": "onun",
-                "vurgu": false
-              },
-              {
-                "k": "pockets",
-                "a": "cepler",
-                "vurgu": true
-              },
-              {
-                "k": "before",
-                "a": "önce",
-                "vurgu": false
-              },
-              {
-                "k": "leaving.",
-                "a": "ayrılmak/çıkmak",
-                "vurgu": true
-              }
-            ],
-            "tr": "Cüzdanını restoranda bırakmış olamaz, çünkü çıkmadan önce hep ceplerini kontrol eder."
           }
         },
         {
@@ -45994,101 +42055,8 @@
       ]
     },
     {
-      "ad": "Test 39",
+      "ad": "Test 37",
       "sorular": [
-        {
-          "soru": "(6) ____ a long time, scientists ... how certain things can be ... to our health.",
-          "secenekler": [
-            "Along",
-            "During",
-            "About",
-            "For"
-          ],
-          "cevap": "For",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "For",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "long",
-                "a": "uzun",
-                "vurgu": false
-              },
-              {
-                "k": "time,",
-                "a": "süre",
-                "vurgu": false,
-                "en": "for a long time = uzun süredir"
-              },
-              {
-                "k": "scientists",
-                "a": "bilim insanları",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false,
-                "en": "have studied = araştırdı/araştırıyor (present perfect)"
-              },
-              {
-                "k": "studied",
-                "a": "araştırdı",
-                "vurgu": true
-              },
-              {
-                "k": "how",
-                "a": "nasıl",
-                "vurgu": false
-              },
-              {
-                "k": "certain",
-                "a": "belirli",
-                "vurgu": true
-              },
-              {
-                "k": "things",
-                "a": "şeyler",
-                "vurgu": true
-              },
-              {
-                "k": "can",
-                "a": "-ebilir",
-                "vurgu": true
-              },
-              {
-                "k": "be",
-                "vurgu": false
-              },
-              {
-                "k": "related",
-                "a": "ilişkili",
-                "en": "be related to = ... ile ilişkili olmak",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "our",
-                "a": "bizim",
-                "vurgu": false
-              },
-              {
-                "k": "health.",
-                "a": "sağlık",
-                "vurgu": true
-              }
-            ],
-            "tr": "Uzun bir süredir bilim insanları belirli şeylerin sağlığımızla nasıl ilişkili olabileceğini araştırıyor."
-          }
-        },
         {
           "soru": "The ____ of endangered species ought to be a global priority.",
           "secenekler": [
@@ -46852,7 +42820,7 @@
       ]
     },
     {
-      "ad": "Test 40",
+      "ad": "Test 38",
       "sorular": [
         {
           "soru": "You ____ to the weather forecast. Then you would have known about the storm.",
@@ -46949,7 +42917,7 @@
           }
         },
         {
-          "soru": "25. \"is unable to take into account\" çevirisi hangisidir? ____",
+          "soru": "\"is unable to take into account\" çevirisi hangisidir? ____",
           "secenekler": [
             "hesaba katmamalı",
             "hesaba katamayacaktı",
@@ -47103,92 +43071,6 @@
               }
             ],
             "tr": "Mahallede elektrik kesik. Bir fırtına elektrik hatlarını devirmiş olabilir."
-          }
-        },
-        {
-          "soru": "31. They ____ so loud during the concert; my ears are still ringing.",
-          "secenekler": [
-            "mustn't have screamed",
-            "might not have screamed",
-            "oughtn't to have screamed",
-            "wouldn't have screamed"
-          ],
-          "cevap": "oughtn't to have screamed",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "vurgu": false
-              },
-              {
-                "k": "oughtn't",
-                "a": "-memeliydi",
-                "en": "oughtn't to have + V3 = -memeliydi (geçmiş kınama)",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "screamed",
-                "a": "bağırmak",
-                "vurgu": true
-              },
-              {
-                "k": "so",
-                "a": "bu kadar",
-                "vurgu": false
-              },
-              {
-                "k": "loud",
-                "a": "yüksek sesle",
-                "vurgu": true
-              },
-              {
-                "k": "during",
-                "a": "sırasında",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "concert;",
-                "a": "konser",
-                "vurgu": true
-              },
-              {
-                "k": "my",
-                "a": "benim",
-                "vurgu": false
-              },
-              {
-                "k": "ears",
-                "a": "kulaklar",
-                "vurgu": true
-              },
-              {
-                "k": "are",
-                "vurgu": false
-              },
-              {
-                "k": "still",
-                "a": "hâlâ",
-                "vurgu": true
-              },
-              {
-                "k": "ringing.",
-                "a": "çınlamak",
-                "vurgu": true
-              }
-            ],
-            "tr": "Konser sırasında bu kadar yüksek sesle bağırmamalıydılar; kulaklarım hâlâ çınlıyor."
           }
         },
         {
@@ -47377,7 +43259,7 @@
           }
         },
         {
-          "soru": "To achieve this unusual state, mercury (4) ____ some fascinating changes in its atomic structure.",
+          "soru": "To achieve this unusual state, mercury ____ some fascinating changes in its atomic structure.",
           "secenekler": [
             "must have undergone",
             "had undergone",
@@ -47552,93 +43434,7 @@
           }
         },
         {
-          "soru": "40. Given the evidence at the crime scene, the thief ____ through the window.",
-          "secenekler": [
-            "ought to have entered",
-            "would have entered",
-            "should have entered",
-            "must have entered"
-          ],
-          "cevap": "must have entered",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Given",
-                "a": "göz önüne alınınca",
-                "en": "given = -e bakılırsa/göz önüne alınınca",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "evidence",
-                "a": "kanıt",
-                "vurgu": true
-              },
-              {
-                "k": "at",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "crime",
-                "a": "suç",
-                "vurgu": true
-              },
-              {
-                "k": "scene,",
-                "a": "olay yeri",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "thief",
-                "a": "hırsız",
-                "vurgu": true
-              },
-              {
-                "k": "must",
-                "a": "-mış olmalı",
-                "en": "must have + V3 = -mış olmalı (güçlü çıkarım)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "entered",
-                "a": "girmek",
-                "vurgu": true
-              },
-              {
-                "k": "through",
-                "a": "-den içeri",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "window.",
-                "a": "pencere",
-                "vurgu": true
-              }
-            ],
-            "tr": "Olay yerindeki kanıtlara bakılırsa, hırsız pencereden girmiş olmalı."
-          }
-        },
-        {
-          "soru": "So, they try to warn people to be careful and not do these things (10) ____ much.",
+          "soru": "So, they try to warn people to be careful and not do these things ____ much.",
           "secenekler": [
             "too",
             "such",
@@ -47731,7 +43527,7 @@
       ]
     },
     {
-      "ad": "Test 41",
+      "ad": "Test 39",
       "sorular": [
         {
           "soru": "We need to provide a clear explanation ____ the delay; the clients are waiting for a response.",
@@ -48089,7 +43885,7 @@
           }
         },
         {
-          "soru": "It's famous for being a liquid metal at room temperature, unlike most metals which are (3) ____.",
+          "soru": "It's famous for being a liquid metal at room temperature, unlike most metals which are ____.",
           "secenekler": [
             "solid",
             "fluid",
@@ -48635,65 +44431,8 @@
       ]
     },
     {
-      "ad": "Test 42",
+      "ad": "Test 40",
       "sorular": [
-        {
-          "soru": "____ A) should be  B) were  C) could be  D) should have been",
-          "secenekler": [
-            "should be",
-            "were",
-            "could be",
-            "should have been"
-          ],
-          "cevap": "should have been",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "report",
-                "a": "rapor",
-                "vurgu": true
-              },
-              {
-                "k": "should",
-                "a": "-mış olmalı",
-                "en": "should have been + V3 = edilmiş olmalı (edilgen)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "been",
-                "vurgu": false
-              },
-              {
-                "k": "submitted",
-                "a": "teslim edilmek",
-                "vurgu": true
-              },
-              {
-                "k": "before",
-                "a": "-den önce",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "deadline.",
-                "a": "son tarih",
-                "vurgu": true
-              }
-            ],
-            "tr": "Rapor son tarihten önce teslim edilmiş olmalıydı."
-          }
-        },
         {
           "soru": "He must have ____ sports at a young age; his skills are impressive.",
           "secenekler": [
@@ -48777,90 +44516,7 @@
           }
         },
         {
-          "soru": "They should have ____ the bridge more carefully; it collapsed after only a year.",
-          "secenekler": [
-            "constructed",
-            "embarked",
-            "",
-            ""
-          ],
-          "cevap": "constructed",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "should",
-                "a": "-meliydi",
-                "en": "should have + V3 = yapmalıydı (geçmiş pişmanlık)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "constructed",
-                "a": "inşa etmek (constructed)",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "bridge",
-                "a": "köprü",
-                "vurgu": true
-              },
-              {
-                "k": "more",
-                "a": "daha",
-                "vurgu": false
-              },
-              {
-                "k": "carefully;",
-                "a": "dikkatli bir şekilde",
-                "vurgu": true
-              },
-              {
-                "k": "it",
-                "a": "o",
-                "vurgu": false
-              },
-              {
-                "k": "collapsed",
-                "a": "çöktü",
-                "vurgu": true
-              },
-              {
-                "k": "after",
-                "a": "sonra",
-                "vurgu": false
-              },
-              {
-                "k": "only",
-                "a": "sadece",
-                "vurgu": false
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "year.",
-                "a": "yıl",
-                "vurgu": false
-              }
-            ],
-            "tr": "Köprüyü daha dikkatli inşa etmeliydiler; sadece bir yıl sonra çöktü."
-          }
-        },
-        {
-          "soru": "(6) ____ a long time, scientists (7) ____ how certain things can be (8) ____ to our health.",
+          "soru": "____ a long time, scientists ____ how certain things can be ____ to our health.",
           "secenekler": [
             "Along",
             "During",
@@ -48956,7 +44612,7 @@
           }
         },
         {
-          "soru": "For a long time, scientists (7) ____ how certain things can be harmful to our health.",
+          "soru": "For a long time, scientists ____ how certain things can be harmful to our health.",
           "secenekler": [
             "had been studying",
             "were studying",
@@ -49239,7 +44895,7 @@
           }
         },
         {
-          "soru": "Scientists have long been intrigued (5) ____ this mysterious element and continue to study it to unlock its secrets.",
+          "soru": "Scientists have long been intrigued ____ this mysterious element and continue to study it to unlock its secrets.",
           "secenekler": [
             "to",
             "by",
@@ -49341,7 +44997,7 @@
           }
         },
         {
-          "soru": "For a long time, scientists have been studying how certain things can be (8) ____ to our health.",
+          "soru": "For a long time, scientists have been studying how certain things can be ____ to our health.",
           "secenekler": [
             "profound",
             "harmful",
@@ -49439,10 +45095,10 @@
         {
           "soru": "She must have made a strong impression ____ her colleagues; they praised her work.",
           "secenekler": [
-            "A) upon",
-            "B) with",
-            "C) along",
-            "D) onto"
+            "upon",
+            "with",
+            "along",
+            "onto"
           ],
           "cevap": "upon",
           "ornek": {
@@ -49524,7 +45180,7 @@
       ]
     },
     {
-      "ad": "Test 43",
+      "ad": "Test 41",
       "sorular": [
         {
           "soru": "They ____ the car with petrol before they set off yesterday. Now, we're out of gas.",
@@ -49627,85 +45283,6 @@
               }
             ],
             "tr": "Dün yola çıkmadan önce arabaya benzin doldurmaları gerekirdi. Şimdi benzinimiz bitti."
-          }
-        },
-        {
-          "soru": "39. She ____ all this work alone. Someone must have helped her.",
-          "secenekler": [
-            "oughtn't to have done",
-            "can't have done",
-            "wouldn't have done",
-            "shouldn't have done"
-          ],
-          "cevap": "can't have done",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "She",
-                "vurgu": false
-              },
-              {
-                "k": "can't",
-                "a": "-mış olamaz",
-                "en": "can't have + V3 = -mış olamaz (güçlü olumsuz çıkarım)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "done",
-                "a": "yapmak",
-                "vurgu": true
-              },
-              {
-                "k": "all",
-                "a": "bütün",
-                "vurgu": true
-              },
-              {
-                "k": "this",
-                "a": "bu",
-                "vurgu": false
-              },
-              {
-                "k": "work",
-                "a": "iş",
-                "vurgu": true
-              },
-              {
-                "k": "alone.",
-                "a": "tek başına",
-                "vurgu": true
-              },
-              {
-                "k": "Someone",
-                "a": "birisi",
-                "vurgu": true
-              },
-              {
-                "k": "must",
-                "a": "-mış olmalı",
-                "en": "must have + V3 = -mış olmalı (güçlü çıkarım)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "helped",
-                "a": "yardım etmek",
-                "vurgu": true
-              },
-              {
-                "k": "her.",
-                "a": "ona",
-                "vurgu": false
-              }
-            ],
-            "tr": "Bütün bu işi tek başına yapmış olamaz. Birisi ona yardım etmiş olmalı."
           }
         },
         {
@@ -49954,7 +45531,7 @@
           }
         },
         {
-          "soru": "(6) ____ a long time, scientists (7) ____ how certain things can be harmful to our health.",
+          "soru": "____ a long time, scientists ____ how certain things can be harmful to our health.",
           "secenekler": [
             "had been studying",
             "were studying",
@@ -50438,12 +46015,7 @@
             ],
             "tr": "Ailem henüz partiye gelmedi. Bu şehri pek iyi bilmiyorlar. Kaybolmuş olmalılar."
           }
-        }
-      ]
-    },
-    {
-      "ad": "Test 44",
-      "sorular": [
+        },
         {
           "soru": "She could run into her old friend ____ in the city centre today; they haven't seen each other in years.",
           "secenekler": [

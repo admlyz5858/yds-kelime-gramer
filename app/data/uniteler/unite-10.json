@@ -8729,72 +8729,6 @@
       "ad": "Test 1",
       "sorular": [
         {
-          "soru": "... online.",
-          "secenekler": [
-            "attend",
-            "attending",
-            "to attend",
-            "to be attended"
-          ],
-          "cevap": "to attend",
-          "ornek": null
-        },
-        {
-          "soru": "____ (review)",
-          "secenekler": [
-            "will have reviewed",
-            "will have been reviewed",
-            "is reviewed",
-            "reviews"
-          ],
-          "cevap": "will have been reviewed",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "By",
-                "a": "-e kadar",
-                "vurgu": true
-              },
-              {
-                "k": "then,",
-                "a": "o zaman",
-                "vurgu": true
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "documents",
-                "a": "belgeler",
-                "vurgu": true
-              },
-              {
-                "k": "will",
-                "a": "-ecek",
-                "en": "will have been + V3 = Future Perfect Passive",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "a": "olmak",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "a": "-miş",
-                "vurgu": true
-              },
-              {
-                "k": "reviewed.",
-                "a": "gözden geçirilmiş",
-                "vurgu": true
-              }
-            ],
-            "tr": "O zamana kadar belgeler gözden geçirilmiş olacak."
-          }
-        },
-        {
           "soru": "____ in Ancient Rome.",
           "secenekler": [
             "thought",
@@ -8804,99 +8738,6 @@
           ],
           "cevap": "thought",
           "ornek": null
-        },
-        {
-          "soru": "____ them ____.",
-          "secenekler": [
-            "are going to be broken",
-            "must have been broken",
-            "can break",
-            "should break"
-          ],
-          "cevap": "must have been broken",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "They",
-                "a": "onlar",
-                "vurgu": false
-              },
-              {
-                "k": "must",
-                "a": "-meli",
-                "en": "must have been + V3 = -mış olmalı (geçmiş tahmin)",
-                "vurgu": true
-              },
-              {
-                "k": "have",
-                "a": "olmak",
-                "vurgu": true
-              },
-              {
-                "k": "been",
-                "a": "-miş",
-                "en": "have been + V3 = edilgen tamamlanmış",
-                "vurgu": true
-              },
-              {
-                "k": "broken.",
-                "a": "kırılmış",
-                "vurgu": true
-              }
-            ],
-            "tr": "Onlar kırılmış olmalı."
-          }
-        },
-        {
-          "soru": "Elephants are known ____ a fantastic memory.",
-          "secenekler": [
-            "having",
-            "to have"
-          ],
-          "cevap": "to have",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Elephants",
-                "a": "filler",
-                "vurgu": true
-              },
-              {
-                "k": "are",
-                "vurgu": false
-              },
-              {
-                "k": "known",
-                "a": "bilinir",
-                "vurgu": true,
-                "en": "be known to have = sahip olduğu bilinir (pasif)"
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "a": "sahip olmak",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "fantastic",
-                "a": "harika",
-                "vurgu": true
-              },
-              {
-                "k": "memory.",
-                "a": "hafıza",
-                "vurgu": true
-              }
-            ],
-            "tr": "Fillerin harika bir hafızaya sahip olduğu bilinir."
-          }
         },
         {
           "soru": "The employee acknowledged ____ a mistake.",
@@ -8956,17 +8797,6 @@
             "remembered"
           ],
           "cevap": "to be remembered",
-          "ornek": null
-        },
-        {
-          "soru": "____ for twelve hours, Alex threw...",
-          "secenekler": [
-            "Having worked",
-            "To work",
-            "To have worked",
-            "Working"
-          ],
-          "cevap": "Having worked",
           "ornek": null
         },
         {
@@ -10122,70 +9952,6 @@
               }
             ],
             "tr": "Polis geçen hafta sonu kayıp kızı bulamadı."
-          }
-        },
-        {
-          "soru": "We're having problems ____ the right material for your dress.",
-          "secenekler": [
-            "to find",
-            "finding"
-          ],
-          "cevap": "finding",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "We're",
-                "a": "-yoruz",
-                "vurgu": false,
-                "en": "be + V-ing = şimdiki zaman"
-              },
-              {
-                "k": "having",
-                "a": "yaşıyoruz",
-                "vurgu": true
-              },
-              {
-                "k": "problems",
-                "a": "sorunlar",
-                "vurgu": true,
-                "en": "have problems + V-ing = -mekte sorun yaşamak"
-              },
-              {
-                "k": "finding",
-                "a": "bulma",
-                "vurgu": true,
-                "en": "V-ing (gerund)"
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "right",
-                "a": "doğru",
-                "vurgu": true
-              },
-              {
-                "k": "material",
-                "a": "kumaş/malzeme",
-                "vurgu": true
-              },
-              {
-                "k": "for",
-                "vurgu": false
-              },
-              {
-                "k": "your",
-                "a": "senin",
-                "vurgu": false
-              },
-              {
-                "k": "dress.",
-                "a": "elbise",
-                "vurgu": true
-              }
-            ],
-            "tr": "Elbiseniz için doğru kumaşı bulmakta sorun yaşıyoruz."
           }
         },
         {
@@ -11537,17 +11303,6 @@
           }
         },
         {
-          "soru": "21. The invitation ____ to all the participants last Friday.",
-          "secenekler": [
-            "was sent",
-            "has to be sent",
-            "was sending",
-            "should have sent"
-          ],
-          "cevap": "was sent",
-          "ornek": null
-        },
-        {
           "soru": "The host ____ the invitation to all the participants last Friday.",
           "secenekler": [
             "sent",
@@ -11684,86 +11439,6 @@
               }
             ],
             "tr": "Gezginler kültürel festivale davet edilmiş olmaktan dolayı heyecanlıydılar."
-          }
-        },
-        {
-          "soru": "Hungarian ____ as one of the world's most difficult languages to learn.",
-          "secenekler": [
-            "sees",
-            "must be seen"
-          ],
-          "cevap": "must be seen",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "Hungarian",
-                "a": "Macarca",
-                "vurgu": true
-              },
-              {
-                "k": "must",
-                "a": "-meli",
-                "en": "must be seen = görülmelidir (zorunluluk edilgen)",
-                "vurgu": true
-              },
-              {
-                "k": "be",
-                "vurgu": false
-              },
-              {
-                "k": "seen",
-                "a": "görülmek",
-                "vurgu": true
-              },
-              {
-                "k": "as",
-                "a": "olarak",
-                "vurgu": false
-              },
-              {
-                "k": "one",
-                "a": "biri",
-                "vurgu": false
-              },
-              {
-                "k": "of",
-                "vurgu": false
-              },
-              {
-                "k": "the",
-                "vurgu": false
-              },
-              {
-                "k": "world's",
-                "a": "dünyanın",
-                "vurgu": true
-              },
-              {
-                "k": "most",
-                "a": "en",
-                "vurgu": false
-              },
-              {
-                "k": "difficult",
-                "a": "zor",
-                "vurgu": true
-              },
-              {
-                "k": "languages",
-                "a": "diller",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "learn.",
-                "a": "öğrenmek",
-                "vurgu": true
-              }
-            ],
-            "tr": "Macarca, öğrenilmesi en zor dünya dillerinden biri olarak görülmelidir."
           }
         },
         {
@@ -11916,17 +11591,6 @@
           }
         },
         {
-          "soru": "39. The chef ____ the cake by the time guests arrive.",
-          "secenekler": [
-            "must bake",
-            "bakes",
-            "is baked",
-            "will have baked"
-          ],
-          "cevap": "will have baked",
-          "ornek": null
-        },
-        {
           "soru": "New York ____ the most diverse city in the U.S.",
           "secenekler": [
             "considers",
@@ -12071,17 +11735,6 @@
           }
         },
         {
-          "soru": "40. The committee ____ the new policy by next month.",
-          "secenekler": [
-            "will have reviewed",
-            "will have been reviewed",
-            "is reviewed",
-            "reviews"
-          ],
-          "cevap": "will have reviewed",
-          "ornek": null
-        },
-        {
           "soru": "She is looking forward to ____ her new job next month.",
           "secenekler": [
             "start",
@@ -12148,17 +11801,6 @@
             ],
             "tr": "Önümüzdeki ay yeni işine başlamayı dört gözle bekliyor."
           }
-        },
-        {
-          "soru": "29. The highway ____ yesterday due to a serious road accident.",
-          "secenekler": [
-            "had to close",
-            "may be closed",
-            "was closed",
-            "closed"
-          ],
-          "cevap": "was closed",
-          "ornek": null
         },
         {
           "soru": "Both parties ____ the agreement as soon as they sign.",
@@ -12530,17 +12172,6 @@
             ],
             "tr": "Hata fark edildiğinde belgeler sekreter tarafından yazılıyordu."
           }
-        },
-        {
-          "soru": "37. The host ____ the invitation to all the participants last Friday.",
-          "secenekler": [
-            "sent",
-            "was sent",
-            "sends",
-            "has been sent"
-          ],
-          "cevap": "sent",
-          "ornek": null
         },
         {
           "soru": "The trainer ____ the rules to all new members during orientation.",
@@ -13248,17 +12879,6 @@
           }
         },
         {
-          "soru": "35. Both parties ____ the agreement as soon as they sign.",
-          "secenekler": [
-            "are finalized",
-            "should have finalized",
-            "could be finalized",
-            "will finalize"
-          ],
-          "cevap": "will finalize",
-          "ornek": null
-        },
-        {
           "soru": "Job applicants ____ of the result of the interview on Wednesday.",
           "secenekler": [
             "will be informed",
@@ -13535,17 +13155,6 @@
       "ad": "Test 10",
       "sorular": [
         {
-          "soru": "34. The trainer ____ the rules to all new members during orientation.",
-          "secenekler": [
-            "explains",
-            "has been explained",
-            "is explained",
-            "would explain"
-          ],
-          "cevap": "explains",
-          "ornek": null
-        },
-        {
           "soru": "Despite his absence, he ____ about the changes to the schedule.",
           "secenekler": [
             "is going to inform",
@@ -13625,17 +13234,6 @@
             ],
             "tr": "Yokluğuna rağmen, programdaki değişiklikler hakkında bilgilendirilmiş olabilir."
           }
-        },
-        {
-          "soru": "32. Intelligent robots ____ over the control of the world by 2100.",
-          "secenekler": [
-            "will have taken",
-            "would take",
-            "could have been taken",
-            "will be taken"
-          ],
-          "cevap": "will have taken",
-          "ornek": null
         },
         {
           "soru": "They ____ the deadline. Now they will have to face the consequences.",
@@ -13799,17 +13397,6 @@
             ],
             "tr": "İnşaat ekibi yıl sonuna kadar binayı inşa etmiş olacak."
           }
-        },
-        {
-          "soru": "28. They ____ that rumour. It caused a lot of unnecessary drama.",
-          "secenekler": [
-            "wouldn't be spread",
-            "shouldn't have spread",
-            "mustn't be spread",
-            "haven't spread"
-          ],
-          "cevap": "shouldn't have spread",
-          "ornek": null
         },
         {
           "soru": "He mentioned ____ the movie before, so we chose a different one to watch.",
@@ -13979,28 +13566,6 @@
             ],
             "tr": "New York'a taşınmadan önce, çocukken şehri ziyaret etmiş olduğunu hatırladı."
           }
-        },
-        {
-          "soru": "36. They ____ the deadline. Now they will have to face the consequences.",
-          "secenekler": [
-            "aren't missing",
-            "hadn't been missed",
-            "mightn't miss",
-            "shouldn't have missed"
-          ],
-          "cevap": "shouldn't have missed",
-          "ornek": null
-        },
-        {
-          "soru": "38. The construction team ____ the building by the end of the year.",
-          "secenekler": [
-            "will have constructed",
-            "constructs",
-            "had to construct",
-            "is being constructed"
-          ],
-          "cevap": "will have constructed",
-          "ornek": null
         }
       ]
     },
@@ -14097,28 +13662,6 @@
             ],
             "tr": "Yeni girişime erkenden yatırım yapma fırsatları vardı ama bunu yapmamaya karar verdiler."
           }
-        },
-        {
-          "soru": "33. He mentioned ____ the movie before, so we chose a different one to watch.",
-          "secenekler": [
-            "to see",
-            "having seen",
-            "being seen",
-            "seeing"
-          ],
-          "cevap": "having seen",
-          "ornek": null
-        },
-        {
-          "soru": "31. Before moving to New York, he remembered ____ the city as a child.",
-          "secenekler": [
-            "to visit",
-            "being visited",
-            "to have been visited",
-            "having visited"
-          ],
-          "cevap": "having visited",
-          "ornek": null
         },
         {
           "soru": "The ancient artefact is believed ____ by skilled artisans over a thousand years ago.",
@@ -14422,119 +13965,6 @@
           "ornek": null
         },
         {
-          "soru": "27. They had the opportunity ____ in the startup early on but decided against it.",
-          "secenekler": [
-            "investing",
-            "being invested",
-            "to have invested",
-            "to be invested"
-          ],
-          "cevap": "to have invested",
-          "ornek": null
-        },
-        {
-          "soru": "20. The ancient artefact is believed ____ by skilled artisans over a thousand years ago.",
-          "secenekler": [
-            "being crafted",
-            "to be crafted",
-            "to craft",
-            "to have been crafted"
-          ],
-          "cevap": "to have been crafted",
-          "ornek": {
-            "tokenlar": [
-              {
-                "k": "The",
-                "vurgu": false
-              },
-              {
-                "k": "ancient",
-                "a": "antik",
-                "vurgu": true
-              },
-              {
-                "k": "artefact",
-                "a": "eser",
-                "vurgu": true
-              },
-              {
-                "k": "is",
-                "a": "-iliyor",
-                "en": "is believed to = ...olduğuna inanılıyor",
-                "vurgu": true
-              },
-              {
-                "k": "believed",
-                "a": "inanılıyor",
-                "vurgu": true
-              },
-              {
-                "k": "to",
-                "vurgu": false
-              },
-              {
-                "k": "have",
-                "vurgu": false
-              },
-              {
-                "k": "been",
-                "vurgu": false
-              },
-              {
-                "k": "crafted",
-                "a": "yapılmış",
-                "en": "to have been + V3 = geçmiş edilgen mastar",
-                "vurgu": true
-              },
-              {
-                "k": "by",
-                "a": "tarafından",
-                "vurgu": false
-              },
-              {
-                "k": "skilled",
-                "a": "yetenekli",
-                "vurgu": true
-              },
-              {
-                "k": "artisans",
-                "a": "zanaatkârlar",
-                "vurgu": true
-              },
-              {
-                "k": "over",
-                "a": "-den fazla",
-                "vurgu": true
-              },
-              {
-                "k": "a",
-                "vurgu": false
-              },
-              {
-                "k": "thousand",
-                "a": "bin",
-                "vurgu": true
-              },
-              {
-                "k": "years",
-                "a": "yıl",
-                "vurgu": true
-              },
-              {
-                "k": "ago.",
-                "a": "önce",
-                "vurgu": true
-              }
-            ],
-            "tr": "Antik eserin bin yıldan fazla zaman önce yetenekli zanaatkârlar tarafından yapıldığına inanılıyor."
-          }
-        }
-      ]
-    },
-    {
-      "ad": "Test 12",
-      "sorular": [
-        {
           "soru": "The students ____ the bus; they were waiting at the stop for a long time.",
           "secenekler": [
             "may not have been missed",
@@ -14627,17 +14057,6 @@
             ],
             "tr": "Öğrenciler otobüsü kaçırmış olamaz; uzun süredir durakta bekliyorlardı."
           }
-        },
-        {
-          "soru": "30. The students ____ the bus; they were waiting at the stop for a long time.",
-          "secenekler": [
-            "may not have been missed",
-            "can't have missed",
-            "wouldn't have missed",
-            "couldn't be missed"
-          ],
-          "cevap": "can't have missed",
-          "ornek": null
         }
       ]
     }
