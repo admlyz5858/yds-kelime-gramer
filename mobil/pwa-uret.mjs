@@ -75,7 +75,7 @@ html = html.replace(/css\/style\.css\?v=\d+/, `css/style.css?v=${surum}`).replac
 writeFileSync(join(hedef, 'index.html'), html);
 
 // --- service worker ---
-const liste = dosyalar.map(p => './' + relative(hedef, p).split('\\').join('/')).filter(p => !/\/sw\.js$/.test(p));
+const liste = dosyalar.map(p => './' + relative(hedef, p).split('\\').join('/')).filter(p => !/\/sw\.js$|\.gitkeep$/.test(p));
 liste.push('./');
 const sw = `// Kelimetre PWA service worker — sürüm ${surum} (pwa-uret.mjs üretir)
 const SURUM = 'kelimetre-${surum}';
