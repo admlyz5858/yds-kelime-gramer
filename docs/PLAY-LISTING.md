@@ -50,7 +50,18 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
 
-## Sürüm notları (1.3.0, max 500 karakter)
+## Sürüm notları (1.3.0, Play Console'a yapıştırılacak kısa sürüm · 431 karakter)
+```
+• Yeni tasarım: Bugün · Kelimeler · Müfredat · Oyun · Ben sekmeleri
+• Tüm kelimeler tek sözlükte: seviye (S1–S5), tür ve durum filtreleri
+• Yenilenen kelime kartları: biçim çipleri, ek örnekler, 100+ yeni örnek cümle
+• Soru Bankası: 1.500+ soru 9 konuda, 10'luk testler kolaydan zora
+• Ünite alıştırmaları ve çeviri çalışması
+• Eşleştirmede sezon yolu; Bugün'de günün planı
+• Kaydırarak derecelendirme, oturuma devam, sistem teması
+```
+
+## Sürüm notları (1.3.0, uzun — iç kayıt)
 ```
 • Yeni tasarım: Bugün · Kelimeler · Müfredat · Oyun · Ben sekmeleri
 • Tüm kelimeler tek sözlükte: seviye (S1–S5), tür ve durum filtreleri, arama, A→Z
