@@ -11,6 +11,7 @@
 import { srs, srsKaydet } from './durum.js';
 import { ses, titre, seslendir } from './efekt.js';
 import { shuffle, gunStr } from './logic.js';
+import { kartCiplerHTML, ornekBlokHTML, wireEkOrnek } from './kart.js';
 
 const GUN_MS = 86400000;
 const bugunGun = () => Math.floor(Date.now() / GUN_MS);
@@ -397,12 +398,12 @@ export function kurKelimeOgren(api) {
     render(`
       <button class="aksiyon ikincil" id="ogrDetGeri" style="margin-bottom:14px">‹ Listeye dön</button>
       <div class="ogr-detay-kart">
-        <div class="ogr-detay-tur">${esc(w.tur || '')}${w.u ? ` · Ünite ${w.u}` : ''}</div>
+        ${kartCiplerHTML(w, esc)}
         <div class="ogr-detay-en">${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrDetSes">🔊</button>' : ''}</div>
         <div class="ogr-detay-tr">${esc(w.tr)}</div>
         <div class="ogr-detay-durum">${durBilgi}</div>
       </div>
-      ${w.ornek_tokenlar ? `<div class="kart-ornek-etiket">Örnek · kelimeye dokun, çeviri için kaydır</div>${ornekHTML({ tokenlar: w.ornek_tokenlar, tr: w.ornek_tr })}` : ''}
+      ${ornekBlokHTML(w, esc, ornekHTML, { hepsi: true })}
       <div class="btn-satir">
         <button class="aksiyon ${defterdeMi(w.en) ? '' : 'ikincil'}" id="ogrDetFav">${defterdeMi(w.en) ? '📓 Defterde ✓' : '📓 Deftere ekle'}</button>
         <button class="aksiyon" id="ogrDetCalis">Bu kelimeyi çalış ›</button>
@@ -445,13 +446,14 @@ export function kurKelimeOgren(api) {
     const onYuz = dinle
       ? `<div class="ogr-kart-on"><button class="ogr-ses buyuk" id="ogrSes">🔊</button><div class="ogr-kart-ipucu">Dinle · kelimeyi hatırla, sonra göster</div></div>`
       : trOn
-        ? `<div class="ogr-kart-on">${w.tur ? `<div class="kart-tur">${esc(w.tur)}</div>` : ''}<div class="kart-on ogr-on-tr">${esc(w.tr)}</div><div class="ogr-kart-ipucu">İngilizcesini düşün, sonra göster</div></div>`
-        : `<div class="ogr-kart-on">${w.tur ? `<div class="kart-tur">${esc(w.tur)}</div>` : ''}<div class="kart-on">${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes">🔊</button>' : ''}</div><div class="ogr-kart-ipucu">Anlamı düşün, sonra göster</div></div>`;
+        ? `<div class="ogr-kart-on">${kartCiplerHTML(w, esc)}<div class="kart-on ogr-on-tr">${esc(w.tr)}</div><div class="ogr-kart-ipucu">İngilizcesini düşün, sonra göster</div></div>`
+        : `<div class="ogr-kart-on">${kartCiplerHTML(w, esc)}<div class="kart-on">${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes">🔊</button>' : ''}</div><div class="ogr-kart-ipucu">Anlamı düşün, sonra göster</div></div>`;
     const arkaAna = trOn ? `${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes2">🔊</button>' : ''}` : esc(w.tr);
     const arkaYuz = `<div class="ogr-kart-arka">
-        <div class="kart-arka-tur">${esc(w.tur || '')}${trOn ? '' : ` · ${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes2">🔊</button>' : ''}`}</div>
+        ${kartCiplerHTML(w, esc)}
+        <div class="kart-arka-tur">${trOn ? esc(w.tr) : `${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes2">🔊</button>' : ''}`}</div>
         <div class="kart-anlam"><span>${arkaAna}</span></div>
-        ${w.ornek_tokenlar ? `<div class="kart-ornek-etiket">Örnek · kelimeye dokun, çeviri için kaydır</div>${ornekHTML({ tokenlar: w.ornek_tokenlar, tr: w.ornek_tr })}` : ''}
+        ${ornekBlokHTML(w, esc, ornekHTML)}
       </div>`;
     render(`${ustBar()}<div class="ogr-kart-ustet">${rozet(item)}</div>
       <div class="ogr-calisma-kart">${_acik ? arkaYuz : onYuz}</div>
@@ -460,7 +462,7 @@ export function kurKelimeOgren(api) {
     ['ogrSes', 'ogrSes2'].forEach(id => { const el = document.getElementById(id); if (el) el.onclick = () => seslendir(w.en); });
     if (dinle && !_acik) seslendir(w.en);
     if (!_acik) { const g = document.getElementById('ogrGoster'); if (g) g.onclick = () => { _acik = true; cizKart(item, mod); }; }
-    else { if (w.ornek_tokenlar) wireOrnekler(document.getElementById('icerik')); wireDerece(item); wireKaydir(item); }
+    else { if (w.ornek_tokenlar) { wireOrnekler(document.getElementById('icerik')); wireEkOrnek(document.getElementById('icerik'), wireOrnekler); } wireDerece(item); wireKaydir(item); }
   }
   // Kartı sola kaydır → Tekrar, sağa kaydır → Kolay (düğmelerle aynı)
   function wireKaydir(item) {

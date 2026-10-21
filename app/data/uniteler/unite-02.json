@@ -15247,6 +15247,13 @@
       "tr": "bağ, ilişki",
       "ornek_tokenlar": [
         {
+          "k": "There",
+          "a": "orada"
+        },
+        {
+          "k": "is"
+        },
+        {
           "k": "a"
         },
         {
@@ -15255,11 +15262,22 @@
         },
         {
           "k": "bond",
-          "a": "bağ",
-          "vurgu": true
+          "vurgu": true,
+          "a": "bağ"
+        },
+        {
+          "k": "between",
+          "a": "arasında"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "twins.",
+          "a": "ikizler"
         }
       ],
-      "ornek_tr": "güçlü bir bağ"
+      "ornek_tr": "İkizler arasında güçlü bir bağ var."
     },
     {
       "en": "rug",
@@ -15267,11 +15285,18 @@
       "tr": "halı, kilim, küçük halı",
       "ornek_tokenlar": [
         {
-          "k": "a"
+          "k": "A"
         },
         {
           "k": "dog",
           "a": "köpek"
+        },
+        {
+          "k": "was"
+        },
+        {
+          "k": "sleeping",
+          "a": "uyumak"
         },
         {
           "k": "on",
@@ -15282,17 +15307,9 @@
         },
         {
           "k": "rug",
-          "a": "halı",
-          "vurgu": true
-        }
-      ],
-      "ornek_tr": "halının üstünde bir köpek"
-    },
-    {
-      "en": "fireplace",
-      "tur": "İsim",
-      "tr": "şömine, ocak",
-      "ornek_tokenlar": [
+          "vurgu": true,
+          "a": "halı"
+        },
         {
           "k": "beside",
           "a": "yanında"
@@ -15301,18 +15318,69 @@
           "k": "the"
         },
         {
-          "k": "fireplace",
-          "a": "şömine",
-          "vurgu": true
+          "k": "fireplace.",
+          "a": "şömine"
         }
       ],
-      "ornek_tr": "şöminenin yanında"
+      "ornek_tr": "Bir köpek şöminenin yanındaki halının üstünde uyuyordu."
+    },
+    {
+      "en": "fireplace",
+      "tur": "İsim",
+      "tr": "şömine, ocak",
+      "ornek_tokenlar": [
+        {
+          "k": "We"
+        },
+        {
+          "k": "spent",
+          "a": "geçirdi"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "evening",
+          "a": "akşam"
+        },
+        {
+          "k": "beside",
+          "a": "yanında"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "fireplace,",
+          "vurgu": true,
+          "a": "şömine"
+        },
+        {
+          "k": "reading",
+          "a": "okuma"
+        },
+        {
+          "k": "quietly.",
+          "a": "sessizce"
+        }
+      ],
+      "ornek_tr": "Akşamı şöminenin yanında sessizce kitap okuyarak geçirdik."
     },
     {
       "en": "desert",
       "tur": "İsim",
       "tr": "çöl",
       "ornek_tokenlar": [
+        {
+          "k": "The"
+        },
+        {
+          "k": "caravan"
+        },
+        {
+          "k": "travelled",
+          "a": "seyahat etti"
+        },
         {
           "k": "across",
           "a": "karşıdan karşıya"
@@ -15322,11 +15390,23 @@
         },
         {
           "k": "desert",
-          "a": "çöl",
-          "vurgu": true
+          "vurgu": true,
+          "a": "çöl"
+        },
+        {
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "ten",
+          "a": "on"
+        },
+        {
+          "k": "days.",
+          "a": "gün"
         }
       ],
-      "ornek_tr": "çölün karşıdan karşıya"
+      "ornek_tr": "Kervan on gün boyunca çölü aştı."
     },
     {
       "en": "ruins",
@@ -15334,13 +15414,21 @@
       "tr": "kalıntılar, harabeler, antik kalıntılar",
       "ornek_tokenlar": [
         {
+          "k": "Archaeologists",
+          "a": "arkeologlar"
+        },
+        {
+          "k": "discovered",
+          "a": "keşfetti"
+        },
+        {
           "k": "ancient",
           "a": "antik"
         },
         {
           "k": "ruins",
-          "a": "kalıntılar",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kalıntılar"
         },
         {
           "k": "beneath",
@@ -15350,11 +15438,11 @@
           "k": "the"
         },
         {
-          "k": "city",
+          "k": "city.",
           "a": "şehir"
         }
       ],
-      "ornek_tr": "şehrin altındaki antik kalıntılar"
+      "ornek_tr": "Arkeologlar şehrin altında antik kalıntılar keşfetti."
     },
     {
       "en": "armed",
@@ -15362,19 +15450,42 @@
       "tr": "silahlı",
       "ornek_tokenlar": [
         {
-          "k": "an"
+          "k": "An"
         },
         {
           "k": "armed",
-          "a": "silahlı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "silahlı"
         },
         {
           "k": "group",
           "a": "grup"
+        },
+        {
+          "k": "took",
+          "a": "aldı"
+        },
+        {
+          "k": "control",
+          "a": "kontrol etmek"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "border",
+          "a": "sınır"
+        },
+        {
+          "k": "town.",
+          "a": "kasaba"
         }
       ],
-      "ornek_tr": "silahlı bir grup"
+      "ornek_tr": "Silahlı bir grup sınır kasabasının kontrolünü ele geçirdi."
     },
     {
       "en": "trophy",
@@ -15460,25 +15571,37 @@
       "tr": "kamp yeri",
       "ornek_tokenlar": [
         {
+          "k": "We"
+        },
+        {
+          "k": "found",
+          "a": "kurmak"
+        },
+        {
           "k": "a"
         },
         {
-          "k": "campsite",
-          "a": "kamp yeri",
-          "vurgu": true
+          "k": "quiet",
+          "a": "sessizlik"
         },
         {
-          "k": "by"
+          "k": "campsite",
+          "vurgu": true,
+          "a": "kamp yeri"
+        },
+        {
+          "k": "by",
+          "a": "tarafından"
         },
         {
           "k": "the"
         },
         {
-          "k": "lake",
+          "k": "lake.",
           "a": "göl"
         }
       ],
-      "ornek_tr": "gölün yanında bir kamp yeri"
+      "ornek_tr": "Göl kenarında sessiz bir kamp yeri bulduk."
     },
     {
       "en": "beneficial",
@@ -15506,28 +15629,96 @@
     {
       "en": "crucial",
       "tur": "Sıfat",
-      "tr": "çok önemli, hayati",
+      "tr": "çok önemli, hayati · crucial for/to: … için çok önemli",
       "ornek_tokenlar": [
         {
-          "k": "crucial",
-          "a": "çok önemli",
-          "vurgu": true
+          "k": "Teamwork",
+          "a": "takım çalışması"
         },
         {
-          "k": "to"
+          "k": "is"
+        },
+        {
+          "k": "crucial",
+          "vurgu": true,
+          "a": "çok önemli"
+        },
+        {
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "the"
         },
         {
-          "k": "project's"
+          "k": "project's",
+          "a": "projeler"
         },
         {
-          "k": "success",
+          "k": "success.",
           "a": "başarı"
         }
       ],
-      "ornek_tr": "projenin başarısı için çok önemli"
+      "ornek_tr": "Takım çalışması projenin başarısı için çok önemlidir.",
+      "ornekler": [
+        {
+          "tokenlar": [
+            {
+              "k": "Access",
+              "a": "erişim"
+            },
+            {
+              "k": "to",
+              "a": "-e"
+            },
+            {
+              "k": "quality",
+              "a": "kaliteli"
+            },
+            {
+              "k": "education",
+              "a": "eğitim"
+            },
+            {
+              "k": "is"
+            },
+            {
+              "k": "crucial",
+              "vurgu": true,
+              "a": "çok önemli"
+            },
+            {
+              "k": "for",
+              "a": "...için"
+            },
+            {
+              "k": "the"
+            },
+            {
+              "k": "long-term",
+              "a": "uzun vadeli"
+            },
+            {
+              "k": "development",
+              "a": "kalkınma"
+            },
+            {
+              "k": "of",
+              "a": "-nin"
+            },
+            {
+              "k": "any",
+              "a": "herhangi bir"
+            },
+            {
+              "k": "society.",
+              "a": "toplum"
+            }
+          ],
+          "tr": "Kaliteli eğitime erişim, herhangi bir toplumun uzun vadeli kalkınması için çok önemlidir.",
+          "bicim": "crucial for / to"
+        }
+      ]
     },
     {
       "en": "relief",
@@ -15592,6 +15783,17 @@
       "tr": "iklim değişimi",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "scientists",
+          "a": "bilim insanları"
+        },
+        {
+          "k": "published",
+          "a": "yayımlandı"
+        },
+        {
           "k": "a"
         },
         {
@@ -15599,20 +15801,29 @@
           "a": "rapor"
         },
         {
-          "k": "about"
+          "k": "about",
+          "a": "hakkında"
         },
         {
           "k": "climate",
-          "a": "iklim",
-          "vurgu": true
+          "vurgu": true,
+          "a": "iklim"
         },
         {
           "k": "change",
-          "a": "değişim",
-          "vurgu": true
+          "vurgu": true,
+          "a": "değişim"
+        },
+        {
+          "k": "last",
+          "a": "sürmek"
+        },
+        {
+          "k": "week.",
+          "a": "hafta"
         }
       ],
-      "ornek_tr": "iklim değişimi hakkında bir rapor"
+      "ornek_tr": "Bilim insanları geçen hafta iklim değişikliği hakkında bir rapor yayımladı."
     },
     {
       "en": "candle",
@@ -15667,14 +15878,15 @@
       "tr": "tüy",
       "ornek_tokenlar": [
         {
-          "k": "a"
+          "k": "A"
         },
         {
           "k": "bird",
           "a": "kuş"
         },
         {
-          "k": "with"
+          "k": "with",
+          "a": "ile"
         },
         {
           "k": "colourful",
@@ -15682,11 +15894,25 @@
         },
         {
           "k": "feathers",
-          "a": "tüyler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "tüyler"
+        },
+        {
+          "k": "landed",
+          "a": "kondu"
+        },
+        {
+          "k": "on",
+          "a": "-de"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "balcony."
         }
       ],
-      "ornek_tr": "renkli tüylü bir kuş"
+      "ornek_tr": "Renkli tüylü bir kuş balkona kondu."
     },
     {
       "en": "bowl",
@@ -15717,20 +15943,46 @@
       "tr": "çit",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "dog",
+          "a": "köpek"
+        },
+        {
+          "k": "jumped"
+        },
+        {
           "k": "over",
-          "a": "üzerinden",
-          "vurgu": false
+          "a": "üzerinden"
         },
         {
           "k": "the"
         },
         {
           "k": "fence",
-          "a": "çit",
-          "vurgu": true
+          "vurgu": true,
+          "a": "çit"
+        },
+        {
+          "k": "and"
+        },
+        {
+          "k": "ran"
+        },
+        {
+          "k": "into",
+          "a": "-in içine"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "field.",
+          "a": "alan"
         }
       ],
-      "ornek_tr": "çitin üzerinden"
+      "ornek_tr": "Köpek çitin üzerinden atladı ve tarlaya koştu."
     },
     {
       "en": "weigh",
@@ -15738,28 +15990,38 @@
       "tr": "ağırlığında olmak, basmak",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
+        },
+        {
+          "k": "package",
+          "a": "paket"
+        },
+        {
+          "k": "must",
+          "a": "-meli"
+        },
+        {
+          "k": "not"
         },
         {
           "k": "weigh",
-          "a": "basmak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "basmak"
         },
         {
           "k": "over",
-          "a": "...dan fazla",
-          "vurgu": false
+          "a": "...dan fazla"
         },
         {
-          "k": "10"
+          "k": "ten",
+          "a": "on"
         },
         {
-          "k": "kilograms",
-          "a": "kilogram",
-          "vurgu": false
+          "k": "kilograms.",
+          "a": "kilogram"
         }
       ],
-      "ornek_tr": "10 kilogramdan fazla basmak"
+      "ornek_tr": "Paket on kilogramdan fazla olmamalı."
     },
     {
       "en": "envelope",
@@ -15905,28 +16167,34 @@
       "tr": "işgalci, istilacı",
       "ornek_tokenlar": [
         {
-          "k": "the",
-          "a": "(belirli artikel)"
+          "k": "The"
         },
         {
           "k": "invaders",
-          "a": "işgalciler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "işgalciler"
         },
         {
           "k": "attacked",
           "a": "saldırdı"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)"
+          "k": "the"
         },
         {
           "k": "city",
           "a": "şehir"
+        },
+        {
+          "k": "at",
+          "a": "-de"
+        },
+        {
+          "k": "dawn.",
+          "a": "şafak"
         }
       ],
-      "ornek_tr": "İşgalciler şehre saldırdı."
+      "ornek_tr": "İşgalciler şehre şafakta saldırdı."
     },
     {
       "en": "ministry",
@@ -15958,26 +16226,57 @@
       "tr": "iletişim kurmak",
       "ornek_tokenlar": [
         {
-          "k": "by",
-          "a": "...erek"
+          "k": "Doctors",
+          "a": "doktorlar"
         },
         {
-          "k": "communicating",
-          "a": "iletişim kurma",
-          "vurgu": true
+          "k": "must",
+          "a": "-meli"
+        },
+        {
+          "k": "communicate",
+          "vurgu": true,
+          "a": "iletişim kurmak"
         },
         {
           "k": "effectively",
           "a": "etkili bir şekilde"
+        },
+        {
+          "k": "with",
+          "a": "ile"
+        },
+        {
+          "k": "their"
+        },
+        {
+          "k": "patients.",
+          "a": "hastalar"
         }
       ],
-      "ornek_tr": "etkili bir şekilde iletişim kurarak"
+      "ornek_tr": "Doktorlar hastalarıyla etkili bir şekilde iletişim kurmalıdır."
     },
     {
       "en": "effectively",
       "tur": "Zarf",
       "tr": "etkili bir şekilde",
       "ornek_tokenlar": [
+        {
+          "k": "Good",
+          "a": "iyi"
+        },
+        {
+          "k": "leaders",
+          "a": "liderler"
+        },
+        {
+          "k": "solve",
+          "a": "çözmek"
+        },
+        {
+          "k": "problems",
+          "a": "sorunları"
+        },
         {
           "k": "by",
           "a": "...erek"
@@ -15988,11 +16287,22 @@
         },
         {
           "k": "effectively",
-          "a": "etkili bir şekilde",
-          "vurgu": true
+          "vurgu": true,
+          "a": "etkili bir şekilde"
+        },
+        {
+          "k": "with",
+          "a": "ile"
+        },
+        {
+          "k": "their"
+        },
+        {
+          "k": "teams.",
+          "a": "ekip"
         }
       ],
-      "ornek_tr": "etkili bir şekilde iletişim kurarak"
+      "ornek_tr": "İyi liderler ekipleriyle etkili bir şekilde iletişim kurarak sorunları çözer."
     },
     {
       "en": "mood",
@@ -16115,7 +16425,7 @@
       "tr": "heykel",
       "ornek_tokenlar": [
         {
-          "k": "a"
+          "k": "A"
         },
         {
           "k": "famous",
@@ -16123,11 +16433,36 @@
         },
         {
           "k": "sculpture",
-          "a": "heykel",
-          "vurgu": true
+          "vurgu": true,
+          "a": "heykel"
+        },
+        {
+          "k": "stands",
+          "a": "durmak"
+        },
+        {
+          "k": "in",
+          "a": "içinde"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "centre",
+          "a": "merkez"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "square."
         }
       ],
-      "ornek_tr": "ünlü bir heykel"
+      "ornek_tr": "Meydanın ortasında ünlü bir heykel duruyor."
     },
     {
       "en": "sunset",
@@ -16135,15 +16470,38 @@
       "tr": "gün batımı",
       "ornek_tokenlar": [
         {
-          "k": "by"
+          "k": "The"
         },
         {
-          "k": "sunset",
-          "a": "gün batımı",
-          "vurgu": true
+          "k": "farmers",
+          "a": "çiftçiler"
+        },
+        {
+          "k": "must",
+          "a": "-meli"
+        },
+        {
+          "k": "finish",
+          "a": "bitirmek"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "harvest",
+          "a": "hasat"
+        },
+        {
+          "k": "by",
+          "a": "tarafından"
+        },
+        {
+          "k": "sunset.",
+          "vurgu": true,
+          "a": "gün batımı"
         }
       ],
-      "ornek_tr": "gün batımına kadar"
+      "ornek_tr": "Çiftçiler hasadı gün batımına kadar bitirmek zorunda."
     },
     {
       "en": "vase",
@@ -16198,12 +16556,12 @@
       "tr": "tartışma, anlaşmazlık",
       "ornek_tokenlar": [
         {
-          "k": "a"
+          "k": "A"
         },
         {
           "k": "dispute",
-          "a": "tartışma",
-          "vurgu": true
+          "vurgu": true,
+          "a": "tartışma"
         },
         {
           "k": "over",
@@ -16215,9 +16573,31 @@
         {
           "k": "rules",
           "a": "kurallar"
+        },
+        {
+          "k": "delayed",
+          "a": "geciktirdi"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "start",
+          "a": "başlamak"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "match.",
+          "a": "maç"
         }
       ],
-      "ornek_tr": "kurallar üzerine bir tartışma"
+      "ornek_tr": "Kurallar üzerine bir anlaşmazlık maçın başlamasını geciktirdi."
     },
     {
       "en": "root",
@@ -16248,6 +16628,17 @@
       "tr": "kampanya",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "charity",
+          "a": "hayır kurumu"
+        },
+        {
+          "k": "launched",
+          "a": "başlattı"
+        },
+        {
           "k": "a"
         },
         {
@@ -16256,17 +16647,59 @@
         },
         {
           "k": "campaign",
-          "a": "kampanya",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kampanya"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "reduce",
+          "a": "azaltmak"
+        },
+        {
+          "k": "food",
+          "a": "yiyecek"
+        },
+        {
+          "k": "waste.",
+          "a": "atık"
         }
       ],
-      "ornek_tr": "yeni bir kampanya"
+      "ornek_tr": "Yardım kuruluşu gıda israfını azaltmak için yeni bir kampanya başlattı."
     },
     {
       "en": "horizon",
       "tur": "İsim",
       "tr": "ufuk",
       "ornek_tokenlar": [
+        {
+          "k": "A"
+        },
+        {
+          "k": "thin"
+        },
+        {
+          "k": "line",
+          "a": "hat"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "ships",
+          "a": "sevkiyat"
+        },
+        {
+          "k": "appeared",
+          "a": "göründü"
+        },
+        {
+          "k": "on",
+          "a": "-de"
+        },
         {
           "k": "the"
         },
@@ -16275,12 +16708,12 @@
           "a": "geniş"
         },
         {
-          "k": "horizon",
-          "a": "ufuk",
-          "vurgu": true
+          "k": "horizon.",
+          "vurgu": true,
+          "a": "ufuk"
         }
       ],
-      "ornek_tr": "geniş ufuk"
+      "ornek_tr": "Geniş ufukta ince bir gemi dizisi belirdi."
     },
     {
       "en": "recognition",
@@ -16288,15 +16721,45 @@
       "tr": "tanınma, tanıma",
       "ornek_tokenlar": [
         {
-          "k": "beyond"
+          "k": "After",
+          "a": "-den sonra"
         },
         {
-          "k": "recognition",
-          "a": "tanınma",
-          "vurgu": true
+          "k": "the"
+        },
+        {
+          "k": "fire,",
+          "a": "ateş"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "old",
+          "a": "yaşlı"
+        },
+        {
+          "k": "house",
+          "a": "ev"
+        },
+        {
+          "k": "was"
+        },
+        {
+          "k": "damaged",
+          "a": "hasar vermek"
+        },
+        {
+          "k": "beyond",
+          "a": "ötesindeki"
+        },
+        {
+          "k": "recognition.",
+          "vurgu": true,
+          "a": "tanınma"
         }
       ],
-      "ornek_tr": "tanınmaz halde"
+      "ornek_tr": "Yangından sonra eski ev tanınmayacak hâlde hasar gördü."
     },
     {
       "en": "measure",
@@ -16304,16 +16767,42 @@
       "tr": "önlem, tedbir",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "government",
+          "a": "hükümet"
+        },
+        {
+          "k": "introduced",
+          "a": "getirmiştir / sunmuştur"
+        },
+        {
           "k": "emergency",
           "a": "acil"
         },
         {
           "k": "measures",
-          "a": "önlemler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "önlemler"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "control",
+          "a": "kontrol etmek"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "outbreak.",
+          "a": "salgın"
         }
       ],
-      "ornek_tr": "acil önlemler"
+      "ornek_tr": "Hükümet salgını kontrol altına almak için acil önlemler getirdi."
     },
     {
       "en": "entire",
@@ -16321,19 +16810,50 @@
       "tr": "bütün, tüm",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "earthquake",
+          "a": "deprem"
+        },
+        {
+          "k": "left",
+          "a": "terk etti"
+        },
+        {
           "k": "the"
         },
         {
           "k": "entire",
-          "a": "tüm",
-          "vurgu": true
+          "vurgu": true,
+          "a": "tüm"
         },
         {
           "k": "city",
           "a": "şehir"
+        },
+        {
+          "k": "without",
+          "a": "-sız"
+        },
+        {
+          "k": "electricity",
+          "a": "elektrik"
+        },
+        {
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "two",
+          "a": "iki"
+        },
+        {
+          "k": "days.",
+          "a": "gün"
         }
       ],
-      "ornek_tr": "tüm şehir"
+      "ornek_tr": "Deprem tüm şehri iki gün boyunca elektriksiz bıraktı."
     },
     {
       "en": "cage",
@@ -16435,11 +16955,11 @@
       "tr": "önlem, tedbir",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "She"
         },
         {
-          "k": "take",
-          "a": "almak"
+          "k": "took",
+          "a": "aldı"
         },
         {
           "k": "an"
@@ -16456,11 +16976,22 @@
         },
         {
           "k": "precaution",
-          "a": "önlem",
-          "vurgu": true
+          "vurgu": true,
+          "a": "önlem"
+        },
+        {
+          "k": "against",
+          "a": "-e karşı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "rain.",
+          "a": "yağmur yağmak"
         }
       ],
-      "ornek_tr": "önlem olarak bir şemsiye (almak)"
+      "ornek_tr": "Yağmura karşı önlem olarak bir şemsiye aldı."
     },
     {
       "en": "ghost",
@@ -16468,29 +16999,45 @@
       "tr": "hayalet",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
         },
         {
-          "k": "move",
-          "a": "hareket etmek"
+          "k": "cat",
+          "a": "kedi"
+        },
+        {
+          "k": "moved",
+          "a": "taşınmak"
         },
         {
           "k": "quietly",
           "a": "sessizce"
         },
         {
-          "k": "like"
+          "k": "through",
+          "a": "içinden"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "house",
+          "a": "ev"
+        },
+        {
+          "k": "like",
+          "a": "sevmek"
         },
         {
           "k": "a"
         },
         {
-          "k": "ghost",
-          "a": "hayalet",
-          "vurgu": true
+          "k": "ghost.",
+          "vurgu": true,
+          "a": "hayalet"
         }
       ],
-      "ornek_tr": "bir hayalet gibi sessizce hareket etmek"
+      "ornek_tr": "Kedi evin içinde bir hayalet gibi sessizce hareket etti."
     },
     {
       "en": "effort",
@@ -16498,18 +17045,42 @@
       "tr": "çaba, gayret",
       "ornek_tokenlar": [
         {
-          "k": "notwithstanding"
+          "k": "Notwithstanding",
+          "a": "rağmen"
         },
         {
           "k": "his"
         },
         {
-          "k": "efforts",
-          "a": "çabalar",
-          "vurgu": true
+          "k": "efforts,",
+          "vurgu": true,
+          "a": "çabalar"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "project",
+          "a": "proje"
+        },
+        {
+          "k": "failed",
+          "a": "yetişemedi"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "attract",
+          "a": "cezbetmek"
+        },
+        {
+          "k": "investors.",
+          "a": "yatırımcılar"
         }
       ],
-      "ornek_tr": "çabalarına rağmen"
+      "ornek_tr": "Çabalarına rağmen proje yatırımcıları çekmeyi başaramadı."
     },
     {
       "en": "warning",
@@ -16517,18 +17088,44 @@
       "tr": "uyarı",
       "ornek_tokenlar": [
         {
-          "k": "despite"
+          "k": "Despite",
+          "a": "-e rağmen"
         },
         {
           "k": "the"
         },
         {
-          "k": "warnings",
-          "a": "uyarılar",
-          "vurgu": true
+          "k": "warnings,",
+          "a": "uyarılar"
+        },
+        {
+          "k": "many",
+          "a": "birçok"
+        },
+        {
+          "k": "tourists",
+          "a": "turist"
+        },
+        {
+          "k": "swam"
+        },
+        {
+          "k": "in",
+          "a": "içinde"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "dangerous",
+          "a": "tehlikeli"
+        },
+        {
+          "k": "currents.",
+          "a": "şu anki"
         }
       ],
-      "ornek_tr": "uyarılara rağmen"
+      "ornek_tr": "Uyarılara rağmen birçok turist tehlikeli akıntılarda yüzdü."
     },
     {
       "en": "circumstances",
@@ -16571,28 +17168,43 @@
       "tr": "hava alanı",
       "ornek_tokenlar": [
         {
-          "k": "3"
+          "k": "The"
         },
         {
-          "k": "km"
+          "k": "hotel"
         },
         {
-          "k": "away"
+          "k": "is"
+        },
+        {
+          "k": "only",
+          "a": "sadece"
+        },
+        {
+          "k": "three",
+          "a": "üç"
+        },
+        {
+          "k": "kilometres"
+        },
+        {
+          "k": "away",
+          "a": "uzakta"
         },
         {
           "k": "from",
-          "vurgu": true
+          "a": "-den"
         },
         {
           "k": "the"
         },
         {
-          "k": "airport",
-          "a": "hava alanı",
-          "vurgu": true
+          "k": "airport.",
+          "vurgu": true,
+          "a": "hava alanı"
         }
       ],
-      "ornek_tr": "hava alanından 3 km uzak"
+      "ornek_tr": "Otel hava alanından yalnızca üç kilometre uzakta."
     },
     {
       "en": "picnic",
@@ -16600,25 +17212,45 @@
       "tr": "piknik",
       "ornek_tokenlar": [
         {
-          "k": "went"
+          "k": "The"
         },
         {
-          "k": "out"
+          "k": "family",
+          "a": "aile"
+        },
+        {
+          "k": "went",
+          "a": "gittim"
+        },
+        {
+          "k": "out",
+          "a": "dışarı"
         },
         {
           "k": "for",
-          "vurgu": true
+          "a": "için"
         },
         {
           "k": "a"
         },
         {
           "k": "picnic",
-          "a": "piknik",
-          "vurgu": true
+          "vurgu": true,
+          "a": "piknik"
+        },
+        {
+          "k": "by",
+          "a": "tarafından"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "river.",
+          "a": "nehir"
         }
       ],
-      "ornek_tr": "piknik için dışarı çıktı"
+      "ornek_tr": "Aile nehir kenarında piknik için dışarı çıktı."
     },
     {
       "en": "cozy",
@@ -16626,18 +17258,44 @@
       "tr": "rahat, samimi, içten",
       "ornek_tokenlar": [
         {
+          "k": "We"
+        },
+        {
+          "k": "had",
+          "a": "have fiilinin past hali"
+        },
+        {
+          "k": "coffee",
+          "a": "kahve"
+        },
+        {
+          "k": "in",
+          "a": "içinde"
+        },
+        {
           "k": "the"
         },
         {
           "k": "cozy",
-          "a": "rahat",
-          "vurgu": true
+          "vurgu": true,
+          "a": "rahat"
         },
         {
           "k": "cafe"
+        },
+        {
+          "k": "across",
+          "a": "karşıdan karşıya"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "street.",
+          "a": "cadde"
         }
       ],
-      "ornek_tr": "rahat kafe"
+      "ornek_tr": "Caddenin karşısındaki rahat kafede kahve içtik."
     },
     {
       "en": "heal",
@@ -16645,24 +17303,45 @@
       "tr": "iyileşmek, iyileştirmek",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
+        },
+        {
+          "k": "doctor",
+          "a": "doktor"
+        },
+        {
+          "k": "expects",
+          "a": "ummak"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "wound"
+        },
+        {
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "heal",
-          "a": "iyileşmek",
-          "vurgu": true
+          "vurgu": true,
+          "a": "iyileşmek"
         },
         {
-          "k": "inside"
+          "k": "inside",
+          "a": "içine"
         },
         {
-          "k": "six"
+          "k": "six",
+          "a": "altı"
         },
         {
-          "k": "months"
+          "k": "months.",
+          "a": "aylar"
         }
       ],
-      "ornek_tr": "6 ay içinde iyileşmek"
+      "ornek_tr": "Doktor yaranın altı ay içinde iyileşmesini bekliyor."
     },
     {
       "en": "necessity",
@@ -16670,30 +17349,40 @@
       "tr": "zorunluluk, ihtiyaç, gereklilik",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "She"
         },
         {
-          "k": "take"
+          "k": "took",
+          "a": "aldı"
         },
         {
           "k": "a"
         },
         {
-          "k": "break"
+          "k": "break",
+          "a": "kırmak"
         },
         {
-          "k": "out"
+          "k": "out",
+          "a": "dışarı"
         },
         {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "necessity",
-          "a": "zorunluluk",
-          "vurgu": true
+          "k": "necessity,",
+          "vurgu": true,
+          "a": "zorunluluk"
+        },
+        {
+          "k": "not"
+        },
+        {
+          "k": "laziness."
         }
       ],
-      "ornek_tr": "ihtiyaçtan ara vermek"
+      "ornek_tr": "Tembellikten değil, zorunluluktan ara verdi."
     },
     {
       "en": "bakery",
@@ -16701,27 +17390,41 @@
       "tr": "fırın, pastane",
       "ornek_tokenlar": [
         {
+          "k": "There",
+          "a": "orada"
+        },
+        {
+          "k": "is"
+        },
+        {
           "k": "a"
         },
         {
-          "k": "bakery",
-          "a": "fırın",
-          "vurgu": true
+          "k": "small",
+          "a": "küçük"
         },
         {
-          "k": "near"
+          "k": "bakery",
+          "vurgu": true,
+          "a": "fırın"
+        },
+        {
+          "k": "near",
+          "a": "yakın"
         },
         {
           "k": "the"
         },
         {
-          "k": "office"
+          "k": "office",
+          "a": "ofis"
         },
         {
-          "k": "building"
+          "k": "building.",
+          "a": "bina"
         }
       ],
-      "ornek_tr": "ofis binasının yanında bir fırın"
+      "ornek_tr": "Ofis binasının yakınında küçük bir fırın var."
     },
     {
       "en": "statue",
@@ -16729,30 +17432,45 @@
       "tr": "heykel",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
-          "k": "historical"
+          "k": "historical",
+          "a": "tarihi"
         },
         {
           "k": "statue",
-          "a": "heykel",
-          "vurgu": true
+          "vurgu": true,
+          "a": "heykel"
         },
         {
-          "k": "behind"
+          "k": "behind",
+          "a": "arkasındaki"
         },
         {
           "k": "the"
         },
         {
-          "k": "modern"
+          "k": "modern",
+          "a": "modern"
         },
         {
-          "k": "building"
+          "k": "building",
+          "a": "bina"
+        },
+        {
+          "k": "dates",
+          "a": "-den kalmadır"
+        },
+        {
+          "k": "from",
+          "a": "-den"
+        },
+        {
+          "k": "1850."
         }
       ],
-      "ornek_tr": "modern binanın arkasındaki tarihi heykel"
+      "ornek_tr": "Modern binanın arkasındaki tarihi heykel 1850'den kalma."
     },
     {
       "en": "gallery",
@@ -16760,24 +17478,50 @@
       "tr": "galeri, sergi salonu",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
-          "k": "paintings"
+          "k": "paintings",
+          "a": "tablolar"
         },
         {
-          "k": "inside"
+          "k": "inside",
+          "a": "içine"
         },
         {
           "k": "the"
         },
         {
           "k": "gallery",
-          "a": "galeri",
-          "vurgu": true
+          "vurgu": true,
+          "a": "galeri"
+        },
+        {
+          "k": "attract",
+          "a": "cezbetmek"
+        },
+        {
+          "k": "thousands",
+          "a": "binlerce"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "visitors",
+          "a": "ziyaretçi"
+        },
+        {
+          "k": "every",
+          "a": "her bir"
+        },
+        {
+          "k": "year.",
+          "a": "yıl"
         }
       ],
-      "ornek_tr": "galerideki resimler"
+      "ornek_tr": "Galerinin içindeki tablolar her yıl binlerce ziyaretçi çekiyor."
     },
     {
       "en": "playground",
@@ -16785,27 +17529,45 @@
       "tr": "oyun alanı",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
           "k": "playground",
-          "a": "oyun alanı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "oyun alanı"
         },
         {
-          "k": "next"
+          "k": "next",
+          "a": "gelecek"
         },
         {
-          "k": "to"
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "the"
         },
         {
-          "k": "school"
+          "k": "school",
+          "a": "okul"
+        },
+        {
+          "k": "is"
+        },
+        {
+          "k": "closed",
+          "a": "kapanmak"
+        },
+        {
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "repairs.",
+          "a": "onarımları"
         }
       ],
-      "ornek_tr": "okulun bitişiğindeki oyun alanı"
+      "ornek_tr": "Okulun bitişiğindeki oyun alanı onarım için kapalı."
     },
     {
       "en": "protestor",
@@ -16813,33 +17575,42 @@
       "tr": "protestocu, eylemci",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
           "k": "protestors",
-          "a": "protestocular",
-          "vurgu": true
+          "vurgu": true,
+          "a": "protestocular"
         },
         {
-          "k": "in"
+          "k": "gathered",
+          "a": "topladı"
         },
         {
-          "k": "front"
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "of"
+          "k": "front",
+          "a": "önünde"
+        },
+        {
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "the"
         },
         {
-          "k": "government"
+          "k": "government",
+          "a": "hükümet"
         },
         {
-          "k": "building"
+          "k": "building.",
+          "a": "bina"
         }
       ],
-      "ornek_tr": "hükümet binasının önündeki protestocular"
+      "ornek_tr": "Protestocular hükümet binasının önünde toplandı."
     },
     {
       "en": "crawl",
@@ -16847,47 +17618,28 @@
       "tr": "emeklemek, sürünerek ilerlemek",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
+        },
+        {
+          "k": "soldiers",
+          "a": "askerler"
+        },
+        {
+          "k": "had",
+          "a": "have fiilinin past hali"
+        },
+        {
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "crawl",
-          "a": "sürünmek",
-          "vurgu": true
+          "vurgu": true,
+          "a": "sürünmek"
         },
         {
-          "k": "out"
-        },
-        {
-          "k": "of"
-        },
-        {
-          "k": "the"
-        },
-        {
-          "k": "narrow"
-        },
-        {
-          "k": "tunnel"
-        }
-      ],
-      "ornek_tr": "dar tünelden çıkmak"
-    },
-    {
-      "en": "tunnel",
-      "tur": "İsim",
-      "tr": "tünel",
-      "ornek_tokenlar": [
-        {
-          "k": "to"
-        },
-        {
-          "k": "crawl"
-        },
-        {
-          "k": "out"
-        },
-        {
-          "k": "of"
+          "k": "through",
+          "a": "içinden"
         },
         {
           "k": "the"
@@ -16898,11 +17650,68 @@
         },
         {
           "k": "tunnel",
-          "a": "tünel",
-          "vurgu": true
+          "a": "tünel"
+        },
+        {
+          "k": "in",
+          "a": "içinde"
+        },
+        {
+          "k": "silence."
         }
       ],
-      "ornek_tr": "dar tünelden çıkmak"
+      "ornek_tr": "Askerler dar tünelden sessizce sürünerek geçmek zorunda kaldı."
+    },
+    {
+      "en": "tunnel",
+      "tur": "İsim",
+      "tr": "tünel",
+      "ornek_tokenlar": [
+        {
+          "k": "The"
+        },
+        {
+          "k": "rescue",
+          "a": "kurtarmak"
+        },
+        {
+          "k": "team",
+          "a": "takım"
+        },
+        {
+          "k": "had",
+          "a": "have fiilinin past hali"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "crawl",
+          "a": "emeklemek"
+        },
+        {
+          "k": "out",
+          "a": "dışarı"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "narrow",
+          "a": "dar"
+        },
+        {
+          "k": "tunnel.",
+          "vurgu": true,
+          "a": "tünel"
+        }
+      ],
+      "ornek_tr": "Kurtarma ekibi dar tünelden sürünerek çıkmak zorunda kaldı."
     },
     {
       "en": "thief",
@@ -16910,24 +17719,40 @@
       "tr": "hırsız",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
           "k": "thief",
-          "a": "hırsız",
-          "vurgu": true
+          "vurgu": true,
+          "a": "hırsız"
         },
         {
-          "k": "behind"
+          "k": "escaped"
+        },
+        {
+          "k": "through",
+          "a": "içinden"
         },
         {
           "k": "the"
         },
         {
-          "k": "curtains"
+          "k": "window",
+          "a": "pencere"
+        },
+        {
+          "k": "behind",
+          "a": "arkasındaki"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "curtains.",
+          "a": "perdeler"
         }
       ],
-      "ornek_tr": "perdenin arkasındaki hırsız"
+      "ornek_tr": "Hırsız perdelerin arkasındaki pencereden kaçtı."
     },
     {
       "en": "curtain",
@@ -16935,24 +17760,47 @@
       "tr": "perde",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
-          "k": "thief"
+          "k": "thief",
+          "a": "hırsız"
         },
         {
-          "k": "behind"
+          "k": "was"
+        },
+        {
+          "k": "hiding"
+        },
+        {
+          "k": "behind",
+          "a": "arkasındaki"
         },
         {
           "k": "the"
         },
         {
           "k": "curtains",
-          "a": "perdeler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "perdeler"
+        },
+        {
+          "k": "when",
+          "a": "ne zaman"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "police",
+          "a": "polis"
+        },
+        {
+          "k": "arrived.",
+          "a": "vardı"
         }
       ],
-      "ornek_tr": "perdenin arkasındaki hırsız"
+      "ornek_tr": "Polis geldiğinde hırsız perdelerin arkasında saklanıyordu."
     },
     {
       "en": "apologize",
@@ -16960,24 +17808,37 @@
       "tr": "özür dilemek",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "You"
+        },
+        {
+          "k": "should",
+          "a": "-meli"
         },
         {
           "k": "apologize",
-          "a": "özür dilemek",
-          "vurgu": true
+          "vurgu": true,
+          "a": "özür dilemek"
         },
         {
-          "k": "out"
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "of"
+          "k": "her"
         },
         {
-          "k": "regret"
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "being"
+        },
+        {
+          "k": "late.",
+          "a": "geç"
         }
       ],
-      "ornek_tr": "pişmanlıktan özür dilemek"
+      "ornek_tr": "Geç kaldığın için ondan özür dilemelisin."
     },
     {
       "en": "regret",
@@ -16985,24 +17846,38 @@
       "tr": "pişmanlık, üzüntü",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "He"
         },
         {
-          "k": "apologize"
+          "k": "apologized",
+          "a": "özür diledi"
         },
         {
-          "k": "out"
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "of"
+          "k": "his"
         },
         {
-          "k": "regret",
-          "a": "pişmanlık",
-          "vurgu": true
+          "k": "sister",
+          "a": "kız kardeş"
+        },
+        {
+          "k": "out",
+          "a": "dışarı"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "regret.",
+          "vurgu": true,
+          "a": "pişmanlık"
         }
       ],
-      "ornek_tr": "pişmanlıktan özür dilemek"
+      "ornek_tr": "Kız kardeşinden pişmanlıkla özür diledi."
     },
     {
       "en": "narrow",
@@ -17010,18 +17885,48 @@
       "tr": "dar",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "miners"
+        },
+        {
+          "k": "crawled",
+          "a": "emeklemek"
+        },
+        {
+          "k": "through",
+          "a": "içinden"
+        },
+        {
           "k": "the"
         },
         {
           "k": "narrow",
-          "a": "dar",
-          "vurgu": true
+          "vurgu": true,
+          "a": "dar"
         },
         {
-          "k": "tunnel"
+          "k": "tunnel",
+          "a": "tünel"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "reach",
+          "a": "varmak"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "surface.",
+          "a": "yüzey"
         }
       ],
-      "ornek_tr": "dar tünel"
+      "ornek_tr": "Madenciler yüzeye ulaşmak için dar tünelden sürünerek geçti."
     },
     {
       "en": "theatre",
@@ -17029,27 +17934,45 @@
       "tr": "tiyatro, sinema salonu",
       "ornek_tokenlar": [
         {
+          "k": "We"
+        },
+        {
+          "k": "had",
+          "a": "have fiilinin past hali"
+        },
+        {
+          "k": "dinner",
+          "a": "akşam yemeği"
+        },
+        {
+          "k": "at",
+          "a": "-de"
+        },
+        {
           "k": "the"
         },
         {
-          "k": "restaurant"
+          "k": "restaurant",
+          "a": "restoran"
         },
         {
-          "k": "beside"
+          "k": "beside",
+          "a": "yanında"
         },
         {
           "k": "the"
         },
         {
-          "k": "movie"
+          "k": "movie",
+          "a": "film"
         },
         {
-          "k": "theatre",
-          "a": "sinema",
-          "vurgu": true
+          "k": "theatre.",
+          "vurgu": true,
+          "a": "sinema"
         }
       ],
-      "ornek_tr": "sinemanın yanındaki restoran"
+      "ornek_tr": "Sinemanın yanındaki restoranda akşam yemeği yedik."
     },
     {
       "en": "hill",
@@ -17057,24 +17980,40 @@
       "tr": "tepe, bayır",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
         },
         {
-          "k": "roll"
+          "k": "children",
+          "a": "çocuklar"
         },
         {
-          "k": "down"
+          "k": "watched",
+          "a": "izledi"
         },
         {
           "k": "the"
         },
         {
-          "k": "hill",
-          "a": "tepe",
-          "vurgu": true
+          "k": "ball"
+        },
+        {
+          "k": "roll",
+          "a": "yuvarlanmak"
+        },
+        {
+          "k": "down",
+          "a": "aşağı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "hill.",
+          "vurgu": true,
+          "a": "tepe"
         }
       ],
-      "ornek_tr": "tepeden aşağı yuvarlanmak"
+      "ornek_tr": "Çocuklar topun tepeden aşağı yuvarlanışını izledi."
     },
     {
       "en": "subway",
@@ -17082,30 +18021,43 @@
       "tr": "metro",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
           "k": "subway",
-          "a": "metro",
-          "vurgu": true
+          "vurgu": true,
+          "a": "metro"
         },
         {
-          "k": "system"
-        },
-        {
-          "k": "beneath"
+          "k": "is"
         },
         {
           "k": "the"
         },
         {
-          "k": "city"
+          "k": "fastest"
         },
         {
-          "k": "streets"
+          "k": "way",
+          "a": "yol"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "cross",
+          "a": "geçmek"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "city.",
+          "a": "şehir"
         }
       ],
-      "ornek_tr": "şehir caddelerinin altındaki metro sistemi"
+      "ornek_tr": "Metro şehri geçmenin en hızlı yolu."
     },
     {
       "en": "beneath",
@@ -17113,30 +18065,42 @@
       "tr": "altında",
       "ornek_tokenlar": [
         {
-          "k": "the"
+          "k": "The"
         },
         {
-          "k": "subway"
+          "k": "subway",
+          "a": "metro"
         },
         {
-          "k": "system"
+          "k": "system",
+          "a": "sistem"
+        },
+        {
+          "k": "runs",
+          "a": "koşmak"
         },
         {
           "k": "beneath",
-          "a": "altında",
-          "vurgu": true
+          "vurgu": true,
+          "a": "altında"
         },
         {
           "k": "the"
         },
         {
-          "k": "city"
+          "k": "busy",
+          "a": "meşgul"
         },
         {
-          "k": "streets"
+          "k": "city",
+          "a": "şehir"
+        },
+        {
+          "k": "streets.",
+          "a": "sokaklar"
         }
       ],
-      "ornek_tr": "şehir caddelerinin altındaki metro sistemi"
+      "ornek_tr": "Metro sistemi kalabalık şehir caddelerinin altından geçer."
     },
     {
       "en": "roll down",
@@ -17144,30 +18108,49 @@
       "tr": "aşağı yuvarlanmak",
       "ornek_tokenlar": [
         {
-          "k": "to",
-          "vurgu": false
+          "k": "We"
+        },
+        {
+          "k": "watched",
+          "a": "izledi"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "rocks",
+          "a": "kaya"
         },
         {
           "k": "roll",
-          "a": "yuvarlanmak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "yuvarlanmak"
         },
         {
           "k": "down",
-          "a": "aşağı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "aşağı"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "the"
         },
         {
           "k": "hill",
-          "a": "tepe",
-          "vurgu": false
+          "a": "tepe"
+        },
+        {
+          "k": "after",
+          "a": "-den sonra"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "storm.",
+          "a": "fırtına"
         }
       ],
-      "ornek_tr": "tepeden aşağı yuvarlanmak"
+      "ornek_tr": "Fırtınadan sonra kayaların tepeden aşağı yuvarlanışını izledik."
     },
     {
       "en": "give off",
@@ -17200,22 +18183,45 @@
       "tr": "kadar (zamana kadar)",
       "ornek_tokenlar": [
         {
+          "k": "We"
+        },
+        {
+          "k": "decided",
+          "a": "karar verdi"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
           "k": "wait",
-          "a": "beklemek",
-          "vurgu": false
+          "a": "beklemek"
         },
         {
           "k": "till",
-          "a": "kadar",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kadar"
         },
         {
           "k": "midnight",
-          "a": "gece yarısı",
-          "vurgu": false
+          "a": "gece yarısı"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "see",
+          "a": "görmek"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "fireworks."
         }
       ],
-      "ornek_tr": "gece yarısına kadar beklemek"
+      "ornek_tr": "Havai fişekleri görmek için gece yarısına kadar beklemeye karar verdik."
     },
     {
       "en": "midnight",
@@ -17223,17 +18229,43 @@
       "tr": "gece yarısı",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "library",
+          "a": "kütüphane"
+        },
+        {
+          "k": "stays",
+          "a": "kalmak"
+        },
+        {
+          "k": "open",
+          "a": "açık"
+        },
+        {
           "k": "till",
-          "a": "kadar",
-          "vurgu": false
+          "a": "kadar"
         },
         {
           "k": "midnight",
-          "a": "gece yarısı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "gece yarısı"
+        },
+        {
+          "k": "during",
+          "a": "sırasında"
+        },
+        {
+          "k": "exam",
+          "a": "sınav"
+        },
+        {
+          "k": "week.",
+          "a": "hafta"
         }
       ],
-      "ornek_tr": "gece yarısına kadar"
+      "ornek_tr": "Kütüphane sınav haftasında gece yarısına kadar açık kalır."
     },
     {
       "en": "underneath",
@@ -17241,31 +18273,47 @@
       "tr": "altında, alt tarafında",
       "ornek_tokenlar": [
         {
-          "k": "treasure",
-          "a": "hazine",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "underneath",
-          "a": "altında",
-          "vurgu": true
+          "k": "children",
+          "a": "çocuklar"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "found",
+          "a": "kurmak"
+        },
+        {
+          "k": "a"
+        },
+        {
+          "k": "box"
+        },
+        {
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "old",
-          "a": "yaşlı",
-          "vurgu": false
+          "a": "yaşlı"
         },
         {
-          "k": "tree",
-          "a": "ağaç",
-          "vurgu": false
+          "k": "coins"
+        },
+        {
+          "k": "underneath",
+          "vurgu": true,
+          "a": "altında"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "tree.",
+          "a": "ağaç"
         }
       ],
-      "ornek_tr": "yaşlı ağacın altında"
+      "ornek_tr": "Çocuklar ağacın altında eski paralarla dolu bir kutu buldu."
     },
     {
       "en": "hidden",
@@ -17273,21 +18321,41 @@
       "tr": "gizli, saklanmış",
       "ornek_tokenlar": [
         {
-          "k": "a",
-          "vurgu": false
+          "k": "The"
+        },
+        {
+          "k": "children",
+          "a": "çocuklar"
+        },
+        {
+          "k": "searched",
+          "a": "aradı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "garden",
+          "a": "bahçe"
+        },
+        {
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "a"
         },
         {
           "k": "hidden",
-          "a": "gizli",
-          "vurgu": true
+          "vurgu": true,
+          "a": "gizli"
         },
         {
-          "k": "treasure",
-          "a": "hazine",
-          "vurgu": false
+          "k": "treasure.",
+          "a": "hazine"
         }
       ],
-      "ornek_tr": "gizli hazine"
+      "ornek_tr": "Çocuklar bahçede gizli bir hazine aradı."
     },
     {
       "en": "up to",
@@ -17329,35 +18397,36 @@
       "tr": "karşısında, karşı tarafında",
       "ornek_tokenlar": [
         {
-          "k": "the",
-          "vurgu": false
+          "k": "The"
         },
         {
           "k": "bus",
-          "a": "otobüs",
-          "vurgu": false
+          "a": "otobüs"
         },
         {
           "k": "stop",
-          "a": "durak",
-          "vurgu": false
+          "a": "durak"
+        },
+        {
+          "k": "is"
         },
         {
           "k": "opposite",
-          "a": "karşısında",
-          "vurgu": true
+          "vurgu": true,
+          "a": "karşısında"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "the"
         },
         {
           "k": "hospital",
-          "a": "hastane",
-          "vurgu": false
+          "a": "hastane"
+        },
+        {
+          "k": "entrance."
         }
       ],
-      "ornek_tr": "hastanenin karşısındaki otobüs durağı"
+      "ornek_tr": "Otobüs durağı hastane girişinin karşısında."
     },
     {
       "en": "audience",
@@ -17365,21 +18434,42 @@
       "tr": "izleyici, seyirci, dinleyici kitlesi",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "young",
+          "a": "genç"
+        },
+        {
+          "k": "pianist",
+          "a": "piyanist"
+        },
+        {
+          "k": "felt",
+          "a": "hissetti"
+        },
+        {
+          "k": "nervous",
+          "a": "gergin"
+        },
+        {
           "k": "before",
-          "a": "önünde",
-          "vurgu": false
+          "a": "önünde"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "audiences",
-          "a": "izleyiciler",
-          "vurgu": true
+          "k": "large",
+          "a": "geniş"
+        },
+        {
+          "k": "audience.",
+          "vurgu": true,
+          "a": "izleyici"
         }
       ],
-      "ornek_tr": "izleyicilerin önünde"
+      "ornek_tr": "Genç piyanist kalabalık izleyicinin önünde gergin hissetti."
     },
     {
       "en": "nervous",
@@ -17387,31 +18477,46 @@
       "tr": "gergin, sinirli",
       "ornek_tokenlar": [
         {
-          "k": "feel",
-          "a": "hissetmek",
-          "vurgu": false
+          "k": "He"
+        },
+        {
+          "k": "always",
+          "a": "her zaman"
+        },
+        {
+          "k": "feels",
+          "a": "hisseder"
         },
         {
           "k": "nervous",
-          "a": "gergin",
-          "vurgu": true
+          "vurgu": true,
+          "a": "gergin"
         },
         {
           "k": "before",
-          "a": "önünde",
-          "vurgu": false
+          "a": "önünde"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "speaking",
+          "a": "konuşmak"
         },
         {
-          "k": "audiences",
-          "a": "izleyiciler",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "a"
+        },
+        {
+          "k": "large",
+          "a": "geniş"
+        },
+        {
+          "k": "audience.",
+          "a": "izleyici"
         }
       ],
-      "ornek_tr": "izleyicinin önünde gergin hissetmek"
+      "ornek_tr": "Kalabalık bir dinleyici önünde konuşmadan önce hep gergin hisseder."
     },
     {
       "en": "following",
@@ -17446,21 +18551,48 @@
       "tr": "duraklama, ara",
       "ornek_tokenlar": [
         {
-          "k": "a",
-          "vurgu": false
+          "k": "There",
+          "a": "orada"
+        },
+        {
+          "k": "was"
+        },
+        {
+          "k": "a"
         },
         {
           "k": "brief",
-          "a": "kısa",
-          "vurgu": false
+          "a": "kısa"
         },
         {
           "k": "pause",
-          "a": "duraklama",
-          "vurgu": true
+          "vurgu": true,
+          "a": "duraklama"
+        },
+        {
+          "k": "before",
+          "a": "-den önce"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "audience",
+          "a": "izleyici"
+        },
+        {
+          "k": "began",
+          "a": "başladı"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "applaud."
         }
       ],
-      "ornek_tr": "kısa bir duraklama"
+      "ornek_tr": "İzleyici alkışlamaya başlamadan önce kısa bir duraklama oldu."
     },
     {
       "en": "brief",
@@ -17468,21 +18600,41 @@
       "tr": "kısa, özet",
       "ornek_tokenlar": [
         {
-          "k": "a",
-          "vurgu": false
+          "k": "After",
+          "a": "-den sonra"
+        },
+        {
+          "k": "a"
         },
         {
           "k": "brief",
-          "a": "kısa",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kısa"
         },
         {
-          "k": "pause",
-          "a": "duraklama",
-          "vurgu": false
+          "k": "pause,",
+          "a": "duraklama"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "speaker",
+          "a": "konuşmacı"
+        },
+        {
+          "k": "continued",
+          "a": "devam etti"
+        },
+        {
+          "k": "her"
+        },
+        {
+          "k": "presentation.",
+          "a": "sunum"
         }
       ],
-      "ornek_tr": "kısa bir duraklama"
+      "ornek_tr": "Kısa bir duraklamadan sonra konuşmacı sunumuna devam etti."
     },
     {
       "en": "graduate from",
@@ -17518,32 +18670,42 @@
       "tr": "görev, nöbet",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "nurse",
+          "a": "hemşire"
+        },
+        {
+          "k": "will",
+          "a": "-ecek"
+        },
+        {
+          "k": "be"
+        },
+        {
           "k": "off",
-          "a": "izinli",
-          "vurgu": false
+          "a": "izinli"
         },
         {
           "k": "duty",
-          "a": "görevden",
-          "vurgu": true
+          "vurgu": true,
+          "a": "görevden"
         },
         {
           "k": "until",
-          "a": "kadar",
-          "vurgu": false
+          "a": "kadar"
         },
         {
           "k": "next",
-          "a": "gelecek",
-          "vurgu": false
+          "a": "gelecek"
         },
         {
-          "k": "Monday",
-          "a": "pazartesi",
-          "vurgu": false
+          "k": "Monday.",
+          "a": "pazartesi"
         }
       ],
-      "ornek_tr": "gelecek pazartesiye kadar izinli"
+      "ornek_tr": "Hemşire gelecek pazartesiye kadar izinli olacak."
     },
     {
       "en": "graduate",
@@ -17622,26 +18784,45 @@
       "tr": "karmaşıklık",
       "ornek_tokenlar": [
         {
-          "k": "given"
+          "k": "Given",
+          "a": "-i göz önüne alarak"
         },
         {
           "k": "the"
         },
         {
           "k": "complexity",
-          "vurgu": true
+          "vurgu": true,
+          "a": "karmaşıklık"
         },
         {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "the"
         },
         {
-          "k": "issue"
+          "k": "problem,",
+          "a": "sorun"
+        },
+        {
+          "k": "we"
+        },
+        {
+          "k": "need",
+          "a": "ihtiyaç duymak"
+        },
+        {
+          "k": "more",
+          "a": "daha"
+        },
+        {
+          "k": "time.",
+          "a": "zaman"
         }
       ],
-      "ornek_tr": "sorunun karmaşıklığı gözönüne alınırsa"
+      "ornek_tr": "Sorunun karmaşıklığı göz önüne alındığında daha fazla zamana ihtiyacımız var."
     },
     {
       "en": "given",
@@ -17649,26 +18830,48 @@
       "tr": "-i göz önüne alarak, -e bakılırsa",
       "ornek_tokenlar": [
         {
-          "k": "given",
-          "vurgu": true
+          "k": "Given",
+          "vurgu": true,
+          "a": "-i göz önüne alarak"
         },
         {
           "k": "the"
         },
         {
-          "k": "complexity"
+          "k": "complexity",
+          "a": "karmaşıklık"
         },
         {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "the"
         },
         {
-          "k": "issue"
+          "k": "issue,",
+          "a": "sorun"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "committee",
+          "a": "komite"
+        },
+        {
+          "k": "postponed",
+          "a": "ertelendi"
+        },
+        {
+          "k": "its"
+        },
+        {
+          "k": "decision.",
+          "a": "karar"
         }
       ],
-      "ornek_tr": "sorunun karmaşıklığı gözönüne alınırsa"
+      "ornek_tr": "Sorunun karmaşıklığı göz önüne alındığında komite kararını erteledi."
     },
     {
       "en": "childhood",
@@ -17676,17 +18879,38 @@
       "tr": "çocukluk",
       "ornek_tokenlar": [
         {
-          "k": "ever"
+          "k": "They"
         },
         {
-          "k": "since"
+          "k": "have",
+          "a": "sahip olmak"
         },
         {
-          "k": "childhood",
-          "vurgu": true
+          "k": "been"
+        },
+        {
+          "k": "best",
+          "a": "en iyi"
+        },
+        {
+          "k": "friends",
+          "a": "arkadaşlar"
+        },
+        {
+          "k": "ever",
+          "a": "şu ana kadar"
+        },
+        {
+          "k": "since",
+          "a": "-den beri"
+        },
+        {
+          "k": "childhood.",
+          "vurgu": true,
+          "a": "çocukluk"
         }
       ],
-      "ornek_tr": "çocukluktan beri"
+      "ornek_tr": "Çocukluktan beri en yakın arkadaşlar."
     },
     {
       "en": "resources",
@@ -17694,23 +18918,50 @@
       "tr": "kaynaklar",
       "ornek_tokenlar": [
         {
-          "k": "resources",
-          "vurgu": true
+          "k": "Resources",
+          "vurgu": true,
+          "a": "kaynaklar"
         },
         {
-          "k": "like"
+          "k": "like",
+          "a": "sevmek"
         },
         {
-          "k": "water"
+          "k": "water",
+          "a": "su"
         },
         {
           "k": "and"
         },
         {
-          "k": "air"
+          "k": "air",
+          "a": "hava"
+        },
+        {
+          "k": "must",
+          "a": "-meli"
+        },
+        {
+          "k": "be"
+        },
+        {
+          "k": "protected",
+          "a": "korumak"
+        },
+        {
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "future",
+          "a": "gelecek"
+        },
+        {
+          "k": "generations.",
+          "a": "nesiller"
         }
       ],
-      "ornek_tr": "su ve hava gibi kaynaklar"
+      "ornek_tr": "Su ve hava gibi kaynaklar gelecek nesiller için korunmalıdır."
     },
     {
       "en": "historical figure",
@@ -17742,19 +18993,41 @@
       "tr": "rağmen, karşın",
       "ornek_tokenlar": [
         {
-          "k": "notwithstanding",
-          "a": "rağmen",
-          "vurgu": true
+          "k": "Notwithstanding",
+          "vurgu": true,
+          "a": "rağmen"
         },
         {
           "k": "the"
         },
         {
-          "k": "differences",
+          "k": "differences,",
           "a": "farklılıklar"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "two",
+          "a": "iki"
+        },
+        {
+          "k": "leaders",
+          "a": "liderler"
+        },
+        {
+          "k": "signed",
+          "a": "imzaladı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "agreement.",
+          "a": "anlaşma"
         }
       ],
-      "ornek_tr": "farklılıklara rağmen"
+      "ornek_tr": "Farklılıklara rağmen iki lider anlaşmayı imzaladı."
     },
     {
       "en": "athlete",
@@ -17786,19 +19059,38 @@
       "tr": "göz önüne alırsak, düşünüldüğünde",
       "ornek_tokenlar": [
         {
-          "k": "considering",
-          "a": "göz önüne alırsak",
-          "vurgu": true
+          "k": "Considering",
+          "vurgu": true,
+          "a": "göz önüne alırsak"
         },
         {
           "k": "his"
         },
         {
-          "k": "age",
+          "k": "age,",
           "a": "yaş"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "athlete",
+          "a": "sporcu"
+        },
+        {
+          "k": "performed",
+          "a": "yapılan"
+        },
+        {
+          "k": "remarkably",
+          "a": "dikkat çekici biçimde"
+        },
+        {
+          "k": "well.",
+          "a": "iyi"
         }
       ],
-      "ornek_tr": "yaşını göz önüne alırsak"
+      "ornek_tr": "Yaşı göz önüne alındığında sporcu olağanüstü iyi performans gösterdi."
     },
     {
       "en": "gently",
@@ -17806,29 +19098,38 @@
       "tr": "nazikçe, yavaşça",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
         },
         {
-          "k": "float",
+          "k": "leaves",
+          "a": "bırakır"
+        },
+        {
+          "k": "floated",
           "a": "yüzmek"
         },
         {
           "k": "gently",
-          "a": "nazikçe",
-          "vurgu": true
+          "vurgu": true,
+          "a": "nazikçe"
         },
         {
-          "k": "like"
+          "k": "down",
+          "a": "aşağı"
         },
         {
-          "k": "a"
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "leaf",
-          "a": "yaprak"
+          "k": "the"
+        },
+        {
+          "k": "ground.",
+          "a": "yer"
         }
       ],
-      "ornek_tr": "bir yaprak gibi nazikçe yüzmek"
+      "ornek_tr": "Yapraklar yere nazikçe süzüldü."
     },
     {
       "en": "leaf",
@@ -17836,28 +19137,44 @@
       "tr": "yaprak",
       "ornek_tokenlar": [
         {
-          "k": "like"
+          "k": "The"
+        },
+        {
+          "k": "boat",
+          "a": "tekne"
+        },
+        {
+          "k": "drifted"
+        },
+        {
+          "k": "slowly",
+          "a": "yavaşça"
+        },
+        {
+          "k": "like",
+          "a": "sevmek"
         },
         {
           "k": "a"
         },
         {
           "k": "leaf",
-          "a": "yaprak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "yaprak"
         },
         {
-          "k": "on"
+          "k": "on",
+          "a": "-de"
         },
         {
           "k": "the"
         },
         {
-          "k": "water",
+          "k": "water.",
           "a": "su"
         }
       ],
-      "ornek_tr": "suyun üstünde bir yaprak gibi"
+      "ornek_tr": "Tekne suyun üstündeki bir yaprak gibi yavaşça süzüldü."
     },
     {
       "en": "hire",
@@ -17865,12 +19182,24 @@
       "tr": "işe almak",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
+        },
+        {
+          "k": "company",
+          "a": "şirket"
+        },
+        {
+          "k": "decided",
+          "a": "karar verdi"
+        },
+        {
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "hire",
-          "a": "işe almak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "işe almak"
         },
         {
           "k": "her"
@@ -17886,11 +19215,11 @@
           "a": "proje"
         },
         {
-          "k": "manager",
+          "k": "manager.",
           "a": "yönetici"
         }
       ],
-      "ornek_tr": "onu proje yöneticisi olarak işe almak"
+      "ornek_tr": "Şirket onu proje yöneticisi olarak işe almaya karar verdi."
     },
     {
       "en": "float",
@@ -17898,36 +19227,42 @@
       "tr": "yüzmek, süzülmek, salınmak",
       "ornek_tokenlar": [
         {
-          "k": "to"
+          "k": "The"
+        },
+        {
+          "k": "feather",
+          "a": "tüy"
+        },
+        {
+          "k": "seemed",
+          "a": "görünmek"
+        },
+        {
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "float",
-          "a": "süzülmek",
-          "vurgu": true
+          "vurgu": true,
+          "a": "süzülmek"
         },
         {
-          "k": "gently"
+          "k": "gently",
+          "a": "nazikçe"
         },
         {
-          "k": "like"
-        },
-        {
-          "k": "a"
-        },
-        {
-          "k": "leaf"
-        },
-        {
-          "k": "on"
+          "k": "above",
+          "a": "-den üstün"
         },
         {
           "k": "the"
         },
         {
-          "k": "water"
+          "k": "water.",
+          "a": "su"
         }
       ],
-      "ornek_tr": "suyun üstünde bir yaprak gibi nazikçe süzülmek"
+      "ornek_tr": "Tüy suyun üstünde nazikçe süzülüyor gibiydi."
     },
     {
       "en": "symbol",
@@ -17957,29 +19292,46 @@
       "tr": "bütçe kesintileri",
       "ornek_tokenlar": [
         {
-          "k": "the"
-        },
-        {
-          "k": "meeting"
-        },
-        {
-          "k": "concerning"
-        },
-        {
-          "k": "the"
+          "k": "The"
         },
         {
           "k": "budget",
-          "a": "bütçe",
-          "vurgu": true
+          "vurgu": true,
+          "a": "bütçe"
         },
         {
           "k": "cuts",
-          "a": "kesintiler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kesintiler"
+        },
+        {
+          "k": "were"
+        },
+        {
+          "k": "discussed",
+          "a": "tartıştı"
+        },
+        {
+          "k": "at",
+          "a": "-de"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "meeting",
+          "a": "toplantı"
+        },
+        {
+          "k": "on",
+          "a": "-de"
+        },
+        {
+          "k": "Monday.",
+          "a": "pazartesi"
         }
       ],
-      "ornek_tr": "bütçe kesintileri hakkındaki toplantı"
+      "ornek_tr": "Bütçe kesintileri pazartesi günkü toplantıda tartışıldı."
     },
     {
       "en": "budget",
@@ -17987,8 +19339,7 @@
       "tr": "bütçe",
       "ornek_tokenlar": [
         {
-          "k": "the",
-          "a": ""
+          "k": "The"
         },
         {
           "k": "meeting",
@@ -17999,20 +19350,31 @@
           "a": "ile ilgili"
         },
         {
-          "k": "the",
-          "a": ""
+          "k": "the"
         },
         {
           "k": "budget",
-          "a": "bütçe",
-          "vurgu": true
+          "vurgu": true,
+          "a": "bütçe"
         },
         {
           "k": "cuts",
           "a": "kesintiler"
+        },
+        {
+          "k": "lasted",
+          "a": "sürmek"
+        },
+        {
+          "k": "three",
+          "a": "üç"
+        },
+        {
+          "k": "hours.",
+          "a": "saatler"
         }
       ],
-      "ornek_tr": "bütçe kesintileri ile ilgili toplantı"
+      "ornek_tr": "Bütçe kesintileriyle ilgili toplantı üç saat sürdü."
     },
     {
       "en": "cuts",
@@ -18020,20 +19382,7 @@
       "tr": "kesintiler, kısıntılar",
       "ornek_tokenlar": [
         {
-          "k": "the",
-          "a": ""
-        },
-        {
-          "k": "meeting",
-          "a": "toplantı"
-        },
-        {
-          "k": "concerning",
-          "a": "ile ilgili"
-        },
-        {
-          "k": "the",
-          "a": ""
+          "k": "The"
         },
         {
           "k": "budget",
@@ -18041,11 +19390,41 @@
         },
         {
           "k": "cuts",
-          "a": "kesintiler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kesintiler"
+        },
+        {
+          "k": "forced",
+          "a": "zorladı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "school",
+          "a": "okul"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "cancel",
+          "a": "iptal etmek"
+        },
+        {
+          "k": "its"
+        },
+        {
+          "k": "music",
+          "a": "müzik"
+        },
+        {
+          "k": "programme.",
+          "a": "program"
         }
       ],
-      "ornek_tr": "bütçe kesintileri ile ilgili toplantı"
+      "ornek_tr": "Bütçe kesintileri okulu müzik programını iptal etmek zorunda bıraktı."
     },
     {
       "en": "shipping",
@@ -18053,16 +19432,46 @@
       "tr": "sevkiyat, kargo",
       "ornek_tokenlar": [
         {
-          "k": "excluding",
+          "k": "The"
+        },
+        {
+          "k": "price",
+          "a": "fiyat"
+        },
+        {
+          "k": "includes",
+          "a": "içerir"
+        },
+        {
+          "k": "taxes",
+          "a": "vergiler"
+        },
+        {
+          "k": "but"
+        },
+        {
+          "k": "excludes",
           "a": "hariç"
         },
         {
           "k": "shipping",
-          "a": "sevkiyat",
-          "vurgu": true
+          "vurgu": true,
+          "a": "sevkiyat"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "remote",
+          "a": "uzak"
+        },
+        {
+          "k": "areas.",
+          "a": "uzmanlık alanları"
         }
       ],
-      "ornek_tr": "sevkiyat hariç"
+      "ornek_tr": "Fiyat vergileri içerir ancak uzak bölgelere sevkiyatı kapsamaz."
     },
     {
       "en": "lily",
@@ -18070,8 +19479,21 @@
       "tr": "zambak",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "florist"
+        },
+        {
+          "k": "sold",
+          "a": "satıldı"
+        },
+        {
           "k": "all",
           "a": "tüm"
+        },
+        {
+          "k": "the"
         },
         {
           "k": "flowers",
@@ -18089,12 +19511,12 @@
           "a": "beyaz"
         },
         {
-          "k": "lilies",
-          "a": "zambaklar",
-          "vurgu": true
+          "k": "lilies.",
+          "vurgu": true,
+          "a": "zambaklar"
         }
       ],
-      "ornek_tr": "Beyaz zambaklar hariç tüm çiçekler."
+      "ornek_tr": "Çiçekçi beyaz zambaklar hariç tüm çiçekleri sattı."
     },
     {
       "en": "tablet",
@@ -18102,8 +19524,23 @@
       "tr": "tablet, hap",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "doctor",
+          "a": "doktor"
+        },
+        {
+          "k": "told",
+          "a": "söylendi"
+        },
+        {
+          "k": "him",
+          "a": "onu"
+        },
+        {
           "k": "to",
-          "a": ""
+          "a": "-e"
         },
         {
           "k": "take",
@@ -18115,19 +19552,19 @@
         },
         {
           "k": "tablets",
-          "a": "tablet",
-          "vurgu": true
+          "vurgu": true,
+          "a": "tablet"
         },
         {
           "k": "per",
           "a": "de"
         },
         {
-          "k": "day",
+          "k": "day.",
           "a": "gün"
         }
       ],
-      "ornek_tr": "Günde iki tablet almak."
+      "ornek_tr": "Doktor ona günde iki tablet almasını söyledi."
     },
     {
       "en": "match",
@@ -18316,24 +19753,44 @@
       "tr": "şikayet",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "hotel"
+        },
+        {
+          "k": "received",
+          "a": "almak"
+        },
+        {
           "k": "a"
         },
         {
           "k": "complaint",
-          "a": "şikayet",
-          "vurgu": true
+          "vurgu": true,
+          "a": "şikayet"
         },
         {
-          "k": "regarding"
+          "k": "regarding",
+          "a": "ile ilgili"
         },
         {
           "k": "the"
         },
         {
-          "k": "noise"
+          "k": "noise",
+          "a": "ses, gürültü"
+        },
+        {
+          "k": "at",
+          "a": "-de"
+        },
+        {
+          "k": "night.",
+          "a": "gece"
         }
       ],
-      "ornek_tr": "gürültü ile ilgili bir şikayet"
+      "ornek_tr": "Otel gece gürültüsüyle ilgili bir şikayet aldı."
     },
     {
       "en": "regarding",
@@ -18341,24 +19798,51 @@
       "tr": "ile ilgili, hakkında",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "neighbours",
+          "a": "komşular"
+        },
+        {
+          "k": "filed"
+        },
+        {
           "k": "a"
         },
         {
-          "k": "complaint"
+          "k": "complaint",
+          "a": "şikayet"
         },
         {
           "k": "regarding",
-          "a": "ile ilgili",
-          "vurgu": true
+          "vurgu": true,
+          "a": "ile ilgili"
         },
         {
           "k": "the"
         },
         {
-          "k": "noise"
+          "k": "noise",
+          "a": "ses, gürültü"
+        },
+        {
+          "k": "from",
+          "a": "-den"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "construction",
+          "a": "inşaat"
+        },
+        {
+          "k": "site.",
+          "a": "yer"
         }
       ],
-      "ornek_tr": "gürültü ile ilgili bir şikayet"
+      "ornek_tr": "Komşular inşaat alanından gelen gürültüyle ilgili şikayette bulundu."
     },
     {
       "en": "excepting",
@@ -18366,18 +19850,30 @@
       "tr": "hariç, dışında",
       "ornek_tokenlar": [
         {
-          "k": "everyone"
+          "k": "Everyone",
+          "a": "herkes"
         },
         {
           "k": "excepting",
-          "a": "hariç",
-          "vurgu": true
+          "vurgu": true,
+          "a": "hariç"
         },
         {
           "k": "Sara"
+        },
+        {
+          "k": "attended",
+          "a": "katıldı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "meeting.",
+          "a": "toplantı"
         }
       ],
-      "ornek_tr": "sara hariç herkes"
+      "ornek_tr": "Sara hariç herkes toplantıya katıldı."
     },
     {
       "en": "concerning",
@@ -18385,18 +19881,38 @@
       "tr": "ile ilgili, hakkında",
       "ornek_tokenlar": [
         {
-          "k": "topics"
+          "k": "The"
+        },
+        {
+          "k": "seminar"
+        },
+        {
+          "k": "covered",
+          "a": "kapsamak"
+        },
+        {
+          "k": "several",
+          "a": "birkaç"
+        },
+        {
+          "k": "topics",
+          "a": "konular"
         },
         {
           "k": "concerning",
-          "a": "ile ilgili",
-          "vurgu": true
+          "vurgu": true,
+          "a": "ile ilgili"
         },
         {
-          "k": "safety"
+          "k": "workplace",
+          "a": "işyeri"
+        },
+        {
+          "k": "safety.",
+          "a": "güvenlik"
         }
       ],
-      "ornek_tr": "güvenlik ile ilgili konular"
+      "ornek_tr": "Seminer iş yeri güvenliğiyle ilgili birkaç konuyu kapsadı."
     },
     {
       "en": "amid",
@@ -18470,24 +19986,40 @@
       "tr": "mutfak (yemek kültürü)",
       "ornek_tokenlar": [
         {
+          "k": "Many",
+          "a": "birçok"
+        },
+        {
+          "k": "chefs",
+          "a": "aşçılar"
+        },
+        {
+          "k": "compare",
+          "a": "karşılaştırmak"
+        },
+        {
           "k": "Italian"
         },
         {
           "k": "cuisine",
-          "a": "mutfak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "mutfak"
         },
         {
-          "k": "versus"
+          "k": "with",
+          "a": "ile"
         },
         {
-          "k": "French"
+          "k": "French",
+          "a": "Fransızca"
         },
         {
-          "k": "cuisine"
+          "k": "cuisine.",
+          "vurgu": true,
+          "a": "mutfak"
         }
       ],
-      "ornek_tr": "İtalyan mutfağına karşı Fransız mutfağı"
+      "ornek_tr": "Birçok şef İtalyan mutfağını Fransız mutfağıyla karşılaştırır."
     },
     {
       "en": "versus",
@@ -18495,24 +20027,42 @@
       "tr": "karşı, karşısında",
       "ornek_tokenlar": [
         {
+          "k": "Tonight's",
+          "a": "bu geceki"
+        },
+        {
+          "k": "debate",
+          "a": "tartışmak"
+        },
+        {
+          "k": "is"
+        },
+        {
+          "k": "about",
+          "a": "hakkında"
+        },
+        {
           "k": "Italian"
         },
         {
-          "k": "cuisine"
+          "k": "cuisine",
+          "a": "mutfak"
         },
         {
           "k": "versus",
-          "a": "karşı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "karşı"
         },
         {
-          "k": "French"
+          "k": "French",
+          "a": "Fransızca"
         },
         {
-          "k": "cuisine"
+          "k": "cuisine.",
+          "a": "mutfak"
         }
       ],
-      "ornek_tr": "İtalyan mutfağına karşı Fransız mutfağı"
+      "ornek_tr": "Bu akşamki tartışma İtalyan mutfağına karşı Fransız mutfağı hakkında."
     },
     {
       "en": "aboard",
@@ -18557,13 +20107,13 @@
       "tr": "artı, üstüne, ile birlikte",
       "ornek_tokenlar": [
         {
-          "k": "five",
+          "k": "Five",
           "a": "beş"
         },
         {
           "k": "plus",
-          "a": "artı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "artı"
         },
         {
           "k": "two",
@@ -18574,11 +20124,34 @@
           "a": "eşittir"
         },
         {
-          "k": "seven",
+          "k": "seven,",
           "a": "yedi"
+        },
+        {
+          "k": "as"
+        },
+        {
+          "k": "every",
+          "a": "her bir"
+        },
+        {
+          "k": "child",
+          "a": "çocuk"
+        },
+        {
+          "k": "learns",
+          "a": "öğrenmek"
+        },
+        {
+          "k": "at",
+          "a": "-de"
+        },
+        {
+          "k": "school.",
+          "a": "okul"
         }
       ],
-      "ornek_tr": "Beş artı iki yedidir."
+      "ornek_tr": "Her çocuğun okulda öğrendiği gibi beş artı iki yedi eder."
     },
     {
       "en": "minus",
@@ -18614,12 +20187,13 @@
       "tr": "ekip, mürettebat, kabin personeli",
       "ornek_tokenlar": [
         {
-          "k": "All"
+          "k": "All",
+          "a": "tüm"
         },
         {
           "k": "crew",
-          "a": "ekip/mürettebat",
-          "vurgu": true
+          "vurgu": true,
+          "a": "ekip/mürettebat"
         },
         {
           "k": "members",
@@ -18629,11 +20203,30 @@
           "k": "are"
         },
         {
-          "k": "aboard",
+          "k": "aboard,",
           "a": "uçakta"
+        },
+        {
+          "k": "so",
+          "a": "bu yüzden"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "plane",
+          "a": "uçak"
+        },
+        {
+          "k": "can",
+          "a": "-ebilmek"
+        },
+        {
+          "k": "depart.",
+          "a": "ayrılmak"
         }
       ],
-      "ornek_tr": "Tüm ekip üyeleri uçaktadır."
+      "ornek_tr": "Tüm mürettebat uçakta, bu yüzden uçak kalkabilir."
     },
     {
       "en": "remarkable",
@@ -18641,24 +20234,41 @@
       "tr": "dikkat çekici, olağanüstü",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "bridge",
+          "a": "köprü"
+        },
+        {
+          "k": "is"
+        },
+        {
+          "k": "considered",
+          "a": "sayılmak"
+        },
+        {
           "k": "a"
         },
         {
           "k": "remarkable",
-          "a": "dikkat çekici",
-          "vurgu": true
+          "vurgu": true,
+          "a": "dikkat çekici"
         },
         {
-          "k": "feat"
+          "k": "feat",
+          "a": "başarı"
         },
         {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "engineering"
+          "k": "engineering.",
+          "a": "mühendislik"
         }
       ],
-      "ornek_tr": "olağanüstü bir mühendislik başarısı"
+      "ornek_tr": "Köprü olağanüstü bir mühendislik başarısı olarak kabul ediliyor."
     },
     {
       "en": "feat",
@@ -18666,24 +20276,41 @@
       "tr": "başarı, beceri gerektiren iş",
       "ornek_tokenlar": [
         {
+          "k": "Climbing",
+          "a": "tırmandı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "mountain",
+          "a": "dağ"
+        },
+        {
+          "k": "in",
+          "a": "içinde"
+        },
+        {
+          "k": "winter",
+          "a": "kış"
+        },
+        {
+          "k": "is"
+        },
+        {
           "k": "a"
         },
         {
-          "k": "remarkable"
+          "k": "remarkable",
+          "a": "dikkat çekici"
         },
         {
-          "k": "feat",
-          "a": "başarı",
-          "vurgu": true
-        },
-        {
-          "k": "of"
-        },
-        {
-          "k": "engineering"
+          "k": "feat.",
+          "vurgu": true,
+          "a": "başarı"
         }
       ],
-      "ornek_tr": "olağanüstü bir mühendislik başarısı"
+      "ornek_tr": "Dağa kışın tırmanmak olağanüstü bir başarıdır."
     },
     {
       "en": "deforestation",
@@ -18713,27 +20340,53 @@
       "tr": "ittifak, birlik",
       "ornek_tokenlar": [
         {
-          "k": "an"
+          "k": "An"
         },
         {
           "k": "alliance",
-          "a": "ittifak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "ittifak"
         },
         {
-          "k": "between"
+          "k": "between",
+          "a": "arasında"
         },
         {
-          "k": "two"
+          "k": "the"
         },
         {
-          "k": "powerful"
+          "k": "two",
+          "a": "iki"
         },
         {
-          "k": "nations"
+          "k": "powerful",
+          "a": "güçlü"
+        },
+        {
+          "k": "nations",
+          "a": "uluslar"
+        },
+        {
+          "k": "changed",
+          "a": "değiştirmiştir"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "balance",
+          "a": "denge"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "power.",
+          "a": "güç"
         }
       ],
-      "ornek_tr": "iki güçlü ulus arasında bir ittifak"
+      "ornek_tr": "İki güçlü ulus arasındaki ittifak güç dengesini değiştirdi."
     },
     {
       "en": "allegation",
@@ -18741,27 +20394,42 @@
       "tr": "iddia, suçlama",
       "ornek_tokenlar": [
         {
-          "k": "allegations",
-          "a": "iddialar",
-          "vurgu": true
+          "k": "The"
         },
         {
-          "k": "of"
+          "k": "minister",
+          "a": "bakan"
         },
         {
-          "k": "corruption"
-        },
-        {
-          "k": "against"
+          "k": "denied",
+          "a": "inkar etti"
         },
         {
           "k": "the"
         },
         {
-          "k": "government"
+          "k": "allegations",
+          "vurgu": true,
+          "a": "iddialar"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "corruption",
+          "a": "yolsuzluk"
+        },
+        {
+          "k": "against",
+          "a": "-e karşı"
+        },
+        {
+          "k": "him.",
+          "a": "onu"
         }
       ],
-      "ornek_tr": "hükümete yönelik yolsuzluk iddiaları"
+      "ornek_tr": "Bakan kendisine yönelik yolsuzluk iddialarını reddetti."
     },
     {
       "en": "corruption",
@@ -18769,27 +20437,46 @@
       "tr": "yolsuzluk, rüşvet",
       "ornek_tokenlar": [
         {
-          "k": "allegations"
+          "k": "Allegations",
+          "a": "iddialar"
         },
         {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "corruption",
-          "a": "yolsuzluk",
-          "vurgu": true
+          "vurgu": true,
+          "a": "yolsuzluk"
         },
         {
-          "k": "against"
+          "k": "against",
+          "a": "-e karşı"
         },
         {
           "k": "the"
         },
         {
-          "k": "government"
+          "k": "government",
+          "a": "hükümet"
+        },
+        {
+          "k": "led",
+          "a": "yol açtı"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "mass",
+          "a": "kitle"
+        },
+        {
+          "k": "protests."
         }
       ],
-      "ornek_tr": "hükümete yönelik yolsuzluk iddiaları"
+      "ornek_tr": "Hükümete yönelik yolsuzluk iddiaları kitlesel protestolara yol açtı."
     },
     {
       "en": "consensus",
@@ -18819,27 +20506,43 @@
       "tr": "iptal",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
           "k": "cancellation",
-          "a": "iptal",
-          "vurgu": true
+          "vurgu": true,
+          "a": "iptal"
         },
         {
-          "k": "without"
-        },
-        {
-          "k": "notice"
-        },
-        {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "the"
         },
         {
-          "k": "concert"
+          "k": "concert",
+          "a": "konser"
+        },
+        {
+          "k": "without",
+          "a": "-sız"
+        },
+        {
+          "k": "notice",
+          "a": "fark etmek"
+        },
+        {
+          "k": "angered"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "fans."
         }
       ],
-      "ornek_tr": "konser iptaline ilişkin bildirim olmaksızın"
+      "ornek_tr": "Konserin önceden haber verilmeden iptali hayranları kızdırdı."
     },
     {
       "en": "extinction",
@@ -18847,27 +20550,47 @@
       "tr": "nesli tükenme, yok oluş",
       "ornek_tokenlar": [
         {
-          "k": "rare"
+          "k": "Rare",
+          "a": "nadir"
         },
         {
-          "k": "species"
+          "k": "species",
+          "a": "tür"
         },
         {
-          "k": "in"
+          "k": "are"
         },
         {
-          "k": "jeopardy"
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "of"
+          "k": "jeopardy",
+          "a": "tehlike"
+        },
+        {
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "extinction",
-          "a": "nesli tükenme",
-          "vurgu": true
+          "vurgu": true,
+          "a": "nesli tükenme"
+        },
+        {
+          "k": "because",
+          "a": "-dığı için"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "hunting.",
+          "a": "avlanma"
         }
       ],
-      "ornek_tr": "nesli tükenme tehlikesindeki nadir türler"
+      "ornek_tr": "Nadir türler avlanma yüzünden nesli tükenme tehlikesinde."
     },
     {
       "en": "jeopardy",
@@ -18919,33 +20642,48 @@
       "tr": "danışman",
       "ornek_tokenlar": [
         {
+          "k": "She"
+        },
+        {
+          "k": "works",
+          "a": "eserler"
+        },
+        {
+          "k": "as"
+        },
+        {
           "k": "a"
         },
         {
           "k": "consultant",
-          "a": "danışman",
-          "vurgu": true
+          "vurgu": true,
+          "a": "danışman"
         },
         {
-          "k": "in"
+          "k": "in",
+          "a": "içinde"
         },
         {
           "k": "the"
         },
         {
-          "k": "field"
+          "k": "field",
+          "a": "alan"
         },
         {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "environmental"
+          "k": "environmental",
+          "a": "çevresel"
         },
         {
-          "k": "science"
+          "k": "science.",
+          "a": "bilim"
         }
       ],
-      "ornek_tr": "çevre bilimi alanında bir danışman"
+      "ornek_tr": "Çevre bilimi alanında danışman olarak çalışıyor."
     },
     {
       "en": "annual",
@@ -18953,24 +20691,47 @@
       "tr": "yıllık",
       "ornek_tokenlar": [
         {
+          "k": "She"
+        },
+        {
+          "k": "accepted",
+          "a": "kabul etmek"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "job",
+          "a": "iş"
+        },
+        {
+          "k": "with",
+          "a": "ile"
+        },
+        {
           "k": "an"
         },
         {
           "k": "annual",
-          "a": "yıllık",
-          "vurgu": true
+          "vurgu": true,
+          "a": "yıllık"
         },
         {
           "k": "salary"
         },
         {
-          "k": "of"
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "$40,000"
+          "k": "40,000"
+        },
+        {
+          "k": "dollars.",
+          "a": "dolar"
         }
       ],
-      "ornek_tr": "40.000 dolarlık yıllık maaş"
+      "ornek_tr": "40.000 dolarlık yıllık maaşla işi kabul etti."
     },
     {
       "en": "diverse",
@@ -18978,18 +20739,43 @@
       "tr": "çeşitli, farklı",
       "ornek_tokenlar": [
         {
-          "k": "explore"
+          "k": "Travelling",
+          "a": "seyahat ediyordu"
+        },
+        {
+          "k": "allows",
+          "a": "olanak tanır"
+        },
+        {
+          "k": "us",
+          "a": "bizi"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "explore",
+          "a": "keşfetmek"
         },
         {
           "k": "diverse",
-          "a": "çeşitli",
-          "vurgu": true
+          "vurgu": true,
+          "a": "çeşitli"
         },
         {
-          "k": "cultures"
+          "k": "cultures",
+          "a": "kültürler"
+        },
+        {
+          "k": "and"
+        },
+        {
+          "k": "traditions.",
+          "a": "gelenek"
         }
       ],
-      "ornek_tr": "çeşitli kültürleri keşfetmek"
+      "ornek_tr": "Seyahat etmek çeşitli kültürleri ve gelenekleri keşfetmemizi sağlar."
     },
     {
       "en": "immediate",
@@ -18997,27 +20783,45 @@
       "tr": "acil, anlık, hemen",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "accident",
+          "a": "kaza"
+        },
+        {
+          "k": "required",
+          "a": "zorunlu tutuldu"
+        },
+        {
+          "k": "an"
+        },
+        {
           "k": "immediate",
-          "a": "acil",
-          "vurgu": true
+          "vurgu": true,
+          "a": "acil"
         },
         {
-          "k": "response"
+          "k": "response",
+          "a": "yanıt"
         },
         {
-          "k": "from"
+          "k": "from",
+          "a": "-den"
         },
         {
           "k": "the"
         },
         {
-          "k": "emergency"
+          "k": "emergency",
+          "a": "acil"
         },
         {
-          "k": "services"
+          "k": "services.",
+          "a": "hizmetler"
         }
       ],
-      "ornek_tr": "acil servislerden anlık müdahale"
+      "ornek_tr": "Kaza, acil servislerden anında müdahale gerektirdi."
     },
     {
       "en": "strategic",
@@ -19025,15 +20829,36 @@
       "tr": "stratejik",
       "ornek_tokenlar": [
         {
-          "k": "strategic",
-          "a": "stratejik",
-          "vurgu": true
+          "k": "Strategic",
+          "vurgu": true,
+          "a": "stratejik"
         },
         {
-          "k": "planning"
+          "k": "planning",
+          "a": "planlama"
+        },
+        {
+          "k": "helps",
+          "a": "yardımcı olur"
+        },
+        {
+          "k": "companies",
+          "a": "şirketler"
+        },
+        {
+          "k": "survive",
+          "a": "hayatta kalmak"
+        },
+        {
+          "k": "economic",
+          "a": "ekonomik"
+        },
+        {
+          "k": "crises.",
+          "a": "krizlerin"
         }
       ],
-      "ornek_tr": "stratejik planlama"
+      "ornek_tr": "Stratejik planlama şirketlerin ekonomik krizleri atlatmasına yardımcı olur."
     }
   ],
   "gramer": [],

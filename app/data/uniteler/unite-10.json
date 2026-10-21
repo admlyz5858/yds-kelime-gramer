@@ -6312,58 +6312,55 @@
     {
       "en": "built",
       "tur": "fiil",
-      "tr": "inşa etmek (build fiilinin geçmiş/3. hali); inşa edilmiş",
-      "ornek_tr": "İşçiler kasabada yeni bir eğlence parkı inşa edecek. (Not: cümle dilbilgisel olarak hatalı; doğrusu 'will build' olmalı.)",
+      "tr": "inşa etmek (build'in 2./3. hali); inşa edilmiş",
+      "ornek_tr": "Gelecek yaza kadar kasabada yeni bir eğlence parkı inşa edilecek.",
       "ornek_tokenlar": [
         {
-          "k": "Workers",
-          "a": "işçiler",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "(gelecek zaman)",
-          "vurgu": false
-        },
-        {
-          "k": "be",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
-        },
-        {
-          "k": "built",
-          "a": "inşa et(il)miş",
-          "vurgu": true
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "A"
         },
         {
           "k": "new",
-          "a": "yeni",
-          "vurgu": false
+          "a": "yeni"
         },
         {
           "k": "fun",
-          "a": "eğlence",
-          "vurgu": false
+          "a": "eğlence"
         },
         {
           "k": "park",
-          "a": "park",
-          "vurgu": false
+          "a": "park"
+        },
+        {
+          "k": "will",
+          "a": "(gelecek zaman)"
+        },
+        {
+          "k": "be"
+        },
+        {
+          "k": "built",
+          "vurgu": true,
+          "a": "inşa et(il)miş"
         },
         {
           "k": "in",
-          "a": "içinde",
-          "vurgu": false
+          "a": "içinde"
         },
         {
-          "k": "town.",
-          "a": "kasaba",
-          "vurgu": false
+          "k": "town",
+          "a": "kasaba"
+        },
+        {
+          "k": "by",
+          "a": "tarafından"
+        },
+        {
+          "k": "next",
+          "a": "gelecek"
+        },
+        {
+          "k": "summer.",
+          "a": "yaz"
         }
       ]
     },

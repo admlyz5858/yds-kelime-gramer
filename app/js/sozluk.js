@@ -1,6 +1,7 @@
-// app/js/sozluk.js — "Kelimeler": 2331 kelimelik tek sözlük. Seviye (S1–S5) · tür · ünite · durum filtreleri,
+// app/js/sozluk.js — "Kelimeler": 2100+ kartlık tek sözlük (çekimli biçimler kök kartta). Seviye (S1–S5) · tür · ünite · durum filtreleri,
 // arama, parça parça yüklenen liste, kelime detayı. Durum (yeni/öğreniliyor/pekişti) ve Defter durum.js'ten.
 import { ogrenmeDurumu, defterdeMi, defterToggle, pekistir, pekistiMi } from './durum.js';
+import { ornekBlokHTML } from './kart.js';
 
 export const SEVIYE_AD = { 1: 'Temel', 2: 'Sık', 3: 'Orta', 4: 'İleri', 5: 'Akademik' };
 export const UNITE_ADI = {
@@ -21,7 +22,7 @@ export function filtrele(havuz, f, durumFn = ogrenmeDurumu, defterFn = defterdeM
   if (f.unite) arr = arr.filter(w => w.u === f.unite);
   if (f.durum === 'defter') arr = arr.filter(w => defterFn(w.en));
   else if (f.durum) arr = arr.filter(w => durumFn(w.en) === f.durum);
-  if (q) arr = arr.filter(w => w.en.toLowerCase().includes(q) || (w.tr || '').toLocaleLowerCase('tr-TR').includes(q));
+  if (q) arr = arr.filter(w => w.en.toLowerCase().includes(q) || (w.tr || '').toLocaleLowerCase('tr-TR').includes(q) || (Array.isArray(w.bicimler) && w.bicimler.some(b => b.toLowerCase().includes(q))));
   if (f.sira === 'alfabe') arr = arr.slice().sort((a, b) => a.en.localeCompare(b.en, 'en'));
   else if (f.sira === 'tur') arr = arr.slice().sort((a, b) => (TUR_SIRA.indexOf(turAna(a)) + 99) % 99 - (TUR_SIRA.indexOf(turAna(b)) + 99) % 99 || a.sv - b.sv);
   return arr;   // 'seviye': havuz sırası zaten sv + sıklık
@@ -47,7 +48,7 @@ export function kurSozluk(api) {
     return `<button class="sz-satir" data-en="${esc(w.en)}">
       <span class="sz-sv s${w.sv}">S${w.sv}</span>
       <span class="sz-ic"><b>${esc(w.en)}</b><i>${esc(w.tr)}</i></span>
-      <span class="sz-sag">${defterdeMi(w.en) ? '📓' : ''}<span class="sz-durum" title="${d}">${DURUM_NOKTA[d]}</span></span>
+      <span class="sz-sag">${Array.isArray(w.bicimler) && w.bicimler.length ? `<span class="sz-bicim-say" title="${esc(w.bicimler.join(', '))}">+${w.bicimler.length}</span>` : ''}${defterdeMi(w.en) ? '📓' : ''}<span class="sz-durum" title="${d}">${DURUM_NOKTA[d]}</span></span>
     </button>`;
   }
   function cipler() {
@@ -126,10 +127,11 @@ export function kurSozluk(api) {
       <div class="sz-detay">
         <div class="sz-detay-ust"><span class="sz-sv s${w.sv}">S${w.sv} ${SEVIYE_AD[w.sv] || ''}</span><span class="sz-rozet">${esc(w.tur || '')}</span>${w.u ? `<span class="sz-rozet">📚 ${esc(UNITE_ADI[w.u] || 'Ünite ' + w.u)}</span>` : ''}</div>
         <div class="sz-detay-en">${esc(w.en)} <button class="ogr-ses" id="szSes" aria-label="Seslendir">🔊</button></div>
+        ${Array.isArray(w.bicimler) && w.bicimler.length ? `<div class="sz-bicimler">Biçimler: ${w.bicimler.map(b => `<b>${esc(b)}</b>`).join(' · ')}</div>` : ''}
         <div class="sz-detay-tr">${esc(w.tr)}</div>
         <div class="sz-detay-durum">${durumYazi}</div>
       </div>
-      ${w.ornek_tokenlar ? `<div class="kart-ornek-etiket">Örnek · kelimeye dokun, çeviri için kaydır</div>${ornekHTML({ tokenlar: w.ornek_tokenlar, tr: w.ornek_tr })}` : ''}
+      ${ornekBlokHTML(w, esc, ornekHTML, { hepsi: true })}
       <div class="btn-satir">
         <button class="aksiyon ${defterdeMi(w.en) ? '' : 'ikincil'}" id="szDefter">${defterdeMi(w.en) ? '📓 Defterde ✓' : '📓 Deftere ekle'}</button>
         <button class="aksiyon ${pekistiMi(w.en) ? '' : 'ikincil'}" id="szBiliyorum">${pekistiMi(w.en) ? '✅ Biliyorum' : '🎓 Biliyorum'}</button>

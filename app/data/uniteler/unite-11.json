@@ -9219,92 +9219,49 @@
       "en": "reactant",
       "tur": "isim",
       "tr": "tepken, reaktan (kimyasal tepkimeye giren madde)",
-      "ornek_tr": "Karbonata sirke eklersen, karışım köpürecek ve bir kimyasal tepkime oluşturacaktır.",
+      "ornek_tr": "Tepkenleri ısıtırsan kimyasal tepkime hızlanır.",
       "ornek_tokenlar": [
         {
           "k": "If",
-          "a": "eğer",
-          "vurgu": false
+          "a": "eğer"
         },
         {
-          "k": "you",
-          "a": "sen",
-          "vurgu": false
+          "k": "you"
         },
         {
-          "k": "add",
-          "a": "eklemek",
-          "vurgu": false
+          "k": "heat",
+          "a": "ısıtmak"
         },
         {
-          "k": "vinegar",
-          "a": "sirke (tepken)",
-          "vurgu": true
+          "k": "the"
         },
         {
-          "k": "to",
-          "a": "-e",
-          "vurgu": false
+          "k": "reactants,",
+          "vurgu": true,
+          "a": "tepken"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "baking",
-          "a": "kabartma",
-          "vurgu": false
-        },
-        {
-          "k": "soda,",
-          "a": "karbonat (tepken)",
-          "vurgu": true
-        },
-        {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "mixture",
-          "a": "karışım",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "-ecek",
-          "vurgu": false
-        },
-        {
-          "k": "fizz",
-          "a": "köpürmek",
-          "vurgu": false
-        },
-        {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
-        },
-        {
-          "k": "create",
-          "a": "oluşturmak",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "the"
         },
         {
           "k": "chemical",
-          "a": "kimyasal",
-          "vurgu": false
+          "a": "kimyasal"
         },
         {
-          "k": "reaction.",
-          "a": "tepkime",
-          "vurgu": false
+          "k": "reaction",
+          "a": "tepkime"
+        },
+        {
+          "k": "will",
+          "a": "-ecek"
+        },
+        {
+          "k": "speed",
+          "a": "hız"
+        },
+        {
+          "k": "up.",
+          "a": "yukarı"
         }
       ]
     },

@@ -12,16 +12,16 @@ Bu dosya, Play Console'da kopyala-yapıştır yapacağın tüm metinleri ve form
 
 ## Kısa açıklama (max 80 karakter)
 ```
-YDS/YÖKDİL: 2300+ kelime tek sözlükte, 13 gramer ünitesi, oyun, aralıklı tekrar.
+YDS/YÖKDİL: 2100+ kelime tek sözlükte, 13 gramer ünitesi, oyun, aralıklı tekrar.
 ```
 
 ## Tam açıklama (max 4000 karakter)
 ```
-Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 2300'den fazla kelime ve 13 gramer ünitesi tamamen ücretsiz.
+Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 2100'den fazla kelime kartı (çekimli biçimleriyle 2300+ sözcük) ve 13 gramer ünitesi tamamen ücretsiz.
 
 ÖNE ÇIKAN ÖZELLİKLER
 
-• Tüm kelimeler tek yerde — 2300+ kelime tek sözlükte. Seviyeye (S1 temel → S5 akademik), türe (isim, fiil, sıfat, zarf, edat…) ve duruma (yeni / öğreniliyor / öğrendim) göre süz; ara, A→Z sırala, listeyi doğrudan çalış.
+• Tüm kelimeler tek yerde — 2100+ kelime tek sözlükte. Seviyeye (S1 temel → S5 akademik), türe (isim, fiil, sıfat, zarf, edat…) ve duruma (yeni / öğreniliyor / öğrendim) göre süz; ara, A→Z sırala, listeyi doğrudan çalış.
 
 • Bugün sekmesi — Günün planı tek ekranda: vadesi gelen tekrarlar, günün eşleştirmesi, kaldığın ünite.
 
@@ -59,6 +59,7 @@ Her gün birkaç dakika — gerisini uygulama hatırlatır.
 • Bugün sekmesinde günün planı: tekrarlar, günün eşleştirmesi, kaldığın ünite
 • Eşleştirme: sezon yolu (6'şar bölüm), bölümler seviye bandıyla etiketli
 • Müfredatta ünite ilerleme halkaları; 3 adımlı karşılama (hedef + sınav tarihi)
+• Kelime kartları yenilendi: seviye/tür/biçim çipleri, ek örnekler; çekimli kopyalar kök karta bağlandı, 100+ örnek cümle yeniden yazıldı
 • Soru Bankası: 1.500+ test sorusu 9 konu ve 40+ alt konuda, 10'ar soruluk testler kolaydan zora; zayıf konun Bugün'e düşer
 • Tüm testler açık; sıradaki vurgulu, konu etiketli
 • Öğren: kartı kaydırarak derecelendir, yarım kalan oturuma devam

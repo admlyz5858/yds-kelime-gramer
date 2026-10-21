@@ -32890,7 +32890,7 @@
     {
       "en": "significant",
       "tur": "Sıfat",
-      "tr": "önemli / kayda değer",
+      "tr": "önemli / kayda değer · significant for/to: … için önemli",
       "ornek_tokenlar": [
         {
           "k": "The"
@@ -32954,7 +32954,70 @@
           "a": "dünya çapında"
         }
       ],
-      "ornek_tr": "Yenilenebilir enerjinin devreye girmesi, dünya çapında karbon salınımlarında önemli bir azalmaya yol açmıştır."
+      "ornek_tr": "Yenilenebilir enerjinin devreye girmesi, dünya çapında karbon salınımlarında önemli bir azalmaya yol açmıştır.",
+      "ornekler": [
+        {
+          "tokenlar": [
+            {
+              "k": "These"
+            },
+            {
+              "k": "findings",
+              "a": "bulgular"
+            },
+            {
+              "k": "are"
+            },
+            {
+              "k": "particularly",
+              "a": "özellikle"
+            },
+            {
+              "k": "significant",
+              "vurgu": true,
+              "a": "önemli"
+            },
+            {
+              "k": "for",
+              "a": "için"
+            },
+            {
+              "k": "researchers",
+              "a": "araştırmacılar"
+            },
+            {
+              "k": "who",
+              "a": "... olan"
+            },
+            {
+              "k": "aim",
+              "a": "amaçlayan"
+            },
+            {
+              "k": "to",
+              "a": "-e"
+            },
+            {
+              "k": "develop",
+              "a": "geliştirmek"
+            },
+            {
+              "k": "sustainable",
+              "a": "sürdürülebilir"
+            },
+            {
+              "k": "energy",
+              "a": "enerji"
+            },
+            {
+              "k": "solutions.",
+              "a": "çözümler"
+            }
+          ],
+          "tr": "Bu bulgular, sürdürülebilir enerji çözümleri geliştirmeyi amaçlayan araştırmacılar için özellikle önemlidir.",
+          "bicim": "significant for / to"
+        }
+      ]
     },
     {
       "en": "speak",
@@ -35760,7 +35823,7 @@
     {
       "en": "available",
       "tur": "Sıfat",
-      "tr": "ulaşılabilir / mevcut",
+      "tr": "ulaşılabilir / mevcut · available for/to: … için ulaşılabilir",
       "ornek_tokenlar": [
         {
           "k": "Thanks",
@@ -35821,7 +35884,70 @@
           "a": "dünya çapında"
         }
       ],
-      "ornek_tr": "İnternet sayesinde, çok büyük miktarda bilgi artık dünya çapındaki öğrenciler için ulaşılabilir durumdadır."
+      "ornek_tr": "İnternet sayesinde, çok büyük miktarda bilgi artık dünya çapındaki öğrenciler için ulaşılabilir durumdadır.",
+      "ornekler": [
+        {
+          "tokenlar": [
+            {
+              "k": "The"
+            },
+            {
+              "k": "new",
+              "a": "yeni"
+            },
+            {
+              "k": "scholarship",
+              "a": "burs programı"
+            },
+            {
+              "k": "program",
+              "a": "programı"
+            },
+            {
+              "k": "is"
+            },
+            {
+              "k": "available",
+              "vurgu": true,
+              "a": "ulaşılabilir"
+            },
+            {
+              "k": "to",
+              "a": "için"
+            },
+            {
+              "k": "all",
+              "a": "tüm"
+            },
+            {
+              "k": "students",
+              "a": "öğrenciler"
+            },
+            {
+              "k": "who",
+              "a": "... olan"
+            },
+            {
+              "k": "demonstrate",
+              "a": "gösteren"
+            },
+            {
+              "k": "outstanding",
+              "a": "olağanüstü"
+            },
+            {
+              "k": "academic",
+              "a": "akademik"
+            },
+            {
+              "k": "achievement.",
+              "a": "başarı"
+            }
+          ],
+          "tr": "Yeni burs programı, olağanüstü akademik başarı gösteren tüm öğrenciler için ulaşılabilir durumdadır.",
+          "bicim": "available for / to"
+        }
+      ]
     },
     {
       "en": "situation",
@@ -41644,7 +41770,65 @@
           "a": "kirlilik"
         }
       ],
-      "ornek_tr": "Hükümetler, artan çevresel kirlilik sorununu ele almak için kapsamlı stratejiler geliştirmelidir."
+      "ornek_tr": "Hükümetler, artan çevresel kirlilik sorununu ele almak için kapsamlı stratejiler geliştirmelidir.",
+      "ornekler": [
+        {
+          "tokenlar": [
+            {
+              "k": "The"
+            },
+            {
+              "k": "group",
+              "a": "grup"
+            },
+            {
+              "k": "dealt",
+              "vurgu": true,
+              "a": "ele aldı"
+            },
+            {
+              "k": "with",
+              "vurgu": true,
+              "a": "ile"
+            },
+            {
+              "k": "a"
+            },
+            {
+              "k": "plan",
+              "a": "plan"
+            },
+            {
+              "k": "during",
+              "a": "sırasında"
+            },
+            {
+              "k": "the"
+            },
+            {
+              "k": "meeting;",
+              "a": "toplantı"
+            },
+            {
+              "k": "everyone",
+              "a": "herkes"
+            },
+            {
+              "k": "contributed",
+              "a": "katkıda bulundu"
+            },
+            {
+              "k": "their"
+            },
+            {
+              "k": "ideas.",
+              "a": "fikirler"
+            }
+          ],
+          "tr": "Grup toplantı sırasında bir planı ele aldı; herkes fikirlerini paylaştı.",
+          "bicim": "deal (with)"
+        }
+      ]
     },
     {
       "en": "fear",
@@ -46264,7 +46448,7 @@
     {
       "en": "either ... or",
       "tur": "Bağlaç",
-      "tr": "ya -- ya --",
+      "tr": "ya … ya …",
       "ornek_tokenlar": [
         {
           "k": "Governments",
@@ -65787,7 +65971,7 @@
     {
       "en": "vital",
       "tur": "Sıfat",
-      "tr": "hayati",
+      "tr": "hayati · vital for/to: … için hayati",
       "ornek_tokenlar": [
         {
           "k": "Access",
@@ -65851,7 +66035,77 @@
           "a": "alanlar"
         }
       ],
-      "ornek_tr": "Temiz suya erişim, yoğun nüfuslu kentsel alanlarda halk sağlığını sürdürmek için hayati önemdedir."
+      "ornek_tr": "Temiz suya erişim, yoğun nüfuslu kentsel alanlarda halk sağlığını sürdürmek için hayati önemdedir.",
+      "ornekler": [
+        {
+          "tokenlar": [
+            {
+              "k": "Access",
+              "a": "erişim"
+            },
+            {
+              "k": "to",
+              "a": "...ya"
+            },
+            {
+              "k": "clean",
+              "a": "temiz"
+            },
+            {
+              "k": "water",
+              "a": "su"
+            },
+            {
+              "k": "is"
+            },
+            {
+              "k": "vital",
+              "vurgu": true,
+              "a": "hayati önemde"
+            },
+            {
+              "k": "for",
+              "a": "... için"
+            },
+            {
+              "k": "the"
+            },
+            {
+              "k": "survival",
+              "a": "hayatta kalma"
+            },
+            {
+              "k": "of",
+              "a": "...nin"
+            },
+            {
+              "k": "every",
+              "a": "her"
+            },
+            {
+              "k": "living",
+              "a": "canlı"
+            },
+            {
+              "k": "organism",
+              "a": "organizma"
+            },
+            {
+              "k": "on",
+              "a": "...daki"
+            },
+            {
+              "k": "the"
+            },
+            {
+              "k": "planet.",
+              "a": "gezegen"
+            }
+          ],
+          "tr": "Temiz suya erişim, gezegendeki her canlı organizmanın hayatta kalması için hayati önem taşır.",
+          "bicim": "vital for / to"
+        }
+      ]
     },
     {
       "en": "advanced",
@@ -67269,79 +67523,6 @@
       "ornek_tr": "Gelişmiş uydu teknolojisinin yardımıyla, bilim insanları artık iklim değişikliğini dikkat çekici bir hassasiyetle izleyebilmektedir."
     },
     {
-      "en": "vital for / to",
-      "tur": "Sıfat",
-      "tr": "... için çok önemli/hayati",
-      "ornek_tokenlar": [
-        {
-          "k": "Access",
-          "a": "erişim",
-          "en": "access to clean water"
-        },
-        {
-          "k": "to",
-          "a": "...ya"
-        },
-        {
-          "k": "clean",
-          "a": "temiz"
-        },
-        {
-          "k": "water",
-          "a": "su"
-        },
-        {
-          "k": "is",
-          "a": "...dır"
-        },
-        {
-          "k": "vital",
-          "vurgu": true,
-          "a": "hayati önemde",
-          "en": "vital for / to"
-        },
-        {
-          "k": "for",
-          "a": "... için"
-        },
-        {
-          "k": "the"
-        },
-        {
-          "k": "survival",
-          "a": "hayatta kalma"
-        },
-        {
-          "k": "of",
-          "a": "...nin"
-        },
-        {
-          "k": "every",
-          "a": "her"
-        },
-        {
-          "k": "living",
-          "a": "canlı"
-        },
-        {
-          "k": "organism",
-          "a": "organizma"
-        },
-        {
-          "k": "on",
-          "a": "...daki"
-        },
-        {
-          "k": "the"
-        },
-        {
-          "k": "planet.",
-          "a": "gezegen"
-        }
-      ],
-      "ornek_tr": "Temiz suya erişim, gezegendeki her canlı organizmanın hayatta kalması için hayati önem taşır."
-    },
-    {
       "en": "advanced in",
       "tur": "Sıfat",
       "tr": "...de ileri düzeyde/gelişmiş",
@@ -67794,72 +67975,6 @@
       "ornek_tr": "Bulgularını yayımlamadan önce, bilim insanları doğruluğu sağlamak için sonuçlarını genellikle meslektaşlarıyla tartışırlar."
     },
     {
-      "en": "crucial for / to",
-      "tur": "Sıfat öbeği",
-      "tr": "...için çok önemli, hayati",
-      "ornek_tokenlar": [
-        {
-          "k": "Access",
-          "en": "access",
-          "a": "erişim"
-        },
-        {
-          "k": "to",
-          "a": "-e"
-        },
-        {
-          "k": "quality",
-          "a": "kaliteli"
-        },
-        {
-          "k": "education",
-          "en": "quality education",
-          "a": "eğitim"
-        },
-        {
-          "k": "is",
-          "a": "...dır"
-        },
-        {
-          "k": "crucial",
-          "vurgu": true,
-          "en": "crucial for",
-          "a": "çok önemli"
-        },
-        {
-          "k": "for",
-          "vurgu": true,
-          "a": "...için"
-        },
-        {
-          "k": "the"
-        },
-        {
-          "k": "long-term",
-          "a": "uzun vadeli"
-        },
-        {
-          "k": "development",
-          "en": "long-term development",
-          "a": "kalkınma"
-        },
-        {
-          "k": "of",
-          "a": "-nin"
-        },
-        {
-          "k": "any",
-          "a": "herhangi bir"
-        },
-        {
-          "k": "society.",
-          "en": "of any society",
-          "a": "toplum"
-        }
-      ],
-      "ornek_tr": "Kaliteli eğitime erişim, herhangi bir toplumun uzun vadeli kalkınması için çok önemlidir."
-    },
-    {
       "en": "vulnerable to",
       "tur": "Sıfat öbeği",
       "tr": "...ya karşı savunmasız, zayıf",
@@ -67927,136 +68042,6 @@
         }
       ],
       "ornek_tr": "Kıyı şehirleri, küresel ısınmanın neden olduğu yükselen deniz seviyelerine karşı giderek daha savunmasız hale gelmektedir."
-    },
-    {
-      "en": "available for / to",
-      "tur": "Sıfat",
-      "tr": "... için ulaşılabilir / kullanıma hazır",
-      "ornek_tokenlar": [
-        {
-          "k": "The"
-        },
-        {
-          "k": "new",
-          "a": "yeni"
-        },
-        {
-          "k": "scholarship",
-          "en": "scholarship program",
-          "a": "burs programı"
-        },
-        {
-          "k": "program",
-          "a": "programı"
-        },
-        {
-          "k": "is"
-        },
-        {
-          "k": "available",
-          "vurgu": true,
-          "a": "ulaşılabilir",
-          "en": "available to"
-        },
-        {
-          "k": "to",
-          "a": "için"
-        },
-        {
-          "k": "all",
-          "a": "tüm"
-        },
-        {
-          "k": "students",
-          "a": "öğrenciler"
-        },
-        {
-          "k": "who",
-          "a": "... olan"
-        },
-        {
-          "k": "demonstrate",
-          "a": "gösteren"
-        },
-        {
-          "k": "outstanding",
-          "a": "olağanüstü"
-        },
-        {
-          "k": "academic",
-          "a": "akademik"
-        },
-        {
-          "k": "achievement.",
-          "a": "başarı"
-        }
-      ],
-      "ornek_tr": "Yeni burs programı, olağanüstü akademik başarı gösteren tüm öğrenciler için ulaşılabilir durumdadır."
-    },
-    {
-      "en": "significant for / to",
-      "tur": "Sıfat",
-      "tr": "... için önemli / kayda değer",
-      "ornek_tokenlar": [
-        {
-          "k": "These",
-          "a": "bu"
-        },
-        {
-          "k": "findings",
-          "a": "bulgular"
-        },
-        {
-          "k": "are"
-        },
-        {
-          "k": "particularly",
-          "a": "özellikle"
-        },
-        {
-          "k": "significant",
-          "vurgu": true,
-          "a": "önemli",
-          "en": "significant for"
-        },
-        {
-          "k": "for",
-          "a": "için"
-        },
-        {
-          "k": "researchers",
-          "a": "araştırmacılar"
-        },
-        {
-          "k": "who",
-          "a": "... olan"
-        },
-        {
-          "k": "aim",
-          "a": "amaçlayan",
-          "en": "aim to"
-        },
-        {
-          "k": "to"
-        },
-        {
-          "k": "develop",
-          "a": "geliştirmek"
-        },
-        {
-          "k": "sustainable",
-          "a": "sürdürülebilir"
-        },
-        {
-          "k": "energy",
-          "a": "enerji"
-        },
-        {
-          "k": "solutions.",
-          "a": "çözümler"
-        }
-      ],
-      "ornek_tr": "Bu bulgular, sürdürülebilir enerji çözümleri geliştirmeyi amaçlayan araştırmacılar için özellikle önemlidir."
     },
     {
       "en": "attribute to",

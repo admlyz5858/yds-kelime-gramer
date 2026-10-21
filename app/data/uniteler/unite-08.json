@@ -15852,28 +15852,47 @@
       "en": "expanded",
       "tur": "fiil",
       "tr": "genişletmek (V3 / past); genişlemiş",
-      "ornek_tr": "D) genişletmiş olması gerekirdi",
+      "ornek_tr": "Şirket yeni pazarlara daha erken açılmalıydı.",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "company",
+          "a": "şirket"
+        },
+        {
           "k": "ought",
-          "a": "-meliydi",
-          "en": "ought to have + V3: geçmişte yapılması gereken eylem",
-          "vurgu": false
+          "a": "-meliydi"
         },
         {
           "k": "to",
-          "a": "(yapı parçası)",
-          "vurgu": false
+          "a": "(yapı parçası)"
         },
         {
           "k": "have",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "a": "(yardımcı fiil)"
         },
         {
           "k": "expanded",
-          "a": "genişletmek (V3)",
-          "vurgu": true
+          "vurgu": true,
+          "a": "genişletmek (V3)"
+        },
+        {
+          "k": "into",
+          "a": "-in içine"
+        },
+        {
+          "k": "new",
+          "a": "yeni"
+        },
+        {
+          "k": "markets",
+          "a": "pazarlar"
+        },
+        {
+          "k": "earlier.",
+          "a": "daha önce"
         }
       ]
     },
@@ -15881,23 +15900,49 @@
       "en": "depend",
       "tur": "fiil",
       "tr": "bağlı olmak; güvenmek, dayanmak",
-      "ornek_tr": "C) -e güvenebilir / -e bağlı olabilir",
+      "ornek_tr": "Raporu zamanında bitirmesi konusunda ona güvenebilirsin.",
       "ornek_tokenlar": [
         {
+          "k": "You"
+        },
+        {
           "k": "can",
-          "a": "-ebilir",
-          "vurgu": false
+          "a": "-ebilir"
         },
         {
           "k": "depend",
-          "a": "güvenmek, bağlı olmak",
-          "en": "depend on: -e güvenmek/bağlı olmak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "güvenmek, bağlı olmak"
         },
         {
           "k": "on",
-          "a": "-e",
-          "vurgu": false
+          "a": "-e"
+        },
+        {
+          "k": "her"
+        },
+        {
+          "k": "to",
+          "a": "-e"
+        },
+        {
+          "k": "finish",
+          "a": "bitirmek"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "report",
+          "a": "rapor"
+        },
+        {
+          "k": "on",
+          "a": "-e"
+        },
+        {
+          "k": "time.",
+          "a": "zaman"
         }
       ]
     },
@@ -15905,28 +15950,47 @@
       "en": "search",
       "tur": "fiil",
       "tr": "aramak, araştırmak",
-      "ornek_tr": "D) aramalıydı / araması gerekirdi",
+      "ornek_tr": "Yolculuktan önce daha güvenli bir güzergâh aramalısın.",
       "ornek_tokenlar": [
         {
+          "k": "You"
+        },
+        {
           "k": "ought",
-          "a": "-meliydi",
-          "vurgu": false
+          "a": "-meliydi"
         },
         {
           "k": "to",
-          "a": "(yapı parçası)",
-          "vurgu": false
+          "a": "(yapı parçası)"
         },
         {
           "k": "search",
-          "a": "aramak",
-          "en": "search for: -i aramak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "aramak"
         },
         {
           "k": "for",
-          "a": "-i",
-          "vurgu": false
+          "a": "-i"
+        },
+        {
+          "k": "a"
+        },
+        {
+          "k": "safer"
+        },
+        {
+          "k": "route"
+        },
+        {
+          "k": "before",
+          "a": "-den önce"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "trip.",
+          "a": "gezi"
         }
       ]
     },
@@ -15934,28 +15998,51 @@
       "en": "won",
       "tur": "fiil",
       "tr": "kazanmak (V3 / past); kazandı",
-      "ornek_tr": "D) kazanmamış olabilir",
+      "ornek_tr": "Takımımız maçı kazanmamış olabilir ama iyi oynadık.",
       "ornek_tokenlar": [
         {
-          "k": "may",
-          "a": "-ebilir (olasılık)",
-          "vurgu": false
+          "k": "Our"
         },
         {
-          "k": "not",
-          "a": "değil",
-          "en": "may not have + V3: geçmişe yönelik olumsuz olasılık",
-          "vurgu": false
+          "k": "team",
+          "a": "takım"
+        },
+        {
+          "k": "may",
+          "a": "-ebilir (olasılık)"
+        },
+        {
+          "k": "not"
         },
         {
           "k": "have",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "a": "(yardımcı fiil)"
         },
         {
           "k": "won",
-          "a": "kazanmak (V3)",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kazanmak (V3)"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "match,",
+          "a": "maç"
+        },
+        {
+          "k": "but"
+        },
+        {
+          "k": "we"
+        },
+        {
+          "k": "played",
+          "a": "oynadı"
+        },
+        {
+          "k": "well.",
+          "a": "iyi"
         }
       ]
     },
@@ -15963,23 +16050,42 @@
       "en": "reduced",
       "tur": "fiil",
       "tr": "azaltmak (V3 / past); azaltılmış",
-      "ornek_tr": "A) azaltmalıydı / azaltması gerekirdi",
+      "ornek_tr": "Fabrika emisyonlarını yıllar önce azaltmalıydı.",
       "ornek_tokenlar": [
         {
+          "k": "The"
+        },
+        {
+          "k": "factory",
+          "a": "fabrika"
+        },
+        {
           "k": "should",
-          "a": "-meliydi",
-          "en": "should have + V3: geçmişte yapılması gereken eylem",
-          "vurgu": false
+          "a": "-meliydi"
         },
         {
           "k": "have",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "a": "(yardımcı fiil)"
         },
         {
           "k": "reduced",
-          "a": "azaltmak (V3)",
-          "vurgu": true
+          "vurgu": true,
+          "a": "azaltmak (V3)"
+        },
+        {
+          "k": "its"
+        },
+        {
+          "k": "emissions",
+          "a": "salımlar"
+        },
+        {
+          "k": "years",
+          "a": "yıllar"
+        },
+        {
+          "k": "ago.",
+          "a": "önce"
         }
       ]
     },
@@ -15987,28 +16093,46 @@
       "en": "suspended",
       "tur": "fiil",
       "tr": "askıya almak, ertelemek (suspend'in 3. hali / sıfat: askıda)",
-      "ornek_tr": "D) askıya almış olamaz",
+      "ornek_tr": "Okul onu ciddi bir sebep olmadan uzaklaştırmış olamaz.",
       "ornek_tokenlar": [
         {
-          "k": "D)",
-          "a": "D şıkkı",
-          "vurgu": false
+          "k": "The"
+        },
+        {
+          "k": "school",
+          "a": "okul"
         },
         {
           "k": "can't",
-          "a": "-amaz",
-          "vurgu": false
+          "a": "-amaz"
         },
         {
           "k": "have",
-          "a": "(yardımcı fiil)",
-          "en": "can't have + V3: geçmişe dair güçlü olumsuz tahmin",
-          "vurgu": false
+          "a": "(yardımcı fiil)"
         },
         {
           "k": "suspended",
-          "a": "askıya almış",
-          "vurgu": true
+          "vurgu": true,
+          "a": "askıya almış"
+        },
+        {
+          "k": "him",
+          "a": "onu"
+        },
+        {
+          "k": "without",
+          "a": "-sız"
+        },
+        {
+          "k": "a"
+        },
+        {
+          "k": "serious",
+          "a": "ciddi"
+        },
+        {
+          "k": "reason.",
+          "a": "sebep"
         }
       ]
     },
@@ -20041,70 +20165,53 @@
       "en": "sleepy",
       "tur": "sıfat",
       "tr": "uykulu, uykusu gelmiş",
-      "ornek_tr": "Linda uyanır uyanmaz bir fincan çay yaptı.",
+      "ornek_tr": "Uzun uçuştan sonra çocuklar akşam yemeği yiyemeyecek kadar uykuluydu.",
       "ornek_tokenlar": [
         {
-          "k": "Linda",
-          "a": "Linda",
-          "vurgu": false
+          "k": "After",
+          "a": "-den sonra"
         },
         {
-          "k": "made",
-          "a": "yaptı",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "long",
+          "a": "uzun"
         },
         {
-          "k": "cup",
-          "a": "fincan",
-          "vurgu": false
+          "k": "flight,",
+          "a": "uçuş"
         },
         {
-          "k": "of",
-          "a": "-den",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "tea",
-          "a": "çay",
-          "vurgu": false
+          "k": "children",
+          "a": "çocuklar"
         },
         {
-          "k": "as",
-          "a": "-er -mez",
-          "en": "as soon as: -ır -maz",
-          "vurgu": false
+          "k": "were"
         },
         {
-          "k": "soon",
-          "a": "hemen",
-          "en": "as soon as: -ır -maz",
-          "vurgu": false
+          "k": "too",
+          "a": "de"
         },
         {
-          "k": "as",
-          "a": "-er -mez",
-          "en": "as soon as: -ır -maz",
-          "vurgu": false
+          "k": "sleepy",
+          "vurgu": true,
+          "a": "uykulu"
         },
         {
-          "k": "she",
-          "a": "o",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "woke",
-          "a": "uyandı",
-          "vurgu": false
+          "k": "eat",
+          "a": "yemek"
         },
         {
-          "k": "up.",
-          "a": "(uyan)dı",
-          "vurgu": false
+          "k": "dinner.",
+          "a": "akşam yemeği"
         }
       ]
     },

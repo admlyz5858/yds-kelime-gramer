@@ -298,7 +298,7 @@ async function mufredatAc() {
     <button class="mf-kelime-link banka" id="mfBanka"><span>📝</span><span><b>Soru Bankası</b><i>${bo.toplam || '1.500+'} soru · ${bo.konu || 9} konu · konuya göre çöz${bo.oran != null ? ` · %${bo.oran} doğruluk` : ''}</i></span><span class="ok">›</span></button>
     ${son ? `<button class="hizli-devam" id="devamBtn"><div><div class="hizli-devam-ust">▶ Kaldığın yerden devam et</div><div class="hizli-devam-bas">${esc(dersKisaAd(son.id))}</div></div><span class="ok">›</span></button>` : ''}
     ${grup}
-    <button class="mf-kelime-link" id="mfKelimeler"><span>📖</span><span><b>Tüm kelimeler tek yerde</b><i>2.300+ kelime · seviye ve türe göre</i></span><span class="ok">›</span></button>
+    <button class="mf-kelime-link" id="mfKelimeler"><span>📖</span><span><b>Tüm kelimeler tek yerde</b><i>2.100+ kelime kartı · seviye ve türe göre</i></span><span class="ok">›</span></button>
   `);
   icerik.querySelectorAll('.mf-kart').forEach(b => b.onclick = () => dersAc(b.dataset.dosya, Number(b.dataset.id)));
   document.getElementById('mfYanlis').onclick = yanlisAc;
@@ -807,7 +807,7 @@ function girisEkrani(zorla) {
         <div class="giris-baslik">Kelimetre</div>
         <div class="giris-alt">YDS · YÖKDİL kelime &amp; gramer</div>
         <div class="giris-ozellik">
-          <div class="giris-sat"><span>📖</span><div><b>2.300+ kelime tek yerde</b><i>Seviye (S1–S5), tür ve duruma göre süz; akışta gez</i></div></div>
+          <div class="giris-sat"><span>📖</span><div><b>2.100+ kelime tek yerde</b><i>Seviye (S1–S5), tür ve duruma göre süz; akışta gez</i></div></div>
           <div class="giris-sat"><span>🌱</span><div><b>Aralıklı tekrar</b><i>Unutmadan önce tekrar; “Bugün” sekmesi planı verir</i></div></div>
           <div class="giris-sat"><span>🎓</span><div><b>13 gramer ünitesi</b><i>Oku, alıştırma yap, test çöz, çeviri çalış</i></div></div>
           <div class="giris-sat"><span>🧩</span><div><b>Eşleştirme oyunu</b><i>Günün bulmacası, düello ve çevrimiçi lig</i></div></div>

@@ -7,6 +7,7 @@
 import { shuffle } from './logic.js';
 import { seslendirDurdur } from './efekt.js';
 import { defterdeMi, defterToggle, pekistiMi, pekistir } from './durum.js';
+import { kartCiplerHTML, ornekBlokHTML, wireEkOrnek, vurguBicimi } from './kart.js';
 
 const SES_KEY = 'yds-akis-ses';
 const otoSesYukle = () => { try { return localStorage.getItem(SES_KEY) !== '0'; } catch { return true; } };
@@ -71,11 +72,12 @@ export function kurKelimeAkisi(api) {
           <div class="akis-on">
             ${w.tur ? `<div class="akis-tur">${esc(w.tur)}</div>` : ''}
             <div class="akis-en">${esc(w.en)} <button class="akis-en-ses" aria-label="Seslendir">🔊</button></div>
+            ${Array.isArray(w.bicimler) && w.bicimler.length ? `<div class="akis-bicimler">${w.bicimler.map(b => `<span>${esc(b)}</span>`).join('')}</div>` : ''}
             <div class="akis-ipucu">anlamı için dokun</div>
           </div>
           <div class="akis-arka" hidden>
             <div class="akis-tr">${esc(w.tr)}</div>
-            ${w.ornek_tokenlar ? `<div class="akis-ornek-et">Örnek · kelimeye dokun</div>${ornekHTML({ tokenlar: w.ornek_tokenlar, tr: w.ornek_tr })}` : ''}
+            ${w.ornek_tokenlar ? `<div class="akis-ornek-et">Örnek · kelimeye dokun${vurguBicimi(w) ? ` · biçim: <b>${esc(vurguBicimi(w))}</b>` : ''}</div>${ornekBlokHTML(w, esc, ornekHTML, { etiketsiz: true })}` : ''}
           </div>
         </div>
         <div class="akis-alt">↑ sonraki kelime</div>
@@ -119,7 +121,7 @@ export function kurKelimeAkisi(api) {
       if (e.target.closest('.tok-anlamli') || e.target.closest('.akis-en-ses')) return;
       const acik = !arka.hidden;
       arka.hidden = acik; on.classList.toggle('sonuk', !acik);
-      if (!acik && w.ornek_tokenlar) wireOrnekler(kart);
+      if (!acik && w.ornek_tokenlar) { wireOrnekler(kart); wireEkOrnek(kart, wireOrnekler); }
     };
     kart.querySelector('.akis-en-ses').onclick = (e) => { e.stopPropagation(); seslendir(w.en); titre('hafif'); };
     kart.querySelectorAll('.akis-rbtn').forEach(b => b.onclick = (e) => {
