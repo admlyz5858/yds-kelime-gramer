@@ -41,5 +41,5 @@ cikti/
 # Mağaza teslim klasörü (indirilen/üretilen, yeniden üretilebilir)
 magaza-varliklari/
 
-# Derlenen APK çıktıları (yeniden üretilebilir)
-*.apk
+# Referans ekran görüntüleri (replica-recon) — asla yayınlanmaz
+replica/screens/

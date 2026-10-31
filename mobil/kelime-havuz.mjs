@@ -131,14 +131,35 @@ export function havuzUret(uniteDir) {
   // Havuz sırası = seviye, ardından sıklık (Ünite 1 sırası önce, sonra genel sıklık)
   kelimeler.sort((a, b) => a.sv - b.sv || a._s - b._s);
   kelimeler.forEach(w => { delete w._s; });
+  // Gün planı: havuz sırası (seviye + sıklık) GUN_BOYUT'luk günlere bölünür; `g` üretimde yazılır, uygulama okur.
+  // Kademe kelimeye bağlı olduğundan içerik değişse de ilerleme kaymaz; "kaldığın gün" kelime olarak saklanır (ayar.sonGunKelime).
+  gunlereBol(kelimeler);
 
   return {
     surum: 2,
     uretim: 'kelime-havuz.mjs',
     toplam: kelimeler.length,
     uniteler: Object.keys(uniteSayac).map(Number).sort((a, b) => a - b),
+    gunPlan: { boyut: GUN_BOYUT, gunSayisi: kelimeler.reduce((m, w) => Math.max(m, w.g || 0), 0), surum: 1 },
     kelimeler,
   };
+}
+
+export const GUN_BOYUT = 20;
+// Gün planına girmeyen türler: artikel, zamir, iyelik/işaret/ilgi/soru sözcükleri, yardımcı fiil, belirteç, olumsuzluk.
+// Bunlar sözlükte ve SRS'de kalır; ama "1. Gün: the, of, a…" diye kart çalıştırmak anlamsız. Edat, bağlaç ve modal planda kalır (YDS'de sorulur).
+export const PLAN_DISI_TUR = /^(artikel|zamir|i̇yelik|iyelik|i̇şaret|işaret|i̇lgi|ilgi|soru|yardımcı|belirteç|olumsuzluk)/i;
+const turIlk = (w) => (String(w.tur || '').split(/[\s(/]/)[0] || '').toLocaleLowerCase('tr-TR');
+// Sıralı kelime listesine gün numarası yazar (1..N, GUN_BOYUT'luk dilimler); plan dışı türlere g yazılmaz. Saf; test edilir.
+// S1 (en sık 1000'in ilk çeyreği: of, to, in, be…) YDS adayının zaten bildiği kelimelerdir → plan S2'den başlar, S1 günleri en sonda.
+export function gunlereBol(kelimeler, boyut = GUN_BOYUT) {
+  let i = 0;
+  const sirali = [...kelimeler].sort((a, b) => ((a.sv || 0) === 1) - ((b.sv || 0) === 1));   // kararlı: S1 sona, iç sıra korunur
+  for (const w of sirali) {
+    if (PLAN_DISI_TUR.test(turIlk(w))) { delete w.g; continue; }
+    w.g = Math.floor(i / boyut) + 1; i++;
+  }
+  return kelimeler;
 }
 
 // Havuzu dosyaya yaz, özet döndür.

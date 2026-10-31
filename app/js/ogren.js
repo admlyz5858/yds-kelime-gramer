@@ -30,6 +30,7 @@ export function kurKelimeOgren(api) {
   let ust = '';   // panelin üstüne sekme/segment HTML'i (Kelimeler sekmesi)
 
   let havuz = null, havuzIndex = null, oturum = null;
+  let zorla = null;   // tek oturumluk mod/yön zorlaması (gün detay test satırları); kullanıcı ayarına yazılmaz
   let listeDurum = { q: '', filtre: 'tum' };
 
   // ---- yükleme ----
@@ -152,20 +153,22 @@ export function kurKelimeOgren(api) {
     oturum = kuyruktanOturum(kuyruk); return kuyruk.length;
   }
   // Belirli kelime listesinden oturum (kelime listesinden "çalış")
-  function listedenOturum(words) {
+  // opt: { mod, yon } → yalnız bu oturum için mod/yön (gün detay "EN → TR testi" gibi satırlar)
+  function listedenOturum(words, opt) {
     const kuyruk = shuffle(words).slice(0, 60).map(w => ({ w, yeniMi: yeniMi(w.en) }));
-    oturum = kuyruktanOturum(kuyruk);
+    zorla = opt || null;
+    try { oturum = kuyruktanOturum(kuyruk); } finally { zorla = null; }
     if (kuyruk.length) oturumBaslat();
   }
-  // Sözlükten "çalış": havuz hazır olunca verilen listeyle oturum
-  function calis(words) { yukle().then(() => listedenOturum(words)).catch(() => {}); }
+  // Sözlükten / gün detaydan "çalış": havuz hazır olunca verilen listeyle oturum
+  function calis(words, opt) { yukle().then(() => listedenOturum(words, opt)).catch(() => {}); }
   // Bugün sekmesi için özet: vadesi gelen tekrar + bugünkü yeni hakkı
   async function ozet() { await yukle(); gunSifirla(); const on = kapsamOnizle(); const s = istat(); return { due: on.due, yeni: on.yeni, toplam: on.toplam, pekisti: s.pekisti, gorulen: s.gorulen, hepsi: s.toplam, bugunYeni: s.bugunYeni, bugunTekrar: s.bugunTekrar }; }
 
   // Karta uygun çalışma modu ve yön
   function clozeHazir(w) { return Array.isArray(w.ornek_tokenlar) && w.ornek_tokenlar.some(t => t.vurgu); }
   function modSec(w) {
-    const m = srs.ayar.mod || 'akilli';
+    const m = (zorla && zorla.mod) || srs.ayar.mod || 'akilli';
     if (m !== 'akilli') {
       if (m === 'bosluk' && !clozeHazir(w)) return 'coktan';   // örnek yoksa çoktan seçmeye düş
       return m;
@@ -176,7 +179,7 @@ export function kurKelimeOgren(api) {
     return 'kart';
   }
   function yonSec(w) {
-    const y = srs.ayar.yon || 'karisik';
+    const y = (zorla && zorla.yon) || srs.ayar.yon || 'karisik';
     if (y !== 'karisik') return y;
     return Math.random() < 0.5 ? 'en2tr' : 'tr2en';
   }
