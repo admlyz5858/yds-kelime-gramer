@@ -191,9 +191,9 @@ mark{ background:var(--vurgu); color:var(--murekkep); padding:0 3px; border-radi
 .tok-vurgu.tok-anlamli{ border-bottom:none; }
 .balon{
   position:absolute; bottom:150%; left:50%; transform:translateX(-50%);
-  background:var(--murekkep); border:none;
+  background:var(--murekkep); border:none; max-width:min(240px, calc(100vw - 32px));
   padding:6px 11px; border-radius:9px; font-family:var(--sans);
-  white-space:nowrap; z-index:5; box-shadow:0 6px 16px rgba(40,30,15,.3);
+  white-space:normal; overflow-wrap:anywhere; text-align:center; z-index:5; box-shadow:0 6px 16px rgba(40,30,15,.3);
   display:flex; flex-direction:column; align-items:center; gap:1px; line-height:1.25;
 }
 .balon-en{ color:var(--vurgu); font-weight:700; font-size:13.5px; }
@@ -1794,3 +1794,6 @@ button.gp-hero-govde{ cursor:pointer; }
 .gp-hero-govde:focus-visible, .gp-hero-btn:focus-visible, .gp-kart:focus-visible, .gp-satir:focus-visible{ outline:2px solid var(--t-on-accent); outline-offset:2px; }
 .gp-kart:focus-visible, .gp-satir:focus-visible{ outline-color:var(--t-accent); }
 @media (prefers-reduced-motion: reduce){ .gp-kart, .gp-hero-btn{ transition:none; } }
+
+/* Faz 1: uzun kelimeler ekranı taşırmasın (360 px) */
+.sz-satir, .sz-ic, .sz-ic b, .sz-ic i, .sz-detay-en, .sz-detay-tr, .sz-bicimler { min-width: 0; overflow-wrap: anywhere; }

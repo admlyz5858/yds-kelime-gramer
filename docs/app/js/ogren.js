@@ -155,6 +155,12 @@ export function kurKelimeOgren(api) {
   // Belirli kelime listesinden oturum (kelime listesinden "çalış")
   // opt: { mod, yon } → yalnız bu oturum için mod/yön (gün detay "EN → TR testi" gibi satırlar)
   function listedenOturum(words, opt) {
+    // Yarım kalan oturum varsa sessizce silinmez: önce kullanıcıya sorulur
+    const acik = srs.devam && devamBilgi();
+    if (acik && api.onayAc) { api.onayAc(`Yarım kalan oturumun (${acik.i}/${acik.n}) silinecek. Yeni oturum başlatılsın mı?`, () => listedenOturumBaslat(words, opt)); return; }
+    listedenOturumBaslat(words, opt);
+  }
+  function listedenOturumBaslat(words, opt) {
     const kuyruk = shuffle(words).slice(0, 60).map(w => ({ w, yeniMi: yeniMi(w.en) }));
     zorla = opt || null;
     try { oturum = kuyruktanOturum(kuyruk); } finally { zorla = null; }
@@ -538,7 +544,7 @@ export function kurKelimeOgren(api) {
     if (!cevaplandi) {
       document.querySelectorAll('.q-secenek').forEach(b => b.onclick = () => {
         _cevap = b.dataset.o; const dogru = _cevap === dogruCevap;
-        derecelendir(w, dogru ? 2 : 0); if (dogru) oturum.dogru++; else oturum.yanlis++; cizCoktan(item);
+        derecelendir(w, dogru ? 2 : 0); if (dogru) oturum.dogru++; else oturum.yanlis++; oturum.cevapli = oturum.i; oturumKaydet(); cizCoktan(item);
       });
     } else { if (w.ornek_tokenlar) wireOrnekler(document.getElementById('icerik')); document.getElementById('ogrDevam').onclick = ilerle; }
   }
@@ -562,7 +568,7 @@ export function kurKelimeOgren(api) {
     wireCik();
     if (!cevaplandi) {
       const inp = document.getElementById('ogrYazi');
-      const onayla = (deger) => { _cevap = deger; const dogru = normYaz(deger) === normYaz(w.en); derecelendir(w, dogru ? 2 : 0); if (dogru) oturum.dogru++; else oturum.yanlis++; cizYazim(item); };
+      const onayla = (deger) => { _cevap = deger; const dogru = normYaz(deger) === normYaz(w.en); derecelendir(w, dogru ? 2 : 0); if (dogru) oturum.dogru++; else oturum.yanlis++; oturum.cevapli = oturum.i; oturumKaydet(); cizYazim(item); };
       document.getElementById('ogrKontrol').onclick = () => onayla(inp.value);
       document.getElementById('ogrBilmiyorum').onclick = () => onayla('');
       inp.onkeydown = (e) => { if (e.key === 'Enter' && inp.value.trim()) onayla(inp.value); };
@@ -604,7 +610,7 @@ export function kurKelimeOgren(api) {
     wireCik();
     if (!cevaplandi) {
       const inp = document.getElementById('ogrYazi');
-      const onayla = (deger) => { _cevap = deger; const d = normYaz(deger) === normYaz(dogru) || normYaz(deger) === normYaz(w.en); derecelendir(w, d ? 2 : 0); if (d) oturum.dogru++; else oturum.yanlis++; cizBosluk(item); };
+      const onayla = (deger) => { _cevap = deger; const d = normYaz(deger) === normYaz(dogru) || normYaz(deger) === normYaz(w.en); derecelendir(w, d ? 2 : 0); if (d) oturum.dogru++; else oturum.yanlis++; oturum.cevapli = oturum.i; oturumKaydet(); cizBosluk(item); };
       document.getElementById('ogrKontrol').onclick = () => onayla(inp.value);
       document.getElementById('ogrBilmiyorum').onclick = () => onayla('');
       inp.onkeydown = (e) => { if (e.key === 'Enter' && inp.value.trim()) onayla(inp.value); };
@@ -618,7 +624,8 @@ export function kurKelimeOgren(api) {
   // Yarım kalan oturum: kuyruk (kelime anahtarı + mod/yön) ve konum saklanır; panelden devam edilir
   function oturumKaydet() {
     if (!oturum || oturum.i >= oturum.kuyruk.length) { delete srs.devam; kaydet(); return; }
-    srs.devam = { kuyruk: oturum.kuyruk.map(x => ({ en: x.w.en, yeniMi: !!x.yeniMi, mod: x.mod, yon: x.yon })), i: oturum.i, dogru: oturum.dogru, yanlis: oturum.yanlis, t: Date.now() };
+    // c: son PUANLANAN kartın konumu. Yenilemede o kart yeniden puanlanmaz (çift sayım önlenir).
+    srs.devam = { kuyruk: oturum.kuyruk.map(x => ({ en: x.w.en, yeniMi: !!x.yeniMi, mod: x.mod, yon: x.yon })), i: oturum.i, c: oturum.cevapli ?? null, dogru: oturum.dogru, yanlis: oturum.yanlis, t: Date.now() };
     kaydet();
   }
   function devamBilgi() {
@@ -631,8 +638,12 @@ export function kurKelimeOgren(api) {
     const d = srs.devam; if (!d) return panelEkrani();
     const kuyruk = d.kuyruk.map(x => { const w = havuzIndex.get(String(x.en).toLowerCase()); return w ? { w, yeniMi: x.yeniMi, mod: x.mod, yon: x.yon } : null; }).filter(Boolean);
     if (!kuyruk.length) { delete srs.devam; kaydet(); return panelEkrani(); }
-    oturum = { kuyruk, i: Math.min(d.i, kuyruk.length - 1), dogru: d.dogru || 0, yanlis: d.yanlis || 0 };
-    ekranModu('Kelime Öğren', panelEkrani); cizOturum();
+    // Puanlanmış ama "Devam"a basılmamış kart: tekrar puanlanmasın, sıradakine geçilsin
+    const atla = d.c === d.i ? 1 : 0;
+    oturum = { kuyruk, i: Math.min(d.i + atla, kuyruk.length), dogru: d.dogru || 0, yanlis: d.yanlis || 0 };
+    ekranModu('Kelime Öğren', panelEkrani);
+    if (oturum.i >= kuyruk.length) { cizBitis(); return; }
+    cizOturum();
   }
 
   // ======================================================= BİTİŞ

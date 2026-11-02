@@ -169,6 +169,7 @@ export async function esitle(sor) {
     if (k === 'yukle') { await bulutaYaz(); return 'yukle'; }
     if (k === 'indir') { buluttanUygula(bulut); return 'indir'; }
     if (k === 'sor') { const secim = sor ? await sor(bulut) : null; if (secim === 'indir') { buluttanUygula(bulut); return 'indir'; } if (secim === 'yukle') { await bulutaYaz(); return 'yukle'; } return null; }
+    if (hesap && hesap.hata) yaz({ ...hesap, hata: '' });   // başarılı eşitlemede eski hata metni kalmasın
     return 'esit';
   } catch (e) { yaz({ ...hesap, hata: String(e.message || e) }); return 'hata'; }
 }

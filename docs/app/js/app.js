@@ -56,6 +56,8 @@ function ozelSil(en) {
   _ozel = _ozel.filter(x => x.en.toLowerCase() !== key); saveOzel(_ozel);
   if (_havuz) { const i = _havuz.findIndex(w => w.ozel && w.en.toLowerCase() === key); if (i >= 0) _havuz.splice(i, 1); }
   if (defter[key]) { delete defter[key]; defterKaydet(); }
+  if (srs.kartlar && srs.kartlar[key]) { delete srs.kartlar[key]; srsKaydet(); }   // yetim SRS kaydı kalmasın
+  notKaydet(key, '');   // yetim hafıza ipucu kalmasın (boş metin = sil)
 }
 // Cümleyi tokenlara böl, hedef kelimeyi vurgula (özel kelime örneği için)
 function cumleTokenla(cumle, hedef) {
@@ -198,11 +200,11 @@ const kelimeAkisi = kurKelimeAkisi({
 });
 const eslestirme = kurEslestirme({
   render, esc, gunKaydet, anaSayfa: kokOyun, ekranModu, paylas, titre, ses, konfeti, toast,
-  havuzYukle, defterdeMi, defterToggle,
+  havuzYukle, defterdeMi, defterToggle, onayAc,
 });
 const sozluk = kurSozluk({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran,
-  calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words); },
+  calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML(kelimelerSegment)); kelimeOgren.calis(words); },
   akisBaslat: (words, baslik) => kelimeAkisi.ac({ kelimeler: words, baslik: baslik || 'Kelime Akışı' }),
   notDuzenle: notDuzenleAc, ozelSil: (w, sonra) => onayAc(`"${w.en}" kelimen silinsin mi?`, () => { ozelSil(w.en); sonra(); }),
 });
@@ -210,7 +212,7 @@ const sozluk = kurSozluk({
 const gun = kurGun({
   render, esc, havuzYukle, altEkran,
   sekmeKok: () => sekmeKokChrome('kelimeler'),
-  calis: (words, opt) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words, opt); },
+  calis: (words, opt) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML(kelimelerSegment)); kelimeOgren.calis(words, opt); },
   listeAc: (g, words) => {
     const geri = () => altEkran(`${g}. Gün · kelimeler`, () => gun.detay(g));
     geri(); sozluk.ac({ ustHTML: '', filtre: { gun: g }, geri });
@@ -221,7 +223,7 @@ const gun = kurGun({
 // Metin tarayıcı — yapıştırılan metindeki kelimeleri havuzla eşler
 const tarayici = kurTarayici({
   render, esc, havuzYukle, wireOrnekler, toast, titre, altEkran,
-  calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words); },
+  calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML(kelimelerSegment)); kelimeOgren.calis(words); },
 });
 const alistirma = kurAlistirma({ render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti });
 // Mini deneme — Soru Bankası'ndan 20 soru, 25 dakika
@@ -635,6 +637,10 @@ function wireOrnekler(root) {
           `<span class="balon-btnler"><button class="balon-ses" aria-label="Seslendir">🔊</button>` +
           `<button class="balon-ogren"${eklenmis ? ' disabled' : ''}>${eklenmis ? '✓ Defterde' : '📓 Öğren'}</button></span>`;
         el.appendChild(b); el.classList.add('acik');
+        // Balon ekran dışına taşmasın: kenara göre kaydır
+        { const r = b.getBoundingClientRect(), pad = 8, vw = document.documentElement.clientWidth;
+          if (r.left < pad) b.style.transform = `translateX(calc(-50% + ${Math.ceil(pad - r.left)}px))`;
+          else if (r.right > vw - pad) b.style.transform = `translateX(calc(-50% - ${Math.ceil(r.right - (vw - pad))}px))`; }
         b.querySelector('.balon-ses').onclick = (ev) => { ev.stopPropagation(); seslendir(enText); titre('hafif'); };
         const ob = b.querySelector('.balon-ogren');
         if (ob) ob.onclick = (ev) => { ev.stopPropagation(); ogrenEkle(el); ob.textContent = '✓ Defterde'; ob.disabled = true; };
@@ -1003,7 +1009,7 @@ function ayarBagla(root) {
     if (is === 'deneme') { deneme.ac(() => sekmeAc('ben')); return; }
     if (is === 'giris-yap') { girisAc(); return; }
     if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulutEsitle(true).then(() => benAc()); return; }
-    if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); return; }
+    if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); const eb = document.getElementById('onayEvet'); if (eb) eb.textContent = 'Evet, çık'; return; }
     if (is === 'hesap-sil') { onayAc('Hesabın ve buluttaki yedeğin kalıcı olarak silinsin mi? Bu cihazdaki ilerleme silinmez.', () => { bulut.hesabiSil().then((r) => { toast(r === 'tam' ? 'Hesap ve yedek silindi' : 'Bulut yedeği silindi, oturum kapatıldı'); benAc(); }).catch(() => toast('Silinemedi, tekrar dene')); }); return; }
     if (is === 'lig') { eslestirme.lig(); return; }
     if (is === 'tema') { temaDegistir(); benAc(); return; }
@@ -1104,11 +1110,14 @@ function seviyeBilgi(xp = 0) {
 }
 function gorevListesi() {
   const hedef = _ayar.hedef || HEDEF_VARSAYILAN;
-  const bitti = _ayar.gorevBitti || {};
+  // Dünün değerleri bugünün görevine taşınmasın (halka ile aynı gün kuralı)
+  const bugunMu = _ayar.gunTarih === gunStr(0);
+  const bitti = bugunMu ? (_ayar.gorevBitti || {}) : {};
+  const g = (k) => (bugunMu ? (Number(_ayar[k]) || 0) : 0);
   return [
-    { id: 'aktivite', ikon: '⚡', ad: `${hedef} aktivite yap`, ilerleme: Math.min(_ayar.gunSayac || 0, hedef), hedef, bitti: !!bitti.aktivite },
-    { id: 'dogru', ikon: '🎯', ad: '15 doğru cevap ver', ilerleme: Math.min(_ayar.gunDogru || 0, 15), hedef: 15, bitti: !!bitti.dogru },
-    { id: 'bitir', ikon: '🏁', ad: '2 test/oturum bitir', ilerleme: Math.min(_ayar.gunBitirilen || 0, 2), hedef: 2, bitti: !!bitti.bitir },
+    { id: 'aktivite', ikon: '⚡', ad: `${hedef} aktivite yap`, ilerleme: Math.min(g('gunSayac'), hedef), hedef, bitti: !!bitti.aktivite },
+    { id: 'dogru', ikon: '🎯', ad: '15 doğru cevap ver', ilerleme: Math.min(g('gunDogru'), 15), hedef: 15, bitti: !!bitti.dogru },
+    { id: 'bitir', ikon: '🏁', ad: '2 test/oturum bitir', ilerleme: Math.min(g('gunBitirilen'), 2), hedef: 2, bitti: !!bitti.bitir },
   ];
 }
 function gorevleriKontrol() {
@@ -1130,7 +1139,7 @@ function gunKaydet(miktar = 1, opt = {}) {
     const dun = gunStr(-1), oncekiGun = gunStr(-2);
     if (_ayar.sonAktif === dun) _ayar.seri = (_ayar.seri || 0) + 1;
     else if (_ayar.sonAktif === oncekiGun && (_ayar.dondurma || 0) > 0) {
-      _ayar.dondurma--; _ayar.seri = (_ayar.seri || 0) + 1; _ayar._dondurmaBildir = true;
+      _ayar.dondurma--; _ayar.seri = (_ayar.seri || 0) + 1; _ayar._dondurmaBildir = true; setTimeout(() => toast('🧊 Dondurma kullanıldı, serin korundu'), 700);
     } else _ayar.seri = 1;
     _ayar.sonAktif = bugun; _ayar.gunTarih = bugun;
     _ayar.gunSayac = 0; _ayar.gunDogru = 0; _ayar.gunYanlis = 0; _ayar.gunBitirilen = 0; _ayar.gorevBitti = {};
@@ -1303,13 +1312,14 @@ function panoHTML() {
 
 // ===== Sınav geri sayımı =====
 function _tarihFark(iso) {
+  if (typeof iso !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return NaN;
   const [y, m, d] = iso.split('-').map(Number);
   const hedef = new Date(y, m - 1, d), bugun = new Date();
   hedef.setHours(0, 0, 0, 0); bugun.setHours(0, 0, 0, 0);
   return Math.round((hedef - bugun) / 86400000);
 }
 function sinavKartHTML() {
-  if (!_ayar.sinavTarih) {
+  if (!_ayar.sinavTarih || Number.isNaN(_tarihFark(_ayar.sinavTarih))) {
     return `<button class="mini-kart sinav" id="sinavKartBtn"><small>Sınav</small><b>📅 Tarih ekle</b><i>geri sayım ve günlük plan</i></button>`;
   }
   const kalan = _tarihFark(_ayar.sinavTarih);
@@ -1422,7 +1432,7 @@ function girisAc(opt = {}) {
         if (!bulut.epostaGecerli(eposta)) { msg.textContent = 'Geçerli bir e-posta yaz.'; return; }
         msg.textContent = 'Gönderiliyor…'; o.querySelector('#hsGonder').disabled = true;
         try { await bulut.kodGonder(eposta); msg.textContent = `Kod ${eposta} adresine gönderildi (spam klasörünü de kontrol et).`; o.querySelector('#hsKodAlan').hidden = false; o.querySelector('#hsGonder').hidden = true; setTimeout(() => o.querySelector('#hsKod').focus(), 100); }
-        catch (e) { msg.textContent = /rate|limit|429/i.test(String(e.message)) ? 'Çok sık denendi; birkaç dakika sonra tekrar dene.' : 'Gönderilemedi: ' + (e.message || 'bağlantı hatası'); o.querySelector('#hsGonder').disabled = false; }
+        catch (e) { msg.textContent = (e.status === 429 || /rate|limit|429|over_email/i.test(String(e.kod || '')) || /rate|limit|429/i.test(String(e.message))) ? 'Çok sık denendi; birkaç dakika sonra tekrar dene.' : 'Gönderilemedi: ' + (e.message || 'bağlantı hatası'); o.querySelector('#hsGonder').disabled = false; }
       };
       o.querySelector('#hsGonder').onclick = gonder;
       o.querySelector('#hsTekrar').onclick = gonder;

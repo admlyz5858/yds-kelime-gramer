@@ -29,6 +29,7 @@ export function puanla(liste, cevaplar) {
   return { dogru, yanlis, bos, puan, kirilim };
 }
 
+const DEVAM_KEY = 'yds-deneme-devam-v1';   // yarım kalan deneme: yenilemeye karşı korunur
 export function kurDeneme(api) {
   const { render, esc, ornekHTML, wireOrnekler, gunKaydet, altEkran, toast, ses, titre, konfeti, yanlisEkle, bankaYukle, konuAd } = api;
   let gecmis = loadDeneme(), oturum = null, sayac = null;
@@ -38,27 +39,42 @@ export function kurDeneme(api) {
   // Bugün planı için: 7 günden uzun süredir deneme yoksa öner
   function onerilsinMi() { const s = ozet(); if (!s.son) return true; return Date.now() - new Date(s.sonTarih).getTime() > 7 * 86400000; }
 
+  function devamKayit() { try { const d = JSON.parse(localStorage.getItem(DEVAM_KEY) || 'null'); return d && d.bitis > Date.now() && Array.isArray(d.liste) ? d : null; } catch { return null; } }
+  function kaydetDevam() { try { if (oturum) localStorage.setItem(DEVAM_KEY, JSON.stringify({ liste: oturum.liste, cevaplar: oturum.cevaplar, i: oturum.i, bitis: oturum.bitis })); } catch {} }
+  function silDevam() { try { localStorage.removeItem(DEVAM_KEY); } catch {} }
+  function sayacBaslat() {
+    if (sayac) clearInterval(sayac);
+    sayac = setInterval(() => { const el = document.getElementById('dnSure'); if (!el) return; const kalan = Math.max(0, oturum.bitis - Date.now()); el.textContent = sureYazi(kalan); el.classList.toggle('az', kalan < 60000); if (kalan <= 0) bitir(true); }, 1000);
+  }
+  function geriSor(geriFn) { return () => { if (confirm('Denemeyi yarıda bırakmak istiyor musun? Cevaplar silinir.')) { durdur(); silDevam(); (geriFn || (() => {}))(); } }; }
+  function devamEt(geriFn) {
+    const d = devamKayit(); if (!d) return ac(geriFn);
+    oturum = { liste: d.liste, cevaplar: d.cevaplar, i: d.i, bitis: d.bitis, bas: d.bitis - SURE_DK * 60000, geri: geriFn };
+    altEkran('Mini Deneme', geriSor(geriFn)); sayacBaslat(); ciz();
+  }
   function ac(geriFn) {
     altEkran('Mini Deneme', geriFn);
     const s = ozet();
+    const acik = devamKayit();
     const satirlar = gecmis.slice(-8).reverse().map(g => `<div class="dn-gecmis-satir"><span>${new Date(g.tarih).toLocaleDateString('tr-TR', { day: '2-digit', month: 'short' })}</span><b>${g.puan}</b><i>${g.dogru}D · ${g.yanlis}Y · ${g.bos}B · ${Math.round(g.sure / 60)} dk</i></div>`).join('');
     render(`
       <div class="dn-hero"><div class="dn-hero-et">🧪 Sınav provası</div><div class="dn-hero-bas">Mini Deneme</div>
         <div class="dn-hero-alt">${Object.values(DAGILIM).reduce((a, b) => a + b, 0)} soru · ${SURE_DK} dakika · karışık konular</div>
         <div class="dn-dagilim">${Object.entries(DAGILIM).map(([k, n]) => `<span>${esc(konuAd(k))} <b>${n}</b></span>`).join('')}</div></div>
       ${s.sayi ? `<div class="mf-ozet"><div><b>${s.sayi}</b><span>deneme</span></div><div><b>${s.son.puan}</b><span>son puan</span></div><div><b>${s.enIyi}</b><span>en iyi</span></div></div>` : ''}
+      ${acik ? `<button class="aksiyon" id="dnDevamEt">▶ Yarım kalan denemeye devam (${acik.cevaplar.filter(x => x != null).length}/${acik.liste.length} cevaplı)</button>` : ''}
       <button class="aksiyon dn-basla" id="dnBasla">▶ Denemeye başla</button>
       <div class="ogr-bilgi"><div class="ogr-bilgi-bas">Nasıl puanlanır?</div><p>Her soru 5 puan; yanlış puan götürmez (YDS'de de götürmez). Süre bitince sınav kendiliğinden biter. Boş bıraktığın sorulara "Sonraki" ile geçebilir, sonra geri dönebilirsin. Sonuçta konu kırılımı ve tahmini YDS puanı görürsün.</p></div>
       ${satirlar ? `<div class="plan-baslik">Geçmiş</div><div class="dn-gecmis">${satirlar}</div>` : ''}`);
     document.getElementById('dnBasla').onclick = () => basla(geriFn);
+    const dv = document.getElementById('dnDevamEt'); if (dv) dv.onclick = () => devamEt(geriFn);
   }
 
   async function basla(geriFn) {
     let veri; try { veri = await bankaYukle(); } catch { toast('Soru bankası yüklenemedi'); return; }
     const liste = denemeSec(veri.sorular);
     oturum = { liste, cevaplar: new Array(liste.length).fill(null), i: 0, bas: Date.now(), bitis: Date.now() + SURE_DK * 60000, geri: geriFn };
-    altEkran('Mini Deneme', () => { if (confirm('Denemeyi yarıda bırakmak istiyor musun? Cevaplar silinir.')) { durdur(); ac(geriFn); } });
-    sayac = setInterval(() => { const el = document.getElementById('dnSure'); if (!el) return; const kalan = Math.max(0, oturum.bitis - Date.now()); el.textContent = sureYazi(kalan); el.classList.toggle('az', kalan < 60000); if (kalan <= 0) bitir(true); }, 1000);
+    altEkran('Mini Deneme', geriSor(geriFn)); silDevam(); sayacBaslat();
     ciz();
   }
   function durdur() { if (sayac) { clearInterval(sayac); sayac = null; } oturum = null; }
@@ -66,6 +82,7 @@ export function kurDeneme(api) {
 
   function ciz() {
     const o = oturum; if (!o) return;
+    kaydetDevam();
     const q = o.liste[o.i], c = o.cevaplar[o.i];
     const sik = q.secenekler.map((s, idx) => `<button class="q-secenek ${c === s ? 'secili' : ''}" data-o="${esc(s).replace(/"/g, '&quot;')}"><span class="q-harf">${'ABCDE'[idx] || '•'}</span><span class="q-sik-metin">${esc(s)}</span></button>`).join('');
     const govde = esc(q.soru).replace(/_{2,}/g, c ? `<span class="q-bosluk secili">${esc(c)}</span>` : '<span class="q-bosluk"></span>');
@@ -84,12 +101,13 @@ export function kurDeneme(api) {
     document.querySelectorAll('.dn-n').forEach(b => b.onclick = () => { o.i = Number(b.dataset.k); ciz(); });
     const on = document.getElementById('dnOnceki'); if (on) on.onclick = () => { if (o.i > 0) { o.i--; ciz(); } };
     const sn = document.getElementById('dnSonraki'); if (sn) sn.onclick = () => { o.i++; ciz(); };
-    const bt = document.getElementById('dnBitir'); if (bt) bt.onclick = () => bitir(false);
+    const bt = document.getElementById('dnBitir'); if (bt) bt.onclick = () => { const bos = o.liste.length - cevaplanan; if (bos > 0 && !confirm(`${bos} soru boş. Sınavı bitirmek istiyor musun?`)) return; bitir(false); };
     const be = document.getElementById('dnBitirErken'); if (be) be.onclick = () => { if (confirm(`${o.liste.length - cevaplanan} soru boş. Sınavı bitirmek istiyor musun?`)) bitir(false); };
   }
 
   function bitir(sureDoldu) {
     const o = oturum; if (!o) return;
+    silDevam();
     if (sayac) { clearInterval(sayac); sayac = null; }
     const r = puanla(o.liste, o.cevaplar);
     const sure = Math.round((Math.min(Date.now(), o.bitis) - o.bas) / 1000);

@@ -16,7 +16,8 @@ const TUR_SIRA = ['isim', 'fiil', 'sıfat', 'zarf', 'edat', 'bağlaç', 'zamir',
 
 // Saf filtre/sıralama (test edilebilir). f: { q, sv, tur, unite, gun, durum, sira }
 export function filtrele(havuz, f, durumFn = ogrenmeDurumu, defterFn = defterdeMi) {
-  const q = (f.q || '').trim().toLocaleLowerCase('tr-TR');
+  // İngilizce araması İngilizce küçültmeyle yapılır ("I" → "i"); Türkçe karşılıklar tr-TR ile (İ/ı doğru)
+  const qRaw = (f.q || '').trim(), qEn = qRaw.toLowerCase(), qTr = qRaw.toLocaleLowerCase('tr-TR');
   let arr = havuz;
   if (f.sv) arr = arr.filter(w => w.sv === f.sv);
   if (f.tur) arr = arr.filter(w => turAna(w) === f.tur);
@@ -24,7 +25,7 @@ export function filtrele(havuz, f, durumFn = ogrenmeDurumu, defterFn = defterdeM
   if (f.gun) arr = arr.filter(w => w.g === f.gun);
   if (f.durum === 'defter') arr = arr.filter(w => defterFn(w.en));
   else if (f.durum) arr = arr.filter(w => durumFn(w.en) === f.durum);
-  if (q) arr = arr.filter(w => w.en.toLowerCase().includes(q) || (w.tr || '').toLocaleLowerCase('tr-TR').includes(q) || (Array.isArray(w.bicimler) && w.bicimler.some(b => b.toLowerCase().includes(q))));
+  if (qRaw) arr = arr.filter(w => w.en.toLowerCase().includes(qEn) || (w.tr || '').toLocaleLowerCase('tr-TR').includes(qTr) || (Array.isArray(w.bicimler) && w.bicimler.some(b => b.toLowerCase().includes(qEn))));
   if (f.sira === 'alfabe') arr = arr.slice().sort((a, b) => a.en.localeCompare(b.en, 'en'));
   else if (f.sira === 'tur') arr = arr.slice().sort((a, b) => (TUR_SIRA.indexOf(turAna(a)) + 99) % 99 - (TUR_SIRA.indexOf(turAna(b)) + 99) % 99 || a.sv - b.sv);
   return arr;   // 'seviye': havuz sırası zaten sv + sıklık
@@ -115,12 +116,13 @@ export function kurSozluk(api) {
     gozlemci = new IntersectionObserver((es) => { if (es.some(e => e.isIntersecting)) dahaGoster(); }, { rootMargin: '500px' });
     const s = document.getElementById('szSentinel'); if (s) gozlemci.observe(s);
   }
+  let sonDetay = 0;   // çift dokunma: ilk dokunuş detayı açınca ikinci dokunuş detaydaki düğmeye düşmesin
   function dahaGoster() {
     const kut = document.getElementById('szListe'); if (!kut || gosterilen >= sonuc.length) return;
     const parca = sonuc.slice(gosterilen, gosterilen + PARCA);
     kut.insertAdjacentHTML('beforeend', parca.map(satirHTML).join(''));
     gosterilen += parca.length;
-    kut.querySelectorAll('.sz-satir:not([data-wired])').forEach(b => { b.dataset.wired = '1'; b.onclick = () => { const w = havuz.find(x => x.en === b.dataset.en); if (w) detay(w); }; });
+    kut.querySelectorAll('.sz-satir:not([data-wired])').forEach(b => { b.dataset.wired = '1'; b.onclick = () => { if (Date.now() - sonDetay < 400) return; const w = havuz.find(x => x.en === b.dataset.en); if (w) detay(w); }; });
   }
 
   function detay(w) {
@@ -142,6 +144,8 @@ export function kurSozluk(api) {
       </div>
       <div class="btn-satir"><button class="aksiyon ikincil" id="szNot">📝 ${notAl(w.en) ? 'İpucunu düzenle' : 'Hafıza ipucu ekle'}</button>${w.ozel && ozelSil ? '<button class="aksiyon ikincil" id="szSil">🗑 Sil</button>' : ''}</div>
       <div class="btn-satir"><button class="aksiyon" id="szCalisTek">🌱 Bu kelimeyi çalış ›</button></div>`);
+    sonDetay = Date.now();
+    const icerikEl = document.getElementById('icerik'); if (icerikEl) { icerikEl.style.pointerEvents = 'none'; setTimeout(() => { icerikEl.style.pointerEvents = ''; }, 350); }
     const nb = document.getElementById('szNot'); if (nb) nb.onclick = () => notDuzenle(w, () => detay(w));
     const sb = document.getElementById('szSil'); if (sb) sb.onclick = () => ozelSil(w, () => { altEkranKapat(); ciz(); });
     document.getElementById('szSes').onclick = () => seslendir(w.en);

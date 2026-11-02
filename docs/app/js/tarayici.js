@@ -2,7 +2,7 @@
 // seviye rengiyle işaretler; dokununca anlam balonu (🔊 + Deftere ekle); bilinmeyenler listesi → deftere ekle / çalış.
 import { ogrenmeDurumu, defterdeMi, defterEkle } from './durum.js';
 
-const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z'’-]/g, '').replace(/['’]s$/, '');
+const norm = (s) => String(s || '').toLowerCase().replace(/[‘’]/g, "'").replace(/[^a-z'-]/g, '').replace(/^['-]+|['-]+$/g, '').replace(/'s$/, '');
 // Havuz dizini: en, biçimler ve türetilmiş kökler → kart
 export function dizinKur(havuz) {
   const m = new Map();
@@ -13,17 +13,19 @@ export function dizinKur(havuz) {
   }
   return m;
 }
+const KOKSUZ = new Set(['evening', 'morning', 'nothing', 'something', 'anything', 'everything', 'building', 'meeting', 'feeling', 'thing', 'king', 'ring', 'spring', 'string', 'wing', 'bring', 'during', 'sibling', 'ceiling', 'sheer', 'butter', 'flower', 'power', 'tower', 'letter', 'matter', 'number', 'paper', 'water', 'order', 'better', 'never', 'ever', 'over', 'under', 'user', 'other']);
 const DUZENSIZ = { began: 'begin', begun: 'begin', broke: 'break', broken: 'break', brought: 'bring', built: 'build', bought: 'buy', caught: 'catch', chose: 'choose', chosen: 'choose', came: 'come', did: 'do', done: 'do', drew: 'draw', drawn: 'draw', drove: 'drive', driven: 'drive', ate: 'eat', eaten: 'eat', fell: 'fall', fallen: 'fall', felt: 'feel', fought: 'fight', found: 'find', flew: 'fly', flown: 'fly', forgot: 'forget', forgotten: 'forget', gave: 'give', given: 'give', went: 'go', gone: 'go', grew: 'grow', grown: 'grow', heard: 'hear', held: 'hold', hid: 'hide', hidden: 'hide', kept: 'keep', knew: 'know', known: 'know', led: 'lead', left: 'leave', lost: 'lose', made: 'make', meant: 'mean', met: 'meet', paid: 'pay', ran: 'run', rose: 'rise', risen: 'rise', said: 'say', saw: 'see', seen: 'see', sold: 'sell', sent: 'send', shown: 'show', sat: 'sit', spoke: 'speak', spoken: 'speak', spent: 'spend', stood: 'stand', stole: 'steal', stolen: 'steal', took: 'take', taken: 'take', taught: 'teach', told: 'tell', thought: 'think', threw: 'throw', thrown: 'throw', understood: 'understand', wore: 'wear', worn: 'wear', won: 'win', wrote: 'write', written: 'write', were: 'be', was: 'be', is: 'be', are: 'be', been: 'be', has: 'have', had: 'have', children: 'child', men: 'man', women: 'woman', people: 'people', feet: 'foot', teeth: 'tooth', mice: 'mouse', lives: 'life', better: 'good', best: 'good', worse: 'bad', worst: 'bad' };
 export function kokBul(dizin, sozcuk) {
   const n = norm(sozcuk); if (!n) return null;
   if (dizin.has(n)) return dizin.get(n);
   if (DUZENSIZ[n] && dizin.has(DUZENSIZ[n])) return dizin.get(DUZENSIZ[n]);
-  const m = n.match(/^(.*?)(ies|ied|ing|ed|es|s|ly|er|est)$/);
+  if (KOKSUZ.has(n)) return null;   // -ing/-er ile biten gerçek kelimeler (evening, butter, flower…) kırpılmaz
+  const m = n.match(/^(.*?)(ies|ied|ing|ed|er|est|es|s|ly)$/);   // -er/-est (bigger→big) korunur; butter/flower/sheer gibi gerçek kelimeler KOKSUZ listesinde
   if (m) {
     const g = m[1], ek = m[2]; const adaylar = [];
     if (ek === 'ies' || ek === 'ied') adaylar.push(g + 'y');
     else if (ek === 'ing' || ek === 'ed' || ek === 'er' || ek === 'est') { adaylar.push(g, g + 'e'); if (/(.)\1$/.test(g)) adaylar.push(g.slice(0, -1)); }
-    else if (ek === 'es') adaylar.push(g, g + 'e');
+    else if (ek === 'es') { if (/(s|x|z|ch|sh)$/.test(g)) adaylar.push(g); adaylar.push(g + 'e'); }   // notes→note, boxes→box (not→notes yanlışı yok)
     else adaylar.push(g);
     for (const a of adaylar) if (a.length >= 3 && dizin.has(a)) return dizin.get(a);
   }
@@ -65,7 +67,7 @@ export function kurTarayici(api) {
       return `<span class="tok tok-anlamli tr-tok s${w.sv || 0} ${d}" data-k="${esc(p).replace(/"/g, '&quot;')}" data-en="${esc(w.en)}" data-a="${esc(kisa).replace(/"/g, '&quot;')}">${esc(p)}</span>`;
     }).join('');
     // İşlev sözcükleri (artikel, zamir, yardımcı fiil…) "bilmediğin" listesine girmez
-    const islev = (w) => /artikel|zamir|yardımcı|belirteç|iyelik|işaret|olumsuzluk|mastar/i.test(w.tur || '') || w.en.length <= 2;
+    const islev = (w) => /artikel|zamir|yardımcı|belirteç|iyelik|işaret|olumsuzluk|mastar|bağlaç|edat|ilgi|soru/i.test(w.tur || '') || w.en.length <= 2;
     const yeni = [...gorulen.values()].filter(x => x.d === 'yeni' && !islev(x.w)).sort((a, b) => (b.w.sv || 0) - (a.w.sv || 0));
     const sv = {}; for (const x of gorulen.values()) sv[x.w.sv || 0] = (sv[x.w.sv || 0] || 0) + 1;
     kut.innerHTML = `
