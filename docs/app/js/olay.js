@@ -2,7 +2,7 @@
 // Aynı kimlik iki kez eklenmez (çift sayım yok). İki cihazın günlükleri kimliğe göre birleşir (çakışma sorusu gerekmez).
 // Bu modül saf fonksiyonlar içerir; depolama storage.js (loadOlay/saveOlay) üzerinden yapılır.
 
-export const OLAY_LIMIT = 20000;   // en eski olaylar kırpılır (yerel depolama sınırı)
+export const OLAY_LIMIT = 6000;    // en eski olaylar kırpılır; ~70 bayt/kayıt, bulut yedeğinin 2 MB sınırı için güvenli pay
 
 // Oturum kimliği + kart konumu: aynı kart aynı oturumda ikinci kez puanlanamaz
 export const olayKimlik = (sid, konum) => `${sid}:${konum}`;
