@@ -12,6 +12,8 @@ import { srs, srsKaydet } from './durum.js';
 import { ses, titre, seslendir } from './efekt.js';
 import { shuffle, gunStr } from './logic.js';
 import { kartCiplerHTML, ornekBlokHTML, wireEkOrnek } from './kart.js';
+import { loadOlay, saveOlay } from './storage.js';
+import { olayKimlik, kirp } from './olay.js';
 
 const GUN_MS = 86400000;
 const bugunGun = () => Math.floor(Date.now() / GUN_MS);
@@ -59,6 +61,14 @@ export function kurKelimeOgren(api) {
     return (c.i || 0) >= PEKISME ? 'pekisti' : 'ogreniliyor';
   }
 
+  // Cevap olayı: oturum kimliği + kart konumu kimliktir; aynı cevap iki kez kaydedilmez
+  function olayKaydet(w, q) {
+    if (!oturum || !oturum.sid) return;
+    const kimlik = olayKimlik(oturum.sid, oturum.i);
+    const mevcut = loadOlay();
+    if (mevcut.some(o => o.id === kimlik)) return;
+    saveOlay(kirp([...mevcut, { id: kimlik, t: Date.now(), en: w.en.toLowerCase(), q }]));
+  }
   function derecelendir(w, q) {
     const key = w.en.toLowerCase();
     let c = srs.kartlar[key]; const ilk = !c;
@@ -76,6 +86,7 @@ export function kurKelimeOgren(api) {
     srs.kartlar[key] = c;
     if (ilk) srs.gun.yeni++; else srs.gun.tekrar++;
     gecKaydet(q > 0); kaydet();
+    olayKaydet(w, q);
     gunKaydet(1, { dogru: q > 0 });
     if (q > 0) { ses('dogru'); titre('hafif'); } else { ses('yanlis'); titre('hata'); }
     return ilk;
@@ -130,7 +141,7 @@ export function kurKelimeOgren(api) {
 
   // ---- oturum kurulumu ----
   function kuyruktanOturum(kuyruk) {
-    return { kuyruk: kuyruk.map(x => ({ ...x, mod: modSec(x.w), yon: yonSec(x.w) })), i: 0, dogru: 0, yanlis: 0 };
+    return { sid: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), kuyruk: kuyruk.map(x => ({ ...x, mod: modSec(x.w), yon: yonSec(x.w) })), i: 0, dogru: 0, yanlis: 0 };
   }
   function oturumKur() {
     const t = bugunGun(), k = srs.ayar.kapsam || 'tum';
@@ -625,7 +636,7 @@ export function kurKelimeOgren(api) {
   function oturumKaydet() {
     if (!oturum || oturum.i >= oturum.kuyruk.length) { delete srs.devam; kaydet(); return; }
     // c: son PUANLANAN kartın konumu. Yenilemede o kart yeniden puanlanmaz (çift sayım önlenir).
-    srs.devam = { kuyruk: oturum.kuyruk.map(x => ({ en: x.w.en, yeniMi: !!x.yeniMi, mod: x.mod, yon: x.yon })), i: oturum.i, c: oturum.cevapli ?? null, dogru: oturum.dogru, yanlis: oturum.yanlis, t: Date.now() };
+    srs.devam = { sid: oturum.sid, kuyruk: oturum.kuyruk.map(x => ({ en: x.w.en, yeniMi: !!x.yeniMi, mod: x.mod, yon: x.yon })), i: oturum.i, c: oturum.cevapli ?? null, dogru: oturum.dogru, yanlis: oturum.yanlis, t: Date.now() };
     kaydet();
   }
   function devamBilgi() {
@@ -640,7 +651,7 @@ export function kurKelimeOgren(api) {
     if (!kuyruk.length) { delete srs.devam; kaydet(); return panelEkrani(); }
     // Puanlanmış ama "Devam"a basılmamış kart: tekrar puanlanmasın, sıradakine geçilsin
     const atla = d.c === d.i ? 1 : 0;
-    oturum = { kuyruk, i: Math.min(d.i + atla, kuyruk.length), dogru: d.dogru || 0, yanlis: d.yanlis || 0 };
+    oturum = { sid: d.sid || ('e' + (d.t || 0).toString(36)), kuyruk, i: Math.min(d.i + atla, kuyruk.length), dogru: d.dogru || 0, yanlis: d.yanlis || 0 };
     ekranModu('Kelime Öğren', panelEkrani);
     if (oturum.i >= kuyruk.length) { cizBitis(); return; }
     cizOturum();

@@ -131,6 +131,14 @@ export function saveBanka(v) { kaydet(BKEY, v); }
 
 // ===== Kullanıcının kendi kelimeleri — [{ en, tr, tur, ornek_tokenlar?, ornek_tr?, t }] =====
 const OZKEY = 'yds-ozel-v1';
+// ===== Cevap olay günlüğü (Faz 2) — kimlikli, yalnızca eklenen kayıtlar =====
+const OLKEY = 'yds-olay-v1';
+export function loadOlay() {
+  try { const v = JSON.parse(localStorage.getItem(OLKEY)); return Array.isArray(v) ? v : []; }
+  catch { return []; }
+}
+export function saveOlay(v) { kaydet(OLKEY, v); }
+
 export function loadOzel() {
   try { return JSON.parse(localStorage.getItem(OZKEY)) || []; }
   catch { return []; }
