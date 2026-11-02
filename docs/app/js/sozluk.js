@@ -14,13 +14,14 @@ export const UNITE_ADI = {
 export const turAna = (w) => (String(w.tur || '').split(/[\s(/]/)[0] || 'diğer').toLocaleLowerCase('tr-TR');
 const TUR_SIRA = ['isim', 'fiil', 'sıfat', 'zarf', 'edat', 'bağlaç', 'zamir', 'modal'];
 
-// Saf filtre/sıralama (test edilebilir). f: { q, sv, tur, unite, durum, sira }
+// Saf filtre/sıralama (test edilebilir). f: { q, sv, tur, unite, gun, durum, sira }
 export function filtrele(havuz, f, durumFn = ogrenmeDurumu, defterFn = defterdeMi) {
   const q = (f.q || '').trim().toLocaleLowerCase('tr-TR');
   let arr = havuz;
   if (f.sv) arr = arr.filter(w => w.sv === f.sv);
   if (f.tur) arr = arr.filter(w => turAna(w) === f.tur);
   if (f.unite) arr = arr.filter(w => w.u === f.unite);
+  if (f.gun) arr = arr.filter(w => w.g === f.gun);
   if (f.durum === 'defter') arr = arr.filter(w => defterFn(w.en));
   else if (f.durum) arr = arr.filter(w => durumFn(w.en) === f.durum);
   if (q) arr = arr.filter(w => w.en.toLowerCase().includes(q) || (w.tr || '').toLocaleLowerCase('tr-TR').includes(q) || (Array.isArray(w.bicimler) && w.bicimler.some(b => b.toLowerCase().includes(q))));
@@ -32,13 +33,13 @@ export function filtrele(havuz, f, durumFn = ogrenmeDurumu, defterFn = defterdeM
 export function kurSozluk(api) {
   const { render, esc, ornekHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran, calis, akisBaslat, notDuzenle, ozelSil } = api;
   let havuz = null, ust = '', geriKok = null;
-  const f = { q: '', sv: 0, tur: '', unite: 0, durum: '', sira: 'seviye' };
+  const f = { q: '', sv: 0, tur: '', unite: 0, gun: 0, durum: '', sira: 'seviye' };
   const PARCA = 60;
   let gozlemci = null, gosterilen = 0, sonuc = [];
 
   async function ac(opts = {}) {
     havuz = await havuzYukle();
-    Object.assign(f, { q: '', sv: 0, tur: '', unite: 0, durum: '' }, opts.filtre || {});
+    Object.assign(f, { q: '', sv: 0, tur: '', unite: 0, gun: 0, durum: '' }, opts.filtre || {});
     ust = opts.ustHTML || ''; geriKok = opts.geri || null;
     ciz();
   }
@@ -75,10 +76,11 @@ export function kurSozluk(api) {
     if (gozlemci) { gozlemci.disconnect(); gozlemci = null; }
     sonuc = filtrele(havuz, f); gosterilen = 0;
     const uniteEt = f.unite ? `<button class="sz-cip aktif" id="szUniteKaldir">📚 ${esc(UNITE_ADI[f.unite] || 'Ünite ' + f.unite)} ✕</button>` : '';
+    const gunEt = f.gun ? `<button class="sz-cip aktif" id="szGunKaldir">📅 ${f.gun}. Gün ✕</button>` : '';
     render(`${typeof ust === 'function' ? ust() : ust}
       <div class="sz-ara-satir"><span class="sz-ara-ikon">🔍</span><input id="szAra" class="sz-ara" type="search" placeholder="Kelime veya anlam ara…" value="${esc(f.q)}" autocomplete="off"></div>
       ${cipler()}
-      ${uniteEt ? `<div class="sz-cipler">${uniteEt}</div>` : ''}
+      ${uniteEt || gunEt ? `<div class="sz-cipler">${uniteEt}${gunEt}</div>` : ''}
       <div class="sz-ust">
         <span class="sz-say" id="szSay">${sayMetni()}</span>
         <select id="szSira" class="sz-sira"><option value="seviye" ${f.sira === 'seviye' ? 'selected' : ''}>seviyeye göre</option><option value="alfabe" ${f.sira === 'alfabe' ? 'selected' : ''}>A → Z</option><option value="tur" ${f.sira === 'tur' ? 'selected' : ''}>türe göre</option></select>
@@ -92,6 +94,7 @@ export function kurSozluk(api) {
     document.querySelectorAll('.sz-cip[data-tur]').forEach(b => b.onclick = () => { f.tur = b.dataset.tur; ciz(); });
     document.querySelectorAll('.sz-cip[data-durum]').forEach(b => b.onclick = () => { f.durum = b.dataset.durum; ciz(); });
     const uk = document.getElementById('szUniteKaldir'); if (uk) uk.onclick = () => { f.unite = 0; ciz(); };
+    const gk = document.getElementById('szGunKaldir'); if (gk) gk.onclick = () => { f.gun = 0; ciz(); };
     document.getElementById('szSira').onchange = (e) => { f.sira = e.target.value; ciz(); };
     listeYenile();
   }

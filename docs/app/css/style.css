@@ -20,6 +20,46 @@
   --serif:'Fraunces', Georgia, "Noto Serif", serif;
   --sans:'Hanken', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
+
+/* ===== Tasarım tokenları (kaynak: replica/design/tokens.json → tokens.css) =====
+   --t-* roller; alttaki eşleme mevcut değişkenleri tokena bağlar. Yeni bileşenler yalnız --t-* kullanır. */
+:root{
+  /* roller */
+  --t-bg:#eef1f5; --t-surface:#ffffff; --t-surface-2:#e4e9f0; --t-tile:#fbe9e2;
+  --t-border:#dde3ea; --t-border-input:#7b858f; --t-track:#d6dde6;
+  --t-text:#14171b; --t-text-muted:#5a6370;
+  --t-accent:#b9431f; --t-accent-strong:#9a3416; --t-accent-soft:#d24f2b; --t-on-accent:#ffffff;
+  --t-hero-start:#b8472a; --t-hero-end:#8a2f13; --t-on-hero:#ffffff; --t-on-hero-muted:#f8e3dc;
+  --t-danger:#c0302f; --t-success:#1d7a48; --t-warning:#a35712; --t-info:#0d6f66;
+  --t-streak:#d9641f; --t-xp:#b57a12;
+  --t-kademe-0:#c3cad3; --t-kademe-1:#bfa57d; --t-kademe-2:#9e6637; --t-kademe-3:#7d818c; --t-kademe-4:#d9a51f; --t-kademe-5:#3fa6d8;
+  --t-overlay:rgba(14,18,24,.46);
+  /* tipografi */
+  --t-font-sans:'Hanken', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --t-font-display:'Fraunces', Georgia, "Noto Serif", serif;
+  --t-xs:12px; --t-sm:14px; --t-base:16px; --t-md:18px; --t-lg:24px; --t-xl:30px; --t-display:34px;
+  --t-lh-tight:1.15; --t-lh-base:1.5;
+  /* boşluk, yerleşim */
+  --t-s1:4px; --t-s2:8px; --t-s3:12px; --t-s4:16px; --t-s5:20px; --t-s6:24px; --t-s7:32px; --t-s8:48px;
+  --t-gutter:18px; --t-card-gap:10px; --t-card-pad:16px; --t-row-h:62px; --t-tile-size:36px; --t-tab-h:64px; --t-max-w:680px;
+  /* radius, gölge, hareket */
+  --t-r-sm:8px; --t-r-md:12px; --t-r-lg:16px; --t-r-xl:24px; --t-r-pill:999px;
+  --t-shadow-card:0 1px 2px rgba(15,20,28,.05), 0 4px 12px rgba(15,20,28,.06);
+  --t-shadow-pop:0 2px 6px rgba(15,20,28,.07), 0 16px 34px rgba(15,20,28,.10);
+  --t-fast:120ms; --t-base-ms:200ms; --t-slow:400ms; --t-ease:cubic-bezier(.22,1,.36,1);
+  --t-hero-gradient:linear-gradient(135deg, var(--t-hero-start) 0%, var(--t-hero-end) 100%);
+  --t-hero-texture:repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 14px, transparent 14px 34px);
+
+  /* ---- mevcut style.css değişkenlerine eşleme ---- */
+  --kagit:var(--t-bg); --yuzey:var(--t-surface); --yuzey-2:var(--t-surface-2);
+  --hat:var(--t-border);
+  --murekkep:var(--t-text); --murekkep-2:var(--t-text-muted);
+  --kil:var(--t-accent); --kil-2:var(--t-accent-strong);
+  --teal:var(--t-info); --orman:var(--t-success); --gul:var(--t-danger); --vurgu:#ffe08a;
+  --golge:var(--t-shadow-card); --golge-2:var(--t-shadow-pop);
+  --serif:var(--t-font-display); --sans:var(--t-font-sans);
+}
+
 *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 html,body{ margin:0; }
 body{
@@ -788,8 +828,8 @@ button.aksiyon:active{ transform:translateY(1px); }
 #sekme-bar button::before { display: none !important; }
 .nav-ikon { font-size: 21px; line-height: 1; transition: transform .2s cubic-bezier(.22,1,.36,1); }
 .nav-etiket { font-size: 10px; font-weight: 700; letter-spacing: .01em; }
-#sekme-bar button.aktif { color: var(--kil); background: rgba(194,84,47,.11); }
-#sekme-bar button.aktif .nav-ikon { transform: translateY(-2px) scale(1.14); }
+#sekme-bar button.aktif { color: var(--t-accent); background: none; }
+#sekme-bar button.aktif .nav-ikon { background: var(--t-tile); padding: 3px 15px; border-radius: var(--t-r-pill); transform: none; }
 #sekme-bar button:active .nav-ikon { transform: scale(.88); }
 
 /* ===== KOYU TEMA ===== */
@@ -1682,3 +1722,75 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .g-btn:active { transform: scale(.985); }
 .ayrac { display: flex; align-items: center; gap: 10px; margin: 14px 0 10px; color: var(--murekkep-2); font-size: 12px; }
 .ayrac::before, .ayrac::after { content: ""; flex: 1; height: 1px; background: var(--hat); }
+
+/* ===== Tasarım tokenları — koyu tema rolleri + büyük yazı ===== */
+:root[data-tema="koyu"]{
+  --t-bg:#0f1114; --t-surface:#191c21; --t-surface-2:#232830; --t-tile:#2d241f;
+  --t-border:#2a2f37; --t-border-input:#8a939d; --t-track:#2e343d;
+  --t-text:#e9ebee; --t-text-muted:#a0a8b2;
+  --t-accent:#f0784f; --t-accent-strong:#f58e6b; --t-on-accent:#1a0d08;
+  --t-hero-start:#a63d1c; --t-hero-end:#5e220d;
+  --t-danger:#f27272; --t-success:#4fc47a; --t-info:#3bc0b2;
+  --t-overlay:rgba(0,0,0,.6);
+  --t-shadow-card:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.5);
+  --t-shadow-pop:0 2px 8px rgba(0,0,0,.5), 0 18px 40px rgba(0,0,0,.55);
+  --vurgu:#c99a34;
+}
+/* büyük yazı ayarı (B05 "Büyük yazı tipi") — ayar.buyukYazi → <html data-yazi="buyuk"> */
+:root[data-yazi="buyuk"]{ --t-xs:13px; --t-sm:15.5px; --t-base:18px; --t-md:20px; --t-lg:26px; --t-xl:32px; --t-display:36px; }
+
+/* ===== Gün planı (gun.js) — yalnız --t-* tokenları (components.md: HeroKart, GünKartı, ListeSatırı, IlerlemeÇubuğu, KademeDağılımBarı) ===== */
+.gp-hero{ position:relative; overflow:hidden; display:flex; flex-direction:column; background:var(--t-hero-gradient); color:var(--t-on-hero); border-radius:var(--t-r-xl); padding:var(--t-s5); min-height:160px; box-shadow:var(--t-shadow-pop); margin-bottom:var(--t-s4); }
+.gp-hero::before{ content:""; position:absolute; inset:0; background:var(--t-hero-texture); pointer-events:none; }
+.gp-hero > *{ position:relative; }
+.gp-hero-govde{ display:block; width:100%; background:none; border:0; padding:0; margin:0; text-align:left; color:inherit; font:inherit; }
+button.gp-hero-govde{ cursor:pointer; }
+.gp-hero-et{ display:block; font-size:var(--t-xs); font-weight:700; letter-spacing:.06em; color:var(--t-on-hero-muted); }
+.gp-hero-bas{ display:block; font-family:var(--t-font-display); font-size:var(--t-xl); line-height:var(--t-lh-tight); font-weight:800; margin:var(--t-s1) 0 var(--t-s2); }
+.gp-hero-alt{ display:flex; justify-content:space-between; align-items:baseline; gap:var(--t-s3); font-size:var(--t-sm); color:var(--t-on-hero-muted); }
+.gp-hero-alt > span:last-child{ flex:none; max-width:45%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.gp-hero .gp-bar{ background:rgba(255,255,255,.25); margin:var(--t-s3) 0 var(--t-s1); }
+.gp-hero .gp-bar > i{ background:var(--t-on-hero); }
+.gp-hero .gp-bar.kademe > i{ background:var(--t-on-hero); opacity:.95; }
+.gp-hero-btn{ align-self:flex-start; display:inline-flex; align-items:center; min-height:40px; padding:0 var(--t-s6); margin-top:var(--t-s3); border:0; border-radius:var(--t-r-pill); background:var(--t-on-hero); color:var(--t-hero-end); font:700 var(--t-md)/1 var(--t-font-sans); cursor:pointer; }
+.gp-hero-btn:active{ opacity:.9; }
+.gp-hero.tamam .gp-hero-alt{ display:block; }
+.gp-bar{ display:flex; height:6px; border-radius:var(--t-r-pill); background:var(--t-track); overflow:hidden; }
+.gp-bar > i{ display:block; height:100%; background:var(--t-accent); }
+.gp-bar.kademe > i.k1, .gp-legend .k1{ background:var(--t-kademe-1); }
+.gp-bar.kademe > i.k2, .gp-legend .k2{ background:var(--t-kademe-2); }
+.gp-bar.kademe > i.k3, .gp-legend .k3{ background:var(--t-kademe-3); }
+.gp-bar.kademe > i.k4, .gp-legend .k4{ background:var(--t-kademe-4); }
+.gp-bar.kademe > i.k5, .gp-legend .k5{ background:var(--t-kademe-5); }
+.gp-legend .k0{ background:var(--t-kademe-0); }
+.gp-legend{ display:flex; flex-wrap:wrap; gap:var(--t-s2) var(--t-s3); list-style:none; padding:0; margin:calc(-1 * var(--t-s2)) 0 var(--t-s4); font-size:var(--t-xs); color:var(--t-text-muted); }
+.gp-legend i{ display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:4px; vertical-align:-1px; }
+.gp-ozet{ display:flex; flex-direction:column; gap:2px; margin:0 0 var(--t-s3); }
+.gp-ozet b{ font-family:var(--t-font-display); font-size:var(--t-md); }
+.gp-ozet span{ font-size:var(--t-sm); color:var(--t-text-muted); }
+.gp-izgara{ display:grid; grid-template-columns:1fr 1fr; gap:var(--t-card-gap); }
+.gp-kart{ display:flex; flex-direction:column; gap:var(--t-s1); min-height:84px; padding:14px var(--t-s4); background:var(--t-surface); border:2px solid transparent; border-radius:var(--t-r-lg); box-shadow:var(--t-shadow-card); text-align:left; font:inherit; color:inherit; cursor:pointer; transition:transform var(--t-fast) var(--t-ease); }
+.gp-kart:active{ transform:scale(.98); }
+.gp-kart.aktif{ border-color:var(--t-accent); }
+.gp-kart-ust{ display:flex; justify-content:space-between; align-items:baseline; gap:var(--t-s2); }
+.gp-kart-ust b{ font-family:var(--t-font-display); font-size:var(--t-md); }
+.gp-kart-d{ font-size:var(--t-sm); color:var(--t-text-muted); white-space:nowrap; }
+.gp-kart-d.devam{ color:var(--t-accent); font-weight:700; }
+.gp-kart-d.tamam{ color:var(--t-success); font-weight:700; }
+.gp-kart-m{ font-size:var(--t-xs); color:var(--t-text-muted); }
+.gp-kart .gp-bar{ height:8px; margin-top:var(--t-s1); }
+.gp-satir{ display:flex; align-items:center; gap:var(--t-s3); width:100%; min-height:var(--t-row-h); padding:var(--t-s3) var(--t-s4); margin-bottom:var(--t-card-gap); border:0; border-radius:var(--t-r-lg); background:var(--t-surface); color:inherit; text-align:left; font:inherit; box-shadow:var(--t-shadow-card); cursor:pointer; }
+.gp-satir:active{ background:var(--t-surface-2); }
+.gp-satir.pasif{ opacity:.5; }
+.gp-kutu{ flex:none; width:var(--t-tile-size); height:var(--t-tile-size); border-radius:var(--t-r-md); background:var(--t-tile); color:var(--t-accent); display:grid; place-items:center; font-size:20px; }
+.gp-satir-ic{ flex:1; min-width:0; display:flex; flex-direction:column; }
+.gp-satir-ic b{ font-size:var(--t-base); font-weight:600; }
+.gp-satir-ic i{ font-style:normal; font-size:var(--t-sm); color:var(--t-text-muted); }
+.gp-satir-ok{ color:var(--t-text-muted); font-size:22px; flex:none; }
+.gp-bos{ text-align:center; padding:var(--t-s8) var(--t-s6); }
+.gp-bos .gp-kutu{ width:72px; height:72px; border-radius:var(--t-r-lg); font-size:32px; margin:0 auto var(--t-s4); }
+.gp-bos h3{ font-family:var(--t-font-display); font-size:var(--t-lg); margin:0 0 var(--t-s2); }
+.gp-bos p{ color:var(--t-text-muted); font-size:var(--t-sm); margin:0; }
+.gp-hero-govde:focus-visible, .gp-hero-btn:focus-visible, .gp-kart:focus-visible, .gp-satir:focus-visible{ outline:2px solid var(--t-on-accent); outline-offset:2px; }
+.gp-kart:focus-visible, .gp-satir:focus-visible{ outline-color:var(--t-accent); }
+@media (prefers-reduced-motion: reduce){ .gp-kart, .gp-hero-btn{ transition:none; } }

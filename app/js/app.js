@@ -1002,7 +1002,7 @@ function ayarBagla(root) {
     if (is === 'rekor') { eslestirme.rekorlar(); return; }
     if (is === 'deneme') { deneme.ac(() => sekmeAc('ben')); return; }
     if (is === 'giris-yap') { girisAc(); return; }
-    if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulut.hemenYaz().then(() => bulutEsitle(true)).then(() => benAc()); return; }
+    if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulutEsitle(true).then(() => benAc()); return; }
     if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); return; }
     if (is === 'hesap-sil') { onayAc('Hesabın ve buluttaki yedeğin kalıcı olarak silinsin mi? Bu cihazdaki ilerleme silinmez.', () => { bulut.hesabiSil().then((r) => { toast(r === 'tam' ? 'Hesap ve yedek silindi' : 'Bulut yedeği silindi, oturum kapatıldı'); benAc(); }).catch(() => toast('Silinemedi, tekrar dene')); }); return; }
     if (is === 'lig') { eslestirme.lig(); return; }
@@ -1388,7 +1388,7 @@ function hesapSatirlariHTML() {
   if (!d.girili) return `<button class="ayar-sat" data-is="giris-yap"><span>☁️</span><div><b>Kayıt ol / giriş yap</b><i>Google ile tek dokunuş ya da e-posta kodu. İlerlemen otomatik yedeklenir; telefon değişince ya da iPhone'da aynı yerden devam edersin.</i></div></button>`;
   const zaman = d.sonSenkron ? new Date(d.sonSenkron).toLocaleString('tr-TR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : 'henüz yok';
   return `<div class="ayar-sat hesap-sat"><span>✅</span><div><b>${esc(d.eposta)}</b><i>${d.saglayici === 'google' ? 'Google hesabı · ' : ''}Bulut yedek açık · son eşitleme: ${zaman}${d.kirli ? ' · bekleyen değişiklik var' : ''}${d.hata ? ` · <span style="color:var(--gul)">hata: ${esc(d.hata)}</span>` : ''}</i></div></div>
-    <button class="ayar-sat" data-is="esitle"><span>🔄</span><div><b>Şimdi eşitle</b><i>Değişiklikler normalde 20 saniye içinde kendiliğinden yazılır</i></div></button>
+    <button class="ayar-sat" data-is="esitle"><span>🔄</span><div><b>Şimdi eşitle</b><i>Yerel değişikliklerini buluta gönderir, buluttaki yenileri alır. Çakışmada sana sorulur.</i></div></button>
     <button class="ayar-sat" data-is="cikis-yap"><span>🚪</span><div><b>Çıkış yap</b><i>Cihazdaki ilerleme kalır</i></div></button>
     <button class="ayar-sat tehlike" data-is="hesap-sil"><span>🗑️</span><div><b>Hesabımı ve bulut yedeğimi sil</b><i>Geri alınamaz</i></div></button>`;
 }
@@ -1458,6 +1458,7 @@ function bulutSor(b) {
 }
 async function bulutEsitle(bildir) {
   const r = await bulut.esitle(bulutSor);
+  if (r === 'silindi') { toast('☁️ Bulut yedeğin silinmiş; bu cihazda oturum kapatıldı'); benAc(); return r; }
   if (r === 'indir') { toast('☁️ Bulut yedeği yüklendi, yeniden başlatılıyor'); setTimeout(() => location.reload(), 900); return r; }
   if (bildir) { if (r === 'yukle') toast('☁️ Buluta yazıldı'); else if (r === 'esit') toast('☁️ Zaten güncel'); else if (r === 'hata') toast('Bulut hatası: ' + (bulut.durum().hata || 'bağlantı')); }
   return r;

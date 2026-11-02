@@ -440,6 +440,7 @@ export function kurEslestirme(api) {
     gunKaydet(0, { bitir: true });
     if (rekor) { ses('kutlama'); titre('basari'); konfeti(); } else { ses('seviye'); titre('basari'); }
     const tumKelimeler = oyun.setler.flat().concat(oyun.havuz);
+    const yanlisSayi = oyun.yanlis.length;   // oyun null'lanmadan önce yakala (Paylaş bu değere bakar)
     ekranModu(`Bölüm ${k + 1}`, panelEkrani);
     const sonrakiVar = k + 1 < bolumAdet();
     render(`<div class="es-sonuc"><div class="es-sonuc-amblem">${'⭐'.repeat(yildiz)}</div><div class="es-sonuc-bas">Bölüm ${k + 1} tamamlandı</div>
@@ -455,7 +456,7 @@ export function kurEslestirme(api) {
     const sn = document.getElementById('esSonraki'); if (sn) sn.onclick = () => bolumBasla(k + 1);
     document.getElementById('esTekrarB').onclick = () => bolumBasla(k);
     document.getElementById('esPaylas').onclick = async () => {
-      const r = await paylas({ baslik: 'Eşleştirme', metin: `🧩 YDS Eşleştirme · Bölüm ${k + 1} tamamlandı\n${'⭐'.repeat(yildiz)} ${toplam} puan · ${oyun.yanlis.length} karıştırma\n📏 Kelimetre · YDS` });
+      const r = await paylas({ baslik: 'Eşleştirme', metin: `🧩 YDS Eşleştirme · Bölüm ${k + 1} tamamlandı\n${'⭐'.repeat(yildiz)} ${toplam} puan · ${yanlisSayi} karıştırma\n📏 Kelimetre · YDS` });
       if (r === 'kopyalandi') toast('📋 Panoya kopyalandı');
     };
     wireCipler(tumKelimeler);

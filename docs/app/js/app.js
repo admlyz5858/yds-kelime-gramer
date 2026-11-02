@@ -10,6 +10,7 @@ import { kurAlistirma } from './alistirma.js';
 import { kurBanka } from './banka.js';
 import { kurDeneme } from './deneme.js';
 import { kurTarayici } from './tarayici.js';
+import { kurGun } from './gun.js';
 import * as bulut from './bulut.js';
 import { loadOzel, saveOzel } from './storage.js';
 import { notAl, notKaydet } from './notlar.js';
@@ -112,7 +113,7 @@ const dersKisaAd = (id) => UNITE_ADI[id] || (manifest?.dersler.find(d => d.id ==
 // ============================================================
 const SEKME_BASLIK = { bugun: 'Kelimetre', kelimeler: 'Kelimeler', mufredat: 'Müfredat', oyun: 'Oyun', ben: 'Ben' };
 let aktifSekme = 'bugun';
-let kelimelerSegment = 'liste';
+let kelimelerSegment = 'gunler';
 
 // Sekme kökü görünümü: alt bar görünür, üst "Geri" yok
 function sekmeKokChrome(sekme) {
@@ -154,7 +155,7 @@ function esc(s) { return String(s ?? '').replace(/[&<>]/g, m => ({ '&': '&amp;',
 // Her sekmede ilk açılışta tek satırlık ipucu (kapatınca bir daha görünmez)
 const IPUCU = {
   bugun: '🏠 Bugünün planı burada: tekrarlar, günün eşleştirmesi ve kaldığın ünite.',
-  kelimeler: '📖 S1 → S5 çiplerle seviyeyi, türle kelime türünü süz; bir kelimeye dokununca detay açılır.',
+  kelimeler: '📅 Her gün 20 kelime: bir güne dokun, kartlarla çalış ya da test çöz. Liste\'de S1 → S5 çiplerle süz.',
   mufredat: '🎓 Her ünitede Oku → Alıştırma → Test sırası önerilir; halka ilerlemeni gösterir.',
   oyun: '🧩 Sezonlar sırayla açılır; günün eşleştirmesi herkese aynı 10 kelimedir.',
   ben: '👤 Tema, günlük hedef ve hatırlatma ayarları aşağıda; ilerlemeni paylaşabilirsin.',
@@ -205,6 +206,18 @@ const sozluk = kurSozluk({
   akisBaslat: (words, baslik) => kelimeAkisi.ac({ kelimeler: words, baslik: baslik || 'Kelime Akışı' }),
   notDuzenle: notDuzenleAc, ozelSil: (w, sonra) => onayAc(`"${w.en}" kelimen silinsin mi?`, () => { ozelSil(w.en); sonra(); }),
 });
+// Gün planı — Günler ızgarası, gün detay, Bugün hero (gun.js); kademe hesapları kademe.js
+const gun = kurGun({
+  render, esc, havuzYukle, altEkran,
+  sekmeKok: () => sekmeKokChrome('kelimeler'),
+  calis: (words, opt) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML('ogren')); kelimeOgren.calis(words, opt); },
+  listeAc: (g, words) => {
+    const geri = () => altEkran(`${g}. Gün · kelimeler`, () => gun.detay(g));
+    geri(); sozluk.ac({ ustHTML: '', filtre: { gun: g }, geri });
+  },
+  akisAc: (words, baslik) => kelimeAkisi.ac({ kelimeler: words, baslik }),
+  ayar: () => _ayar, ayarKaydet: () => saveAyar(_ayar),
+});
 // Metin tarayıcı — yapıştırılan metindeki kelimeleri havuzla eşler
 const tarayici = kurTarayici({
   render, esc, havuzYukle, wireOrnekler, toast, titre, altEkran,
@@ -252,6 +265,7 @@ async function anaSayfa() {
   await gununKelimesiYukle();
   const havuz = await havuzYukle().catch(() => []);
   if (!_tasindi) { _tasindi = true; try { eskiKayitlariTasi(havuz); } catch (_) {} }
+  await gun.hazirla().catch(() => {});
   const oz = await kelimeOgren.ozet().catch(() => null);
   if (aktifSekme !== 'bugun') return;   // beklerken başka sekmeye geçildiyse (ör. Google dönüşü → Ben) ezme
   const es = eslestirme.ozet();
@@ -265,6 +279,7 @@ async function anaSayfa() {
   const sonAd = son ? dersKisaAd(son.id) : '';
   render(`
     ${ipucuHTML('bugun')}
+    ${gun.heroHTML()}
     ${panoHTML()}
     <div class="ana-satir">${sinavKartHTML()}${gununKartHTML()}</div>
     <div class="plan-baslik">Bugünün planı</div>
@@ -277,7 +292,7 @@ async function anaSayfa() {
     <button class="plan-kart" id="pDers">
       <span class="plan-ikon">🎓</span><span class="plan-ic"><b>${son ? 'Müfredata devam' : 'Müfredata başla'}</b><i>${son ? esc(sonAd) + ' · kaldığın yerden' : 'Edatlar, zamanlar, modallar…'}</i></span><span class="plan-durum">›</span>
     </button>
-    ${!bulut.durum().girili && !_ayar.bulutKapatildi && (_ayar.toplamAktivite || 0) >= 1 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni kaydet</b><i>Google ya da e-posta ile kayıt ol; telefon değişse de devam et</i></span><button class="ipucu-kapat" id="pBulutKapat" aria-label="Kapat">✕</button></button>` : ''}
+    ${!bulut.durum().girili && !_ayar.bulutKapatildi && (_ayar.toplamAktivite || 0) >= 1 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni kaydet</b><i>Google ya da e-posta ile kayıt ol; telefon değişse de devam et</i></span><span class="ipucu-kapat" id="pBulutKapat" role="button" aria-label="Kapat">✕</span></button>` : ''}
     ${deneme.onerilsinMi() ? `<button class="plan-kart kucuk" id="pDeneme"><span class="plan-ikon">🧪</span><span class="plan-ic"><b>Haftalık mini deneme</b><i>${deneme.ozet().son ? `Son: ${deneme.ozet().son.puan} puan · ` : ''}20 soru · 25 dakika</i></span><span class="plan-durum">›</span></button>` : ''}
     ${zayif ? `<button class="plan-kart zayif" id="pZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konunu güçlendir</b><i>${esc(zayif.ad)} · %${Math.round(zayif.oran * 100)} doğruluk · 10 soru</i></span><span class="plan-durum">›</span></button>` : ''}
     <button class="plan-kart kucuk" id="pAkis">
@@ -291,6 +306,7 @@ async function anaSayfa() {
     else if (g === 'ogrenilen') sekmeAc('kelimeler', { segment: 'liste', filtre: { durum: 'pekisti' } });
     else if (g === 'ilerleme') sekmeAc('ben');
   });
+  gun.heroBagla();
   const sk = document.getElementById('sinavKartBtn');
   if (sk) sk.onclick = sinavAyarAc;
   document.getElementById('pOgren').onclick = () => yarim ? kelimeOgren.devamEt() : kelimeOgren.ac();
@@ -313,13 +329,14 @@ function gununKartHTML() {
 // ============================================================
 // KELİMELER (Liste · Öğren · Defterim)
 // ============================================================
-const KELIME_SEGMENTLER = [['liste', '📖 Liste'], ['ogren', '🌱 Öğren'], ['defter', '📓 Defterim'], ['tara', '📄 Tara']];
+const KELIME_SEGMENTLER = [['gunler', '📅 Günler'], ['liste', '📖 Liste'], ['ogren', '🌱 Öğren'], ['defter', '📓 Defter'], ['tara', '📄 Tara']];
 const kelimelerSegmentHTML = (seg) => segmentHTML('kelimeler', KELIME_SEGMENTLER, seg);
 function kelimelerAc(segment, opts = {}) {
-  kelimelerSegment = segment || kelimelerSegment || 'liste';
+  kelimelerSegment = segment || kelimelerSegment || 'gunler';
   const seg = kelimelerSegment;
   const ust = () => ipucuHTML('kelimeler') + kelimelerSegmentHTML(seg);
   const geri = () => sekmeKokChrome('kelimeler');
+  if (kelimelerSegment === 'gunler') return gun.ac({ ustHTML: ust });
   if (kelimelerSegment === 'ogren') return kelimeOgren.ac({ ustHTML: ust });
   if (kelimelerSegment === 'tara') return tarayici.ac({ ustHTML: ust });
   if (kelimelerSegment === 'defter') return sozluk.ac({ ustHTML: () => ust() + `<button class="plan-kart kucuk" id="ozelEkleBtn"><span class="plan-ikon">➕</span><span class="plan-ic"><b>Kendi kelimeni ekle</b><i>${_ozel.length ? _ozel.length + ' özel kelime' : 'Listelerde olmayan kelimeleri deftere al'}</i></span><span class="plan-durum">›</span></button>`, filtre: { durum: 'defter' }, geri });
@@ -985,7 +1002,7 @@ function ayarBagla(root) {
     if (is === 'rekor') { eslestirme.rekorlar(); return; }
     if (is === 'deneme') { deneme.ac(() => sekmeAc('ben')); return; }
     if (is === 'giris-yap') { girisAc(); return; }
-    if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulut.hemenYaz().then(() => bulutEsitle(true)).then(() => benAc()); return; }
+    if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulutEsitle(true).then(() => benAc()); return; }
     if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); return; }
     if (is === 'hesap-sil') { onayAc('Hesabın ve buluttaki yedeğin kalıcı olarak silinsin mi? Bu cihazdaki ilerleme silinmez.', () => { bulut.hesabiSil().then((r) => { toast(r === 'tam' ? 'Hesap ve yedek silindi' : 'Bulut yedeği silindi, oturum kapatıldı'); benAc(); }).catch(() => toast('Silinemedi, tekrar dene')); }); return; }
     if (is === 'lig') { eslestirme.lig(); return; }
@@ -1371,7 +1388,7 @@ function hesapSatirlariHTML() {
   if (!d.girili) return `<button class="ayar-sat" data-is="giris-yap"><span>☁️</span><div><b>Kayıt ol / giriş yap</b><i>Google ile tek dokunuş ya da e-posta kodu. İlerlemen otomatik yedeklenir; telefon değişince ya da iPhone'da aynı yerden devam edersin.</i></div></button>`;
   const zaman = d.sonSenkron ? new Date(d.sonSenkron).toLocaleString('tr-TR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : 'henüz yok';
   return `<div class="ayar-sat hesap-sat"><span>✅</span><div><b>${esc(d.eposta)}</b><i>${d.saglayici === 'google' ? 'Google hesabı · ' : ''}Bulut yedek açık · son eşitleme: ${zaman}${d.kirli ? ' · bekleyen değişiklik var' : ''}${d.hata ? ` · <span style="color:var(--gul)">hata: ${esc(d.hata)}</span>` : ''}</i></div></div>
-    <button class="ayar-sat" data-is="esitle"><span>🔄</span><div><b>Şimdi eşitle</b><i>Değişiklikler normalde 20 saniye içinde kendiliğinden yazılır</i></div></button>
+    <button class="ayar-sat" data-is="esitle"><span>🔄</span><div><b>Şimdi eşitle</b><i>Yerel değişikliklerini buluta gönderir, buluttaki yenileri alır. Çakışmada sana sorulur.</i></div></button>
     <button class="ayar-sat" data-is="cikis-yap"><span>🚪</span><div><b>Çıkış yap</b><i>Cihazdaki ilerleme kalır</i></div></button>
     <button class="ayar-sat tehlike" data-is="hesap-sil"><span>🗑️</span><div><b>Hesabımı ve bulut yedeğimi sil</b><i>Geri alınamaz</i></div></button>`;
 }
@@ -1441,6 +1458,7 @@ function bulutSor(b) {
 }
 async function bulutEsitle(bildir) {
   const r = await bulut.esitle(bulutSor);
+  if (r === 'silindi') { toast('☁️ Bulut yedeğin silinmiş; bu cihazda oturum kapatıldı'); benAc(); return r; }
   if (r === 'indir') { toast('☁️ Bulut yedeği yüklendi, yeniden başlatılıyor'); setTimeout(() => location.reload(), 900); return r; }
   if (bildir) { if (r === 'yukle') toast('☁️ Buluta yazıldı'); else if (r === 'esit') toast('☁️ Zaten güncel'); else if (r === 'hata') toast('Bulut hatası: ' + (bulut.durum().hata || 'bağlantı')); }
   return r;

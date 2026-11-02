@@ -22,3 +22,20 @@ test('googleUrl: sağlayıcı ve dönüş adresi', () => {
   const u = bulut.googleUrl('kelimetre://auth');
   assert.ok(u.startsWith('https://thftjeecotladgnuqwhd.supabase.co/auth/v1/authorize?provider=google&redirect_to=kelimetre%3A%2F%2Fauth'));
 });
+
+// Faz 0 regresyonları
+test('karar: ilk eşitleme, iki taraf dolu → sor (ilk girişte yerel ilerleme ezilmez)', () => {
+  assert.equal(karar({ kirli: false, sonSenkron: 0, bulutZaman: 9000, yerelBos: false }), 'sor');
+});
+test('karar: daha önce eşitlenmiş, bulutta yedek silinmiş → silindi (oturum kapatılır)', () => {
+  assert.equal(karar({ kirli: false, sonSenkron: 5000, bulutZaman: null, yerelBos: false }), 'silindi');
+});
+test('karar: yerel boş, bulut indirildikten sonra tekrar indirme YOK (açılış döngüsü)', () => {
+  assert.equal(karar({ kirli: false, sonSenkron: 9000, bulutZaman: 9000, yerelBos: true }), 'esit');
+});
+test('karar: yerel boş ama değişiklik bekliyor, bulut eski → yükle', () => {
+  assert.equal(karar({ kirli: true, sonSenkron: 9000, bulutZaman: 9000, yerelBos: true }), 'yukle');
+});
+test('karar: sıfır sonSenkron ve bulut yerelden yeni, yerel boş → indir', () => {
+  assert.equal(karar({ kirli: false, sonSenkron: 0, bulutZaman: 1000, yerelBos: true }), 'indir');
+});

@@ -2,7 +2,12 @@
 // Her save*() bir kayıt bildirimi yayar (bulut eşitleme bunu dinler): kayitDinle(fn) → fn(anahtar)
 const dinleyiciler = [];
 export function kayitDinle(fn) { dinleyiciler.push(fn); }
-function kaydet(anahtar, deger) { localStorage.setItem(anahtar, JSON.stringify(deger)); for (const f of dinleyiciler) { try { f(anahtar); } catch {} } }
+function kaydet(anahtar, deger) {
+  const yeni = JSON.stringify(deger);
+  if (localStorage.getItem(anahtar) === yeni) return;   // içerik değişmediyse yazma ve bildirim yok (açılışta sahte "kirli" üretmez)
+  localStorage.setItem(anahtar, yeni);
+  for (const f of dinleyiciler) { try { f(anahtar); } catch {} }
+}
 const KEY = 'yds-ilerleme-v1';
 
 export function loadProgress() {
