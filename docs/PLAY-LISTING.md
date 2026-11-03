@@ -43,7 +43,7 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Kelime Defteri — Bilmediklerini biriktir; “Biliyorum” dediklerin aralıklı tekrara pekişmiş olarak girer.
 
-• Motivasyon — Günlük seri, XP ve seviye, günlük görevler, başarımlar, aktivite ısı haritası, sınav geri sayımı ve günlük hatırlatma.
+• Motivasyon — Günlük seri ve dondurma, günlük hedef ve görevler, sınav geri sayımı ve günlük hatırlatma.
 
 • Gizlilik — Hesap zorunlu değildir, reklam ve izleme yoktur. İlerlemen cihazında kalır. İstersen e-postanla kayıt olup ilerlemeni buluta yedekleyebilirsin. Hesabını ve yedeğini istediğin an silebilirsin.
 
