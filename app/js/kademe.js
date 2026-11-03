@@ -47,13 +47,11 @@ export function tamamlananGun(gunler, kartlar) {
 }
 
 // Sıradaki gün: kullanıcının kaldığı günden (sonGun) başlayarak tamamlanmamış ilk gün.
-// sonGun yoksa en ileri "başlanmış" gün; hiç başlanmamışsa ilk gün; her gün tamamsa 0.
+// sonGun yoksa 1. günden başlanır (plan dışı çalışmalar işaretçiyi ileri atmaz). Her gün tamamsa 0.
 export function siradakiGun(gunler, kartlar, sonGun = 0) {
   const gs = [...gunler.keys()];
   if (!gs.length) return 0;
-  let bas = sonGun;
-  if (!bas) for (const g of gs) if (gunDurumu(gunler.get(g), kartlar).n > 0) bas = g;
-  if (!bas) return gs[0];
+  const bas = sonGun || gs[0];
   for (const g of gs) if (g >= bas && gunDurumu(gunler.get(g), kartlar).durum !== 'tamam') return g;
   for (const g of gs) if (gunDurumu(gunler.get(g), kartlar).durum !== 'tamam') return g;
   return 0;

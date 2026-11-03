@@ -1,9 +1,10 @@
 // app/js/durum.js — Kelime durumu tek yerde: aralıklı tekrar (SRS) kartları + Kelime Defteri.
 // Akış "Biliyorum", Öğren derecelendirmesi, sözlük ve oyun hepsi aynı kayıtları okur/yazar.
 import { loadSRS, saveSRS, loadDefter, saveDefter, loadOgrenilen } from './storage.js';
+import { yerelGunNo } from './logic.js';
 
 export const PEKISME = 21;              // gün: bu aralığa ulaşan kelime "pekişti" (öğrenildi) sayılır
-const bugunGun = () => Math.floor(Date.now() / 86400000);
+const bugunGun = () => yerelGunNo();
 
 export const srs = Object.assign({ surum: 1, kartlar: {}, gun: { tarih: '', yeni: 0, tekrar: 0 }, gec: [], ayar: {} }, loadSRS() || {});
 if (!srs.kartlar) srs.kartlar = {};

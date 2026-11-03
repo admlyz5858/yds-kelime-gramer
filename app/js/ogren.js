@@ -10,13 +10,13 @@
 //  • Günlük hedef + seri: her gün en az 20 yeni kelime + biriken tekrarlar.
 import { srs, srsKaydet } from './durum.js';
 import { ses, titre, seslendir } from './efekt.js';
-import { shuffle, gunStr } from './logic.js';
+import { shuffle, gunStr, yerelGunNo } from './logic.js';
 import { kartCiplerHTML, ornekBlokHTML, wireEkOrnek } from './kart.js';
 import { loadOlay, olayYazSessiz } from './storage.js';
 import { olayKimlik, kirp } from './olay.js';
 
 const GUN_MS = 86400000;
-const bugunGun = () => Math.floor(Date.now() / GUN_MS);
+const bugunGun = () => yerelGunNo();
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 const PEKISME = 21;              // gün: bu aralığa ulaşan kelime "pekişmiş" sayılır
 const LEECH = 4;                 // bu kadar kez yanlış yapılan kelime "zor" (leech) sayılır

@@ -1797,3 +1797,6 @@ button.gp-hero-govde{ cursor:pointer; }
 
 /* Faz 1: uzun kelimeler ekranı taşırmasın (360 px) */
 .sz-satir, .sz-ic, .sz-ic b, .sz-ic i, .sz-detay-en, .sz-detay-tr, .sz-bicimler { min-width: 0; overflow-wrap: anywhere; }
+
+/* Faz 1: koyu temada ana düğme yazısı koyu (beyaz/#46c26f ve beyaz/#f0663f oranları 4,5:1'in altındaydı) */
+:root[data-tema="koyu"] button.aksiyon { color: var(--kagit); }

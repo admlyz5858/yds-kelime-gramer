@@ -119,7 +119,7 @@ export function kurGun(api) {
   function detay(g) {
     hazirla().then(() => {
       if (!gunler.has(g)) return izgara();
-      acik = g; sonGunYaz(g);
+      acik = g;   // yalnızca çalışma başlayınca sıradaki gün ilerler (detay açmak ilerletmez)
       altEkran(`${g}. Gün`, izgara);
       const ws = gunler.get(g), d = gunDurumu(ws, kartlar());
       const ilk = ws.slice(0, 3).map(w => w.en).join(', ');
@@ -145,7 +145,7 @@ export function kurGun(api) {
         ${satirHTML('gpKarisik', '🎲', 'Karışık', 'Akıllı mod: kelimenin olgunluğuna göre soru tipi')}
       `);
       const bagla = (id, fn) => { const el = document.getElementById(id); if (el) el.onclick = fn; };
-      bagla('gpCalis', () => calis(ws));
+      bagla('gpCalis', () => { sonGunYaz(g); calis(ws); });
       bagla('gpListe', () => listeAc(g, ws));
       bagla('gpAkis', () => akisAc(ws, `${g}. Gün`));
       bagla('gpEn2tr', () => calis(ws, { mod: 'coktan', yon: 'en2tr' }));

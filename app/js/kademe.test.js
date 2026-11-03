@@ -41,7 +41,7 @@ test('siradakiGun ve tamamlananGun', () => {
   assert.equal(siradakiGun(m, {}), 1);                                  // hiç başlanmamış → ilk gün
   assert.equal(siradakiGun(m, { a: { i: 1 } }), 1);                      // 1 devam ediyor
   assert.equal(siradakiGun(m, { a: { i: 1 }, b: { i: 1 } }), 2);         // 1 tamam → 2
-  assert.equal(siradakiGun(m, { c: { i: 1 } }), 2);                      // sonGun yok: en ileri başlanmış gün
+  assert.equal(siradakiGun(m, { c: { i: 1 } }), 1);                      // sonGun yok: plan dışı çalışma işaretçiyi ileri atmaz → ilk eksik gün
   assert.equal(siradakiGun(m, { c: { i: 1 }, d: { i: 1 } }, 2), 3);      // kaldığı gün tamam → sonraki
   assert.equal(siradakiGun(m, { c: { i: 1 }, d: { i: 1 }, e: { i: 1 } }, 3), 1);   // sonrası yok → geriye kalan ilk eksik gün
   const hepsi = { a: { i: 1 }, b: { i: 1 }, c: { i: 1 }, d: { i: 1 }, e: { i: 1 } };

@@ -29,6 +29,12 @@ export function shuffle(arr) {
 export function isoGun(d = new Date()) {
   return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
+// Yerel takvim günü (Türkiye'de gece yarısı yerel saate göre değişir). UTC günü kullanılmaz:
+// yoksa 00:00-03:00 arasındaki "1 gün sonra" tekrarlar birkaç saat sonraya düşer.
+export function yerelGunNo(ms = Date.now()) {
+  const d = new Date(ms);
+  return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
+}
 export function gunStr(off = 0) {
   const d = new Date(); d.setDate(d.getDate() + off);
   return isoGun(d);
