@@ -21,7 +21,7 @@ export function kartCiplerHTML(w, esc, opt = {}) {
   if (w.sv) parca.push(`<span class="kart-cip sv s${w.sv}">S${w.sv} ${SEVIYE_AD[w.sv] || ''}</span>`);
   else if (w.ozel) parca.push('<span class="kart-cip ozel">Özel kelime</span>');
   if (w.tur && !opt.tursuz) parca.push(`<span class="kart-cip tur">${esc(w.tur)}</span>`);
-  if (Array.isArray(w.bicimler) && w.bicimler.length) parca.push(`<span class="kart-cip bicim" title="Diğer biçimler">${w.bicimler.map(esc).join(' · ')}</span>`);
+  if (Array.isArray(w.bicimler) && w.bicimler.length && !opt.bicimsiz) parca.push(`<span class="kart-cip bicim" title="Diğer biçimler">${w.bicimler.map(esc).join(' · ')}</span>`);
   return parca.length ? `<div class="kart-cipler">${parca.join('')}</div>` : '';
 }
 

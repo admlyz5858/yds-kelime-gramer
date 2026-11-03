@@ -159,6 +159,8 @@ export function kurKelimeOgren(api) {
     for (const w of pool) { if (yeniler.length >= s.yeniBugunKalan) break; if (yeniMi(w.en)) yeniler.push(w); }
     // zor kelimeler öne alınır (önce onlar pekişsin)
     due.sort((a, b) => (leechMi(b.en) ? 1 : 0) - (leechMi(a.en) ? 1 : 0));
+    // En gecikmiş kartlar önce: sınır kesildiğinde en çok gecikenler kalır
+    due.sort((a, b) => (srs.kartlar[a.en.toLowerCase()].d - srs.kartlar[b.en.toLowerCase()].d));
     const dueSec = due.slice(0, 80);
     const kuyruk = shuffle([...dueSec.map(w => ({ w, yeniMi: false })), ...yeniler.map(w => ({ w, yeniMi: true }))]);
     oturum = kuyruktanOturum(kuyruk); return kuyruk.length;
@@ -466,7 +468,7 @@ export function kurKelimeOgren(api) {
     const onYuz = dinle
       ? `<div class="ogr-kart-on"><button class="ogr-ses buyuk" id="ogrSes">🔊</button><div class="ogr-kart-ipucu">Dinle · kelimeyi hatırla, sonra göster</div></div>`
       : trOn
-        ? `<div class="ogr-kart-on">${kartCiplerHTML(w, esc)}<div class="kart-on ogr-on-tr">${esc(w.tr)}</div><div class="ogr-kart-ipucu">İngilizcesini düşün, sonra göster</div></div>`
+        ? `<div class="ogr-kart-on">${kartCiplerHTML(w, esc, { tursuz: true, bicimsiz: true })}<div class="kart-on ogr-on-tr">${esc(w.tr)}</div><div class="ogr-kart-ipucu">İngilizcesini düşün, sonra göster</div></div>`
         : `<div class="ogr-kart-on">${kartCiplerHTML(w, esc)}<div class="kart-on">${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes">🔊</button>' : ''}</div><div class="ogr-kart-ipucu">Anlamı düşün, sonra göster</div></div>`;
     const arkaAna = trOn ? `${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes2">🔊</button>' : ''}` : esc(w.tr);
     const arkaYuz = `<div class="ogr-kart-arka">
@@ -506,6 +508,8 @@ export function kurKelimeOgren(api) {
       if (yatay && Math.abs(dx) >= ESIK) {
         const q = dx > 0 ? 2 : 0;
         kart.style.transform = `translateX(${dx > 0 ? 420 : -420}px) rotate(${dx > 0 ? 20 : -20}deg)`;
+        // Kaydırma animasyonu sürerken düğmelerle ikinci puanlama olmasın
+        document.querySelectorAll('.ogr-d-btn').forEach(b => { b.disabled = true; });
         setTimeout(() => { derecelendir(item.w, q); if (q === 0) oturum.yanlis++; else oturum.dogru++; ilerle(); }, 160);
       } else { kart.style.transform = ''; sol.style.opacity = 0; sag.style.opacity = 0; }
       x0 = null;
@@ -665,7 +669,7 @@ export function kurKelimeOgren(api) {
     const s = istat();
     const on = kapsamOnizle();
     let enYakin = null; const t = bugunGun();
-    for (const k in srs.kartlar) { const d = srs.kartlar[k].d; if (d > t && (enYakin == null || d < enYakin)) enYakin = d; }
+    for (const k in srs.kartlar) { const d = srs.kartlar[k].d; if (d >= t && (enYakin == null || d < enYakin)) enYakin = d; }   // bugünkü vadeler de sayılır
     const yakinGun = enYakin != null ? enYakin - t : null;
     render(`
       <div class="ogr-bitis">

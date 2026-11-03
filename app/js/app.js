@@ -170,7 +170,8 @@ function ipucuHTML(sekme) {
 icerik.addEventListener('click', (e) => { if (e.target.closest('#ozelEkleBtn')) ozelEkleAc(() => kelimelerAc('defter')); });
 icerik.addEventListener('click', (e) => {
   const b = e.target.closest('.ipucu-kapat'); if (!b) return;
-  const k = b.closest('.ipucu'); _ayar.ipucuGoruldu = Object.assign(_ayar.ipucuGoruldu || {}, { [k.dataset.sekme]: true }); saveAyar(_ayar);
+  const k = b.closest('.ipucu'); if (!k) return;   // Bugün'ün bulut kartı .ipucu değil; kendi tıklama işleyicisi kapatır
+  _ayar.ipucuGoruldu = Object.assign(_ayar.ipucuGoruldu || {}, { [k.dataset.sekme]: true }); saveAyar(_ayar);
   k.remove();
 });
 
@@ -316,7 +317,7 @@ async function anaSayfa() {
   document.getElementById('pDers').onclick = () => son ? dersAc(son.dosya, son.id) : sekmeAc('mufredat');
   document.getElementById('pAkis').onclick = () => kelimeAkisi.ac({ baslik: 'Kelime Akışı' });
   const pd = document.getElementById('pDeneme'); if (pd) pd.onclick = () => deneme.ac(() => sekmeAc('bugun'));
-  const pb = document.getElementById('pBulut'); if (pb) pb.onclick = (e) => { if (e.target.closest('#pBulutKapat')) { _ayar.bulutKapatildi = true; saveAyar(_ayar); anaSayfa(); return; } girisAc(); };
+  const pb = document.getElementById('pBulut'); if (pb) pb.onclick = (e) => { if (e.target.closest('#pBulutKapat')) { e.stopPropagation(); _ayar.bulutKapatildi = true; saveAyar(_ayar); anaSayfa(); return; } girisAc(); };
   const pz = document.getElementById('pZayif'); if (pz) pz.onclick = () => banka.basla({ konu: zayif.konu, alt: zayif.alt, baslik: zayif.ad, geri: () => sekmeAc('bugun') });
   const gb = document.getElementById('gununBtn');
   if (gb) gb.onclick = gununAc;
