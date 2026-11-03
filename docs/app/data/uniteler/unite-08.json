@@ -4918,78 +4918,40 @@
       "en": "freezing",
       "tur": "sıfat",
       "tr": "buz gibi, donduran, çok soğuk",
-      "ornek_tr": "Isıtıcı olmasaydı, donuyor olurduk; bizi bütün gece sıcak tuttu.",
+      "ornek_tr": "Dışarısı buz gibi, bu yüzden sıcak bir mont giy.",
       "ornek_tokenlar": [
         {
-          "k": "Without",
-          "a": "-sız, olmadan",
-          "vurgu": false
+          "k": "It"
         },
         {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "heater,",
-          "a": "ısıtıcı",
-          "vurgu": false
+          "k": "freezing",
+          "vurgu": true,
+          "a": "donmak"
         },
         {
-          "k": "we",
-          "a": "biz",
-          "vurgu": false
+          "k": "outside,",
+          "a": "-ın dışında"
         },
         {
-          "k": "would",
-          "a": "-ardı",
-          "vurgu": false
+          "k": "so",
+          "a": "bu yüzden"
         },
         {
-          "k": "have",
-          "a": "-miş",
-          "en": "would have been: olurduk",
-          "vurgu": false
+          "k": "wear",
+          "a": "takmak"
         },
         {
-          "k": "been",
-          "a": "olmak",
-          "vurgu": false
-        },
-        {
-          "k": "freezing;",
-          "a": "donmak",
-          "vurgu": true
-        },
-        {
-          "k": "it",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "kept",
-          "a": "tutmak",
-          "vurgu": false
-        },
-        {
-          "k": "us",
-          "a": "bizi",
-          "vurgu": false
+          "k": "a"
         },
         {
           "k": "warm",
-          "a": "sıcak",
-          "vurgu": false
+          "a": "sıcak"
         },
         {
-          "k": "all",
-          "a": "bütün",
-          "vurgu": false
-        },
-        {
-          "k": "night.",
-          "a": "gece",
-          "vurgu": false
+          "k": "coat."
         }
       ]
     },
@@ -5155,78 +5117,37 @@
       "en": "neighbour",
       "tur": "isim",
       "tr": "komşu",
-      "ornek_tr": "Dün gece bu kadar gürültü yapmamalıydın, komşular bundan şikayet etti.",
+      "ornek_tr": "Komşum ağır kutuları taşımama yardım etti.",
       "ornek_tokenlar": [
         {
-          "k": "You",
-          "a": "sen",
-          "vurgu": false
+          "k": "My"
         },
         {
-          "k": "mustn't",
-          "a": "-memeli",
-          "vurgu": false
+          "k": "neighbour",
+          "vurgu": true,
+          "a": "komşu"
         },
         {
-          "k": "have",
-          "a": "-miş",
-          "en": "mustn't have made: yapmamalıydın",
-          "vurgu": false
+          "k": "helped",
+          "a": "yardım etti"
         },
         {
-          "k": "made",
-          "a": "yapmak",
-          "vurgu": false
+          "k": "me",
+          "a": "beni"
         },
         {
-          "k": "so",
-          "a": "o kadar",
-          "vurgu": false
+          "k": "carry",
+          "a": "taşımak"
         },
         {
-          "k": "much",
-          "a": "çok",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "noise",
-          "a": "gürültü",
-          "vurgu": false
+          "k": "heavy",
+          "a": "ağır"
         },
         {
-          "k": "last",
-          "a": "geçen",
-          "vurgu": false
-        },
-        {
-          "k": "night,",
-          "a": "gece",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
-        },
-        {
-          "k": "neighbours",
-          "a": "komşular",
-          "vurgu": true
-        },
-        {
-          "k": "complained",
-          "a": "şikayet etmek",
-          "vurgu": false
-        },
-        {
-          "k": "about",
-          "a": "hakkında",
-          "vurgu": false
-        },
-        {
-          "k": "it.",
-          "a": "o",
-          "vurgu": false
+          "k": "boxes."
         }
       ]
     },
@@ -20356,67 +20277,36 @@
       "en": "conclude",
       "tur": "fiil",
       "tr": "sonuçlandırmak, sona ermek",
-      "ornek_tr": "Toplantı sona erince bir sonraki toplantının gündemini belirlediler.",
+      "ornek_tr": "Yargıç davayı gelecek hafta sonuçlandıracak.",
       "ornek_tokenlar": [
         {
-          "k": "Once",
-          "a": "-ınca",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
+          "k": "judge"
         },
         {
-          "k": "meeting",
-          "a": "toplantı",
-          "vurgu": false
+          "k": "will",
+          "a": "-ecek"
         },
         {
-          "k": "concluded,",
-          "a": "sona erdi",
-          "vurgu": true
+          "k": "conclude",
+          "vurgu": true,
+          "a": "sonuçlandırmak"
         },
         {
-          "k": "they",
-          "a": "onlar",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "set",
-          "a": "belirlediler",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
-        },
-        {
-          "k": "agenda",
-          "a": "gündem",
-          "vurgu": false
-        },
-        {
-          "k": "for",
-          "a": "için",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
+          "k": "trial"
         },
         {
           "k": "next",
-          "a": "sonraki",
-          "vurgu": false
+          "a": "sonraki"
         },
         {
-          "k": "meeting.",
-          "a": "toplantı",
-          "vurgu": false
+          "k": "week.",
+          "a": "hafta"
         }
       ]
     },

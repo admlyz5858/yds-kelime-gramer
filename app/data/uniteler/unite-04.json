@@ -3179,62 +3179,40 @@
       "en": "iceberg",
       "tur": "isim",
       "tr": "buzdağı",
-      "ornek_tr": "Titanik Atlantik'i geçerken bir buzdağına çarptı.",
+      "ornek_tr": "Gemi bir buzdağına çarptıktan sonra hasar gördü.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "Titanic",
-          "a": "Titanik",
-          "vurgu": false
+          "k": "ship",
+          "a": "gemi"
         },
         {
-          "k": "was",
-          "a": "-yordu",
-          "vurgu": false
+          "k": "was"
         },
         {
-          "k": "crossing",
-          "a": "geçiyor",
-          "vurgu": false
+          "k": "damaged",
+          "a": "hasar vermek"
         },
         {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
+          "k": "after",
+          "a": "-den sonra"
         },
         {
-          "k": "Atlantic",
-          "a": "Atlantik",
-          "vurgu": false
+          "k": "it"
         },
         {
-          "k": "when",
-          "a": "-diğinde",
-          "vurgu": false
+          "k": "hit",
+          "a": "vurmak"
         },
         {
-          "k": "it",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "struck",
-          "a": "çarptı",
-          "vurgu": false
-        },
-        {
-          "k": "an",
-          "a": "bir",
-          "vurgu": false
+          "k": "an"
         },
         {
           "k": "iceberg.",
-          "a": "buzdağı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "buzdağı"
         }
       ]
     },
@@ -8281,72 +8259,39 @@
       "en": "misread",
       "tur": "fiil",
       "tr": "yanlış okumak, yanlış yorumlamak",
-      "ornek_tr": "Yürüyüşçü pusulasını yanlış okuduğu için ormanda kayboldu.",
+      "ornek_tr": "Otobüs saatlerini yanlış okudum ve otobüsü kaçırdım.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
-        },
-        {
-          "k": "hiker",
-          "a": "yürüyüşçü",
-          "vurgu": false
-        },
-        {
-          "k": "was",
-          "a": "-(idi)",
-          "vurgu": false
-        },
-        {
-          "k": "lost",
-          "a": "kaybolmuş",
-          "vurgu": false
-        },
-        {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
-        },
-        {
-          "k": "woods",
-          "a": "orman",
-          "vurgu": false
-        },
-        {
-          "k": "because",
-          "a": "çünkü",
-          "vurgu": false
-        },
-        {
-          "k": "he",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "had",
-          "a": "-(geçmiş)",
-          "vurgu": false
+          "k": "I"
         },
         {
           "k": "misread",
-          "a": "yanlış okumuştu",
-          "vurgu": true
+          "vurgu": true,
+          "a": "yanlış okumuştu"
         },
         {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "compass.",
-          "a": "pusula",
-          "vurgu": false
+          "k": "bus",
+          "a": "otobüs"
+        },
+        {
+          "k": "timetable"
+        },
+        {
+          "k": "and"
+        },
+        {
+          "k": "missed",
+          "a": "kaçırdı"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "bus.",
+          "a": "otobüs"
         }
       ]
     },
@@ -8767,57 +8712,28 @@
       "en": "conquered",
       "tur": "fiil",
       "tr": "fethetti, ele geçirdi",
-      "ornek_tr": "Roma İmparatorluğu, Avrupa ve Asya'da geniş topraklar fethetti.",
+      "ornek_tr": "Osmanlılar 1453'te İstanbul'u fethetti.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirtme)",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "Roman",
-          "a": "Roma",
-          "vurgu": false
-        },
-        {
-          "k": "Empire",
-          "a": "İmparatorluğu",
-          "vurgu": false
+          "k": "Ottomans"
         },
         {
           "k": "conquered",
-          "a": "fethetti",
-          "vurgu": true
+          "vurgu": true,
+          "a": "fethetti"
         },
         {
-          "k": "vast",
-          "a": "geniş/uçsuz",
-          "vurgu": false
+          "k": "Constantinople"
         },
         {
-          "k": "territories",
-          "a": "topraklar",
-          "vurgu": false
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "across",
-          "a": "boyunca",
-          "vurgu": false
-        },
-        {
-          "k": "Europe",
-          "a": "Avrupa",
-          "vurgu": false
-        },
-        {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
-        },
-        {
-          "k": "Asia.",
-          "a": "Asya",
-          "vurgu": false
+          "k": "1453."
         }
       ]
     },
@@ -9039,57 +8955,39 @@
       "en": "territories",
       "tur": "isim",
       "tr": "topraklar, bölgeler (territory'nin çoğulu)",
-      "ornek_tr": "Roma İmparatorluğu, Avrupa ve Asya'da geniş topraklar fethetti.",
+      "ornek_tr": "Şirket Asya'daki yeni bölgelere yayıldı.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirtme)",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "Roman",
-          "a": "Roma",
-          "vurgu": false
+          "k": "company",
+          "a": "şirket"
         },
         {
-          "k": "Empire",
-          "a": "İmparatorluğu",
-          "vurgu": false
+          "k": "expanded",
+          "a": "genişletmek"
         },
         {
-          "k": "conquered",
-          "a": "fethetti",
-          "vurgu": false
+          "k": "into",
+          "a": "-in içine"
         },
         {
-          "k": "vast",
-          "a": "geniş",
-          "vurgu": false
+          "k": "new",
+          "a": "yeni"
         },
         {
           "k": "territories",
-          "a": "topraklar",
-          "vurgu": true
+          "vurgu": true,
+          "a": "topraklar"
         },
         {
-          "k": "across",
-          "a": "boyunca",
-          "vurgu": false
-        },
-        {
-          "k": "Europe",
-          "a": "Avrupa",
-          "vurgu": false
-        },
-        {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
+          "k": "in",
+          "a": "içinde"
         },
         {
           "k": "Asia.",
-          "a": "Asya",
-          "vurgu": false
+          "a": "Asya"
         }
       ]
     },
@@ -9427,82 +9325,44 @@
       "en": "flaw",
       "tur": "isim",
       "tr": "kusur, hata, eksiklik",
-      "ornek_tr": "Bu proje üzerinde bir ay çalışmıştık ki temel bir kusur bulduk.",
+      "ornek_tr": "Tasarımda düzeltilmesi gereken ciddi bir kusur var.",
       "ornek_tokenlar": [
         {
-          "k": "We",
-          "a": "biz",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "had",
-          "a": "(-mişti)",
-          "vurgu": false
+          "k": "design",
+          "a": "tasarlamak"
         },
         {
-          "k": "worked",
-          "a": "çalıştık",
-          "vurgu": false
+          "k": "has",
+          "a": "sahip olmak"
         },
         {
-          "k": "on",
-          "a": "üzerinde",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "this",
-          "a": "bu",
-          "vurgu": false
+          "k": "serious",
+          "a": "ciddi"
         },
         {
-          "k": "project",
-          "a": "proje",
-          "vurgu": false
+          "k": "flaw",
+          "vurgu": true,
+          "a": "kusur"
         },
         {
-          "k": "for",
-          "a": "boyunca",
-          "vurgu": false
+          "k": "that"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "must",
+          "a": "-meli"
         },
         {
-          "k": "month",
-          "a": "ay",
-          "vurgu": false
+          "k": "be"
         },
         {
-          "k": "before",
-          "a": "-den önce",
-          "vurgu": false
-        },
-        {
-          "k": "we",
-          "a": "biz",
-          "vurgu": false
-        },
-        {
-          "k": "found",
-          "a": "bulduk",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "fundamental",
-          "a": "temel",
-          "vurgu": false
-        },
-        {
-          "k": "flaw.",
-          "a": "kusur",
-          "vurgu": true
+          "k": "fixed.",
+          "a": "sabit"
         }
       ]
     },
@@ -12813,78 +12673,38 @@
       "en": "renewable",
       "tur": "sıfat",
       "tr": "yenilenebilir",
-      "ornek_tr": "Gelecek Cuma bu saatte, yenilenebilir enerji üzerine bir konferans veriyor olacak.",
+      "ornek_tr": "Güneş ve rüzgâr yenilenebilir enerji kaynaklarıdır.",
       "ornek_tokenlar": [
         {
-          "k": "Next",
-          "a": "gelecek",
-          "vurgu": false
+          "k": "Solar",
+          "a": "güneşe ait"
         },
         {
-          "k": "Friday",
-          "a": "Cuma",
-          "vurgu": false
+          "k": "and"
         },
         {
-          "k": "at",
-          "a": "-de",
-          "vurgu": false
+          "k": "wind",
+          "a": "rüzgar"
         },
         {
-          "k": "this",
-          "a": "bu",
-          "vurgu": false
-        },
-        {
-          "k": "hour,",
-          "a": "saat",
-          "vurgu": false
-        },
-        {
-          "k": "he",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "-ecek",
-          "vurgu": false
-        },
-        {
-          "k": "be",
-          "a": "(sürekli gelecek)",
-          "en": "will be giving: veriyor olacak",
-          "vurgu": false
-        },
-        {
-          "k": "giving",
-          "a": "veriyor",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "lecture",
-          "a": "konferans",
-          "vurgu": false
-        },
-        {
-          "k": "on",
-          "a": "üzerine",
-          "vurgu": false
+          "k": "are"
         },
         {
           "k": "renewable",
-          "a": "yenilenebilir",
-          "vurgu": true
+          "vurgu": true,
+          "a": "yenilenebilir"
+        },
+        {
+          "k": "sources",
+          "a": "kaynakları"
+        },
+        {
+          "k": "of",
+          "a": "-in"
         },
         {
           "k": "energy.",
-          "a": "enerji",
-          "vurgu": false
+          "a": "enerji"
         }
       ]
     },
@@ -13205,84 +13025,38 @@
       "en": "astronaut",
       "tur": "isim",
       "tr": "astronot, uzay adamı",
-      "ornek_tr": "Uzay gemisi Mars'a ulaştığında, astronotlar uzayda altı ay geçirmişti.",
+      "ornek_tr": "Astronot uzay istasyonunun içinde yavaşça süzüldü.",
       "ornek_tokenlar": [
         {
-          "k": "By",
-          "a": "(-diğinde)",
-          "en": "by the time: -diği zaman",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "astronaut",
+          "vurgu": true,
+          "a": "astronot"
         },
         {
-          "k": "time",
-          "a": "zaman",
-          "vurgu": false
+          "k": "floated",
+          "a": "yüzmek"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "slowly",
+          "a": "yavaşça"
         },
         {
-          "k": "spaceship",
-          "a": "uzay gemisi",
-          "vurgu": false
+          "k": "inside",
+          "a": "içine"
         },
         {
-          "k": "reached",
-          "a": "ulaştı",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "Mars,",
-          "a": "Mars",
-          "vurgu": false
+          "k": "space",
+          "a": "uzay"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "astronauts",
-          "a": "astronotlar",
-          "vurgu": true
-        },
-        {
-          "k": "had",
-          "a": "(geçmişin geçmişi)",
-          "en": "had spent: geçirmişti",
-          "vurgu": false
-        },
-        {
-          "k": "spent",
-          "a": "geçirmiş",
-          "vurgu": false
-        },
-        {
-          "k": "six",
-          "a": "altı",
-          "vurgu": false
-        },
-        {
-          "k": "months",
-          "a": "ay",
-          "vurgu": false
-        },
-        {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
-        },
-        {
-          "k": "space.",
-          "a": "uzay",
-          "vurgu": false
+          "k": "station.",
+          "a": "istasyon"
         }
       ]
     },

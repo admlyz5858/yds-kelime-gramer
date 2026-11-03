@@ -6729,77 +6729,47 @@
       "en": "mitigate",
       "tur": "fiil",
       "tr": "hafifletmek, azaltmak (etkisini)",
-      "ornek_tr": "Ekosistemlere yönelik tehditleri hafifletmek ve biyoçeşitliliği korumak için bu önlemlere öncelik verilmelidir.",
+      "ornek_tr": "Yeni düzenlemeler sellerin verdiği zararı hafifletmeyi amaçlıyor.",
       "ornek_tokenlar": [
         {
-          "k": "These",
-          "a": "bu",
-          "vurgu": false
+          "k": "New",
+          "a": "yeni"
         },
         {
-          "k": "measures",
-          "a": "önlemler",
-          "vurgu": false
+          "k": "regulations",
+          "a": "düzenlemeler"
         },
         {
-          "k": "must",
-          "a": "-meli",
-          "vurgu": false
-        },
-        {
-          "k": "be",
-          "a": "-mek",
-          "vurgu": false
-        },
-        {
-          "k": "prioritized",
-          "a": "öncelik verilmeli",
-          "vurgu": false
+          "k": "aim",
+          "a": "amaç"
         },
         {
           "k": "to",
-          "a": "-mek için",
-          "vurgu": false
+          "a": "-e yönelik"
         },
         {
           "k": "mitigate",
-          "a": "hafifletmek",
-          "vurgu": true
+          "vurgu": true,
+          "a": "hafifletmek"
         },
         {
-          "k": "the",
-          "a": "",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "threats",
-          "a": "tehditler",
-          "vurgu": false
+          "k": "damage",
+          "a": "zarar vermek"
         },
         {
-          "k": "to",
-          "a": "-e yönelik",
-          "vurgu": false
+          "k": "caused",
+          "a": "-den kaynaklanan"
         },
         {
-          "k": "ecosystems",
-          "a": "ekosistemler",
-          "vurgu": false
+          "k": "by",
+          "a": "tarafından"
         },
         {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
-        },
-        {
-          "k": "preserve",
-          "a": "korumak",
-          "vurgu": false
-        },
-        {
-          "k": "biodiversity.",
-          "a": "biyoçeşitlilik",
-          "vurgu": false
+          "k": "floods.",
+          "a": "sel"
         }
       ]
     },
@@ -7049,62 +7019,34 @@
       "en": "wisely",
       "tur": "zarf",
       "tr": "akıllıca, bilgece",
-      "ornek_tr": "Onu akıllıca kullanmayı ve değerini takdir etmeyi öğrenmeliyiz.",
+      "ornek_tr": "Tatilde paranı akıllıca harca.",
       "ornek_tokenlar": [
         {
-          "k": "We",
-          "a": "biz",
-          "vurgu": false
+          "k": "Spend",
+          "a": "harcamak"
         },
         {
-          "k": "should",
-          "a": "-meliyiz",
-          "vurgu": false
+          "k": "your"
         },
         {
-          "k": "learn",
-          "a": "öğrenmek",
-          "vurgu": false
-        },
-        {
-          "k": "to",
-          "a": "-mek",
-          "vurgu": false
-        },
-        {
-          "k": "use",
-          "a": "kullanmak",
-          "vurgu": false
-        },
-        {
-          "k": "it",
-          "a": "onu",
-          "vurgu": false
+          "k": "money",
+          "a": "para"
         },
         {
           "k": "wisely",
-          "a": "akıllıca",
-          "vurgu": true
+          "vurgu": true,
+          "a": "akıllıca"
         },
         {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
+          "k": "during",
+          "a": "sırasında"
         },
         {
-          "k": "appreciate",
-          "a": "takdir etmek",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "its",
-          "a": "onun",
-          "vurgu": false
-        },
-        {
-          "k": "value.",
-          "a": "değer",
-          "vurgu": false
+          "k": "holidays.",
+          "a": "tatil"
         }
       ]
     },
@@ -9504,77 +9446,40 @@
       "en": "noticeably",
       "tur": "zarf",
       "tr": "gözle görülür şekilde, belirgin biçimde",
-      "ornek_tr": "Sıkı çevre düzenlemelerinin uygulanmasından sonra, kentsel bölgelerde hava kalitesi gözle görülür şekilde iyileşti.",
+      "ornek_tr": "Yeni yol, işe gidip gelmeyi gözle görülür biçimde kısalttı.",
       "ornek_tokenlar": [
         {
-          "k": "After",
-          "a": "-den sonra",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "new",
+          "a": "yeni"
         },
         {
-          "k": "implementation",
-          "a": "uygulama",
-          "vurgu": false
+          "k": "road",
+          "a": "yol"
         },
         {
-          "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "k": "has",
+          "a": "sahip olmak"
         },
         {
-          "k": "strict",
-          "a": "sıkı",
-          "vurgu": false
+          "k": "made",
+          "a": "yapmak"
         },
         {
-          "k": "environmental",
-          "a": "çevresel",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "regulations,",
-          "a": "düzenlemeler",
-          "vurgu": false
+          "k": "commute"
         },
         {
-          "k": "air",
-          "a": "hava",
-          "vurgu": false
+          "k": "noticeably",
+          "vurgu": true,
+          "a": "gözle görülür şekilde"
         },
         {
-          "k": "quality",
-          "a": "kalite",
-          "vurgu": false
-        },
-        {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
-        },
-        {
-          "k": "urban",
-          "a": "kentsel",
-          "vurgu": false
-        },
-        {
-          "k": "areas",
-          "a": "bölgeler",
-          "vurgu": false
-        },
-        {
-          "k": "improved",
-          "a": "iyileşti",
-          "vurgu": false
-        },
-        {
-          "k": "noticeably.",
-          "a": "gözle görülür şekilde",
-          "vurgu": true
+          "k": "shorter."
         }
       ]
     },

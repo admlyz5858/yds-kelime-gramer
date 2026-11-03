@@ -6936,57 +6936,38 @@
       "en": "declare",
       "tur": "fiil",
       "tr": "ilan etmek, açıklamak, beyan etmek",
-      "ornek_tr": "Bu hafta ilerleyen günlerde bir ateşkesin ilan edilmesi bekleniyor.",
+      "ornek_tr": "Hükümet pazartesi günü tatil ilan edecek.",
       "ornek_tokenlar": [
         {
-          "k": "A",
-          "a": "bir",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "ceasefire",
-          "a": "ateşkes",
-          "vurgu": false
+          "k": "government",
+          "a": "hükümet"
         },
         {
-          "k": "is",
-          "a": "-dır",
-          "vurgu": false
+          "k": "will",
+          "a": "-ecek"
         },
         {
-          "k": "expected",
-          "a": "bekleniyor",
-          "vurgu": false
+          "k": "declare",
+          "vurgu": true,
+          "a": "ilan etmek"
         },
         {
-          "k": "to",
-          "a": "-mek",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "be",
-          "a": "olmak",
-          "vurgu": false
+          "k": "holiday",
+          "a": "tatil"
         },
         {
-          "k": "declared",
-          "a": "ilan edilmek",
-          "vurgu": true
+          "k": "on",
+          "a": "-de"
         },
         {
-          "k": "later",
-          "a": "ilerleyen",
-          "vurgu": false
-        },
-        {
-          "k": "this",
-          "a": "bu",
-          "vurgu": false
-        },
-        {
-          "k": "week.",
-          "a": "hafta",
-          "vurgu": false
+          "k": "Monday.",
+          "a": "pazartesi"
         }
       ]
     },

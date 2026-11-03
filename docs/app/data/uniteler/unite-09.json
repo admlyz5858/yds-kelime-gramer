@@ -6402,68 +6402,48 @@
       "en": "tense",
       "tur": "sıfat",
       "tr": "gergin, gerilimli",
-      "ornek_tr": "Çocukların önünde tartışmak evde gergin bir ortam yaratabilir.",
+      "ornek_tr": "Tartışmadan sonra toplantı odasındaki hava geriliydi.",
       "ornek_tokenlar": [
         {
-          "k": "Arguing",
-          "a": "tartışmak",
-          "vurgu": false
-        },
-        {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
-        },
-        {
-          "k": "front",
-          "a": "ön",
-          "en": "in front of: -in önünde",
-          "vurgu": false
-        },
-        {
-          "k": "of",
-          "a": "-in",
-          "vurgu": false
-        },
-        {
-          "k": "children",
-          "a": "çocuklar",
-          "vurgu": false
-        },
-        {
-          "k": "can",
-          "a": "-ebilir",
-          "vurgu": false
-        },
-        {
-          "k": "create",
-          "a": "yaratmak",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "tense",
-          "a": "gergin",
-          "vurgu": true
+          "k": "The"
         },
         {
           "k": "atmosphere",
-          "a": "ortam, hava",
-          "vurgu": false
+          "a": "ortam, hava"
         },
         {
-          "k": "at",
-          "a": "-de",
-          "vurgu": false
+          "k": "in",
+          "a": "-de"
         },
         {
-          "k": "home.",
-          "a": "ev",
-          "vurgu": false
+          "k": "the"
+        },
+        {
+          "k": "meeting",
+          "a": "toplantı"
+        },
+        {
+          "k": "room",
+          "a": "oda"
+        },
+        {
+          "k": "was"
+        },
+        {
+          "k": "tense",
+          "vurgu": true,
+          "a": "gergin"
+        },
+        {
+          "k": "after",
+          "a": "-den sonra"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "argument.",
+          "a": "savı"
         }
       ]
     },
@@ -6779,52 +6759,38 @@
       "en": "gathering",
       "tur": "isim",
       "tr": "toplantı, bir araya gelme",
-      "ornek_tr": "Aile toplantıları için yemek pişirmek her zaman tutkum olmuştur.",
+      "ornek_tr": "Parktaki toplantı gece yarısına kadar sürdü.",
       "ornek_tokenlar": [
         {
-          "k": "Cooking",
-          "a": "yemek pişirme",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "for",
-          "a": "için",
-          "vurgu": false
+          "k": "gathering",
+          "vurgu": true,
+          "a": "toplantı"
         },
         {
-          "k": "family",
-          "a": "aile",
-          "vurgu": false
+          "k": "at",
+          "a": "-de"
         },
         {
-          "k": "gatherings",
-          "a": "toplantılar",
-          "vurgu": true
+          "k": "the"
         },
         {
-          "k": "has",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "k": "park",
+          "a": "park etmek"
         },
         {
-          "k": "always",
-          "a": "her zaman",
-          "vurgu": false
+          "k": "lasted",
+          "a": "sürmek"
         },
         {
-          "k": "been",
-          "a": "olmuştur",
-          "vurgu": false
+          "k": "until",
+          "a": "-e kadar"
         },
         {
-          "k": "my",
-          "a": "benim",
-          "vurgu": false
-        },
-        {
-          "k": "passion.",
-          "a": "tutku",
-          "vurgu": false
+          "k": "midnight.",
+          "a": "gece yarısı"
         }
       ]
     },
@@ -7086,57 +7052,46 @@
       "en": "fundraising",
       "tur": "isim",
       "tr": "bağış toplama, para toplama",
-      "ornek_tr": "Hayır etkinliği için bağış toplama hedeflerine ulaşmayı kutladılar.",
+      "ornek_tr": "Okul, yeni kitaplar için bağış toplama yemeği düzenledi.",
       "ornek_tokenlar": [
         {
-          "k": "They",
-          "a": "onlar",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "celebrated",
-          "a": "kutladılar",
-          "vurgu": false
+          "k": "school",
+          "a": "okul"
         },
         {
-          "k": "achieving",
-          "a": "ulaşmayı",
-          "vurgu": false
+          "k": "held",
+          "a": "benimsemişti"
         },
         {
-          "k": "their",
-          "a": "onların",
-          "vurgu": false
+          "k": "a"
         },
         {
           "k": "fundraising",
-          "a": "bağış toplama",
-          "vurgu": true
+          "vurgu": true,
+          "a": "bağış toplama"
         },
         {
-          "k": "goal",
-          "a": "hedef",
-          "vurgu": false
+          "k": "dinner",
+          "a": "akşam yemeği"
         },
         {
           "k": "for",
-          "a": "için",
-          "vurgu": false
+          "a": "için"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "new",
+          "a": "yeni"
         },
         {
-          "k": "charity",
-          "a": "hayır",
-          "vurgu": false
+          "k": "library",
+          "a": "kütüphane"
         },
         {
-          "k": "event.",
-          "a": "etkinlik",
-          "vurgu": false
+          "k": "books.",
+          "a": "kitap"
         }
       ]
     },
@@ -9120,63 +9075,37 @@
       "en": "regrets",
       "tur": "fiil",
       "tr": "pişman olur, üzüntü duyar",
-      "ornek_tr": "Jane sürpriz parti hakkında arkadaşına yalan söylediği için pişman.",
+      "ornek_tr": "Sınav için daha çok çalışmamış olmaktan pişman.",
       "ornek_tokenlar": [
         {
-          "k": "Jane",
-          "a": "Jane",
-          "vurgu": false
+          "k": "He"
         },
         {
           "k": "regrets",
-          "a": "pişman",
-          "vurgu": true
+          "vurgu": true,
+          "a": "pişman"
         },
         {
-          "k": "having",
-          "a": "-mış olma",
-          "en": "regret + V-ing",
-          "vurgu": false
+          "k": "not"
         },
         {
-          "k": "lied",
-          "a": "yalan söylemiş",
-          "vurgu": false
+          "k": "studying",
+          "a": "ders çalışmak"
         },
         {
-          "k": "to",
-          "a": "-e",
-          "vurgu": false
+          "k": "harder",
+          "a": "daha çok"
         },
         {
-          "k": "her",
-          "a": "kendi",
-          "vurgu": false
+          "k": "for",
+          "a": "için"
         },
         {
-          "k": "friend",
-          "a": "arkadaşı",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "about",
-          "a": "hakkında",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirtme)",
-          "vurgu": false
-        },
-        {
-          "k": "surprise",
-          "a": "sürpriz",
-          "vurgu": false
-        },
-        {
-          "k": "party.",
-          "a": "parti",
-          "vurgu": false
+          "k": "exam.",
+          "a": "sınav"
         }
       ]
     },
@@ -9966,63 +9895,45 @@
       "en": "skilled",
       "tur": "sıfat",
       "tr": "yetenekli, becerikli, usta",
-      "ornek_tr": "Yetenekli bir müzisyen olmak saatlerce pratik ve disiplin gerektirir.",
+      "ornek_tr": "Yirmi yıllık deneyimi olan becerikli bir cerrah.",
       "ornek_tokenlar": [
         {
-          "k": "To",
-          "a": "(mastar)",
-          "en": "To + V: özne olarak mastar",
-          "vurgu": false
+          "k": "She"
         },
         {
-          "k": "become",
-          "a": "olmak",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "a"
         },
         {
           "k": "skilled",
-          "a": "yetenekli",
-          "vurgu": true
+          "vurgu": true,
+          "a": "yetenekli"
         },
         {
-          "k": "musician",
-          "a": "müzisyen",
-          "vurgu": false
+          "k": "surgeon",
+          "a": "cerrah"
         },
         {
-          "k": "demands",
-          "a": "gerektirir",
-          "vurgu": false
+          "k": "with",
+          "a": "ile"
         },
         {
-          "k": "hours",
-          "a": "saatler",
-          "vurgu": false
+          "k": "twenty",
+          "a": "yirmi"
+        },
+        {
+          "k": "years",
+          "a": "yıllar"
         },
         {
           "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "a": "-in"
         },
         {
-          "k": "practice",
-          "a": "pratik",
-          "vurgu": false
-        },
-        {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
-        },
-        {
-          "k": "discipline.",
-          "a": "disiplin",
-          "vurgu": false
+          "k": "experience.",
+          "a": "deneyim"
         }
       ]
     },
@@ -10660,47 +10571,34 @@
       "en": "performance-enhancing",
       "tur": "sıfat",
       "tr": "performans artırıcı",
-      "ornek_tr": "Sporcu, herhangi bir performans artırıcı ilaç aldığını reddetti.",
+      "ornek_tr": "Performans artırıcı ilaç kullanırken yakalanan sporcular men edilir.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "",
-          "vurgu": false
+          "k": "Athletes",
+          "a": "sporcular"
         },
         {
-          "k": "athlete",
-          "a": "sporcu",
-          "vurgu": false
+          "k": "caught"
         },
         {
-          "k": "denied",
-          "a": "reddetti",
-          "vurgu": false
-        },
-        {
-          "k": "having",
-          "a": "",
-          "vurgu": false
-        },
-        {
-          "k": "taken",
-          "a": "almış olmak",
-          "vurgu": false
-        },
-        {
-          "k": "any",
-          "a": "herhangi",
-          "vurgu": false
+          "k": "using",
+          "a": "kullanarak"
         },
         {
           "k": "performance-enhancing",
-          "a": "performans artırıcı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "performans artırıcı"
         },
         {
-          "k": "drugs.",
-          "a": "ilaçlar",
-          "vurgu": false
+          "k": "drugs",
+          "a": "ilaçlar"
+        },
+        {
+          "k": "are"
+        },
+        {
+          "k": "banned.",
+          "a": "yasaklamak"
         }
       ]
     },
@@ -11343,57 +11241,39 @@
       "en": "collaborate",
       "tur": "fiil",
       "tr": "işbirliği yapmak",
-      "ornek_tr": "Kuruluş, çevre sorunlarını ele almak için yerel topluluklarla işbirliği yaptı.",
+      "ornek_tr": "Üç ülkeden bilim insanları projede işbirliği yapıyor.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "Scientists",
+          "a": "bilim insanları"
         },
         {
-          "k": "organization",
-          "a": "kuruluş",
-          "vurgu": false
+          "k": "from",
+          "a": "-den"
         },
         {
-          "k": "collaborated",
-          "a": "işbirliği yaptı",
-          "vurgu": true
+          "k": "three",
+          "a": "üç"
         },
         {
-          "k": "with",
-          "a": "ile",
-          "vurgu": false
+          "k": "countries",
+          "a": "ülkeler"
         },
         {
-          "k": "local",
-          "a": "yerel",
-          "vurgu": false
+          "k": "collaborate",
+          "vurgu": true,
+          "a": "işbirliği yapmak"
         },
         {
-          "k": "communities",
-          "a": "topluluklar",
-          "vurgu": false
+          "k": "on",
+          "a": "-de"
         },
         {
-          "k": "to",
-          "a": "-mek için",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "address",
-          "a": "ele almak",
-          "vurgu": false
-        },
-        {
-          "k": "environmental",
-          "a": "çevresel",
-          "vurgu": false
-        },
-        {
-          "k": "issues.",
-          "a": "sorunlar",
-          "vurgu": false
+          "k": "project.",
+          "a": "proje"
         }
       ]
     },
@@ -11797,79 +11677,47 @@
       "en": "victim",
       "tur": "isim",
       "tr": "kurban, mağdur",
-      "ornek_tr": "Kurbanın yanlışlıkla büyük miktarda zehir aldığı düşünülüyor.",
+      "ornek_tr": "Soygunun mağduru hırsızı polise tarif etti.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli)",
-          "vurgu": false
+          "k": "The"
         },
         {
           "k": "victim",
-          "a": "kurban",
-          "vurgu": true
-        },
-        {
-          "k": "is",
-          "a": "-dir",
-          "vurgu": false
-        },
-        {
-          "k": "thought",
-          "a": "düşünülüyor",
-          "vurgu": false
-        },
-        {
-          "k": "to",
-          "a": "-ği",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "(geçmiş)",
-          "en": "to have + V3: perfect infinitive",
-          "vurgu": false
-        },
-        {
-          "k": "taken",
-          "a": "almış",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "large",
-          "a": "büyük",
-          "vurgu": false
-        },
-        {
-          "k": "quantity",
-          "a": "miktar",
-          "vurgu": false
+          "vurgu": true,
+          "a": "kurban"
         },
         {
           "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "a": "-in"
         },
         {
-          "k": "poison",
-          "a": "zehir",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "by",
-          "a": "-le",
-          "vurgu": false
+          "k": "robbery",
+          "a": "soygun"
         },
         {
-          "k": "mistake.",
-          "a": "yanlışlık",
-          "en": "by mistake: yanlışlıkla",
-          "vurgu": false
+          "k": "described"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "thief",
+          "a": "hırsız"
+        },
+        {
+          "k": "to",
+          "a": "-ği"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "police.",
+          "a": "polis"
         }
       ]
     },
@@ -12573,77 +12421,34 @@
       "en": "predator",
       "tur": "isim",
       "tr": "yırtıcı (avcı hayvan)",
-      "ornek_tr": "Yırtıcılar tarafından saldırıya uğramaktan kaçınmak için böcek türlerinin kamuflaj gibi birçok stratejisi vardır.",
+      "ornek_tr": "Aslan zebraları avlayan bir yırtıcıdır.",
       "ornek_tokenlar": [
         {
-          "k": "To",
-          "a": "-mak için",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "avoid",
-          "a": "kaçınmak",
-          "vurgu": false
+          "k": "lion",
+          "a": "aslan"
         },
         {
-          "k": "being",
-          "a": "(edilgen)",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "attacked",
-          "a": "saldırılmak",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "by",
-          "a": "tarafından",
-          "vurgu": false
+          "k": "predator",
+          "vurgu": true,
+          "a": "yırtıcı"
         },
         {
-          "k": "predators,",
-          "a": "yırtıcılar",
-          "vurgu": true
+          "k": "that"
         },
         {
-          "k": "beetle",
-          "a": "böcek/kınkanatlı",
-          "vurgu": false
+          "k": "hunts"
         },
         {
-          "k": "species",
-          "a": "türler",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "sahiptir",
-          "vurgu": false
-        },
-        {
-          "k": "many",
-          "a": "birçok",
-          "vurgu": false
-        },
-        {
-          "k": "strategies",
-          "a": "stratejiler",
-          "vurgu": false
-        },
-        {
-          "k": "such",
-          "a": "gibi",
-          "vurgu": false
-        },
-        {
-          "k": "as",
-          "a": "gibi",
-          "vurgu": false
-        },
-        {
-          "k": "camouflage.",
-          "a": "kamuflaj",
-          "vurgu": false
+          "k": "zebras."
         }
       ]
     },
@@ -13095,87 +12900,37 @@
       "en": "parasite",
       "tur": "isim",
       "tr": "parazit, asalak",
-      "ornek_tr": "Sivrisinek ısırıklarıyla bulaşan parazitlerin neden olduğu bir hastalık olan sıtma, önemli bir halk sağlığı sorunudur.",
+      "ornek_tr": "Bir parazit başka bir organizmanın üzerinde ya da içinde yaşar.",
       "ornek_tokenlar": [
         {
-          "k": "Malaria,",
-          "a": "sıtma",
-          "vurgu": false
+          "k": "A"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "parasite",
+          "vurgu": true,
+          "a": "parazit"
         },
         {
-          "k": "disease",
-          "a": "hastalık",
-          "vurgu": false
+          "k": "lives",
+          "a": "yaşamlar"
         },
         {
-          "k": "caused",
-          "a": "neden olunan",
-          "vurgu": false
+          "k": "on",
+          "a": "-de"
         },
         {
-          "k": "by",
-          "a": "tarafından",
-          "vurgu": false
+          "k": "or"
         },
         {
-          "k": "parasites",
-          "a": "parazitler",
-          "vurgu": true
+          "k": "inside",
+          "a": "içine"
         },
         {
-          "k": "transmitted",
-          "a": "bulaşan/iletilen",
-          "vurgu": false
+          "k": "another",
+          "a": "bir diğer"
         },
         {
-          "k": "through",
-          "a": "yoluyla",
-          "vurgu": false
-        },
-        {
-          "k": "mosquito",
-          "a": "sivrisinek",
-          "vurgu": false
-        },
-        {
-          "k": "bites,",
-          "a": "ısırıklar",
-          "vurgu": false
-        },
-        {
-          "k": "is",
-          "a": "-dir",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "significant",
-          "a": "önemli",
-          "vurgu": false
-        },
-        {
-          "k": "public",
-          "a": "halk/kamu",
-          "vurgu": false
-        },
-        {
-          "k": "health",
-          "a": "sağlık",
-          "vurgu": false
-        },
-        {
-          "k": "concern.",
-          "a": "endişe/sorun",
-          "vurgu": false
+          "k": "organism."
         }
       ]
     },
@@ -17116,72 +16871,41 @@
       "en": "intend",
       "tur": "fiil",
       "tr": "niyet etmek, amaçlamak",
-      "ornek_tr": "Şef, restoranın menüsü için yeni bir imza yemek yaratmayı amaçlıyor.",
+      "ornek_tr": "Kursu yaz gelmeden bitirmeyi niyet ediyorum.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "I"
         },
         {
-          "k": "chef",
-          "a": "şef",
-          "vurgu": false
-        },
-        {
-          "k": "intends",
-          "a": "amaçlıyor",
-          "vurgu": true
+          "k": "intend",
+          "vurgu": true,
+          "a": "niyet etmek"
         },
         {
           "k": "to",
-          "a": "(-mek)",
-          "vurgu": false
+          "a": "(-mek)"
         },
         {
-          "k": "create",
-          "a": "yaratmak",
-          "vurgu": false
+          "k": "finish",
+          "a": "bitirmek"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "new",
-          "a": "yeni",
-          "vurgu": false
+          "k": "course",
+          "a": "kurs"
         },
         {
-          "k": "signature",
-          "a": "imza",
-          "vurgu": false
+          "k": "before",
+          "a": "-den önce"
         },
         {
-          "k": "dish",
-          "a": "yemek",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "for",
-          "a": "için",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "restaurant's",
-          "a": "restoranın",
-          "vurgu": false
-        },
-        {
-          "k": "menu.",
-          "a": "menü",
-          "vurgu": false
+          "k": "summer.",
+          "a": "yaz"
         }
       ]
     },
@@ -18531,81 +18255,49 @@
       "en": "poison",
       "tur": "isim",
       "tr": "zehir",
-      "ornek_tr": "Kurbanın yanlışlıkla büyük miktarda zehir aldığı düşünülüyor.",
+      "ornek_tr": "Bazı kurbağalar tehdit altında hissettiklerinde derileri yoluyla zehir salgılar.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "o",
-          "vurgu": false
+          "k": "Some",
+          "a": "bazı"
         },
         {
-          "k": "victim",
-          "a": "kurban",
-          "vurgu": false
+          "k": "frogs"
         },
         {
-          "k": "is",
-          "a": "-dir",
-          "vurgu": false
-        },
-        {
-          "k": "thought",
-          "a": "düşünülüyor",
-          "vurgu": false
-        },
-        {
-          "k": "to",
-          "a": "-mış olmak",
-          "en": "to have + V3: önceki zaman",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "",
-          "en": "to have + V3: önceki zaman",
-          "vurgu": false
-        },
-        {
-          "k": "taken",
-          "a": "almak",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "large",
-          "a": "büyük",
-          "vurgu": false
-        },
-        {
-          "k": "quantity",
-          "a": "miktar",
-          "vurgu": false
-        },
-        {
-          "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "k": "release",
+          "a": "yayımlamak"
         },
         {
           "k": "poison",
-          "a": "zehir",
-          "vurgu": true
+          "vurgu": true,
+          "a": "zehir"
         },
         {
-          "k": "by",
-          "a": "",
-          "en": "by mistake: yanlışlıkla",
-          "vurgu": false
+          "k": "through",
+          "a": "içinden"
         },
         {
-          "k": "mistake.",
-          "a": "yanlışlıkla",
-          "en": "by mistake: yanlışlıkla",
-          "vurgu": false
+          "k": "their"
+        },
+        {
+          "k": "skin",
+          "a": "deri"
+        },
+        {
+          "k": "when",
+          "a": "ne zaman"
+        },
+        {
+          "k": "they"
+        },
+        {
+          "k": "feel",
+          "a": "hissetmek"
+        },
+        {
+          "k": "threatened.",
+          "a": "tehdit etti"
         }
       ]
     },

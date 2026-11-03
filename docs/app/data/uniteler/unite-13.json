@@ -1818,45 +1818,41 @@
       "en": "praise",
       "tur": "fiil",
       "tr": "övmek",
-      "ornek_tr": "Eleştirmenlerin övdüğü yazar mütevazı kaldı.",
+      "ornek_tr": "Öğretmen öğrencileri çalışkanlıkları nedeniyle övdü.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "author",
-          "a": "yazar",
-          "vurgu": false
-        },
-        {
-          "k": "whom",
-          "a": "ki onu",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "vurgu": false
-        },
-        {
-          "k": "critics",
-          "a": "eleştirmenler",
-          "vurgu": false
+          "k": "teacher",
+          "a": "öğretmen"
         },
         {
           "k": "praised",
-          "a": "övdü",
-          "vurgu": true
+          "vurgu": true,
+          "a": "övdü"
         },
         {
-          "k": "remained",
-          "a": "kaldı",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "modest.",
-          "a": "mütevazı",
-          "vurgu": false
+          "k": "students",
+          "a": "öğrenci"
+        },
+        {
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "their"
+        },
+        {
+          "k": "hard",
+          "a": "zor"
+        },
+        {
+          "k": "work.",
+          "a": "çalışmak"
         }
       ]
     },
@@ -3101,48 +3097,33 @@
       "en": "priceless",
       "tur": "sıfat",
       "tr": "paha biçilmez",
-      "ornek_tr": "Yangından kurtulan antik el yazması paha biçilmez.",
+      "ornek_tr": "Tablo müze için paha biçilmez.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "ancient",
-          "a": "antik",
-          "vurgu": false
+          "k": "painting",
+          "a": "tablo"
         },
         {
-          "k": "manuscript",
-          "a": "el yazması",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "which",
-          "a": "ki o",
-          "vurgu": false
+          "k": "priceless",
+          "vurgu": true,
+          "a": "paha biçilmez"
         },
         {
-          "k": "survived",
-          "a": "hayatta kaldı",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "fire",
-          "vurgu": false
-        },
-        {
-          "k": "is",
-          "vurgu": false
-        },
-        {
-          "k": "priceless.",
-          "a": "paha biçilmez",
-          "vurgu": true
+          "k": "museum.",
+          "a": "müze"
         }
       ]
     },
@@ -3784,41 +3765,35 @@
       "en": "dislike",
       "tur": "fiil",
       "tr": "hoşlanmamak",
-      "ornek_tr": "Göreliliği geliştiren Einstein, katı kurallardan hoşlanmazdı.",
+      "ornek_tr": "Birçok insan uzun kuyrukta beklemekten hoşlanmaz.",
       "ornek_tokenlar": [
         {
-          "k": "Einstein,",
-          "a": "Einstein",
-          "vurgu": false
+          "k": "Many",
+          "a": "birçok"
         },
         {
-          "k": "who",
-          "a": "ki o",
-          "vurgu": false
+          "k": "people",
+          "a": "insanlar"
         },
         {
-          "k": "developed",
-          "a": "geliştirdi",
-          "vurgu": false
+          "k": "dislike",
+          "vurgu": true,
+          "a": "hoşlanmamak"
         },
         {
-          "k": "relativity,",
-          "a": "görelilik",
-          "vurgu": false
+          "k": "waiting",
+          "a": "bekliyor"
         },
         {
-          "k": "disliked",
-          "a": "hoşlanmazdı",
-          "vurgu": true
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "rigid",
-          "vurgu": false
+          "k": "long",
+          "a": "uzun"
         },
         {
-          "k": "rules.",
-          "a": "katı kurallar",
-          "vurgu": false
+          "k": "queues."
         }
       ]
     },
@@ -4336,45 +4311,30 @@
       "en": "scandal",
       "tur": "isim",
       "tr": "skandal, rezalet",
-      "ornek_tr": "Skandalı ifşa eden gazeteci tehditler aldı.",
+      "ornek_tr": "Skandal bütün ülkeyi şoke etti.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "vurgu": false
-        },
-        {
-          "k": "journalist",
-          "a": "gazeteci",
-          "vurgu": false
-        },
-        {
-          "k": "who",
-          "a": "ki o",
-          "vurgu": false
-        },
-        {
-          "k": "exposed",
-          "a": "ifşa etti",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "vurgu": false
+          "k": "The"
         },
         {
           "k": "scandal",
-          "a": "skandal",
-          "vurgu": true
+          "vurgu": true,
+          "a": "skandal"
         },
         {
-          "k": "received",
-          "a": "aldı",
-          "vurgu": false
+          "k": "shocked",
+          "a": "sarstı"
         },
         {
-          "k": "threats.",
-          "a": "tehditler",
-          "vurgu": false
+          "k": "the"
+        },
+        {
+          "k": "entire",
+          "a": "bütün"
+        },
+        {
+          "k": "country.",
+          "a": "ülke"
         }
       ]
     },
@@ -5267,37 +5227,38 @@
       "en": "penalty",
       "tur": "isim",
       "tr": "ceza, yaptırım",
-      "ornek_tr": "İntihal yapan öğrenciler ciddi cezalarla karşılaşır.",
+      "ornek_tr": "Kanun, alkollü araç kullanmak için ağır cezalar öngörüyor.",
       "ornek_tokenlar": [
         {
-          "k": "Students",
-          "a": "öğrenciler",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "who",
-          "a": "ki onlar",
-          "vurgu": false
+          "k": "law",
+          "a": "kanun"
         },
         {
-          "k": "plagiarize",
-          "a": "intihal yapar",
-          "vurgu": false
+          "k": "sets",
+          "a": "batar"
         },
         {
-          "k": "face",
-          "a": "karşılaşır",
-          "vurgu": false
+          "k": "heavy",
+          "a": "ağır"
         },
         {
-          "k": "serious",
-          "a": "ciddi",
-          "vurgu": false
+          "k": "penalties",
+          "vurgu": true,
+          "a": "cezalar"
         },
         {
-          "k": "penalties.",
-          "a": "cezalar",
-          "vurgu": true
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "drunk"
+        },
+        {
+          "k": "driving.",
+          "a": "sürüyor"
         }
       ]
     },

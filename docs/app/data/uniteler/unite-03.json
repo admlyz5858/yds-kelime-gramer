@@ -1821,43 +1821,44 @@
       "en": "complete",
       "tur": "fiil",
       "tr": "tamamlamak, bitirmek",
-      "ornek_tr": "Doktora derecesini henüz tamamlamadı.",
+      "ornek_tr": "Hafta sonundan önce raporunu bitirmeye çalışıyor.",
       "ornek_tokenlar": [
         {
-          "k": "He",
-          "a": "o",
-          "vurgu": false
+          "k": "She"
         },
         {
-          "k": "hasn't",
-          "a": "(yardımcı fiil-olumsuz)",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "completed",
-          "a": "tamamlamadı",
-          "en": "hasn't + V3: present perfect olumsuz",
-          "vurgu": true
+          "k": "trying",
+          "a": "çalışmaktadır"
         },
         {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "doctorate",
-          "a": "doktora",
-          "vurgu": false
+          "k": "complete",
+          "vurgu": true,
+          "a": "tamamlamak"
         },
         {
-          "k": "degree",
-          "a": "derece",
-          "vurgu": false
+          "k": "her"
         },
         {
-          "k": "yet.",
-          "a": "henüz",
-          "vurgu": false
+          "k": "report",
+          "a": "rapor"
+        },
+        {
+          "k": "before",
+          "a": "-den önce"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "weekend.",
+          "a": "hafta sonu"
         }
       ]
     },

@@ -1677,47 +1677,30 @@
       "en": "approve",
       "tur": "fiil",
       "tr": "onaylamak",
-      "ornek_tr": "Plan riskliydi; ancak kurul onu onayladı.",
+      "ornek_tr": "Komite yeni bütçeyi onayladı.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "plan",
-          "vurgu": false
-        },
-        {
-          "k": "was",
-          "vurgu": false
-        },
-        {
-          "k": "risky;",
-          "a": "riskli",
-          "vurgu": false
-        },
-        {
-          "k": "however,",
-          "a": "ancak",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "vurgu": false
-        },
-        {
-          "k": "board",
-          "vurgu": false
+          "k": "committee",
+          "a": "komite"
         },
         {
           "k": "approved",
-          "a": "onayladı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "onayladı"
         },
         {
-          "k": "it.",
-          "a": "onu",
-          "vurgu": false
+          "k": "the"
+        },
+        {
+          "k": "new",
+          "a": "yeni"
+        },
+        {
+          "k": "budget.",
+          "a": "bütçe"
         }
       ]
     },
@@ -1776,50 +1759,45 @@
       "en": "lazy",
       "tur": "sıfat",
       "tr": "tembel",
-      "ornek_tr": "O çok yetenekli, oysa erkek kardeşi oldukça tembel.",
+      "ornek_tr": "Bu kadar tembel olma; kalk ve odanı temizle.",
       "ornek_tokenlar": [
         {
-          "k": "She",
-          "vurgu": false
+          "k": "Don't",
+          "a": "-me (olumsuz emir)"
         },
         {
-          "k": "is",
-          "vurgu": false
+          "k": "be"
         },
         {
-          "k": "very",
-          "vurgu": false
+          "k": "so",
+          "a": "bu yüzden"
         },
         {
-          "k": "talented,",
-          "a": "yetenekli",
-          "vurgu": false
+          "k": "lazy;",
+          "vurgu": true,
+          "a": "tembel"
         },
         {
-          "k": "whereas",
-          "a": "oysa",
-          "vurgu": false
+          "k": "get",
+          "a": "almak"
         },
         {
-          "k": "her",
-          "vurgu": false
+          "k": "up",
+          "a": "yukarı"
         },
         {
-          "k": "brother",
-          "vurgu": false
+          "k": "and"
         },
         {
-          "k": "is",
-          "vurgu": false
+          "k": "clean",
+          "a": "temizlemek"
         },
         {
-          "k": "rather",
-          "vurgu": false
+          "k": "your"
         },
         {
-          "k": "lazy.",
-          "a": "tembel",
-          "vurgu": true
+          "k": "room.",
+          "a": "oda"
         }
       ]
     },
@@ -2358,46 +2336,30 @@
       "en": "repeat",
       "tur": "fiil",
       "tr": "tekrarlamak",
-      "ornek_tr": "Veriler eksikti; bu yüzden çalışma tekrarlandı.",
+      "ornek_tr": "Soruyu tekrar eder misiniz, lütfen?",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "vurgu": false
+          "k": "Could",
+          "a": "-ebildi"
         },
         {
-          "k": "data",
-          "vurgu": false
+          "k": "you"
         },
         {
-          "k": "was",
-          "vurgu": false
+          "k": "repeat",
+          "vurgu": true,
+          "a": "tekrarlamak"
         },
         {
-          "k": "incomplete;",
-          "a": "eksik",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "therefore,",
-          "a": "bu yüzden",
-          "vurgu": false
+          "k": "question,",
+          "a": "soru"
         },
         {
-          "k": "the",
-          "vurgu": false
-        },
-        {
-          "k": "study",
-          "vurgu": false
-        },
-        {
-          "k": "was",
-          "vurgu": false
-        },
-        {
-          "k": "repeated.",
-          "a": "tekrarlandı",
-          "vurgu": true
+          "k": "please?",
+          "a": "lütfen"
         }
       ]
     },

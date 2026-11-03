@@ -5817,69 +5817,44 @@
       "en": "wallet",
       "tur": "isim",
       "tr": "cüzdan",
-      "ornek_tr": "Cüzdanını düşürdün. Senin için alacağım.",
+      "ornek_tr": "Bu sabah cüzdanımı mutfak masasında unuttum.",
       "ornek_tokenlar": [
         {
-          "k": "You",
-          "a": "sen",
-          "vurgu": false
+          "k": "I"
         },
         {
-          "k": "have",
-          "a": "(yardımcı)",
-          "vurgu": false
+          "k": "left",
+          "a": "terk etti"
         },
         {
-          "k": "dropped",
-          "a": "düşürdün",
-          "vurgu": false
+          "k": "my"
         },
         {
-          "k": "your",
-          "a": "senin",
-          "vurgu": false
+          "k": "wallet",
+          "vurgu": true,
+          "a": "cüzdan"
         },
         {
-          "k": "wallet.",
-          "a": "cüzdan",
-          "vurgu": true
+          "k": "on",
+          "a": "-de"
         },
         {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "will",
-          "a": "-ecek",
-          "en": "anlık karar: will",
-          "vurgu": false
+          "k": "kitchen",
+          "a": "mutfak"
         },
         {
-          "k": "pick",
-          "a": "alacağım",
-          "en": "pick up = yerden almak",
-          "vurgu": false
+          "k": "table",
+          "a": "tablo"
         },
         {
-          "k": "it",
-          "a": "onu",
-          "vurgu": false
+          "k": "this"
         },
         {
-          "k": "up",
-          "a": "(yukarı)",
-          "vurgu": false
-        },
-        {
-          "k": "for",
-          "a": "-için",
-          "vurgu": false
-        },
-        {
-          "k": "you.",
-          "a": "sen",
-          "vurgu": false
+          "k": "morning.",
+          "a": "sabah"
         }
       ]
     },
@@ -6772,73 +6747,39 @@
       "en": "festival",
       "tur": "isim",
       "tr": "festival",
-      "ornek_tr": "Düzenleyiciler programı onayladı; festival Temmuz'da yapılacak.",
+      "ornek_tr": "Festival her yaz binlerce ziyaretçiyi çekiyor.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli)",
-          "vurgu": false
-        },
-        {
-          "k": "organizers",
-          "a": "düzenleyiciler",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "(tamamlanma)",
-          "vurgu": false
-        },
-        {
-          "k": "confirmed",
-          "a": "onayladı",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
-        },
-        {
-          "k": "schedule;",
-          "a": "program",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
+          "k": "The"
         },
         {
           "k": "festival",
-          "a": "festival",
-          "vurgu": true
+          "vurgu": true,
+          "a": "festival"
         },
         {
-          "k": "will",
-          "a": "-acak",
-          "vurgu": false
+          "k": "attracts",
+          "a": "çeker"
         },
         {
-          "k": "take",
-          "a": "(yapılmak)",
-          "vurgu": false
+          "k": "thousands",
+          "a": "binlerce"
         },
         {
-          "k": "place",
-          "a": "yer",
-          "en": "take place: gerçekleşmek",
-          "vurgu": false
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
+          "k": "visitors",
+          "a": "ziyaretçi"
         },
         {
-          "k": "July.",
-          "a": "Temmuz",
-          "vurgu": false
+          "k": "every",
+          "a": "her bir"
+        },
+        {
+          "k": "summer.",
+          "a": "yaz"
         }
       ]
     },
@@ -8419,52 +8360,33 @@
       "en": "hives",
       "tur": "isim",
       "tr": "arı kovanları",
-      "ornek_tr": "Bal arıları kovanlarında karmaşık dans hareketleriyle iletişim kurar.",
+      "ornek_tr": "Arıcı kovanları her hafta kontrol etti.",
       "ornek_tokenlar": [
         {
-          "k": "Honeybees",
-          "a": "bal arıları",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "communicate",
-          "a": "iletişim kurar",
-          "vurgu": false
+          "k": "beekeeper"
         },
         {
-          "k": "through",
-          "a": "aracılığıyla",
-          "vurgu": false
+          "k": "checked",
+          "a": "kontrol etmek"
         },
         {
-          "k": "intricate",
-          "a": "karmaşık",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "dance",
-          "a": "dans",
-          "vurgu": false
+          "k": "hives",
+          "vurgu": true,
+          "a": "kovanlar"
         },
         {
-          "k": "patterns",
-          "a": "desenler/hareketler",
-          "vurgu": false
+          "k": "every",
+          "a": "her bir"
         },
         {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
-        },
-        {
-          "k": "their",
-          "a": "onların",
-          "vurgu": false
-        },
-        {
-          "k": "hives.",
-          "a": "kovanlar",
-          "vurgu": true
+          "k": "week.",
+          "a": "hafta"
         }
       ]
     },
@@ -13274,47 +13196,42 @@
       "en": "conserve",
       "tur": "fiil",
       "tr": "korumak, tasarruflu kullanmak",
-      "ornek_tr": "Yaz kuraklığı boyunca suyu tasarruflu kullanmalıyız.",
+      "ornek_tr": "Soğuk aylarda enerjiden tasarruf etmemiz gerekiyor.",
       "ornek_tokenlar": [
         {
-          "k": "We",
-          "a": "biz",
-          "vurgu": false
+          "k": "We"
         },
         {
-          "k": "should",
-          "a": "-meliyiz",
-          "vurgu": false
+          "k": "need",
+          "a": "ihtiyaç duymak"
+        },
+        {
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "conserve",
-          "a": "tasarruflu kullanmak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "tasarruflu kullanmak"
         },
         {
-          "k": "water",
-          "a": "su",
-          "vurgu": false
+          "k": "energy",
+          "a": "enerji"
         },
         {
           "k": "during",
-          "a": "boyunca",
-          "vurgu": false
+          "a": "boyunca"
         },
         {
-          "k": "the",
-          "a": "(artikel)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "summer",
-          "a": "yaz",
-          "vurgu": false
+          "k": "cold",
+          "a": "soğuk"
         },
         {
-          "k": "drought.",
-          "a": "kuraklık",
-          "vurgu": false
+          "k": "months.",
+          "a": "aylar"
         }
       ]
     },
@@ -13370,62 +13287,45 @@
       "en": "consult",
       "tur": "fiil",
       "tr": "danışmak, başvurmak",
-      "ornek_tr": "Sağlığınızla ilgili her konuda bir doktora danışmalısınız.",
+      "ornek_tr": "Yeni bir diyete başlamadan önce lütfen doktorunuza danışın.",
       "ornek_tokenlar": [
         {
-          "k": "You",
-          "a": "sen/siz",
-          "vurgu": false
-        },
-        {
-          "k": "should",
-          "a": "-malısınız",
-          "vurgu": false
+          "k": "Please",
+          "a": "lütfen"
         },
         {
           "k": "consult",
-          "a": "danışmak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "danışmak"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "your"
         },
         {
-          "k": "physician",
-          "a": "doktor",
-          "vurgu": false
+          "k": "doctor",
+          "a": "doktor"
         },
         {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
+          "k": "before",
+          "a": "-den önce"
         },
         {
-          "k": "all",
-          "a": "tüm",
-          "vurgu": false
+          "k": "you"
         },
         {
-          "k": "matters",
-          "a": "konular",
-          "vurgu": false
+          "k": "start",
+          "a": "başlamak"
         },
         {
-          "k": "about",
-          "a": "hakkında",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "your",
-          "a": "senin",
-          "vurgu": false
+          "k": "new",
+          "a": "yeni"
         },
         {
-          "k": "health.",
-          "a": "sağlık",
-          "vurgu": false
+          "k": "diet.",
+          "a": "beslenme"
         }
       ]
     },
@@ -13715,47 +13615,52 @@
       "en": "treks",
       "tur": "isim",
       "tr": "(zorlu/uzun) yürüyüşler, doğa yürüyüşleri",
-      "ornek_tr": "Yürüyüşçüler uzun yürüyüşlerde acil durum malzemeleri taşımalıdır.",
+      "ornek_tr": "Rehber bize dağ vadilerindeki uzun yürüyüşlerden bahsetti.",
       "ornek_tokenlar": [
         {
-          "k": "Hikers",
-          "a": "yürüyüşçüler",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "should",
-          "a": "-meli",
-          "vurgu": false
+          "k": "guide",
+          "a": "rehber"
         },
         {
-          "k": "carry",
-          "a": "taşımak",
-          "vurgu": false
+          "k": "told",
+          "a": "söylendi"
         },
         {
-          "k": "emergency",
-          "a": "acil durum",
-          "vurgu": false
+          "k": "us",
+          "a": "bizi"
         },
         {
-          "k": "supplies",
-          "a": "malzemeler",
-          "vurgu": false
+          "k": "about",
+          "a": "hakkında"
         },
         {
-          "k": "on",
-          "a": "-de",
-          "vurgu": false
+          "k": "the"
         },
         {
           "k": "long",
-          "a": "uzun",
-          "vurgu": false
+          "a": "uzun"
         },
         {
-          "k": "treks.",
-          "a": "yürüyüşler",
-          "vurgu": true
+          "k": "treks",
+          "vurgu": true,
+          "a": "yürüyüşler"
+        },
+        {
+          "k": "through",
+          "a": "içinden"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "mountain",
+          "a": "dağ"
+        },
+        {
+          "k": "valleys."
         }
       ]
     },
@@ -14452,73 +14357,36 @@
       "en": "attend",
       "tur": "fiil",
       "tr": "katılmak, devam etmek",
-      "ornek_tr": "Yarın toplantıya katılmayacağım çünkü doktor randevum var.",
+      "ornek_tr": "Birçok öğrenci işten sonra akşam derslerine katılıyor.",
       "ornek_tokenlar": [
         {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
+          "k": "Many",
+          "a": "birçok"
         },
         {
-          "k": "won't",
-          "a": "-meyeceğim",
-          "vurgu": false
+          "k": "students",
+          "a": "öğrenci"
         },
         {
-          "k": "be",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "k": "attend",
+          "vurgu": true,
+          "a": "katılmak"
         },
         {
-          "k": "attending",
-          "a": "katılıyor (olacağım)",
-          "en": "future continuous",
-          "vurgu": true
+          "k": "evening",
+          "a": "akşam"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "classes",
+          "a": "derslere"
         },
         {
-          "k": "meeting",
-          "a": "toplantı",
-          "vurgu": false
+          "k": "after",
+          "a": "-den sonra"
         },
         {
-          "k": "tomorrow",
-          "a": "yarın",
-          "vurgu": false
-        },
-        {
-          "k": "because",
-          "a": "çünkü",
-          "vurgu": false
-        },
-        {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "sahibim",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "doctor's",
-          "a": "doktorun",
-          "vurgu": false
-        },
-        {
-          "k": "appointment.",
-          "a": "randevu",
-          "vurgu": false
+          "k": "work.",
+          "a": "çalışmak"
         }
       ]
     },
@@ -14897,98 +14765,51 @@
       "en": "lay",
       "tur": "fiil",
       "tr": "(yere) koymak, sermek, döşemek; (temel) atmak",
-      "ornek_tr": "İnşaat yavaş ama istikrarlı ilerliyor; bu ayın sonuna kadar temeli atmış olacaklar.",
+      "ornek_tr": "Oturma odasına yeni bir halı sermeyi planlıyorlar.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "They"
         },
         {
-          "k": "construction",
-          "a": "inşaat",
-          "vurgu": false
+          "k": "are"
         },
         {
-          "k": "is",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "k": "going",
+          "a": "-ecek"
         },
         {
-          "k": "slow",
-          "a": "yavaş",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "but",
-          "a": "ama",
-          "vurgu": false
+          "k": "lay",
+          "vurgu": true,
+          "a": "bırakmak"
         },
         {
-          "k": "steady;",
-          "a": "istikrarlı",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "by",
-          "a": "-e kadar",
-          "vurgu": false
+          "k": "new",
+          "a": "yeni"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "carpet"
         },
         {
-          "k": "end",
-          "a": "son",
-          "vurgu": false
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "this",
-          "a": "bu",
-          "vurgu": false
+          "k": "living",
+          "a": "yaşam"
         },
         {
-          "k": "month,",
-          "a": "ay",
-          "vurgu": false
-        },
-        {
-          "k": "they",
-          "a": "onlar",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "-ecek",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
-        },
-        {
-          "k": "laid",
-          "a": "atmış (olacaklar)",
-          "en": "future perfect: lay-laid-laid",
-          "vurgu": true
-        },
-        {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "foundation.",
-          "a": "temel",
-          "vurgu": false
+          "k": "room.",
+          "a": "oda"
         }
       ]
     },
@@ -15676,94 +15497,41 @@
       "en": "decorate",
       "tur": "fiil",
       "tr": "süslemek, dekore etmek",
-      "ornek_tr": "Bir sürpriz planlıyor; kocası geldiğinde tüm evi dekore etmiş olacak.",
+      "ornek_tr": "Yılbaşı partisi için sınıfı süslediler.",
       "ornek_tokenlar": [
         {
-          "k": "She's",
-          "a": "o (planlıyor)",
-          "vurgu": false
-        },
-        {
-          "k": "planning",
-          "a": "planlıyor",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "surprise;",
-          "a": "sürpriz",
-          "vurgu": false
-        },
-        {
-          "k": "by",
-          "a": "-e kadar",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "time",
-          "a": "zaman",
-          "en": "by the time: -dığı zamana kadar",
-          "vurgu": false
-        },
-        {
-          "k": "her",
-          "a": "onun",
-          "vurgu": false
-        },
-        {
-          "k": "husband",
-          "a": "koca",
-          "vurgu": false
-        },
-        {
-          "k": "arrives,",
-          "a": "varır",
-          "vurgu": false
-        },
-        {
-          "k": "she",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "-ecek",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "(bitmiş gelecek)",
-          "en": "will have V3",
-          "vurgu": false
+          "k": "They"
         },
         {
           "k": "decorated",
-          "a": "dekore etmiş",
-          "vurgu": true
+          "vurgu": true,
+          "a": "dekore etmiş"
         },
         {
-          "k": "the",
-          "a": "(artikel)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "entire",
-          "a": "tüm",
-          "vurgu": false
+          "k": "classroom",
+          "a": "sınıf"
         },
         {
-          "k": "house.",
-          "a": "ev",
-          "vurgu": false
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "New",
+          "a": "yeni"
+        },
+        {
+          "k": "Year",
+          "a": "yıl"
+        },
+        {
+          "k": "party.",
+          "a": "parti"
         }
       ]
     },
@@ -17152,88 +16920,43 @@
       "en": "coexist",
       "tur": "fiil",
       "tr": "bir arada yaşamak",
-      "ornek_tr": "Antlaşmayı imzaladıktan sonra, uluslar onyıllardır ilk kez barış içinde bir arada yaşayacak.",
+      "ornek_tr": "Farklı kültürler aynı şehirde barış içinde bir arada yaşayabilir.",
       "ornek_tokenlar": [
         {
-          "k": "Once",
-          "a": "-dığında",
-          "vurgu": false
+          "k": "Different",
+          "a": "farklı"
         },
         {
-          "k": "they",
-          "a": "onlar",
-          "vurgu": false
+          "k": "cultures",
+          "a": "kültürler"
         },
         {
-          "k": "sign",
-          "a": "imzalamak",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
-        },
-        {
-          "k": "treaty,",
-          "a": "antlaşma",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
-        },
-        {
-          "k": "nations",
-          "a": "uluslar",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "-ecek",
-          "vurgu": false
+          "k": "can",
+          "a": "-ebilmek"
         },
         {
           "k": "coexist",
-          "a": "bir arada yaşamak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "bir arada yaşamak"
         },
         {
           "k": "peacefully",
-          "a": "barışçıl bir şekilde",
-          "vurgu": false
-        },
-        {
-          "k": "for",
-          "a": "için",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
-        },
-        {
-          "k": "first",
-          "a": "ilk",
-          "vurgu": false
-        },
-        {
-          "k": "time",
-          "a": "kez",
-          "en": "for the first time = ilk kez",
-          "vurgu": false
+          "a": "barışçıl bir şekilde"
         },
         {
           "k": "in",
-          "a": "-de",
-          "vurgu": false
+          "a": "-de"
         },
         {
-          "k": "decades.",
-          "a": "onyıllardır",
-          "vurgu": false
+          "k": "the"
+        },
+        {
+          "k": "same",
+          "a": "aynı"
+        },
+        {
+          "k": "city.",
+          "a": "şehir"
         }
       ]
     },
@@ -17373,73 +17096,51 @@
       "en": "stumble",
       "tur": "fiil",
       "tr": "tökezlemek; (upon ile) tesadüfen rastlamak",
-      "ornek_tr": "Antik harabeleri keşfederlerken gizli bir odaya rastladılar.",
+      "ornek_tr": "Tepeden koşarken bir taşa takılıp tökezledim.",
       "ornek_tokenlar": [
         {
-          "k": "They",
-          "a": "onlar",
-          "vurgu": false
+          "k": "I"
         },
         {
           "k": "stumbled",
-          "a": "rastladılar",
-          "en": "stumble upon = tesadüfen bulmak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "rastladılar"
         },
         {
-          "k": "upon",
-          "a": "-e",
-          "vurgu": false
+          "k": "over",
+          "a": "üstünde"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "hidden",
-          "a": "gizli",
-          "vurgu": false
-        },
-        {
-          "k": "chamber",
-          "a": "oda",
-          "vurgu": false
+          "k": "rock",
+          "a": "kaya"
         },
         {
           "k": "while",
-          "a": "iken",
-          "vurgu": false
+          "a": "iken"
         },
         {
-          "k": "they",
-          "a": "onlar",
-          "vurgu": false
+          "k": "I"
         },
         {
-          "k": "were",
-          "a": "(geçmiş sürekli)",
-          "vurgu": false
+          "k": "was"
         },
         {
-          "k": "exploring",
-          "a": "keşfediyor",
-          "vurgu": false
+          "k": "running",
+          "a": "koşmak"
         },
         {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
+          "k": "down",
+          "a": "aşağı"
         },
         {
-          "k": "ancient",
-          "a": "antik",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "ruins.",
-          "a": "harabeler",
-          "vurgu": false
+          "k": "hill.",
+          "a": "tepe"
         }
       ]
     },
@@ -17563,73 +17264,44 @@
       "en": "injure",
       "tur": "fiil",
       "tr": "yaralamak, sakatlamak",
-      "ornek_tr": "Dizini sakatladığından beri sahadaki performansı düştü.",
+      "ornek_tr": "Antrenman sırasında takım arkadaşını sakatlamak istemedi.",
       "ornek_tokenlar": [
         {
-          "k": "Ever",
-          "a": "-den beri",
-          "vurgu": false
+          "k": "He"
         },
         {
-          "k": "since",
-          "a": "-den beri",
-          "en": "ever since = -den beri",
-          "vurgu": false
+          "k": "didn't",
+          "a": "(olumsuz geçmiş)"
         },
         {
-          "k": "he",
-          "a": "o",
-          "vurgu": false
+          "k": "want",
+          "a": "istemek"
         },
         {
-          "k": "injured",
-          "a": "sakatladı",
-          "vurgu": true
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
+          "k": "injure",
+          "vurgu": true,
+          "a": "yaralamak"
         },
         {
-          "k": "knee,",
-          "a": "diz",
-          "vurgu": false
+          "k": "his"
         },
         {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
+          "k": "teammate"
         },
         {
-          "k": "performance",
-          "a": "performans",
-          "vurgu": false
+          "k": "during",
+          "a": "sırasında"
         },
         {
-          "k": "on",
-          "a": "-de",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
-        },
-        {
-          "k": "field",
-          "a": "saha",
-          "vurgu": false
-        },
-        {
-          "k": "has",
-          "a": "(yardımcı)",
-          "vurgu": false
-        },
-        {
-          "k": "declined.",
-          "a": "düştü",
-          "vurgu": false
+          "k": "training.",
+          "a": "antrenman"
         }
       ]
     },
@@ -20617,57 +20289,45 @@
       "en": "instinctively",
       "tur": "zarf",
       "tr": "içgüdüsel olarak, sezgisel biçimde",
-      "ornek_tr": "Göçmen kuşlar her yıl içgüdüsel olarak engin okyanusları aşarak yol bulur.",
+      "ornek_tr": "Araba üzerine geldiğinde içgüdüsel olarak geri çekildi.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "",
-          "vurgu": false
-        },
-        {
-          "k": "migratory",
-          "a": "göçmen",
-          "vurgu": false
-        },
-        {
-          "k": "birds",
-          "a": "kuşlar",
-          "vurgu": false
+          "k": "She"
         },
         {
           "k": "instinctively",
-          "a": "içgüdüsel olarak",
-          "vurgu": true
+          "vurgu": true,
+          "a": "içgüdüsel olarak"
         },
         {
-          "k": "navigate",
-          "a": "yol bulur",
-          "vurgu": false
+          "k": "stepped",
+          "a": "aşama"
         },
         {
-          "k": "across",
-          "a": "boyunca",
-          "vurgu": false
+          "k": "back",
+          "a": "geri"
         },
         {
-          "k": "vast",
-          "a": "engin",
-          "vurgu": false
+          "k": "when",
+          "a": "ne zaman"
         },
         {
-          "k": "oceans",
-          "a": "okyanuslar",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "every",
-          "a": "her",
-          "vurgu": false
+          "k": "car",
+          "a": "araba"
         },
         {
-          "k": "year.",
-          "a": "yıl",
-          "vurgu": false
+          "k": "came",
+          "a": "geldi / ortaya çıktı"
+        },
+        {
+          "k": "toward",
+          "a": "-e doğru"
+        },
+        {
+          "k": "her."
         }
       ]
     },
@@ -21131,58 +20791,39 @@
       "en": "debate",
       "tur": "fiil",
       "tr": "tartışmak, müzakere etmek (isim: tartışma, münazara)",
-      "ornek_tr": "Belediye meclisi bu günlerde yeni çevre düzenlemelerini tartışıyor.",
+      "ornek_tr": "Öğrenciler yarın derste bu konuyu tartışacak.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "Students",
+          "a": "öğrenci"
         },
         {
-          "k": "city",
-          "a": "şehir",
-          "vurgu": false
+          "k": "will",
+          "a": "-ecek"
         },
         {
-          "k": "council",
-          "a": "meclis",
-          "vurgu": false
+          "k": "debate",
+          "vurgu": true,
+          "a": "tartışmak"
         },
         {
-          "k": "is",
-          "a": "-iyor",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "debating",
-          "a": "tartışıyor",
-          "vurgu": true
+          "k": "issue",
+          "a": "sorun"
         },
         {
-          "k": "new",
-          "a": "yeni",
-          "vurgu": false
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "environmental",
-          "a": "çevresel",
-          "vurgu": false
+          "k": "class",
+          "a": "sınıf"
         },
         {
-          "k": "regulations",
-          "a": "düzenlemeler",
-          "vurgu": false
-        },
-        {
-          "k": "these",
-          "a": "bu",
-          "vurgu": false
-        },
-        {
-          "k": "days.",
-          "a": "günlerde",
-          "en": "these days: bu günlerde",
-          "vurgu": false
+          "k": "tomorrow.",
+          "a": "yarın"
         }
       ]
     },
@@ -21249,83 +20890,39 @@
       "en": "reforestation",
       "tur": "isim",
       "tr": "ağaçlandırma, yeniden ormanlaştırma",
-      "ornek_tr": "On yıl içinde, ağaçlandırma projesi ekosistemi 25 yıldır yeniden canlandırmış olacak.",
+      "ornek_tr": "Yangından sonra ağaçlandırma çok yıl sürecek.",
       "ornek_tokenlar": [
         {
-          "k": "In",
-          "a": "-de",
-          "vurgu": false
+          "k": "Reforestation",
+          "vurgu": true,
+          "a": "ağaçlandırma"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "after",
+          "a": "-den sonra"
         },
         {
-          "k": "decade,",
-          "a": "on yıl",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "reforestation",
-          "a": "ağaçlandırma",
-          "vurgu": true
-        },
-        {
-          "k": "project",
-          "a": "proje",
-          "vurgu": false
+          "k": "fire",
+          "a": "ateş"
         },
         {
           "k": "will",
-          "a": "-ecek",
-          "vurgu": false
+          "a": "-ecek"
         },
         {
-          "k": "have",
-          "a": "(perfect)",
-          "vurgu": false
+          "k": "take",
+          "a": "almak"
         },
         {
-          "k": "been",
-          "a": "(perfect cont.)",
-          "en": "will have been + V-ing: gelecekte sürmüş olacak",
-          "vurgu": false
-        },
-        {
-          "k": "restoring",
-          "a": "canlandırıyor",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "ecosystem",
-          "a": "ekosistem",
-          "vurgu": false
-        },
-        {
-          "k": "for",
-          "a": "-dir (süre)",
-          "vurgu": false
-        },
-        {
-          "k": "25",
-          "a": "25",
-          "vurgu": false
+          "k": "many",
+          "a": "birçok"
         },
         {
           "k": "years.",
-          "a": "yıl",
-          "vurgu": false
+          "a": "yıl"
         }
       ]
     },
@@ -21333,83 +20930,31 @@
       "en": "restore",
       "tur": "fiil",
       "tr": "eski haline getirmek, onarmak, yeniden canlandırmak",
-      "ornek_tr": "On yıl içinde, ağaçlandırma projesi ekosistemi 25 yıldır yeniden canlandırmış olacak.",
+      "ornek_tr": "Gönüllüler eski kütüphaneyi onarmaya yardım etti.",
       "ornek_tokenlar": [
         {
-          "k": "In",
-          "a": "-de",
-          "vurgu": false
+          "k": "Volunteers",
+          "a": "gönüllüler"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "helped",
+          "a": "yardım etti"
         },
         {
-          "k": "decade,",
-          "a": "on yıl",
-          "vurgu": false
+          "k": "restore",
+          "vurgu": true,
+          "a": "eski haline getirmek"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "reforestation",
-          "a": "ağaçlandırma",
-          "vurgu": false
+          "k": "old",
+          "a": "yaşlı"
         },
         {
-          "k": "project",
-          "a": "proje",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "-ecek",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "(perfect)",
-          "vurgu": false
-        },
-        {
-          "k": "been",
-          "a": "(perfect cont.)",
-          "en": "will have been + V-ing: gelecekte sürmüş olacak",
-          "vurgu": false
-        },
-        {
-          "k": "restoring",
-          "a": "canlandırıyor",
-          "vurgu": true
-        },
-        {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "ecosystem",
-          "a": "ekosistem",
-          "vurgu": false
-        },
-        {
-          "k": "for",
-          "a": "-dir (süre)",
-          "vurgu": false
-        },
-        {
-          "k": "25",
-          "a": "25",
-          "vurgu": false
-        },
-        {
-          "k": "years.",
-          "a": "yıl",
-          "vurgu": false
+          "k": "library.",
+          "a": "kütüphane"
         }
       ]
     },
@@ -21632,67 +21177,47 @@
       "en": "flash",
       "tur": "fiil",
       "tr": "çakmak, parlamak, bir an parıldamak (isim: parıltı, an)",
-      "ornek_tr": "Fırtına sırasında, gökyüzünde her birkaç saniyede bir şimşek çakıyordu.",
+      "ornek_tr": "Bir kamera flaşı karanlık odayı bir an aydınlattı.",
       "ornek_tokenlar": [
         {
-          "k": "During",
-          "a": "boyunca",
-          "vurgu": false
+          "k": "A"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "camera"
         },
         {
-          "k": "storm,",
-          "a": "fırtına",
-          "vurgu": false
+          "k": "flash",
+          "vurgu": true,
+          "a": "çakmak"
         },
         {
-          "k": "lightning",
-          "a": "şimşek",
-          "vurgu": false
+          "k": "lit"
         },
         {
-          "k": "was",
-          "a": "-iyordu",
-          "vurgu": false
+          "k": "up",
+          "a": "yukarı"
         },
         {
-          "k": "flashing",
-          "a": "çakıyor",
-          "vurgu": true
+          "k": "the"
         },
         {
-          "k": "across",
-          "a": "boyunca",
-          "vurgu": false
+          "k": "dark",
+          "a": "karanlık"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "room",
+          "a": "oda"
         },
         {
-          "k": "sky",
-          "a": "gökyüzü",
-          "vurgu": false
+          "k": "for",
+          "a": "için"
         },
         {
-          "k": "every",
-          "a": "her",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "few",
-          "a": "birkaç",
-          "vurgu": false
-        },
-        {
-          "k": "seconds.",
-          "a": "saniye",
-          "vurgu": false
+          "k": "second.",
+          "a": "saniye"
         }
       ]
     },
@@ -21799,98 +21324,45 @@
       "en": "hiker",
       "tur": "isim",
       "tr": "doğa yürüyüşçüsü",
-      "ornek_tr": "Kurtarma ekibi geldiğinde, yürüyüşçüler mağaradan çıkış yolunu çoktan bulmuştu.",
+      "ornek_tr": "Doğa yürüyüşçüsü öğlen dağın zirvesine ulaştı.",
       "ornek_tokenlar": [
         {
-          "k": "By",
-          "a": "-e kadar",
-          "en": "by the time: -dığı zamana kadar",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "hiker",
+          "vurgu": true,
+          "a": "doğa yürüyüşçüsü"
         },
         {
-          "k": "time",
-          "a": "zaman",
-          "vurgu": false
+          "k": "reached",
+          "a": "varmak"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "rescue",
-          "a": "kurtarma",
-          "vurgu": false
-        },
-        {
-          "k": "team",
-          "a": "ekip",
-          "vurgu": false
-        },
-        {
-          "k": "arrived,",
-          "a": "vardı",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "hikers",
-          "a": "yürüyüşçüler",
-          "vurgu": true
-        },
-        {
-          "k": "had",
-          "a": "(geçmiş yardımcı)",
-          "vurgu": false
-        },
-        {
-          "k": "already",
-          "a": "çoktan",
-          "vurgu": false
-        },
-        {
-          "k": "found",
-          "a": "buldu",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "way",
-          "a": "yol",
-          "vurgu": false
-        },
-        {
-          "k": "out",
-          "a": "dışarı",
-          "vurgu": false
+          "k": "top",
+          "a": "zirve"
         },
         {
           "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "a": "-in"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "cave.",
-          "a": "mağara",
-          "vurgu": false
+          "k": "mountain",
+          "a": "dağ"
+        },
+        {
+          "k": "at",
+          "a": "-de"
+        },
+        {
+          "k": "noon.",
+          "a": "öğlen"
         }
       ]
     },
@@ -21898,78 +21370,51 @@
       "en": "epic",
       "tur": "sıfat",
       "tr": "destansı, görkemli",
-      "ornek_tr": "Yazar, destansı romanını yayımlanmadan önce yedi yıldır yazıyordu.",
+      "ornek_tr": "Film, iki krallık arasındaki bir savaşı anlatan destansı bir hikâye.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "author",
-          "a": "yazar",
-          "vurgu": false
+          "k": "film",
+          "a": "film"
         },
         {
-          "k": "had",
-          "a": "(geçmiş yardımcı)",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "been",
-          "a": "(sürerlik)",
-          "en": "had been + ing: -dığı süredir",
-          "vurgu": false
-        },
-        {
-          "k": "writing",
-          "a": "yazıyor",
-          "vurgu": false
-        },
-        {
-          "k": "her",
-          "a": "onun",
-          "vurgu": false
+          "k": "an"
         },
         {
           "k": "epic",
-          "a": "destansı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "destansı"
         },
         {
-          "k": "novel",
-          "a": "roman",
-          "vurgu": false
+          "k": "story",
+          "a": "hikaye"
         },
         {
-          "k": "for",
-          "a": "-dır/süredir",
-          "vurgu": false
+          "k": "about",
+          "a": "hakkında"
         },
         {
-          "k": "seven",
-          "a": "yedi",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "years",
-          "a": "yıl",
-          "vurgu": false
+          "k": "war",
+          "a": "savaş"
         },
         {
-          "k": "before",
-          "a": "-den önce",
-          "vurgu": false
+          "k": "between",
+          "a": "arasında"
         },
         {
-          "k": "its",
-          "a": "onun",
-          "vurgu": false
+          "k": "two",
+          "a": "iki"
         },
         {
-          "k": "publication.",
-          "a": "yayımlanması",
-          "vurgu": false
+          "k": "kingdoms."
         }
       ]
     },
@@ -22182,72 +21627,37 @@
       "en": "revolutionize",
       "tur": "fiil",
       "tr": "köklü değişim yaratmak, devrim niteliğinde değiştirmek",
-      "ornek_tr": "1492'de Leonardo da Vinci, yenilikçi fikirleriyle sanat ve bilimde devrim yarattı.",
+      "ornek_tr": "İnternet iletişim biçimimizi kökten değiştirdi.",
       "ornek_tokenlar": [
         {
-          "k": "In",
-          "a": "-de",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "1492,",
-          "a": "1492",
-          "vurgu": false
+          "k": "internet",
+          "a": "internet"
         },
         {
-          "k": "Leonardo",
-          "a": "Leonardo",
-          "vurgu": false
-        },
-        {
-          "k": "da",
-          "a": "da",
-          "vurgu": false
-        },
-        {
-          "k": "Vinci",
-          "a": "Vinci",
-          "vurgu": false
+          "k": "has",
+          "a": "sahip olmak"
         },
         {
           "k": "revolutionized",
-          "a": "devrim yarattı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "devrim yarattı"
         },
         {
-          "k": "art",
-          "a": "sanat",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
+          "k": "way",
+          "a": "yol"
         },
         {
-          "k": "science",
-          "a": "bilim",
-          "vurgu": false
+          "k": "we"
         },
         {
-          "k": "with",
-          "a": "ile",
-          "vurgu": false
-        },
-        {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
-        },
-        {
-          "k": "innovative",
-          "a": "yenilikçi",
-          "vurgu": false
-        },
-        {
-          "k": "ideas.",
-          "a": "fikirler",
-          "vurgu": false
+          "k": "communicate.",
+          "a": "iletişim kurmak"
         }
       ]
     },
@@ -25335,73 +24745,41 @@
       "en": "practise",
       "tur": "fiil",
       "tr": "alıştırma yapmak, pratik yapmak",
-      "ornek_tr": "Müzisyen performansından önce aylarca zorlu konçertoyu çalışmıştı.",
+      "ornek_tr": "Her sabah bir saat piyano pratiği yapar.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "She"
         },
         {
-          "k": "musician",
-          "a": "müzisyen",
-          "vurgu": false
+          "k": "practises",
+          "vurgu": true,
+          "a": "pratik yapmak"
         },
         {
-          "k": "had",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "been",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
-        },
-        {
-          "k": "practising",
-          "a": "çalışıyordu",
-          "en": "had been practising: çalışmaktaydı",
-          "vurgu": true
-        },
-        {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "challenging",
-          "a": "zorlu",
-          "vurgu": false
-        },
-        {
-          "k": "concerto",
-          "a": "konçerto",
-          "vurgu": false
+          "k": "piano",
+          "a": "piyano"
         },
         {
           "k": "for",
-          "a": "boyunca",
-          "vurgu": false
+          "a": "boyunca"
         },
         {
-          "k": "months",
-          "a": "aylar",
-          "vurgu": false
+          "k": "an"
         },
         {
-          "k": "before",
-          "a": "önce",
-          "vurgu": false
+          "k": "hour",
+          "a": "saat"
         },
         {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
+          "k": "every",
+          "a": "her bir"
         },
         {
-          "k": "performance.",
-          "a": "performansı",
-          "vurgu": false
+          "k": "morning.",
+          "a": "sabah"
         }
       ]
     },
@@ -26565,42 +25943,33 @@
       "en": "captivate",
       "tur": "fiil",
       "tr": "büyülemek, cezbetmek, hayran bırakmak",
-      "ornek_tr": "Müziğin büyüleyici melodisi seyirciyi cezbetti.",
+      "ornek_tr": "Şarkıcının sesi bütün seyirciyi büyüledi.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli)",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "music's",
-          "a": "müziğin",
-          "vurgu": false
+          "k": "singer's"
         },
         {
-          "k": "enchanting",
-          "a": "büyüleyici",
-          "vurgu": false
-        },
-        {
-          "k": "melody",
-          "a": "melodi",
-          "vurgu": false
+          "k": "voice",
+          "a": "sesini"
         },
         {
           "k": "captivated",
-          "a": "cezbetti",
-          "vurgu": true
+          "vurgu": true,
+          "a": "cezbetti"
         },
         {
-          "k": "the",
-          "a": "(belirli)",
-          "vurgu": false
+          "k": "the"
+        },
+        {
+          "k": "whole",
+          "a": "tüm"
         },
         {
           "k": "audience.",
-          "a": "seyirci",
-          "vurgu": false
+          "a": "seyirci"
         }
       ]
     },

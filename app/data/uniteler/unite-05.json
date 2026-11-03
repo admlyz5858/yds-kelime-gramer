@@ -3333,54 +3333,39 @@
       "en": "dizzy",
       "tur": "sıfat",
       "tr": "başı dönen, sersemlemiş",
-      "ornek_tr": "Başım dönüyor. Sanırım bayılacağım.",
+      "ornek_tr": "Çok hızlı ayağa kalktıktan sonra başım döndü.",
       "ornek_tokenlar": [
         {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
+          "k": "I"
         },
         {
-          "k": "feel",
-          "a": "hissetmek",
-          "vurgu": false
+          "k": "felt",
+          "a": "hissetti"
         },
         {
-          "k": "dizzy.",
-          "a": "başı dönen",
-          "vurgu": true
+          "k": "dizzy",
+          "vurgu": true,
+          "a": "başı dönen"
         },
         {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
+          "k": "after",
+          "a": "-den sonra"
         },
         {
-          "k": "think",
-          "a": "sanmak",
-          "vurgu": false
+          "k": "standing",
+          "a": "duruyor"
         },
         {
-          "k": "I'm",
-          "a": "ben -im",
-          "en": "be going to: -ecek",
-          "vurgu": false
+          "k": "up",
+          "a": "yukarı"
         },
         {
-          "k": "going",
-          "a": "-ecek",
-          "en": "be going to: -ecek",
-          "vurgu": false
+          "k": "too",
+          "a": "de"
         },
         {
-          "k": "to",
-          "a": "-e",
-          "vurgu": false
-        },
-        {
-          "k": "faint.",
-          "a": "bayılmak",
-          "vurgu": false
+          "k": "quickly.",
+          "a": "çabucak"
         }
       ]
     },
@@ -3730,63 +3715,42 @@
       "en": "hike",
       "tur": "fiil",
       "tr": "uzun yürüyüş yapmak, doğa yürüyüşü yapmak",
-      "ornek_tr": "Yarın öğlen, dağ patikalarında yürüyüş yapıyor olacağız.",
+      "ornek_tr": "Gün batmadan tepeye doğa yürüyüşü yapmayı planlıyoruz.",
       "ornek_tokenlar": [
         {
-          "k": "Tomorrow",
-          "a": "yarın",
-          "vurgu": false
+          "k": "We"
         },
         {
-          "k": "at",
-          "a": "-de",
-          "vurgu": false
+          "k": "plan",
+          "a": "planlamak"
         },
         {
-          "k": "noon,",
-          "a": "öğlen",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "we",
-          "a": "biz",
-          "vurgu": false
+          "k": "hike",
+          "vurgu": true,
+          "a": "uzun yürüyüş yapmak"
         },
         {
-          "k": "will",
-          "a": "-ecek",
-          "en": "future continuous",
-          "vurgu": false
+          "k": "up",
+          "a": "yukarı"
         },
         {
-          "k": "be",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "hiking",
-          "a": "yürüyüş yapmak",
-          "vurgu": true
+          "k": "hill",
+          "a": "tepe"
         },
         {
-          "k": "through",
-          "a": "boyunca",
-          "vurgu": false
+          "k": "before",
+          "a": "-den önce"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "mountain",
-          "a": "dağ",
-          "vurgu": false
-        },
-        {
-          "k": "trails.",
-          "a": "patikalar",
-          "vurgu": false
+          "k": "sunset.",
+          "a": "gün batımı"
         }
       ]
     },
@@ -4090,88 +4054,33 @@
       "en": "strategy",
       "tur": "isim",
       "tr": "strateji, izlem",
-      "ornek_tr": "Bizi 14.00 ile 16.00 arasında rahatsız etmeyin. Firmanın pazarlama stratejilerini tartışıyor olacağız.",
+      "ornek_tr": "Antrenör devre arasında stratejisini değiştirdi.",
       "ornek_tokenlar": [
         {
-          "k": "Don't",
-          "a": "-me",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "disturb",
-          "a": "rahatsız etmek",
-          "vurgu": false
+          "k": "coach",
+          "a": "antrenör"
         },
         {
-          "k": "us",
-          "a": "bizi",
-          "vurgu": false
+          "k": "changed",
+          "a": "değiştirmiştir"
         },
         {
-          "k": "between",
-          "a": "arasında",
-          "vurgu": false
+          "k": "his"
         },
         {
-          "k": "2",
-          "a": "2",
-          "vurgu": false
+          "k": "strategy",
+          "vurgu": true,
+          "a": "strateji"
         },
         {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
+          "k": "at",
+          "a": "-de"
         },
         {
-          "k": "4",
-          "a": "4",
-          "vurgu": false
-        },
-        {
-          "k": "pm.",
-          "a": "öğleden sonra",
-          "vurgu": false
-        },
-        {
-          "k": "We",
-          "a": "biz",
-          "vurgu": false
-        },
-        {
-          "k": "will",
-          "a": "-ecek",
-          "en": "future continuous",
-          "vurgu": false
-        },
-        {
-          "k": "be",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
-        },
-        {
-          "k": "discussing",
-          "a": "tartışmak",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "firm's",
-          "a": "firmanın",
-          "vurgu": false
-        },
-        {
-          "k": "marketing",
-          "a": "pazarlama",
-          "vurgu": false
-        },
-        {
-          "k": "strategies.",
-          "a": "stratejiler",
-          "vurgu": true
+          "k": "halftime."
         }
       ]
     },
@@ -6443,74 +6352,44 @@
       "en": "confirm",
       "tur": "fiil",
       "tr": "onaylamak, doğrulamak, teyit etmek",
-      "ornek_tr": "Organizatörler programı onayladı; festival temmuzda gerçekleşecek.",
+      "ornek_tr": "Otele varmadan önce rezervasyonunu onaylaman rica olunur.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
+          "k": "Please",
+          "a": "lütfen"
         },
         {
-          "k": "organizers",
-          "a": "organizatörler",
-          "vurgu": false
+          "k": "confirm",
+          "vurgu": true,
+          "a": "doğrulamak"
         },
         {
-          "k": "have",
-          "a": "-",
-          "en": "present perfect",
-          "vurgu": false
+          "k": "your"
         },
         {
-          "k": "confirmed",
-          "a": "onaylamak",
-          "vurgu": true
+          "k": "reservation",
+          "a": "rezervasyon"
         },
         {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
+          "k": "before",
+          "a": "-den önce"
         },
         {
-          "k": "schedule;",
-          "a": "program",
-          "vurgu": false
+          "k": "you"
         },
         {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
+          "k": "arrive",
+          "a": "varmak"
         },
         {
-          "k": "festival",
-          "a": "festival",
-          "vurgu": false
+          "k": "at",
+          "a": "-de"
         },
         {
-          "k": "will",
-          "a": "-ecek",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "take",
-          "a": "-",
-          "en": "take place: gerçekleşmek",
-          "vurgu": false
-        },
-        {
-          "k": "place",
-          "a": "gerçekleşmek",
-          "vurgu": false
-        },
-        {
-          "k": "in",
-          "a": "-da",
-          "vurgu": false
-        },
-        {
-          "k": "July.",
-          "a": "temmuz",
-          "vurgu": false
+          "k": "hotel."
         }
       ]
     },

@@ -4573,58 +4573,47 @@
       "en": "applicants",
       "tur": "isim",
       "tr": "başvuru sahipleri, adaylar",
-      "ornek_tr": "Başvuru sahipleri özgeçmişlerini e-posta ile veya şahsen gönderebilirler.",
+      "ornek_tr": "Başvuru sahipleri iki fotoğraf ve pasaportlarının bir kopyasını getirmelidir.",
       "ornek_tokenlar": [
         {
           "k": "Applicants",
-          "a": "başvuru sahipleri",
-          "vurgu": true
+          "vurgu": true,
+          "a": "başvuru sahipleri"
         },
         {
-          "k": "may",
-          "a": "-ebilir",
-          "vurgu": false
+          "k": "must",
+          "a": "-meli"
         },
         {
-          "k": "submit",
-          "a": "sunmak, göndermek",
-          "vurgu": false
+          "k": "bring",
+          "a": "getirmek"
         },
         {
-          "k": "their",
-          "a": "onların",
-          "vurgu": false
+          "k": "two",
+          "a": "iki"
         },
         {
-          "k": "resumes",
-          "a": "özgeçmişler",
-          "vurgu": false
+          "k": "photos"
         },
         {
-          "k": "via",
-          "a": "aracılığıyla",
-          "vurgu": false
+          "k": "and"
         },
         {
-          "k": "email",
-          "a": "e-posta",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "or",
-          "a": "veya",
-          "vurgu": false
+          "k": "copy"
         },
         {
-          "k": "in",
-          "a": "(edat)",
-          "vurgu": false
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "person.",
-          "a": "şahsen",
-          "en": "in person: bizzat",
-          "vurgu": false
+          "k": "their"
+        },
+        {
+          "k": "passport.",
+          "a": "pasaport"
         }
       ]
     },
@@ -5000,47 +4989,46 @@
       "en": "downturn",
       "tur": "isim",
       "tr": "gerileme, durgunluk, düşüş",
-      "ornek_tr": "Ekonomik gerileme küresel piyasaları önemli ölçüde etkileyebilir.",
+      "ornek_tr": "Ekonomik durgunluk ülke genelinde işe alımları yavaşlattı.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "",
-          "vurgu": false
+          "k": "The"
         },
         {
           "k": "economic",
-          "a": "ekonomik",
-          "vurgu": false
+          "a": "ekonomik"
         },
         {
           "k": "downturn",
-          "a": "gerileme",
-          "vurgu": true
+          "vurgu": true,
+          "a": "gerileme"
         },
         {
-          "k": "might",
-          "a": "-ebilir",
-          "vurgu": false
+          "k": "has",
+          "a": "sahip olmak"
         },
         {
-          "k": "affect",
-          "a": "etkilemek",
-          "vurgu": false
+          "k": "slowed",
+          "a": "yavaşladı"
         },
         {
-          "k": "global",
-          "a": "küresel",
-          "vurgu": false
+          "k": "down",
+          "a": "aşağı"
         },
         {
-          "k": "markets",
-          "a": "piyasalar",
-          "vurgu": false
+          "k": "hiring",
+          "a": "işe aldı"
         },
         {
-          "k": "significantly.",
-          "a": "önemli ölçüde",
-          "vurgu": false
+          "k": "across",
+          "a": "karşıdan karşıya"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "country.",
+          "a": "ülke"
         }
       ]
     },
@@ -6289,80 +6277,45 @@
       "en": "overcast",
       "tur": "sıfat",
       "tr": "kapalı, bulutlu (hava)",
-      "ornek_tr": "Hava kapalı olduğu için güneş tutulmasını göremeyeceğiz.",
+      "ornek_tr": "Gökyüzü bütün gün bulutluydu, bu yüzden içeride kaldık.",
       "ornek_tokenlar": [
         {
-          "k": "We",
-          "a": "biz",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "won't",
-          "a": "-meyeceğiz",
-          "vurgu": false
+          "k": "sky",
+          "a": "gökyüzü"
         },
         {
-          "k": "be",
-          "a": "",
-          "en": "be able to: -ebilmek",
-          "vurgu": false
+          "k": "was"
         },
         {
-          "k": "able",
-          "a": "",
-          "en": "be able to: -ebilmek",
-          "vurgu": false
+          "k": "overcast",
+          "vurgu": true,
+          "a": "kapalı"
         },
         {
-          "k": "to",
-          "a": "",
-          "en": "be able to: -ebilmek",
-          "vurgu": false
+          "k": "all",
+          "a": "tüm"
         },
         {
-          "k": "see",
-          "a": "görmek",
-          "vurgu": false
+          "k": "day,",
+          "a": "gün"
         },
         {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "so",
+          "a": "bu yüzden"
         },
         {
-          "k": "solar",
-          "a": "güneş",
-          "vurgu": false
+          "k": "we"
         },
         {
-          "k": "eclipse",
-          "a": "tutulma",
-          "vurgu": false
+          "k": "stayed",
+          "a": "kaldık"
         },
         {
-          "k": "because",
-          "a": "çünkü",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "weather",
-          "a": "hava",
-          "vurgu": false
-        },
-        {
-          "k": "is",
-          "a": "-dir",
-          "vurgu": false
-        },
-        {
-          "k": "overcast.",
-          "a": "kapalı",
-          "vurgu": true
+          "k": "inside.",
+          "a": "içine"
         }
       ]
     },
@@ -9042,74 +8995,37 @@
       "en": "trace",
       "tur": "isim",
       "tr": "iz, eser, belirti",
-      "ornek_tr": "Şüpheli ülkeden kaçmış olabilir. Polis hiçbir iz bulamıyor.",
+      "ornek_tr": "Kayıp teknenin hiçbir izi yok.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
+          "k": "There",
+          "a": "orada"
         },
         {
-          "k": "suspect",
-          "a": "şüpheli",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "might",
-          "a": "-mış olabilir",
-          "en": "might have: -mış olabilir",
-          "vurgu": false
+          "k": "no"
         },
         {
-          "k": "have",
-          "a": "-",
-          "en": "might have",
-          "vurgu": false
+          "k": "trace",
+          "vurgu": true,
+          "a": "iz"
         },
         {
-          "k": "fled",
-          "a": "kaçmak",
-          "vurgu": false
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "country.",
-          "a": "ülke",
-          "vurgu": false
+          "k": "missing",
+          "a": "kayıp"
         },
         {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
-        },
-        {
-          "k": "police",
-          "a": "polis",
-          "vurgu": false
-        },
-        {
-          "k": "can't",
-          "a": "-emiyor",
-          "vurgu": false
-        },
-        {
-          "k": "find",
-          "a": "bulmak",
-          "vurgu": false
-        },
-        {
-          "k": "any",
-          "a": "hiçbir",
-          "vurgu": false
-        },
-        {
-          "k": "traces.",
-          "a": "izler",
-          "vurgu": true
+          "k": "boat.",
+          "a": "tekne"
         }
       ]
     },
@@ -9694,68 +9610,45 @@
       "en": "refund",
       "tur": "isim",
       "tr": "para iadesi, geri ödeme",
-      "ornek_tr": "Seyahat sigortası alabilirdik. Şimdi para iadesi alamıyoruz.",
+      "ornek_tr": "Iptal edilen uçuş için hâlâ para iadesi almadım.",
       "ornek_tokenlar": [
         {
-          "k": "We",
-          "a": "biz",
-          "vurgu": false
+          "k": "I"
         },
         {
-          "k": "could",
-          "a": "-ebilirdik",
-          "en": "could have + V3: kaçırılmış olanak",
-          "vurgu": false
+          "k": "still",
+          "a": "hala"
         },
         {
-          "k": "have",
-          "a": "(yardımcı fiil)",
-          "vurgu": false
+          "k": "haven't",
+          "a": "(yardımcı fiil-olumsuz)"
         },
         {
-          "k": "bought",
-          "a": "satın almış",
-          "vurgu": false
+          "k": "received",
+          "a": "almak"
         },
         {
-          "k": "travel",
-          "a": "seyahat",
-          "vurgu": false
+          "k": "a"
         },
         {
-          "k": "insurance.",
-          "a": "sigorta",
-          "vurgu": false
+          "k": "refund",
+          "vurgu": true,
+          "a": "para iadesi"
         },
         {
-          "k": "Now",
-          "a": "şimdi",
-          "vurgu": false
+          "k": "for",
+          "a": "için"
         },
         {
-          "k": "we",
-          "a": "biz",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "can't",
-          "a": "-amıyoruz",
-          "vurgu": false
+          "k": "canceled",
+          "a": "iptal etmek"
         },
         {
-          "k": "get",
-          "a": "almak",
-          "vurgu": false
-        },
-        {
-          "k": "a",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "refund.",
-          "a": "para iadesi",
-          "vurgu": true
+          "k": "flight.",
+          "a": "uçuş"
         }
       ]
     },
@@ -9911,73 +9804,40 @@
       "en": "overslept",
       "tur": "fiil",
       "tr": "uyuyakaldı, fazla uyudu (oversleep'in geçmiş hâli)",
-      "ornek_tr": "Alarm kurmalıydım. Uyuyakaldım ve uçağımı kaçırdım.",
+      "ornek_tr": "Bu sabah uyuyakaldım ve ilk otobüsü kaçırdım.",
       "ornek_tokenlar": [
         {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
-        },
-        {
-          "k": "ought",
-          "a": "-meli",
-          "en": "ought to have V3: yapmalıydım (pişmanlık)",
-          "vurgu": false
-        },
-        {
-          "k": "to",
-          "a": "-e",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "sahip olmak",
-          "vurgu": false
-        },
-        {
-          "k": "set",
-          "a": "kurmak",
-          "vurgu": false
-        },
-        {
-          "k": "an",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "alarm.",
-          "a": "alarm",
-          "vurgu": false
-        },
-        {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
+          "k": "I"
         },
         {
           "k": "overslept",
-          "a": "uyuyakaldım",
-          "vurgu": true
+          "vurgu": true,
+          "a": "uyuyakaldım"
         },
         {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
+          "k": "this"
+        },
+        {
+          "k": "morning",
+          "a": "sabah"
+        },
+        {
+          "k": "and"
         },
         {
           "k": "missed",
-          "a": "kaçırdım",
-          "vurgu": false
+          "a": "kaçırdım"
         },
         {
-          "k": "my",
-          "a": "benim",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "flight.",
-          "a": "uçuş",
-          "vurgu": false
+          "k": "first",
+          "a": "ilk"
+        },
+        {
+          "k": "bus.",
+          "a": "otobüs"
         }
       ]
     },
@@ -10650,68 +10510,40 @@
       "en": "confusing",
       "tur": "sıfat",
       "tr": "kafa karıştırıcı, şaşırtıcı",
-      "ornek_tr": "GPS olmasaydı kaybolurdu. Kırsal yollar kafa karıştırıcı.",
+      "ornek_tr": "Talimatlar o kadar kafa karıştırıcıydı ki kimse anlamadı.",
       "ornek_tokenlar": [
         {
-          "k": "He",
-          "a": "o",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "would",
-          "a": "-mış olurdu",
-          "en": "would have V3: olmayan koşulun sonucu",
-          "vurgu": false
+          "k": "instructions",
+          "a": "talimatlar"
         },
         {
-          "k": "have",
-          "a": "sahip olmak",
-          "vurgu": false
+          "k": "were"
         },
         {
-          "k": "gotten",
-          "a": "olmak",
-          "vurgu": false
+          "k": "so",
+          "a": "bu yüzden"
         },
         {
-          "k": "lost",
-          "a": "kayıp",
-          "vurgu": false
+          "k": "confusing",
+          "vurgu": true,
+          "a": "kafa karıştırıcı"
         },
         {
-          "k": "without",
-          "a": "-sız",
-          "vurgu": false
+          "k": "that"
         },
         {
-          "k": "GPS.",
-          "a": "GPS",
-          "vurgu": false
+          "k": "nobody",
+          "a": "kimse"
         },
         {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
+          "k": "understood"
         },
         {
-          "k": "rural",
-          "a": "kırsal",
-          "vurgu": false
-        },
-        {
-          "k": "roads",
-          "a": "yollar",
-          "vurgu": false
-        },
-        {
-          "k": "are",
-          "a": "-dır",
-          "vurgu": false
-        },
-        {
-          "k": "confusing.",
-          "a": "kafa karıştırıcı",
-          "vurgu": true
+          "k": "them.",
+          "a": "onları"
         }
       ]
     },
@@ -10926,63 +10758,44 @@
       "en": "eruption",
       "tur": "isim",
       "tr": "patlama, püskürme (volkan)",
-      "ornek_tr": "Devasa volkanik püskürmeler on binlerce dinozoru öldürmüş olabilir.",
+      "ornek_tr": "Yanardağın püskürmesi köyü küle boğdu.",
       "ornek_tokenlar": [
         {
-          "k": "Huge",
-          "a": "devasa",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "volcanic",
-          "a": "volkanik",
-          "vurgu": false
-        },
-        {
-          "k": "eruptions",
-          "a": "püskürmeler",
-          "vurgu": true
-        },
-        {
-          "k": "could",
-          "a": "-miş olabilir",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "(tamamlanmış)",
-          "vurgu": false
-        },
-        {
-          "k": "killed",
-          "a": "öldürmüş",
-          "en": "could have + V3: geçmişe yönelik olasılık",
-          "vurgu": false
-        },
-        {
-          "k": "tens",
-          "a": "onlarca",
-          "vurgu": false
+          "k": "eruption",
+          "vurgu": true,
+          "a": "patlama"
         },
         {
           "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "a": "-in"
         },
         {
-          "k": "thousands",
-          "a": "binler",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "of",
-          "a": "-in",
-          "vurgu": false
+          "k": "volcano",
+          "a": "yanardağ"
         },
         {
-          "k": "dinosaurs.",
-          "a": "dinozorlar",
-          "vurgu": false
+          "k": "covered",
+          "a": "kapsamak"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "village",
+          "a": "köy"
+        },
+        {
+          "k": "in",
+          "a": "içinde"
+        },
+        {
+          "k": "ash."
         }
       ]
     },
@@ -10990,73 +10803,40 @@
       "en": "traces",
       "tur": "isim",
       "tr": "izler, emareler",
-      "ornek_tr": "Şüpheli ülkeden kaçmış olabilir. Polis hiçbir iz bulamıyor.",
+      "ornek_tr": "Dedektifler halı üzerinde kan izleri buldu.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "-i (belirli)",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "suspect",
-          "a": "şüpheli",
-          "vurgu": false
+          "k": "detectives"
         },
         {
-          "k": "might",
-          "a": "-miş olabilir",
-          "vurgu": false
+          "k": "found",
+          "a": "kurmak"
         },
         {
-          "k": "have",
-          "a": "(tamamlanmış)",
-          "vurgu": false
+          "k": "traces",
+          "vurgu": true,
+          "a": "izler"
         },
         {
-          "k": "fled",
-          "a": "kaçmış",
-          "en": "might have + V3: geçmişe yönelik zayıf olasılık",
-          "vurgu": false
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "the",
-          "a": "-i (belirli)",
-          "vurgu": false
+          "k": "blood",
+          "a": "kan"
         },
         {
-          "k": "country.",
-          "a": "ülke",
-          "vurgu": false
+          "k": "on",
+          "a": "-de"
         },
         {
-          "k": "The",
-          "a": "-i (belirli)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "police",
-          "a": "polis",
-          "vurgu": false
-        },
-        {
-          "k": "can't",
-          "a": "-emiyor",
-          "vurgu": false
-        },
-        {
-          "k": "find",
-          "a": "bulmak",
-          "vurgu": false
-        },
-        {
-          "k": "any",
-          "a": "hiç",
-          "vurgu": false
-        },
-        {
-          "k": "traces.",
-          "a": "izler",
-          "vurgu": true
+          "k": "carpet."
         }
       ]
     },
@@ -11203,73 +10983,46 @@
       "en": "oversleep",
       "tur": "fiil",
       "tr": "uyuyakalmak, fazla uyumak",
-      "ornek_tr": "Alarm kurmalıydım. Uyuyakaldım ve uçağımı kaçırdım.",
+      "ornek_tr": "Geç yatarsan yarın uyuyakalabilirsin.",
       "ornek_tokenlar": [
         {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
+          "k": "If",
+          "a": "eğer"
         },
         {
-          "k": "ought",
-          "a": "-meliydim",
-          "vurgu": false
+          "k": "you"
+        },
+        {
+          "k": "go",
+          "a": "gitmek"
         },
         {
           "k": "to",
-          "a": "(to)",
-          "vurgu": false
+          "a": "(to)"
         },
         {
-          "k": "have",
-          "a": "(tamamlanmış)",
-          "vurgu": false
+          "k": "bed",
+          "a": "yatak"
         },
         {
-          "k": "set",
-          "a": "kurmalıydım",
-          "en": "ought to have + V3: geçmişte yapılması gereken",
-          "vurgu": false
+          "k": "late,",
+          "a": "geç"
         },
         {
-          "k": "an",
-          "a": "bir",
-          "vurgu": false
+          "k": "you"
         },
         {
-          "k": "alarm.",
-          "a": "alarm",
-          "vurgu": false
+          "k": "might",
+          "a": "-ebilir"
         },
         {
-          "k": "I",
-          "a": "ben",
-          "vurgu": false
+          "k": "oversleep",
+          "vurgu": true,
+          "a": "uyuyakalmak"
         },
         {
-          "k": "overslept",
-          "a": "uyuyakaldım",
-          "vurgu": true
-        },
-        {
-          "k": "and",
-          "a": "ve",
-          "vurgu": false
-        },
-        {
-          "k": "missed",
-          "a": "kaçırdım",
-          "vurgu": false
-        },
-        {
-          "k": "my",
-          "a": "benim",
-          "vurgu": false
-        },
-        {
-          "k": "flight.",
-          "a": "uçuş",
-          "vurgu": false
+          "k": "tomorrow.",
+          "a": "yarın"
         }
       ]
     },
@@ -13215,63 +12968,33 @@
       "en": "approaching",
       "tur": "fiil",
       "tr": "yaklaşmak (approach'in -ing hali)",
-      "ornek_tr": "Son teslim tarihi yaklaşıyor; raporunu en kısa sürede teslim etsen iyi olur.",
+      "ornek_tr": "Batıdan bir fırtına yaklaşıyor.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "",
-          "vurgu": false
+          "k": "A"
         },
         {
-          "k": "deadline",
-          "a": "son teslim tarihi",
-          "vurgu": false
+          "k": "storm",
+          "a": "fırtına"
         },
         {
-          "k": "is",
-          "a": "",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "approaching;",
-          "a": "yaklaşıyor",
-          "vurgu": true
+          "k": "approaching",
+          "vurgu": true,
+          "a": "yaklaşıyor"
         },
         {
-          "k": "you",
-          "a": "sen",
-          "vurgu": false
+          "k": "from",
+          "a": "-den"
         },
         {
-          "k": "had",
-          "a": "iyi olur",
-          "en": "had better: -sen iyi olur",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "better",
-          "a": "",
-          "vurgu": false
-        },
-        {
-          "k": "submit",
-          "a": "teslim etmek",
-          "vurgu": false
-        },
-        {
-          "k": "your",
-          "a": "senin",
-          "vurgu": false
-        },
-        {
-          "k": "report",
-          "a": "rapor",
-          "vurgu": false
-        },
-        {
-          "k": "soon.",
-          "a": "kısa sürede",
-          "vurgu": false
+          "k": "west.",
+          "a": "batı"
         }
       ]
     },
@@ -13464,52 +13187,35 @@
       "en": "outages",
       "tur": "isim",
       "tr": "kesintiler (özellikle elektrik/hizmet kesintisi)",
-      "ornek_tr": "Fırtına kıyı bölgelerinde elektrik kesintilerine yol açabilir.",
+      "ornek_tr": "Şiddetli fırtınalarda elektrik kesintileri yaygındır.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli artikel)",
-          "vurgu": false
-        },
-        {
-          "k": "storm",
-          "a": "fırtına",
-          "vurgu": false
-        },
-        {
-          "k": "might",
-          "a": "-ebilir (olasılık)",
-          "vurgu": false
-        },
-        {
-          "k": "cause",
-          "a": "neden olmak",
-          "vurgu": false
-        },
-        {
-          "k": "power",
-          "a": "elektrik, güç",
-          "vurgu": false
+          "k": "Power",
+          "a": "elektrik, güç"
         },
         {
           "k": "outages",
-          "a": "kesintiler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kesintiler"
         },
         {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
+          "k": "are"
         },
         {
-          "k": "coastal",
-          "a": "kıyıya ait",
-          "vurgu": false
+          "k": "common",
+          "a": "yaygın"
         },
         {
-          "k": "areas.",
-          "a": "bölgeler",
-          "vurgu": false
+          "k": "during",
+          "a": "sırasında"
+        },
+        {
+          "k": "heavy",
+          "a": "ağır"
+        },
+        {
+          "k": "storms.",
+          "a": "fırtına"
         }
       ]
     },
@@ -13517,52 +13223,36 @@
       "en": "coastal",
       "tur": "sıfat",
       "tr": "kıyısal, sahil ile ilgili",
-      "ornek_tr": "Fırtına kıyı bölgelerinde elektrik kesintilerine yol açabilir.",
+      "ornek_tr": "Kıyı kasabaları yazın birçok turisti çeker.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirli artikel)",
-          "vurgu": false
+          "k": "Coastal",
+          "vurgu": true,
+          "a": "kıyısal, sahil"
         },
         {
-          "k": "storm",
-          "a": "fırtına",
-          "vurgu": false
+          "k": "towns",
+          "a": "kasaba"
         },
         {
-          "k": "might",
-          "a": "-ebilir (olasılık)",
-          "vurgu": false
+          "k": "attract",
+          "a": "cezbetmek"
         },
         {
-          "k": "cause",
-          "a": "neden olmak",
-          "vurgu": false
+          "k": "many",
+          "a": "birçok"
         },
         {
-          "k": "power",
-          "a": "elektrik, güç",
-          "vurgu": false
-        },
-        {
-          "k": "outages",
-          "a": "kesintiler",
-          "vurgu": false
+          "k": "tourists",
+          "a": "turist"
         },
         {
           "k": "in",
-          "a": "-de",
-          "vurgu": false
+          "a": "-de"
         },
         {
-          "k": "coastal",
-          "a": "kıyısal, sahil",
-          "vurgu": true
-        },
-        {
-          "k": "areas.",
-          "a": "bölgeler",
-          "vurgu": false
+          "k": "summer.",
+          "a": "yaz"
         }
       ]
     },
@@ -13806,43 +13496,37 @@
       "en": "gasoline",
       "tur": "isim",
       "tr": "benzin",
-      "ornek_tr": "Arabalar eskiden sadece benzinle çalışırdı.",
+      "ornek_tr": "Benzinin fiyatı bu yıl keskin biçimde yükseldi.",
       "ornek_tokenlar": [
         {
-          "k": "Cars",
-          "a": "arabalar",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "used",
-          "a": "-erdi (geçmiş alışkanlık)",
-          "en": "used to: eskiden -erdi",
-          "vurgu": false
+          "k": "price",
+          "a": "fiyat"
         },
         {
-          "k": "to",
-          "a": "(mastar)",
-          "vurgu": false
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "run",
-          "a": "çalışmak",
-          "vurgu": false
+          "k": "gasoline",
+          "vurgu": true,
+          "a": "benzin"
         },
         {
-          "k": "solely",
-          "a": "yalnızca",
-          "vurgu": false
+          "k": "rose"
         },
         {
-          "k": "on",
-          "a": "ile",
-          "vurgu": false
+          "k": "sharply",
+          "a": "keskin biçimde"
         },
         {
-          "k": "gasoline.",
-          "a": "benzin",
-          "vurgu": true
+          "k": "this"
+        },
+        {
+          "k": "year.",
+          "a": "yıl"
         }
       ]
     },
@@ -16259,69 +15943,36 @@
       "en": "forgery",
       "tur": "isim",
       "tr": "sahtecilik, sahte eser/taklit",
-      "ornek_tr": "Tablo bir sahte eser olabilirdi. Fırça darbeleri sıra dışı görünüyor.",
+      "ornek_tr": "Uzmanlar imzanın sahte olduğunu doğruladı.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
+          "k": "Experts",
+          "a": "uzmanlar"
         },
         {
-          "k": "painting",
-          "a": "tablo",
-          "vurgu": false
+          "k": "confirmed",
+          "a": "onaylamak"
         },
         {
-          "k": "could",
-          "a": "-olabilirdi",
-          "en": "could have + V3: geçmişe yönelik olasılık",
-          "vurgu": false
+          "k": "that"
         },
         {
-          "k": "have",
-          "a": "-",
-          "en": "could have + V3",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "been",
-          "a": "-",
-          "vurgu": false
+          "k": "signature",
+          "a": "imza"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "was"
+        },
+        {
+          "k": "a"
         },
         {
           "k": "forgery.",
-          "a": "sahte eser",
-          "vurgu": true
-        },
-        {
-          "k": "The",
-          "a": "-",
-          "vurgu": false
-        },
-        {
-          "k": "brush",
-          "a": "fırça",
-          "vurgu": false
-        },
-        {
-          "k": "strokes",
-          "a": "darbeler",
-          "vurgu": false
-        },
-        {
-          "k": "look",
-          "a": "görünüyor",
-          "vurgu": false
-        },
-        {
-          "k": "unusual.",
-          "a": "sıra dışı",
-          "vurgu": false
+          "vurgu": true,
+          "a": "sahte eser"
         }
       ]
     },
@@ -16458,64 +16109,32 @@
       "en": "inherit",
       "tur": "fiil",
       "tr": "miras almak, devralmak",
-      "ornek_tr": "Bir servet miras almış olabilir. Beklenmedik şekilde işten ayrıldı.",
+      "ornek_tr": "Büyükbabasının evini ve arazisini miras aldı.",
       "ornek_tokenlar": [
         {
-          "k": "He",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "might",
-          "a": "-olabilir",
-          "en": "might have + V3: geçmişe yönelik olasılık",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "-",
-          "en": "might have + V3",
-          "vurgu": false
+          "k": "She"
         },
         {
           "k": "inherited",
-          "a": "miras almış",
-          "vurgu": true
+          "vurgu": true,
+          "a": "miras almış"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
+          "k": "her"
         },
         {
-          "k": "fortune.",
-          "a": "servet",
-          "vurgu": false
+          "k": "grandfather's"
         },
         {
-          "k": "He",
-          "a": "o",
-          "vurgu": false
+          "k": "house",
+          "a": "ev"
         },
         {
-          "k": "quit",
-          "a": "ayrıldı",
-          "vurgu": false
+          "k": "and"
         },
         {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
-        },
-        {
-          "k": "job",
-          "a": "iş",
-          "vurgu": false
-        },
-        {
-          "k": "unexpectedly.",
-          "a": "beklenmedik şekilde",
-          "vurgu": false
+          "k": "land.",
+          "a": "ayak basmak"
         }
       ]
     },
@@ -16587,64 +16206,44 @@
       "en": "qualification",
       "tur": "isim",
       "tr": "nitelik, yeterlilik; diploma/yetkinlik",
-      "ornek_tr": "Bursa başvurmuş olabilirdi. Nitelikleri mükemmeldi.",
+      "ornek_tr": "Nitelikleri onu işe en uygun aday yaptı.",
       "ornek_tokenlar": [
         {
-          "k": "He",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "could",
-          "a": "-olabilirdi",
-          "en": "could have + V3: geçmişe yönelik olasılık",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "-",
-          "en": "could have + V3",
-          "vurgu": false
-        },
-        {
-          "k": "applied",
-          "a": "başvurmuş",
-          "vurgu": false
-        },
-        {
-          "k": "for",
-          "a": "-için",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "a": "-",
-          "vurgu": false
-        },
-        {
-          "k": "scholarship.",
-          "a": "burs",
-          "vurgu": false
-        },
-        {
-          "k": "His",
-          "a": "onun",
-          "vurgu": false
+          "k": "Her"
         },
         {
           "k": "qualifications",
-          "a": "nitelikler",
-          "vurgu": true
+          "vurgu": true,
+          "a": "nitelikler"
         },
         {
-          "k": "were",
-          "a": "-idi",
-          "vurgu": false
+          "k": "made",
+          "a": "yapmak"
         },
         {
-          "k": "perfect.",
-          "a": "mükemmel",
-          "vurgu": false
+          "k": "her"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "best",
+          "a": "en iyi"
+        },
+        {
+          "k": "candidate",
+          "a": "aday"
+        },
+        {
+          "k": "for",
+          "a": "-için"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "job.",
+          "a": "iş"
         }
       ]
     },
@@ -18197,73 +17796,33 @@
       "en": "flee",
       "tur": "fiil",
       "tr": "kaçmak, firar etmek",
-      "ornek_tr": "Şüpheli ülkeden kaçmış olabilir. Polis hiçbir iz bulamıyor.",
+      "ornek_tr": "Mahkûmlar tekneyle ülkeden kaçtı.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "suspect",
-          "a": "şüpheli",
-          "vurgu": false
-        },
-        {
-          "k": "might",
-          "a": "-mış olabilir",
-          "en": "might have fled = kaçmış olabilir",
-          "vurgu": false
-        },
-        {
-          "k": "have",
-          "a": "",
-          "vurgu": false
+          "k": "prisoners"
         },
         {
           "k": "fled",
-          "a": "kaçmış",
-          "vurgu": true
+          "vurgu": true,
+          "a": "kaçmış"
         },
         {
-          "k": "the",
-          "a": "",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "country.",
-          "a": "ülke",
-          "vurgu": false
+          "k": "country",
+          "a": "ülke"
         },
         {
-          "k": "The",
-          "a": "",
-          "vurgu": false
+          "k": "by",
+          "a": "tarafından"
         },
         {
-          "k": "police",
-          "a": "polis",
-          "vurgu": false
-        },
-        {
-          "k": "can't",
-          "a": "-emez",
-          "vurgu": false
-        },
-        {
-          "k": "find",
-          "a": "bulmak",
-          "vurgu": false
-        },
-        {
-          "k": "any",
-          "a": "hiçbir",
-          "vurgu": false
-        },
-        {
-          "k": "traces.",
-          "a": "iz",
-          "vurgu": false
+          "k": "boat.",
+          "a": "tekne"
         }
       ]
     },
@@ -18606,83 +18165,36 @@
       "en": "deliver",
       "tur": "fiil",
       "tr": "teslim etmek, ulaştırmak",
-      "ornek_tr": "Paket yanlış adrese teslim edilmiş olabilir. Posta kutumuzda değil.",
+      "ornek_tr": "Kurye paketi yarın sabah teslim edecek.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "package",
-          "a": "paket",
-          "vurgu": false
+          "k": "courier"
         },
         {
-          "k": "could",
-          "a": "-ebilir",
-          "en": "could have been + V3: geçmiş edilgen olasılık",
-          "vurgu": false
+          "k": "will",
+          "a": "-ecek"
         },
         {
-          "k": "have",
-          "a": "(yardımcı)",
-          "vurgu": false
+          "k": "deliver",
+          "vurgu": true,
+          "a": "teslim etmek"
         },
         {
-          "k": "been",
-          "a": "(edilgen)",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "delivered",
-          "a": "teslim edilmek",
-          "vurgu": true
+          "k": "parcel"
         },
         {
-          "k": "to",
-          "a": "-e",
-          "vurgu": false
+          "k": "tomorrow",
+          "a": "yarın"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "wrong",
-          "a": "yanlış",
-          "vurgu": false
-        },
-        {
-          "k": "address.",
-          "a": "adres",
-          "vurgu": false
-        },
-        {
-          "k": "It's",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "not",
-          "a": "değil",
-          "vurgu": false
-        },
-        {
-          "k": "in",
-          "a": "-de",
-          "vurgu": false
-        },
-        {
-          "k": "our",
-          "a": "bizim",
-          "vurgu": false
-        },
-        {
-          "k": "mailbox.",
-          "a": "posta kutusu",
-          "vurgu": false
+          "k": "morning.",
+          "a": "sabah"
         }
       ]
     },
@@ -18690,58 +18202,38 @@
       "en": "investor",
       "tur": "isim",
       "tr": "yatırımcı",
-      "ornek_tr": "Yeni yatırımcılar olmadan şirket iflas etmiş olurdu.",
+      "ornek_tr": "Yabancı bir yatırımcı girişimi finanse etmeyi teklif etti.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "a": "(belirteç)",
-          "vurgu": false
+          "k": "A"
         },
         {
-          "k": "company",
-          "a": "şirket",
-          "vurgu": false
+          "k": "foreign",
+          "a": "yabancı"
         },
         {
-          "k": "would",
-          "a": "-irdi",
-          "en": "would have + V3: geçmişe yönelik koşullu sonuç",
-          "vurgu": false
+          "k": "investor",
+          "vurgu": true,
+          "a": "yatırımcı"
         },
         {
-          "k": "have",
-          "a": "(yardımcı)",
-          "vurgu": false
+          "k": "offered",
+          "a": "teklif etti"
         },
         {
-          "k": "gone",
-          "a": "gitmek",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
         },
         {
-          "k": "bankrupt",
-          "a": "iflas etmiş",
-          "vurgu": false
+          "k": "fund",
+          "a": "finansman"
         },
         {
-          "k": "without",
-          "a": "-sız/olmadan",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "the",
-          "a": "(belirteç)",
-          "vurgu": false
-        },
-        {
-          "k": "new",
-          "a": "yeni",
-          "vurgu": false
-        },
-        {
-          "k": "investors.",
-          "a": "yatırımcılar",
-          "vurgu": true
+          "k": "startup.",
+          "a": "girişim"
         }
       ]
     },
@@ -20846,63 +20338,27 @@
       "en": "unexpectedly",
       "tur": "zarf",
       "tr": "beklenmedik şekilde, aniden",
-      "ornek_tr": "Bir servet miras almış olabilir. İşinden beklenmedik şekilde ayrıldı.",
+      "ornek_tr": "Toplantı beklenmedik şekilde erken bitti.",
       "ornek_tokenlar": [
         {
-          "k": "He",
-          "a": "o",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "might",
-          "a": "-mış olabilir",
-          "en": "might have + V3",
-          "vurgu": false
+          "k": "meeting",
+          "a": "toplantı"
         },
         {
-          "k": "have",
-          "a": "(perfect)",
-          "vurgu": false
+          "k": "ended",
+          "a": "sona erdi"
         },
         {
-          "k": "inherited",
-          "a": "miras almış",
-          "vurgu": false
+          "k": "unexpectedly",
+          "vurgu": true,
+          "a": "beklenmedik şekilde"
         },
         {
-          "k": "a",
-          "a": "bir",
-          "vurgu": false
-        },
-        {
-          "k": "fortune.",
-          "a": "servet",
-          "vurgu": false
-        },
-        {
-          "k": "He",
-          "a": "o",
-          "vurgu": false
-        },
-        {
-          "k": "quit",
-          "a": "bıraktı",
-          "vurgu": false
-        },
-        {
-          "k": "his",
-          "a": "onun",
-          "vurgu": false
-        },
-        {
-          "k": "job",
-          "a": "iş",
-          "vurgu": false
-        },
-        {
-          "k": "unexpectedly.",
-          "a": "beklenmedik şekilde",
-          "vurgu": true
+          "k": "early.",
+          "a": "erken"
         }
       ]
     },

@@ -1881,45 +1881,31 @@
       "en": "sharply",
       "tur": "zarf",
       "tr": "keskin biçimde",
-      "ornek_tr": "Rapor, işsizliğin keskin biçimde düştüğünü gösteriyor.",
+      "ornek_tr": "Petrol fiyatları geçen ay keskin biçimde düştü.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "vurgu": false
+          "k": "Oil",
+          "a": "yağ"
         },
         {
-          "k": "report",
-          "a": "rapor",
-          "vurgu": false
+          "k": "prices",
+          "a": "fiyatlar"
         },
         {
-          "k": "shows",
-          "a": "gösterir",
-          "vurgu": false
+          "k": "fell"
         },
         {
-          "k": "that",
-          "a": "-diğini",
-          "vurgu": false
+          "k": "sharply",
+          "vurgu": true,
+          "a": "keskin biçimde"
         },
         {
-          "k": "unemployment",
-          "a": "işsizlik",
-          "vurgu": false
+          "k": "last",
+          "a": "sürmek"
         },
         {
-          "k": "has",
-          "vurgu": false
-        },
-        {
-          "k": "fallen",
-          "a": "düşmüş",
-          "vurgu": false
-        },
-        {
-          "k": "sharply.",
-          "a": "keskin biçimde",
-          "vurgu": true
+          "k": "month.",
+          "a": "ay"
         }
       ]
     },
@@ -3672,49 +3658,40 @@
       "en": "repay",
       "tur": "fiil",
       "tr": "geri ödemek",
-      "ornek_tr": "Yatırımcılar şirketin borçlarını geri ödeyebileceğinden şüphe duyuyor.",
+      "ornek_tr": "Krediyi bir yıl içinde geri ödemeye söz verdi.",
       "ornek_tokenlar": [
         {
-          "k": "Investors",
-          "a": "yatırımcılar",
-          "vurgu": false
+          "k": "He"
         },
         {
-          "k": "doubt",
-          "a": "şüphe eder",
-          "vurgu": false
+          "k": "promised",
+          "a": "söz verdi"
         },
         {
-          "k": "if",
-          "a": "-ebileceğinden",
-          "vurgu": false
-        },
-        {
-          "k": "the",
-          "vurgu": false
-        },
-        {
-          "k": "company",
-          "a": "şirket",
-          "vurgu": false
-        },
-        {
-          "k": "can",
-          "vurgu": false
+          "k": "to",
+          "a": "-e"
         },
         {
           "k": "repay",
-          "a": "geri ödemek",
-          "vurgu": true
+          "vurgu": true,
+          "a": "geri ödemek"
         },
         {
-          "k": "its",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "debts.",
-          "a": "borçlar",
-          "vurgu": false
+          "k": "loan"
+        },
+        {
+          "k": "within",
+          "a": "içinde"
+        },
+        {
+          "k": "a"
+        },
+        {
+          "k": "year.",
+          "a": "yıl"
         }
       ]
     },
@@ -4339,45 +4316,37 @@
       "en": "unclear",
       "tur": "sıfat",
       "tr": "belirsiz",
-      "ornek_tr": "Aşının bulaşmayı önleyip önlemediği belirsizliğini koruyor.",
+      "ornek_tr": "Köprünün neden çöktüğü hâlâ belirsiz.",
       "ornek_tokenlar": [
         {
-          "k": "It",
-          "vurgu": false
+          "k": "It"
         },
         {
-          "k": "remains",
-          "a": "olmaya devam eder",
-          "vurgu": false
+          "k": "is"
+        },
+        {
+          "k": "still",
+          "a": "hala"
         },
         {
           "k": "unclear",
-          "a": "belirsiz",
-          "vurgu": true
+          "vurgu": true,
+          "a": "belirsiz"
         },
         {
-          "k": "whether",
-          "a": "-ip -mediği",
-          "vurgu": false
+          "k": "why",
+          "a": "neden"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "vaccine",
-          "a": "aşı",
-          "vurgu": false
+          "k": "bridge",
+          "a": "köprü"
         },
         {
-          "k": "prevents",
-          "a": "önler",
-          "vurgu": false
-        },
-        {
-          "k": "transmission.",
-          "a": "bulaşma",
-          "vurgu": false
+          "k": "collapsed.",
+          "a": "çöktü"
         }
       ]
     },
@@ -4385,45 +4354,42 @@
       "en": "vaccine",
       "tur": "isim",
       "tr": "aşı",
-      "ornek_tr": "Aşının bulaşmayı önleyip önlemediği belirsizliğini koruyor.",
+      "ornek_tr": "Doktorlar çocukların aşılarını zamanında yaptırmasını öneriyor.",
       "ornek_tokenlar": [
         {
-          "k": "It",
-          "vurgu": false
+          "k": "Doctors",
+          "a": "doktorlar"
         },
         {
-          "k": "remains",
-          "a": "olmaya devam eder",
-          "vurgu": false
+          "k": "recommend",
+          "a": "tavsiye etmek"
         },
         {
-          "k": "unclear",
-          "a": "belirsiz",
-          "vurgu": false
+          "k": "that"
         },
         {
-          "k": "whether",
-          "a": "-ip -mediği",
-          "vurgu": false
+          "k": "children",
+          "a": "çocuklar"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "receive",
+          "a": "almak"
+        },
+        {
+          "k": "the"
         },
         {
           "k": "vaccine",
-          "a": "aşı",
-          "vurgu": true
+          "vurgu": true,
+          "a": "aşı"
         },
         {
-          "k": "prevents",
-          "a": "önler",
-          "vurgu": false
+          "k": "on",
+          "a": "-de"
         },
         {
-          "k": "transmission.",
-          "a": "bulaşma",
-          "vurgu": false
+          "k": "schedule.",
+          "a": "program"
         }
       ]
     },
@@ -4717,44 +4683,59 @@
       "en": "pyramid",
       "tur": "isim",
       "tr": "piramit",
-      "ornek_tr": "Piramitlerin nasıl inşa edildiği hâlâ bir gizemdir.",
+      "ornek_tr": "Giza'daki piramit, Antik Dünya'nın Yedi Harikasından biridir.",
       "ornek_tokenlar": [
         {
-          "k": "How",
-          "a": "nasıl",
-          "vurgu": false
+          "k": "The"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "pyramid",
+          "vurgu": true,
+          "a": "piramit"
         },
         {
-          "k": "pyramids",
-          "a": "piramitler",
-          "vurgu": true
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "were",
-          "vurgu": false
+          "k": "Giza"
         },
         {
-          "k": "built",
-          "a": "inşa edildi",
-          "vurgu": false
+          "k": "is"
         },
         {
-          "k": "remains",
-          "a": "olmaya devam ediyor",
-          "vurgu": false
+          "k": "one",
+          "a": "bir"
         },
         {
-          "k": "a",
-          "vurgu": false
+          "k": "of",
+          "a": "-in"
         },
         {
-          "k": "mystery.",
-          "a": "gizem",
-          "vurgu": false
+          "k": "the"
+        },
+        {
+          "k": "Seven",
+          "a": "yedi"
+        },
+        {
+          "k": "Wonders",
+          "a": "merak etmek"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "Ancient",
+          "a": "antik"
+        },
+        {
+          "k": "World.",
+          "a": "dünya"
         }
       ]
     },
@@ -4948,53 +4929,37 @@
       "en": "impress",
       "tur": "fiil",
       "tr": "etkilemek",
-      "ornek_tr": "Dört dil konuşması jüriyi etkiledi.",
+      "ornek_tr": "Sunumu komite üyelerini etkiledi.",
       "ornek_tokenlar": [
         {
-          "k": "The",
-          "vurgu": false
+          "k": "His"
         },
         {
-          "k": "fact",
-          "a": "gerçeği",
-          "vurgu": false
-        },
-        {
-          "k": "that",
-          "a": "-diği",
-          "vurgu": false
-        },
-        {
-          "k": "she",
-          "vurgu": false
-        },
-        {
-          "k": "speaks",
-          "a": "konuşur",
-          "vurgu": false
-        },
-        {
-          "k": "four",
-          "vurgu": false
-        },
-        {
-          "k": "languages",
-          "a": "dil",
-          "vurgu": false
+          "k": "presentation",
+          "a": "sunum"
         },
         {
           "k": "impressed",
-          "a": "etkiledi",
-          "vurgu": true
+          "vurgu": true,
+          "a": "etkiledi"
         },
         {
-          "k": "the",
-          "vurgu": false
+          "k": "the"
         },
         {
-          "k": "panel.",
-          "a": "jüri",
-          "vurgu": false
+          "k": "members",
+          "a": "üyeler"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "committee.",
+          "a": "komite"
         }
       ]
     },

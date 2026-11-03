@@ -18642,27 +18642,36 @@
       "tr": "mezun olmak",
       "ornek_tokenlar": [
         {
-          "k": "after",
-          "a": "sonra",
-          "vurgu": false
+          "k": "She"
         },
         {
-          "k": "graduating",
-          "a": "mezun olmak",
-          "vurgu": true
+          "k": "will",
+          "a": "-ecek"
+        },
+        {
+          "k": "graduate",
+          "vurgu": true,
+          "a": "mezun olmak"
         },
         {
           "k": "from",
-          "a": "den",
-          "vurgu": false
+          "vurgu": true,
+          "a": "den"
         },
         {
-          "k": "college",
-          "a": "kolej",
-          "vurgu": false
+          "k": "university",
+          "a": "üniversite"
+        },
+        {
+          "k": "next",
+          "a": "gelecek"
+        },
+        {
+          "k": "summer.",
+          "a": "yaz"
         }
       ],
-      "ornek_tr": "kolejden mezun olduktan sonra"
+      "ornek_tr": "Gelecek yaz üniversiteden mezun olacak."
     },
     {
       "en": "duty",
@@ -19603,24 +19612,48 @@
       "tr": "yolcu",
       "ornek_tokenlar": [
         {
-          "k": "Passengers",
-          "a": "yolcular",
-          "vurgu": true
+          "k": "The"
         },
         {
-          "k": "went"
+          "k": "passenger",
+          "vurgu": true,
+          "a": "yolcu"
         },
         {
-          "k": "aboard"
+          "k": "in",
+          "a": "içinde"
         },
         {
-          "k": "the"
+          "k": "seat"
         },
         {
-          "k": "ship."
+          "k": "twelve",
+          "a": "on iki"
+        },
+        {
+          "k": "asked",
+          "a": "sorulduğunda"
+        },
+        {
+          "k": "for",
+          "a": "için"
+        },
+        {
+          "k": "a"
+        },
+        {
+          "k": "glass"
+        },
+        {
+          "k": "of",
+          "a": "-in"
+        },
+        {
+          "k": "water.",
+          "a": "su"
         }
       ],
-      "ornek_tr": "yolcular gemiye bindi"
+      "ornek_tr": "On ikinci koltuktaki yolcu bir bardak su istedi."
     },
     {
       "en": "ship",
@@ -19920,21 +19953,41 @@
       "tr": "ortasında, arasında",
       "ornek_tokenlar": [
         {
-          "k": "calm"
+          "k": "The"
+        },
+        {
+          "k": "villagers",
+          "a": "köylüler"
+        },
+        {
+          "k": "continued",
+          "a": "devam etti"
+        },
+        {
+          "k": "their"
+        },
+        {
+          "k": "work",
+          "a": "çalışmak"
         },
         {
           "k": "amid",
-          "a": "ortasında",
-          "vurgu": true
+          "vurgu": true,
+          "a": "ortasında"
         },
         {
           "k": "the"
         },
         {
-          "k": "chaos"
+          "k": "heavy",
+          "a": "ağır"
+        },
+        {
+          "k": "rain.",
+          "a": "yağmur yağmak"
         }
       ],
-      "ornek_tr": "kaosun ortasında sakin olmak"
+      "ornek_tr": "Köylüler şiddetli yağmur ortasında işlerine devam etti."
     },
     {
       "en": "chaos",
