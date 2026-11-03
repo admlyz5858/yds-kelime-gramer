@@ -1,5 +1,5 @@
-// app/js/bulut.js — E-posta hesabı + bulut yedekleme (Supabase Auth e-posta kodu + PostgREST, SDK'sız).
-// Akış: Google ile giriş (OAuth yönlendirme) ya da e-posta → 6 haneli kod → oturum (yds-hesap-v1; yedeğe GİRMEZ). Oturum varken:
+// app/js/bulut.js — Google ile giriş + bulut yedekleme (Supabase Auth OAuth + PostgREST, SDK'sız).
+// Akış: Google ile giriş (OAuth yönlendirme) → oturum (yds-hesap-v1; yedeğe GİRMEZ). Oturum varken:
 //   - yerel kayıtlar "kirli" bayrağı olarak işaretlenir; buluta YAZIM YALNIZCA kullanıcı "Şimdi eşitle" dediğinde
 //     ya da girişte yapılır (OTOMATIK_YAZIM=false: çakışmada veri ezilmesin diye güvenli mod)
 //   - bulut sürümü yerelden yeniyse ve yerelde değişiklik yoksa bulut cihaza indirilir
@@ -25,7 +25,7 @@ function tazele() { const g = oku(); if (g) hesap = g; return hesap; }
 if (typeof window !== 'undefined') window.addEventListener('storage', (e) => { if (e.key === HKEY) { hesap = oku(); bildir(); } });
 function bildir() { for (const f of dinleyiciler) { try { f(durum()); } catch {} } }
 export function dinle(f) { dinleyiciler.push(f); }
-export function durum() { return { girili: !!hesap, eposta: hesap?.eposta || '', saglayici: hesap?.saglayici || 'eposta', sonSenkron: hesap?.sonSenkron || 0, kirli, hata: hesap?.hata || '' }; }
+export function durum() { return { girili: !!hesap, eposta: hesap?.eposta || '', saglayici: hesap?.saglayici || 'google', sonSenkron: hesap?.sonSenkron || 0, kirli, hata: hesap?.hata || '' }; }
 
 async function istek(yol, { method = 'GET', govde, yetki, prefer } = {}) {
   const ac = new AbortController(); const z = setTimeout(() => ac.abort(), 12000);
@@ -40,19 +40,6 @@ async function istek(yol, { method = 'GET', govde, yetki, prefer } = {}) {
 }
 
 // ---- Kimlik ----
-export const epostaGecerli = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(e || '').trim());
-// 1) kod gönder (kullanıcı yoksa oluşturulur)
-export async function kodGonder(eposta) {
-  await istek('/auth/v1/otp', { method: 'POST', govde: { email: String(eposta).trim().toLowerCase(), create_user: true } });
-  return true;
-}
-// 2) kodu doğrula → oturum
-export async function kodDogrula(eposta, kod) {
-  const r = await istek('/auth/v1/verify', { method: 'POST', govde: { type: 'email', email: String(eposta).trim().toLowerCase(), token: String(kod).trim() } });
-  if (!r || !r.access_token) throw new Error('Oturum açılamadı');
-  yaz({ eposta: r.user?.email || eposta, kullanici: r.user?.id, erisim: r.access_token, yenileme: r.refresh_token, bitis: Date.now() + (r.expires_in || 3600) * 1000, sonSenkron: 0 });
-  return durum();
-}
 
 // ---- Google ile giriş (Supabase OAuth, SDK'sız; tokenlar dönüş adresinin #parçasında gelir) ----
 const DONUS_ANDROID = 'kelimetre://auth';

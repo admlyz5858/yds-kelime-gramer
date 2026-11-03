@@ -35,7 +35,7 @@ await s.reload({ waitUntil: 'networkidle' }); await bekle(800);
 await sek('mufredat'); await s.locator('#mfBanka').click(); await bekle(800); await s.locator('.bk-konu[data-konu="modal"]').click(); await bekle(400); await s.locator('.bk-alt[data-alt="cikarim"]').click(); await bekle(400); await s.locator('.test-link').first().click(); await bekle(500);
 for (let i = 0; i < 10; i++) { await s.locator('.q-secenek').first().click(); await bekle(150); await s.locator('#bkDevam').click(); await bekle(150); }
 await bekle(1800);
-T('ilk oturum bitince kayıt önerisi penceresi (Google + e-posta + geç)', (await s.locator('#hsGoogle').count()) === 1 && (await s.locator('#hsGec').count()) === 1 && (await s.locator('#hsEposta').count()) === 1);
+T('ilk oturum bitince kayıt önerisi penceresi (yalnızca Google + geç)', (await s.locator('#hsGoogle').count()) === 1 && (await s.locator('#hsGec').count()) === 1 && (await s.locator('#hsEposta').count()) === 0);
 await s.screenshot({ path: SCRATCH + '/bulut-oner.png' });
 await s.locator('#hsGec').click(); await bekle(300);
 T('geç → bir daha sorulmaz bayrağı', (await s.evaluate(() => JSON.parse(localStorage.getItem('yds-ayar-v1')).kayitSoruldu)) === true && (await s.locator('.modal-katman').count()) === 0);
@@ -55,17 +55,13 @@ await s.locator('.ayar-sat[data-is="cikis-yap"]').click(); await bekle(300); awa
 sunucu.yedek = null; sunucu.yazim = 0;
 await sek('bugun');
 await sek('ben');
-T('Ben: giriş satırı', (await s.locator('.ayar-sat[data-is="giris-yap"]').count()) === 1 && (await s.locator('.ayar-sat[data-is="yedekal"]').count()) === 0);
+T('Ben: giriş satırı', (await s.locator('.ayar-sat[data-is="giris-yap"]').count()) === 1);
 await s.locator('.ayar-sat[data-is="giris-yap"]').click(); await bekle(400);
-await s.locator('#hsEposta').fill('kullanici@example.com'); await s.locator('#hsGonder').click(); await bekle(500);
-T('kod gönderildi, kod alanı açıldı', sunucu.otp[0] === 'kullanici@example.com' && !(await s.locator('#hsKodAlan').isHidden()));
-await s.locator('#hsKod').fill('000000'); await s.locator('#hsDogrula').click(); await bekle(500);
-T('yanlış kod mesajı', (await s.locator('#hsMsg').textContent()).includes('hatalı'));
-await s.locator('#hsKod').fill('123456'); await s.locator('#hsDogrula').click(); await bekle(1500);
+await Promise.all([s.waitForURL(/localhost:8905/, { waitUntil: 'networkidle' }), s.locator('#hsGoogle').click()]).catch(() => {}); await bekle(2500);
 const h = await s.evaluate(() => JSON.parse(localStorage.getItem('yds-hesap-v1')));
-T('oturum kaydedildi ve ilk yedek buluta yazıldı (yerel dolu, bulut boş → yükle)', h && h.eposta === 'kullanici@example.com' && sunucu.yazim === 1 && sunucu.yedek.veri.veri['yds-defter-v1'].abandon);
+T('oturum kaydedildi ve ilk yedek buluta yazıldı (yerel dolu, bulut boş → yükle)', h && h.eposta === 'google@example.com' && sunucu.yazim === 1 && sunucu.yedek.veri.veri['yds-defter-v1'].abandon);
 T('yedekte oturum anahtarı yok', !('yds-hesap-v1' in sunucu.yedek.veri.veri));
-T('Ben: hesap satırı e-posta ile', (await s.locator('.hesap-sat').textContent()).includes('kullanici@example.com'));
+T('Ben: hesap satırı Google hesabını gösterir', (await s.locator('.hesap-sat').textContent()).includes('google@example.com'));
 await s.screenshot({ path: SCRATCH + '/bulut-ben.png', fullPage: true });
 // yerel değişiklik → gecikmeli otomatik yazım (zamanlayıcıyı test için kısaltamayız; hemenYaz ile tetikle)
 await s.evaluate(() => { const d = JSON.parse(localStorage.getItem('yds-defter-v1')); d.ability = { en: 'ability', tr: 'yetenek' }; localStorage.setItem('yds-defter-v1', JSON.stringify(d)); });

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { karar, epostaGecerli } from './bulut.js';
+import { karar } from './bulut.js';
 import * as bulut from './bulut.js';
 
 test('karar: bulutta yedek yoksa yükle', () => { assert.equal(karar({ kirli: false, sonSenkron: 0, bulutZaman: null, yerelBos: true }), 'yukle'); });
@@ -9,7 +9,6 @@ test('karar: bulut yeni, yerel temiz → indir', () => { assert.equal(karar({ ki
 test('karar: yerel kirli, bulut eski → yükle', () => { assert.equal(karar({ kirli: true, sonSenkron: 9000, bulutZaman: 9000, yerelBos: false }), 'yukle'); });
 test('karar: ikisi de değişmiş → sor', () => { assert.equal(karar({ kirli: true, sonSenkron: 5000, bulutZaman: 9000, yerelBos: false }), 'sor'); });
 test('karar: değişiklik yok → esit', () => { assert.equal(karar({ kirli: false, sonSenkron: 9000, bulutZaman: 9000, yerelBos: false }), 'esit'); });
-test('epostaGecerli', () => { assert.ok(epostaGecerli('a.b@c.io')); assert.ok(!epostaGecerli('abc')); assert.ok(!epostaGecerli('a@b')); });
 
 test('donusCoz: token parçası, hata ve boş adres', () => {
   const t = bulut.donusCoz('https://x/app/#access_token=A&expires_in=3600&refresh_token=R&token_type=bearer&type=magiclink');
