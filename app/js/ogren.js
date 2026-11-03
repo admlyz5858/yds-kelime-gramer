@@ -12,7 +12,7 @@ import { srs, srsKaydet } from './durum.js';
 import { ses, titre, seslendir } from './efekt.js';
 import { shuffle, gunStr } from './logic.js';
 import { kartCiplerHTML, ornekBlokHTML, wireEkOrnek } from './kart.js';
-import { loadOlay, saveOlay } from './storage.js';
+import { loadOlay, olayYazSessiz } from './storage.js';
 import { olayKimlik, kirp } from './olay.js';
 
 const GUN_MS = 86400000;
@@ -67,7 +67,7 @@ export function kurKelimeOgren(api) {
     const kimlik = olayKimlik(oturum.sid, oturum.i);
     const mevcut = loadOlay();
     if (mevcut.some(o => o.id === kimlik)) return;
-    saveOlay(kirp([...mevcut, { id: kimlik, t: Date.now(), en: w.en.toLowerCase(), q }]));
+    olayYazSessiz(kirp([...mevcut, { id: kimlik, t: Date.now(), en: w.en.toLowerCase(), q }]));
   }
   function derecelendir(w, q) {
     const key = w.en.toLowerCase();

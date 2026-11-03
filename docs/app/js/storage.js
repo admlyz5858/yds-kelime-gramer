@@ -138,6 +138,8 @@ export function loadOlay() {
   catch { return []; }
 }
 export function saveOlay(v) { kaydet(OLKEY, v); }
+// Bildirimsiz yazım: olay eklemek "kirli" işaretlemez; senkronda birleşim olarak ele alınır
+export function olayYazSessiz(v) { localStorage.setItem(OLKEY, JSON.stringify(v)); }
 
 export function loadOzel() {
   try { return JSON.parse(localStorage.getItem(OZKEY)) || []; }

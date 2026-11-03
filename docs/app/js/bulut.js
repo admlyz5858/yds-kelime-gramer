@@ -5,7 +5,9 @@
 //   - bulut sürümü yerelden yeniyse ve yerelde değişiklik yoksa bulut cihaza indirilir
 //   - ilk eşitlemede iki taraf da doluysa, ya da ikisi de değişmişse kullanıcıya sorulur (bulut mu, bu cihaz mı)
 //   - bulutta yedek silinmişse (bu cihaz daha önce eşitlemişti) oturum kapatılır
-import { yedekAl, yedekYukle, kayitDinle } from './storage.js';
+import { yedekAl, yedekYukle, kayitDinle, loadOlay, olayYazSessiz } from './storage.js';
+import { birlestir, kirp } from './olay.js';
+const OLAY = 'yds-olay-v1';
 
 const URL = 'https://thftjeecotladgnuqwhd.supabase.co';
 const KEY = 'sb_publishable_Up8BuFFjwR-nNFlyyGpmzA_ns50xFAU';
@@ -147,15 +149,15 @@ export function buluttanUygula(bulut) { const n = yedekYukle(bulut.veri); kirli 
 const cihazAdi = () => (typeof window === 'undefined' ? 'node' : window.Capacitor ? 'android' : /iPhone|iPad/.test(navigator.userAgent) ? 'ios-pwa' : 'web');
 
 // Karar: yerel değişiklik var mı, bulut daha yeni mi? → 'yukle' | 'indir' | 'sor' | 'esit'
-export function karar({ kirli, sonSenkron, bulutZaman, yerelBos }) {
+export function karar({ kirli, sonSenkron, bulutZaman, yerelBos, olayFarki = false }) {
   if (bulutZaman == null) return sonSenkron > 0 ? 'silindi' : 'yukle';   // daha önce eşitlenmiş ama bulutta yedek yoksa: hesap silinmiş
   const bulutYeni = !sonSenkron || bulutZaman > sonSenkron + 1000;      // hiç eşitlenmemiş cihaz için bulut her zaman "yeni" sayılır
   if (!sonSenkron && !yerelBos) return 'sor';                          // ilk eşitleme ve iki taraf da dolu: kullanıcıya sorulur
-  if (yerelBos) return bulutYeni ? 'indir' : (kirli ? 'yukle' : 'esit'); // bu cihaz boş: bulut kazanır; tekrar indirme döngüsü yok
+  if (yerelBos) return bulutYeni ? 'indir' : (kirli || olayFarki ? 'yukle' : 'esit'); // bu cihaz boş: bulut kazanır; tekrar indirme döngüsü yok
   if (!kirli && bulutYeni) return 'indir';
   if (kirli && !bulutYeni) return 'yukle';
   if (kirli && bulutYeni) return 'sor';
-  return 'esit';
+  return olayFarki ? 'yukle' : 'esit';   // yalnızca cevap olayları farklıysa birleşimi buluta gönder
 }
 export const yerelBosMu = () => { const o = ozetCikar(yedekAl().veri); return o.kart === 0 && o.test === 0 && o.defter === 0 && o.xp < 50; };
 
@@ -164,10 +166,21 @@ export async function esitle(sor) {
   if (!hesap) return null;
   try {
     const bulut = await bulutOku();
-    const k = karar({ kirli, sonSenkron: hesap.sonSenkron || 0, bulutZaman: bulut ? bulut.guncelleme : null, yerelBos: yerelBosMu() });
+    // Cevap olayları kimliğe göre birleşir: iki cihazın cevapları da korunur, çakışma sorusu gerekmez
+    let olayFarki = false;
+    if (bulut) {
+      const yerel = loadOlay();
+      const uzak = Array.isArray(bulut.veri?.veri?.[OLAY]) ? bulut.veri.veri[OLAY] : [];
+      const uzakKimlik = new Set(uzak.map(o => o.id));
+      olayFarki = yerel.some(o => !uzakKimlik.has(o.id));
+      const birlesik = kirp(birlestir(yerel, uzak));
+      olayYazSessiz(birlesik);
+      bulut.veri.veri[OLAY] = birlesik;
+    }
+    const k = karar({ kirli, sonSenkron: hesap.sonSenkron || 0, bulutZaman: bulut ? bulut.guncelleme : null, yerelBos: yerelBosMu(), olayFarki });
     if (k === 'silindi') { yaz(null); return 'silindi'; }
     if (k === 'yukle') { await bulutaYaz(); return 'yukle'; }
-    if (k === 'indir') { buluttanUygula(bulut); return 'indir'; }
+    if (k === 'indir') { buluttanUygula(bulut); if (olayFarki) await bulutaYaz(); return 'indir'; }
     if (k === 'sor') { const secim = sor ? await sor(bulut) : null; if (secim === 'indir') { buluttanUygula(bulut); return 'indir'; } if (secim === 'yukle') { await bulutaYaz(); return 'yukle'; } return null; }
     if (hesap && hesap.hata) yaz({ ...hesap, hata: '' });   // başarılı eşitlemede eski hata metni kalmasın
     return 'esit';

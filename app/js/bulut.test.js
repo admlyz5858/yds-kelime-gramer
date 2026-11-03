@@ -39,3 +39,13 @@ test('karar: yerel boş ama değişiklik bekliyor, bulut eski → yükle', () =>
 test('karar: sıfır sonSenkron ve bulut yerelden yeni, yerel boş → indir', () => {
   assert.equal(karar({ kirli: false, sonSenkron: 0, bulutZaman: 1000, yerelBos: true }), 'indir');
 });
+
+test('karar: yalnızca cevap olayları farklı, bulut eski → yükle (çakışma sorusu yok)', () => {
+  assert.equal(karar({ kirli: false, sonSenkron: 9000, bulutZaman: 9000, yerelBos: false, olayFarki: true }), 'yukle');
+});
+test('karar: olay farkı yok, değişiklik yok → esit', () => {
+  assert.equal(karar({ kirli: false, sonSenkron: 9000, bulutZaman: 9000, yerelBos: false, olayFarki: false }), 'esit');
+});
+test('karar: başka veri de değişmiş, bulut yeni → hâlâ sor (olay birleşimi bunu değiştirmez)', () => {
+  assert.equal(karar({ kirli: true, sonSenkron: 5000, bulutZaman: 9000, yerelBos: false, olayFarki: true }), 'sor');
+});
