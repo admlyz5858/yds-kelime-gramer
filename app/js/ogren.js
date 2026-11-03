@@ -380,7 +380,7 @@ export function kurKelimeOgren(api) {
     const arr = listeFiltreli();
     const calisBtn = arr.length ? `<button class="ogr-basla" id="ogrListeCalis"><span class="ogr-basla-bas">Bu listeyi çalış</span><span class="ogr-basla-alt">${Math.min(arr.length, 60)} kelime · karışık mod</span></button>` : '';
     render(`
-      <div class="ogr-liste-ara-satir"><input id="ogrAra" class="ogr-liste-ara" type="text" placeholder="Kelime veya anlam ara…" value="${esc(listeDurum.q)}"></div>
+      <div class="ogr-liste-ara-satir"><input id="ogrAra" class="ogr-liste-ara" type="text" placeholder="Kelime veya anlam ara…" value="${esc(listeDurum.q)}" aria-label="Kelime ara"></div>
       <div class="ogr-liste-cipler">${cipler}</div>
       <div class="ogr-liste-say">${listeSayMetni(arr)}</div>
       ${calisBtn}
@@ -580,7 +580,7 @@ export function kurKelimeOgren(api) {
     render(`${ustBar()}<div class="ogr-kart-ustet">${rozet(item)} <span class="ogr-mod-et">⌨️ İngilizcesini yaz</span></div>
       <div class="soru-kart"><div class="soru-etiket">Türkçesi verildi — İngilizcesini yaz</div><div class="soru-cumle ogr-soru-tr">${esc(w.tr)}</div>${w.tur ? `<div class="ogr-yazim-ipucu">${esc(w.tur)}</div>` : ''}</div>
       <div class="ogr-yazim-alan">
-        <input id="ogrYazi" class="ogr-yazi-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="İngilizce yaz…" ${cevaplandi ? 'disabled' : ''} value="${cevaplandi ? esc(_cevap) : ''}">
+        <input id="ogrYazi" class="ogr-yazi-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="İngilizce yaz…" ${cevaplandi ? 'disabled' : ''} value="${cevaplandi ? esc(_cevap) : ''}" aria-label="Çeviriyi yaz">
         ${cevaplandi ? '' : '<button class="aksiyon" id="ogrKontrol">Kontrol et</button><button class="aksiyon ikincil" id="ogrBilmiyorum">Bilmiyorum</button>'}
       </div>${alt}`);
     wireCik();
@@ -622,7 +622,7 @@ export function kurKelimeOgren(api) {
     render(`${ustBar()}<div class="ogr-kart-ustet">${rozet(item)} <span class="ogr-mod-et">📝 Boşluğu doldur (${esc(w.tr)})</span></div>
       <div class="soru-kart"><div class="soru-etiket">Cümledeki boşluğa uygun İngilizce kelimeyi yaz</div>${govde}</div>
       <div class="ogr-yazim-alan">
-        <input id="ogrYazi" class="ogr-yazi-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="Boşluğa gelen kelime…" ${cevaplandi ? 'disabled' : ''} value="${cevaplandi ? esc(_cevap) : ''}">
+        <input id="ogrYazi" class="ogr-yazi-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="Boşluğa gelen kelime…" ${cevaplandi ? 'disabled' : ''} value="${cevaplandi ? esc(_cevap) : ''}" aria-label="Çeviriyi yaz">
         ${cevaplandi ? '' : '<button class="aksiyon" id="ogrKontrol">Kontrol et</button><button class="aksiyon ikincil" id="ogrBilmiyorum">Bilmiyorum</button>'}
       </div>${alt}`);
     wireCik();

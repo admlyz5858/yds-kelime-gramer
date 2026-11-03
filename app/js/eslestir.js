@@ -274,7 +274,7 @@ export function kurEslestirme(api) {
   function cizKodGir() {
     ekranModu('Düello kodu', panelEkrani);
     render(`<div class="cumle"><div class="tr">Arkadaşının paylaştığı düello kodunu gir; aynı 10 kelimeyi 60 saniyede eşleştir, skorlar karşılaştırılsın.</div></div>
-      <div class="ogr-yazim-alan"><input id="esKod" class="ogr-yazi-input" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ör. 1A2B3-4C" maxlength="9">
+      <div class="ogr-yazim-alan"><input id="esKod" class="ogr-yazi-input" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ör. 1A2B3-4C" maxlength="9" aria-label="Düello kodu">
       <button class="aksiyon" id="esKodBasla">Düelloya başla</button></div>
       <div id="esKodMsg" class="alt-bilgi" style="margin-top:10px;color:var(--kil)"></div>`);
     const inp = document.getElementById('esKod');

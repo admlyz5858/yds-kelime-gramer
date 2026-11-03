@@ -67,12 +67,12 @@ function cumleTokenla(cumle, hedef) {
 function ozelEkleAc(sonra) {
   modalAc('Kendi kelimeni ekle', `
     <p class="modal-aciklama">Kelime Defter'e girer, aralıklı tekrar ve akışta diğer kelimeler gibi çalışılır.</p>
-    <input id="ozEn" class="giris-tarih" style="margin-top:0" placeholder="İngilizce kelime (ör. resilient)" autocapitalize="off" autocomplete="off">
-    <input id="ozTr" class="giris-tarih" style="margin-top:8px" placeholder="Türkçe anlamı">
+    <input id="ozEn" class="giris-tarih" style="margin-top:0" placeholder="İngilizce kelime (ör. resilient)" autocapitalize="off" autocomplete="off" aria-label="İngilizce kelime">
+    <input id="ozTr" class="giris-tarih" style="margin-top:8px" placeholder="Türkçe anlamı" aria-label="Türkçe anlamı">
     <select id="ozTur" class="giris-tarih" style="margin-top:8px"><option>İsim</option><option>Fiil</option><option>Sıfat</option><option>Zarf</option><option>Edat</option><option>Bağlaç</option><option>Öbek</option></select>
-    <input id="ozOrnek" class="giris-tarih" style="margin-top:8px" placeholder="Örnek cümle (isteğe bağlı)" autocapitalize="off">
-    <input id="ozOrnekTr" class="giris-tarih" style="margin-top:8px" placeholder="Örnek cümlenin çevirisi (isteğe bağlı)">
-    <input id="ozNot" class="giris-tarih" style="margin-top:8px" placeholder="Hafıza ipucu (isteğe bağlı)">
+    <input id="ozOrnek" class="giris-tarih" style="margin-top:8px" placeholder="Örnek cümle (isteğe bağlı)" autocapitalize="off" aria-label="Örnek cümle">
+    <input id="ozOrnekTr" class="giris-tarih" style="margin-top:8px" placeholder="Örnek cümlenin çevirisi (isteğe bağlı)" aria-label="Örnek cümlenin çevirisi">
+    <input id="ozNot" class="giris-tarih" style="margin-top:8px" placeholder="Hafıza ipucu (isteğe bağlı)" aria-label="Hafıza ipucu">
     <div id="ozMsg" style="margin-top:8px;color:var(--gul);min-height:1.2em;font-size:13px"></div>
     <button class="aksiyon" id="ozKaydet" style="width:100%;margin-top:6px">Ekle</button>`, {
     onWire: (o, kapat) => {
@@ -947,7 +947,7 @@ function girisEkrani(zorla) {
         <div class="giris-amblem kucuk">📅</div>
         <div class="giris-baslik">Sınav tarihin var mı?</div>
         <div class="giris-alt">Geri sayım ve günlük kelime planı için</div>
-        <input id="girisTarih" type="date" value="${esc(tarih)}" class="giris-tarih">
+        <input id="girisTarih" type="date" value="${esc(tarih)}" class="giris-tarih" aria-label="Sınav tarihi">
         <p class="giris-not">İstersen boş bırak; Bugün sekmesinden sonra da ekleyebilirsin.</p>
         ${noktalar()}
         <div class="btn-satir"><button class="aksiyon ikincil" id="girisGeri">‹ Geri</button><button class="aksiyon giris-basla" id="girisBasla">Çalışmaya Başla →</button></div>
@@ -1292,7 +1292,7 @@ function sinavAyarAc() {
   const mevcut = _ayar.sinavTarih || '';
   modalAc('Sınav tarihi', `
     <p class="modal-aciklama">YDS/YÖKDİL sınav tarihini seç; Bugün sekmesinde geri sayım ve günlük kelime planı görünsün.</p>
-    <input id="sinavInput" type="date" value="${mevcut}" style="width:100%;box-sizing:border-box;padding:13px;border:1px solid var(--hat);border-radius:12px;background:var(--yuzey);color:var(--murekkep);font-size:16px;margin-bottom:12px;">
+    <input id="sinavInput" type="date" value="${mevcut}" style="width:100%;box-sizing:border-box;padding:13px;border:1px solid var(--hat);border-radius:12px;background:var(--yuzey);color:var(--murekkep);font-size:16px;margin-bottom:12px;" aria-label="Sınav tarihi">
     <div class="btn-satir">
       ${mevcut ? '<button class="aksiyon ikincil" id="sinavSil">Kaldır</button>' : ''}
       <button class="aksiyon" id="sinavKaydet">Kaydet</button>
@@ -1407,9 +1407,9 @@ function bildirimAyarAc() {
   modalAc('Günlük hatırlatma', `
     <p class="modal-aciklama">Her gün seçtiğin saatte “bugünkü kelimeler seni bekliyor” hatırlatması gönderilsin.${native ? '' : ' <b>Not:</b> Bildirimler yalnızca Android uygulamasında çalışır (tarayıcıda değil).'}</p>
     <label class="ayar-sat" style="cursor:default"><span>🔔</span><div style="flex:1"><b>Hatırlatma</b><i>Açık/Kapalı</i></div>
-      <input type="checkbox" id="bildAcik" ${acik ? 'checked' : ''} style="width:22px;height:22px;accent-color:var(--orman)"></label>
+      <input type="checkbox" id="bildAcik" ${acik ? 'checked' : ''} style="width:22px;height:22px;accent-color:var(--orman)" aria-label="Hatırlatmayı aç"></label>
     <label class="ayar-sat" style="cursor:default"><span>⏰</span><div style="flex:1"><b>Saat</b><i>Hatırlatma vakti</i></div>
-      <input type="time" id="bildSaat" value="${saat}" style="padding:8px;border:1px solid var(--hat);border-radius:10px;background:var(--yuzey);color:var(--murekkep);font-size:15px"></label>
+      <input type="time" id="bildSaat" value="${saat}" style="padding:8px;border:1px solid var(--hat);border-radius:10px;background:var(--yuzey);color:var(--murekkep);font-size:15px" aria-label="Hatırlatma saati"></label>
     <button class="aksiyon" id="bildKaydet" style="width:100%;margin-top:12px">Kaydet</button>
     <div id="bildMsg" style="margin-top:10px;color:var(--murekkep-2);min-height:1.2em;font-size:13px"></div>
   `, {
