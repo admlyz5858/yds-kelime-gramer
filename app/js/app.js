@@ -922,7 +922,7 @@ function girisEkrani(zorla) {
           <div class="giris-sat"><span>📖</span><div><b>2.100+ kelime tek yerde</b><i>Seviye (S1–S5), tür ve duruma göre süz; akışta gez</i></div></div>
           <div class="giris-sat"><span>🌱</span><div><b>Aralıklı tekrar</b><i>Unutmadan önce tekrar; “Bugün” sekmesi planı verir</i></div></div>
           <div class="giris-sat"><span>🎓</span><div><b>13 gramer ünitesi</b><i>Oku, alıştırma yap, test çöz, çeviri çalış</i></div></div>
-          <div class="giris-sat"><span>🧩</span><div><b>Eşleştirme oyunu</b><i>Günün bulmacası, düello ve çevrimiçi lig</i></div></div>
+          <div class="giris-sat"><span>🧩</span><div><b>Eşleştirme oyunu</b><i>Günün bulmacası, bölümler ve düello</i></div></div>
         </div>
         ${noktalar()}
         <button class="aksiyon giris-basla" id="girisIleri">Devam →</button>
@@ -968,7 +968,7 @@ function yardimAc() {
     <div class="yardim-sat"><span>🌱</span><div><b>Öğren</b> — Aralıklı tekrar: kelimeler unutulmadan önce tekrar gelir; kart, test, yazım ve boşluk modları.</div></div>
     <div class="yardim-sat"><span>🎓</span><div><b>Müfredat</b> — Her ünitede Oku (kurallar + etkileşimli örnekler), Alıştırma (ünitenin kendi cümlelerinden boşluk ve sınıflandırma), Test (kolaydan zora) ve Çeviri.</div></div>
     <div class="yardim-sat"><span>📝</span><div><b>Soru Bankası</b> — Tüm test soruları konuya göre: Edatlar, Zamanlar, Modallar, Koşul… Alt konu seç, 10 soru çöz; doğruluk konu bazında saklanır, zayıf konun Bugün’e düşer.</div></div>
-    <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme; bölümler, günün bulmacası, düello, rekorlar ve çevrimiçi lig.</div></div>
+    <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme; bölümler, günün bulmacası, düello ve rekorlar.</div></div>
     <div class="yardim-sat"><span>🧪</span><div><b>Mini deneme</b> — Soru Bankası'ndan 20 soru, 25 dakika; tahmini YDS puanı ve konu kırılımı. Bugün'de haftada bir önerilir.</div></div>
     <div class="yardim-sat"><span>📄</span><div><b>Metin tara</b> — Kelimeler › Tara: bir metin yapıştır, havuzdaki kelimeler seviye rengiyle işaretlenir; bilmediklerini deftere al ya da çalış.</div></div>
     <div class="yardim-sat"><span>➕</span><div><b>Kendi kelimen</b> — Defterim › "Kendi kelimeni ekle"; her karta 📝 hafıza ipucu yazabilirsin.</div></div>
@@ -984,7 +984,6 @@ function ayarSatirlariHTML() {
   return `
     <div class="ben-baslik">Oyun</div>
     <button class="ayar-sat" data-is="rekor"><span>🏅</span><div><b>Rekorlarım</b><i>Eşleştirme skorların</i></div></button>
-    <button class="ayar-sat" data-is="lig"><span>🌍</span><div><b>Çevrimiçi lig</b><i>Günün bulmacası, haftalık ve en iyi bölüm sıralaması</i></div></button>
     <button class="ayar-sat" data-is="deneme"><span>🧪</span><div><b>Mini deneme</b><i>${deneme.ozet().sayi ? `${deneme.ozet().sayi} deneme · son ${deneme.ozet().son.puan} · en iyi ${deneme.ozet().enIyi}` : 'Henüz deneme çözülmedi'}</i></div></button>
     <div class="ben-baslik">Ayarlar</div>
     <button class="ayar-sat" data-is="tema"><span>${TEMA_AD[temaSecimi()][0]}</span><div><b>${TEMA_AD[temaSecimi()][1]}</b><i>${TEMA_AD[temaSecimi()][2]} — değiştirmek için dokun</i></div></button>
@@ -1012,7 +1011,6 @@ function ayarBagla(root) {
     if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulutEsitle(true).then(() => benAc()); return; }
     if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); const eb = document.getElementById('onayEvet'); if (eb) eb.textContent = 'Evet, çık'; return; }
     if (is === 'hesap-sil') { onayAc('Hesabın ve buluttaki yedeğin kalıcı olarak silinsin mi? Bu cihazdaki ilerleme silinmez.', () => { bulut.hesabiSil().then((r) => { toast(r === 'tam' ? 'Hesap ve yedek silindi' : 'Bulut yedeği silindi, oturum kapatıldı'); benAc(); }).catch(() => toast('Silinemedi, tekrar dene')); }); return; }
-    if (is === 'lig') { eslestirme.lig(); return; }
     if (is === 'tema') { temaDegistir(); benAc(); return; }
     if (is === 'hedef') {
       const ops = [10, 20, 30, 50];
@@ -1418,7 +1416,7 @@ function girisAc(opt = {}) {
       <button class="dn-bitir-link" id="hsTekrar">Kod gelmedi, tekrar gönder</button>
     </div>
     ${opt.oner ? '<button class="dn-bitir-link" id="hsGec">Şimdilik geç</button>' : ''}
-    <p class="giris-not" style="text-align:left">Hesap verisi: e-posta adresin ve ilerleme yedeğin. Lig takma adından bağımsızdır. İstediğin an Ben › Hesabımı sil ile her şey silinir.</p>`, {
+    <p class="giris-not" style="text-align:left">Hesap verisi: e-posta adresin ve ilerleme yedeğin. İstediğin an Ben › Hesabımı sil ile her şey silinir.</p>`, {
     onWire: (o, kapat) => {
       const msg = o.querySelector('#hsMsg'), ep = o.querySelector('#hsEposta');
       if (!opt.oner) setTimeout(() => ep.focus(), 120);

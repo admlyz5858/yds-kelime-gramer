@@ -29,7 +29,7 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Eşleştirme Oyunu — İngilizce ve Türkçe kelimeleri eşleştir. 42 bölüm, kolaydan zora: 5 kelimeyle başla, süreli seviyelere kadar ilerle. Puan, yıldız ve rekorlarını takip et.
 
-• Günün Eşleştirmesi — Her gün herkese aynı 10 kelime. Sonucunu arkadaşlarınla paylaş, çevrimiçi ligde sıralamaya gir (isteğe bağlı, takma adla).
+• Günün Eşleştirmesi — Her gün herkese aynı 10 kelime. Sonucunu arkadaşlarınla paylaş.
 
 • Düello — Bir kod paylaş, arkadaşın aynı kelimelerle oynasın; kim daha yüksek puan alacak?
 
@@ -45,7 +45,7 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Motivasyon — Günlük seri, XP ve seviye, günlük görevler, başarımlar, aktivite ısı haritası, sınav geri sayımı ve günlük hatırlatma.
 
-• Gizlilik — Hesap zorunlu değildir, reklam ve izleme yoktur. İlerlemen cihazında kalır. İstersen e-postanla kayıt olup ilerlemeni buluta yedekleyebilirsin; çevrimiçi lige katılırsan takma adın ve skorların sunucuya gider. Hesabını ve yedeğini istediğin an silebilirsin.
+• Gizlilik — Hesap zorunlu değildir, reklam ve izleme yoktur. İlerlemen cihazında kalır. İstersen e-postanla kayıt olup ilerlemeni buluta yedekleyebilirsin. Hesabını ve yedeğini istediğin an silebilirsin.
 
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
@@ -92,7 +92,6 @@ Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
 • Yeni: Eşleştirme Oyunu — 42 bölüm, kolaydan zora, süreli seviyeler
 • Günün Eşleştirmesi ve arkadaşınla Düello
-• Çevrimiçi lig (isteğe bağlı, takma adla)
 • Telaffuz artık Android'de çalışıyor; örnek cümlede kelimeye dokununca 🔊
 • Kelime sekmesi Reels tarzı akışa dönüştü
 • Sadeleştirmeler ve hata düzeltmeleri
@@ -101,7 +100,7 @@ Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ## İçerik derecelendirme anketi (IARC) — önerilen yanıtlar
 - Uygulama türü: **Uygulama (oyun değil)** → Eğitim/Referans
 - Şiddet, korku, cinsellik, küfür, kumar, uyuşturucu, vb.: **Hiçbiri / Hayır**
-- Kullanıcılar arası etkileşim / mesajlaşma: **Hayır** (lig yalnızca takma ad + skor gösterir; mesajlaşma/içerik paylaşımı yok)
+- Kullanıcılar arası etkileşim / mesajlaşma: **Hayır**
 - Konum paylaşımı: **Hayır**
 - Dijital satın alma: **Hayır** (şimdilik)
 - Beklenen sonuç: **3+ / Herkes (Everyone)**
@@ -126,10 +125,3 @@ E-posta hesabı ve bulut yedekleme (isteğe bağlı, 1.4.0+) için:
 - **Uygulama etkinliği → Uygulama etkileşimleri:** çalışma ilerlemesi yedeği (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
 - Hesap oluşturma: Google ile giriş (OAuth; yalnızca e-posta + hesap kimliği alınır) ya da e-posta + tek kullanımlık kod (şifre yok). Aktarımda şifreli (HTTPS). Sunucu: Supabase (AB/Frankfurt).
 
-Eşleştirme oyunu çevrimiçi ligi (isteğe bağlı) için:
-- **Veri toplanıyor mu?** Evet — yalnızca kullanıcı "Lige katıl" derse.
-- **Uygulama etkinliği → Diğer kullanıcı tarafından oluşturulan içerik:** takma ad (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
-- **Uygulama etkinliği → Uygulama etkileşimleri:** oyun skorları (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
-- **Cihaz veya diğer kimlikler:** rastgele uygulama kimliği (isteğe bağlı; amaç: uygulama işlevselliği). Reklam kimliği YOK.
-- Veriler aktarımda şifrelenir (HTTPS). Kullanıcı silme isteyebilir: uygulama içi "Ligden ayrıl".
-- Üçüncü taraf: Supabase (veri işleyen, AB/Frankfurt).
