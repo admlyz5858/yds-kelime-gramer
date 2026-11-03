@@ -154,7 +154,7 @@ const turIlk = (w) => (String(w.tur || '').split(/[\s(/]/)[0] || '').toLocaleLow
 // S1 (en sık 1000'in ilk çeyreği: of, to, in, be…) YDS adayının zaten bildiği kelimelerdir → plan S2'den başlar, S1 günleri en sonda.
 export function gunlereBol(kelimeler, boyut = GUN_BOYUT) {
   let i = 0;
-  const sirali = [...kelimeler].sort((a, b) => ((a.sv || 0) === 1) - ((b.sv || 0) === 1));   // kararlı: S1 sona, iç sıra korunur
+  const sirali = [...kelimeler].sort((a, b) => ((b.sv || 0) === 1) - ((a.sv || 0) === 1));   // kararlı: S1 başa (temel kelimeler ilk günlerde), iç sıra korunur
   for (const w of sirali) {
     if (PLAN_DISI_TUR.test(turIlk(w))) { delete w.g; continue; }
     w.g = Math.floor(i / boyut) + 1; i++;

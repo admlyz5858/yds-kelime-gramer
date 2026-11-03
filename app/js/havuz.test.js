@@ -39,8 +39,8 @@ test('gunlereBol: artikel/zamir/yardımcı fiil gibi dil bilgisi sözcükleri pl
   gunlereBol(h, 2);
   assert.deepEqual(h.map(w => w.g), [undefined, 1, undefined, undefined, 1, 2]);
 });
-test('gunlereBol: S1 kelimeleri planın sonuna gider, S2+ iç sırası korunur', () => {
+test('gunlereBol: S1 kelimeleri planın başına gider, S2+ iç sırası korunur', () => {
   const h = [{ en: 'of', sv: 1 }, { en: 'study', sv: 2 }, { en: 'to', sv: 1 }, { en: 'cause', sv: 2 }, { en: 'notion', sv: 3 }];
   gunlereBol(h, 2);
-  assert.deepEqual(h.map(w => [w.en, w.g]), [['of', 2], ['study', 1], ['to', 3], ['cause', 1], ['notion', 2]]);
+  assert.deepEqual(h.map(w => [w.en, w.g]), [['of', 1], ['study', 2], ['to', 1], ['cause', 2], ['notion', 3]]);
 });

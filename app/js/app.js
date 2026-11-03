@@ -12,7 +12,7 @@ import { kurDeneme } from './deneme.js';
 import { kurTarayici } from './tarayici.js';
 import { kurGun } from './gun.js';
 import * as bulut from './bulut.js';
-import { loadOzel, saveOzel } from './storage.js';
+import { loadOzel, saveOzel, saveDefter, saveOgrenilen, saveEslestir, saveAlistirma, saveBanka, saveDeneme, saveOlay } from './storage.js';
 import { notAl, notKaydet } from './notlar.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
@@ -999,7 +999,7 @@ function ayarSatirlariHTML() {
     <div class="ben-baslik">Veri</div>
     <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>${_yanlis.length} biriken soruyu sıfırla</i></div></button>
     <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>${defterKelimeler().length} kelimeyi sil</i></div></button>
-    <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Test skorları, kelime durumları, defter, yanlışlar — hepsi</i></div></button>
+    <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Öğrenilen kelimeler, defter, testler, yanlışlar, deneme ve oyun geçmişi, seri ve günlük sayaçlar silinir. Ayarların, kendi kelimelerin ve ipuçların kalır</i></div></button>
     <div class="ayar-hakkinda">Kelimetre · YDS/YÖKDİL · v${SURUM}</div>`;
 }
 function ayarBagla(root) {
@@ -1031,13 +1031,26 @@ function ayarBagla(root) {
     onayAc(sorular[is], () => {
       if (is === 'yanlis' || is === 'hepsi') { _yanlis = []; saveYanlis(_yanlis); }
       if (is === 'defter' || is === 'hepsi') { for (const k of Object.keys(defter)) delete defter[k]; defterKaydet(); }
-      if (is === 'hepsi') {
-        for (const k of Object.keys(srs.kartlar)) delete srs.kartlar[k]; srsKaydet();
-        _istat = {}; saveIstat(_istat); progress = {}; saveProgress(progress);
-      }
+      if (is === 'hepsi') { ilerlemeSifirla(); return; }
       benAc();
     });
   });
+}
+// Tüm ilerlemeyi sıfırlar (ayarlar, özel kelimeler ve hafıza ipuçları kalır). Kayıtlar bildirimli yazılır:
+// giriş yapılmışsa değişiklik buluta gider, aksi halde bulut kopyası eski ilerlemeyi geri getirmez.
+function ilerlemeSifirla() {
+  for (const k of Object.keys(srs.kartlar)) delete srs.kartlar[k];
+  srs.gun = { tarih: '', yeni: 0, tekrar: 0 }; srs.gec = []; delete srs.devam; srsKaydet();
+  for (const k of Object.keys(defter)) delete defter[k]; saveDefter(defter);
+  _yanlis = []; saveYanlis(_yanlis);
+  _istat = {}; saveIstat(_istat);
+  progress = {}; saveProgress(progress);
+  saveOgrenilen({}); saveEslestir({}); saveAlistirma({}); saveBanka({}); saveDeneme([]); saveOlay([]);
+  for (const k of ['seri', 'sonAktif', 'gunTarih', 'gunSayac', 'gunDogru', 'gunYanlis', 'gunBitirilen', 'gorevBitti', 'toplamAktivite', 'enUzunSeri', 'gunlog', 'dondurma', 'sonDers', 'sonGunKelime', 'sonDondurmaSeri', '_dondurmaBildir', 'xp']) delete _ayar[k];
+  saveAyar(_ayar);
+  const bitir = () => setTimeout(() => location.reload(), 300);
+  toast('🧹 İlerleme sıfırlandı');
+  if (bulut.durum().girili) bulut.hemenYaz().finally(bitir); else bitir();
 }
 function benAc() {
   const s = panoStats();
