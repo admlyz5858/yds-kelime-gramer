@@ -1,6 +1,6 @@
 // app/js/banka.js — Soru Bankası: tüm ünite test soruları konu › alt konu ağacında.
 // Konu seç → 10 soruluk oturum (önce hiç çözülmemiş / yanlış yapılmış sorular) → doğruluk kaydı; zayıf konular Bugün'e düşer.
-import { shuffle } from './logic.js';
+import { shuffle, bosluklariDoldur } from './logic.js';
 import { loadBanka, saveBanka } from './storage.js';
 
 const N = 10;   // bir test / oturum en fazla 10 soru
@@ -162,8 +162,7 @@ export function kurBanka(api) {
       if (cevaplandi) { if (s === q.cevap) { cls += ' dogru'; im = '<span class="q-isaret">✓</span>'; } else if (s === o.cevap) { cls += ' yanlis'; im = '<span class="q-isaret">✕</span>'; } }
       return `<button class="${cls}" data-o="${esc(s).replace(/"/g, '&quot;')}" ${cevaplandi ? 'disabled' : ''}><span class="q-harf">${'ABCDE'[idx] || '•'}</span><span class="q-sik-metin">${esc(s)}</span>${im}</button>`;
     }).join('');
-    const blank = cevaplandi ? `<span class="q-bosluk ${dogruMu ? 'dogru' : 'yanlis'}">${esc(q.cevap)}</span>` : '<span class="q-bosluk"></span>';
-    const govde = esc(q.soru).replace(/_{2,}/, blank).replace(/_{2,}/g, '<span class="q-bosluk"></span>');
+    const govde = bosluklariDoldur(esc(q.soru), cevaplandi ? q.cevap : null, (t) => `<span class="q-bosluk ${dogruMu ? 'dogru' : 'yanlis'}">${esc(t)}</span>`, () => '<span class="q-bosluk"></span>');
     let alt = '';
     if (cevaplandi) {
       alt = `<div class="q-sonuc-rozet ${dogruMu ? 'dogru' : 'yanlis'}">${dogruMu ? '✓ Doğru' : '✕ Doğrusu: ' + esc(q.cevap)}</div>`;

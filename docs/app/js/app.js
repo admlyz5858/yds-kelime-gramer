@@ -1,5 +1,5 @@
 // app/js/app.js — Kelimetre v2: beş sekme (Bugün · Kelimeler · Müfredat · Oyun · Ben)
-import { toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr } from './logic.js';
+import { toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr, bosluklariDoldur } from './logic.js';
 import { loadProgress, saveProgress, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar } from './storage.js';
 import { srs, srsKaydet, defter, defterKaydet, defterdeMi, defterToggle, defterEkle, defterKelimeler, pekisenSayisi, eskiKayitlariTasi } from './durum.js';
 import { kurKelimeOgren } from './ogren.js';
@@ -761,10 +761,7 @@ function cizQuiz() {
     return `<button class="${sinif}" data-o="${esc(o)}" ${cevaplandi ? 'disabled' : ''}>
       <span class="q-harf">${_harfler[idx] || '•'}</span><span class="q-sik-metin">${esc(o)}</span>${isaret}</button>`;
   }).join('');
-  const blank = cevaplandi
-    ? `<span class="q-bosluk ${dogruMu ? 'dogru' : 'yanlis'}">${esc(soru.cevap)}</span>`
-    : `<span class="q-bosluk"></span>`;
-  const soruGovde = esc(soru.soru).replace(/_{2,}/, blank);
+  const soruGovde = bosluklariDoldur(esc(soru.soru), cevaplandi ? soru.cevap : null, (t) => `<span class="q-bosluk ${dogruMu ? 'dogru' : 'yanlis'}">${esc(t)}</span>`, () => '<span class="q-bosluk"></span>');
   let alt = '';
   if (cevaplandi) {
     alt += `<div class="q-sonuc-rozet ${dogruMu ? 'dogru' : 'yanlis'}">${dogruMu ? '✓ Doğru' : '✕ Yanlış · doğrusu: ' + esc(soru.cevap)}</div>`;

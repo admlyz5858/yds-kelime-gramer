@@ -39,3 +39,18 @@ export function gunStr(off = 0) {
   const d = new Date(); d.setDate(d.getDate() + off);
   return isoGun(d);
 }
+
+// Soru metnindeki boşlukları doldurur. secim: seçilen/doğru cevap ("A / B" biçimi çok boşluklu sorular içindir).
+// doldur(metin) → dolu boşluk HTML'i, bos() → boş boşluk HTML'i. secim null ise hepsi boş kalır.
+export function bosluklariDoldur(metin, secim, doldur, bos) {
+  const bl = (String(metin).match(/_{2,}/g) || []).length;
+  const parcalar = String(secim ?? '').split(' / ');
+  const coklu = bl > 1 && parcalar.length === bl;
+  let k = 0;
+  return String(metin).replace(/_{2,}/g, () => {
+    const i = k++;
+    if (secim == null) return bos();
+    if (coklu) return doldur(parcalar[i]);
+    return i === 0 ? doldur(String(secim)) : bos();
+  });
+}

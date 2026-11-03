@@ -34,3 +34,14 @@ test('isoGun/gunStr yerel günü YYYY-AA-GG verir', () => {
   assert.match(gunStr(), /^\d{4}-\d{2}-\d{2}$/);
   assert.notEqual(gunStr(-1), gunStr(0));
 });
+
+import { bosluklariDoldur } from './logic.js';
+test('bosluklariDoldur: çok boşluklu soruda her boşluğa kendi parçası', () => {
+  const dol = (t) => `[${t}]`, bos = () => '[_]';
+  assert.equal(bosluklariDoldur('A ____ B ____ C', 'x / y', dol, bos), 'A [x] B [y] C');
+});
+test('bosluklariDoldur: tek cevap ilk boşluğa, diğerleri boş; seçim yoksa hepsi boş', () => {
+  const dol = (t) => `[${t}]`, bos = () => '[_]';
+  assert.equal(bosluklariDoldur('A ____ B ____', 'x', dol, bos), 'A [x] B [_]');
+  assert.equal(bosluklariDoldur('A ____ B ____', null, dol, bos), 'A [_] B [_]');
+});

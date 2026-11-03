@@ -1,6 +1,6 @@
 // app/js/deneme.js — Mini deneme sınavı: Soru Bankası'ndan ÖSYM dağılımına yakın 20 soru, 25 dakika, sonunda net/puan
 // tahmini ve konu kırılımı. Sorular sırayla gezilir, cevaplar sonda açıklanır; yanlışlar Yanlışlarım'a düşer.
-import { shuffle } from './logic.js';
+import { shuffle, bosluklariDoldur } from './logic.js';
 import { loadDeneme, saveDeneme } from './storage.js';
 
 export const DAGILIM = { edat: 4, zaman: 3, modal: 3, baglac: 2, kosul: 2, cumlecik: 2, fiilimsi: 1, cati: 1, kelime: 2 };   // = 20
@@ -85,7 +85,7 @@ export function kurDeneme(api) {
     kaydetDevam();
     const q = o.liste[o.i], c = o.cevaplar[o.i];
     const sik = q.secenekler.map((s, idx) => `<button class="q-secenek ${c === s ? 'secili' : ''}" data-o="${esc(s).replace(/"/g, '&quot;')}"><span class="q-harf">${'ABCDE'[idx] || '•'}</span><span class="q-sik-metin">${esc(s)}</span></button>`).join('');
-    const govde = esc(q.soru).replace(/_{2,}/g, c ? `<span class="q-bosluk secili">${esc(c)}</span>` : '<span class="q-bosluk"></span>');
+    const govde = bosluklariDoldur(esc(q.soru), c ?? null, (t) => `<span class="q-bosluk secili">${esc(t)}</span>`, () => '<span class="q-bosluk"></span>');
     const cevaplanan = o.cevaplar.filter(x => x != null).length;
     render(`
       <div class="dn-ust"><span class="dn-sayac">Soru ${o.i + 1} / ${o.liste.length} · ${cevaplanan} cevaplı</span><span class="es-sure" id="dnSure">${sureYazi(o.bitis - Date.now())}</span></div>
@@ -136,7 +136,7 @@ export function kurDeneme(api) {
     render(`<div class="cumle"><div class="tr">${r.dogru} doğru · ${r.yanlis} yanlış · ${r.bos} boş. Yanlışlar “Yanlışlarım”a eklendi.</div></div>` + o.liste.map((q, i) => {
       const c = o.cevaplar[i], d = c === q.cevap;
       return `<div class="dn-inc ${c == null ? 'bos' : d ? 'dogru' : 'yanlis'}"><div class="dn-inc-bas"><span>${i + 1}. ${esc(konuAd(q.konu))}</span><b>${c == null ? '— boş' : d ? '✓ doğru' : '✕ yanlış'}</b></div>
-        <div class="dn-inc-soru">${esc(q.soru).replace(/_{2,}/g, `<span class="q-bosluk dogru">${esc(q.cevap)}</span>`)}</div>
+        <div class="dn-inc-soru">${bosluklariDoldur(esc(q.soru), q.cevap, (t) => `<span class="q-bosluk dogru">${esc(t)}</span>`, () => '<span class="q-bosluk"></span>')}</div>
         ${c != null && !d ? `<div class="dn-inc-cevap">Senin cevabın: <s>${esc(c)}</s></div>` : ''}
         ${q.aciklama ? `<div class="q-aciklama"><span class="q-aciklama-bas">💡 İpucu</span>${esc(q.aciklama)}</div>` : ''}</div>`;
     }).join('') + `<div class="btn-satir"><button class="aksiyon ikincil" id="dnGeri">Denemeye dön</button></div>`);
