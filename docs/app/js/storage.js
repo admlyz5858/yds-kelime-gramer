@@ -87,7 +87,7 @@ export function loadAyar() {
   let a;
   try { a = JSON.parse(localStorage.getItem(AKEY)) || {}; } catch { a = {}; }
   // Bozuk sayısal alanlar (ör. "x") ekranda NaN üretmesin
-  for (const k of ['xp', 'toplamAktivite', 'seri', 'dondurma', 'hedef', 'gunSayac', 'gunDogru', 'gunBitirilen', 'enUzunSeri']) if (a[k] !== undefined && !Number.isFinite(Number(a[k]))) a[k] = 0;
+  for (const k of ['seri', 'dondurma', 'hedef', 'enUzunSeri']) if (a[k] !== undefined && !Number.isFinite(Number(a[k]))) a[k] = 0;
   if (a.hedef !== undefined) a.hedef = Math.min(50, Math.max(5, Number(a.hedef) || 20));
   if (a.dondurma !== undefined) a.dondurma = Math.min(3, Math.max(0, Number(a.dondurma) || 0));
   return a;

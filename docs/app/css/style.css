@@ -838,7 +838,7 @@ button.aksiyon:active{ transform:translateY(1px); }
   --hat:#2a2f37; --hat-2:#3a414a;
   --murekkep:#e9ebee; --murekkep-2:#97a0ab;
   --kil:#f0663f; --kil-2:#d8552e;
-  --teal:#3bc0b2; --orman:#46c26f; --gul:#f26d6d;
+  --teal:#3bc0b2; --orman:#46c26f; --gul:#f26d6d; --gorev-yazi:#0b1f14;
   --vurgu:#c99a34;
   --golge:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.5);
   --golge-2:0 2px 8px rgba(0,0,0,.5), 0 18px 40px rgba(0,0,0,.55);
@@ -1173,7 +1173,7 @@ button.aksiyon:active{ transform:translateY(1px); }
 /* Günlük görevler kartı */
 .gorev-kart { background: var(--yuzey); border: 1px solid var(--hat); border-radius: 16px; padding: 14px 16px; margin-bottom: 14px; box-shadow: var(--golge); }
 .gorev-bas { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--murekkep); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-.gorev-rozet { font-size: 12px; font-weight: 700; color: #fff; background: var(--orman); border-radius: 999px; padding: 2px 9px; }
+.gorev-rozet { font-size: 12px; font-weight: 700; color: var(--gorev-yazi, #fff); background: var(--orman); border-radius: 999px; padding: 2px 9px; }
 .gorev-satir { display: flex; align-items: center; gap: 10px; padding: 7px 0; }
 .gorev-satir.bitti .gorev-ad { color: var(--murekkep-2); text-decoration: line-through; }
 .gorev-ikon { font-size: 18px; flex: none; width: 22px; text-align: center; }
