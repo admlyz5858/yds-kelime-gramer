@@ -12,7 +12,8 @@ import { kurDeneme } from './deneme.js';
 import { kurTarayici } from './tarayici.js';
 import { kurGun } from './gun.js';
 import * as bulut from './bulut.js';
-import { loadOzel, saveOzel, saveDefter, saveOgrenilen, saveEslestir, saveAlistirma, saveBanka, saveDeneme, saveOlay } from './storage.js';
+import { loadOzel, saveOzel, saveDefter, saveOgrenilen, saveEslestir, saveAlistirma, saveBanka, saveDeneme, saveOlay, loadOlay, olayYazSessiz } from './storage.js';
+import { etkinlikOzeti, kirp } from './olay.js';
 import { notAl, notKaydet } from './notlar.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
@@ -298,7 +299,7 @@ async function anaSayfa() {
     <button class="plan-kart" id="pDers">
       <span class="plan-ikon">🎓</span><span class="plan-ic"><b>${son ? 'Müfredata devam' : 'Müfredata başla'}</b><i>${son ? esc(sonAd) + ' · kaldığın yerden' : 'Edatlar, zamanlar, modallar…'}</i></span><span class="plan-durum">›</span>
     </button>
-    ${!bulut.durum().girili && !_ayar.bulutKapatildi && (_ayar.toplamAktivite || 0) >= 1 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni kaydet</b><i>Google ile giriş yap; telefon değişse de devam et</i></span><span class="ipucu-kapat" id="pBulutKapat" role="button" aria-label="Kapat">✕</span></button>` : ''}
+    ${!bulut.durum().girili && !_ayar.bulutKapatildi && etkinlikDurumu().toplam >= 1 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni kaydet</b><i>Google ile giriş yap; telefon değişse de devam et</i></span><span class="ipucu-kapat" id="pBulutKapat" role="button" aria-label="Kapat">✕</span></button>` : ''}
     ${deneme.onerilsinMi() ? `<button class="plan-kart kucuk" id="pDeneme"><span class="plan-ikon">🧪</span><span class="plan-ic"><b>Haftalık mini deneme</b><i>${deneme.ozet().son ? `Son: ${deneme.ozet().son.puan} puan · ` : ''}20 soru · 25 dakika</i></span><span class="plan-durum">›</span></button>` : ''}
     ${zayif ? `<button class="plan-kart zayif" id="pZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konunu güçlendir</b><i>${esc(zayif.ad)} · %${Math.round(zayif.oran * 100)} doğruluk · 10 soru</i></span><span class="plan-durum">›</span></button>` : ''}
     <button class="plan-kart kucuk" id="pAkis">
@@ -1100,16 +1101,21 @@ function onayAc(mesaj, evet) {
 // Günlük görevler ve seri
 // ============================================================
 const HEDEF_VARSAYILAN = 20;
+// Bugün ve toplam sayılar olay günlüğünden türetilir: iki cihazda aynı rakam (cihaza özel sayaç yok)
+const etkinlikDurumu = () => etkinlikOzeti(loadOlay(), (ms) => isoGun(new Date(ms)), gunStr(0));
+let _kimlikSayac = 0;
+const kimlikUret = (on) => `${on}${Date.now().toString(36)}${(++_kimlikSayac).toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 function gorevListesi() {
   const hedef = _ayar.hedef || HEDEF_VARSAYILAN;
   // Dünün değerleri bugünün görevine taşınmasın (halka ile aynı gün kuralı)
   const bugunMu = _ayar.gunTarih === gunStr(0);
   const bitti = bugunMu ? (_ayar.gorevBitti || {}) : {};
-  const g = (k) => (bugunMu ? (Number(_ayar[k]) || 0) : 0);
+  const et = etkinlikDurumu();
+  const g = (k) => (bugunMu ? (et[k] || 0) : 0);
   return [
-    { id: 'aktivite', ikon: '⚡', ad: `${hedef} aktivite yap`, ilerleme: Math.min(g('gunSayac'), hedef), hedef, bitti: !!bitti.aktivite },
-    { id: 'dogru', ikon: '🎯', ad: '15 doğru cevap ver', ilerleme: Math.min(g('gunDogru'), 15), hedef: 15, bitti: !!bitti.dogru },
-    { id: 'bitir', ikon: '🏁', ad: '2 test/oturum bitir', ilerleme: Math.min(g('gunBitirilen'), 2), hedef: 2, bitti: !!bitti.bitir },
+    { id: 'aktivite', ikon: '⚡', ad: `${hedef} aktivite yap`, ilerleme: Math.min(g('bugunAktivite'), hedef), hedef, bitti: !!bitti.aktivite },
+    { id: 'dogru', ikon: '🎯', ad: '15 doğru cevap ver', ilerleme: Math.min(g('bugunDogru'), 15), hedef: 15, bitti: !!bitti.dogru },
+    { id: 'bitir', ikon: '🏁', ad: '2 test/oturum bitir', ilerleme: Math.min(g('bugunBitir'), 2), hedef: 2, bitti: !!bitti.bitir },
   ];
 }
 function gorevleriKontrol() {
@@ -1135,19 +1141,19 @@ function gunKaydet(miktar = 1, opt = {}) {
     _ayar.sonAktif = bugun; _ayar.gunTarih = bugun;
     // Her 7 günlük seride bir dondurma (ayrıca bir kez)
     if (_ayar.seri > 0 && _ayar.seri % 7 === 0 && _ayar.sonDondurmaSeri !== _ayar.seri) { _ayar.dondurma = Math.min(3, (_ayar.dondurma || 0) + 1); _ayar.sonDondurmaSeri = _ayar.seri; setTimeout(() => toast('🧊 7 günlük seri! Dondurma +1'), 900); }
-    _ayar.gunSayac = 0; _ayar.gunDogru = 0; _ayar.gunYanlis = 0; _ayar.gunBitirilen = 0; _ayar.gorevBitti = {};
+    _ayar.gorevBitti = {};
   }
-  const oncekiHedefTam = (_ayar.gunSayac || 0) >= (_ayar.hedef || HEDEF_VARSAYILAN);
-  _ayar.gunSayac = (_ayar.gunSayac || 0) + miktar;
-  _ayar.toplamAktivite = (_ayar.toplamAktivite || 0) + miktar;
+  const oncekiHedefTam = etkinlikDurumu().bugunAktivite >= (_ayar.hedef || HEDEF_VARSAYILAN);
+  const yeniKayit = [];
+  if (miktar > 0 || 'dogru' in opt) yeniKayit.push({ id: kimlikUret('a'), t: Date.now(), k: 'akt', n: miktar, d: opt.dogru === true ? 1 : opt.dogru === false ? 0 : -1 });
+  if (opt.bitir) yeniKayit.push({ id: kimlikUret('b'), t: Date.now(), k: 'bit' });
+  if (yeniKayit.length) olayYazSessiz(kirp([...loadOlay(), ...yeniKayit]));
   _ayar.enUzunSeri = Math.max(_ayar.enUzunSeri || 0, _ayar.seri || 0);
   if (!_ayar.hedef) _ayar.hedef = HEDEF_VARSAYILAN;
-  if (opt.dogru === true) _ayar.gunDogru = (_ayar.gunDogru || 0) + 1;
-  else if (opt.dogru === false) _ayar.gunYanlis = (_ayar.gunYanlis || 0) + 1;
-  if (opt.bitir) { _ayar.gunBitirilen = (_ayar.gunBitirilen || 0) + 1; if (!_ayar.kayitSoruldu && !bulut.durum().girili && _ayar.toplamAktivite >= 5) { _ayar.kayitSoruldu = true; setTimeout(() => { if (!document.querySelector('.modal-katman')) girisAc({ oner: true }); }, 1400); } }
+  if (opt.bitir) { if (!_ayar.kayitSoruldu && !bulut.durum().girili && etkinlikDurumu().toplam >= 5) { _ayar.kayitSoruldu = true; setTimeout(() => { if (!document.querySelector('.modal-katman')) girisAc({ oner: true }); }, 1400); } }
   if (!_ayar.gunlog) _ayar.gunlog = {};
   _ayar.gunlog[bugun] = (_ayar.gunlog[bugun] || 0) + miktar;
-  const simdiHedefTam = _ayar.gunSayac >= (_ayar.hedef || HEDEF_VARSAYILAN);
+  const simdiHedefTam = etkinlikDurumu().bugunAktivite >= (_ayar.hedef || HEDEF_VARSAYILAN);
   if (simdiHedefTam && !oncekiHedefTam) {
     toast('🎯 Günlük hedef tamam!');
     ses('kutlama'); titre('basari'); konfeti();
@@ -1228,7 +1234,7 @@ function panoStats() {
   Object.values(_istat).forEach(s => { d += s.dogru; t += s.toplam; });
   const bugun = gunStr(0), dun = gunStr(-1);
   const seri = (_ayar.sonAktif === bugun || _ayar.sonAktif === dun) ? (_ayar.seri || 0) : 0;
-  const bugunSay = _ayar.gunTarih === bugun ? (_ayar.gunSayac || 0) : 0;
+  const bugunSay = etkinlikDurumu().bugunAktivite;
   return {
     cozTest, dogru: d, toplam: t, yuzde: t ? Math.round(d / t * 100) : 0,
     defter: defterKelimeler().length, yanlis: _yanlis.length, ogrenilen: pekisenSayisi(),

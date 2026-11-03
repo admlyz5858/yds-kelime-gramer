@@ -21,12 +21,29 @@ export function ozet(olaylar, gunFn, bugun) {
   let dogru = 0, yanlis = 0, bugunSay = 0, bugunDogru = 0;
   const kartlar = new Set();
   for (const o of olaylar || []) {
+    if (o.k) continue;   // etkinlik kayıtları (k: 'akt' | 'bit') kart özetine girmez
     const d = o.q > 0;
     if (d) dogru++; else yanlis++;
     kartlar.add(o.en);
     if (gunFn(o.t) === bugun) { bugunSay++; if (d) bugunDogru++; }
   }
   return { toplam: dogru + yanlis, dogru, yanlis, kart: kartlar.size, bugun: bugunSay, bugunDogru };
+}
+
+// Etkinlik özeti (Faz 2): Bugün ve Ben sayaçları buradan türetilir, cihaza özel sayaç tutulmaz.
+//   k:'akt' → n adet aktivite birimi; d: 1 doğru | 0 yanlış | -1 bilgisiz
+//   k:'bit' → bir oturum/test bitişi
+export function etkinlikOzeti(olaylar, gunFn, bugun) {
+  let bugunAktivite = 0, bugunDogru = 0, bugunYanlis = 0, bugunBitir = 0, toplam = 0;
+  for (const o of olaylar || []) {
+    const bugunMu = gunFn(o.t) === bugun;
+    if (o.k === 'akt') {
+      const n = Number(o.n) || 0;
+      toplam += n;
+      if (bugunMu) { bugunAktivite += n; if (o.d === 1) bugunDogru += n; else if (o.d === 0) bugunYanlis += n; }
+    } else if (o.k === 'bit' && bugunMu) bugunBitir++;
+  }
+  return { bugunAktivite, bugunDogru, bugunYanlis, bugunBitir, toplam };
 }
 
 // Kırpma: en yeni OLAY_LIMIT kayıt kalır
