@@ -26,7 +26,7 @@ await ctx.route('https://thftjeecotladgnuqwhd.supabase.co/**', async (route) => 
   return route.fulfill({ status: 404, body: '{}' });
 });
 await s.goto('' + BASE + '', { waitUntil: 'networkidle' });
-await s.evaluate(() => { localStorage.clear(); localStorage.setItem('yds-ayar-v1', JSON.stringify({ girisGoruldu: true, toplamAktivite: 40, xp: 300, ipucuGoruldu: { bugun: 1, kelimeler: 1, mufredat: 1, oyun: 1, ben: 1 } })); localStorage.setItem('yds-defter-v1', JSON.stringify({ abandon: { en: 'abandon', tr: 'terk etmek' } })); });
+await s.evaluate(() => { localStorage.clear(); localStorage.setItem('yds-olay-v1', JSON.stringify([{ id: 'seed:akt', t: Date.now(), k: 'akt', n: 40, d: -1 }])); localStorage.setItem('yds-ayar-v1', JSON.stringify({ girisGoruldu: true, xp: 300, ipucuGoruldu: { bugun: 1, kelimeler: 1, mufredat: 1, oyun: 1, ben: 1 } })); localStorage.setItem('yds-defter-v1', JSON.stringify({ abandon: { en: 'abandon', tr: 'terk etmek' } })); });
 await s.reload({ waitUntil: 'networkidle' }); await bekle(900);
 T('Bugün: kaydet önerisi (girişsiz, aktivite ≥ 1)', (await s.locator('#pBulut').count()) === 1);
 // --- ilk oturum bitince tek seferlik kayıt önerisi (banka testi çöz)
