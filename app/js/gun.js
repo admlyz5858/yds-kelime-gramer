@@ -85,7 +85,7 @@ export function kurGun(api) {
   function heroBagla() {
     const g = siradaki(); if (!g) return;
     const gov = document.getElementById('gpHeroGovde'); if (gov) gov.onclick = () => detay(g);
-    const bas = document.getElementById('gpHeroBasla'); if (bas) bas.onclick = () => { sonGunYaz(g); calis(gunler.get(g)); };
+    const bas = document.getElementById('gpHeroBasla'); if (bas) bas.onclick = () => { sonGunYaz(g); calis(gunler.get(g), { donus: () => detay(g) }); };
   }
 
   // ---- Günler ızgarası ----
@@ -145,7 +145,7 @@ export function kurGun(api) {
         ${satirHTML('gpKarisik', '🎲', 'Karışık', 'Akıllı mod: kelimenin olgunluğuna göre soru tipi')}
       `);
       const bagla = (id, fn) => { const el = document.getElementById(id); if (el) el.onclick = fn; };
-      bagla('gpCalis', () => { sonGunYaz(g); calis(ws); });
+      bagla('gpCalis', () => { sonGunYaz(g); calis(ws, { donus: () => detay(g) }); });
       bagla('gpListe', () => listeAc(g, ws));
       bagla('gpAkis', () => akisAc(ws, `${g}. Gün`));
       bagla('gpEn2tr', () => calis(ws, { mod: 'coktan', yon: 'en2tr' }));

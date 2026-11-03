@@ -5,7 +5,7 @@
    "id": 1,
    "dosya": "uniteler/unite-01.json",
    "baslik": "Ünite 1 — En Sık Kullanılan 1000 Kelime",
-   "kelime_sayisi": 1034,
+   "kelime_sayisi": 1030,
    "durum": "hazir",
    "test_sayisi": 0,
    "cift_sayisi": 0
@@ -36,7 +36,7 @@
    "baslik": "Ünite 4 — Geçmiş Zamanlar (Past Tenses)",
    "durum": "hazir",
    "bolum_sayisi": 6,
-   "kelime_sayisi": 214,
+   "kelime_sayisi": 213,
    "test_sayisi": 20,
    "cift_sayisi": 7
   },

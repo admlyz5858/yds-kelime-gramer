@@ -1,6 +1,7 @@
+import { kademe, KADEME_AD } from './kademe.js';
 // app/js/sozluk.js — "Kelimeler": 2100+ kartlık tek sözlük (çekimli biçimler kök kartta). Seviye (S1–S5) · tür · ünite · durum filtreleri,
 // arama, parça parça yüklenen liste, kelime detayı. Durum (yeni/öğreniliyor/pekişti) ve Defter durum.js'ten.
-import { ogrenmeDurumu, defterdeMi, defterToggle, pekistir, pekistiMi } from './durum.js';
+import { ogrenmeDurumu, defterdeMi, defterToggle, pekistir, pekistiMi, kartDurum } from './durum.js';
 import { ornekBlokHTML } from './kart.js';
 import { notAl } from './notlar.js';
 
@@ -50,7 +51,7 @@ export function kurSozluk(api) {
     const d = ogrenmeDurumu(w.en);
     return `<button class="sz-satir" data-en="${esc(w.en)}">
       <span class="sz-sv s${w.sv || 0}">${w.sv ? 'S' + w.sv : 'Ö'}</span>
-      <span class="sz-ic"><b>${esc(w.en)}</b><i>${esc(w.tr)}</i></span>
+      <span class="sz-ic"><b lang="en">${esc(w.en)}</b><i>${esc(w.tr)}</i>${kartDurum(w.en) ? `<small class="sz-kad">${KADEME_AD[kademe(kartDurum(w.en))]}</small>` : ''}</span>
       <span class="sz-sag">${Array.isArray(w.bicimler) && w.bicimler.length ? `<span class="sz-bicim-say" title="${esc(w.bicimler.join(', '))}">+${w.bicimler.length}</span>` : ''}${defterdeMi(w.en) ? '📓' : ''}<span class="sz-durum" title="${d}">${DURUM_NOKTA[d]}</span></span>
     </button>`;
   }
@@ -79,7 +80,7 @@ export function kurSozluk(api) {
     const uniteEt = f.unite ? `<button class="sz-cip aktif" id="szUniteKaldir">📚 ${esc(UNITE_ADI[f.unite] || 'Ünite ' + f.unite)} ✕</button>` : '';
     const gunEt = f.gun ? `<button class="sz-cip aktif" id="szGunKaldir">📅 ${f.gun}. Gün ✕</button>` : '';
     render(`${typeof ust === 'function' ? ust() : ust}
-      <div class="sz-ara-satir"><span class="sz-ara-ikon">🔍</span><input id="szAra" class="sz-ara" type="search" placeholder="Kelime veya anlam ara…" value="${esc(f.q)}" autocomplete="off"></div>
+      <div class="sz-ara-satir"><span class="sz-ara-ikon">🔍</span><input id="szAra" class="sz-ara" type="search" aria-label="Kelime veya anlam ara" placeholder="Kelime veya anlam ara…" value="${esc(f.q)}" autocomplete="off"></div>
       ${cipler()}
       ${uniteEt || gunEt ? `<div class="sz-cipler">${uniteEt}${gunEt}</div>` : ''}
       <div class="sz-ust">
@@ -132,7 +133,7 @@ export function kurSozluk(api) {
     render(`
       <div class="sz-detay">
         <div class="sz-detay-ust"><span class="sz-sv s${w.sv || 0}">${w.sv ? `S${w.sv} ${SEVIYE_AD[w.sv] || ''}` : 'Özel kelime'}</span><span class="sz-rozet">${esc(w.tur || '')}</span>${w.u ? `<span class="sz-rozet">📚 ${esc(UNITE_ADI[w.u] || 'Ünite ' + w.u)}</span>` : ''}</div>
-        <div class="sz-detay-en">${esc(w.en)} <button class="ogr-ses" id="szSes" aria-label="Seslendir">🔊</button></div>
+        <div class="sz-detay-en" lang="en">${esc(w.en)} <button class="ogr-ses" id="szSes" aria-label="Seslendir">🔊</button></div>
         ${Array.isArray(w.bicimler) && w.bicimler.length ? `<div class="sz-bicimler">Biçimler: ${w.bicimler.map(b => `<b>${esc(b)}</b>`).join(' · ')}</div>` : ''}
         <div class="sz-detay-tr">${esc(w.tr)}</div>
         <div class="sz-detay-durum">${durumYazi}</div>

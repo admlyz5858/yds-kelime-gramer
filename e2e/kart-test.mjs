@@ -1,0 +1,58 @@
+const BASE = process.env.BASE || 'http://localhost:8905/';   // uygulama adresi (ör. BASE=http://localhost:8901/ npm)
+const { chromium } = await import(new URL('../mobil/node_modules/playwright/index.mjs', import.meta.url));
+const SCRATCH = process.env.SHOT_DIR || '/tmp';   // ekran görüntüleri
+const hata = [];
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const s = await b.newPage({ viewport: { width: 412, height: 860 }, deviceScaleFactor: 2 });
+s.on('pageerror', e => hata.push('SAYFA: ' + e.message));
+s.on('console', m => { if (m.type() === 'error' && !m.text().includes('404')) hata.push('KONSOL: ' + m.text()); });
+const bekle = (ms) => s.waitForTimeout(ms);
+const T = async (ad, kosul) => console.log((kosul ? '✓' : '✗ FAIL'), ad);
+const sek = async (ad) => { await s.locator(`#sekme-bar button[data-sekme="${ad}"]`).click(); await bekle(700); if (ad === 'kelimeler') { await s.locator('.segment button[data-seg="liste"]').click().catch(()=>{}); await bekle(400); } };
+await s.goto('' + BASE + '', { waitUntil: 'networkidle' });
+await s.evaluate(() => { localStorage.clear(); localStorage.setItem('yds-ayar-v1', JSON.stringify({ girisGoruldu: true, kayitSoruldu: true, ipucuGoruldu: { bugun: 1, kelimeler: 1, mufredat: 1, oyun: 1, ben: 1 } })); });
+await s.reload({ waitUntil: 'networkidle' }); await bekle(900);
+await sek('kelimeler');
+T('havuz 2119', (await s.locator('#szSay').textContent()) === '2119 kelime');
+await s.locator('#szAra').fill('accepted'); await bekle(400);
+T('biçimde arama: accepted → accept bulunur', (await s.locator('.sz-satir b').first().textContent()) === 'accept' && (await s.locator('.sz-satir .sz-bicim-say').first().textContent()) === '+1');
+await s.locator('.sz-satir').first().click(); await bekle(500);
+T('detay: biçimler satırı + ek örnek', (await s.locator('.sz-bicimler').count()) === 1 && (await s.locator('.kart-ek-ornek').count()) === 1 && (await s.locator('.kart-ek-bicim').textContent()) === 'accepted');
+await s.screenshot({ path: SCRATCH + '/k-detay.png', fullPage: true });
+await s.locator('#geri').click(); await bekle(400);
+await s.locator('#szAra').fill('begin'); await bekle(400);
+await s.locator('.sz-satir').first().click(); await bekle(500);
+T('detay: biçim notu (begun)', (await s.locator('.kart-bicim-not').count()) === 1 && (await s.locator('.kart-bicim-not').textContent()).includes('begun'));
+await s.locator('#geri').click(); await bekle(400);
+await s.locator('#szAra').fill('entire'); await bekle(400);
+await s.locator('.sz-satir').first().click(); await bekle(500);
+const ent = await s.locator('.ornek-cumle').first().textContent();
+console.log('   entire örneği:', ent.trim().slice(0, 70));
+T('entire: tam cümle örnek', /earthquake/.test(ent) && (await s.locator('.tok-vurgu').first().textContent()) === 'entire');
+await s.locator('#geri').click(); await bekle(400);
+await s.locator('#szAra').fill('suspended'); await bekle(400);
+T('suspended → suspend kartı, şık kalıntısı yok', (await s.locator('.sz-satir b').first().textContent()) === 'suspend');
+await s.locator('.sz-satir').first().click(); await bekle(500);
+const icerik = await s.locator('#icerik').innerText();
+T('suspend detayında "D)" yok, ek örnek var', !/\bD\)/.test(icerik) && (await s.locator('.kart-ek-ornek').count()) >= 1);
+await s.locator('#geri').click(); await bekle(400);
+// Öğren kartı
+await s.locator('#szAra').fill('accept'); await bekle(300);
+await s.locator('.sz-satir').first().click(); await bekle(400);
+await s.locator('#szCalisTek').click(); await bekle(800);
+T('öğren kartı: çipler ön yüzde (Türkçe ön yüzde en az seviye çipi)', (await s.locator('.ogr-calisma-kart .kart-cipler .kart-cip').count()) >= 1);
+await s.locator('#ogrGoster').click(); await bekle(300);
+T('öğren arka yüz: çipler + örnek + ek örnek düğmesi', (await s.locator('.ogr-kart-arka .kart-cip.bicim').count()) === 1 && (await s.locator('.kart-ek-ac').count()) === 1);
+await s.locator('.kart-ek-ac').click(); await bekle(300);
+T('ek örnek açıldı', (await s.locator('.kart-ek-liste:not([hidden]) .kart-ek-ornek').count()) === 1);
+await s.screenshot({ path: SCRATCH + '/k-ogren.png', fullPage: true });
+await s.locator('#geri').click(); await bekle(500);
+// Akış kartı
+await sek('kelimeler'); await s.locator('#szAra').fill('accept'); await bekle(300); await s.locator('#szAkis').click(); await bekle(1000);
+T('akış: biçim çipi', (await s.locator('.akis-kart').first().locator('.akis-bicimler span').count()) === 1);
+await s.locator('.akis-kart').first().locator('.akis-govde').click(); await bekle(400);
+T('akış arka: ek örnek düğmesi', (await s.locator('.akis-kart').first().locator('.kart-ek-ac').count()) === 1);
+await s.screenshot({ path: SCRATCH + '/k-akis.png' });
+await s.locator('#geri').click(); await bekle(400);
+console.log('\nHATALAR:', hata.length ? hata : 'yok');
+await b.close();

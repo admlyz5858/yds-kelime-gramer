@@ -63,7 +63,7 @@ export function donusCoz(url) {
   const u = String(url || ''); const h = u.indexOf('#'); const q = u.indexOf('?');
   const parca = new URLSearchParams((h >= 0 ? u.slice(h + 1) : '') + '&' + (q >= 0 ? u.slice(q + 1, h >= 0 && h > q ? h : undefined) : ''));
   const hata = parca.get('error_description') || parca.get('error');
-  if (hata) return { hata: decodeURIComponent(String(hata).replace(/\+/g, ' ')) };
+  if (hata) return { hata: String(hata).replace(/\+/g, ' ') };   // URLSearchParams zaten çözer (çift çözme '%' ile çökerdi)
   const erisim = parca.get('access_token'), yenileme = parca.get('refresh_token');
   if (!erisim || !yenileme) return null;
   return { erisim, yenileme, bitis: Date.now() + (Number(parca.get('expires_in')) || 3600) * 1000 };
@@ -76,20 +76,30 @@ async function oturumTamamla(t) {
 }
 let googleBekleyen = null;
 // Android: sistem tarayıcı sekmesi + kelimetre://auth derin bağlantısı · Web/PWA: aynı pencerede yönlendirme (dönüşte donusIsle)
+// Bu cihazın başlattığı bir giriş beklendiğini işaretler. Dönüşte yalnızca bu işaret varsa adres çubuğundaki belirteç kabul edilir
+// (kötü niyetli bir bağlantının oturumu değiştirmesini önler).
+const BEKLE_KEY = 'yds-google-bekle';
+const isaretle = (v) => { try { if (v) localStorage.setItem(BEKLE_KEY, '1'); else localStorage.removeItem(BEKLE_KEY); } catch {} };
+const isaretVar = () => { try { return localStorage.getItem(BEKLE_KEY) === '1'; } catch { return false; } };
 export async function googleIleGiris() {
   const B = typeof window !== 'undefined' && window.Capacitor?.Plugins?.Browser, A = typeof window !== 'undefined' && window.Capacitor?.Plugins?.App;
   const url = googleUrl(donusAdresi());
+  isaretle(true);
   if (!B || !A) { location.href = url; return new Promise(() => {}); }
   return new Promise((coz, red) => {
-    const zaman = setTimeout(() => { temizle(); red(new Error('Zaman aşımı')); }, 5 * 60000);
-    const temizle = () => { clearTimeout(zaman); googleBekleyen = null; try { B.close(); } catch {} };
-    googleBekleyen = async (gelen) => {
+    const id = {};   // bu denemenin kimliği: eski deneme yeni denemeyi silmesin
+    let zaman = null;
+    const temizle = () => { clearTimeout(zaman); if (googleBekleyen && googleBekleyen.id === id) googleBekleyen = null; try { B.close(); } catch {} };
+    const bitir = async (gelen) => {
       const t = donusCoz(gelen); if (!t) return;   // başka bir derin bağlantı
-      temizle();
+      temizle(); isaretle(false);
       if (t.hata) { red(new Error(t.hata)); return; }
       try { coz(await oturumTamamla(t)); } catch (e) { red(e); }
     };
-    B.open({ url, presentationStyle: 'popover' }).catch(e => { temizle(); red(e); });
+    bitir.id = id;
+    googleBekleyen = bitir;
+    zaman = setTimeout(() => { temizle(); isaretle(false); red(new Error('Zaman aşımı')); }, 5 * 60000);
+    B.open({ url, presentationStyle: 'popover' }).catch(e => { temizle(); isaretle(false); red(e); });
   });
 }
 if (typeof window !== 'undefined' && window.Capacitor?.Plugins?.App?.addListener) {
@@ -100,6 +110,8 @@ export async function donusIsle() {
   if (typeof location === 'undefined') return false;
   const t = donusCoz(location.href); if (!t) return false;
   try { history.replaceState(null, '', location.pathname); } catch {}
+  if (!isaretVar()) return false;   // bu cihazdan başlatılmamış dönüş: belirteç kabul edilmez
+  isaretle(false);
   if (t.hata) throw new Error(t.hata);
   await oturumTamamla(t); return true;
 }

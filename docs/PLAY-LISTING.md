@@ -50,6 +50,16 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
 ```
 
+## Sürüm notları (1.5.0, Play Console'a yapıştırılacak kısa sürüm · 412 karakter)
+```
+• Oyun sekmesi: eşleştirme, düello ve günlük oyun
+• Gün planı: ilk günler 1. seviye kelimelerle başlar
+• Sıfırlama: ilerlemeyi sıfırla, defter ve öğrenilen kelimeleri temizler; ayarların ve kendi kelimelerin kalır
+• Soru Bankası: yanlış ve tekrarlı sorular düzeltildi, çoklu boşluklu sorular doğru gösterilir
+• Kelime kartlarında anlam ve örnek cümle düzeltmeleri
+• Sadeleştirme: lig, XP ve başarımlar kaldırıldı
+```
+
 ## Sürüm notları (1.4.0, Play Console'a yapıştırılacak kısa sürüm · 447 karakter)
 ```
 • Google ya da e-posta ile kayıt ol: ilerlemen otomatik buluta yedeklenir, Android ↔ iPhone arasında taşınır

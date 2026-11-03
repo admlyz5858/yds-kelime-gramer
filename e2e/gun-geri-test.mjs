@@ -1,0 +1,20 @@
+const BASE = process.env.BASE || 'http://localhost:8905/';
+const { chromium } = await import(new URL('../mobil/node_modules/playwright/index.mjs', import.meta.url));
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const s = await (await b.newContext({ viewport: { width: 412, height: 860 } })).newPage();
+const hata = []; s.on('pageerror', e => hata.push(e.message));
+const bekle = (ms) => new Promise(r => setTimeout(r, ms));
+await s.goto(BASE, { waitUntil: 'networkidle' });
+await s.evaluate(() => { localStorage.clear(); localStorage.setItem('yds-ayar-v1', JSON.stringify({ girisGoruldu: true, kayitSoruldu: true, ipucuGoruldu: { bugun:1,kelimeler:1,mufredat:1,oyun:1,ben:1 } })); });
+await s.reload({ waitUntil: 'networkidle' }); await bekle(500);
+await s.locator('#sekme-bar button[data-sekme="kelimeler"]').click(); await bekle(600);
+await s.locator('.segment button[data-seg="gunler"]').click(); await bekle(600);
+await s.locator('button.gp-kart[data-g="1"]').click(); await bekle(600);
+const ilkBaslik = await s.locator('#baslik').textContent();
+const calis = s.locator('#gpCalis'); if (await calis.count()) await calis.click(); await bekle(800);
+// Oturumda geri: gün detayına dönmeli (Öğren paneline değil)
+await s.locator('#geri').click(); await bekle(600);
+const geriBaslik = await s.locator('#baslik').textContent();
+console.log('✓/✗ gün detayı baslık:', ilkBaslik, '| geri sonrası:', geriBaslik, geriBaslik.includes('Gün') ? '✓' : '✗');
+console.log('HATALAR:', hata.length ? hata : 'yok');
+await b.close();

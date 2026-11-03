@@ -1,0 +1,24 @@
+const BASE = process.env.BASE || 'http://localhost:8905/';   // uygulama adresi (ör. BASE=http://localhost:8901/ npm)
+const { chromium } = await import(new URL('../mobil/node_modules/playwright/index.mjs', import.meta.url));
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const s = await (await b.newContext({ viewport: { width: 412, height: 860 } })).newPage();
+const hata = []; s.on('pageerror', e => hata.push(e.message));
+await s.goto('' + BASE + '', { waitUntil: 'networkidle' });
+await s.evaluate(() => { localStorage.clear(); localStorage.setItem('yds-ayar-v1', JSON.stringify({ girisGoruldu: true, kayitSoruldu: true, ipucuGoruldu: { bugun:1,kelimeler:1,mufredat:1,oyun:1,ben:1 } })); });
+await s.reload({ waitUntil: 'networkidle' }); await s.waitForTimeout(600);
+await s.locator('#sekme-bar button[data-sekme="kelimeler"]').click(); await s.waitForTimeout(600);
+await s.locator('.segment button[data-seg="ogren"]').click(); await s.waitForTimeout(400);
+await s.locator('.ogr-mod-cip', { hasText: 'Test' }).click(); await s.waitForTimeout(300);
+await s.locator('#ogrBasla').click(); await s.waitForTimeout(800);
+const olay = () => s.evaluate(() => JSON.parse(localStorage.getItem('yds-olay-v1') || '[]'));
+await s.locator('.q-secenek').first().click(); await s.waitForTimeout(300);
+let o = await olay(); console.log('1 cevap sonrası olay:', o.length);
+await s.reload({ waitUntil: 'networkidle' }); await s.waitForTimeout(600);
+await s.locator('#sekme-bar button[data-sekme="kelimeler"]').click(); await s.waitForTimeout(500);
+await s.locator('.segment button[data-seg="ogren"]').click(); await s.waitForTimeout(400);
+await s.locator('#ogrDevamKayit').click(); await s.waitForTimeout(700);
+await s.locator('.q-secenek').first().click(); await s.waitForTimeout(300);
+o = await olay(); const ids = o.map(x => x.id);
+console.log('2. cevap sonrası olay:', o.length, '| benzersiz kimlik:', new Set(ids).size, '| kart tekrarı yok:', new Set(o.map(x=>x.en)).size === o.length);
+console.log('HATALAR:', hata.length ? hata : 'yok');
+await b.close();

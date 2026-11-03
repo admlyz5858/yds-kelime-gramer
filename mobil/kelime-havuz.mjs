@@ -131,6 +131,13 @@ export function havuzUret(uniteDir) {
   // Havuz sırası = seviye, ardından sıklık (Ünite 1 sırası önce, sonra genel sıklık)
   kelimeler.sort((a, b) => a.sv - b.sv || a._s - b._s);
   kelimeler.forEach(w => { delete w._s; });
+  // Kart yamaları (kaynak/kart-yama.json): üretilen tr veya örnek token alanını elle doğrulanmış değerle değiştirir.
+  const yamalar = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), 'kaynak', 'kart-yama.json'), 'utf8')).yamalar;
+  for (const y of yamalar) {
+    const hedefler = kelimeler.filter(w => w.en === y.en && w.u === y.u);
+    if (hedefler.length !== 1) throw new Error(`kart-yama eşleşmedi: ${y.en} u${y.u} (${hedefler.length})`);
+    hedefler[0][y.alan] = y.deger;
+  }
   // Gün planı: havuz sırası (seviye + sıklık) GUN_BOYUT'luk günlere bölünür; `g` üretimde yazılır, uygulama okur.
   // Kademe kelimeye bağlı olduğundan içerik değişse de ilerleme kaymaz; "kaldığın gün" kelime olarak saklanır (ayar.sonGunKelime).
   gunlereBol(kelimeler);

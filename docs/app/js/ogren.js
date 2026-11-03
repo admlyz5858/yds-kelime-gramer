@@ -32,7 +32,7 @@ export function kurKelimeOgren(api) {
   let ust = '';   // panelin üstüne sekme/segment HTML'i (Kelimeler sekmesi)
 
   let havuz = null, havuzIndex = null, oturum = null;
-  let zorla = null;   // tek oturumluk mod/yön zorlaması (gün detay test satırları); kullanıcı ayarına yazılmaz
+  let zorla = null, donus = null;   // donus: oturumun geri hedefi (gün detayı) veya null   // tek oturumluk mod/yön zorlaması (gün detay test satırları); kullanıcı ayarına yazılmaz
   let listeDurum = { q: '', filtre: 'tum' };
 
   // ---- yükleme ----
@@ -175,7 +175,9 @@ export function kurKelimeOgren(api) {
   }
   function listedenOturumBaslat(words, opt) {
     const kuyruk = shuffle(words).slice(0, 60).map(w => ({ w, yeniMi: yeniMi(w.en) }));
-    zorla = opt || null;
+    donus = (opt && opt.donus) || null;   // gün detaydan başlatıldıysa geri/bitiş gün detayına döner
+    const mod = opt ? { mod: opt.mod, yon: opt.yon } : null;
+    zorla = mod && (mod.mod || mod.yon) ? mod : null;
     try { oturum = kuyruktanOturum(kuyruk); } finally { zorla = null; }
     if (kuyruk.length) oturumBaslat();
   }
@@ -296,9 +298,9 @@ export function kurKelimeOgren(api) {
       <div class="ogr-hedef-satir">
         <div><b>🎯 Günlük yeni kelime hedefi</b><i>Her gün en az ${s.yeniHedef} yeni kelime</i></div>
         <div class="ogr-hedef-btnler">
-          <button class="ogr-hedef-btn" data-h="-">−</button>
+          <button class="ogr-hedef-btn" data-h="-" aria-label="Günlük hedefi azalt">−</button>
           <span class="ogr-hedef-deger">${s.yeniHedef}</span>
-          <button class="ogr-hedef-btn" data-h="+">+</button>
+          <button class="ogr-hedef-btn" data-h="+" aria-label="Günlük hedefi artır">+</button>
         </div>
       </div>
 
@@ -469,7 +471,7 @@ export function kurKelimeOgren(api) {
       ? `<div class="ogr-kart-on"><button class="ogr-ses buyuk" id="ogrSes">🔊</button><div class="ogr-kart-ipucu">Dinle · kelimeyi hatırla, sonra göster</div></div>`
       : trOn
         ? `<div class="ogr-kart-on">${kartCiplerHTML(w, esc, { tursuz: true, bicimsiz: true })}<div class="kart-on ogr-on-tr">${esc(w.tr)}</div><div class="ogr-kart-ipucu">İngilizcesini düşün, sonra göster</div></div>`
-        : `<div class="ogr-kart-on">${kartCiplerHTML(w, esc)}<div class="kart-on">${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes">🔊</button>' : ''}</div><div class="ogr-kart-ipucu">Anlamı düşün, sonra göster</div></div>`;
+        : `<div class="ogr-kart-on">${kartCiplerHTML(w, esc)}<div class="kart-on" lang="en">${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes">🔊</button>' : ''}</div><div class="ogr-kart-ipucu">Anlamı düşün, sonra göster</div></div>`;
     const arkaAna = trOn ? `${esc(w.en)} ${sesVar() ? '<button class="ogr-ses" id="ogrSes2">🔊</button>' : ''}` : esc(w.tr);
     const arkaYuz = `<div class="ogr-kart-arka">
         ${kartCiplerHTML(w, esc)}
@@ -565,7 +567,8 @@ export function kurKelimeOgren(api) {
   }
 
   // --- Yazım (TR → EN üretim) ---
-  const normYaz = (s) => String(s || '').toLowerCase().trim().replace(/^to\s+/, '').replace(/[.,!?;:"'’]+$/g, '');
+  // "as ... as" gibi kalıplarda üç nokta ve boşluk farkı yazımda önemsiz (boşluk modu da böyle kabul eder)
+  const normYaz = (s) => String(s || '').toLowerCase().replace(/\.{3}|…/g, ' ').replace(/\s+/g, ' ').trim().replace(/^to\s+/, '').replace(/[.,!?;:"'’]+$/g, '');
   function cizYazim(item) {
     const w = item.w, cevaplandi = _cevap != null, dogruMu = cevaplandi && normYaz(_cevap) === normYaz(w.en);
     let alt = '';
@@ -635,7 +638,7 @@ export function kurKelimeOgren(api) {
 
   function ilerle() { oturum.i++; oturumKaydet(); cizOturum(); }
   // Oturum ekranı her zaman alt ekrandır: üst "Geri" panele döner (kayıt korunur)
-  function oturumBaslat() { oturumKaydet(); ekranModu('Kelime Öğren', panelEkrani); cizOturum(); }
+  function oturumBaslat() { oturumKaydet(); ekranModu('Kelime Öğren', donus || panelEkrani); cizOturum(); }
   // Yarım kalan oturum: kuyruk (kelime anahtarı + mod/yön) ve konum saklanır; panelden devam edilir
   function oturumKaydet() {
     if (!oturum || oturum.i >= oturum.kuyruk.length) { delete srs.devam; kaydet(); return; }
@@ -656,7 +659,7 @@ export function kurKelimeOgren(api) {
     // Puanlanmış ama "Devam"a basılmamış kart: tekrar puanlanmasın, sıradakine geçilsin
     const atla = d.c === d.i ? 1 : 0;
     oturum = { sid: d.sid || ('e' + (d.t || 0).toString(36)), kuyruk, i: Math.min(d.i + atla, kuyruk.length), dogru: d.dogru || 0, yanlis: d.yanlis || 0 };
-    ekranModu('Kelime Öğren', panelEkrani);
+    ekranModu('Kelime Öğren', donus || panelEkrani);
     if (oturum.i >= kuyruk.length) { cizBitis(); return; }
     cizOturum();
   }
@@ -690,7 +693,7 @@ export function kurKelimeOgren(api) {
       </div>`);
     const dv = document.getElementById('ogrDevamOturum');
     if (dv) dv.onclick = () => { if (oturumKur() > 0) oturumBaslat(); else panelEkrani(); };
-    document.getElementById('ogrPanel').onclick = panelEkrani;
+    document.getElementById('ogrPanel').onclick = () => (donus ? donus() : panelEkrani());
   }
 
   function ac(opts = {}) { ust = opts.ustHTML || ''; panel(); }

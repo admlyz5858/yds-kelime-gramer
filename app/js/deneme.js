@@ -64,7 +64,7 @@ export function kurDeneme(api) {
       ${s.sayi ? `<div class="mf-ozet"><div><b>${s.sayi}</b><span>deneme</span></div><div><b>${s.son.puan}</b><span>son puan</span></div><div><b>${s.enIyi}</b><span>en iyi</span></div></div>` : ''}
       ${acik ? `<button class="aksiyon" id="dnDevamEt">▶ Yarım kalan denemeye devam (${acik.cevaplar.filter(x => x != null).length}/${acik.liste.length} cevaplı)</button>` : ''}
       <button class="aksiyon dn-basla" id="dnBasla">▶ Denemeye başla</button>
-      <div class="ogr-bilgi"><div class="ogr-bilgi-bas">Nasıl puanlanır?</div><p>Her soru 5 puan; yanlış puan götürmez (YDS'de de götürmez). Süre bitince sınav kendiliğinden biter. Boş bıraktığın sorulara "Sonraki" ile geçebilir, sonra geri dönebilirsin. Sonuçta konu kırılımı ve tahmini YDS puanı görürsün.</p></div>
+      <div class="ogr-bilgi"><div class="ogr-bilgi-bas">Nasıl puanlanır?</div><p>Her soru 5 puan; yanlış puan götürmez (YDS'de de götürmez). Süre bitince sınav kendiliğinden biter. Boş bıraktığın sorulara "Sonraki" ile geçebilir, sonra geri dönebilirsin. Sonuçta konu kırılımı ve deneme puanı (doğru oranı) görürsün.</p></div>
       ${satirlar ? `<div class="plan-baslik">Geçmiş</div><div class="dn-gecmis">${satirlar}</div>` : ''}`);
     document.getElementById('dnBasla').onclick = () => basla(geriFn);
     const dv = document.getElementById('dnDevamEt'); if (dv) dv.onclick = () => devamEt(geriFn);
@@ -121,7 +121,7 @@ export function kurDeneme(api) {
     altEkran('Deneme Sonucu', () => { durdur(); ac(o.geri); });
     render(`
       <div class="es-sonuc"><div class="es-sonuc-amblem">${r.puan >= 70 ? '🌟' : r.puan >= 50 ? '👏' : '💪'}</div><div class="es-sonuc-bas">${sureDoldu ? 'Süre doldu' : 'Deneme tamam'}</div>
-        <div class="es-sonuc-skor">${r.puan}<small>/100</small></div><div class="es-sonuc-alt">tahmini YDS puanı · ${r.dogru} doğru · ${r.yanlis} yanlış · ${r.bos} boş · ${Math.floor(sure / 60)} dk ${sure % 60} sn</div>
+        <div class="es-sonuc-skor">${r.puan}<small>/100</small></div><div class="es-sonuc-alt">deneme puanı (doğru oranı) · ${r.dogru} doğru · ${r.yanlis} yanlış · ${r.bos} boş · ${Math.floor(sure / 60)} dk ${sure % 60} sn</div>
         ${onceki != null ? `<div class="es-sonuc-not">Önceki deneme: <b>${onceki}</b> → ${r.puan > onceki ? '📈 +' + (r.puan - onceki) : r.puan < onceki ? '📉 ' + (r.puan - onceki) : 'aynı'}</div>` : ''}</div>
       <div class="plan-baslik">Konu kırılımı</div>
       <div class="dn-kirilim">${kir.map(([k, v]) => `<div class="dn-kir-satir"><span>${esc(konuAd(k))}</span><div class="gorev-bar"><div class="gorev-bar-ic" style="width:${Math.round(v.dogru / v.n * 100)}%"></div></div><b>${v.dogru}/${v.n}</b></div>`).join('')}</div>

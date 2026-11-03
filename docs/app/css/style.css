@@ -827,7 +827,7 @@ button.aksiyon:active{ transform:translateY(1px); }
 }
 #sekme-bar button::before { display: none !important; }
 .nav-ikon { font-size: 21px; line-height: 1; transition: transform .2s cubic-bezier(.22,1,.36,1); }
-.nav-etiket { font-size: 10px; font-weight: 700; letter-spacing: .01em; }
+.nav-etiket { font-size: 11px; font-weight: 700; letter-spacing: .01em; }
 #sekme-bar button.aktif { color: var(--t-accent); background: none; }
 #sekme-bar button.aktif .nav-ikon { background: var(--t-tile); padding: 3px 15px; border-radius: var(--t-r-pill); transform: none; }
 #sekme-bar button:active .nav-ikon { transform: scale(.88); }
@@ -1800,3 +1800,11 @@ button.gp-hero-govde{ cursor:pointer; }
 
 /* Faz 1: koyu temada ana düğme yazısı koyu (beyaz/#46c26f ve beyaz/#f0663f oranları 4,5:1'in altındaydı) */
 :root[data-tema="koyu"] button.aksiyon { color: var(--kagit); }
+
+/* Çakışma penceresi: hangi seçeneğin neyi sileceği belli olsun */
+.bs-uyari { display:block; color: var(--gul); font-size: 12px; margin-top: 2px; }
+
+/* Erişilebilirlik: dokunma hedefleri en az 40 px */
+.segment button, .sz-cip, #yardimBtn, #ayarBtn, .ogr-mod-cip, .ogr-hedef-btn { min-height: 40px; min-width: 40px; }
+#sekme-bar button { min-height: 44px; }
+.sz-ara:focus { outline: 2px solid var(--kil); outline-offset: 1px; }

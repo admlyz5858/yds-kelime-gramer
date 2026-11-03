@@ -57,7 +57,8 @@ export function kurTarayici(api) {
     const gorulen = new Map(); let sozcuk = 0, bilinen = 0;
     const html = parcalar.map(p => {
       if (/^\s+$/.test(p) || !p) return p.replace(/\n/g, '<br>');
-      const w = /[a-zA-Z]/.test(p) ? kokBul(dizin, p) : null;
+      const kisaltma = /^([A-Za-z]\.){2,}$/.test(p);   // U.S., e.g. gibi kısaltmalar kelime sayılmaz ("us" zamirine dönüşmesin)
+      const w = /[a-zA-Z]/.test(p) && !kisaltma ? kokBul(dizin, p) : null;
       if (/[a-zA-Z]{2,}/.test(p)) sozcuk++;
       if (!w) return esc(p);
       bilinen++;

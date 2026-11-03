@@ -17,7 +17,7 @@ import { notAl, notKaydet } from './notlar.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
 import { bildirimVarMi, gunlukKur, iptalEt } from './bildirim.js';
 
-const SURUM = '1.4.0';
+const SURUM = '1.5.0';
 const icerik = document.getElementById('icerik');
 const baslikEl = document.getElementById('baslik');
 const geriBtn = document.getElementById('geri');
@@ -588,7 +588,7 @@ function ornekInteraktifHTML(ex) {
   const ceviriVar = ex.tr ? ' var-ceviri' : '';
   return `
     <div class="ornek-kutu">
-      <div class="ornek-cumle${ceviriVar}">${govde}</div>
+      <div class="ornek-cumle${ceviriVar}" lang="en">${govde}</div>
       ${ex.tr ? `<div class="ornek-ceviri">${esc(ex.tr)}</div>` : ''}
     </div>`;
 }
@@ -966,7 +966,7 @@ function yardimAc() {
     <div class="yardim-sat"><span>🎓</span><div><b>Müfredat</b> — Her ünitede Oku (kurallar + etkileşimli örnekler), Alıştırma (ünitenin kendi cümlelerinden boşluk ve sınıflandırma), Test (kolaydan zora) ve Çeviri.</div></div>
     <div class="yardim-sat"><span>📝</span><div><b>Soru Bankası</b> — Tüm test soruları konuya göre: Edatlar, Zamanlar, Modallar, Koşul… Alt konu seç, 10 soru çöz; doğruluk konu bazında saklanır, zayıf konun Bugün’e düşer.</div></div>
     <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme; bölümler, günün bulmacası, düello ve rekorlar.</div></div>
-    <div class="yardim-sat"><span>🧪</span><div><b>Mini deneme</b> — Soru Bankası'ndan 20 soru, 25 dakika; tahmini YDS puanı ve konu kırılımı. Bugün'de haftada bir önerilir.</div></div>
+    <div class="yardim-sat"><span>🧪</span><div><b>Mini deneme</b> — Soru Bankası'ndan 20 soru, 25 dakika; deneme puanı (doğru oranı) ve konu kırılımı. Bugün'de haftada bir önerilir.</div></div>
     <div class="yardim-sat"><span>📄</span><div><b>Metin tara</b> — Kelimeler › Tara: bir metin yapıştır, havuzdaki kelimeler seviye rengiyle işaretlenir; bilmediklerini deftere al ya da çalış.</div></div>
     <div class="yardim-sat"><span>➕</span><div><b>Kendi kelimen</b> — Defterim › "Kendi kelimeni ekle"; her karta 📝 hafıza ipucu yazabilirsin.</div></div>
     <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, ayarlar; ☁️ e-posta ile kayıt olunca ilerlemen buluta yedeklenir ve cihazlar arasında taşınır.</div></div>
@@ -995,7 +995,7 @@ function ayarSatirlariHTML() {
     ${hesapSatirlariHTML()}
     <div class="ben-baslik">Veri</div>
     <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>${_yanlis.length} biriken soruyu sıfırla</i></div></button>
-    <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>${defterKelimeler().length} kelimeyi sil</i></div></button>
+    <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>${defterKelimeler().length} kelime silinir; kendi eklediğin kelimeler ve ipuçları kalır</i></div></button>
     <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Öğrenilen kelimeler, defter, testler, yanlışlar, deneme ve oyun geçmişi, seri ve günlük sayaçlar silinir. Ayarların, kendi kelimelerin ve ipuçların kalır</i></div></button>
     <div class="ayar-hakkinda">Kelimetre · YDS/YÖKDİL · v${SURUM}</div>`;
 }
@@ -1391,8 +1391,8 @@ function bulutSor(b) {
     const t = new Date(b.guncelleme).toLocaleString('tr-TR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
     modalAc('Hangi ilerleme kalsın?', `
       <p class="modal-aciklama">Hem bu cihazda hem bulutta farklı değişiklikler var.</p>
-      <button class="ayar-sat" id="bsIndir"><span>☁️</span><div><b>Buluttaki yedeği kullan</b><i>${t} · ${b.ozet.kart} kelime kaydı · ${b.ozet.defter} defter · ${b.ozet.test} test · ${b.ozet.xp} XP (${esc(b.cihaz || '')})</i></div></button>
-      <button class="ayar-sat" id="bsYukle"><span>📱</span><div><b>Bu cihazdakini kullan</b><i>Bulut yedeği bu cihazın verisiyle değiştirilir</i></div></button>`, {
+      <button class="ayar-sat" id="bsIndir"><span>☁️</span><div><b>Buluttaki yedeği kullan</b><i>${t} · ${b.ozet.kart} kelime kaydı · ${b.ozet.defter} defter · ${b.ozet.test} test (${esc(b.cihaz || '')})</i><i class="bs-uyari">Bu cihazdaki değişiklikler silinir.</i></div></button>
+      <button class="ayar-sat" id="bsYukle"><span>📱</span><div><b>Bu cihazdakini kullan</b><i>Bu cihazdaki ilerleme buluta yazılır.</i><i class="bs-uyari">Buluttaki daha yeni yedek üzerine yazılır.</i></div></button>`, {
       onWire: (o, kapat) => {
         o.querySelector('#bsIndir').onclick = () => { kapat(); resolve('indir'); };
         o.querySelector('#bsYukle').onclick = () => { kapat(); resolve('yukle'); };

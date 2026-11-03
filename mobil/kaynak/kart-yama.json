@@ -1,0 +1,151 @@
+{
+  "aciklama": "Havuz üretiminde (kelime-havuz.mjs) uygulanan kart düzeltmeleri. Ünite kaynağına dokunmadan, üretilen kartın tr veya ornek_tokenlar alanını değiştirir. en+u eşleşmesi gerekir.",
+  "yamalar": [
+    {
+      "en": "festival",
+      "u": 6,
+      "alan": "tr",
+      "deger": "festival / şenlik"
+    },
+    {
+      "en": "enormously",
+      "u": 6,
+      "alan": "tr",
+      "deger": "büyük ölçüde, çok fazla"
+    },
+    {
+      "en": "athlete",
+      "u": 2,
+      "alan": "ornek_tokenlar",
+      "deger": [
+        {
+          "k": "train",
+          "a": "eğitim yapmak"
+        },
+        {
+          "k": "like",
+          "vurgu": false
+        },
+        {
+          "k": "an"
+        },
+        {
+          "k": "athlete",
+          "a": "atlet",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "en": "warning",
+      "u": 2,
+      "alan": "ornek_tokenlar",
+      "deger": [
+        {
+          "k": "Despite",
+          "a": "-e rağmen"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "warnings,",
+          "a": "uyarılar",
+          "vurgu": true
+        },
+        {
+          "k": "many",
+          "a": "birçok"
+        },
+        {
+          "k": "tourists",
+          "a": "turist"
+        },
+        {
+          "k": "swam"
+        },
+        {
+          "k": "in",
+          "a": "içinde"
+        },
+        {
+          "k": "the"
+        },
+        {
+          "k": "dangerous",
+          "a": "tehlikeli"
+        },
+        {
+          "k": "currents.",
+          "a": "şu anki"
+        }
+      ]
+    },
+    {
+      "en": "yes",
+      "u": 1,
+      "alan": "ornek_tokenlar",
+      "deger": [
+        {
+          "k": "When",
+          "a": "-diğinde"
+        },
+        {
+          "k": "asked",
+          "a": "sorulduğunda"
+        },
+        {
+          "k": "whether",
+          "a": "-ip -mediği"
+        },
+        {
+          "k": "renewable",
+          "a": "yenilenebilir"
+        },
+        {
+          "k": "energy",
+          "en": "renewable energy",
+          "a": "enerji"
+        },
+        {
+          "k": "could",
+          "a": "-ebilir"
+        },
+        {
+          "k": "replace",
+          "a": "yerini almak"
+        },
+        {
+          "k": "fossil",
+          "a": "fosil"
+        },
+        {
+          "k": "fuels,",
+          "en": "fossil fuels",
+          "a": "yakıtlar"
+        },
+        {
+          "k": "most",
+          "a": "çoğu"
+        },
+        {
+          "k": "experts",
+          "a": "uzman"
+        },
+        {
+          "k": "firmly",
+          "a": "kararlılıkla"
+        },
+        {
+          "k": "answered",
+          "a": "yanıtladı"
+        },
+        {
+          "k": "Yes.",
+          "vurgu": true,
+          "a": "evet"
+        }
+      ]
+    }
+  ]
+}
