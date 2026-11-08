@@ -159,7 +159,7 @@ T('rekor geri geri → Ben', (await aktifSekme()) === 'ben' && (await baslik()) 
 await sek('bugun'); await s.locator('#ayarBtn').click(); await bekle(500);
 T('dişli → Ben', (await aktifSekme()) === 'ben');
 await s.locator('#yardimBtn').click(); await bekle(400);
-T('yardım modalı', (await s.locator('.modal-katman .yardim-sat').count()) === 11);
+T('yardım modalı', (await s.locator('.modal-katman .yardim-sat').count()) === 8);
 await s.evaluate(() => window.__geriYonet()); await bekle(400);
 T('donanım geri modalı kapatır', (await s.locator('.modal-katman').count()) === 0);
 const g1 = await s.evaluate(() => window.__geriYonet()); await bekle(500);
