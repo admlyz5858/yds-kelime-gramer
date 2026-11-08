@@ -54,7 +54,7 @@ await s.locator('#geri').click(); await bekle(600);
 T('iki geri → Bugün', (await baslik()) === 'Kelimetre');
 // devam → ünite 2
 await s.locator('#pDers').click(); await bekle(900);
-T('devam → Edatlar ünitesi', (await baslik()) === 'Edatlar' && (await s.locator('.segment button').count()) === 4);
+T('devam → Edatlar ünitesi', (await baslik()) === 'Edatlar' && (await s.locator('.segment button').count()) === 2);
 await s.locator('#geri').click(); await bekle(600);
 T('ünite geri → Müfredat', (await aktifSekme()) === 'mufredat');
 
@@ -114,25 +114,8 @@ await sek('mufredat');
 T('Müfredat: 13 ünite kartı, 5 grup', (await s.locator('.mf-kart').count()) === 13 && (await s.locator('.mf-grup').count()) === 5);
 await s.screenshot({ path: SCRATCH + '/v2-mufredat.png' });
 await s.locator('.mf-kart[data-id="3"]').click(); await bekle(900);
-T('Present Tenses: 3 segment (çeviri yok)', (await baslik()) === 'Present Tenses' && (await s.locator('.segment button').count()) === 3);
+T('Present Tenses: yalnızca Oku segmenti (çeviri yok)', (await baslik()) === 'Present Tenses' && (await s.locator('.segment button').count()) === 1);
 T('bu ünitenin kelimeleri linki', (await s.locator('#uniteKelimeler').count()) === 1);
-await s.locator('.segment button[data-seg="alistirma"]').click(); await bekle(600);
-const alTur = await s.locator('.al-tur').count(); console.log('   alıştırma türleri:', alTur, (await s.locator('.al-tur').allInnerTexts()).map(x => x.replace(/\n/g, ' ')).join(' | '));
-T('alıştırma paneli', alTur >= 1);
-await s.screenshot({ path: SCRATCH + '/v2-alistirma.png' });
-await s.locator('.al-tur').first().click(); await bekle(500);
-T('alıştırma soru', (await s.locator('.q-secenek').count()) === 4 && (await s.locator('#alGeri').count()) === 1);
-for (let i = 0; i < 10; i++) { await s.locator('.q-secenek').first().click(); await bekle(250); const d = s.locator('#alDevam'); if (await d.count()) { await d.click(); await bekle(250); } }
-T('alıştırma bitiş', (await s.locator('#alTekrar').count()) === 1);
-await s.screenshot({ path: SCRATCH + '/v2-alistirma-son.png' });
-await s.locator('#alPanel').click(); await bekle(400);
-T('bitiş → panel (istatistik)', (await s.locator('.al-ozet').count()) === 1 && (await s.locator('.al-ozet b').first().textContent()) === '10');
-await s.locator('.segment button[data-seg="test"]').click(); await bekle(500);
-T('test listesi: sıradaki rozet', (await s.locator('.test-link.siradaki').count()) === 1 && (await s.locator('.siradaki-rozet').count()) === 1);
-await s.locator('.test-link').first().click(); await bekle(500);
-T('test başladı (#qGeri)', (await s.locator('#qGeri').count()) === 1);
-await s.evaluate(() => window.__geriYonet()); await bekle(400);
-T('donanım geri → test listesi', (await s.locator('.test-link').count()) >= 1);
 await s.locator('.segment button[data-seg="oku"]').click(); await bekle(500);
 T('oku: bölüm listesi + çalışıldı düğmesi', (await s.locator('.bolum-link').count()) >= 1 && (await s.locator('#tamamla').count()) === 1);
 await s.locator('.bolum-link').first().click(); await bekle(500);
@@ -143,7 +126,7 @@ T('ünite kelimeleri → Kelimeler sekmesi ünite filtresi', (await aktifSekme()
 console.log('   ünite 3 kelime:', await s.locator('#szSay').textContent());
 // Çeviri sekmesi (Edatlar)
 await sek('mufredat'); await s.locator('.mf-kart[data-id="2"]').click(); await bekle(900);
-T('Edatlar: 4 segment', (await s.locator('.segment button').count()) === 4);
+T('Edatlar: Oku + Çeviri segmentleri', (await s.locator('.segment button').count()) === 2);
 await s.locator('.segment button[data-seg="ceviri"]').click(); await bekle(700);
 await s.screenshot({ path: SCRATCH + '/v2-ceviri.png' });
 await s.locator('.ornek-cumle').first().click(); await bekle(300);
@@ -153,11 +136,6 @@ await s.locator('#tamamla').click(); await bekle(400);
 T('çalışıldı işaretle', (await s.locator('#tamamla').textContent()).includes('geri al'));
 await s.locator('#geri').click(); await bekle(600);
 T('müfredatta ✓ çalışıldı rozeti', (await s.locator('.mf-kart[data-id="2"] .mf-rozet.ok').count()) === 1);
-await s.locator('#mfYanlis').click(); await bekle(500);
-T('yanlışlarım alt ekran', (await baslik()) === 'Yanlışlarım' && (await geriGor()));
-await s.locator('#geri').click(); await bekle(500);
-T('yanlış geri → müfredat', (await aktifSekme()) === 'mufredat');
-
 // ---- OYUN
 await sek('oyun');
 T('Oyun kökü (panel, bar görünür)', (await baslik()) === 'Oyun' && (await barGor()) && (await s.locator('.es-hucre, .es-bolum, .es-panel, [id^=esBolum]').count()) >= 0);

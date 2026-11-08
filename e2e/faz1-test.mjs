@@ -68,26 +68,6 @@ const seg = async (s, ad) => { await s.locator(`.segment button[data-seg="${ad}"
   await ctx.close();
 }
 
-// 4) Mini deneme: yenilemede ilerleme korunur; boş soru varken bitir onay ister
-{
-  const { ctx, s } = await yeni();
-  await s.evaluate((a) => { localStorage.clear(); localStorage.setItem('yds-ayar-v1', JSON.stringify(a)); }, AYAR); await s.reload({ waitUntil: 'networkidle' });
-  await sek(s, 'mufredat'); await s.locator('#mfBanka').click(); await bekle(700); await s.locator('#bkDeneme').click(); await bekle(500);
-  await s.locator('#dnBasla').click(); await bekle(700);
-  for (let i = 0; i < 3; i++) { await s.locator('.q-secenek').first().click(); await bekle(150); await s.locator('#dnSonraki').click().catch(() => {}); await bekle(150); }
-  await s.reload({ waitUntil: 'networkidle' }); await bekle(700);
-  await sek(s, 'mufredat'); await s.locator('#mfBanka').click(); await bekle(600); await s.locator('#bkDeneme').click(); await bekle(500);
-  T('deneme: yarım kalan deneme devam düğmesi var', (await s.locator('#dnDevamEt').count()) === 1);
-  await s.locator('#dnDevamEt').click(); await bekle(600);
-  const cevapli = await s.locator('.dn-n.dolu').count();
-  T('deneme: yenilemeden sonra 3 cevap korundu', cevapli === 3);
-  // boş sorular varken "Sınavı bitir" (son soru) onay penceresi: dismiss ile kalmalı
-  await s.locator('.dn-n[data-k="19"]').click(); await bekle(300);
-  if (await s.locator('#dnBitir').count()) { await s.locator('#dnBitir').click(); await bekle(400); }
-  T('deneme: boş sorularla onaysız bitmiyor (ekran sürüyor)', (await s.locator('#dnSure').count()) === 1);
-  await ctx.close();
-}
-
 // 5) Özel kelime silinince SRS kaydı ve ipucu da silinir
 {
   const { ctx, s } = await yeni();

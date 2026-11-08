@@ -32,8 +32,11 @@ T('Bugün: kaydet önerisi (girişsiz, aktivite ≥ 1)', (await s.locator('#pBul
 // --- ilk oturum bitince tek seferlik kayıt önerisi (banka testi çöz)
 await s.evaluate(() => { const a = JSON.parse(localStorage.getItem('yds-ayar-v1')); a.toplamAktivite = 4; a.kayitSoruldu = false; localStorage.setItem('yds-ayar-v1', JSON.stringify(a)); });
 await s.reload({ waitUntil: 'networkidle' }); await bekle(800);
-await sek('mufredat'); await s.locator('#mfBanka').click(); await bekle(800); await s.locator('.bk-konu[data-konu="modal"]').click(); await bekle(400); await s.locator('.bk-alt[data-alt="cikarim"]').click(); await bekle(400); await s.locator('.test-link').first().click(); await bekle(500);
-for (let i = 0; i < 10; i++) { await s.locator('.q-secenek').first().click(); await bekle(150); await s.locator('#bkDevam').click(); await bekle(150); }
+await sek('oyun'); await s.locator('.segment[data-alan="oyun"] button[data-seg="av"]').click(); await bekle(900); await s.locator('.og-sev[data-sev="kolay"]').click(); await bekle(400);
+for (let k = 0; k < 5; k++) {
+  for (const h of 'etaoinsrhldcumfpgwybvkxjqz') { if (await s.locator('.og-sonuc').count()) break; const t = s.locator(`.og-tus[data-h="${h}"]:not([disabled])`); if (await t.count()) { await t.click(); await bekle(40); } }
+  await s.locator('#ogSonraki').click(); await bekle(250);
+}
 await bekle(1800);
 T('ilk oturum bitince kayıt önerisi penceresi (yalnızca Google + geç)', (await s.locator('#hsGoogle').count()) === 1 && (await s.locator('#hsGec').count()) === 1 && (await s.locator('#hsEposta').count()) === 0);
 await s.screenshot({ path: SCRATCH + '/bulut-oner.png' });

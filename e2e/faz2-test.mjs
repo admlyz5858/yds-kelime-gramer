@@ -34,7 +34,7 @@ await s.locator('.mf-kart[data-id="14"]').click(); await bekle(900);
 await s.locator('#tamamla').click(); await bekle(300);
 await s.locator('#geri').click(); await bekle(600);
 const halka = await s.locator('.mf-kart[data-id="14"] .mf-halka.var').count();
-T('çalışıldı → halka doldu (%30)', halka === 1 && (await s.locator('.mf-grup').last().locator('.mf-grup-oran').textContent()) === '%15');
+T('çalışıldı → halka doldu (grupta 2 üniteden 1 → %50)', halka === 1 && (await s.locator('.mf-grup').last().locator('.mf-grup-oran').textContent()) === '%50');
 await s.screenshot({ path: SCRATCH + '/f2-mufredat.png' });
 // oyun yol görünümü
 await sek('oyun');

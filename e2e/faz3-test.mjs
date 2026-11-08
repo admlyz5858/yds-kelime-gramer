@@ -33,16 +33,6 @@ await s.locator('.ayar-sat[data-is="tema"]').click(); await bekle(300);
 T('tema → koyu', (await tema()) === 'koyu');
 await s.locator('.ayar-sat[data-is="tema"]').click(); await bekle(300);
 T('tema → sistem', (await s.locator('.ayar-sat[data-is="tema"] b').textContent()).includes('Sistem'));
-// test konu etiketleri
-await sek('mufredat'); await s.locator('.mf-kart[data-id="2"]').click(); await bekle(900);
-await s.locator('.segment button[data-seg="test"]').click(); await bekle(500);
-const konular = await s.locator('.test-konu').allTextContents(); console.log('   edat test etiketleri:', konular.slice(0, 4).join(' | '));
-T('test konu etiketleri var', konular.length === 10 && konular.every(k => k.length > 0));
-await s.locator('#geri').click(); await bekle(500);
-await s.locator('.mf-kart[data-id="7"]').click(); await bekle(900);
-await s.locator('.segment button[data-seg="test"]').click(); await bekle(500);
-console.log('   modal test etiketleri:', (await s.locator('.test-konu').allTextContents()).slice(0, 4).join(' | '));
-await s.locator('#geri').click(); await bekle(500);
 // Öğren oturumu: üst Geri, kaydırma, devam kaydı
 await sek('kelimeler'); await s.locator('.segment button[data-seg="ogren"]').click(); await bekle(900);
 await s.evaluate(() => { const srs = JSON.parse(localStorage.getItem('yds-srs-v1') || '{}'); srs.ayar = Object.assign(srs.ayar || {}, { mod: 'kart' }); localStorage.setItem('yds-srs-v1', JSON.stringify(srs)); });

@@ -63,34 +63,6 @@ await s.locator('#trCalis').click(); await bekle(800);
 T('bilinmeyenleri çalış → oturum', (await s.locator('.kart-sayac').count()) === 1);
 await s.locator('#geri').click(); await bekle(500);
 
-// ---- 2) mini deneme
-await sek('mufredat'); await s.locator('#mfBanka').click(); await bekle(900);
-T('bankada deneme kartı', (await s.locator('#bkDeneme').count()) === 1);
-await s.locator('#bkDeneme').click(); await bekle(500);
-T('deneme giriş', (await baslik()) === 'Mini Deneme' && (await s.locator('#dnBasla').count()) === 1);
-await s.locator('#dnBasla').click(); await bekle(800);
-T('20 soru, süre sayacı', (await s.locator('.dn-n').count()) === 20 && /^2[45]:\d\d$/.test(await s.locator('#dnSure').textContent()));
-await s.screenshot({ path: SCRATCH + '/f5-deneme.png' });
-for (let i = 0; i < 20; i++) { await s.locator('.q-secenek').first().click(); await bekle(120); }
-T('tüm sorular cevaplandı, bitir düğmesi', (await s.locator('.dn-n.dolu').count()) === 20 && (await s.locator('#dnBitir').count()) === 1);
-await s.locator('.dn-n[data-k="4"]').click(); await bekle(200);
-T('soru 5\'e gidildi, seçili şık korunuyor', (await s.locator('.q-secenek.secili').count()) === 1);
-await s.locator('.dn-n[data-k="19"]').click(); await bekle(200); await s.locator('#dnBitir').click(); await bekle(800);
-const sonuc = await s.locator('#icerik').innerText();
-T('sonuç: puan, kırılım, en zayıf konu', /deneme puanı/.test(sonuc) && (await s.locator('.dn-kir-satir').count()) >= 5);
-await s.screenshot({ path: SCRATCH + '/f5-deneme-sonuc.png', fullPage: true });
-const dn = await s.evaluate(() => JSON.parse(localStorage.getItem('yds-deneme-v1')));
-T('deneme geçmişe kaydedildi', dn.length === 1 && dn[0].dogru + dn[0].yanlis + dn[0].bos === 20);
-await s.locator('#dnIncele').click(); await bekle(500);
-T('inceleme: 20 soru', (await s.locator('.dn-inc').count()) === 20);
-await s.locator('#dnGeri').click(); await bekle(400);
-T('deneme girişinde geçmiş satırı', (await s.locator('.dn-gecmis-satir').count()) === 1);
-await s.locator('#geri').click(); await bekle(400);
-T('geri → banka', (await baslik()) === 'Soru Bankası');
-await s.locator('#geri').click(); await bekle(400);
-await sek('bugun');
-T('Bugün: deneme çözüldüğü için öneri kartı yok', (await s.locator('#pDeneme').count()) === 0);
-
 // ---- 1) bulut yedek (manuel yedek satırları kaldırıldı)
 await sek('ben');
 T('manuel yedek satırları yok, giriş satırı var', (await s.locator('.ayar-sat[data-is="yedekal"]').count()) === 0 && (await s.locator('.ayar-sat[data-is="yedekyukle"]').count()) === 0 && (await s.locator('.ayar-sat[data-is="giris-yap"]').count()) === 1);
