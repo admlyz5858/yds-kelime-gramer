@@ -43,30 +43,6 @@ export function saveOgrenilen(o) {
   kaydet(OGKEY, o);
 }
 
-// ===== Test istatistikleri — { "unitId#testIdx": {dogru, toplam, tamam} } (en iyi skor) =====
-const IKEY = 'yds-test-istat-v1';
-
-export function loadIstat() {
-  try { return JSON.parse(localStorage.getItem(IKEY)) || {}; }
-  catch { return {}; }
-}
-
-export function saveIstat(istat) {
-  kaydet(IKEY, istat);
-}
-
-// ===== Yanlışlarım — [{ key, soru, unite }] tüm üniteler boyunca birikir =====
-const YKEY = 'yds-yanlis-v1';
-
-export function loadYanlis() {
-  try { return JSON.parse(localStorage.getItem(YKEY)) || []; }
-  catch { return []; }
-}
-
-export function saveYanlis(yanlis) {
-  kaydet(YKEY, yanlis);
-}
-
 // ===== Kelime Öğren — aralıklı tekrar (SRS) durumu =====
 // { surum, kartlar:{ enLower:{b,e,i,d,r,l,s} }, gun:{tarih,yeni,tekrar}, gec:[{t,y,r,d,w}], ayar:{yeniHedef} }
 const SKEY = 'yds-srs-v1';
@@ -109,26 +85,6 @@ export function saveEslestir(d) {
   kaydet(EKEY, d);
 }
 
-// ===== Ünite alıştırmaları — { uniteId: { yapilan, dogru, zayif:{etiket: yanlisSayisi} } } =====
-const ALKEY = 'yds-alistirma-v1';
-
-export function loadAlistirma() {
-  try { return JSON.parse(localStorage.getItem(ALKEY)) || {}; }
-  catch { return {}; }
-}
-
-export function saveAlistirma(a) {
-  kaydet(ALKEY, a);
-}
-
-// ===== Soru Bankası istatistikleri — { "konu/alt": { yapilan, dogru, yanlisId: [] } } =====
-const BKEY = 'yds-banka-v1';
-export function loadBanka() {
-  try { return JSON.parse(localStorage.getItem(BKEY)) || {}; }
-  catch { return {}; }
-}
-export function saveBanka(v) { kaydet(BKEY, v); }
-
 // ===== Kullanıcının kendi kelimeleri — [{ en, tr, tur, ornek_tokenlar?, ornek_tr?, t }] =====
 const OZKEY = 'yds-ozel-v1';
 // ===== Cevap olay günlüğü (Faz 2) — kimlikli, yalnızca eklenen kayıtlar =====
@@ -155,20 +111,25 @@ export function loadNot() {
 }
 export function saveNot(v) { kaydet(NKEY, v); }
 
-// ===== Mini deneme geçmişi — [{ tarih, dogru, yanlis, bos, puan, sure, kirilim }] =====
-const DNKEY = 'yds-deneme-v1';
-export function loadDeneme() {
-  try { return JSON.parse(localStorage.getItem(DNKEY)) || []; }
-  catch { return []; }
+// ===== Kelime oyunları (Harf Avı, Karışık Harfler) — { av: { kolay: { en: puan, tur: sayi } }, karisik: {...} } =====
+const OYKEY = 'yds-oyunlar-v1';
+export function loadOyunlar() {
+  try { return JSON.parse(localStorage.getItem(OYKEY)) || {}; }
+  catch { return {}; }
 }
-export function saveDeneme(v) { kaydet(DNKEY, v); }
+export function saveOyunlar(v) { kaydet(OYKEY, v); }
+
+// ===== Kaldırılan test özelliklerinden kalan veri (Soru Bankası, mini deneme, ünite testleri/alıştırmaları, Yanlışlarım) =====
+// Artık kullanılmaz; yedeğe girmez ve açılışta silinir.
+const ESKI_TEST_ANAHTARLARI = ['yds-test-istat-v1', 'yds-yanlis-v1', 'yds-alistirma-v1', 'yds-banka-v1', 'yds-deneme-v1', 'yds-deneme-devam-v1'];
+export function eskiTestVerisiniTemizle() { for (const k of ESKI_TEST_ANAHTARLARI) { try { localStorage.removeItem(k); } catch {} } }
 
 // ===== Yedek: tüm yds-* anahtarları tek nesnede =====
 export function yedekAl() {
   const veri = {};
   for (let i = 0; i < localStorage.length; i++) {
     const k = localStorage.key(i);
-    if (k && k.startsWith('yds-')) { try { veri[k] = JSON.parse(localStorage.getItem(k)); } catch { veri[k] = localStorage.getItem(k); } }
+    if (k && k.startsWith('yds-') && !ESKI_TEST_ANAHTARLARI.includes(k)) { try { veri[k] = JSON.parse(localStorage.getItem(k)); } catch { veri[k] = localStorage.getItem(k); } }
   }
   return { uygulama: 'kelimetre', surum: 1, tarih: new Date().toISOString(), veri };
 }
@@ -177,7 +138,7 @@ export function yedekYukle(obj) {
   if (!obj || obj.uygulama !== 'kelimetre' || typeof obj.veri !== 'object') throw new Error('Geçersiz yedek dosyası');
   let n = 0;
   for (const [k, v] of Object.entries(obj.veri)) {
-    if (!k.startsWith('yds-')) continue;
+    if (!k.startsWith('yds-') || ESKI_TEST_ANAHTARLARI.includes(k)) continue;
     localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v)); n++;   // bildirimsiz (buluttan indirme)
   }
   return n;

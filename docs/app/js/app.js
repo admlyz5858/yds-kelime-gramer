@@ -1,18 +1,16 @@
 // app/js/app.js — Kelimetre v2: beş sekme (Bugün · Kelimeler · Müfredat · Oyun · Ben)
-import { toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr, bosluklariDoldur } from './logic.js';
-import { loadProgress, saveProgress, loadIstat, saveIstat, loadYanlis, saveYanlis, loadAyar, saveAyar } from './storage.js';
+import { toggleDone, isDone, shuffle, isoGun, gunStr } from './logic.js';
+import { loadProgress, saveProgress, loadAyar, saveAyar } from './storage.js';
 import { srs, srsKaydet, defter, defterKaydet, defterdeMi, defterToggle, defterEkle, defterKelimeler, pekisenSayisi, eskiKayitlariTasi } from './durum.js';
 import { kurKelimeOgren } from './ogren.js';
 import { kurKelimeAkisi } from './akis.js';
 import { kurEslestirme } from './eslestir.js';
+import { kurOyunlar } from './oyunlar.js';
 import { kurSozluk, UNITE_ADI } from './sozluk.js';
-import { kurAlistirma } from './alistirma.js';
-import { kurBanka } from './banka.js';
-import { kurDeneme } from './deneme.js';
 import { kurTarayici } from './tarayici.js';
 import { kurGun } from './gun.js';
 import * as bulut from './bulut.js';
-import { loadOzel, saveOzel, saveDefter, saveOgrenilen, saveEslestir, saveAlistirma, saveBanka, saveDeneme, saveOlay, loadOlay, olayYazSessiz } from './storage.js';
+import { loadOzel, saveOzel, saveDefter, saveOgrenilen, saveEslestir, saveOyunlar, eskiTestVerisiniTemizle, saveOlay, loadOlay, olayYazSessiz } from './storage.js';
 import { etkinlikOzeti, kirp } from './olay.js';
 import { notAl, notKaydet } from './notlar.js';
 import { titre, ses, konfeti, paylas, efektAyarla, seslendir } from './efekt.js';
@@ -27,11 +25,8 @@ const sekmeBar = document.getElementById('sekme-bar');
 let manifest = null;
 let aktifDers = null;
 let progress = loadProgress();
-let _istat = loadIstat();      // test istatistikleri (kalıcı, tüm üniteler)
-let _yanlis = loadYanlis();    // Yanlışlarım listesi (kalıcı, tüm üniteler)
 let _ayar = loadAyar();        // uygulama ayarları / bayraklar
-const testKey = (id, ti) => `${id}#${ti}`;
-const soruKey = (q) => (q.soru || '').trim().toLowerCase();
+eskiTestVerisiniTemizle();     // kaldırılan test özelliklerinden kalan eski veri
 let _acikBolum = null;   // Oku ekranında açık olan bölüm indeksi (null = başlık listesi)
 
 async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url); return r.json(); }
@@ -129,16 +124,24 @@ function sekmeKokChrome(sekme) {
   document.body.dataset.sekme = sekme;
 }
 function sekmeAc(sekme, opts = {}) {
-  kelimeAkisi.temizle(); eslestirme.temizle();
+  kelimeAkisi.temizle(); eslestirme.temizle(); oyunlar.temizle();
   aktifSekme = sekme; anaTur++;
   sekmeKokChrome(sekme);
   if (sekme === 'kelimeler') return kelimelerAc(opts.segment, opts);
   if (sekme === 'mufredat') return mufredatAc();
-  if (sekme === 'oyun') return eslestirme.ac(Object.assign({ ustHTML: () => ipucuHTML('oyun') }, opts));
+  if (sekme === 'oyun') return oyunAc(opts.segment, opts);
   if (sekme === 'ben') return benAc();
   return anaSayfa();
 }
 const yenile = () => sekmeAc(aktifSekme);
+// Oyun sekmesi: Eşleştirme · Harf Avı · Karışık Harfler (segment çubuğu)
+const OYUN_SEGMENTLER = [['esles', '🧩 Eşleştirme'], ['av', '🔤 Harf Avı'], ['karisik', '🔀 Karışık']];
+const oyunSegmentHTML = (aktif) => segmentHTML('oyun', OYUN_SEGMENTLER, aktif);
+function oyunAc(seg = 'esles', opts = {}) {
+  eslestirme.temizle(); oyunlar.temizle();
+  if (seg === 'av' || seg === 'karisik') return oyunlar.ac(seg);
+  return eslestirme.ac(Object.assign({ ustHTML: () => ipucuHTML('oyun') + oyunSegmentHTML('esles') }, opts));
+}
 // Alt ekran: üst "Geri" + başlık, alt bar gizli
 function altEkran(baslik, geriFn) {
   geriBtn.hidden = false; geriBtn.onclick = geriFn; sekmeBar.hidden = true;
@@ -159,9 +162,9 @@ function esc(s) { return String(s ?? '').replace(/[&<>]/g, m => ({ '&': '&amp;',
 // Her sekmede ilk açılışta tek satırlık ipucu (kapatınca bir daha görünmez)
 const IPUCU = {
   bugun: '🏠 Bugünün planı burada: tekrarlar, günün eşleştirmesi ve kaldığın ünite.',
-  kelimeler: '📅 Her gün 20 kelime: bir güne dokun, kartlarla çalış ya da test çöz. Liste\'de S1 → S5 çiplerle süz.',
-  mufredat: '🎓 Her ünitede Oku → Alıştırma → Test sırası önerilir; halka ilerlemeni gösterir.',
-  oyun: '🧩 Sezonlar sırayla açılır; günün eşleştirmesi herkese aynı 10 kelimedir.',
+  kelimeler: '📅 Her gün 20 kelime: bir güne dokun, kartlarla çalış. Liste\'de S1 → S5 çiplerle süz.',
+  mufredat: '🎓 Her ünitede kuralları oku, örnekleri incele; bitince ✓ çalışıldı işaretle.',
+  oyun: '🎮 Eşleştirme, Harf Avı ve Karışık Harfler ile kelimeleri oyunla öğren. Eşleştirmede sezonlar sırayla açılır.',
   ben: '👤 Tema, günlük hedef ve hatırlatma ayarları aşağıda; ilerlemeni paylaşabilirsin.',
 };
 function ipucuHTML(sekme) {
@@ -188,6 +191,7 @@ icerik.addEventListener('click', (e) => {
   const alan = b.closest('.segment').dataset.alan;
   if (alan === 'kelimeler') kelimelerAc(b.dataset.seg);
   else if (alan === 'unite' && aktifDers) ekranGoster(b.dataset.seg);
+  else if (alan === 'oyun') oyunAc(b.dataset.seg);
 });
 
 // ============================================================
@@ -204,6 +208,10 @@ const kelimeAkisi = kurKelimeAkisi({
 const eslestirme = kurEslestirme({
   render, esc, gunKaydet, anaSayfa: kokOyun, ekranModu, paylas, titre, ses, konfeti, toast,
   havuzYukle, defterdeMi, defterToggle, onayAc,
+});
+const oyunlar = kurOyunlar({
+  render, esc, gunKaydet, ses, titre, konfeti, ekranModu, anaSayfa: kokOyun, havuzYukle,
+  ustHTML: (oyun) => ipucuHTML('oyun') + oyunSegmentHTML(oyun),
 });
 const sozluk = kurSozluk({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran,
@@ -228,25 +236,6 @@ const tarayici = kurTarayici({
   render, esc, havuzYukle, wireOrnekler, toast, titre, altEkran,
   calis: (words) => { kelimeOgren.ustAyarla(() => ipucuHTML('kelimeler') + kelimelerSegmentHTML(kelimelerSegment)); kelimeOgren.calis(words); },
 });
-const alistirma = kurAlistirma({ render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti });
-// Mini deneme — Soru Bankası'ndan 20 soru, 25 dakika
-let deneme = null;
-// Soru Bankası — tüm test soruları konu › alt konu ağacında; yanlışlar Yanlışlarım'a da düşer
-const banka = kurBanka({
-  render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, ses, titre, konfeti, altEkran, toast,
-  uniteAdi: (u) => dersKisaAd(u),
-  yanlisEkle: (q, etiket) => {
-    const sk = soruKey(q); if (_yanlis.some(y => y.key === sk)) return;
-    _yanlis.push({ key: sk, soru: { soru: q.soru, secenekler: q.secenekler, cevap: q.cevap, aciklama: q.aciklama, ornek: q.ornek }, unite: etiket }); saveYanlis(_yanlis);
-  },
-  denemeAc: (geri) => deneme.ac(geri),
-});
-deneme = kurDeneme({
-  render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, gunKaydet, altEkran, toast, ses, titre, konfeti,
-  bankaYukle: () => banka.yukle(), konuAd: (k) => banka.konuAd(k),
-  yanlisEkle: (q, etiket) => { const sk = soruKey(q); if (_yanlis.some(y => y.key === sk)) return; _yanlis.push({ key: sk, soru: { soru: q.soru, secenekler: q.secenekler, cevap: q.cevap, aciklama: q.aciklama, ornek: q.ornek }, unite: etiket }); saveYanlis(_yanlis); },
-});
-
 // Örnek cümledeki bir kelimeyi (o cümleyi örnek alarak) deftere ekle
 function ogrenEkle(el) {
   const kutu = el.closest('.ornek-kutu');
@@ -277,9 +266,6 @@ async function anaSayfa() {
   const es = eslestirme.ozet();
   const son = _ayar.sonDers;
   bildirimYenile(oz);
-  await banka.yukle().catch(() => {});
-  if (aktifSekme !== 'bugun' || anaTur !== tur) return;
-  const zayif = banka.zayifKonu();
   const yarim = kelimeOgren.devamBilgi();
   const tekrarBitti = !yarim && oz && (oz.due + oz.yeni) === 0;
   const tekrarMetin = yarim ? `Yarım kalan oturum · ${yarim.i}/${yarim.n} tamamlandı` : !oz ? 'Aralıklı tekrar' : tekrarBitti ? 'Bugünlük tamam — istersen yine çalış' : `${oz.due} tekrar · ${oz.yeni} yeni kelime`;
@@ -300,8 +286,9 @@ async function anaSayfa() {
       <span class="plan-ikon">🎓</span><span class="plan-ic"><b>${son ? 'Müfredata devam' : 'Müfredata başla'}</b><i>${son ? esc(sonAd) + ' · kaldığın yerden' : 'Edatlar, zamanlar, modallar…'}</i></span><span class="plan-durum">›</span>
     </button>
     ${!bulut.durum().girili && !_ayar.bulutKapatildi && etkinlikDurumu().toplam >= 1 ? `<button class="plan-kart kucuk bulut" id="pBulut"><span class="plan-ikon">☁️</span><span class="plan-ic"><b>İlerlemeni kaydet</b><i>Google ile giriş yap; telefon değişse de devam et</i></span><span class="ipucu-kapat" id="pBulutKapat" role="button" aria-label="Kapat">✕</span></button>` : ''}
-    ${deneme.onerilsinMi() ? `<button class="plan-kart kucuk" id="pDeneme"><span class="plan-ikon">🧪</span><span class="plan-ic"><b>Haftalık mini deneme</b><i>${deneme.ozet().son ? `Son: ${deneme.ozet().son.puan} puan · ` : ''}20 soru · 25 dakika</i></span><span class="plan-durum">›</span></button>` : ''}
-    ${zayif ? `<button class="plan-kart zayif" id="pZayif"><span class="plan-ikon">🎯</span><span class="plan-ic"><b>Zayıf konunu güçlendir</b><i>${esc(zayif.ad)} · %${Math.round(zayif.oran * 100)} doğruluk · 10 soru</i></span><span class="plan-durum">›</span></button>` : ''}
+    <button class="plan-kart kucuk" id="pOyun">
+      <span class="plan-ikon">🔤</span><span class="plan-ic"><b>Harf Avı · Karışık Harfler</b><i>Kelimeleri oyunla pekiştir</i></span><span class="plan-durum">›</span>
+    </button>
     <button class="plan-kart kucuk" id="pAkis">
       <span class="plan-ikon">🎬</span><span class="plan-ic"><b>Kelime Akışı</b><i>Yukarı kaydır, dinle, kaydet</i></span><span class="plan-durum">›</span>
     </button>
@@ -309,8 +296,8 @@ async function anaSayfa() {
   icerik.querySelectorAll('[data-git]').forEach(c => c.onclick = () => {
     const g = c.dataset.git;
     if (g === 'defter') sekmeAc('kelimeler', { segment: 'defter' });
-    else if (g === 'yanlis') yanlisAc();
     else if (g === 'ogrenilen') sekmeAc('kelimeler', { segment: 'liste', filtre: { durum: 'pekisti' } });
+    else if (g === 'oyun') sekmeAc('oyun');
     else if (g === 'ilerleme') sekmeAc('ben');
   });
   gun.heroBagla();
@@ -320,9 +307,8 @@ async function anaSayfa() {
   document.getElementById('pGunluk').onclick = () => eslestirme.ac({ gunluk: true });
   document.getElementById('pDers').onclick = () => son ? dersAc(son.dosya, son.id) : sekmeAc('mufredat');
   document.getElementById('pAkis').onclick = () => kelimeAkisi.ac({ baslik: 'Kelime Akışı' });
-  const pd = document.getElementById('pDeneme'); if (pd) pd.onclick = () => deneme.ac(() => sekmeAc('bugun'));
+  document.getElementById('pOyun').onclick = () => sekmeAc('oyun', { segment: 'av' });
   const pb = document.getElementById('pBulut'); if (pb) pb.onclick = (e) => { if (e.target.closest('#pBulutKapat')) { e.stopPropagation(); _ayar.bulutKapatildi = true; saveAyar(_ayar); anaSayfa(); return; } girisAc(); };
-  const pz = document.getElementById('pZayif'); if (pz) pz.onclick = () => banka.basla({ konu: zayif.konu, alt: zayif.alt, baslik: zayif.ad, geri: () => sekmeAc('bugun') });
   const gb = document.getElementById('gununBtn');
   if (gb) gb.onclick = gununAc;
 }
@@ -360,40 +346,28 @@ const GRUPLAR = [
   { ad: 'Cümle yapıları', ikon: '🧱', ids: [11, 12, 13] },
   { ad: 'Bağlayıcılar', ikon: '🔗', ids: [2, 14] },
 ];
-function uniteTestSayisi(id) { return Object.keys(_istat).filter(k => k.startsWith(id + '#')).length; }
-// Ünite ilerlemesi 0–1: testler %50, "çalışıldı" %30, alıştırma (20 soru) %20
-function uniteOrani(d, tS, al, bitti) {
-  const test = d.test_sayisi ? Math.min(1, tS / d.test_sayisi) : (tS ? 1 : 0);
-  const alis = al ? Math.min(1, (al.yapilan || 0) / 20) : 0;
-  return Math.min(1, 0.5 * test + 0.3 * (bitti ? 1 : 0) + 0.2 * alis);
-}
+// Ünite ilerlemesi 0–1: "çalışıldı" işaretliyse tam
+function uniteOrani(bitti) { return bitti ? 1 : 0; }
 function halkaHTML(oran, etiket) {
   const r = 16, c = 2 * Math.PI * r, tam = oran >= 0.999;
   return `<span class="mf-halka ${tam ? 'tam' : ''} ${oran > 0 ? 'var' : ''}"><svg viewBox="0 0 40 40"><circle class="arka" cx="20" cy="20" r="${r}"/><circle class="on" cx="20" cy="20" r="${r}" stroke-dasharray="${(c * oran).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 20 20)"/></svg><b>${tam ? '✓' : etiket}</b></span>`;
 }
 async function mufredatAc() {
   await manifestYukle();
-  await banka.yukle().catch(() => {});
-  const bo = banka.ozet();
   const dersler = manifest.dersler.filter(d => d.id !== 1);
   const calisilan = dersler.filter(d => isDone(progress, d.id)).length;
-  const cozTest = Object.keys(_istat).length;
   const son = _ayar.sonDers;
   const grup = GRUPLAR.map(g => {
     const dersListe = g.ids.map(id => manifest.dersler.find(d => d.id === id)).filter(Boolean);
     let grupOran = 0;
     const kartlar = dersListe.map(d => {
-      const tS = uniteTestSayisi(d.id), al = alistirma.ozet(d.id), bitti = isDone(progress, d.id);
-      const oran = uniteOrani(d, tS, al, bitti); grupOran += oran;
-      const rozetler = [
-        bitti ? '<span class="mf-rozet ok">✓ çalışıldı</span>' : '',
-        tS ? `<span class="mf-rozet">🧠 ${tS}/${d.test_sayisi || tS} test</span>` : '',
-        al && al.yapilan ? `<span class="mf-rozet">✍️ %${Math.round(al.dogru / al.yapilan * 100)}</span>` : '',
-      ].filter(Boolean).join('');
+      const bitti = isDone(progress, d.id);
+      const oran = uniteOrani(bitti); grupOran += oran;
+      const rozetler = bitti ? '<span class="mf-rozet ok">✓ çalışıldı</span>' : '';
       return `<button class="mf-kart ${son && son.id === d.id ? 'son' : ''}" data-id="${d.id}" data-dosya="${d.dosya}">
         ${halkaHTML(oran, d.id)}
         <span class="mf-ic"><span class="mf-bas">${esc(dersKisaAd(d.id))}</span>
-          <span class="mf-alt">${d.bolum_sayisi || 0} bölüm${rozetler ? ' · ' : ''}${rozetler}${!rozetler && !tS ? ' · henüz başlanmadı' : ''}</span></span>
+          <span class="mf-alt">${d.bolum_sayisi || 0} bölüm${rozetler ? ' · ' : ''}${rozetler}${!rozetler ? ' · henüz başlanmadı' : ''}</span></span>
         <span class="ok">›</span>
       </button>`;
     }).join('');
@@ -404,23 +378,18 @@ async function mufredatAc() {
     ${ipucuHTML('mufredat')}
     <div class="mf-ozet">
       <div><b>${calisilan}/${dersler.length}</b><span>ünite çalışıldı</span></div>
-      <div><b>${cozTest}</b><span>test çözüldü</span></div>
-      <button class="mf-ozet-btn" id="mfYanlis"><b>${_yanlis.length}</b><span>❌ yanlış soru</span></button>
     </div>
-    <button class="mf-kelime-link banka" id="mfBanka"><span>📝</span><span><b>Soru Bankası</b><i>${bo.toplam || '1.500+'} soru · ${bo.konu || 9} konu · konuya göre çöz${bo.oran != null ? ` · %${bo.oran} doğruluk` : ''}</i></span><span class="ok">›</span></button>
     ${son ? `<button class="hizli-devam" id="devamBtn"><div><div class="hizli-devam-ust">▶ Kaldığın yerden devam et</div><div class="hizli-devam-bas">${esc(dersKisaAd(son.id))}</div></div><span class="ok">›</span></button>` : ''}
     ${grup}
     <button class="mf-kelime-link" id="mfKelimeler"><span>📖</span><span><b>Tüm kelimeler tek yerde</b><i>2.100+ kelime kartı · seviye ve türe göre</i></span><span class="ok">›</span></button>
   `);
   icerik.querySelectorAll('.mf-kart').forEach(b => b.onclick = () => dersAc(b.dataset.dosya, Number(b.dataset.id)));
-  document.getElementById('mfYanlis').onclick = yanlisAc;
-  document.getElementById('mfBanka').onclick = () => banka.ac(() => sekmeAc('mufredat'));
   document.getElementById('mfKelimeler').onclick = () => sekmeAc('kelimeler', { segment: 'liste' });
   const db = document.getElementById('devamBtn');
   if (db) db.onclick = () => dersAc(son.dosya, son.id);
 }
 
-// ---------- Ünite ekranı: Oku · Alıştırma · Test · Çeviri ----------
+// ---------- Ünite ekranı: Oku · Çeviri ----------
 async function dersAc(dosya, id, ekran) {
   await manifestYukle();
   try {
@@ -436,7 +405,7 @@ async function dersAc(dosya, id, ekran) {
 }
 const ciftSayisi = (d) => (d.bolumler || []).reduce((s, b) => s + (b.ciftler?.length || 0), 0);
 function uniteSegmentler() {
-  const s = [['oku', '📖 Oku'], ['alistirma', '✍️ Alıştırma'], ['test', '🧠 Test']];
+  const s = [['oku', '📖 Oku']];
   if (ciftSayisi(aktifDers) >= 20) s.push(['ceviri', '🔁 Çeviri']);
   return s;
 }
@@ -446,8 +415,6 @@ function ekranGoster(ekran) {
   const d = aktifDers;
   _acikBolum = null;
   altEkran(d.kisaAd, () => sekmeAc('mufredat'));
-  if (ekran === 'alistirma') return alistirma.ac(d, { ustHTML: uniteUstHTML('alistirma') });
-  if (ekran === 'test') return ekranQuiz();
   if (ekran === 'ceviri') return ekranCeviri();
   return ekranOku();
 }
@@ -546,13 +513,12 @@ function bolumDetay(d, i) {
   }
   html += `<div class="btn-satir bolum-gez">
     ${onceki ? `<button class="aksiyon ikincil" id="bolumOnceki">‹ ${esc(d.bolumler[i - 1].baslik)}</button>` : ''}
-    ${sonraki ? `<button class="aksiyon" id="bolumSonraki">${esc(d.bolumler[i + 1].baslik)} ›</button>` : `<button class="aksiyon" id="bolumAlistirma">✍️ Alıştırmaya geç</button>`}
+    ${sonraki ? `<button class="aksiyon" id="bolumSonraki">${esc(d.bolumler[i + 1].baslik)} ›</button>` : ''}
   </div>`;
   render(html);
   document.getElementById('bolumGeri').onclick = () => { _acikBolum = null; ekranOku(); };
   const bo = document.getElementById('bolumOnceki'); if (bo) bo.onclick = () => { _acikBolum = i - 1; ekranOku(); };
   const bs = document.getElementById('bolumSonraki'); if (bs) bs.onclick = () => { _acikBolum = i + 1; ekranOku(); };
-  const ba = document.getElementById('bolumAlistirma'); if (ba) ba.onclick = () => ekranGoster('alistirma');
   wireOrnekler(icerik);
   icerik.querySelectorAll('.edat-cip').forEach(c => c.onclick = () => {
     const el = document.getElementById(c.dataset.hedef);
@@ -683,197 +649,6 @@ function wireOrnekler(root) {
 }
 
 // ============================================================
-// TEST (ünite testleri) · Yanlışlarım
-// ============================================================
-let _quizCevap = [], _quizIdx = 0, _quizSorular = [], _aktifTest = null, _yanlisMod = false;
-function quizTestleri() {
-  const d = aktifDers;
-  if (Array.isArray(d.testler) && d.testler.length) return d.testler;
-  if (Array.isArray(d.quiz) && d.quiz.length) return [{ ad: 'Test', sorular: d.quiz }];
-  return [];
-}
-// Testin konu etiketi: kısa cevaplardan en sık 3'ü (at · in · on) ya da soru biçimi
-function testEtiket(t) {
-  const say = {};
-  for (const q of t.sorular || []) { const c = String(q.cevap || '').trim(); if (c && !/\s/.test(c) && c.length <= 14) say[c] = (say[c] || 0) + 1; }
-  const top = Object.entries(say).sort((a, b) => b[1] - a[1]).slice(0, 3).map(x => x[0]);
-  if (top.length >= 2 && Object.keys(say).length <= 14) return top.join(' · ');
-  const n = (t.sorular || []).length, bosluk = (t.sorular || []).filter(q => /_{2,}/.test(q.soru)).length, ceviri = (t.sorular || []).filter(q => /çeviri/i.test(q.soru)).length;
-  if (ceviri > n / 2) return 'çeviri';
-  if (bosluk > n / 2) return 'boşluk doldurma';
-  return 'karma';
-}
-function zorlukRozet(i, n) {
-  const r = n <= 1 ? 0 : i / (n - 1);
-  if (r < 0.34) return '<span class="zorluk-rozet z-kolay">Kolay</span>';
-  if (r < 0.67) return '<span class="zorluk-rozet z-orta">Orta</span>';
-  return '<span class="zorluk-rozet z-zor">Zor</span>';
-}
-let _testGorunum = 'testler';
-const testGorunumHTML = () => `<div class="sz-cipler bk-gorunum"><button class="sz-cip ${_testGorunum === 'testler' ? 'aktif' : ''}" data-g="testler">🧠 Testler</button><button class="sz-cip ${_testGorunum === 'konular' ? 'aktif' : ''}" data-g="konular">📝 Konuya göre</button></div>`;
-function testGorunumBagla() { icerik.querySelectorAll('.bk-gorunum .sz-cip').forEach(b => b.onclick = () => { _testGorunum = b.dataset.g; ekranQuiz(); }); }
-function ekranQuiz() {
-  _aktifTest = null; _yanlisMod = false;
-  if (_testGorunum === 'konular') {
-    const d = aktifDers;
-    banka.uniteKonular(d._id, { ustHTML: uniteUstHTML('test') + testGorunumHTML(), geri: () => { aktifDers = d; ekranGoster('test'); } }).then(testGorunumBagla);
-    return;
-  }
-  const testler = quizTestleri();
-  if (!testler.length) { render(uniteUstHTML('test') + '<div class="cumle"><div class="tr">Bu ünitede test yok.</div></div>'); return; }
-  const id = aktifDers._id;
-  let topD = 0, topT = 0, bitenSayi = 0;
-  const siradaki = testler.findIndex((t, i) => !_istat[testKey(id, i)]);
-  const liste = testler.map((t, i) => {
-    const st = _istat[testKey(id, i)];
-    if (st) { topD += st.dogru; topT += st.toplam; bitenSayi++; }
-    const durum = st
-      ? `<span class="test-skor ${st.dogru === st.toplam ? 'tam' : ''}">✓ ${st.dogru}/${st.toplam}</span>`
-      : (i === siradaki ? '<span class="siradaki-rozet">Sıradaki</span>' : '');
-    return `<div class="test-link${st ? ' biten' : ''}${i === siradaki ? ' siradaki' : ''}" data-i="${i}">
-      <div><div class="baslik">${esc(t.ad || ('Test ' + (i + 1)))}</div><div class="alt-bilgi">${(t.sorular || []).length} soru · <span class="test-konu">${esc(testEtiket(t))}</span></div></div>
-      ${durum}${zorlukRozet(i, testler.length)}<span class="ok">›</span>
-    </div>`;
-  }).join('');
-  const ozet = bitenSayi
-    ? `<div class="quiz-ozet">Çözülen: ${bitenSayi}/${testler.length} test · Toplam doğru: ${topD}/${topT} (%${Math.round(topD / topT * 100)})</div>`
-    : '';
-  render(uniteUstHTML('test') + testGorunumHTML() + `<div class="cumle"><div class="tr">Testler kolaydan zora sıralı; hepsi açık, sıradaki vurgulu. Yanlışların “Yanlışlarım”da birikir.</div></div>${ozet}${liste}`);
-  icerik.querySelectorAll('.test-link').forEach(el => el.onclick = () => baslatTest(Number(el.dataset.i)));
-  testGorunumBagla();
-}
-function baslatTest(ti) {
-  _aktifTest = ti; _yanlisMod = false;
-  _quizSorular = (quizTestleri()[ti].sorular) || [];
-  _quizCevap = new Array(_quizSorular.length).fill(null);
-  _quizIdx = 0;
-  cizQuiz();
-}
-const _harfler = ['A', 'B', 'C', 'D', 'E', 'F'];
-function cizQuiz() {
-  const q = _quizSorular, i = _quizIdx, soru = q[i];
-  const testler = _yanlisMod ? [] : quizTestleri();
-  const cevaplandi = _quizCevap[i] != null;
-  const dogruMu = cevaplandi && _quizCevap[i] === soru.cevap;
-  const sec = soru.secenekler.map((o, idx) => {
-    let sinif = 'q-secenek';
-    let isaret = '';
-    if (cevaplandi) {
-      if (o === soru.cevap) { sinif += ' dogru'; isaret = '<span class="q-isaret">✓</span>'; }
-      else if (o === _quizCevap[i]) { sinif += ' yanlis'; isaret = '<span class="q-isaret">✕</span>'; }
-    }
-    return `<button class="${sinif}" data-o="${esc(o)}" ${cevaplandi ? 'disabled' : ''}>
-      <span class="q-harf">${_harfler[idx] || '•'}</span><span class="q-sik-metin">${esc(o)}</span>${isaret}</button>`;
-  }).join('');
-  const soruGovde = bosluklariDoldur(esc(soru.soru), cevaplandi ? soru.cevap : null, (t) => `<span class="q-bosluk ${dogruMu ? 'dogru' : 'yanlis'}">${esc(t)}</span>`, () => '<span class="q-bosluk"></span>');
-  let alt = '';
-  if (cevaplandi) {
-    alt += `<div class="q-sonuc-rozet ${dogruMu ? 'dogru' : 'yanlis'}">${dogruMu ? '✓ Doğru' : '✕ Yanlış · doğrusu: ' + esc(soru.cevap)}</div>`;
-    if (soru.aciklama) alt += `<div class="q-aciklama"><span class="q-aciklama-bas">💡 İpucu</span>${esc(soru.aciklama)}</div>`;
-    if (soru.ornek) alt += `<div class="q-ornek"><div class="q-ornek-etiket">Örnek cümle · kelimeye dokun, çeviri için kaydır</div>${ornekInteraktifHTML(soru.ornek)}</div>`;
-    alt += `<div class="btn-satir"><button class="aksiyon" id="qSonraki">${i + 1 < q.length ? 'Sonraki ›' : 'Testi bitir'}</button></div>`;
-  }
-  const ust = _yanlisMod
-    ? `<div class="kart-sayac">Yanlışlarım · Soru ${i + 1} / ${q.length}</div>`
-    : `<button class="aksiyon ikincil" id="qGeri" style="margin-bottom:12px">‹ Testler</button>
-       <div class="kart-sayac">${esc(testler[_aktifTest]?.ad || 'Test')} · Soru ${i + 1} / ${q.length}</div>`;
-  const ilerleme = `<div class="kart-ilerleme"><div class="kart-ilerleme-ic" style="width:${Math.round((cevaplandi ? i + 1 : i) / q.length * 100)}%"></div></div>`;
-  const etiket = /_{2,}/.test(soru.soru) ? 'Boşluğa uygun ifadeyi seç' : 'Doğru cevabı seç';
-  const soruKart = `<div class="soru-kart">
-      <div class="soru-etiket">${etiket}</div>
-      <div class="soru-cumle">${soruGovde}</div>
-    </div>`;
-  render(`${ust}${ilerleme}${soruKart}<div class="q-secenekler">${sec}</div>${alt}`);
-  const gb = document.getElementById('qGeri');
-  if (gb) gb.onclick = () => ekranQuiz();
-  if (!cevaplandi) {
-    icerik.querySelectorAll('.q-secenek').forEach(b => b.onclick = () => {
-      _quizCevap[i] = b.dataset.o;
-      const dogruMu2 = b.dataset.o === soru.cevap;
-      geriBildirim(dogruMu2);
-      gunKaydet(1, { dogru: dogruMu2 });
-      cizQuiz();
-    });
-  } else {
-    if (soru.ornek) wireOrnekler(icerik);
-    const ns = document.getElementById('qSonraki');
-    if (ns) ns.onclick = () => { if (i + 1 < q.length) { _quizIdx++; cizQuiz(); } else cizQuizSonuc(); };
-  }
-}
-function geriBildirim(dogruMu) {
-  if (dogruMu) { ses('dogru'); titre('hafif'); } else { ses('yanlis'); titre('hata'); }
-}
-function cizQuizSonuc() {
-  if (_yanlisMod) return yanlisSonuc();
-  gunKaydet(0, { bitir: true });
-  const r = scoreQuiz(_quizSorular, _quizCevap);
-  const testler = quizTestleri();
-  const sonrakiVar = _aktifTest != null && _aktifTest + 1 < testler.length;
-  const yuzde = Math.round((r.dogru / r.toplam) * 100);
-  const k = testKey(aktifDers._id, _aktifTest);
-  const onceki = _istat[k];
-  if (!onceki || r.dogru > onceki.dogru) { _istat[k] = { dogru: r.dogru, toplam: r.toplam, tamam: true }; saveIstat(_istat); }
-  const mevcut = new Set(_yanlis.map(y => y.key));
-  let eklenen = 0;
-  _quizSorular.forEach((q, idx) => {
-    if (_quizCevap[idx] !== q.cevap) {
-      const sk = soruKey(q);
-      if (!mevcut.has(sk)) { _yanlis.push({ key: sk, soru: q, unite: aktifDers.baslik || '' }); mevcut.add(sk); eklenen++; }
-    }
-  });
-  if (eklenen) saveYanlis(_yanlis);
-  if (yuzde >= 80) { ses('kutlama'); konfeti(); }
-  render(`<div class="es-sonuc"><div class="es-sonuc-amblem">${yuzde >= 80 ? '🌟' : yuzde >= 50 ? '👏' : '💪'}</div>
-      <div class="es-sonuc-bas">${esc(testler[_aktifTest]?.ad || 'Test')}</div>
-      <div class="es-sonuc-skor">${r.dogru} / ${r.toplam}</div><div class="es-sonuc-alt">%${yuzde} doğru</div>
-      ${eklenen ? `<div class="es-sonuc-not">❌ ${eklenen} yanlış soru “Yanlışlarım”a eklendi</div>` : '<div class="es-sonuc-not">Hiç yanlış yok 👏</div>'}</div>
-    <div class="btn-satir">
-      ${sonrakiVar ? '<button class="aksiyon" id="qSonrakiTest">Sonraki test ›</button>' : ''}
-      <button class="aksiyon ${sonrakiVar ? 'ikincil' : ''}" id="qTekrar">Tekrar çöz</button>
-      <button class="aksiyon ikincil" id="qListe">Testler</button>
-    </div>`);
-  document.getElementById('qTekrar').onclick = () => baslatTest(_aktifTest);
-  const st = document.getElementById('qSonrakiTest');
-  if (st) st.onclick = () => baslatTest(_aktifTest + 1);
-  document.getElementById('qListe').onclick = () => ekranQuiz();
-}
-
-// Yanlışlarım — tüm ünitelerden biriken yanlış sorular; doğru yapınca silinir
-function yanlisAc() {
-  _yanlis = loadYanlis();
-  const kaynak = aktifSekme;
-  aktifDers = { _id: 'yanlis', baslik: 'Yanlışlarım' };
-  altEkran('Yanlışlarım', () => sekmeAc(kaynak));
-  _yanlisMod = true; _aktifTest = 0;
-  _quizSorular = shuffle(_yanlis.map(y => y.soru));
-  if (!_quizSorular.length) {
-    render('<div class="cumle"><div class="tr">Henüz yanlışın yok. 👏 Testlerde yanlış yaptığın sorular burada birikir; burada doğru çözünce listeden silinir.</div></div>');
-    return;
-  }
-  _quizCevap = new Array(_quizSorular.length).fill(null);
-  _quizIdx = 0;
-  cizQuiz();
-}
-function yanlisSonuc() {
-  const r = scoreQuiz(_quizSorular, _quizCevap);
-  const dogruKeys = new Set();
-  _quizSorular.forEach((q, idx) => { if (_quizCevap[idx] === q.cevap) dogruKeys.add(soruKey(q)); });
-  let cozulen = 0;
-  _yanlis = _yanlis.filter(y => { if (dogruKeys.has(y.key)) { cozulen++; return false; } return true; });
-  saveYanlis(_yanlis);
-  render(`<div class="es-sonuc"><div class="es-sonuc-amblem">${_yanlis.length ? '💪' : '✨'}</div><div class="es-sonuc-bas">Yanlışlarım</div>
-      <div class="es-sonuc-skor">${r.dogru} / ${r.toplam}</div>
-      <div class="es-sonuc-alt">✅ ${cozulen} soru listeden silindi · Kalan: ${_yanlis.length}</div></div>
-    <div class="btn-satir">
-      ${_yanlis.length ? '<button class="aksiyon" id="yTekrar">Kalanları çöz</button>' : ''}
-      <button class="aksiyon ikincil" id="yEv">Bitir</button>
-    </div>`);
-  const yt = document.getElementById('yTekrar');
-  if (yt) yt.onclick = () => yanlisAc();
-  document.getElementById('yEv').onclick = () => yenile();
-}
-
-// ============================================================
 // Modal · Giriş · Yardım
 // ============================================================
 let _modalKapat = null;
@@ -922,8 +697,8 @@ function girisEkrani(zorla) {
         <div class="giris-ozellik">
           <div class="giris-sat"><span>📖</span><div><b>2.100+ kelime tek yerde</b><i>Seviye (S1–S5), tür ve duruma göre süz; akışta gez</i></div></div>
           <div class="giris-sat"><span>🌱</span><div><b>Aralıklı tekrar</b><i>Unutmadan önce tekrar; “Bugün” sekmesi planı verir</i></div></div>
-          <div class="giris-sat"><span>🎓</span><div><b>13 gramer ünitesi</b><i>Oku, alıştırma yap, test çöz, çeviri çalış</i></div></div>
-          <div class="giris-sat"><span>🧩</span><div><b>Eşleştirme oyunu</b><i>Günün bulmacası, bölümler ve düello</i></div></div>
+          <div class="giris-sat"><span>🎓</span><div><b>13 gramer ünitesi</b><i>Kuralları oku, örnekleri incele, çeviri çalış</i></div></div>
+          <div class="giris-sat"><span>🧩</span><div><b>Kelime oyunları</b><i>Eşleştirme, Harf Avı, Karışık Harfler</i></div></div>
         </div>
         ${noktalar()}
         <button class="aksiyon giris-basla" id="girisIleri">Devam →</button>
@@ -967,14 +742,11 @@ function yardimAc() {
     <div class="yardim-sat"><span>🏠</span><div><b>Bugün</b> — Günlük hedef, seri ve bugünün planı: kelime tekrarı, günün eşleştirmesi, kaldığın ünite.</div></div>
     <div class="yardim-sat"><span>📖</span><div><b>Kelimeler</b> — Tüm kelimeler tek listede. S1 (temel) → S5 (akademik) seviye, tür ve durum çipleriyle süz; bir kelimeye dokun → anlam, örnek, 🔊, 📓 Defter, 🎓 Biliyorum. “Bu listeyi çalış” ile aralıklı tekrara al.</div></div>
     <div class="yardim-sat"><span>🌱</span><div><b>Öğren</b> — Aralıklı tekrar: kelimeler unutulmadan önce tekrar gelir; kart, test, yazım ve boşluk modları.</div></div>
-    <div class="yardim-sat"><span>🎓</span><div><b>Müfredat</b> — Her ünitede Oku (kurallar + etkileşimli örnekler), Alıştırma (ünitenin kendi cümlelerinden boşluk ve sınıflandırma), Test (kolaydan zora) ve Çeviri.</div></div>
-    <div class="yardim-sat"><span>📝</span><div><b>Soru Bankası</b> — Tüm test soruları konuya göre: Edatlar, Zamanlar, Modallar, Koşul… Alt konu seç, 10 soru çöz; doğruluk konu bazında saklanır, zayıf konun Bugün’e düşer.</div></div>
-    <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme; bölümler, günün bulmacası, düello ve rekorlar.</div></div>
-    <div class="yardim-sat"><span>🧪</span><div><b>Mini deneme</b> — Soru Bankası'ndan 20 soru, 25 dakika; deneme puanı (doğru oranı) ve konu kırılımı. Bugün'de haftada bir önerilir.</div></div>
+    <div class="yardim-sat"><span>🎓</span><div><b>Müfredat</b> — Her ünitede Oku (kurallar + etkileşimli örnekler) ve Çeviri.</div></div>
+    <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme (bölümler, günün bulmacası, düello, rekorlar), Harf Avı ve Karışık Harfler. Tüm oyunlar günlük hedefe sayılır.</div></div>
     <div class="yardim-sat"><span>📄</span><div><b>Metin tara</b> — Kelimeler › Tara: bir metin yapıştır, havuzdaki kelimeler seviye rengiyle işaretlenir; bilmediklerini deftere al ya da çalış.</div></div>
     <div class="yardim-sat"><span>➕</span><div><b>Kendi kelimen</b> — Defterim › "Kendi kelimeni ekle"; her karta 📝 hafıza ipucu yazabilirsin.</div></div>
     <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, ayarlar; ☁️ Google ile giriş yapınca ilerlemen buluta yedeklenir ve cihazlar arasında taşınır.</div></div>
-    <div class="yardim-sat"><span>❌</span><div><b>Yanlışlarım</b> — Testlerde yanlış yaptığın sorular birikir; doğru çözünce silinir (Müfredat ve Bugün’den ulaşılır).</div></div>
   `);
 }
 
@@ -985,7 +757,6 @@ function ayarSatirlariHTML() {
   return `
     <div class="ben-baslik">Oyun</div>
     <button class="ayar-sat" data-is="rekor"><span>🏅</span><div><b>Rekorlarım</b><i>Eşleştirme skorların</i></div></button>
-    <button class="ayar-sat" data-is="deneme"><span>🧪</span><div><b>Mini deneme</b><i>${deneme.ozet().sayi ? `${deneme.ozet().sayi} deneme · son ${deneme.ozet().son.puan} · en iyi ${deneme.ozet().enIyi}` : 'Henüz deneme çözülmedi'}</i></div></button>
     <div class="ben-baslik">Ayarlar</div>
     <button class="ayar-sat" data-is="tema"><span>${TEMA_AD[temaSecimi()][0]}</span><div><b>${TEMA_AD[temaSecimi()][1]}</b><i>${TEMA_AD[temaSecimi()][2]} — değiştirmek için dokun</i></div></button>
     <button class="ayar-sat" data-is="hedef"><span>🎯</span><div><b>Günlük hedef</b><i>${_ayar.hedef || HEDEF_VARSAYILAN} aktivite/gün — değiştirmek için dokun</i></div></button>
@@ -998,16 +769,14 @@ function ayarSatirlariHTML() {
     <div class="ben-baslik">Hesap ve bulut yedek</div>
     ${hesapSatirlariHTML()}
     <div class="ben-baslik">Veri</div>
-    <button class="ayar-sat" data-is="yanlis"><span>❌</span><div><b>Yanlışlarım’ı temizle</b><i>${_yanlis.length} biriken soruyu sıfırla</i></div></button>
     <button class="ayar-sat" data-is="defter"><span>📓</span><div><b>Kelime Defteri’ni temizle</b><i>${defterKelimeler().length} kelime silinir; kendi eklediğin kelimeler ve ipuçları kalır</i></div></button>
-    <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Öğrenilen kelimeler, defter, testler, yanlışlar, deneme ve oyun geçmişi, seri ve günlük sayaçlar silinir. Ayarların, kendi kelimelerin ve ipuçların kalır</i></div></button>
+    <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Öğrenilen kelimeler, defter, oyun geçmişi, seri ve günlük sayaçlar silinir. Ayarların, kendi kelimelerin ve ipuçların kalır</i></div></button>
     <div class="ayar-hakkinda">Kelimetre · YDS/YÖKDİL · v${SURUM}</div>`;
 }
 function ayarBagla(root) {
   root.querySelectorAll('.ayar-sat').forEach(b => b.onclick = () => {
     const is = b.dataset.is;
     if (is === 'rekor') { eslestirme.rekorlar(); return; }
-    if (is === 'deneme') { deneme.ac(() => sekmeAc('ben')); return; }
     if (is === 'giris-yap') { girisAc(); return; }
     if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulutEsitle(true).then(() => benAc()); return; }
     if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); const eb = document.getElementById('onayEvet'); if (eb) eb.textContent = 'Evet, çık'; return; }
@@ -1025,12 +794,10 @@ function ayarBagla(root) {
     if (is === 'yardim') { yardimAc(); return; }
     if (is === 'giris') { girisEkrani(true); return; }
     const sorular = {
-      yanlis: 'Yanlışlarım listesindeki tüm sorular silinsin mi?',
       defter: 'Kelime Defteri’ndeki tüm kelimeler silinsin mi?',
-      hepsi: 'TÜM ilerleme (test skorları, kelime durumları, defter, yanlışlar) sıfırlansın mı? Bu geri alınamaz.'
+      hepsi: 'TÜM ilerleme (kelime durumları, defter, oyun geçmişi) sıfırlansın mı? Bu geri alınamaz.'
     };
     onayAc(sorular[is], () => {
-      if (is === 'yanlis' || is === 'hepsi') { _yanlis = []; saveYanlis(_yanlis); }
       if (is === 'defter' || is === 'hepsi') { for (const k of Object.keys(defter)) delete defter[k]; defterKaydet(); }
       if (is === 'hepsi') { ilerlemeSifirla(); return; }
       benAc();
@@ -1043,10 +810,9 @@ function ilerlemeSifirla() {
   for (const k of Object.keys(srs.kartlar)) delete srs.kartlar[k];
   srs.gun = { tarih: '', yeni: 0, tekrar: 0 }; srs.gec = []; delete srs.devam; srsKaydet();
   for (const k of Object.keys(defter)) delete defter[k]; saveDefter(defter);
-  _yanlis = []; saveYanlis(_yanlis);
-  _istat = {}; saveIstat(_istat);
+  eskiTestVerisiniTemizle();
   progress = {}; saveProgress(progress);
-  saveOgrenilen({}); saveEslestir({}); saveAlistirma({}); saveBanka({}); saveDeneme([]); saveOlay([]);
+  saveOgrenilen({}); saveEslestir({}); saveOyunlar({}); saveOlay([]);
   for (const k of ['seri', 'sonAktif', 'gunTarih', 'gunSayac', 'gunDogru', 'gunYanlis', 'gunBitirilen', 'gorevBitti', 'toplamAktivite', 'enUzunSeri', 'gunlog', 'dondurma', 'sonDers', 'sonGunKelime', 'sonDondurmaSeri', '_dondurmaBildir', 'xp']) delete _ayar[k];
   saveAyar(_ayar);
   const bitir = () => setTimeout(() => location.reload(), 300);
@@ -1062,8 +828,8 @@ function benAc() {
     <div class="ilerleme-cip-satir">
       <div class="ilerleme-cip"><b>🌳 ${s.ogrenilen}</b><span>öğrenilen</span></div>
       <div class="ilerleme-cip"><b>📓 ${s.defter}</b><span>defter</span></div>
-      <div class="ilerleme-cip"><b>%${s.yuzde}</b><span>test başarısı</span></div>
-      <div class="ilerleme-cip"><b>📝 ${s.cozTest}</b><span>çözülen test</span></div>
+      <div class="ilerleme-cip"><b>⭐ ${s.yildiz}</b><span>yıldız</span></div>
+      <div class="ilerleme-cip"><b>🧩 ${s.bolum}</b><span>oyun bölümü</span></div>
     </div>
     <div class="ilerleme-cip-satir">
       <div class="ilerleme-cip"><b>🔥 ${s.seri}</b><span>seri</span></div>
@@ -1075,7 +841,7 @@ function benAc() {
     ${ayarSatirlariHTML()}
   `);
   document.getElementById('paylasBtn').onclick = async () => {
-    const metin = `📏 Kelimetre · YDS ilerlemem:\n🔥 ${s.seri} günlük seri\n🌳 ${s.ogrenilen} kelime öğrendim, %${s.yuzde} test başarısı.\nSen de çalış!`;
+    const metin = `📏 Kelimetre · YDS ilerlemem:\n🔥 ${s.seri} günlük seri\n🌳 ${s.ogrenilen} kelime öğrendim, ⭐ ${s.yildiz} yıldız topladım.\nSen de çalış!`;
     const sonuc = await paylas({ baslik: 'Kelimetre ilerlemem', metin });
     if (sonuc === 'kopyalandi') toast('📋 İlerleme panoya kopyalandı');
     else if (sonuc === false) toast('Paylaşım bu cihazda desteklenmiyor');
@@ -1115,7 +881,7 @@ function gorevListesi() {
   return [
     { id: 'aktivite', ikon: '⚡', ad: `${hedef} aktivite yap`, ilerleme: Math.min(g('bugunAktivite'), hedef), hedef, bitti: !!bitti.aktivite },
     { id: 'dogru', ikon: '🎯', ad: '15 doğru cevap ver', ilerleme: Math.min(g('bugunDogru'), 15), hedef: 15, bitti: !!bitti.dogru },
-    { id: 'bitir', ikon: '🏁', ad: '2 test/oturum bitir', ilerleme: Math.min(g('bugunBitir'), 2), hedef: 2, bitti: !!bitti.bitir },
+    { id: 'bitir', ikon: '🏁', ad: '2 oturum/oyun bitir', ilerleme: Math.min(g('bugunBitir'), 2), hedef: 2, bitti: !!bitti.bitir },
   ];
 }
 function gorevleriKontrol() {
@@ -1229,15 +995,12 @@ function gununAc() {
 
 // --- Pano (Bugün üstü) ---
 function panoStats() {
-  const cozTest = Object.keys(_istat).length;
-  let d = 0, t = 0;
-  Object.values(_istat).forEach(s => { d += s.dogru; t += s.toplam; });
   const bugun = gunStr(0), dun = gunStr(-1);
   const seri = (_ayar.sonAktif === bugun || _ayar.sonAktif === dun) ? (_ayar.seri || 0) : 0;
   const bugunSay = etkinlikDurumu().bugunAktivite;
   return {
-    cozTest, dogru: d, toplam: t, yuzde: t ? Math.round(d / t * 100) : 0,
-    defter: defterKelimeler().length, yanlis: _yanlis.length, ogrenilen: pekisenSayisi(),
+    defter: defterKelimeler().length, ogrenilen: pekisenSayisi(),
+    yildiz: eslestirme.ozet().toplamYildiz, bolum: eslestirme.istat().bitenBolum,
     seri, bugun: bugunSay, hedef: _ayar.hedef || HEDEF_VARSAYILAN,
     dondurma: _ayar.dondurma || 0
   };
@@ -1266,7 +1029,7 @@ function panoHTML() {
     <div class="pano-stat">
       <button class="pano-cip" data-git="ogrenilen"><b>${s.ogrenilen}</b><span>🌳 Öğrenilen</span></button>
       <button class="pano-cip" data-git="defter"><b>${s.defter}</b><span>📓 Defter</span></button>
-      <button class="pano-cip" data-git="yanlis"><b>${s.yanlis}</b><span>❌ Yanlış</span></button>
+      <button class="pano-cip" data-git="oyun"><b>${s.yildiz}</b><span>⭐ Yıldız</span></button>
       <button class="pano-cip" data-git="ilerleme"><b>${bitenGorev}/${gorevler.length}</b><span>🎮 Görev</span></button>
     </div>
   </div>`;

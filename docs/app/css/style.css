@@ -1808,3 +1808,42 @@ button.gp-hero-govde{ cursor:pointer; }
 .segment button, .sz-cip, #yardimBtn, #ayarBtn, .ogr-mod-cip, .ogr-hedef-btn { min-height: 40px; min-width: 40px; }
 #sekme-bar button { min-height: 44px; }
 .sz-ara:focus { outline: 2px solid var(--kil); outline-offset: 1px; }
+
+/* ===== Kelime oyunları: Harf Avı · Karışık Harfler ===== */
+.og-hero { display: flex; align-items: center; gap: 14px; background: var(--yuzey); border: 1px solid var(--hat); border-radius: 18px; padding: 16px; margin: 8px 0 4px; }
+.og-hero-ikon { font-size: 40px; line-height: 1; }
+.og-hero-bas { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--murekkep); }
+.og-hero-alt { font-size: 13.5px; color: var(--murekkep-2); margin-top: 2px; line-height: 1.4; }
+.og-seviyeler { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 6px; }
+.og-sev { display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 96px; padding: 14px 6px; border-radius: 16px; border: 1px solid var(--hat-2); background: var(--yuzey); color: var(--murekkep); cursor: pointer; font-family: var(--sans); }
+.og-sev b { font-family: var(--serif); font-size: 18px; }
+.og-sev span { font-size: 12.5px; color: var(--murekkep-2); }
+.og-sev i { font-style: normal; font-size: 11.5px; color: var(--murekkep-2); }
+.og-sev:disabled { opacity: .5; cursor: default; }
+.og-ust { display: flex; justify-content: space-between; align-items: center; margin: 10px 2px 6px; font-size: 14px; color: var(--murekkep-2); font-weight: 600; }
+.og-tr { text-align: center; margin: 8px 0 4px; }
+.og-tr b { font-family: var(--serif); font-size: 24px; color: var(--murekkep); line-height: 1.25; }
+.og-tr i { display: block; font-style: normal; font-size: 12.5px; color: var(--murekkep-2); margin-top: 2px; }
+.og-can { text-align: center; letter-spacing: 3px; font-size: 18px; margin: 6px 0; }
+.og-kelime { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+.og-harf { width: 34px; height: 46px; display: flex; align-items: center; justify-content: center; border-bottom: 3px solid var(--hat-2); font: 700 26px var(--serif); text-transform: uppercase; color: var(--murekkep); }
+.og-harf.acik { border-bottom-color: var(--orman); }
+.og-klavye { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 14px 0 10px; }
+.og-tus { min-height: 46px; border-radius: 10px; border: 1px solid var(--hat-2); background: var(--yuzey); color: var(--murekkep); font: 700 17px var(--sans); text-transform: uppercase; cursor: pointer; }
+.og-tus.dogru { background: var(--orman); border-color: var(--orman); color: var(--gorev-yazi, #fff); }
+.og-tus.yanlis { background: transparent; border-color: var(--gul); color: var(--gul); text-decoration: line-through; }
+.og-tus:disabled { cursor: default; }
+.og-karolar { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 16px 0 10px; }
+.og-karo { width: 48px; height: 52px; border-radius: 12px; border: 1px solid var(--hat-2); background: var(--yuzey); color: var(--murekkep); font: 700 24px var(--serif); text-transform: uppercase; cursor: pointer; box-shadow: var(--golge); }
+.og-karo:disabled { opacity: .35; box-shadow: none; cursor: default; }
+.og-cevap.titre { animation: og-titre .4s; }
+@keyframes og-titre { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-7px); } 40%, 80% { transform: translateX(7px); } }
+@media (prefers-reduced-motion: reduce) { .og-cevap.titre { animation: none; } }
+.og-sonuc { text-align: center; border: 1px solid var(--hat); border-radius: 16px; padding: 14px; margin: 10px 0; background: var(--yuzey); }
+.og-sonuc.dogru { border-color: var(--orman); }
+.og-sonuc.yanlis { border-color: var(--gul); }
+.og-sonuc-bas { font-weight: 700; color: var(--murekkep); }
+.og-sonuc-kelime { font-family: var(--serif); font-size: 26px; font-weight: 700; margin-top: 4px; color: var(--murekkep); }
+.og-sonuc-tr { font-size: 14px; color: var(--murekkep-2); margin-top: 2px; }
+.es-sonuc-yildiz { font-size: 30px; color: var(--vurgu); letter-spacing: 4px; margin: 4px 0; }
+@media (max-width: 380px) { .og-harf { width: 28px; } .og-karo { width: 42px; } }

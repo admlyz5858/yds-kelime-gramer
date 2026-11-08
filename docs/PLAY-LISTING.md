@@ -12,22 +12,26 @@ Bu dosya, Play Console'da kopyala-yapıştır yapacağın tüm metinleri ve form
 
 ## Kısa açıklama (max 80 karakter)
 ```
-YDS/YÖKDİL: 2100+ kelime tek sözlükte, 13 gramer ünitesi, oyun, aralıklı tekrar.
+YDS/YÖKDİL: 2100+ kelime, gramer anlatımı, kelime oyunları, aralıklı tekrar.
 ```
 
 ## Tam açıklama (max 4000 karakter)
 ```
-Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 2100'den fazla kelime kartı (çekimli biçimleriyle 2300+ sözcük) ve 13 gramer ünitesi tamamen ücretsiz.
+Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarlanmış, çevrimdışı çalışan bir kelime ve gramer çalışma uygulamasıdır. 2100'den fazla kelime kartı (çekimli biçimleriyle 2300+ sözcük) ve 13 gramer ünitesi tamamen ücretsiz. Kelimeleri sıkıcı testlerle değil, oyunlarla ve aralıklı tekrarla öğrenirsin.
 
 ÖNE ÇIKAN ÖZELLİKLER
 
 • Tüm kelimeler tek yerde — 2100+ kelime tek sözlükte. Seviyeye (S1 temel → S5 akademik), türe (isim, fiil, sıfat, zarf, edat…) ve duruma (yeni / öğreniliyor / öğrendim) göre süz; ara, A→Z sırala, listeyi doğrudan çalış.
 
-• Bugün sekmesi — Günün planı tek ekranda: vadesi gelen tekrarlar, günün eşleştirmesi, kaldığın ünite.
+• Bugün sekmesi — Günün planı tek ekranda: vadesi gelen tekrarlar, günün eşleştirmesi, kelime oyunları, kaldığın ünite.
 
 • Kelime Akışı — Yukarı kaydır, kelimeleri Reels tarzında hızlıca gez. Karta dokun anlamı ve örnek cümlesi açılsın; kelime otomatik seslendirilsin. Beğendiğini kaydet, bildiğini işaretle.
 
-• Eşleştirme Oyunu — İngilizce ve Türkçe kelimeleri eşleştir. 42 bölüm, kolaydan zora: 5 kelimeyle başla, süreli seviyelere kadar ilerle. Puan, yıldız ve rekorlarını takip et.
+• Eşleştirme Oyunu — İngilizce ve Türkçe kelimeleri eşleştir. Bölümler kolaydan zora: 5 kelimeyle başla, süreli seviyelere kadar ilerle. Puan, yıldız ve rekorlarını takip et.
+
+• Harf Avı — Türkçe anlamı verilen İngilizce kelimeyi harf harf bul; 6 yanlış hakkın var. Kolay, orta ve zor seviye.
+
+• Karışık Harfler — Karışık harfleri doğru sırayla dizip kelimeyi oluştur; takılırsan ipucu al.
 
 • Günün Eşleştirmesi — Her gün herkese aynı 10 kelime. Sonucunu arkadaşlarınla paylaş.
 
@@ -37,9 +41,7 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Telaffuz — Her kelimeyi ve örnek cümledeki kelimeleri tek dokunuşla dinle.
 
-• Müfredat — Edatlar, zamanlar, modallar, fiilimsiler, etken-edilgen, koşul cümleleri, isim/sıfat cümlecikleri, bağlaçlar. Her ünitede konu anlatımı (Oku), ünitenin kendi cümlelerinden üretilen alıştırmalar (boşluk doldurma ve sınıflandırma), kolaydan zora testler ve çeviri çalışması. Yanlışların birikir, doğru çözünce silinir.
-
-• Soru Bankası — 1.500'den fazla test sorusu konuya göre: Past Perfect, geçmiş çıkarım modalları, Type 3 koşul, sıfat cümlecikleri… Her alt konu 10'ar soruluk testlere bölünmüş, kolaydan zora sıralı; skorlar saklanır, zayıf konun günün planına düşer.
+• Müfredat — Edatlar, zamanlar, modallar, fiilimsiler, etken-edilgen, koşul cümleleri, isim/sıfat cümlecikleri, bağlaçlar. Her ünitede konu anlatımı (Oku: kurallar ve etkileşimli örnek cümleler) ve çeviri çalışması.
 
 • Kelime Defteri — Bilmediklerini biriktir; “Biliyorum” dediklerin aralıklı tekrara pekişmiş olarak girer.
 
@@ -48,6 +50,15 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 • Gizlilik — Hesap zorunlu değildir, reklam ve izleme yoktur. İlerlemen cihazında kalır. İstersen Google hesabınla giriş yapıp ilerlemeni buluta yedekleyebilirsin. Hesabını ve yedeğini istediğin an silebilirsin.
 
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
+```
+
+## Sürüm notları (1.6.0, Play Console'a yapıştırılacak kısa sürüm · 331 karakter)
+```
+• Yeni oyunlar: Harf Avı ve Karışık Harfler
+• Kelime öğrenimi oyunlara odaklandı: Soru Bankası, mini deneme, ünite testleri ve Yanlışlarım kaldırıldı
+• Müfredat artık yalnızca gramer anlatımı ve çeviri çalışması içerir
+• Tüm oyunlar günlük hedefe ve görevlere sayılır
+• Sadece Google ile giriş; erişilebilirlik ve hata düzeltmeleri
 ```
 
 ## Sürüm notları (1.5.0, Play Console'a yapıştırılacak kısa sürüm · 412 karakter)

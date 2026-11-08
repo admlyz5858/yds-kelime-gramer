@@ -1,7 +1,7 @@
 // app/js/logic.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { searchLessons, toggleDone, isDone, scoreQuiz, shuffle, isoGun, gunStr } from './logic.js';
+import { searchLessons, toggleDone, isDone, shuffle, isoGun, gunStr } from './logic.js';
 
 test('searchLessons başlığa göre filtreler (büyük/küçük harf duyarsız)', () => {
   const m = [{ id: 1, baslik: 'Hazırlık 101' }, { id: 2, baslik: 'Deneme 5' }];
@@ -17,11 +17,6 @@ test('toggleDone/isDone ilerlemeyi değiştirir (saf)', () => {
   assert.equal(isDone(p, 1), false);
 });
 
-test('scoreQuiz doğru sayısını verir', () => {
-  const quiz = [{ cevap: 'a', secenekler: ['a','b'] }, { cevap: 'b', secenekler: ['a','b'] }];
-  assert.deepEqual(scoreQuiz(quiz, ['a', 'a']), { dogru: 1, toplam: 2 });
-});
-
 test('shuffle aynı elemanları korur, kaynağı değiştirmez', () => {
   const a = [1, 2, 3, 4, 5];
   const s = shuffle(a);
@@ -33,15 +28,4 @@ test('isoGun/gunStr yerel günü YYYY-AA-GG verir', () => {
   assert.equal(isoGun(new Date(2026, 0, 5)), '2026-01-05');
   assert.match(gunStr(), /^\d{4}-\d{2}-\d{2}$/);
   assert.notEqual(gunStr(-1), gunStr(0));
-});
-
-import { bosluklariDoldur } from './logic.js';
-test('bosluklariDoldur: çok boşluklu soruda her boşluğa kendi parçası', () => {
-  const dol = (t) => `[${t}]`, bos = () => '[_]';
-  assert.equal(bosluklariDoldur('A ____ B ____ C', 'x / y', dol, bos), 'A [x] B [y] C');
-});
-test('bosluklariDoldur: tek cevap ilk boşluğa, diğerleri boş; seçim yoksa hepsi boş', () => {
-  const dol = (t) => `[${t}]`, bos = () => '[_]';
-  assert.equal(bosluklariDoldur('A ____ B ____', 'x', dol, bos), 'A [x] B [_]');
-  assert.equal(bosluklariDoldur('A ____ B ____', null, dol, bos), 'A [_] B [_]');
 });

@@ -7,7 +7,6 @@
    "baslik": "Ünite 1 — En Sık Kullanılan 1000 Kelime",
    "kelime_sayisi": 1030,
    "durum": "hazir",
-   "test_sayisi": 0,
    "cift_sayisi": 0
   },
   {
@@ -17,7 +16,6 @@
    "kelime_sayisi": 147,
    "durum": "hazir",
    "bolum_sayisi": 77,
-   "test_sayisi": 10,
    "cift_sayisi": 182
   },
   {
@@ -27,7 +25,6 @@
    "durum": "hazir",
    "bolum_sayisi": 5,
    "kelime_sayisi": 79,
-   "test_sayisi": 6,
    "cift_sayisi": 0
   },
   {
@@ -37,7 +34,6 @@
    "durum": "hazir",
    "bolum_sayisi": 6,
    "kelime_sayisi": 213,
-   "test_sayisi": 20,
    "cift_sayisi": 7
   },
   {
@@ -47,7 +43,6 @@
    "kelime_sayisi": 63,
    "durum": "hazir",
    "bolum_sayisi": 6,
-   "test_sayisi": 3,
    "cift_sayisi": 24
   },
   {
@@ -57,7 +52,6 @@
    "kelime_sayisi": 347,
    "durum": "hazir",
    "bolum_sayisi": 2,
-   "test_sayisi": 15,
    "cift_sayisi": 80
   },
   {
@@ -67,7 +61,6 @@
    "durum": "hazir",
    "bolum_sayisi": 7,
    "kelime_sayisi": 286,
-   "test_sayisi": 23,
    "cift_sayisi": 20
   },
   {
@@ -77,7 +70,6 @@
    "kelime_sayisi": 287,
    "durum": "hazir",
    "bolum_sayisi": 2,
-   "test_sayisi": 41,
    "cift_sayisi": 50
   },
   {
@@ -87,7 +79,6 @@
    "durum": "hazir",
    "bolum_sayisi": 5,
    "kelime_sayisi": 283,
-   "test_sayisi": 10,
    "cift_sayisi": 10
   },
   {
@@ -97,7 +88,6 @@
    "durum": "hazir",
    "bolum_sayisi": 5,
    "kelime_sayisi": 127,
-   "test_sayisi": 11,
    "cift_sayisi": 0
   },
   {
@@ -107,7 +97,6 @@
    "durum": "hazir",
    "bolum_sayisi": 6,
    "kelime_sayisi": 145,
-   "test_sayisi": 25,
    "cift_sayisi": 15
   },
   {
@@ -117,7 +106,6 @@
    "durum": "hazir",
    "bolum_sayisi": 6,
    "kelime_sayisi": 87,
-   "test_sayisi": 5,
    "cift_sayisi": 12
   },
   {
@@ -127,7 +115,6 @@
    "durum": "hazir",
    "bolum_sayisi": 6,
    "kelime_sayisi": 79,
-   "test_sayisi": 5,
    "cift_sayisi": 12
   },
   {
@@ -137,7 +124,6 @@
    "durum": "hazir",
    "bolum_sayisi": 6,
    "kelime_sayisi": 46,
-   "test_sayisi": 5,
    "cift_sayisi": 12
   }
  ]
