@@ -35,7 +35,7 @@ T('Ben: Mini deneme ve Yanlışlarım satırı yok; yıldız ve oyun bölümü v
 // --- Oyun sekmesi: segment çubuğu
 await s.locator('button[data-sekme="oyun"]').click(); await bekle(900);
 const oyunSeg = await s.locator('.segment[data-alan="oyun"] button').allInnerTexts();
-T('Oyun: Eşleştirme · Harf Avı · Karışık segmentleri', oyunSeg.length === 3 && /Eşleştirme/.test(oyunSeg[0]) && /Harf Avı/.test(oyunSeg[1]) && /Karışık/.test(oyunSeg[2]));
+T('Oyun: Eşleştir · Harf Avı · Karışık · Sıralama segmentleri', oyunSeg.length === 4 && /Eşleştir/.test(oyunSeg[0]) && /Harf Avı/.test(oyunSeg[1]) && /Karışık/.test(oyunSeg[2]) && /Sıralama/.test(oyunSeg[3]));
 T('Oyun: Eşleştirme paneli açık', (await s.locator('.es-hero').count()) === 1);
 
 // --- Harf Avı: tüm turu harf harf oyna
