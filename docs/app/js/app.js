@@ -6,6 +6,7 @@ import { kurKelimeOgren } from './ogren.js';
 import { kurKelimeAkisi } from './akis.js';
 import { kurEslestirme } from './eslestir.js';
 import { kurOyunlar } from './oyunlar.js';
+import { kurSiralama } from './siralama.js';
 import { kurSozluk, UNITE_ADI } from './sozluk.js';
 import { kurTarayici } from './tarayici.js';
 import { kurGun } from './gun.js';
@@ -135,11 +136,12 @@ function sekmeAc(sekme, opts = {}) {
 }
 const yenile = () => sekmeAc(aktifSekme);
 // Oyun sekmesi: Eşleştirme · Harf Avı · Karışık Harfler (segment çubuğu)
-const OYUN_SEGMENTLER = [['esles', '🧩 Eşleştirme'], ['av', '🔤 Harf Avı'], ['karisik', '🔀 Karışık']];
+const OYUN_SEGMENTLER = [['esles', '🧩 Eşleştir'], ['av', '🔤 Harf Avı'], ['karisik', '🔀 Karışık'], ['sira', '🏆 Sıralama']];
 const oyunSegmentHTML = (aktif) => segmentHTML('oyun', OYUN_SEGMENTLER, aktif);
 function oyunAc(seg = 'esles', opts = {}) {
   eslestirme.temizle(); oyunlar.temizle();
   if (seg === 'av' || seg === 'karisik') return oyunlar.ac(seg);
+  if (seg === 'sira') return siralama.ac();
   return eslestirme.ac(Object.assign({ ustHTML: () => ipucuHTML('oyun') + oyunSegmentHTML('esles') }, opts));
 }
 // Alt ekran: üst "Geri" + başlık, alt bar gizli
@@ -208,10 +210,19 @@ const kelimeAkisi = kurKelimeAkisi({
 const eslestirme = kurEslestirme({
   render, esc, gunKaydet, anaSayfa: kokOyun, ekranModu, paylas, titre, ses, konfeti, toast,
   havuzYukle, defterdeMi, defterToggle, onayAc,
+  skorGonder: (oyun, puan) => siralama.gonder(oyun, puan),
 });
 const oyunlar = kurOyunlar({
   render, esc, gunKaydet, ses, titre, konfeti, ekranModu, anaSayfa: kokOyun, havuzYukle,
   ustHTML: (oyun) => ipucuHTML('oyun') + oyunSegmentHTML(oyun),
+  skorGonder: (oyun, puan) => siralama.gonder(oyun, puan),
+  siralamaAc: () => oyunAc('sira'),
+});
+// Misafir sıralaması — kayıtsız; misafir adını sunucu üretir, skorlar oyun bitince gönderilir
+const siralama = kurSiralama({
+  rpc: bulut.rpc, render, esc, ekranModu, anaSayfa: kokOyun, toast,
+  ustHTML: () => ipucuHTML('oyun') + oyunSegmentHTML('sira'),
+  gunlukOyna: () => oyunAc('esles', { gunluk: true }), oyunOyna: () => oyunAc('av'),
 });
 const sozluk = kurSozluk({
   render, esc, ornekHTML: ornekInteraktifHTML, wireOrnekler, havuzYukle, seslendir, titre, toast, altEkran,
@@ -743,7 +754,7 @@ function yardimAc() {
     <div class="yardim-sat"><span>📖</span><div><b>Kelimeler</b> — Tüm kelimeler tek listede. S1 (temel) → S5 (akademik) seviye, tür ve durum çipleriyle süz; bir kelimeye dokun → anlam, örnek, 🔊, 📓 Defter, 🎓 Biliyorum. “Bu listeyi çalış” ile aralıklı tekrara al.</div></div>
     <div class="yardim-sat"><span>🌱</span><div><b>Öğren</b> — Aralıklı tekrar: kelimeler unutulmadan önce tekrar gelir; kart, test, yazım ve boşluk modları.</div></div>
     <div class="yardim-sat"><span>🎓</span><div><b>Müfredat</b> — Her ünitede Oku (kurallar + etkileşimli örnekler) ve Çeviri.</div></div>
-    <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme (bölümler, günün bulmacası, düello, rekorlar), Harf Avı ve Karışık Harfler. Tüm oyunlar günlük hedefe sayılır.</div></div>
+    <div class="yardim-sat"><span>🧩</span><div><b>Oyun</b> — İngilizce↔Türkçe eşleştirme (bölümler, günün bulmacası, düello, rekorlar), Harf Avı ve Karışık Harfler. Tüm oyunlar günlük hedefe sayılır; 🏆 Sıralama'da misafir adınla arkadaşlarınla yarışırsın (bugün ve bu hafta).</div></div>
     <div class="yardim-sat"><span>📄</span><div><b>Metin tara</b> — Kelimeler › Tara: bir metin yapıştır, havuzdaki kelimeler seviye rengiyle işaretlenir; bilmediklerini deftere al ya da çalış.</div></div>
     <div class="yardim-sat"><span>➕</span><div><b>Kendi kelimen</b> — Defterim › "Kendi kelimeni ekle"; her karta 📝 hafıza ipucu yazabilirsin.</div></div>
     <div class="yardim-sat"><span>👤</span><div><b>Ben</b> — İlerleme, ayarlar; ☁️ Google ile giriş yapınca ilerlemen buluta yedeklenir ve cihazlar arasında taşınır.</div></div>
@@ -757,6 +768,7 @@ function ayarSatirlariHTML() {
   return `
     <div class="ben-baslik">Oyun</div>
     <button class="ayar-sat" data-is="rekor"><span>🏅</span><div><b>Rekorlarım</b><i>Eşleştirme skorların</i></div></button>
+    ${siralamaSatirHTML()}
     <div class="ben-baslik">Ayarlar</div>
     <button class="ayar-sat" data-is="tema"><span>${TEMA_AD[temaSecimi()][0]}</span><div><b>${TEMA_AD[temaSecimi()][1]}</b><i>${TEMA_AD[temaSecimi()][2]} — değiştirmek için dokun</i></div></button>
     <button class="ayar-sat" data-is="hedef"><span>🎯</span><div><b>Günlük hedef</b><i>${_ayar.hedef || HEDEF_VARSAYILAN} aktivite/gün — değiştirmek için dokun</i></div></button>
@@ -773,10 +785,20 @@ function ayarSatirlariHTML() {
     <button class="ayar-sat tehlike" data-is="hepsi"><span>🗑️</span><div><b>Tüm ilerlemeyi sıfırla</b><i>Öğrenilen kelimeler, defter, oyun geçmişi, seri ve günlük sayaçlar silinir. Ayarların, kendi kelimelerin ve ipuçların kalır</i></div></button>
     <div class="ayar-hakkinda">Kelimetre · YDS/YÖKDİL · v${SURUM}</div>`;
 }
+function siralamaSatirHTML() {
+  const s = siralama.durum();
+  const alt = s.kapali ? 'Katılmıyorsun — katılmak için dokun' : `${s.ad ? esc(s.ad) + ' adıyla' : 'Misafir adınla'} görünüyorsun — çıkmak için dokun`;
+  return `<button class="ayar-sat" data-is="siralama"><span>🏆</span><div><b>Sıralama</b><i>${alt}</i></div></button>`;
+}
 function ayarBagla(root) {
   root.querySelectorAll('.ayar-sat').forEach(b => b.onclick = () => {
     const is = b.dataset.is;
     if (is === 'rekor') { eslestirme.rekorlar(); return; }
+    if (is === 'siralama') {
+      if (siralama.durum().kapali) { siralama.katil().then(() => { toast('🏆 Sıralamaya katıldın'); benAc(); }).catch(() => toast('Bağlantı yok, sonra tekrar dene')); return; }
+      onayAc('Sıralamadan çıkılsın mı? Misafir adın ve sıralamadaki tüm skorların silinir.', () => { siralama.cik().then(() => { toast('Sıralamadan çıktın'); benAc(); }).catch(() => toast('Çıkılamadı: internet bağlantını kontrol et')); });
+      return;
+    }
     if (is === 'giris-yap') { girisAc(); return; }
     if (is === 'esitle') { toast('☁️ Eşitleniyor…'); bulutEsitle(true).then(() => benAc()); return; }
     if (is === 'cikis-yap') { onayAc('Hesaptan çıkılsın mı? Bu cihazdaki ilerleme kalır, bulut yedeği durur.', () => { bulut.cikis().then(() => benAc()); }); const eb = document.getElementById('onayEvet'); if (eb) eb.textContent = 'Evet, çık'; return; }
@@ -1252,6 +1274,7 @@ bulut.donusIsle().then(async (geldi) => {
 }).catch(e => toast('Google ile giriş yapılamadı: ' + (e.message || 'hata')));
 girisEkrani(false);
 sekmeAc('bugun');
+setTimeout(() => siralama.bosalt(), 2500);   // çevrimdışıyken biriken oyun skorlarını gönder (kuyruk boşsa ağa çıkılmaz)
 
 const _capApp = window.Capacitor?.Plugins?.App;
 if (_capApp?.addListener) {

@@ -39,6 +39,9 @@ async function istek(yol, { method = 'GET', govde, yetki, prefer } = {}) {
   } finally { clearTimeout(z); }
 }
 
+// Herkese açık RPC (oturum gerekmez): misafir sıralaması gibi denetimli sunucu fonksiyonları
+export const rpc = (ad, govde) => istek('/rest/v1/rpc/' + ad, { method: 'POST', govde: govde || {} });
+
 // ---- Kimlik ----
 
 // ---- Google ile giriş (Supabase OAuth, SDK'sız; tokenlar dönüş adresinin #parçasında gelir) ----

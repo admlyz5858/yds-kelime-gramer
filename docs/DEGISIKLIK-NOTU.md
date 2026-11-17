@@ -55,6 +55,14 @@ Bu not, kapalı test sürecinde gelen geri bildirimler doğrultusunda uygulamada
 - Giriş alanları ve ses düğmeleri ekran okuyucular için etiketlendi.
 - Dokunma hedefleri büyütüldü; küçük ekranlarda taşmalar düzeltildi.
 
+### F. Arkadaşlarla yarışma: misafir sıralaması
+**[geri bildirim: ]**
+- Kayıt gerektirmeyen **sıralama** eklendi: her oyuncuya otomatik bir misafir adı verilir (ör. "Çevik Tilki 42"); oyun puanları arkadaşlarla aynı listede görünür.
+- İki sıralama: **Bugün** (herkesin aynı 10 kelimeyi oynadığı Günün Eşleştirmesi) ve **Bu hafta** (tüm oyunların toplamı).
+- Misafir adlarını sunucu üretir; kullanıcı serbest metin giremez, böylece uygunsuz ad riski yoktur. Puanlar sunucuda makul sınırlarla denetlenir.
+- İnternet yokken puanlar cihazda bekler, bağlantı gelince gönderilir.
+- Kullanıcı istediği an **Ben › Sıralama**'dan çıkabilir; adı ve puanları sunucudan silinir.
+
 ---
 
 ## 3. Sorulara hazır kısa cevaplar
@@ -74,3 +82,4 @@ Bu not, kapalı test sürecinde gelen geri bildirimler doğrultusunda uygulamada
 - **1.4.0** — Google ile giriş, bulut yedeği, mini deneme, metin tarayıcı.
 - **1.5.0** — Lig/XP/başarım sadeleştirmesi, sıfırlama, kart ve soru düzeltmeleri, Faz 2 sayaçlar.
 - **1.6.0** — Test özellikleri kaldırıldı; Harf Avı ve Karışık Harfler eklendi; müfredat sadeleştirildi.
+- **1.7.0** — Misafir sıralaması: kayıt olmadan arkadaşlarla yarışma (bugün ve bu hafta).

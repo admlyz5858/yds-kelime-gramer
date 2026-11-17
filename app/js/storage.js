@@ -119,6 +119,14 @@ export function loadOyunlar() {
 }
 export function saveOyunlar(v) { kaydet(OYKEY, v); }
 
+// ===== Misafir sıralaması — { anahtar, ad, kapali, bekleyen: [{ oyun, puan }] } (anahtar gizlidir; sunucu yalnızca özetini tutar) =====
+const SRKEY = 'yds-siralama-v1';
+export function loadSiralama() {
+  try { return JSON.parse(localStorage.getItem(SRKEY)) || null; }
+  catch { return null; }
+}
+export function saveSiralama(v) { kaydet(SRKEY, v); }
+
 // ===== Kaldırılan test özelliklerinden kalan veri (Soru Bankası, mini deneme, ünite testleri/alıştırmaları, Yanlışlarım) =====
 // Artık kullanılmaz; yedeğe girmez ve açılışta silinir.
 const ESKI_TEST_ANAHTARLARI = ['yds-test-istat-v1', 'yds-yanlis-v1', 'yds-alistirma-v1', 'yds-banka-v1', 'yds-deneme-v1', 'yds-deneme-devam-v1'];

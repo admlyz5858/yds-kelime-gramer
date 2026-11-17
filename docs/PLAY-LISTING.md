@@ -33,6 +33,8 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 
 • Karışık Harfler — Karışık harfleri doğru sırayla dizip kelimeyi oluştur; takılırsan ipucu al.
 
+• Sıralama — Kayıt olmadan, sana verilen misafir adıyla arkadaşlarınla yarış: bugünün Günün Eşleştirmesi sıralaması ve bu haftanın tüm oyunlar sıralaması. İstemezsen tek dokunuşla çık.
+
 • Günün Eşleştirmesi — Her gün herkese aynı 10 kelime. Sonucunu arkadaşlarınla paylaş.
 
 • Düello — Bir kod paylaş, arkadaşın aynı kelimelerle oynasın; kim daha yüksek puan alacak?
@@ -50,6 +52,14 @@ Kelimetre, YDS ve YÖKDİL İngilizce sınavlarına hazırlananlar için tasarla
 • Gizlilik — Hesap zorunlu değildir, reklam ve izleme yoktur. İlerlemen cihazında kalır. İstersen Google hesabınla giriş yapıp ilerlemeni buluta yedekleyebilirsin. Hesabını ve yedeğini istediğin an silebilirsin.
 
 Her gün birkaç dakika — gerisini uygulama hatırlatır.
+```
+
+## Sürüm notları (1.7.0, Play Console'a yapıştırılacak kısa sürüm · 271 karakter)
+```
+• Yeni: Sıralama — kayıt olmadan misafir adınla arkadaşlarınla yarış
+• Bugünün Günün Eşleştirmesi ve bu haftanın tüm oyunlar sıralaması
+• Harf Avı, Karışık Harfler ve Eşleştirme puanların sıralamaya eklenir
+• İstediğin an Ben › Sıralama'dan çık; adın ve puanların silinir
 ```
 
 ## Sürüm notları (1.6.0, Play Console'a yapıştırılacak kısa sürüm · 331 karakter)
@@ -144,5 +154,9 @@ https://admlyz5858.github.io/yds-kelime-gramer/gizlilik/
 E-posta hesabı ve bulut yedekleme (isteğe bağlı, 1.4.0+) için:
 - **Kişisel bilgiler → E-posta adresi:** isteğe bağlı, toplanır, paylaşılmaz; amaç: hesap yönetimi. Kullanıcı silebilir (uygulama içi "Hesabımı ve bulut yedeğimi sil").
 - **Uygulama etkinliği → Uygulama etkileşimleri:** çalışma ilerlemesi yedeği (isteğe bağlı, toplanır, paylaşılmaz; amaç: uygulama işlevselliği).
+Misafir sıralaması (1.7.0+) için önerilen ek yanıtlar (Play'in güncel tanımlarıyla son kez kontrol edin):
+- **Uygulama etkinliği → Uygulama etkileşimleri:** oyun türü ve puanı; toplanır, üçüncü taraflarla paylaşılmaz; amaç: uygulama işlevselliği (sıralama). Kullanıcı Ben › Sıralama'dan çıkarak toplanmayı durdurabilir ve verisini sildirebilir.
+- **Cihaz veya diğer kimlikler:** uygulamanın ürettiği rastgele anahtar (sunucuda yalnızca özeti); toplanır, paylaşılmaz; amaç: uygulama işlevselliği. Reklam kimliği ve donanım kimliği kullanılmaz.
+- Sıralamada diğer kullanıcılara yalnızca sunucunun ürettiği misafir adı ve puan görünür; serbest metin yoktur.
 - Hesap oluşturma: yalnızca Google ile giriş (OAuth; yalnızca e-posta + hesap kimliği alınır; şifre yok). Aktarımda şifreli (HTTPS). Sunucu: Supabase (AB/Frankfurt).
 

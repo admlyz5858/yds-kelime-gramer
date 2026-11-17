@@ -161,6 +161,7 @@ export function kurOyunlar(api) {
     d[tur.oyun][tur.seviye] = { en: Math.max(onceki.en, tur.puan), tur: onceki.tur + 1 };
     saveOyunlar(d);
     gunKaydet(0, { bitir: true });
+    api.skorGonder?.(tur.oyun, tur.puan);
     if (yildiz === 3) { ses('kutlama'); titre('basari'); konfeti(); } else ses(yildiz ? 'dogru' : 'yanlis');
     const { oyun, seviye } = tur;
     render(`${ust(oyun)}
@@ -168,9 +169,11 @@ export function kurOyunlar(api) {
         <div class="es-sonuc-bas">${esc(OYUNLAR[oyun].ad)} · ${esc(SEVIYE[seviye].ad)}</div>
         <div class="es-sonuc-yildiz" aria-label="${yildiz} yıldız">${'★'.repeat(yildiz)}${'☆'.repeat(3 - yildiz)}</div>
         <div class="es-sonuc-alt">${tur.puan} puan · ${tur.dogru}/${n} kelime${rekor ? ' · 🎉 yeni rekor' : ''}</div></div>
-      <div class="btn-satir"><button class="aksiyon" id="ogTekrar">Tekrar oyna</button><button class="aksiyon ikincil" id="ogListe">Seviyeler</button></div>`);
+      <div class="btn-satir"><button class="aksiyon" id="ogTekrar">Tekrar oyna</button><button class="aksiyon ikincil" id="ogListe">Seviyeler</button></div>
+      ${api.siralamaAc ? '<div class="btn-satir"><button class="aksiyon ikincil" id="ogSira">🏆 Sıralamayı gör</button></div>' : ''}`);
     document.getElementById('ogTekrar').onclick = () => basla(oyun, seviye);
     document.getElementById('ogListe').onclick = () => ac(oyun);
+    const sr = document.getElementById('ogSira'); if (sr) sr.onclick = () => api.siralamaAc();
     temizleKlavye();
   }
   function temizleKlavye() { if (tus) { document.removeEventListener('keydown', tus); tus = null; } }

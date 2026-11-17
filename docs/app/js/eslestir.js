@@ -434,6 +434,7 @@ export function kurEslestirme(api) {
     if (durum.kayitlar.length > 100) durum.kayitlar = durum.kayitlar.slice().sort((a, b) => b.skor - a.skor).slice(0, 100);
     kaydet();
     gunKaydet(0, { bitir: true });
+    api.skorGonder?.('bolum', toplam);
     if (rekor) { ses('kutlama'); titre('basari'); konfeti(); } else { ses('seviye'); titre('basari'); }
     const tumKelimeler = oyun.setler.flat().concat(oyun.havuz);
     const yanlisSayi = oyun.yanlis.length;   // oyun null'lanmadan önce yakala (Paylaş bu değere bakar)
@@ -469,6 +470,7 @@ export function kurEslestirme(api) {
     if (mod === 'gunluk') {
       kayit = { skor: sonuc.puan, izgara: grid, kalan, tamam };
       durum.gunluk[t] = kayit; kaydet();
+      api.skorGonder?.('gunluk', sonuc.puan);
     } else {
       const kod = kodUret(oyun.seed, sonuc.puan);
       kayit = { kod, skorum: sonuc.puan, rakip: oyun.rakip, t: new Date().toISOString() };
